@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Storyraise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #803BB1;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span { color: #DDFF1E; }
+
+    hero {
+      display: block;
+      max-width: 860px;
+      margin: 80px auto;
+      padding: 0 48px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #803BB1;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: #DDFF1E;
+    }
+
+    p.lead {
+      font-size: 1.15rem;
+      color: #ccc;
+      line-height: 1.75;
+      max-width: 620px;
+      margin: 0 auto 48px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #F12E5B;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .cta:hover { opacity: 0.85; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 960px;
+      margin: 80px auto;
+      padding: 0 48px;
+    }
+
+    .feature {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 32px 28px;
+    }
+
+    .feature .icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .feature h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .feature p {
+      font-size: 0.9rem;
+      color: #888;
+      line-height: 1.65;
+    }
+
+    footer {
+      text-align: center;
+      padding: 48px;
+      color: #444;
+      font-size: 0.85rem;
+      border-top: 1px solid #111;
+    }
+
+    footer a { color: #803BB1; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">story<span>raise</span></div>
+  </header>
+
+  <hero>
+    <div class="tag">What We Do</div>
+    <h1>We help organizations <em>tell stories</em> that move people to act.</h1>
+    <p class="lead">
+      Storyraise is a creative studio built for nonprofits, foundations, and mission-driven teams. We turn your data, impact, and ideas into beautifully designed reports, presentations, and digital experiences — so your work gets the attention it deserves.
+    </p>
+    <a href="https://storyraise.com" class="cta">Visit Storyraise.com</a>
+  </hero>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">📊</div>
+      <h3>Annual Reports</h3>
+      <p>Transform your year-end data into compelling visual narratives that donors and stakeholders actually read.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🎨</div>
+      <h3>Brand & Design</h3>
+      <p>From logos to full brand systems — we build identities that communicate your mission at a glance.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📄</div>
+      <h3>Presentations</h3>
+      <p>Pitch decks, board presentations, and conference slides designed to make your case clearly and confidently.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🌐</div>
+      <h3>Digital Experiences</h3>
+      <p>Interactive reports and web pages that bring your impact to life beyond the printed page.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Storyraise &mdash; <a href="https://storyraise.com">storyraise.com</a>
+  </footer>
+
+</body>
+</html>
