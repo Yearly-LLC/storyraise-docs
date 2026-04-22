@@ -703,7 +703,12 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="https://storyraise.com" class="logo" target="_blank" rel="noopener">
-      <img src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a" alt="Storyraise" style="height:36px;width:auto;display:block;">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+      </div>
+      <span class="logo-text">Story<span>raise</span></span>
     </a>
     <span class="nav-badge">Impact Report Grader</span>
   </div>
@@ -1747,6 +1752,15 @@ async function runAnalysis() {
   // ── 3. Video detection ───────────────────────────────────────────────────
   await showCheck('video', 500);
   {
+    // Static document platforms — these never have embedded video; check first so
+    // false-positive signals from Jina/Microlink don't override this known truth.
+    const isStaticDocPlatform = isUrl && /issuu\.com|fliphtml5\.com|flipsnack\.com|heyzine\.com|joomag\.com|publuu\.com|calameo\.com|yumpu\.com/i.test(reportSource.label);
+
+    if (isStaticDocPlatform) {
+      setDetected('multimedia', 'no', 0, 'No video');
+      finishCheck('video', false, 'Static document platform — no video (+0 pts)');
+    } else {
+
     let videoFound  = false;
     let videoSignal = null;
 
@@ -1793,9 +1807,6 @@ async function runAnalysis() {
       }
     }
 
-    // Static document platforms — these never have embedded video, safe to auto-set
-    const isStaticDocPlatform = isUrl && /issuu\.com|fliphtml5\.com|flipsnack\.com|heyzine\.com|joomag\.com|publuu\.com|calameo\.com|yumpu\.com/i.test(reportSource.label);
-
     if (videoFound) {
       const isLinkOnly = videoSignal === 'link to video platform';
       if (isLinkOnly) {
@@ -1805,10 +1816,6 @@ async function runAnalysis() {
         setDetected('multimedia', 'embed', 10, 'Embedded video / player');
         finishCheck('video', true, `Video embed detected (+10 pts) [${videoSignal}]`);
       }
-    } else if (isStaticDocPlatform) {
-      // Issuu, FlipHTML5, Flipsnack etc. are static document viewers — no video possible
-      setDetected('multimedia', 'no', 0, 'No video');
-      finishCheck('video', false, 'Static document platform — no video (+0 pts)');
     } else {
       // Neither Microlink nor CORS proxy could confirm video presence.
       // CORS proxies return static HTML (JS embeds invisible), and Microlink
@@ -1816,6 +1823,8 @@ async function runAnalysis() {
       // — leave for manual review so the user can answer accurately.
       skipCheck('video', 'Couldn\'t auto-detect — please answer manually');
     }
+
+    } // end non-static-platform branch
   }
 
   // ── 3. Photo quality detection ───────────────────────────────────────────
