@@ -1,0 +1,2740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact Report Evaluator — Storyraise</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #000000;
+      --navy-mid:    #803BB1;
+      --blue:        #803BB1;
+      --blue-light:  #F12E5B;
+      --accent:      #F12E5B;
+      --teal:        #DDFF1E;
+      --white:       #ffffff;
+      --off-white:   #ece5f5;
+      --gray-100:    #ddd4ec;
+      --gray-300:    #cccccc;
+      --gray-500:    #888888;
+      --gray-700:    #444444;
+      --success:     #22c55e;
+      --warn:        #f59e0b;
+      --danger:      #ef4444;
+      --shadow-md:   0 4px 24px rgba(0,0,0,.5);
+      --shadow-lg:   0 12px 48px rgba(0,0,0,.7);
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(to bottom, #f5f0fc 0%, #faf8fe 40%, #ffffff 100%);
+      background-attachment: fixed;
+      color: #000000;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245,240,252,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #ddd4ec;
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 900px; margin: 0 auto; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--navy-mid));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 18px; height: 18px; }
+    .logo-text { font-size: 18px; font-weight: 800; color: #000000; letter-spacing: -.4px; }
+    .logo-text span { color: var(--accent); }
+    .nav-badge {
+      font-size: 12px; font-weight: 600; color: var(--accent);
+      background: rgba(241,46,91,.15); padding: 5px 12px; border-radius: 20px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, #803BB1 0%, #9b4fd4 40%, #b06ae0 100%);
+      padding: 72px 24px 80px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 50% at 10% 65%, rgba(241,46,91,.2) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 55% at 90% 20%, rgba(221,255,30,.12) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 50% 110%, rgba(0,0,0,.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 680px; margin: 0 auto; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #F12E5B; border: 1px solid #F12E5B;
+      border-radius: 20px; padding: 6px 16px; margin-bottom: 24px;
+    }
+    .hero-tag-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: pulse 2s infinite; }
+    .hero-tag span { font-size: 12px; font-weight: 700; color: #fff; letter-spacing: .08em; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; color: var(--white); line-height: 1.15; letter-spacing: -.03em; margin-bottom: 20px; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p { font-size: 18px; color: rgba(255,255,255,.72); max-width: 520px; margin: 0 auto 36px; line-height: 1.65; }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--navy-mid));
+      color: var(--white); font-size: 16px; font-weight: 700;
+      padding: 14px 32px; border-radius: 50px; border: none; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(241,46,91,.4); transition: transform .2s, box-shadow .2s;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(241,46,91,.5); }
+    .hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 52px; flex-wrap: wrap; }
+    .hero-stat strong { display: block; font-size: 28px; font-weight: 900; color: var(--white); letter-spacing: -.04em; }
+    .hero-stat span { font-size: 13px; color: rgba(255,255,255,.55); font-weight: 500; }
+    .hero-stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,.12); align-self: center; }
+
+    /* ── Quiz section ── */
+    .quiz-section { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* ── Input card ── */
+    .input-card {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow-md); border: 1px solid var(--gray-100);
+      overflow: hidden; animation: slideUp .35s cubic-bezier(.4,0,.2,1);
+    }
+    .input-tabs {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .input-tab {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 16px; font-size: 14px; font-weight: 700; color: var(--gray-500);
+      background: var(--white); border: none; cursor: pointer;
+      border-bottom: 3px solid transparent; transition: all .2s;
+    }
+    .input-tab .tab-icon { font-size: 17px; }
+    .input-tab:hover { color: var(--navy); background: var(--off-white); }
+    .input-tab.active { color: var(--blue-light); border-bottom-color: var(--blue-light); background: var(--white); }
+
+    .input-body { padding: 32px 36px 28px; }
+
+    /* URL input */
+    .url-panel, .file-panel { display: none; }
+    .url-panel.active, .file-panel.active { display: block; }
+
+    .input-label { font-size: 13px; font-weight: 700; color: var(--gray-700); margin-bottom: 8px; }
+    .url-field-wrap { position: relative; }
+    .url-field {
+      width: 100%; padding: 13px 46px 13px 16px;
+      border-radius: var(--radius-sm); border: 2px solid var(--gray-100);
+      font-size: 15px; color: var(--navy); background: var(--off-white);
+      outline: none; transition: border-color .2s, background .2s;
+      font-family: inherit;
+    }
+    .url-field:focus { border-color: var(--blue-light); background: var(--white); }
+    .url-field.error { border-color: var(--danger); }
+    .url-field-icon {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      font-size: 18px; pointer-events: none;
+    }
+    .url-error { font-size: 12px; color: var(--danger); margin-top: 6px; display: none; }
+    .url-error.show { display: block; }
+
+    /* File drop zone */
+    .drop-zone {
+      border: 2px dashed var(--gray-300); border-radius: var(--radius-sm);
+      padding: 36px 24px; text-align: center; cursor: pointer;
+      transition: all .2s; background: var(--off-white); position: relative;
+    }
+    .drop-zone:hover, .drop-zone.drag-over {
+      border-color: var(--blue-light); background: rgba(241,46,91,.04);
+    }
+    .drop-zone input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .drop-icon { font-size: 36px; margin-bottom: 12px; }
+    .drop-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .drop-sub { font-size: 13px; color: var(--gray-500); }
+    .drop-sub span { color: var(--blue-light); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+    .file-chosen {
+      display: none; align-items: center; gap: 12px;
+      background: rgba(34,197,94,.07); border: 1px solid rgba(34,197,94,.25);
+      border-radius: var(--radius-sm); padding: 12px 16px; margin-top: 12px;
+    }
+    .file-chosen.show { display: flex; }
+    .file-chosen-icon { font-size: 22px; }
+    .file-chosen-name { font-size: 14px; font-weight: 600; color: #166534; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .file-chosen-clear { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--gray-500); padding: 0 4px; flex-shrink: 0; }
+    .file-chosen-clear:hover { color: var(--danger); }
+
+    /* What's auto-detected note */
+    .auto-detect-note {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: rgba(221,255,30,.04); border: 1px solid rgba(221,255,30,.18);
+      border-radius: var(--radius-sm); padding: 12px 14px; margin-top: 20px;
+    }
+    .adn-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .adn-text { font-size: 12px; line-height: 1.55; color: var(--gray-700); }
+    .adn-text strong { color: var(--teal); }
+
+    .input-footer { padding: 0 36px 28px; }
+    .btn-analyze {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 14px; border-radius: 50px;
+      font-size: 16px; font-weight: 700; color: var(--white);
+      background: linear-gradient(135deg, var(--accent), var(--navy-mid));
+      border: none; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(241,46,91,.4); transition: all .2s;
+    }
+    .btn-analyze:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(241,46,91,.5); }
+    .btn-analyze:disabled { opacity: .45; cursor: default; transform: none; box-shadow: none; }
+
+    /* ── Analyzing screen ── */
+    .analyzing-card {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow-lg); padding: 44px 40px 36px;
+      border: 1px solid var(--gray-100);
+      animation: fadeIn .3s ease;
+    }
+    .analyzing-source {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--off-white); border: 1px solid var(--gray-100);
+      border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 28px;
+    }
+    .analyzing-source-icon { font-size: 18px; flex-shrink: 0; }
+    .analyzing-source-label { font-size: 13px; font-weight: 600; color: var(--navy); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .analyzing-spinner-wrap { position: relative; width: 80px; height: 80px; margin: 0 auto 20px; }
+    .analyzing-spinner {
+      width: 80px; height: 80px; border-radius: 50%;
+      border: 3px solid var(--gray-100);
+      border-top-color: var(--blue-light);
+      border-right-color: var(--accent);
+      animation: spin 1s linear infinite;
+    }
+    .analyzing-spinner-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+    .analyzing-title { font-size: 20px; font-weight: 800; color: var(--navy); letter-spacing: -.03em; margin-bottom: 6px; text-align: center; }
+    .analyzing-sub { font-size: 14px; color: var(--gray-500); margin-bottom: 20px; text-align: center; }
+    .countdown-wrap { margin-bottom: 24px; }
+    .countdown-bar-bg { width: 100%; height: 4px; background: var(--gray-100); border-radius: 10px; overflow: hidden; margin-top: 14px; }
+    .countdown-bar-fill {
+      height: 100%; width: 100%; border-radius: 10px;
+      background: linear-gradient(90deg, var(--blue-light), var(--accent));
+      transition: width 1s linear;
+    }
+
+    /* Tip card shown during countdown */
+    .tip-card {
+      background: linear-gradient(135deg, #000000 0%, #1a0030 100%);
+      border-radius: var(--radius-sm); padding: 18px 20px; margin-bottom: 0;
+      min-height: 90px; position: relative; overflow: hidden;
+    }
+    .tip-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 10% 50%, rgba(221,255,30,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .tip-category {
+      font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 7px; opacity: 0;
+      transition: opacity .4s ease;
+    }
+    .tip-text {
+      font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.88);
+      opacity: 0; transition: opacity .4s ease;
+    }
+    .tip-card.tip-visible .tip-category,
+    .tip-card.tip-visible .tip-text { opacity: 1; }
+
+    .check-list { display: flex; flex-direction: column; gap: 8px; }
+    .check-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 14px; border-radius: var(--radius-sm);
+      background: var(--off-white); font-size: 13px; font-weight: 600;
+      color: var(--gray-500); transition: all .3s;
+    }
+    .check-item.running { color: var(--navy); background: rgba(241,46,91,.08); }
+    .check-item.pass    { color: #166534;    background: rgba(34,197,94,.07); }
+    .check-item.fail    { color: #991b1b;    background: rgba(239,68,68,.06); }
+    .check-item.skip    { color: var(--gray-500); background: var(--off-white); opacity: .6; }
+    .check-icon { font-size: 17px; width: 24px; text-align: center; flex-shrink: 0; }
+    .check-result {
+      margin-left: auto; font-size: 11px; font-weight: 700;
+      padding: 2px 8px; border-radius: 20px;
+      background: var(--gray-100); color: var(--gray-500);
+      opacity: 0; transition: opacity .3s; white-space: nowrap;
+    }
+    .check-item.pass .check-result { opacity: 1; background: rgba(34,197,94,.15); color: #166534; }
+    .check-item.fail .check-result { opacity: 1; background: rgba(239,68,68,.1);  color: #991b1b; }
+    .check-item.skip .check-result { opacity: 1; }
+
+    /* ── Progress (question flow) ── */
+    .progress-wrap { margin-bottom: 28px; }
+    .progress-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .progress-label { font-size: 13px; font-weight: 600; color: var(--gray-500); }
+    .progress-count { font-size: 13px; font-weight: 700; color: var(--blue-light); }
+    .progress-bar-bg { height: 6px; background: var(--gray-100); border-radius: 10px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--blue-light), var(--accent)); border-radius: 10px; transition: width .5s cubic-bezier(.4,0,.2,1); }
+    .progress-steps { display: flex; gap: 4px; margin-top: 10px; }
+    .step-dot { flex: 1; height: 4px; border-radius: 4px; background: var(--gray-100); transition: background .35s; }
+    .step-dot.done   { background: var(--blue-light); }
+    .step-dot.active { background: var(--accent); }
+    .potential-score {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 700; color: var(--blue-light);
+      background: rgba(241,46,91,.08); padding: 4px 10px; border-radius: 20px; margin-top: 10px;
+    }
+    .potential-score.boosted { color: #166534; background: rgba(34,197,94,.1); animation: pop .3s ease; }
+
+    /* ── Card ── */
+    .card {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow-md); padding: 36px 40px 32px;
+      border: 1px solid var(--gray-100);
+      animation: slideUp .35s cubic-bezier(.4,0,.2,1);
+    }
+    .question-category {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--blue-light);
+      background: rgba(241,46,91,.08); padding: 4px 10px; border-radius: 6px; margin-bottom: 16px;
+    }
+    .question-text { font-size: clamp(17px, 2.8vw, 22px); font-weight: 800; color: var(--navy); line-height: 1.3; letter-spacing: -.03em; margin-bottom: 8px; }
+    .question-hint { font-size: 14px; color: var(--gray-500); margin-bottom: 28px; line-height: 1.55; }
+
+    /* Auto-detected banner */
+    .auto-detected-banner {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: rgba(221,255,30,.05); border: 1px solid rgba(221,255,30,.2);
+      border-radius: var(--radius-sm); padding: 11px 14px; margin-bottom: 16px;
+      animation: slideDown .25s ease;
+    }
+    .adb-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .adb-body { flex: 1; }
+    .adb-title { font-size: 12px; font-weight: 700; color: var(--teal); margin-bottom: 2px; }
+    .adb-sub   { font-size: 12px; color: var(--gray-500); }
+    .adb-edit  {
+      font-size: 11px; font-weight: 700; color: var(--teal);
+      background: none; border: 1px solid rgba(221,255,30,.3);
+      padding: 3px 9px; border-radius: 20px; cursor: pointer;
+      white-space: nowrap; transition: all .2s; align-self: flex-start;
+    }
+    .adb-edit:hover { background: rgba(221,255,30,.08); }
+
+    /* ── Option styles ── */
+    .yn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .yn-btn {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 8px; padding: 22px 14px; border-radius: var(--radius-sm);
+      border: 2px solid var(--gray-100); background: var(--white);
+      cursor: pointer; transition: all .2s; text-align: center;
+    }
+    .yn-icon  { font-size: 28px; line-height: 1; transition: transform .2s; }
+    .yn-label { font-size: 15px; font-weight: 700; color: var(--gray-700); }
+    .yn-pts   { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px; background: var(--gray-100); color: var(--gray-500); transition: all .2s; }
+    .yn-btn:hover { border-color: var(--blue-light); background: rgba(241,46,91,.04); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(241,46,91,.1); }
+    .yn-btn:hover .yn-icon { transform: scale(1.1); }
+    .yn-btn.sel-pos { border-color: var(--success); background: rgba(34,197,94,.06); box-shadow: 0 0 0 3px rgba(34,197,94,.12); }
+    .yn-btn.sel-pos .yn-label { color: #166534; }
+    .yn-btn.sel-pos .yn-pts   { background: rgba(34,197,94,.15); color: #166534; }
+    .yn-btn.sel-neg { border-color: var(--gray-300); background: rgba(0,0,0,.02); }
+    .yn-btn.sel-neg .yn-label { color: var(--gray-500); }
+    .mc-list { display: flex; flex-direction: column; gap: 10px; }
+    .mc-btn {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px; border-radius: var(--radius-sm);
+      border: 2px solid var(--gray-100); background: var(--white);
+      cursor: pointer; text-align: left; transition: all .2s; width: 100%;
+    }
+    .mc-radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--gray-300); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+    .mc-radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: white; opacity: 0; transition: opacity .2s; }
+    .mc-icon  { font-size: 20px; flex-shrink: 0; }
+    .mc-text  { flex: 1; }
+    .mc-label { font-size: 15px; font-weight: 600; color: var(--gray-700); }
+    .mc-sub   { font-size: 12px; color: var(--gray-500); margin-top: 1px; }
+    .mc-pts   { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px; background: var(--gray-100); color: var(--gray-500); flex-shrink: 0; transition: all .2s; }
+    .mc-btn:hover { border-color: var(--blue-light); background: rgba(241,46,91,.04); transform: translateX(3px); }
+    .mc-btn.sel-pos { border-color: var(--success); background: rgba(34,197,94,.06); box-shadow: 0 0 0 3px rgba(34,197,94,.1); }
+    .mc-btn.sel-pos .mc-radio { background: var(--success); border-color: var(--success); }
+    .mc-btn.sel-pos .mc-radio::after { opacity: 1; }
+    .mc-btn.sel-pos .mc-label { color: #166534; }
+    .mc-btn.sel-pos .mc-pts   { background: rgba(34,197,94,.15); color: #166534; }
+    .mc-btn.sel-neg { border-color: var(--gray-300); background: rgba(0,0,0,.02); }
+    .mc-btn.sel-neg .mc-radio { background: var(--gray-300); border-color: var(--gray-300); }
+    .mc-btn.sel-neg .mc-radio::after { opacity: 1; }
+    .mc-btn.sel-neg .mc-label { color: var(--gray-500); }
+
+    /* Locked (auto-detected) options */
+    .options-locked { pointer-events: none; opacity: .85; }
+    .options-unlocked { pointer-events: auto; opacity: 1; }
+
+    /* ── Card footer ── */
+    .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--gray-100); }
+    .btn-back { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--gray-500); background: none; border: none; cursor: pointer; padding: 8px 12px; border-radius: 8px; transition: all .2s; }
+    .btn-back:hover { color: var(--navy); background: var(--gray-100); }
+    .btn-back:disabled { opacity: .3; cursor: default; }
+    .btn-next {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 15px; font-weight: 700; color: var(--white);
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      border: none; padding: 12px 26px; border-radius: 50px; cursor: pointer;
+      box-shadow: 0 4px 14px rgba(241,46,91,.35); transition: all .2s;
+    }
+    .btn-next:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(241,46,91,.45); }
+    .btn-next:disabled { opacity: .4; cursor: default; transform: none; box-shadow: none; }
+    .btn-submit { background: linear-gradient(135deg, var(--accent), var(--navy-mid)); color: var(--white); box-shadow: 0 4px 14px rgba(241,46,91,.4); }
+    .btn-submit:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(241,46,91,.5); }
+
+    /* ── Calculating ── */
+    .calc-card {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow-lg); padding: 52px 40px;
+      border: 1px solid var(--gray-100); animation: fadeIn .4s ease; text-align: center;
+    }
+    .calc-spinner-wrap { position: relative; width: 96px; height: 96px; margin: 0 auto 24px; }
+    .calc-spinner { width: 96px; height: 96px; border-radius: 50%; border: 4px solid var(--gray-100); border-top-color: var(--blue-light); border-right-color: var(--accent); animation: spin 1s linear infinite; }
+    .calc-spinner-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 30px; }
+    .calc-title { font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: -.03em; margin-bottom: 6px; }
+    .calc-sub   { font-size: 14px; color: var(--gray-500); margin-bottom: 32px; }
+    .calc-steps { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+    .calc-step { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; color: var(--gray-500); padding: 11px 14px; border-radius: var(--radius-sm); background: var(--off-white); transition: all .35s; }
+    .calc-step.active { color: var(--navy); background: rgba(241,46,91,.06); }
+    .calc-step.done   { color: #166534; background: rgba(34,197,94,.07); }
+    .calc-step-icon { font-size: 16px; width: 22px; text-align: center; flex-shrink: 0; }
+    .calc-step-pts { margin-left: auto; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: var(--gray-100); color: var(--gray-500); opacity: 0; transition: all .4s; white-space: nowrap; }
+    .calc-step.done .calc-step-pts { opacity: 1; background: rgba(34,197,94,.15); color: #166534; }
+    .calc-step.done.zero-pts .calc-step-pts { background: rgba(239,68,68,.08); color: #991b1b; }
+
+    /* ── Results ── */
+    .results-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden; border: 1px solid var(--gray-100); animation: slideUp .4s cubic-bezier(.4,0,.2,1); }
+    .results-header { padding: 44px 40px 36px; text-align: center; position: relative; overflow: hidden; }
+    .results-header.tier-pro      { background: linear-gradient(135deg, #000000 0%, #1a0030 60%, #280040 100%); }
+    .results-header.tier-engaging { background: linear-gradient(135deg, #000000 0%, #2a0018 100%); }
+    .results-header.tier-static   { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); }
+    .results-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 90% 70% at 50% 110%, rgba(241,46,91,.15), transparent); pointer-events: none; }
+    .results-eyebrow { position: relative; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px; }
+    .tier-badge { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; border-radius: 50px; font-size: clamp(15px, 2.5vw, 18px); font-weight: 900; letter-spacing: .02em; text-transform: uppercase; margin-bottom: 18px; animation: badgePop .5s cubic-bezier(.34,1.56,.64,1) .2s both; }
+    .tier-badge.pro      { background: linear-gradient(135deg, rgba(221,255,30,.15), rgba(241,46,91,.15)); border: 1.5px solid rgba(221,255,30,.5); color: #DDFF1E; }
+    .tier-badge.engaging { background: linear-gradient(135deg, rgba(241,46,91,.2), rgba(128,59,177,.2));  border: 1.5px solid rgba(241,46,91,.5); color: #F12E5B; }
+    .tier-badge.static   { background: rgba(239,68,68,.1); border: 1.5px solid rgba(239,68,68,.3); color: #fca5a5; }
+    .tier-icon { font-size: 22px; }
+    .score-display { position: relative; margin-bottom: 12px; }
+    .score-number { font-size: clamp(52px, 8vw, 72px); font-weight: 900; color: var(--white); line-height: 1; letter-spacing: -.05em; }
+    .score-number .score-max { font-size: clamp(20px, 3vw, 28px); color: rgba(255,255,255,.35); font-weight: 700; }
+    .results-headline { position: relative; font-size: clamp(18px, 3vw, 24px); font-weight: 800; color: var(--white); letter-spacing: -.02em; margin-bottom: 8px; }
+    .results-subhead  { position: relative; font-size: 14px; color: rgba(255,255,255,.58); line-height: 1.6; max-width: 460px; margin: 0 auto; }
+    .score-bar-outer  { position: relative; margin-top: 28px; }
+    .score-bar-track  { height: 10px; background: rgba(255,255,255,.1); border-radius: 10px; overflow: visible; position: relative; }
+    .score-bar-fill   { height: 100%; width: 0%; border-radius: 10px; transition: width 1.3s cubic-bezier(.4,0,.2,1) .4s; position: relative; }
+    .score-bar-fill::after { content: ''; position: absolute; right: -1px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--white); background: inherit; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+    .score-bar-fill.pro      { background: linear-gradient(90deg, var(--teal), var(--accent)); }
+    .score-bar-fill.engaging { background: linear-gradient(90deg, var(--accent), var(--navy-mid)); }
+    .score-bar-fill.static   { background: linear-gradient(90deg, #f87171, #fca5a5); }
+    .score-bar-zones { display: flex; margin-top: 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: rgba(255,255,255,.3); }
+    .zone { text-align: center; }
+    .zone-static   { flex: 0 0 53%; }
+    .zone-engaging { flex: 0 0 14%; text-align: center; }
+    .zone-pro      { flex: 1; text-align: right; }
+    .results-body { padding: 32px 40px 40px; }
+    .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gray-500); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: var(--gray-100); }
+    .summary-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+    .summary-stat { background: var(--off-white); border-radius: var(--radius-sm); padding: 14px 16px; text-align: center; border: 1px solid var(--gray-100); }
+    .summary-stat strong { display: block; font-size: 24px; font-weight: 900; color: var(--navy); letter-spacing: -.04em; }
+    .summary-stat span   { font-size: 11px; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+    .criterion-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--gray-100); }
+    .criterion-row:last-of-type { border-bottom: none; }
+    .criterion-icon { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .criterion-icon.pass { background: rgba(34,197,94,.1); }
+    .criterion-icon.fail { background: rgba(239,68,68,.07); }
+    .criterion-body  { flex: 1; min-width: 0; }
+    .criterion-top   { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+    .criterion-label  { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .criterion-chosen { font-size: 12px; color: var(--gray-500); font-style: italic; }
+    .criterion-badge  { flex-shrink: 0; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 6px; }
+    .criterion-badge.pass { background: rgba(34,197,94,.1); color: #166534; }
+    .criterion-badge.fail { background: rgba(239,68,68,.08); color: #991b1b; }
+    .auto-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; color: var(--teal); background: rgba(221,255,30,.1); padding: 2px 7px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+    .criterion-insight { font-size: 13px; line-height: 1.55; color: var(--gray-500); margin-top: 4px; }
+    .insight-callout { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: 0 8px 8px 0; margin-top: 8px; font-size: 12px; line-height: 1.5; font-weight: 500; }
+    .insight-callout.bad  { background: rgba(239,68,68,.05); border-left: 3px solid var(--danger); color: #7f1d1d; }
+    .insight-callout.good { background: rgba(34,197,94,.05); border-left: 3px solid var(--success); color: #14532d; }
+    .ic-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+    /* ── Review screen ── */
+    .review-card {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow-md); border: 1px solid var(--gray-100);
+      overflow: hidden; animation: slideUp .35s cubic-bezier(.4,0,.2,1);
+    }
+    .review-header {
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .review-header h2 { font-size: 20px; font-weight: 900; color: var(--navy); letter-spacing: -.03em; margin-bottom: 4px; }
+    .review-header p  { font-size: 14px; color: var(--gray-500); }
+    .review-score-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      color: var(--white); font-size: 14px; font-weight: 800;
+      padding: 6px 16px; border-radius: 20px; margin-top: 12px;
+    }
+    .review-score-pill .pill-pts { font-size: 11px; opacity: .75; font-weight: 600; }
+
+    .review-rows { padding: 8px 0; }
+
+    .review-row {
+      border-bottom: 1px solid var(--gray-100);
+      transition: background .15s;
+    }
+    .review-row:last-child { border-bottom: none; }
+
+    .review-row-summary {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 32px; cursor: pointer;
+      transition: background .15s;
+    }
+    .review-row-summary:hover { background: var(--off-white); }
+
+    .review-row-icon {
+      width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 17px;
+    }
+    .review-row-icon.scored    { background: rgba(34,197,94,.1); }
+    .review-row-icon.unscored  { background: rgba(239,68,68,.07); }
+    .review-row-icon.unanswered{ background: var(--gray-100); }
+
+    .review-row-body { flex: 1; min-width: 0; }
+    .review-row-label { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .review-row-answer {
+      font-size: 12px; color: var(--gray-500); margin-top: 1px;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .review-row-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+    .review-pts-badge {
+      font-size: 12px; font-weight: 800;
+      padding: 3px 10px; border-radius: 6px; white-space: nowrap;
+    }
+    .review-pts-badge.scored    { background: rgba(34,197,94,.1); color: #166534; }
+    .review-pts-badge.unscored  { background: rgba(239,68,68,.08); color: #991b1b; }
+    .review-pts-badge.unanswered{ background: var(--gray-100); color: var(--gray-500); }
+
+    .review-auto-badge {
+      font-size: 10px; font-weight: 700; color: var(--teal);
+      background: rgba(221,255,30,.1); padding: 2px 6px; border-radius: 10px;
+    }
+    .review-manual-badge {
+      font-size: 10px; font-weight: 700; color: #92400e;
+      background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.3);
+      padding: 2px 7px; border-radius: 10px;
+    }
+    .review-row-needs-answer {
+      background: rgba(245,158,11,.03);
+    }
+    .review-row-needs-answer .review-row-summary {
+      border-left: 3px solid var(--warn);
+      padding-left: 29px;
+    }
+    .review-edit-btn {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 700; color: var(--blue-light);
+      background: rgba(241,46,91,.08); border: 1px solid rgba(241,46,91,.2);
+      padding: 5px 12px; border-radius: 20px; cursor: pointer;
+      transition: all .2s; white-space: nowrap; flex-shrink: 0;
+    }
+    .review-edit-btn:hover { background: rgba(241,46,91,.15); }
+    .review-edit-btn.open  { background: rgba(241,46,91,.15); }
+
+    /* Inline edit panel */
+    .review-edit-panel {
+      display: none; padding: 0 32px 20px;
+      animation: slideDown .2s ease;
+    }
+    .review-edit-panel.open { display: block; }
+
+    .edit-panel-inner {
+      background: var(--off-white); border-radius: var(--radius-sm);
+      border: 1px solid var(--gray-100); padding: 16px 18px;
+    }
+    .edit-panel-hint { font-size: 12px; color: var(--gray-500); margin-bottom: 14px; line-height: 1.5; }
+
+    /* Compact option buttons inside edit panel */
+    .edit-yn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .edit-mc-list { display: flex; flex-direction: column; gap: 7px; }
+    .edit-opt-btn {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; border-radius: var(--radius-sm);
+      border: 2px solid var(--gray-100); background: var(--white);
+      cursor: pointer; text-align: left; transition: all .15s; width: 100%;
+      font-size: 13px; font-weight: 600; color: var(--gray-700);
+    }
+    .edit-opt-btn:hover { border-color: var(--blue-light); background: rgba(241,46,91,.04); }
+    .edit-opt-btn.sel-pos { border-color: var(--success); background: rgba(34,197,94,.07); color: #166534; }
+    .edit-opt-btn.sel-neg { border-color: var(--gray-300); background: rgba(0,0,0,.02); color: var(--gray-500); }
+    .edit-opt-icon { font-size: 17px; flex-shrink: 0; }
+    .edit-opt-pts  {
+      margin-left: auto; font-size: 11px; font-weight: 700;
+      padding: 2px 7px; border-radius: 10px;
+      background: var(--gray-100); color: var(--gray-500); flex-shrink: 0;
+    }
+    .edit-opt-btn.sel-pos .edit-opt-pts { background: rgba(34,197,94,.15); color: #166534; }
+
+    .review-footer {
+      padding: 20px 32px;
+      border-top: 1px solid var(--gray-100);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .review-incomplete-msg { font-size: 13px; color: var(--warn); font-weight: 600; display: none; }
+    .review-incomplete-msg.show { display: block; }
+
+    /* Strategy section */
+    .strategy-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+    .strategy-card { display: flex; align-items: flex-start; gap: 16px; background: linear-gradient(135deg, #fffbeb, #fef9ec); border: 1px solid #fde68a; border-left: 4px solid var(--warn); border-radius: var(--radius-sm); padding: 18px 20px; animation: slideUp .3s ease both; }
+    .strategy-card-icon { width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; background: rgba(245,158,11,.12); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .strategy-card-body { flex: 1; min-width: 0; }
+    .strategy-card-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #92400e; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .strategy-card-label::before { content: '💡'; font-size: 13px; }
+    .strategy-card-text { font-size: 14px; line-height: 1.6; color: #78350f; font-style: italic; }
+    .strategy-card-text::before { content: '\201C'; }
+    .strategy-card-text::after  { content: '\201D'; }
+    /* CTA */
+    .cta-box { margin-top: 0; background: linear-gradient(135deg, #000000, #1a0030); border: 1px solid #3d1060; border-radius: var(--radius-sm); padding: 28px 28px 24px; text-align: center; color: var(--white); }
+    .cta-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; letter-spacing: -.02em; }
+    .cta-box p  { font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 20px; line-height: 1.55; }
+    .cta-btns   { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary-cta { background: linear-gradient(135deg, var(--accent), var(--navy-mid)); color: var(--white); font-weight: 700; font-size: 15px; padding: 12px 26px; border-radius: 50px; border: none; cursor: pointer; transition: all .2s; box-shadow: 0 4px 14px rgba(241,46,91,.35); text-decoration: none; display: inline-block; }
+    .btn-primary-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(241,46,91,.5); }
+    .btn-secondary-cta { background: rgba(255,255,255,.1); color: var(--white); font-weight: 600; font-size: 15px; padding: 12px 26px; border-radius: 50px; border: 1px solid rgba(255,255,255,.2); cursor: pointer; transition: all .2s; }
+    .btn-secondary-cta:hover { background: rgba(255,255,255,.16); }
+    .restart-btn { display: block; margin: 20px auto 0; background: none; border: none; font-size: 14px; color: var(--gray-500); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    .restart-btn:hover { color: var(--navy); }
+
+    /* ── Journey progress bar ── */
+    .journey-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(245,240,252,.97); border-top: 1px solid #ddd4ec;
+      backdrop-filter: blur(12px);
+      padding: 12px 24px 14px;
+    }
+    .journey-inner {
+      max-width: 640px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0;
+    }
+    .journey-step {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      flex: 1; position: relative;
+    }
+    .journey-step:not(:last-child)::after {
+      content: ''; position: absolute; top: 13px; left: calc(50% + 18px);
+      right: calc(-50% + 18px); height: 2px;
+      background: #ddd4ec;
+      transition: background .4s;
+    }
+    .journey-step.done:not(:last-child)::after,
+    .journey-step.active:not(:last-child)::after {
+      background: var(--accent);
+    }
+    .journey-dot {
+      width: 28px; height: 28px; border-radius: 50%; border: 2px solid #c4b0d8;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; color: #9a7cb8;
+      background: #ece5f5; transition: all .3s;
+    }
+    .journey-step.active .journey-dot {
+      border-color: var(--accent); color: var(--accent);
+      background: rgba(241,46,91,.12);
+      box-shadow: 0 0 12px rgba(241,46,91,.4);
+    }
+    .journey-step.done .journey-dot {
+      border-color: var(--accent); background: var(--accent);
+      color: #fff;
+    }
+    .journey-label {
+      font-size: 10px; font-weight: 700; color: #9a7cb8; letter-spacing: .04em;
+      text-transform: uppercase; text-align: center; white-space: nowrap;
+      transition: color .3s;
+    }
+    .journey-step.active .journey-label { color: var(--accent); }
+    .journey-step.done .journey-label   { color: var(--gray-500); }
+
+    /* Add bottom padding to quiz section so content isn't hidden behind bar */
+    .quiz-section { padding-bottom: 100px !important; }
+
+    /* Animations */
+    @keyframes pulse    { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.85)} }
+    @keyframes slideUp  { from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)} }
+    @keyframes slideDown{ from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn   { from{opacity:0}to{opacity:1} }
+    @keyframes spin     { to{transform:rotate(360deg)} }
+    @keyframes pop      { 0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)} }
+    @keyframes badgePop { 0%{opacity:0;transform:scale(.7)}100%{opacity:1;transform:scale(1)} }
+
+    @media (max-width: 520px) {
+      .card,.analyzing-card,.calc-card { padding: 22px 18px 20px; }
+      .results-header  { padding: 28px 20px; }
+      .results-body    { padding: 22px 18px 28px; }
+      .input-body,.input-footer { padding-left: 20px; padding-right: 20px; }
+      .hero-stat-divider { display: none; }
+      .hero-stats { gap: 20px; }
+      .summary-bar { grid-template-columns: 1fr 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://storyraise.com" class="logo" target="_blank" rel="noopener">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+      </div>
+      <span class="logo-text">Story<span>raise</span></span>
+    </a>
+    <span class="nav-badge">Impact Report Evaluator</span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <div class="hero-tag-dot"></div>
+      <span>Free Audit Tool</span>
+    </div>
+    <h1>Audit your annual report<br>in <em>60 seconds.</em></h1>
+    <p>Paste a link or upload your PDF. We'll auto-analyze what we can and walk you through the rest.</p>
+    <button class="hero-cta" onclick="document.getElementById('evaluator').scrollIntoView({behavior:'smooth'})">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>
+      Grade My Report
+    </button>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>11</strong><span>Criteria graded</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><strong>100</strong><span>Points possible</span></div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat"><strong>3</strong><span>Performance tiers</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="quiz-section" id="evaluator">
+  <div id="quiz-root"></div>
+</section>
+
+<script>
+// ── Questions ──────────────────────────────────────────────────────────────
+const QUESTIONS = [
+  {
+    id: 'interactivity', label: 'Interactivity', icon: '🖥️', maxPts: 10, type: 'mc',
+    question: 'What format is your impact report delivered in?',
+    hint: 'How donors receive your report directly affects how long they engage with it.',
+    options: [
+      { label: 'Fully digital / web-based',     sub: 'Hosted URL, microsite, or digital-first platform', icon: '🌐', pts: 10, key: 'interactive' },
+      { label: 'PDF with internal links',        sub: 'Bookmarks, clickable table of contents, or hyperlinks', icon: '🔗', pts: 7, key: 'pdf_links' },
+      { label: 'Static PDF',                     sub: 'No interactive elements', icon: '📄', pts: 4, key: 'pdf' },
+      { label: 'Print-only / physical',          sub: 'Scanned or mailed copy only', icon: '📮', pts: 0, key: 'print' },
+    ],
+    passInsight: 'A web-based report keeps donors 3× longer and makes sharing effortless.',
+    failInsight: '<strong>60% of PDF readers never reach page 2.</strong> Moving to a web-based format is the highest-leverage upgrade you can make.',
+    failStat: '⚡ 60% of PDF readers abandon before page 2',
+    passStat: '✅ Web reports drive 3× more engagement than PDFs',
+  },
+  {
+    id: 'length', label: 'Length', icon: '📏', maxPts: 10, type: 'mc',
+    question: 'How long is your impact report?',
+    hint: 'Shorter reports get read. Longer reports get skimmed or abandoned. Less is almost always more.',
+    options: [
+      { label: '2 pages / 2 scrolls or less',   sub: 'Tight and punchy — donors read every word', icon: '⚡', pts: 10, key: 'short' },
+      { label: 'Up to 5 pages / 5 scrolls',     sub: 'Reasonable length for most donors', icon: '📄', pts: 5, key: 'medium' },
+      { label: 'More than 5 pages / scrolls',   sub: 'Most donors won\'t make it to the end', icon: '❌', pts: 0, key: 'long' },
+    ],
+    passInsight: 'Concise reports get read. You\'re respecting your donor\'s time.',
+    failInsight: 'Long reports feel like homework. <strong>Most donors abandon after the third scroll.</strong> Cut ruthlessly — every section you remove is a section that gets read.',
+    failStat: '⚡ Most donors abandon reports longer than 5 scrolls',
+    passStat: '✅ Short reports get read all the way through',
+  },
+  {
+    id: 'multimedia', label: 'Video', icon: '🎬', maxPts: 10, type: 'mc',
+    question: 'Does your report include video?',
+    hint: 'A 60-second story video does more emotional work than three pages of copy.',
+    options: [
+      { label: 'Embedded video / player',       sub: 'Plays directly in the report — no clicking away', icon: '▶️', pts: 10, key: 'embed' },
+      { label: 'Link out to video',             sub: 'Sends the reader away to watch', icon: '🔗', pts: 5, key: 'link' },
+      { label: 'No video',                      sub: 'Text and images only', icon: '🚫', pts: 0, key: 'no' },
+    ],
+    passInsight: 'Video is the #1 driver of emotional connection and donor recall.',
+    failInsight: 'Embedded video generates <strong>80% more engagement</strong> than text-only reports. Even a 60-second story clip changes everything.',
+    failStat: '⚡ Video = 80% more engagement vs. text-only',
+    passStat: '✅ Video doubles average time-on-page',
+  },
+  {
+    id: 'connectivity', label: 'Links', icon: '🔗', maxPts: 10, type: 'mc',
+    question: 'How many strategic links does your report include?',
+    hint: 'Every engaged reader is a potential donor. Give them clear paths back to your website, donate page, and social channels.',
+    options: [
+      { label: '3 or more strategic links',     sub: 'Website, donate page, social, and more', icon: '✅', pts: 10, key: 'three_plus' },
+      { label: '2 links',                       sub: 'Some navigation back to your org', icon: '🔗', pts: 7, key: 'two' },
+      { label: '1 link',                        sub: 'Minimal connectivity', icon: '⚠️', pts: 4, key: 'one' },
+      { label: 'No links',                      sub: 'Dead end for donors', icon: '❌', pts: 0, key: 'none' },
+    ],
+    passInsight: 'Every reader has multiple paths back to your donate page — good.',
+    failInsight: 'Without links, <strong>you\'re cutting off the donor journey</strong> at the moment of peak inspiration. Add your website, donate page, and at least one social link.',
+    failStat: '⚡ No links = the donation journey ends here',
+    passStat: '✅ Linked reports convert inspired readers into donors',
+  },
+  {
+    id: 'storytelling', label: 'Storytelling', icon: '📖', maxPts: 10, type: 'mc',
+    question: 'Does your report tell a story of impact?',
+    hint: 'E.g. "Maria, a single mother in Austin, now has stable housing" vs. "100 families found housing" vs. no story.',
+    options: [
+      { label: 'Named individual story',   sub: 'A real person, named, with a specific outcome — the gold standard', icon: '🧑‍🤝‍🧑', pts: 10, key: 'named' },
+      { label: 'Group or project story',   sub: 'A cohort, program, or community story without a named individual', icon: '👥', pts: 5, key: 'group' },
+      { label: 'No story at all',          sub: 'Pure statistics, org updates, or program descriptions only', icon: '📋', pts: 0, key: 'none' },
+    ],
+    passInsight: 'Named stories create the emotional connection that drives renewals.',
+    failInsight: 'A single named impact story increases <strong>donor conversion by up to 65%</strong> compared to data-only reports. Give your impact a human face.',
+    failStat: '⚡ Named stories lift conversions by 65%',
+    passStat: '✅ Your report connects donors to real people',
+    strategy: 'The most powerful sentence in any impact report is a real person\'s name followed by what changed in their life because of your donor\'s gift.',
+  },
+  {
+    id: 'authorship', label: 'Authorship', icon: '✍️', maxPts: 10, type: 'mc',
+    question: 'Who authored or narrated your report?',
+    hint: 'Voices from volunteers, recipients, or board members feel 3× more authentic than a letter from a CEO.',
+    options: [
+      { label: 'Volunteer, recipient, or board', sub: 'Story told by those closest to the mission', icon: '🙌', pts: 10, key: 'community' },
+      { label: 'Executive Director / CEO',       sub: 'Leadership letter or foreword', icon: '🏛️', pts: 7, key: 'ed' },
+      { label: 'Staff member',                   sub: 'Program or communications staff authored it', icon: '💼', pts: 4, key: 'staff' },
+      { label: 'Anonymous / no signature',       sub: 'No authorship credited', icon: '📋', pts: 0, key: 'anon' },
+    ],
+    passInsight: 'Community voices build the most authentic trust with donors.',
+    failInsight: 'A generic, unsigned report signals a form exercise, not a living mission. <strong>Donors notice when no one\'s name is behind it.</strong>',
+    failStat: '⚡ Unsigned reports feel impersonal to donors',
+    passStat: '✅ Authentic voices build genuine donor trust',
+    strategy: 'Reports from volunteers or recipients feel 3× more authentic than a letter from a CEO. Let others speak for you — you\'re building trust by proxy.',
+  },
+  {
+    id: 'donor_centricity', label: 'Donor-Centricity', icon: '💙', maxPts: 10, type: 'mc',
+    question: 'Whose story does your report tell?',
+    hint: '"You made this possible" vs. "We served 500 families." Who is the hero of your report?',
+    options: [
+      { label: 'High "You" — donor is the hero',   sub: '"You made this possible" framing throughout', icon: '🤝', pts: 10, key: 'high_you' },
+      { label: 'Balanced "You" and "We"',          sub: 'Shares credit between donor and org', icon: '⚖️', pts: 7, key: 'balanced' },
+      { label: 'High "We / I" — org is the hero',  sub: '"We served 500 families" throughout', icon: '🏢', pts: 4, key: 'high_we' },
+      { label: 'Cold / institutional voice',       sub: 'No personal language — stats and programs only', icon: '🥶', pts: 0, key: 'cold' },
+    ],
+    passInsight: 'Positioning the donor as the hero is the most powerful retention signal.',
+    failInsight: 'Reports written as "we did this" <strong>reduce donor identity</strong> with the mission. The donor should be the hero — your org is their vehicle.',
+    failStat: '⚡ "We"-centric reports reduce donor identity with the mission',
+    passStat: '✅ Donors feel seen as partners, not ATMs',
+    strategy: 'Donors give through you, not to you. If the report is all about your org\'s stats and not their impact, they won\'t feel connected.',
+  },
+  {
+    id: 'visuals', label: 'Visuals', icon: '📸', maxPts: 10, type: 'mc',
+    question: 'What kind of visuals does your report primarily use?',
+    hint: 'Authentic photos of real people you serve build trust that stock images simply cannot replicate.',
+    options: [
+      { label: 'High-quality, original photos',     sub: 'Authentic images of people you serve', icon: '📷', pts: 10, key: 'real' },
+      { label: 'Stock photography (well chosen)',   sub: 'Professional but not from your community', icon: '🖼️', pts: 7, key: 'stock_good' },
+      { label: 'Low-res or generic imagery',        sub: 'Blurry, dated, or clearly placeholder', icon: '⚠️', pts: 4, key: 'low_res' },
+      { label: 'Text-heavy / no photography',       sub: 'Little to no imagery used', icon: '📊', pts: 0, key: 'text' },
+    ],
+    passInsight: 'Authentic photos of real beneficiaries build trust that stock images never can.',
+    failInsight: 'Stock photos <strong>signal disconnection</strong> from your mission. Donors can tell the difference — and it erodes trust.',
+    failStat: '⚡ Stock photos erode donor trust in authenticity',
+    passStat: '✅ Real photos create emotional resonance',
+  },
+  {
+    id: 'readability', label: 'Readability', icon: '📖', maxPts: 10, type: 'mc',
+    question: 'How readable is your report\'s writing?',
+    hint: 'The Flesch-Kincaid scale measures how easy text is to read. Aim for 8th grade level — that\'s Time Magazine. Most donor reports read like legal documents.',
+    options: [
+      { label: '8th grade level (FK 60+)',     sub: 'Plain English — readable by most donors', icon: '✅', pts: 10, key: 'easy' },
+      { label: '10th grade level (FK 40–59)', sub: 'Some complexity but still accessible', icon: '📖', pts: 7, key: 'moderate' },
+      { label: 'College level (FK 20–39)',    sub: 'Dense writing that loses casual readers', icon: '⚠️', pts: 4, key: 'college' },
+      { label: 'Academic / jargon (FK < 20)', sub: 'Highly technical — most donors will skim', icon: '❌', pts: 0, key: 'hard' },
+    ],
+    passInsight: 'Your writing is accessible — donors can absorb your impact without effort.',
+    failInsight: 'Dense writing <strong>loses donors before they reach your ask.</strong> Aim for a Flesch-Kincaid score above 60 — that\'s the level of Time Magazine.',
+    failStat: '⚡ Hard-to-read reports see significantly lower donor engagement',
+    passStat: '✅ Readable prose keeps donors engaged all the way to the ask',
+  },
+  {
+    id: 'conversion', label: 'The Ask', icon: '💙', maxPts: 10, type: 'mc',
+    question: 'Does your report include a donation ask?',
+    hint: 'Counter-intuitive: a gratitude report with no ask often raises more over time by building a deeper emotional bond first.',
+    options: [
+      { label: 'No ask — pure gratitude',       sub: 'Lets the impact speak and builds long-term trust', icon: '💙', pts: 10, key: 'no_ask' },
+      { label: 'Soft link (no call-out)',        sub: 'A subtle donate link without pressure', icon: '🔗', pts: 7, key: 'soft' },
+      { label: 'Hard ask ("Donate Now")',        sub: 'A prominent CTA button or banner', icon: '💰', pts: 4, key: 'hard' },
+      { label: 'Aggressive / multiple asks',    sub: 'Multiple donate prompts throughout', icon: '🚨', pts: 0, key: 'aggressive' },
+    ],
+    passInsight: 'Pure gratitude builds the deepest donor bonds. This is your long game.',
+    failInsight: 'Multiple donate asks <strong>signal that you value the gift more than the donor.</strong> Let the impact speak — a soft link is all you need.',
+    failStat: '⚡ Aggressive asks undermine the emotional trust you just built',
+    passStat: '✅ Gratitude-first reports build lifetime donor loyalty',
+    strategy: 'Gratitude is the best time to build a bond. An impact report that doesn\'t ask creates donors who give again next year without needing to be asked.',
+  },
+  {
+    id: 'mobile', label: 'Mobile Friendly', icon: '📱', maxPts: 10, type: 'mc',
+    question: 'Does your report work well on mobile devices?',
+    hint: 'Over 60% of donors open emails and links on their phone. A report that doesn\'t scale will lose them in seconds.',
+    options: [
+      { label: 'Fully responsive',     sub: 'Scales perfectly on any screen size', icon: '📱', pts: 10, key: 'responsive' },
+      { label: 'Partially responsive', sub: 'Works on mobile but not optimised', icon: '🔍', pts: 5, key: 'partial' },
+      { label: 'Not mobile friendly',  sub: 'Requires zooming or horizontal scrolling', icon: '❌', pts: 0, key: 'none' },
+    ],
+    passInsight: 'Mobile-first design meets donors where they already are.',
+    failInsight: '<strong>60%+ of donors read reports on mobile.</strong> A non-responsive report loses the majority of your audience before they reach your story.',
+    failStat: '⚡ 60%+ of donors read on mobile — unresponsive reports lose them fast',
+    passStat: '✅ Your report is accessible to donors on any device',
+    strategy: 'If your report only looks good on a desktop, you\'re already losing more than half your audience. Test it on your phone before you send it.',
+  },
+];
+
+const MAX_SCORE = 145;
+
+// ── State ──────────────────────────────────────────────────────────────────
+let screen             = 'input';
+let openPanel          = null;
+let detectedLangCounts = null; // { you: N, we: N } from analysis
+let current  = 0;
+let answers  = {};
+let detected = {};          // answers auto-filled by analysis { id: true }
+let reportSource = null;    // { type: 'url'|'file', label: string }
+let uploadedFile = null;
+
+// ── Tier config ────────────────────────────────────────────────────────────
+function getTier(score) {
+  if (score >= 100) return { id: 'pro',      label: 'Storytelling Pro',     icon: '🏆', headerClass: 'tier-pro',      badgeClass: 'pro',
+    headline: 'Best-in-Class Impact Report',
+    subhead: 'Your report is a donor-retention engine. You\'re checking nearly every best-practice box.',
+    ctaHeadline: 'You\'re in the top tier. Let\'s keep you there.',
+    ctaBody: 'Even Storytelling Pros find optimization opportunities. Let Storyraise help you benchmark against the best.',
+  };
+  if (score >= 80) return { id: 'engaging', label: 'Engaging',             icon: '📈', headerClass: 'tier-engaging', badgeClass: 'engaging',
+    headline: 'Strong Report — Clear Upside Ahead',
+    subhead: 'You\'re ahead of most nonprofits. A few targeted upgrades could push you into the Storytelling Pro tier.',
+    ctaHeadline: 'Close the gap to Storytelling Pro.',
+    ctaBody: 'You\'re within reach of the top tier. Let\'s identify the specific upgrades that will lift your donor retention.',
+  };
+  return { id: 'static', label: 'Static / Traditional', icon: '📄', headerClass: 'tier-static', badgeClass: 'static',
+    headline: 'Significant Gaps Detected',
+    subhead: 'Your report is likely missing the elements that drive donor renewals. The good news: these are fixable.',
+    ctaHeadline: 'Let\'s fix this — together.',
+    ctaBody: 'You\'re leaving significant donor retention on the table. A free 20-min strategy call is the fastest path to a better score.',
+  };
+}
+
+const BASE_SCORE = 0;
+
+function calcScore() {
+  return BASE_SCORE + Object.values(answers).reduce((s, a) => s + (a ? a.pts : 0), 0);
+}
+function earnedPts(qid) { return answers[qid] ? answers[qid].pts : 0; }
+function maxAnswered()  { return BASE_SCORE + Object.keys(answers).reduce((s, id) => s + (QUESTIONS.find(q => q.id === id)?.maxPts || 0), 0); }
+
+// ── Render dispatcher ──────────────────────────────────────────────────────
+function render() {
+  const root = document.getElementById('quiz-root');
+  if      (screen === 'input')      root.innerHTML = renderInput();
+  else if (screen === 'analyzing')  { root.innerHTML = renderAnalyzing(); runAnalysis(); }
+  else if (screen === 'review')     root.innerHTML = renderReview();
+  else if (screen === 'question')   root.innerHTML = renderQuestion();
+  else if (screen === 'calculating'){ root.innerHTML = renderCalculating(); runCalcAnimation(); }
+  else if (screen === 'results')    { root.innerHTML = renderResults(); animateResults(); }
+  if (typeof renderJourneyBar === 'function') renderJourneyBar();
+}
+
+// ── Input screen ───────────────────────────────────────────────────────────
+function renderInput() {
+  return `
+    <div class="input-card">
+      <div class="input-tabs">
+        <button class="input-tab active" id="tab-url" onclick="switchTab('url')">
+          <span class="tab-icon">🔗</span> Paste a Link
+        </button>
+        <button class="input-tab" id="tab-file" onclick="switchTab('file')">
+          <span class="tab-icon">📄</span> Upload PDF
+        </button>
+      </div>
+
+      <div class="input-body">
+        <!-- URL panel -->
+        <div class="url-panel active" id="panel-url">
+          <div class="input-label">Report URL</div>
+          <div class="url-field-wrap">
+            <input class="url-field" id="url-input" type="url"
+              placeholder="https://yourorg.org/impact-report"
+              oninput="onUrlInput()" onkeydown="if(event.key==='Enter')submitInput()" />
+            <span class="url-field-icon">🌐</span>
+          </div>
+          <div class="url-error" id="url-error">Please enter a valid URL (starting with https://)</div>
+        </div>
+
+        <!-- File panel -->
+        <div class="file-panel" id="panel-file">
+          <div class="input-label">Upload your impact report</div>
+          <div class="drop-zone" id="drop-zone"
+            ondragover="event.preventDefault();this.classList.add('drag-over')"
+            ondragleave="this.classList.remove('drag-over')"
+            ondrop="handleDrop(event)">
+            <input type="file" accept=".pdf,.html,.htm" onchange="handleFileSelect(event)" />
+            <div class="drop-icon">📁</div>
+            <div class="drop-title">Drop your file here</div>
+            <div class="drop-sub">or <span>browse to upload</span> &nbsp;·&nbsp; PDF or HTML</div>
+          </div>
+          <div class="file-chosen" id="file-chosen">
+            <span class="file-chosen-icon">📄</span>
+            <span class="file-chosen-name" id="file-chosen-name">—</span>
+            <button class="file-chosen-clear" onclick="clearFile()" title="Remove">✕</button>
+          </div>
+        </div>
+
+        <div class="auto-detect-note">
+          <span class="adn-icon">🤖</span>
+          <span class="adn-text">
+            <strong>We'll auto-detect</strong> format, video, photos, links, readability, and donor language.
+            You'll answer any remaining questions manually — it takes under 60 seconds.
+          </span>
+        </div>
+      </div>
+
+      <div class="input-footer">
+        <button class="btn-analyze" id="btn-analyze" onclick="submitInput()" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          Analyze My Report
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function switchTab(tab) {
+  document.getElementById('tab-url').classList.toggle('active', tab === 'url');
+  document.getElementById('tab-file').classList.toggle('active', tab === 'file');
+  document.getElementById('panel-url').classList.toggle('active', tab === 'url');
+  document.getElementById('panel-file').classList.toggle('active', tab === 'file');
+  updateAnalyzeBtn();
+}
+
+function onUrlInput() {
+  updateAnalyzeBtn();
+  document.getElementById('url-error').classList.remove('show');
+  const field = document.getElementById('url-input');
+  field.classList.remove('error');
+}
+
+function updateAnalyzeBtn() {
+  const btn     = document.getElementById('btn-analyze');
+  if (!btn) return;
+  const urlVal  = (document.getElementById('url-input')?.value || '').trim();
+  const fileOk  = !!uploadedFile;
+  const urlOk   = urlVal.length > 4;
+  const urlTab  = document.getElementById('tab-url')?.classList.contains('active');
+  btn.disabled  = urlTab ? !urlOk : !fileOk;
+}
+
+function handleFileSelect(e) {
+  const file = e.target.files[0];
+  if (file) setFile(file);
+}
+
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('drop-zone').classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file) setFile(file);
+}
+
+function setFile(file) {
+  uploadedFile = file;
+  const nameEl  = document.getElementById('file-chosen-name');
+  const chosenEl = document.getElementById('file-chosen');
+  if (nameEl)   nameEl.textContent  = file.name;
+  if (chosenEl) chosenEl.classList.add('show');
+  updateAnalyzeBtn();
+}
+
+function clearFile() {
+  uploadedFile = null;
+  const chosenEl = document.getElementById('file-chosen');
+  if (chosenEl) chosenEl.classList.remove('show');
+  updateAnalyzeBtn();
+}
+
+function submitInput() {
+  const urlTab = document.getElementById('tab-url')?.classList.contains('active');
+  if (urlTab) {
+    const url = (document.getElementById('url-input')?.value || '').trim();
+    if (!url.startsWith('http')) {
+      const err = document.getElementById('url-error');
+      const field = document.getElementById('url-input');
+      if (err) err.classList.add('show');
+      if (field) field.classList.add('error');
+      return;
+    }
+    reportSource = { type: 'url', label: url };
+  } else {
+    if (!uploadedFile) return;
+    reportSource = { type: 'file', label: uploadedFile.name };
+  }
+  answers  = {};
+  detected = {};
+  current  = 0;
+  screen   = 'analyzing';
+  render();
+  scrollToEvaluator();
+}
+
+// ── Analyzing screen ───────────────────────────────────────────────────────
+const CHECKS = [
+  { id: 'format',       label: 'Detecting report format',              icon: '🖥️' },
+  { id: 'length',       label: 'Estimating report length',             icon: '📏' },
+  { id: 'video',        label: 'Scanning for embedded video',          icon: '🎬' },
+  { id: 'photos',       label: 'Analysing photo quality',              icon: '📸' },
+  { id: 'links',        label: 'Counting strategic links',             icon: '🔗' },
+  { id: 'cta',          label: 'Detecting donation ask intensity',     icon: '💙' },
+  { id: 'readability',  label: 'Scoring readability (Flesch-Kincaid)', icon: '📖' },
+  { id: 'donor_lang',   label: 'Counting You vs. We language',         icon: '💙' },
+  { id: 'authorship',   label: 'Detecting authorship voice',           icon: '✍️' },
+  { id: 'storytelling', label: 'Looking for named impact story',       icon: '📖' },
+  { id: 'mobile',       label: 'Checking mobile responsiveness',      icon: '📱' },
+];
+
+const TIPS = [
+  { category: 'On Authorship',    text: 'Reports from volunteers or recipients feel 3x more authentic than a letter from a CEO. You\'re building trust by letting others speak for you.' },
+  { category: 'On The Ask',       text: 'Counter-intuitive but true: A gratitude report that doesn\'t ask for money actually raises more over time by building a deeper emotional bond.' },
+  { category: 'On Readability',   text: 'Donors skim. If your report reads like a legal document, they\'ll miss your impact. Aim for an 8th-grade reading level.' },
+  { category: 'On Interactivity', text: 'Static PDFs are where engagement goes to die. Interactive digital reports keep people on the page longer and allow for better storytelling.' },
+];
+
+function renderAnalyzing() {
+  const isUrl  = reportSource?.type === 'url';
+  return `
+    <div class="analyzing-card">
+      <div class="analyzing-source">
+        <span class="analyzing-source-icon">${isUrl ? '🌐' : '📄'}</span>
+        <span class="analyzing-source-label">${reportSource?.label || ''}</span>
+      </div>
+      <div class="analyzing-spinner-wrap">
+        <div class="analyzing-spinner"></div>
+        <div class="analyzing-spinner-icon">🔍</div>
+      </div>
+      <div class="analyzing-title">Fetching your report…</div>
+      <div class="analyzing-sub">Deep-scanning for video, photos, links, and readability.</div>
+      <div class="countdown-wrap" id="countdown-wrap">
+        <div class="tip-card" id="tip-card">
+          <div class="tip-category" id="tip-category"></div>
+          <div class="tip-text" id="tip-text"></div>
+        </div>
+        <div class="countdown-bar-bg">
+          <div class="countdown-bar-fill" id="countdown-bar"></div>
+        </div>
+      </div>
+      <div class="check-list" id="check-list" style="opacity:.4;pointer-events:none">
+        ${CHECKS.map((c, i) => `
+          <div class="check-item" id="chk-${c.id}">
+            <span class="check-icon" id="chk-icon-${c.id}">⏳</span>
+            <span>${c.label}</span>
+            <span class="check-result" id="chk-res-${c.id}"></span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// Broad video platform pattern — matches URLs, class names, data attributes, script names
+const VIDEO_PLATFORM_RE = /youtube\.com|youtu\.be|vimeo\.com|wistia\.(com|net)|loom\.com|kaltura\.com|brightcove\.(com|net)|vidyard\.com|sproutvideo\.com|jwplatform\.com|jwplayer\.com|dailymotion\.com|streamable\.com|bunny\.net\/embed|videopress\.com|vzaar\.com|spotlightr\.com|vidizmo\.com/i;
+
+// Thumbnail / poster URLs that only exist when a video is present
+const VIDEO_THUMB_RE = /img\.youtube\.com\/vi\/|i\.ytimg\.com\/vi\/|i\.vimeocdn\.com\/video\/|i3\.ytimg\.com\/vi\//i;
+
+function detectVideo(doc, raw) {
+  if (!raw && !doc) return { found: false, signal: null };
+
+  // ── 1. Raw HTML string — catches lazy-loaded & JS-rendered embeds ────────
+  if (raw) {
+    if (VIDEO_PLATFORM_RE.test(raw))  return { found: true, signal: 'platform URL in source' };
+    if (/<video[\s>]/i.test(raw))     return { found: true, signal: '<video> tag in source' };
+    if (VIDEO_THUMB_RE.test(raw))     return { found: true, signal: 'video thumbnail in source' };
+  }
+
+  if (!doc) return { found: false, signal: null };
+
+  // ── 2. Native <video> element ────────────────────────────────────────────
+  if (doc.querySelector('video'))
+    return { found: true, signal: '<video> element' };
+
+  // ── 3. Iframes — check every possible src/lazy attribute ────────────────
+  for (const f of doc.querySelectorAll('iframe')) {
+    const candidates = [
+      f.getAttribute('src'), f.getAttribute('data-src'),
+      f.getAttribute('data-lazy-src'), f.getAttribute('data-original'),
+      f.getAttribute('data-url'), f.getAttribute('data-embed'),
+    ].filter(Boolean).join(' ');
+    if (VIDEO_PLATFORM_RE.test(candidates))
+      return { found: true, signal: 'iframe embed' };
+  }
+
+  // ── 4. <embed> / <object> ────────────────────────────────────────────────
+  for (const e of doc.querySelectorAll('embed, object')) {
+    const src = e.getAttribute('src') || e.getAttribute('data') || '';
+    if (/\.(mp4|webm|ogg|mov|flv)/i.test(src) || VIDEO_PLATFORM_RE.test(src))
+      return { found: true, signal: 'embed/object tag' };
+  }
+
+  // ── 5. Images — YouTube/Vimeo thumbnails mean a video is present ─────────
+  for (const img of doc.querySelectorAll('img[src],img[data-src]')) {
+    const src = img.getAttribute('src') || img.getAttribute('data-src') || '';
+    if (VIDEO_THUMB_RE.test(src))
+      return { found: true, signal: 'video thumbnail image' };
+  }
+
+  // ── 6. Anchors linking to a video platform ───────────────────────────────
+  for (const a of doc.querySelectorAll('a[href]')) {
+    if (VIDEO_PLATFORM_RE.test(a.getAttribute('href') || ''))
+      return { found: true, signal: 'link to video platform' };
+  }
+
+  // ── 7. Meta tags (og:video, twitter:player) ──────────────────────────────
+  for (const m of doc.querySelectorAll('meta[property],meta[name]')) {
+    const prop    = m.getAttribute('property') || m.getAttribute('name') || '';
+    const content = m.getAttribute('content') || '';
+    if (/og:video|twitter:player/i.test(prop) && content)
+      return { found: true, signal: 'og:video meta tag' };
+  }
+
+  // ── 8. JSON-LD VideoObject schema ────────────────────────────────────────
+  for (const s of doc.querySelectorAll('script[type="application/ld+json"]')) {
+    try {
+      const str = JSON.stringify(JSON.parse(s.textContent || '{}'));
+      if (/VideoObject|embedUrl|contentUrl/i.test(str))
+        return { found: true, signal: 'JSON-LD VideoObject' };
+    } catch (_) {}
+  }
+
+  // ── 9. Data attributes / class names used by popular embed widgets ────────
+  const dataAttrSel = [
+    '[data-video-id]','[data-wistia-id]','[data-plyr-provider]',
+    '[data-vimeo-id]','[data-youtube-id]','[class*="wistia_embed"]',
+    '[class*="vidyard"]','[class*="loom-embed"]','[class*="yt-lite"]',
+    '[id*="wistia"]','[id*="vimeo-"]','[class*="wp-block-embed__wrapper"]',
+  ].join(',');
+  if (doc.querySelector(dataAttrSel))
+    return { found: true, signal: 'video widget attribute' };
+
+  // ── 10. Script src loading a known player SDK ────────────────────────────
+  for (const s of doc.querySelectorAll('script[src]')) {
+    if (VIDEO_PLATFORM_RE.test(s.getAttribute('src') || ''))
+      return { found: true, signal: 'player SDK script' };
+  }
+
+  // ── 11. Inline script text — player init code & JSON config ─────────────
+  const PLAYER_INIT_RE = /YT\.Player|Vimeo\.Player|wistiaEmbed|_wq\s*=|vidyard\.api|brightcove\.createVideo|jwplayer\s*\(|kaltura\.kWidget|loom\.setup|bunny\.net\/embed/i;
+  // Video IDs stored in JS config objects (even when iframe is JS-injected)
+  const VIDEO_ID_JSON_RE = /["'](videoId|video_id|youtubeId|youtube_id|vimeoId|vimeo_id|videoKey|media_id)["']\s*:\s*["'][a-zA-Z0-9_\-]{5,}/i;
+  for (const s of doc.querySelectorAll('script:not([src])')) {
+    const txt = s.textContent || '';
+    if (VIDEO_PLATFORM_RE.test(txt) || PLAYER_INIT_RE.test(txt) || VIDEO_ID_JSON_RE.test(txt))
+      return { found: true, signal: 'inline player init script' };
+  }
+
+  // ── 12. <noscript> content — WordPress / Elementor stores actual embeds ──
+  for (const ns of doc.querySelectorAll('noscript')) {
+    const inner = ns.innerHTML || '';
+    if (VIDEO_PLATFORM_RE.test(inner) || /<video[\s>]/i.test(inner))
+      return { found: true, signal: 'noscript embed' };
+  }
+
+  // ── 13. HTML comments — Gutenberg/WP block: <!-- wp:embed {"url":"..."} -->
+  try {
+    const walker = doc.createTreeWalker(doc, NodeFilter.SHOW_COMMENT);
+    let c;
+    while ((c = walker.nextNode())) {
+      if (VIDEO_PLATFORM_RE.test(c.nodeValue || ''))
+        return { found: true, signal: 'HTML comment embed' };
+    }
+  } catch (_) {}
+
+  return { found: false, signal: null };
+}
+
+// ── Stock photo CDN detection ──────────────────────────────────────────────
+// Returns 'stock' | 'real' | null (null = not enough signal)
+const STOCK_CDN_RE = /shutterstock\.com|gettyimages\.(com|co\.uk)|istockphoto\.com|stock\.adobe\.com|depositphotos\.com|dreamstime\.com|123rf\.com|bigstockphoto\.com|alamy\.com|unsplash\.com\/photos\/|pexels\.com\/photo\/|pixabay\.com\/photos\//i;
+
+// Stock filename patterns — common in self-hosted stock photos
+const STOCK_FILENAME_RE = /shutterstock|istock|istockphoto|gettyimages|getty[-_]|depositphotos|dreamstime|123rf|bigstock|adobe[-_]?stock|stock[-_]?photo|royalty[-_]?free/i;
+
+// Real photo filename signals — dates, event names, org-specific naming
+const REAL_FILENAME_RE = /\b(20\d\d[-_]?\d{2}[-_]?\d{2}|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)|\b(event|program|volunteer|team|staff|community|client|family|graduation|gala|visit|field|trip|award|ceremony|celebration|workshop|training|outreach|impact)\b/i;
+
+// Generic alt text = stock signal (describes the concept, not the moment)
+const GENERIC_ALT_RE = /^(photo|image|picture|img|banner|hero|background|slide|icon|logo|placeholder|stock\s+photo|man|woman|person|people|group|team|happy|smiling|diverse|professional|business|concept|abstract)[\s,.]?$/i;
+
+// Rich alt text = real photo signal (describes who/what/where specifically)
+const REAL_ALT_RE = /\b(our|we|us|program|client|participant|volunteer|staff|community|neighbor|family|child|youth|recipient|beneficiar|resident|member|student|donor|graduate|survivor|veteran)\b/i;
+
+function scoreImageUrl(url, alt) {
+  // url and alt may be empty strings
+  let stockScore = 0;
+  let realScore  = 0;
+
+  if (url) {
+    if (STOCK_CDN_RE.test(url))     stockScore += 3;
+    if (STOCK_FILENAME_RE.test(url)) stockScore += 2;
+    if (REAL_FILENAME_RE.test(url))  realScore  += 2;
+    // Self-hosted on the org's own domain = mild real signal
+    if (/wp-content\/uploads|\/images\/|\/media\/|\/photos\/|\/assets\//i.test(url)) realScore += 1;
+  }
+
+  if (alt) {
+    const trimmed = alt.trim();
+    if (!trimmed || trimmed.length < 4) {
+      stockScore += 1; // empty/missing alt is a mild stock signal
+    } else if (GENERIC_ALT_RE.test(trimmed)) {
+      stockScore += 2;
+    } else if (REAL_ALT_RE.test(trimmed)) {
+      realScore  += 3;
+    } else if (trimmed.length > 20) {
+      realScore  += 1; // descriptive alt = good sign
+    }
+  }
+
+  return { stockScore, realScore };
+}
+
+function detectPhotos(doc, raw, jinaText, mlOgImage) {
+  let totalStockScore = 0;
+  let totalRealScore  = 0;
+  let imageCount      = 0;
+
+  // ── A. Parse Jina markdown for image references: ![alt](url) ─────────────
+  if (jinaText) {
+    const jinaImgRe = /!\[([^\]]*)\]\(([^)]+)\)/g;
+    let m;
+    while ((m = jinaImgRe.exec(jinaText)) !== null) {
+      const [, alt, url] = m;
+      if (/^data:/.test(url)) continue;
+      imageCount++;
+      const s = scoreImageUrl(url, alt);
+      totalStockScore += s.stockScore;
+      totalRealScore  += s.realScore;
+    }
+  }
+
+  // ── B. Microlink og:image ─────────────────────────────────────────────────
+  if (mlOgImage) {
+    const s = scoreImageUrl(mlOgImage, '');
+    totalStockScore += s.stockScore;
+    totalRealScore  += s.realScore;
+    imageCount = Math.max(imageCount, 1);
+  }
+
+  // ── C. DOM scan ───────────────────────────────────────────────────────────
+  if (doc) {
+    for (const img of doc.querySelectorAll('img')) {
+      const src = img.getAttribute('src') || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || '';
+      const alt = img.getAttribute('alt') || '';
+      if (!src || /^data:image\/gif/.test(src)) continue;
+      const w = parseInt(img.getAttribute('width')  || '0');
+      const h = parseInt(img.getAttribute('height') || '0');
+      if ((w > 0 && w < 40) || (h > 0 && h < 40)) continue;
+      imageCount++;
+      const s = scoreImageUrl(src, alt);
+      totalStockScore += s.stockScore;
+      totalRealScore  += s.realScore;
+    }
+  }
+
+  // ── D. Raw HTML fallback ──────────────────────────────────────────────────
+  if (raw && imageCount === 0) {
+    if (STOCK_CDN_RE.test(raw) || STOCK_FILENAME_RE.test(raw)) totalStockScore += 2;
+    const rawImgs = raw.match(/<img\b[^>]+>/gi) || [];
+    imageCount = rawImgs.length;
+    // Try to score alt text from raw HTML
+    rawImgs.forEach(tag => {
+      const altM = tag.match(/alt=["']([^"']*)["']/i);
+      const srcM = tag.match(/src=["']([^"']*)["']/i) || tag.match(/data-src=["']([^"']*)["']/i);
+      const s = scoreImageUrl(srcM?.[1] || '', altM?.[1] || '');
+      totalStockScore += s.stockScore;
+      totalRealScore  += s.realScore;
+    });
+  }
+
+  if (imageCount === 0) return null; // no images at all
+
+  // ── Score decision ────────────────────────────────────────────────────────
+  if (totalStockScore > totalRealScore && totalStockScore >= 3) return 'stock';
+  if (totalRealScore  > totalStockScore)                        return 'real';
+  if (totalStockScore > 0)                                      return 'stock';
+  if (imageCount > 0)                                           return 'real'; // images exist, no strong stock signal
+  return null;
+}
+
+// ── Microlink API — JS-rendered metadata ──────────────────────────────────
+// waitFor=5000 tells Microlink's headless browser to wait 5s after load for
+// JS to inject iframes and players before capturing metadata.
+async function fetchMicrolink(url) {
+  try {
+    const apiUrl = `https://api.microlink.io/?url=${encodeURIComponent(url)}&video=true&screenshot=false&waitFor=5000`;
+    const resp = await Promise.race([
+      fetch(apiUrl),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 15000)),
+    ]);
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    return data?.data || null;
+  } catch (_) { return null; }
+}
+
+// ── Flesch-Kincaid helpers ─────────────────────────────────────────────────
+
+// Count syllables in a word using a heuristic (accurate enough for FK scoring)
+function countSyllables(word) {
+  word = word.toLowerCase().replace(/[^a-z]/g, '');
+  if (word.length <= 3) return 1;
+  word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+  word = word.replace(/^y/, '');
+  const m = word.match(/[aeiouy]{1,2}/g);
+  return m ? m.length : 1;
+}
+
+// Count sentences — split on . ! ? followed by whitespace or end
+function countSentences(text) {
+  const matches = text.match(/[^.!?]*[.!?]+/g);
+  return matches ? matches.length : 1;
+}
+
+// Flesch Reading Ease: 206.835 - 1.015*(words/sentences) - 84.6*(syllables/words)
+// Returns { score, label, key, pts }
+function fleschKincaid(text) {
+  // Strip HTML artifacts and normalize whitespace
+  const clean = text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  if (clean.length < 100) return null; // not enough text
+
+  const wordList  = clean.split(/\s+/).filter(w => w.replace(/[^a-zA-Z]/g, '').length > 0);
+  const wordCount = wordList.length;
+  if (wordCount < 30) return null;
+
+  const sentenceCount  = Math.max(countSentences(clean), 1);
+  const syllableCount  = wordList.reduce((sum, w) => sum + countSyllables(w), 0);
+
+  const score = Math.round(
+    206.835
+    - 1.015  * (wordCount / sentenceCount)
+    - 84.6   * (syllableCount / wordCount)
+  );
+
+  // Clamp to 0–100 display range
+  const clamped = Math.max(0, Math.min(100, score));
+
+  if (clamped >= 60) return { score: clamped, label: `8th grade level (FK ${clamped})`,     key: 'easy',     pts: 10 };
+  if (clamped >= 40) return { score: clamped, label: `10th grade level (FK ${clamped})`,    key: 'moderate', pts: 7  };
+  if (clamped >= 20) return { score: clamped, label: `College level (FK ${clamped})`,       key: 'college',  pts: 4  };
+  return               { score: clamped, label: `Academic / jargon (FK ${clamped})`,        key: 'hard',     pts: 0  };
+}
+
+// Detect bot-challenge / empty proxy responses
+function isUsableHtml(text) {
+  if (!text || text.length < 500) return false;
+  // Reject known bot-challenge pages
+  if (/Just a moment|checking your browser|Enable JavaScript and cookies|cf-browser-verification|DDoS protection by/i.test(text)) return false;
+  // Reject if no real HTML body content
+  if (!/<(p|div|section|article|main|h[1-6]|span|a)\b/i.test(text)) return false;
+  return true;
+}
+
+// Strip script/style block contents from raw HTML before text extraction
+function stripScriptsAndStyles(html) {
+  return html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z#0-9]+;/gi, ' ')
+    .replace(/\s+/g, ' ');
+}
+
+// ── Authorship detection ───────────────────────────────────────────────────
+function detectAuthorship(doc, raw) {
+  let text;
+  if (raw) {
+    text = stripScriptsAndStyles(raw);
+  } else if (doc?.body) {
+    try {
+      const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          const tag = node.parentElement?.tagName?.toLowerCase();
+          return (tag === 'script' || tag === 'style') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      const parts = []; let n;
+      while ((n = walker.nextNode())) parts.push(n.nodeValue);
+      text = parts.join(' ');
+    } catch(_) { text = doc.body.textContent || ''; }
+  } else {
+    text = '';
+  }
+
+  const len = text.trim().length;
+  if (len === 0) return { found: false, signal: 'no text extracted' };
+
+  const try_ = (label, re) => re.test(text) ? { found: true, signal: label } : null;
+
+  return (
+    try_('salutation',      /\b(sincerely|with gratitude|warmly|in service|with appreciation|yours truly|in mission|respectfully|with hope|with love|in solidarity|gratefully)[,\s]/i) ||
+    try_('dear opener',     /\bdear\s+(friend|donor|supporter|partner|community|stakeholder|neighbor|colleague|reader)/i) ||
+    try_('message from',    /\b(message|letter|note|word|foreword|introduction|welcome)\s+(from|by)\b/i) ||
+    try_('from the desk',   /\bfrom\s+the\s+(desk|office)\s+of\b/i) ||
+    try_('leadership title',/\b(executive director|chief executive|board (chair|member|president)|vice president|vp\s+of|founder|co-founder|chief operating|chief development|development director|program director|communications director|director of (programs?|development|operations|communications|finance))\b/i) ||
+    try_('abbrev title',    /[,|\n]\s*(ED|CEO|COO|CFO|CTO|CDO|board\s+chair|exec\.?\s+dir\.?)\b/i) ||
+    try_('written by',      /\b(signed|authored|written|prepared|submitted|compiled|presented|report)\s+by\b/i) ||
+    try_('as your leader',  /\bas (your|our)\s+(executive director|president|CEO|director|founder|chair)\b/i) ||
+    try_('first person',    /\bI am (proud|excited|pleased|delighted|honored|humbled|grateful)\b/i) ||
+    try_('staff section',   /\b(our\s+)?(team|staff|leadership)\b[^.]{0,60}\b(director|president|founder|officer|coordinator|manager)\b/i) ||
+    { found: false, signal: `no match in ${len} chars` }
+  );
+}
+
+// ── Storytelling detection ─────────────────────────────────────────────────
+// Returns 'named' (individual story), 'group' (cohort/project story), or null (skip to manual)
+function detectStorytelling(doc, raw) {
+  const text = raw ? stripScriptsAndStyles(raw) : (doc?.body?.textContent || '');
+  if (!text) return null;
+
+  // ── NAMED individual signals ──────────────────────────────────────────────
+
+  // "Meet [Name]" — classic named-story intro
+  if (/\bmeet\s+[A-Z][a-z]{2,}\b/.test(text)) return 'named';
+
+  // "[FirstName]'s story" — possessive story headline
+  if (/\b[A-Z][a-z]{2,}['']s\s+story\b/.test(text)) return 'named';
+
+  // "[FirstName], a [specific human descriptor]"
+  if (/\b[A-Z][a-z]{2,},\s+a\s+(single mother|single father|homeless|formerly homeless|refugee|asylum seeker|cancer survivor|veteran|first-generation|low-income|domestic violence survivor|foster child|foster youth)\b/.test(text)) return 'named';
+
+  // "[First Last], [age/role descriptor]"
+  if (/\b[A-Z][a-z]{2,}\s+[A-Z][a-z]{2,},\s+(age\s+\d|a\s+(mother|father|student|veteran|refugee|survivor|child|youth|resident|client|participant))\b/.test(text)) return 'named';
+
+  // Quoted speech attributed to a specific first+last name: "…" — First Last
+  if (/["""]\s*—\s*[A-Z][a-z]{2,}\s+[A-Z][a-z]{2,}/.test(text)) return 'named';
+
+  // "[Name] came to us..." or "[Name] was struggling..." — named narrative opening
+  if (/\b[A-Z][a-z]{2,}\s+(came to us|walked into|was referred|reached out|contacted us|was struggling|had nowhere|didn['']t know|lost (her|his|their))\b/.test(text)) return 'named';
+
+  // ── GROUP / PROJECT story signals ─────────────────────────────────────────
+
+  // "X families/students/people [verb]..." — aggregate outcome narrative
+  if (/\b\d+\s+(families|households|students|children|youth|adults|seniors|veterans|refugees|clients|participants|individuals)\s+(received|found|completed|graduated|accessed|secured|enrolled|gained|moved)\b/i.test(text)) return 'group';
+
+  // "families like [Name]'s" or "people like [Name]" — group framing with a token name
+  if (/\b(families|people|individuals|students|clients)\s+like\s+[A-Z][a-z]{2,}['']s?\b/.test(text)) return 'group';
+
+  // "the [ProgramName] program" or "our [X] initiative/project" with an outcome
+  if (/\b(the|our)\s+[A-Z][A-Za-z\s]{2,20}\s+(program|initiative|project|cohort|campaign)\b.*\b(helped|served|reached|supported|impacted|changed|transformed)\b/is.test(text)) return 'group';
+
+  // "together, we..." or "as a community..." — collective story framing
+  if (/\b(together,?\s+we|as a community|as a (family|village|team)|our community came together)\b/i.test(text)) return 'group';
+
+  // "this year, [number] [people]..." — year-in-review narrative framing
+  if (/\bthis (year|season)\b.{0,60}\b\d+\s+(people|families|individuals|youth|students|clients|participants)\b/is.test(text)) return 'group';
+
+  return null;
+}
+
+// ── Continuity detection ───────────────────────────────────────────────────
+// Looks for future-engagement promises: "next year", newsletter CTAs, social follow prompts
+function detectContinuity(doc, raw) {
+  const text = (raw ? stripScriptsAndStyles(raw) : (doc?.body?.textContent || '')).toLowerCase();
+  if (!text) return null;
+
+  if (/\b(next year|coming (year|months|season)|in 20\d\d)\b/.test(text)) return true;
+  if (/\b(sign up|subscribe|newsletter|email updates?|stay (connected|in touch|informed))\b/.test(text)) return true;
+  if (/\b(follow us|join us|be part of|upcoming (event|gala|campaign))\b/.test(text)) return true;
+  if (/\b(what'?s next|looking ahead|our (vision|goals?) for|future (plans?|impact))\b/.test(text)) return true;
+
+  // Social media links or handles
+  if (doc) {
+    for (const a of doc.querySelectorAll('a[href]')) {
+      if (/facebook\.com|twitter\.com|instagram\.com|linkedin\.com|tiktok\.com/i.test(a.getAttribute('href') || ''))
+        return true;
+    }
+  }
+  if (/facebook\.com|twitter\.com|instagram\.com|linkedin\.com/i.test(text)) return true;
+
+  return false;
+}
+
+// ── Jina AI Reader — JS-rendered page text ────────────────────────────────
+// r.jina.ai executes JavaScript and returns clean text, including iframe titles
+// and any video platform URLs that appear in the rendered DOM.
+async function fetchJina(url) {
+  try {
+    const resp = await Promise.race([
+      fetch(`https://r.jina.ai/${encodeURIComponent(url)}`, {
+        headers: { 'Accept': 'text/plain', 'X-Return-Format': 'text' }
+      }),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 14000)),
+    ]);
+    if (!resp.ok) return null;
+    const text = await resp.text();
+    return text.length > 100 ? text : null;
+  } catch (_) { return null; }
+}
+
+// Try multiple CORS proxies, return { html, proxyUsed } or null
+async function fetchViaProxy(url) {
+  const proxies = [
+    { name: 'allorigins',  url: `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}` },
+    { name: 'corsproxy',   url: `https://corsproxy.io/?${encodeURIComponent(url)}` },
+    { name: 'codetabs',    url: `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}` },
+  ];
+  for (const proxy of proxies) {
+    try {
+      const resp = await Promise.race([
+        fetch(proxy.url),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 8000)),
+      ]);
+      if (resp.ok) {
+        const text = await resp.text();
+        if (isUsableHtml(text)) return { html: text, proxyUsed: proxy.name };
+      }
+    } catch (_) { /* try next */ }
+  }
+  return null;
+}
+
+async function runAnalysis() {
+  const isUrl = reportSource?.type === 'url';
+  let doc        = null; // parsed HTML document
+  let rawHtml    = '';   // raw HTML string
+  let mlData     = null; // Microlink API response data
+
+  // ── Kick off all fetches in parallel during countdown ────────────────────
+  let proxyPromise     = null;
+  let microlinkPromise = null;
+  let jinaPromise      = null;
+  if (isUrl) {
+    proxyPromise     = fetchViaProxy(reportSource.label);
+    microlinkPromise = fetchMicrolink(reportSource.label);
+    jinaPromise      = fetchJina(reportSource.label);
+  }
+
+  // ── 15-second countdown — cycles tips, fills progress bar left-to-right ──
+  const WAIT       = 15;
+  const TIP_EVERY  = Math.ceil(WAIT / TIPS.length); // seconds per tip
+  let   tipIndex   = -1;
+
+  function showNextTip() {
+    tipIndex = (tipIndex + 1) % TIPS.length;
+    const tip      = TIPS[tipIndex];
+    const card     = document.getElementById('tip-card');
+    const catEl    = document.getElementById('tip-category');
+    const textEl   = document.getElementById('tip-text');
+    if (!card) return;
+    // Fade out
+    card.classList.remove('tip-visible');
+    setTimeout(() => {
+      if (catEl)  catEl.textContent  = tip.category;
+      if (textEl) textEl.textContent = tip.text;
+      // Fade in
+      card.classList.add('tip-visible');
+    }, 420);
+  }
+
+  showNextTip(); // show first tip immediately
+  for (let elapsed = 1; elapsed <= WAIT; elapsed++) {
+    await delay(1000);
+    const bar = document.getElementById('countdown-bar');
+    if (bar) bar.style.width = ((elapsed / WAIT) * 100) + '%';
+    // Rotate tip at each interval
+    if (elapsed % TIP_EVERY === 0 && elapsed < WAIT) showNextTip();
+  }
+  // Hide countdown, show checks
+  const cw = document.getElementById('countdown-wrap');
+  if (cw) cw.style.display = 'none';
+  const cl = document.getElementById('check-list');
+  if (cl) { cl.style.opacity = '1'; cl.style.pointerEvents = 'auto'; }
+  const title = document.querySelector('.analyzing-title');
+  if (title) title.textContent = 'Analysing your report…';
+  const sub = document.querySelector('.analyzing-sub');
+  if (sub) sub.textContent = 'Auto-detecting criteria where possible.';
+
+  // ── Resolve fetch results (all should be done by now) ───────────────────
+  let jinaText = null;
+  if (isUrl) {
+    const [fetched, ml, jina] = await Promise.all([proxyPromise, microlinkPromise, jinaPromise]);
+    if (fetched) {
+      rawHtml = fetched.html;
+      const parser = new DOMParser();
+      doc = parser.parseFromString(rawHtml, 'text/html');
+    }
+    mlData   = ml;
+    jinaText = jina;
+  } else if (uploadedFile) {
+    if (/\.html?$/i.test(uploadedFile.name)) {
+      try {
+        rawHtml = await uploadedFile.text();
+        const parser = new DOMParser();
+        doc = parser.parseFromString(rawHtml, 'text/html');
+      } catch (_) {}
+    }
+  }
+
+  // ── 1. Format ────────────────────────────────────────────────────────────
+  await showCheck('format', 400);
+  if (isUrl) {
+    const url = reportSource.label;
+    const isPdfUrl = /\.pdf(\?.*)?$/i.test(url);
+    if (isPdfUrl) {
+      setDetected('interactivity', 'pdf',          4, 'Static PDF');
+      finishCheck('format', false, 'PDF link detected (+4 pts)');
+    } else {
+      setDetected('interactivity', 'interactive', 10, 'Fully digital / web-based');
+      finishCheck('format', true, 'Web page detected (+10 pts)');
+    }
+  } else {
+    if (uploadedFile && /\.html?$/i.test(uploadedFile.name)) {
+      setDetected('interactivity', 'interactive', 10, 'Fully digital / web-based');
+      finishCheck('format', true, 'HTML file detected (+10 pts)');
+    } else {
+      setDetected('interactivity', 'pdf', 4, 'Static PDF');
+      finishCheck('format', false, 'PDF file (+4 pts)');
+    }
+  }
+
+  // ── 2. Length estimation ─────────────────────────────────────────────────
+  // Uses word count as a proxy for pages/scrolls:
+  // ~500 words ≈ 2 scrolls/pages, ~1250 words ≈ 5 scrolls/pages
+  await showCheck('length', 400);
+  {
+    const lengthText = jinaText || (doc ? doc.body?.textContent : null) || rawHtml;
+    if (lengthText) {
+      const cleaned   = lengthText.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      const wordCount = cleaned.split(/\s+/).filter(w => w.length > 1).length;
+      if (wordCount <= 500) {
+        setDetected('length', 'short',  10, '2 pages / scrolls or less');
+        finishCheck('length', true,  `~${wordCount} words — very concise (+10 pts)`);
+      } else if (wordCount <= 1250) {
+        setDetected('length', 'medium',  5, 'Up to 5 pages / scrolls');
+        finishCheck('length', true,  `~${wordCount} words — reasonable length (+5 pts)`);
+      } else {
+        setDetected('length', 'long',    0, 'More than 5 pages / scrolls');
+        finishCheck('length', false, `~${wordCount} words — may be too long (+0 pts)`);
+      }
+    } else {
+      skipCheck('length', 'Couldn\'t estimate — please answer manually');
+    }
+  }
+
+  // ── 3. Video detection ───────────────────────────────────────────────────
+  await showCheck('video', 500);
+  {
+    // Static document platforms — these never have embedded video; check first so
+    // false-positive signals from Jina/Microlink don't override this known truth.
+    const isStaticDocPlatform = isUrl && /issuu\.com|fliphtml5\.com|flipsnack\.com|heyzine\.com|joomag\.com|publuu\.com|calameo\.com|yumpu\.com/i.test(reportSource.label);
+
+    if (isStaticDocPlatform) {
+      setDetected('multimedia', 'no', 0, 'No video');
+      finishCheck('video', false, 'Static document platform — no video (+0 pts)');
+    } else {
+
+    let videoFound  = false;
+    let videoSignal = null;
+
+    // A. Jina Reader — renders JavaScript, returns text with iframe/embed info
+    if (jinaText) {
+      if (VIDEO_PLATFORM_RE.test(jinaText))
+        { videoFound = true; videoSignal = 'Jina JS-rendered scan'; }
+      // Jina renders iframe titles like "YouTube video player" in its output
+      else if (/youtube\s*(video\s*)?(player|embed)|vimeo\s*(player|embed)|video\s+player/i.test(jinaText))
+        { videoFound = true; videoSignal = 'Jina rendered video player'; }
+    }
+
+    // B. Microlink structured fields
+    if (!videoFound && mlData) {
+      if (mlData.video?.url || mlData.video?.html || mlData.video?.type) {
+        videoFound = true; videoSignal = 'Microlink video metadata';
+      }
+      if (!videoFound) {
+        try {
+          const mlJson = JSON.stringify(mlData);
+          if (VIDEO_PLATFORM_RE.test(mlJson))
+            videoFound = true, videoSignal = 'Microlink JSON video URL';
+        } catch (_) {}
+      }
+    }
+
+    // B. Deep scan of CORS-proxy HTML + expanded heuristics
+    if (!videoFound && (doc || rawHtml)) {
+      if (rawHtml) {
+        if (/youtube\.com\/iframe_api|youtube\.com\/player_api/i.test(rawHtml))
+          { videoFound = true; videoSignal = 'YouTube IFrame API'; }
+        else if (/wistia_async_[a-z0-9]+/i.test(rawHtml))
+          { videoFound = true; videoSignal = 'Wistia async embed'; }
+        else if (/data-video(?:-id)?=["'][a-zA-Z0-9_\-]{8,}["']/i.test(rawHtml))
+          { videoFound = true; videoSignal = 'data-video-id attr'; }
+        else if (/class="[^"]*(?:wp-block-embed|video-block|video-embed|video-wrapper|yt-embed|video-container|embed-responsive|fluid-width-video)[^"]*"/i.test(rawHtml))
+          { videoFound = true; videoSignal = 'embed container class'; }
+        else if (/ytInitialData|ytInitialPlayerResponse/i.test(rawHtml))
+          { videoFound = true; videoSignal = 'YouTube page data'; }
+      }
+      if (!videoFound) {
+        const vr = detectVideo(doc, rawHtml);
+        if (vr.found) { videoFound = true; videoSignal = vr.signal; }
+      }
+    }
+
+    if (videoFound) {
+      const isLinkOnly = videoSignal === 'link to video platform';
+      if (isLinkOnly) {
+        setDetected('multimedia', 'link', 5, 'Link out to video');
+        finishCheck('video', true, `Video link found (+5 pts) [${videoSignal}]`);
+      } else {
+        setDetected('multimedia', 'embed', 10, 'Embedded video / player');
+        finishCheck('video', true, `Video embed detected (+10 pts) [${videoSignal}]`);
+      }
+    } else {
+      // Neither Microlink nor CORS proxy could confirm video presence.
+      // CORS proxies return static HTML (JS embeds invisible), and Microlink
+      // free tier doesn't reliably render all players. Never auto-set "no video"
+      // — leave for manual review so the user can answer accurately.
+      skipCheck('video', 'Couldn\'t auto-detect — please answer manually');
+    }
+
+    } // end non-static-platform branch
+  }
+
+  // ── 3. Photo quality detection ───────────────────────────────────────────
+  await showCheck('photos', 500);
+  {
+    let photoResult = null;
+
+    // detectPhotos handles all sources: Jina markdown, mlOgImage, DOM, raw HTML
+    if (doc || rawHtml || jinaText || mlData?.image?.url) {
+      photoResult = detectPhotos(doc, rawHtml, jinaText, mlData?.image?.url || null);
+    }
+
+    if (photoResult === 'stock') {
+      setDetected('visuals', 'stock_good', 7, 'Stock photography (well chosen)');
+      finishCheck('photos', true, 'Stock photos detected (+7 pts)');
+    } else if (photoResult === 'real') {
+      setDetected('visuals', 'real', 10, 'High-quality, original photos');
+      finishCheck('photos', true, 'Real photos detected (+10 pts)');
+    } else {
+      skipCheck('photos', 'Manual review needed');
+    }
+  }
+
+  // ── 4. Links (4-tier count) ──────────────────────────────────────────────
+  await showCheck('links', 400);
+  if (doc) {
+    const extLinks = [...doc.querySelectorAll('a[href]')].filter(a =>
+      /^https?:\/\//i.test(a.getAttribute('href') || '')
+    ).length;
+    if (extLinks >= 3) {
+      setDetected('connectivity', 'three_plus', 10, '3 or more strategic links');
+      finishCheck('links', true, `${extLinks} external links found (+10 pts)`);
+    } else if (extLinks === 2) {
+      setDetected('connectivity', 'two', 7, '2 links');
+      finishCheck('links', true, `2 external links found (+7 pts)`);
+    } else if (extLinks === 1) {
+      setDetected('connectivity', 'one', 4, '1 link');
+      finishCheck('links', true, `1 external link found (+4 pts)`);
+    } else {
+      setDetected('connectivity', 'none', 0, 'No links');
+      finishCheck('links', false, 'No external links found');
+    }
+  } else {
+    skipCheck('links', 'Manual review needed');
+  }
+
+  // ── 5. The Ask — reversed: no ask = best (4-tier) ────────────────────────
+  await showCheck('cta', 450);
+  if (doc) {
+    const donateEls = [...doc.querySelectorAll('a, button')].filter(el =>
+      /donat|give\s+now|contribut|support\s+us|fund\s+us/i.test((el.getAttribute('href') || '') + ' ' + (el.textContent || ''))
+    );
+    const ctaCount = donateEls.length;
+    if (ctaCount === 0) {
+      setDetected('conversion', 'no_ask', 10, 'No ask — pure gratitude');
+      finishCheck('cta', true, 'No donate ask — pure gratitude (+10 pts)');
+    } else if (ctaCount <= 2) {
+      setDetected('conversion', 'soft', 7, 'Soft link (no call-out)');
+      finishCheck('cta', true, `${ctaCount} subtle donate link(s) (+7 pts)`);
+    } else if (ctaCount <= 5) {
+      setDetected('conversion', 'hard', 4, 'Hard ask ("Donate Now")');
+      finishCheck('cta', false, `${ctaCount} donate CTAs — prominent ask (+4 pts)`);
+    } else {
+      setDetected('conversion', 'aggressive', 0, 'Aggressive / multiple asks');
+      finishCheck('cta', false, `${ctaCount} donate prompts — aggressive ask`);
+    }
+  } else {
+    skipCheck('cta', 'Manual review needed');
+  }
+
+  // ── 6. Readability (Flesch-Kincaid, 4-tier) ──────────────────────────────
+  await showCheck('readability', 400);
+  if (jinaText || rawHtml || doc) {
+    const text = jinaText
+      ? jinaText
+      : rawHtml
+        ? stripScriptsAndStyles(rawHtml)
+        : (doc.body?.textContent || '');
+    const fk = fleschKincaid(text);
+    if (fk) {
+      setDetected('readability', fk.key, fk.pts, fk.label);
+      const grade = fk.pts === 10 ? '8th grade' : fk.pts === 7 ? '10th grade' : fk.pts === 4 ? 'College' : 'Academic';
+      finishCheck('readability', fk.pts >= 7, `FK ${fk.score} — ${grade} (+${fk.pts} pts)`);
+    } else {
+      skipCheck('readability', 'Not enough text to score');
+    }
+  } else {
+    skipCheck('readability', 'Manual review needed');
+  }
+
+  // ── 7. You vs. We language (4-tier) ──────────────────────────────────────
+  await showCheck('donor_lang', 400);
+  const langText = jinaText
+    ? jinaText.toLowerCase()
+    : rawHtml
+      ? stripScriptsAndStyles(rawHtml).toLowerCase()
+      : (doc?.body?.textContent || '').toLowerCase();
+
+  if (langText.length > 200) {
+    const youWords = (langText.match(/\byou\b|\byour\b|\byours\b|\byourself\b/g) || []).length;
+    const weWords  = (langText.match(/\bwe\b|\bour\b|\bours\b|\bus\b|\bwe've\b|\bwe're\b|\bwe'll\b|\bwe'd\b/g) || []).length;
+    const total    = youWords + weWords;
+    detectedLangCounts = { you: youWords, we: weWords };
+
+    if (total >= 5) {
+      const ratio = youWords / (weWords || 1);
+      const pct   = Math.round((youWords / total) * 100);
+
+      if (ratio >= 1.5) {
+        setDetected('donor_centricity', 'high_you', 10, `High "You" — donor is the hero`);
+        finishCheck('donor_lang', true, `${youWords} "you" vs ${weWords} "we" — donor-centric (+10 pts)`);
+      } else if (ratio >= 0.8) {
+        setDetected('donor_centricity', 'balanced', 7, 'Balanced "You" and "We"');
+        finishCheck('donor_lang', true, `${youWords} "you" vs ${weWords} "we" — balanced (+7 pts)`);
+      } else if (ratio >= 0.3) {
+        setDetected('donor_centricity', 'high_we', 4, 'High "We / I" — org is the hero');
+        finishCheck('donor_lang', false, `${youWords} "you" vs ${weWords} "we" — org-centric (+4 pts)`);
+      } else {
+        setDetected('donor_centricity', 'cold', 0, 'Cold / institutional voice');
+        finishCheck('donor_lang', false, `${youWords} "you" vs ${weWords} "we" — institutional`);
+      }
+    } else if (total > 0) {
+      // Some pronouns found but too few to be confident — score conservatively
+      const ratio = youWords / (weWords || 1);
+      if (ratio >= 1.0) {
+        setDetected('donor_centricity', 'balanced', 7, 'Balanced "You" and "We"');
+        finishCheck('donor_lang', true, `${youWords} "you" vs ${weWords} "we" — leaning donor-centric (+7 pts)`);
+      } else {
+        setDetected('donor_centricity', 'high_we', 4, 'High "We / I" — org is the hero');
+        finishCheck('donor_lang', false, `${youWords} "you" vs ${weWords} "we" — leaning org-centric (+4 pts)`);
+      }
+    } else {
+      skipCheck('donor_lang', 'Not enough pronoun instances to score');
+    }
+  } else {
+    skipCheck('donor_lang', 'Manual review needed');
+  }
+
+  // ── 8. Authorship ────────────────────────────────────────────────────────
+  await showCheck('authorship', 400);
+  // Prefer Jina text (clean rendered output) over raw HTML for text-based checks
+  const authorSource = jinaText || rawHtml;
+  const authorDoc    = jinaText ? null : doc;
+  if (authorSource || authorDoc) {
+    const { found: authorFound, signal: authorSignal } = detectAuthorship(authorDoc, authorSource);
+    if (authorFound) {
+      setDetected('authorship', 'ed', 7, 'Executive Director / CEO');
+      finishCheck('authorship', true, `Leadership found (+7 pts) [${authorSignal}]`);
+    } else {
+      skipCheck('authorship', `Couldn't confirm — please answer manually`);
+    }
+  } else {
+    skipCheck('authorship', 'Manual review needed');
+  }
+
+  // ── 9. Storytelling ──────────────────────────────────────────────────────
+  await showCheck('storytelling', 400);
+  const storySource = jinaText || rawHtml;
+  const storyDoc    = jinaText ? null : doc;
+  if (storySource || storyDoc) {
+    const storyLevel = detectStorytelling(storyDoc, storySource);
+    if (storyLevel === 'named') {
+      setDetected('storytelling', 'named', 10, 'Named individual story');
+      finishCheck('storytelling', true, 'Named individual story detected (+10 pts)');
+    } else if (storyLevel === 'group') {
+      setDetected('storytelling', 'group', 5, 'Group or project story');
+      finishCheck('storytelling', true, 'Group/project story detected (+5 pts)');
+    } else {
+      skipCheck('storytelling', 'Couldn\'t confirm — please answer manually');
+    }
+  } else {
+    skipCheck('storytelling', 'Manual review needed');
+  }
+
+  // ── 10. Mobile responsiveness ────────────────────────────────────────────
+  await showCheck('mobile', 400);
+  if (isUrl) {
+    // Check for viewport meta tag (required for responsive design)
+    const hasViewport = rawHtml
+      ? /<meta[^>]+name=["']viewport["'][^>]*>/i.test(rawHtml)
+      : (doc ? !!doc.querySelector('meta[name="viewport"]') : false);
+
+    // Check for responsive CSS signals
+    const hasMediaQuery = rawHtml ? /@media\s*\(/.test(rawHtml) : false;
+    const hasFlexGrid   = rawHtml ? /display\s*:\s*(flex|grid)/i.test(rawHtml) : false;
+    const hasResponsiveClass = rawHtml
+      ? /col-\w+|container-fluid|row\b|flex-wrap|w-full|max-w-|sm:|md:|lg:/i.test(rawHtml)
+      : false;
+
+    if (!hasViewport) {
+      // No viewport meta = definitely not mobile-friendly
+      setDetected('mobile', 'none', 0, 'Not mobile friendly');
+      finishCheck('mobile', false, 'No viewport meta tag found (+0 pts)');
+    } else if (hasMediaQuery || hasFlexGrid || hasResponsiveClass) {
+      setDetected('mobile', 'responsive', 10, 'Fully responsive');
+      finishCheck('mobile', true, 'Responsive design detected (+10 pts)');
+    } else {
+      // Has viewport but no clear responsive signals — may be partial
+      setDetected('mobile', 'partial', 5, 'Partially responsive');
+      finishCheck('mobile', true, 'Viewport tag found, responsiveness unclear (+5 pts)');
+    }
+  } else if (uploadedFile && /\.pdf$/i.test(uploadedFile.name)) {
+    // PDFs are not mobile-friendly by nature
+    setDetected('mobile', 'none', 0, 'Not mobile friendly');
+    finishCheck('mobile', false, 'PDFs don\'t scale on mobile (+0 pts)');
+  } else {
+    skipCheck('mobile', 'Couldn\'t auto-detect — please answer manually');
+  }
+
+  // ── Done — copy detected into answers, show review screen ───────────────
+  for (const [id, val] of Object.entries(detected)) {
+    answers[id] = val;
+  }
+
+  await delay(600);
+  screen = 'review';
+  render();
+  scrollToEvaluator();
+}
+
+// Check helpers
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function showCheck(id, ms) {
+  const el = document.getElementById(`chk-${id}`);
+  const ic = document.getElementById(`chk-icon-${id}`);
+  if (el) el.classList.add('running');
+  if (ic) ic.textContent = '⏳';
+  await delay(ms);
+}
+
+function finishCheck(id, passed, resultText) {
+  const el  = document.getElementById(`chk-${id}`);
+  const ic  = document.getElementById(`chk-icon-${id}`);
+  const res = document.getElementById(`chk-res-${id}`);
+  if (!el) return;
+  el.classList.remove('running');
+  el.classList.add(passed ? 'pass' : 'fail');
+  if (ic)  ic.textContent  = passed ? '✅' : '⚠️';
+  if (res) res.textContent = resultText || '';
+}
+
+function skipCheck(id, resultText) {
+  const el  = document.getElementById(`chk-${id}`);
+  const ic  = document.getElementById(`chk-icon-${id}`);
+  const res = document.getElementById(`chk-res-${id}`);
+  if (!el) return;
+  el.classList.remove('running');
+  el.classList.add('skip');
+  if (ic)  ic.textContent  = '❓';
+  if (res) res.textContent = resultText || 'Manual';
+}
+
+function setDetected(questionId, key, pts, label) {
+  detected[questionId] = { key, pts, label, auto: true };
+}
+
+// ── Review screen ─────────────────────────────────────────────────────────
+function renderReview() {
+  const score       = Math.min(calcScore(), 100);
+  const answeredAll = QUESTIONS.every(q => answers[q.id]);
+  const autoCount   = Object.keys(detected).length;
+  const unanswered  = QUESTIONS.filter(q => !answers[q.id]).length;
+
+  const rows = QUESTIONS.map(q => {
+    const ans          = answers[q.id];
+    const earned       = ans ? ans.pts : 0;
+    const isAuto       = !!detected[q.id];
+    const needsManual  = !ans; // highlight any unanswered row
+    const state        = !ans ? 'unanswered' : earned > 0 ? 'scored' : 'unscored';
+    const ptsTxt       = !ans ? '? pts' : `${earned > 0 ? '+' : ''}${earned} / ${q.maxPts} pts`;
+    const langSuffix   = (q.id === 'donor_centricity' && detectedLangCounts)
+      ? ` · ${detectedLangCounts.you} "you" vs ${detectedLangCounts.we} "we"`
+      : '';
+    const ansLabel = ans ? ans.label + langSuffix : 'Tap Edit to answer';
+
+    const optionsHtml = q.type === 'yn'
+      ? `<div class="edit-yn-grid">
+          ${q.options.map((o, i) => {
+            const sel = ans && ans.key === o.key;
+            const cls = sel ? (o.pts > 0 ? 'sel-pos' : 'sel-neg') : '';
+            return `<button class="edit-opt-btn ${cls}" onclick="reviewSelectAnswer('${q.id}', ${i})">
+              <span class="edit-opt-icon">${o.icon}</span>
+              <span>${o.label}</span>
+              <span class="edit-opt-pts">${o.pts > 0 ? '+' + o.pts : '0'} pts</span>
+            </button>`;
+          }).join('')}
+        </div>`
+      : `<div class="edit-mc-list">
+          ${q.options.map((o, i) => {
+            const sel = ans && ans.key === o.key;
+            const cls = sel ? (o.pts > 0 ? 'sel-pos' : 'sel-neg') : '';
+            return `<button class="edit-opt-btn ${cls}" onclick="reviewSelectAnswer('${q.id}', ${i})">
+              <span class="edit-opt-icon">${o.icon}</span>
+              <div style="flex:1;text-align:left">
+                <div>${o.label}</div>
+                ${o.sub ? `<div style="font-size:11px;color:var(--gray-500);margin-top:1px">${o.sub}</div>` : ''}
+              </div>
+              <span class="edit-opt-pts">${o.pts > 0 ? '+' + o.pts : '0'} pts</span>
+            </button>`;
+          }).join('')}
+        </div>`;
+
+    return `
+      <div class="review-row ${needsManual ? 'review-row-needs-answer' : ''}" id="rrow-${q.id}">
+        <div class="review-row-summary" onclick="toggleEditPanel('${q.id}')">
+          <div class="review-row-icon ${state}">${q.icon}</div>
+          <div class="review-row-body">
+            <div class="review-row-label">
+              ${q.label}
+              ${isAuto ? '<span class="review-auto-badge">🤖 auto</span>' : ''}
+              ${needsManual ? '<span class="review-manual-badge">👆 Tap to answer</span>' : ''}
+            </div>
+            <div class="review-row-answer" id="rans-${q.id}">${ansLabel}</div>
+          </div>
+          <div class="review-row-right">
+            <span class="review-pts-badge ${state}" id="rpts-${q.id}">${ptsTxt}</span>
+            <button class="review-edit-btn" id="redit-${q.id}" onclick="event.stopPropagation();toggleEditPanel('${q.id}')">✏️ Edit</button>
+          </div>
+        </div>
+        <div class="review-edit-panel" id="repanel-${q.id}">
+          <div class="edit-panel-inner">
+            <div class="edit-panel-hint">${q.hint}</div>
+            ${optionsHtml}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="review-card">
+      <div class="review-header">
+        <h2>Initial Results</h2>
+        <p>
+          ${autoCount > 0 ? `We auto-detected <strong>${autoCount} criteria</strong> from your report.` : `Couldn't auto-detect criteria from this report.`}
+          ${unanswered > 0 ? ` We need your input on <strong>${unanswered} more question${unanswered !== 1 ? 's' : ''}</strong> to finalise your grade.` : ' All criteria detected — review and edit any row if needed.'}
+        </p>
+        <div class="review-score-pill">
+          <span>Score so far: <strong id="review-score-num">${score}</strong> / 100</span>
+          <span class="pill-pts">${unanswered > 0 ? `${unanswered} question${unanswered !== 1 ? 's' : ''} remaining` : 'All answered ✓'}</span>
+        </div>
+      </div>
+
+      <div class="review-rows">${rows}</div>
+
+      <div class="review-footer">
+        <button class="btn-back" onclick="screen='input';render();scrollToEvaluator();">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back
+        </button>
+        <button class="btn-next btn-submit" id="review-submit-btn" onclick="submitReview()">
+          ${unanswered > 0 ? `Answer ${unanswered} Question${unanswered !== 1 ? 's' : ''}` : 'Get Final Grade'}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function toggleEditPanel(qid) {
+  const panel = document.getElementById(`repanel-${qid}`);
+  const btn   = document.getElementById(`redit-${qid}`);
+  if (!panel) return;
+
+  const isOpen = panel.classList.contains('open');
+
+  // Close any currently open panel
+  if (openPanel && openPanel !== qid) {
+    const prev = document.getElementById(`repanel-${openPanel}`);
+    const prevBtn = document.getElementById(`redit-${openPanel}`);
+    if (prev) prev.classList.remove('open');
+    if (prevBtn) { prevBtn.classList.remove('open'); prevBtn.textContent = '✏️ Edit'; }
+  }
+
+  panel.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.textContent = isOpen ? '✏️ Edit' : '✕ Close';
+  openPanel = isOpen ? null : qid;
+}
+
+function reviewSelectAnswer(qid, optionIdx) {
+  const q   = QUESTIONS.find(q => q.id === qid);
+  const opt = q.options[optionIdx];
+  answers[qid] = { key: opt.key, pts: opt.pts, label: opt.label };
+
+  // If user edits, remove auto tag
+  delete detected[qid];
+
+  // Update option buttons in panel
+  const panel = document.getElementById(`repanel-${qid}`);
+  if (panel) {
+    panel.querySelectorAll('.edit-opt-btn').forEach((btn, i) => {
+      btn.classList.remove('sel-pos', 'sel-neg');
+      if (i === optionIdx) btn.classList.add(q.options[i].pts > 0 ? 'sel-pos' : 'sel-neg');
+    });
+  }
+
+  // Update row summary
+  const earned = opt.pts;
+  const state  = earned > 0 ? 'scored' : 'unscored';
+
+  const iconEl = document.querySelector(`#rrow-${qid} .review-row-icon`);
+  if (iconEl) { iconEl.className = `review-row-icon ${state}`; }
+
+  const ansEl = document.getElementById(`rans-${qid}`);
+  if (ansEl) ansEl.textContent = opt.label;
+
+  const ptsEl = document.getElementById(`rpts-${qid}`);
+  if (ptsEl) {
+    ptsEl.textContent = `${earned > 0 ? '+' : ''}${earned} / ${q.maxPts} pts`;
+    ptsEl.className   = `review-pts-badge ${state}`;
+  }
+
+  // Remove auto badge from label if present
+  const autoTag = document.querySelector(`#rrow-${qid} .review-auto-badge`);
+  if (autoTag) autoTag.remove();
+
+  // Update running score pill
+  const scoreNum = document.getElementById('review-score-num');
+  if (scoreNum) scoreNum.textContent = Math.min(calcScore(), 100);
+
+  // Update unanswered count in header pill
+  const unanswered = QUESTIONS.filter(q => !answers[q.id]).length;
+  const pill = document.querySelector('.review-score-pill .pill-pts');
+  if (pill) pill.textContent = unanswered > 0 ? `${unanswered} not yet answered` : 'All answered ✓';
+
+  // Auto-close panel after selection
+  setTimeout(() => toggleEditPanel(qid), 320);
+}
+
+function submitReview() {
+  // If there are unanswered questions, step through them before calculating
+  const unanswered = QUESTIONS.filter(q => !answers[q.id]);
+  if (unanswered.length > 0) {
+    // Set current to the first unanswered question
+    current = QUESTIONS.indexOf(unanswered[0]);
+    screen = 'question';
+  } else {
+    screen = 'calculating';
+  }
+  render();
+  scrollToEvaluator();
+}
+
+// ── Question screen ────────────────────────────────────────────────────────
+function renderQuestion() {
+  const q      = QUESTIONS[current];
+  const sel    = answers[q.id];
+  const isAuto = !!detected[q.id];
+  const runningScore = Math.min(calcScore(), 100);
+
+  // Only show dots/progress for unanswered questions
+  const unanswered  = getUnansweredQuestions();
+  const unansweredIdx = unanswered.indexOf(q);
+  const totalSteps    = unanswered.length;
+  const isLast        = unansweredIdx === totalSteps - 1 || unanswered.slice(unansweredIdx + 1).length === 0;
+  const pct           = totalSteps > 1 ? Math.round((unansweredIdx / (totalSteps - 1)) * 100) : 100;
+
+  const dots = unanswered.map((uq, i) => {
+    const cls = i < unansweredIdx ? 'done' : i === unansweredIdx ? 'active' : '';
+    return `<div class="step-dot ${cls}"></div>`;
+  }).join('');
+
+  // Auto-detected banner
+  const autoBanner = isAuto ? `
+    <div class="auto-detected-banner" id="auto-banner">
+      <span class="adb-icon">🤖</span>
+      <div class="adb-body">
+        <div class="adb-title">Auto-detected from your report</div>
+        <div class="adb-sub">We found this automatically. Review it below and change if needed.</div>
+      </div>
+      <button class="adb-edit" onclick="unlockQuestion()">Edit</button>
+    </div>
+  ` : '';
+
+  const optionsClass = isAuto ? 'options-locked' : 'options-unlocked';
+
+  const optionsHtml = q.type === 'yn'
+    ? `<div class="yn-grid ${optionsClass}" id="options-wrap">
+        ${q.options.map((o, i) => {
+          let cls = '';
+          if (sel) cls = sel.key === o.key ? (o.pts > 0 ? 'sel-pos' : 'sel-neg') : '';
+          return `<button class="yn-btn ${cls}" onclick="selectAnswer('${q.id}', ${i})">
+            <span class="yn-icon">${o.icon}</span>
+            <span class="yn-label">${o.label}</span>
+            <span class="yn-pts">${o.pts > 0 ? '+' + o.pts + ' pts' : '0 pts'}</span>
+          </button>`;
+        }).join('')}
+      </div>`
+    : `<div class="mc-list ${optionsClass}" id="options-wrap">
+        ${q.options.map((o, i) => {
+          let cls = '';
+          if (sel) cls = sel.key === o.key ? (o.pts > 0 ? 'sel-pos' : 'sel-neg') : '';
+          return `<button class="mc-btn ${cls}" onclick="selectAnswer('${q.id}', ${i})">
+            <div class="mc-radio"></div>
+            <span class="mc-icon">${o.icon}</span>
+            <div class="mc-text">
+              <div class="mc-label">${o.label}</div>
+              ${o.sub ? `<div class="mc-sub">${o.sub}</div>` : ''}
+            </div>
+            <span class="mc-pts">${o.pts > 0 ? '+' + o.pts + ' pts' : '0 pts'}</span>
+          </button>`;
+        }).join('')}
+      </div>`;
+
+  return `
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label">Question ${unansweredIdx + 1} of ${totalSteps} to answer</span>
+        <span class="progress-count">${pct}% complete</span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+      <div class="progress-steps">${dots}</div>
+      ${current > 0 ? `<div class="potential-score ${runningScore > 0 ? 'boosted' : ''}" id="running-score">
+        Running score: <strong>${runningScore} / ${maxAnswered()} pts answered</strong>
+      </div>` : ''}
+    </div>
+
+    <div class="card">
+      <div class="question-category">${q.icon} ${q.label} &nbsp;·&nbsp; up to ${q.maxPts} pts</div>
+      ${autoBanner}
+      <div class="question-text">${q.question}</div>
+      <div class="question-hint">${q.hint}</div>
+      ${optionsHtml}
+      <div class="card-footer">
+        <button class="btn-back" onclick="goBack()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back
+        </button>
+        <button class="btn-next ${isLast ? 'btn-submit' : ''}" id="next-btn"
+                onclick="${isLast ? 'submitQuiz()' : 'goNext()'}"
+                ${!sel ? 'disabled' : ''}>
+          ${isLast ? 'Calculate My Score' : 'Next'}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="${isLast ? 'M9 11l3 3L22 4' : 'M5 12h14M12 5l7 7-7 7'}"/>
+            ${isLast ? '<path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>' : ''}
+          </svg>
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function unlockQuestion() {
+  const wrap   = document.getElementById('options-wrap');
+  const banner = document.getElementById('auto-banner');
+  if (wrap)   { wrap.classList.remove('options-locked'); wrap.classList.add('options-unlocked'); }
+  if (banner) banner.remove();
+}
+
+// ── Calculating screen ─────────────────────────────────────────────────────
+function renderCalculating() {
+  return `
+    <div class="calc-card">
+      <div class="calc-spinner-wrap">
+        <div class="calc-spinner"></div>
+        <div class="calc-spinner-icon">📊</div>
+      </div>
+      <div class="calc-title">Calculating your score…</div>
+      <div class="calc-sub">Benchmarking your report against best-in-class standards.</div>
+      <div class="calc-steps" id="calc-steps">
+        ${QUESTIONS.map((q) => {
+          const pts = earnedPts(q.id);
+          const isAuto = !!detected[q.id];
+          return `
+            <div class="calc-step ${pts === 0 ? 'zero-pts' : ''}" id="cs-${q.id}">
+              <span class="calc-step-icon">${q.icon}</span>
+              <span>${q.label}${isAuto ? ' <span style="font-size:10px;color:var(--blue-light);font-weight:700;">AUTO</span>' : ''}</span>
+              <span class="calc-step-pts" id="csp-${q.id}">${pts > 0 ? '+' + pts : '0'} / ${q.maxPts} pts</span>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function runCalcAnimation() {
+  const stepDelay = 260;
+  QUESTIONS.forEach((q, i) => {
+    setTimeout(() => {
+      const el = document.getElementById(`cs-${q.id}`);
+      if (el) el.classList.add('active');
+    }, i * stepDelay);
+    setTimeout(() => {
+      const el  = document.getElementById(`cs-${q.id}`);
+      const pts = document.getElementById(`csp-${q.id}`);
+      if (el)  { el.classList.remove('active'); el.classList.add('done'); }
+      if (pts)   pts.style.opacity = '1';
+    }, i * stepDelay + stepDelay - 40);
+  });
+
+  const totalTime = QUESTIONS.length * stepDelay + 400;
+  setTimeout(() => { screen = 'results'; render(); scrollToEvaluator(); }, totalTime);
+}
+
+// ── Results screen ─────────────────────────────────────────────────────────
+function renderLangBar({ you, we }) {
+  const total   = you + we || 1;
+  const youPct  = Math.round((you / total) * 100);
+  const wePct   = 100 - youPct;
+  const targetMet = youPct >= 55; // donor-centric if majority is "you" words
+
+  return `
+    <div style="margin: 10px 0 6px; background: var(--off-white); border: 1px solid var(--gray-100); border-radius: 10px; padding: 12px 14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <span style="font-size:12px; font-weight:700; color:var(--navy);">You vs. We word count</span>
+        <span style="font-size:11px; font-weight:600; color:var(--gray-500);">${you + we} pronouns scanned</span>
+      </div>
+      <div style="display:flex; height:10px; border-radius:10px; overflow:hidden; gap:2px;">
+        <div style="width:${youPct}%; background:${targetMet ? 'var(--success)' : 'var(--blue-light)'}; border-radius:10px 0 0 10px; transition:width 1s ease; min-width:4px;"></div>
+        <div style="flex:1; background:${targetMet ? 'var(--gray-300)' : 'var(--danger)'}; border-radius:0 10px 10px 0;"></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-top:6px;">
+        <span style="font-size:12px; font-weight:700; color:${targetMet ? '#166534' : 'var(--blue-light)'};">
+          "You/Your" — ${you} words (${youPct}%)
+        </span>
+        <span style="font-size:12px; font-weight:700; color:${targetMet ? 'var(--gray-500)' : '#991b1b'};">
+          "We/Our" — ${we} words (${wePct}%)
+        </span>
+      </div>
+      <div style="font-size:11px; color:var(--gray-500); margin-top:5px;">
+        ${targetMet
+          ? '✅ Majority donor-focused language. Keep it up.'
+          : `⚡ Aim for at least 55% "you" language. Currently at ${youPct}%.`}
+      </div>
+    </div>
+  `;
+}
+
+function renderResults() {
+  const score      = calcScore();
+  const displayScore = Math.min(score, 100);
+  const tier       = getTier(score);
+  const pct        = Math.min((score / MAX_SCORE) * 100, 100);
+  const passCount  = Object.values(answers).filter(a => a && a.pts > 0).length;
+  const failCount  = QUESTIONS.length - passCount;
+  const autoCount  = Object.keys(detected).length;
+
+  const breakdown = QUESTIONS.map(q => {
+    const ans    = answers[q.id];
+    const earned = ans ? ans.pts : 0;
+    const passed = earned > 0;
+    const wasAuto = !!detected[q.id];
+    return `
+      <div class="criterion-row">
+        <div class="criterion-icon ${passed ? 'pass' : 'fail'}">${q.icon}</div>
+        <div class="criterion-body">
+          <div class="criterion-top">
+            <div>
+              <span class="criterion-label">${q.label}</span>
+              ${wasAuto ? '<span class="auto-badge">🤖 auto</span>' : ''}
+              ${ans ? `<div class="criterion-chosen">"${ans.label}"</div>` : ''}
+            </div>
+            <span class="criterion-badge ${passed ? 'pass' : 'fail'}">
+              ${passed ? '+' + earned + ' pts' : '0 / ' + q.maxPts + ' pts'}
+            </span>
+          </div>
+          <div class="criterion-insight">${passed ? q.passInsight : q.failInsight}</div>
+          ${q.id === 'donor_centricity' && detectedLangCounts ? renderLangBar(detectedLangCounts) : ''}
+          <div class="insight-callout ${passed ? 'good' : 'bad'}">
+            <span class="ic-icon">${passed ? '✅' : '⚡'}</span>
+            <span>${passed ? q.passStat.replace('✅ ', '') : q.failStat.replace('⚡ ', '')}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const strategyItems = QUESTIONS
+    .filter(q => q.strategy && answers[q.id] && answers[q.id].pts === 0)
+    .map((q, idx) => `
+      <div class="strategy-card" style="animation-delay:${idx * 80}ms">
+        <div class="strategy-card-icon">${q.icon}</div>
+        <div class="strategy-card-body">
+          <div class="strategy-card-label">${q.label}</div>
+          <div class="strategy-card-text">${q.strategy}</div>
+        </div>
+      </div>
+    `).join('');
+
+  const strategySection = strategyItems ? `
+    <div class="section-title" style="margin-top:32px;">Strategy Breakdown</div>
+    <div class="strategy-list">${strategyItems}</div>
+  ` : '';
+
+  return `
+    <div class="results-card">
+      <div class="results-header ${tier.headerClass}">
+        <div class="results-eyebrow">Your Impact Report Score</div>
+        <div class="tier-badge ${tier.badgeClass}"><span class="tier-icon">${tier.icon}</span>${tier.label}</div>
+        <div class="score-display">
+          <span class="score-number" id="score-num">0</span><span class="score-number score-max"> / 100</span>
+        </div>
+        <div class="results-headline">${tier.headline}</div>
+        <div class="results-subhead">${tier.subhead}</div>
+        <div class="score-bar-outer">
+          <div class="score-bar-track">
+            <div class="score-bar-fill ${tier.badgeClass}" id="score-bar" style="width:0%"></div>
+          </div>
+          <div class="score-bar-zones">
+            <div class="zone zone-static">Static / Traditional (0–59)</div>
+            <div class="zone zone-engaging">Engaging (60–85)</div>
+            <div class="zone zone-pro">Pro</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-body">
+        <div class="cta-box">
+          <h3>${tier.ctaHeadline}</h3>
+          <p>${tier.ctaBody}</p>
+          <div class="cta-btns">
+            <a href="https://meetings.hubspot.com/harkov/reportstrategycall" target="_blank" rel="noopener" class="btn-primary-cta">Book a Free Strategy Call</a>
+            <button class="btn-secondary-cta" onclick="shareScore(${displayScore}, '${tier.label}')">Share My Score</button>
+          </div>
+        </div>
+
+        <div class="summary-bar" style="margin-top:24px;">
+          <div class="summary-stat"><strong>${displayScore}</strong><span>Out of 100</span></div>
+          <div class="summary-stat"><strong style="color:var(--success)">${passCount}</strong><span>Criteria passed</span></div>
+          <div class="summary-stat"><strong style="color:var(--blue-light)">${autoCount}</strong><span>Auto-detected</span></div>
+        </div>
+
+        <div class="section-title" style="margin-top:24px;">Criterion-by-criterion breakdown</div>
+        ${breakdown}
+        ${strategySection}
+
+        <button class="restart-btn" onclick="restartQuiz()">← Grade a different report</button>
+      </div>
+    </div>
+  `;
+}
+
+function animateResults() {
+  const score        = calcScore();
+  const displayScore = Math.min(score, 100);
+  const pct          = Math.min((score / MAX_SCORE) * 100, 100);
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      const bar  = document.getElementById('score-bar');
+      if (bar) bar.style.width = pct + '%';
+      const numEl    = document.getElementById('score-num');
+      const duration = 1300;
+      const start    = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased    = 1 - Math.pow(1 - progress, 3);
+        if (numEl) numEl.textContent = Math.round(eased * displayScore);
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }, 80);
+  });
+}
+
+// ── Navigation ─────────────────────────────────────────────────────────────
+function selectAnswer(qid, optionIdx) {
+  const q   = QUESTIONS.find(q => q.id === qid);
+  const opt = q.options[optionIdx];
+  answers[qid] = { key: opt.key, pts: opt.pts, label: opt.label };
+
+  // Remove auto lock since user explicitly chose
+  delete detected[qid];
+
+  if (q.type === 'yn') {
+    document.querySelectorAll('.yn-btn').forEach((btn, i) => {
+      btn.classList.remove('sel-pos', 'sel-neg');
+      if (i === optionIdx) btn.classList.add(q.options[i].pts > 0 ? 'sel-pos' : 'sel-neg');
+    });
+  } else {
+    document.querySelectorAll('.mc-btn').forEach((btn, i) => {
+      btn.classList.remove('sel-pos', 'sel-neg');
+      if (i === optionIdx) btn.classList.add(q.options[i].pts > 0 ? 'sel-pos' : 'sel-neg');
+    });
+  }
+
+  const ticker = document.getElementById('running-score');
+  if (ticker) {
+    const rs = Math.min(calcScore(), 100);
+    ticker.innerHTML = `Running score: <strong>${rs} / 100 pts</strong>`;
+    ticker.classList.toggle('boosted', opt.pts > 0);
+  }
+
+  const nextBtn = document.getElementById('next-btn');
+  if (nextBtn) nextBtn.disabled = false;
+}
+
+function getUnansweredQuestions() {
+  return QUESTIONS.filter(q => !answers[q.id]);
+}
+
+function goNext() {
+  if (!answers[QUESTIONS[current].id]) return;
+  // Find next unanswered question after current index
+  const nextUnanswered = QUESTIONS.slice(current + 1).find(q => !answers[q.id]);
+  if (nextUnanswered) {
+    current = QUESTIONS.indexOf(nextUnanswered);
+    render();
+    scrollToEvaluator();
+  } else {
+    screen = 'calculating';
+    render();
+    scrollToEvaluator();
+  }
+}
+
+function goBack() {
+  // Find previous unanswered question before current index
+  const prevUnanswered = QUESTIONS.slice(0, current).reverse().find(q => !answers[q.id]);
+  if (prevUnanswered) {
+    current = QUESTIONS.indexOf(prevUnanswered);
+    render();
+    scrollToEvaluator();
+  } else {
+    screen = 'review';
+    render();
+    scrollToEvaluator();
+  }
+}
+
+function submitQuiz() {
+  if (!answers[QUESTIONS[current].id]) return;
+  screen = 'calculating';
+  render();
+  scrollToEvaluator();
+}
+
+function restartQuiz() {
+  screen = 'input'; current = 0; answers = {}; detected = {};
+  uploadedFile = null; reportSource = null; openPanel = null; detectedLangCounts = null;
+  render(); scrollToEvaluator();
+}
+
+function scrollToEvaluator() {
+  const el = document.getElementById('evaluator');
+  if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+}
+
+function shareScore(score, tier) {
+  const text = `I just graded my nonprofit's impact report with Storyraise: ${score}/100 — "${tier}" tier. How does yours score? storyraise.com`;
+  if (navigator.share) {
+    navigator.share({ title: 'My Impact Report Score', text });
+  } else {
+    navigator.clipboard.writeText(text)
+      .then(() => alert('Score copied to clipboard!'))
+      .catch(() => alert(text));
+  }
+}
+
+render();
+renderJourneyBar();
+</script>
+
+<!-- Journey progress bar -->
+<div class="journey-bar" id="journey-bar" style="display:none">
+  <div class="journey-inner">
+    <div class="journey-step" id="jstep-upload">
+      <div class="journey-dot">1</div>
+      <div class="journey-label">Upload Report</div>
+    </div>
+    <div class="journey-step" id="jstep-review">
+      <div class="journey-dot">2</div>
+      <div class="journey-label">Initial Results</div>
+    </div>
+    <div class="journey-step" id="jstep-grade">
+      <div class="journey-dot">3</div>
+      <div class="journey-label">Final Grade</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function renderJourneyBar() {
+  const bar = document.getElementById('journey-bar');
+  if (!bar) return;
+
+  // Hide on the very first input screen
+  if (screen === 'input') { bar.style.display = 'none'; return; }
+  bar.style.display = 'block';
+
+  const steps = ['upload','review','grade'];
+  const stepEl = s => document.getElementById(`jstep-${s}`);
+
+  // Determine which stage we're in
+  // upload = analyzing
+  // review = review or question
+  // grade  = calculating or results
+  let active;
+  if (screen === 'analyzing')            active = 'upload';
+  else if (screen === 'review' || screen === 'question') active = 'review';
+  else                                    active = 'grade';
+
+  const order = ['upload','review','grade'];
+  const activeIdx = order.indexOf(active);
+
+  order.forEach((s, i) => {
+    const el = stepEl(s);
+    if (!el) return;
+    el.classList.remove('active','done');
+    if (i < activeIdx)       el.classList.add('done');
+    else if (i === activeIdx) el.classList.add('active');
+    // Mark done dot with checkmark
+    const dot = el.querySelector('.journey-dot');
+    if (dot) dot.textContent = i < activeIdx ? '✓' : i + 1;
+  });
+}
+</script>
+</body>
+</html>
