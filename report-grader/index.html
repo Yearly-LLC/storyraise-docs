@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impact Report Grader — Storyraise</title>
+  <title>Impact Report Evaluator — Storyraise</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -710,7 +710,7 @@
       </div>
       <span class="logo-text">Story<span>raise</span></span>
     </a>
-    <span class="nav-badge">Impact Report Grader</span>
+    <span class="nav-badge">Impact Report Evaluator</span>
   </div>
 </nav>
 
@@ -723,7 +723,7 @@
     </div>
     <h1>Audit your annual report<br>in <em>60 seconds.</em></h1>
     <p>Paste a link or upload your PDF. We'll auto-analyze what we can and walk you through the rest.</p>
-    <button class="hero-cta" onclick="document.getElementById('grader').scrollIntoView({behavior:'smooth'})">
+    <button class="hero-cta" onclick="document.getElementById('evaluator').scrollIntoView({behavior:'smooth'})">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>
       Grade My Report
     </button>
@@ -737,7 +737,7 @@
   </div>
 </header>
 
-<section class="quiz-section" id="grader">
+<section class="quiz-section" id="evaluator">
   <div id="quiz-root"></div>
 </section>
 
@@ -1104,7 +1104,7 @@ function submitInput() {
   current  = 0;
   screen   = 'analyzing';
   render();
-  scrollToGrader();
+  scrollToEvaluator();
 }
 
 // ── Analyzing screen ───────────────────────────────────────────────────────
@@ -2042,7 +2042,7 @@ async function runAnalysis() {
   await delay(600);
   screen = 'review';
   render();
-  scrollToGrader();
+  scrollToEvaluator();
 }
 
 // Check helpers
@@ -2172,7 +2172,7 @@ function renderReview() {
       <div class="review-rows">${rows}</div>
 
       <div class="review-footer">
-        <button class="btn-back" onclick="screen='input';render();scrollToGrader();">
+        <button class="btn-back" onclick="screen='input';render();scrollToEvaluator();">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
           Back
         </button>
@@ -2269,7 +2269,7 @@ function submitReview() {
     screen = 'calculating';
   }
   render();
-  scrollToGrader();
+  scrollToEvaluator();
 }
 
 // ── Question screen ────────────────────────────────────────────────────────
@@ -2421,7 +2421,7 @@ function runCalcAnimation() {
   });
 
   const totalTime = QUESTIONS.length * stepDelay + 400;
-  setTimeout(() => { screen = 'results'; render(); scrollToGrader(); }, totalTime);
+  setTimeout(() => { screen = 'results'; render(); scrollToEvaluator(); }, totalTime);
 }
 
 // ── Results screen ─────────────────────────────────────────────────────────
@@ -2627,11 +2627,11 @@ function goNext() {
   if (nextUnanswered) {
     current = QUESTIONS.indexOf(nextUnanswered);
     render();
-    scrollToGrader();
+    scrollToEvaluator();
   } else {
     screen = 'calculating';
     render();
-    scrollToGrader();
+    scrollToEvaluator();
   }
 }
 
@@ -2641,11 +2641,11 @@ function goBack() {
   if (prevUnanswered) {
     current = QUESTIONS.indexOf(prevUnanswered);
     render();
-    scrollToGrader();
+    scrollToEvaluator();
   } else {
     screen = 'review';
     render();
-    scrollToGrader();
+    scrollToEvaluator();
   }
 }
 
@@ -2653,17 +2653,17 @@ function submitQuiz() {
   if (!answers[QUESTIONS[current].id]) return;
   screen = 'calculating';
   render();
-  scrollToGrader();
+  scrollToEvaluator();
 }
 
 function restartQuiz() {
   screen = 'input'; current = 0; answers = {}; detected = {};
   uploadedFile = null; reportSource = null; openPanel = null; detectedLangCounts = null;
-  render(); scrollToGrader();
+  render(); scrollToEvaluator();
 }
 
-function scrollToGrader() {
-  const el = document.getElementById('grader');
+function scrollToEvaluator() {
+  const el = document.getElementById('evaluator');
   if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
 }
 
