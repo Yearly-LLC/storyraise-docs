@@ -3,60 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Storyraise</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>Storyraise Knowledge Base</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #000;
+      background: #0a0a0a;
       color: #fff;
       min-height: 100vh;
     }
 
     header {
-      padding: 32px 48px;
+      padding: 28px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 1px solid #1a1a1a;
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: #803BB1;
       letter-spacing: -0.5px;
+      text-decoration: none;
     }
-
     .logo span { color: #DDFF1E; }
 
-    hero {
-      display: block;
+    .header-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #555;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero {
       max-width: 860px;
-      margin: 80px auto;
+      margin: 72px auto 64px;
       padding: 0 48px;
       text-align: center;
     }
 
     .tag {
       display: inline-block;
-      background: #803BB1;
-      color: #fff;
-      font-size: 0.75rem;
+      background: rgba(128, 59, 177, 0.2);
+      border: 1px solid rgba(128, 59, 177, 0.4);
+      color: #b97fe0;
+      font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
       padding: 6px 16px;
       border-radius: 100px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
       font-weight: 600;
-      line-height: 1.15;
-      margin-bottom: 24px;
+      line-height: 1.2;
+      margin-bottom: 20px;
     }
 
     h1 em {
@@ -64,108 +73,222 @@
       color: #DDFF1E;
     }
 
-    p.lead {
-      font-size: 1.15rem;
-      color: #ccc;
-      line-height: 1.75;
-      max-width: 620px;
-      margin: 0 auto 48px;
+    .lead {
+      font-size: 1.05rem;
+      color: #999;
+      line-height: 1.8;
+      max-width: 580px;
+      margin: 0 auto 40px;
     }
 
-    .cta {
-      display: inline-block;
-      background: #F12E5B;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 14px 36px;
+    .search-bar {
+      display: flex;
+      align-items: center;
+      max-width: 520px;
+      margin: 0 auto;
+      background: #111;
+      border: 1px solid #2a2a2a;
       border-radius: 100px;
-      text-decoration: none;
-      transition: opacity 0.2s;
+      padding: 12px 20px;
+      gap: 10px;
+      color: #555;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+      cursor: default;
     }
 
-    .cta:hover { opacity: 0.85; }
+    .search-bar .search-icon { font-size: 1rem; }
+    .search-bar span { color: #444; }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      max-width: 960px;
-      margin: 80px auto;
+    .section {
+      max-width: 1000px;
+      margin: 0 auto 80px;
       padding: 0 48px;
     }
 
-    .feature {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 16px;
-      padding: 32px 28px;
-    }
-
-    .feature .icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .feature h3 {
-      font-size: 1.1rem;
+    .section-title {
+      font-size: 0.72rem;
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 24px;
     }
 
-    .feature p {
-      font-size: 0.9rem;
-      color: #888;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #1e1e1e;
+      border-radius: 14px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, background 0.2s;
+      cursor: default;
+      text-decoration: none;
+      display: block;
+    }
+
+    .card:hover {
+      border-color: #803BB1;
+      background: #140d1a;
+    }
+
+    .card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.82rem;
+      color: #666;
       line-height: 1.65;
+    }
+
+    .card .coming-soon {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #444;
+      background: #1a1a1a;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      max-width: 1000px;
+      margin: 0 auto 64px;
     }
 
     footer {
       text-align: center;
-      padding: 48px;
-      color: #444;
-      font-size: 0.85rem;
+      padding: 40px 48px;
+      color: #333;
+      font-size: 0.82rem;
       border-top: 1px solid #111;
     }
 
     footer a { color: #803BB1; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">story<span>raise</span></div>
+    <a href="/" class="logo">story<span>raise</span></a>
+    <div class="header-label">Knowledge Base</div>
   </header>
 
-  <hero>
-    <div class="tag">What We Do</div>
-    <h1>We help organizations <em>tell stories</em> that move people to act.</h1>
+  <div class="hero">
+    <div class="tag">Help &amp; Documentation</div>
+    <h1>Welcome to the<br><em>Storyraise</em> Knowledge Base</h1>
     <p class="lead">
-      Storyraise is a creative studio built for nonprofits, foundations, and mission-driven teams. We turn your data, impact, and ideas into beautifully designed reports, presentations, and digital experiences — so your work gets the attention it deserves.
+      Everything you need to get the most out of Storyraise — guides, tutorials, integrations, and answers to common questions. More content coming soon.
     </p>
-    <a href="https://storyraise.com" class="cta">Visit Storyraise.com</a>
-  </hero>
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <span>Search the knowledge base&hellip;</span>
+    </div>
+  </div>
 
-  <div class="features">
-    <div class="feature">
-      <div class="icon">📊</div>
-      <h3>Annual Reports</h3>
-      <p>Transform your year-end data into compelling visual narratives that donors and stakeholders actually read.</p>
+  <div class="section">
+    <div class="section-title">Products</div>
+    <div class="cards">
+      <a class="card" href="#">
+        <div class="icon">📊</div>
+        <h3>Reports</h3>
+        <p>Create drag-and-drop digital impact reports that engage donors and stakeholders.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">🎬</div>
+        <h3>Video</h3>
+        <p>Produce personalized video at scale, tailored to each constituent.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">📋</div>
+        <h3>Collect</h3>
+        <p>AI-powered conversational forms to gather stories and data from your community.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">📈</div>
+        <h3>Insights</h3>
+        <p>Analytics and AI-driven reporting to understand your audience and impact.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">🎨</div>
+        <h3>Brandkit</h3>
+        <p>Centralize your fonts, colors, logos, and templates across every piece of content.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">📣</div>
+        <h3>Email &amp; Text</h3>
+        <p>Personalized outreach campaigns powered by your content and constituent data.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">🗂️</div>
+        <h3>Planner</h3>
+        <p>The connective hub tying all Storyraise products into end-to-end campaigns.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">👥</div>
+        <h3>Constituents</h3>
+        <p>Donor and constituent profiles that power personalization across every product.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
     </div>
-    <div class="feature">
-      <div class="icon">🎨</div>
-      <h3>Brand & Design</h3>
-      <p>From logos to full brand systems — we build identities that communicate your mission at a glance.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">📄</div>
-      <h3>Presentations</h3>
-      <p>Pitch decks, board presentations, and conference slides designed to make your case clearly and confidently.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">🌐</div>
-      <h3>Digital Experiences</h3>
-      <p>Interactive reports and web pages that bring your impact to life beyond the printed page.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section">
+    <div class="section-title">Resources</div>
+    <div class="cards">
+      <a class="card" href="#">
+        <div class="icon">🚀</div>
+        <h3>Getting Started</h3>
+        <p>New to Storyraise? Start here for account setup, onboarding, and your first report.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">🔌</div>
+        <h3>Integrations</h3>
+        <p>Connect Storyraise to Blackbaud, your CRM, SSO, and other tools.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">💡</div>
+        <h3>Best Practices</h3>
+        <p>Tips and templates from the Storyraise team and top-performing customers.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
+      <a class="card" href="#">
+        <div class="icon">❓</div>
+        <h3>FAQ</h3>
+        <p>Quick answers to the most common questions about your account and subscription.</p>
+        <span class="coming-soon">Coming soon</span>
+      </a>
     </div>
   </div>
 
