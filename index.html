@@ -4,44 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Storyraise Knowledge Base</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0a0a0a;
-      color: #fff;
+      background: #fff;
+      color: #1a1a1a;
       min-height: 100vh;
     }
 
-    header {
-      padding: 28px 48px;
+    /* ── NAV ── */
+    nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #1a1a1a;
+      padding: 20px 48px;
+      border-bottom: 1px solid #f0f0f0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
     }
 
     .logo {
       font-size: 1.4rem;
-      font-weight: 600;
+      font-weight: 700;
       color: #803BB1;
       letter-spacing: -0.5px;
       text-decoration: none;
     }
     .logo span { color: #DDFF1E; }
 
-    .header-label {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #555;
+    .nav-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      color: #803BB1;
+      background: rgba(128, 59, 177, 0.08);
+      border: 1px solid rgba(128, 59, 177, 0.2);
+      padding: 4px 12px;
+      border-radius: 100px;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-link:hover { color: #803BB1; }
+
+    .nav-cta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      background: #803BB1;
+      padding: 9px 22px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── HERO ── */
     .hero {
-      max-width: 860px;
+      max-width: 800px;
       margin: 72px auto 64px;
       padding: 0 48px;
       text-align: center;
@@ -49,9 +86,9 @@
 
     .tag {
       display: inline-block;
-      background: rgba(128, 59, 177, 0.2);
-      border: 1px solid rgba(128, 59, 177, 0.4);
-      color: #b97fe0;
+      background: rgba(128, 59, 177, 0.08);
+      border: 1px solid rgba(128, 59, 177, 0.2);
+      color: #803BB1;
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 2px;
@@ -62,59 +99,89 @@
     }
 
     h1 {
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
-      font-weight: 600;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
       line-height: 1.2;
-      margin-bottom: 20px;
+      color: #1a1a1a;
+      margin-bottom: 18px;
     }
 
     h1 em {
       font-style: normal;
-      color: #DDFF1E;
+      color: #803BB1;
     }
 
     .lead {
       font-size: 1.05rem;
-      color: #999;
+      color: #666;
       line-height: 1.8;
-      max-width: 580px;
+      max-width: 560px;
       margin: 0 auto 40px;
     }
 
-    .search-bar {
-      display: flex;
-      align-items: center;
-      max-width: 520px;
+    /* Search */
+    .search-wrap {
+      max-width: 500px;
       margin: 0 auto;
-      background: #111;
-      border: 1px solid #2a2a2a;
-      border-radius: 100px;
-      padding: 12px 20px;
-      gap: 10px;
-      color: #555;
-      font-size: 0.95rem;
-      font-family: 'Poppins', sans-serif;
-      cursor: default;
+      position: relative;
     }
 
-    .search-bar .search-icon { font-size: 1rem; }
-    .search-bar span { color: #444; }
+    .search-wrap input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 100px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.92rem;
+      color: #333;
+      background: #fafafa;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
 
+    .search-wrap input:focus {
+      border-color: #803BB1;
+      box-shadow: 0 0 0 4px rgba(128, 59, 177, 0.1);
+      background: #fff;
+    }
+
+    .search-wrap input::placeholder { color: #aaa; }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      pointer-events: none;
+    }
+
+    /* ── SECTIONS ── */
     .section {
-      max-width: 1000px;
-      margin: 0 auto 80px;
+      max-width: 1040px;
+      margin: 0 auto 72px;
       padding: 0 48px;
     }
 
-    .section-title {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #555;
-      margin-bottom: 24px;
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 28px;
     }
 
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    /* ── CARDS ── */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -122,178 +189,259 @@
     }
 
     .card {
-      background: #111;
-      border: 1px solid #1e1e1e;
-      border-radius: 14px;
+      background: #fff;
+      border: 1.5px solid #ececec;
+      border-radius: 16px;
       padding: 28px 24px;
-      transition: border-color 0.2s, background 0.2s;
-      cursor: default;
       text-decoration: none;
       display: block;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
     }
 
     .card:hover {
       border-color: #803BB1;
-      background: #140d1a;
+      box-shadow: 0 6px 24px rgba(128, 59, 177, 0.1);
+      transform: translateY(-2px);
     }
 
     .card .icon {
       font-size: 1.8rem;
       margin-bottom: 14px;
+      display: block;
     }
 
     .card h3 {
       font-size: 0.95rem;
       font-weight: 600;
-      color: #fff;
+      color: #1a1a1a;
       margin-bottom: 8px;
     }
 
     .card p {
       font-size: 0.82rem;
-      color: #666;
+      color: #777;
       line-height: 1.65;
     }
 
-    .card .coming-soon {
+    .badge {
       display: inline-block;
-      margin-top: 12px;
-      font-size: 0.68rem;
+      margin-top: 14px;
+      font-size: 0.66rem;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #444;
-      background: #1a1a1a;
+      color: #aaa;
+      background: #f5f5f5;
       padding: 3px 10px;
       border-radius: 100px;
     }
 
-    .divider {
+    /* ── DIVIDER ── */
+    hr {
       border: none;
-      border-top: 1px solid #1a1a1a;
-      max-width: 1000px;
+      border-top: 1px solid #f0f0f0;
+      max-width: 1040px;
       margin: 0 auto 64px;
     }
 
+    /* ── BANNER ── */
+    .banner {
+      background: #803BB1;
+      border-radius: 20px;
+      max-width: 1040px;
+      margin: 0 auto 80px;
+      padding: 48px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .banner-text h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .banner-text p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+    }
+
+    .banner a {
+      flex-shrink: 0;
+      background: #DDFF1E;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 13px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .banner a:hover { opacity: 0.9; }
+
+    /* ── FOOTER ── */
     footer {
+      background: #1a1a1a;
+      color: #888;
       text-align: center;
-      padding: 40px 48px;
-      color: #333;
+      padding: 36px 48px;
       font-size: 0.82rem;
-      border-top: 1px solid #111;
     }
 
     footer a { color: #803BB1; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 24px; }
+      .hero { padding: 0 24px; margin: 48px auto 48px; }
+      .section { padding: 0 24px; }
+      .banner { padding: 32px 28px; flex-direction: column; text-align: center; }
+      .nav-right .nav-link { display: none; }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <a href="/" class="logo">story<span>raise</span></a>
-    <div class="header-label">Knowledge Base</div>
-  </header>
+  <!-- NAV -->
+  <nav>
+    <a href="https://storyraise.com" class="logo">story<span>raise</span></a>
+    <div class="nav-badge">Knowledge Base</div>
+    <div class="nav-right">
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+    </div>
+  </nav>
 
+  <!-- HERO -->
   <div class="hero">
     <div class="tag">Help &amp; Documentation</div>
     <h1>Welcome to the<br><em>Storyraise</em> Knowledge Base</h1>
     <p class="lead">
-      Everything you need to get the most out of Storyraise — guides, tutorials, integrations, and answers to common questions. More content coming soon.
+      Guides, tutorials, and answers to help you get the most out of every Storyraise product. More articles coming soon.
     </p>
-    <div class="search-bar">
+    <div class="search-wrap">
       <span class="search-icon">🔍</span>
-      <span>Search the knowledge base&hellip;</span>
+      <input type="text" placeholder="Search the knowledge base…" disabled />
     </div>
   </div>
 
+  <!-- PRODUCTS -->
   <div class="section">
-    <div class="section-title">Products</div>
+    <div class="section-header">
+      <div class="section-title">Products</div>
+      <div class="section-sub">8 products, documentation coming soon</div>
+    </div>
     <div class="cards">
       <a class="card" href="#">
-        <div class="icon">📊</div>
+        <span class="icon">📊</span>
         <h3>Reports</h3>
-        <p>Create drag-and-drop digital impact reports that engage donors and stakeholders.</p>
-        <span class="coming-soon">Coming soon</span>
+        <p>Drag-and-drop digital impact reports personalized for every donor.</p>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">🎬</div>
+        <span class="icon">🎬</span>
         <h3>Video</h3>
-        <p>Produce personalized video at scale, tailored to each constituent.</p>
-        <span class="coming-soon">Coming soon</span>
+        <p>Personalized video at scale — tailored to each constituent's name, gift, and impact.</p>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">📋</div>
+        <span class="icon">📋</span>
         <h3>Collect</h3>
         <p>AI-powered conversational forms to gather stories and data from your community.</p>
-        <span class="coming-soon">Coming soon</span>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">📈</div>
+        <span class="icon">📈</span>
         <h3>Insights</h3>
-        <p>Analytics and AI-driven reporting to understand your audience and impact.</p>
-        <span class="coming-soon">Coming soon</span>
+        <p>Analytics and AI-driven reporting including the Donor Engagement Score™.</p>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">🎨</div>
+        <span class="icon">🎨</span>
         <h3>Brandkit</h3>
         <p>Centralize your fonts, colors, logos, and templates across every piece of content.</p>
-        <span class="coming-soon">Coming soon</span>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">📣</div>
+        <span class="icon">📣</span>
         <h3>Email &amp; Text</h3>
         <p>Personalized outreach campaigns powered by your content and constituent data.</p>
-        <span class="coming-soon">Coming soon</span>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">🗂️</div>
+        <span class="icon">🗂️</span>
         <h3>Planner</h3>
         <p>The connective hub tying all Storyraise products into end-to-end campaigns.</p>
-        <span class="coming-soon">Coming soon</span>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">👥</div>
+        <span class="icon">👥</span>
         <h3>Constituents</h3>
         <p>Donor and constituent profiles that power personalization across every product.</p>
-        <span class="coming-soon">Coming soon</span>
+        <span class="badge">Coming soon</span>
       </a>
     </div>
   </div>
 
-  <hr class="divider" />
+  <hr />
 
+  <!-- RESOURCES -->
   <div class="section">
-    <div class="section-title">Resources</div>
+    <div class="section-header">
+      <div class="section-title">Resources</div>
+    </div>
     <div class="cards">
       <a class="card" href="#">
-        <div class="icon">🚀</div>
+        <span class="icon">🚀</span>
         <h3>Getting Started</h3>
         <p>New to Storyraise? Start here for account setup, onboarding, and your first report.</p>
-        <span class="coming-soon">Coming soon</span>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">🔌</div>
+        <span class="icon">🔌</span>
         <h3>Integrations</h3>
-        <p>Connect Storyraise to Blackbaud, your CRM, SSO, and other tools.</p>
-        <span class="coming-soon">Coming soon</span>
+        <p>Connect Storyraise to Blackbaud, your CRM, SSO, and other tools in your stack.</p>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">💡</div>
+        <span class="icon">💡</span>
         <h3>Best Practices</h3>
         <p>Tips and templates from the Storyraise team and top-performing customers.</p>
-        <span class="coming-soon">Coming soon</span>
+        <span class="badge">Coming soon</span>
       </a>
       <a class="card" href="#">
-        <div class="icon">❓</div>
+        <span class="icon">❓</span>
         <h3>FAQ</h3>
         <p>Quick answers to the most common questions about your account and subscription.</p>
-        <span class="coming-soon">Coming soon</span>
+        <span class="badge">Coming soon</span>
       </a>
     </div>
   </div>
 
+  <!-- BANNER -->
+  <div class="section">
+    <div class="banner">
+      <div class="banner-text">
+        <h2>Need help right now?</h2>
+        <p>Our support team is ready to help — from setup to launch and beyond.</p>
+      </div>
+      <a href="https://storyraise.com/support">Contact Support</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
-    &copy; 2026 Storyraise &mdash; <a href="https://storyraise.com">storyraise.com</a>
+    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
+    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
   </footer>
 
 </body>
