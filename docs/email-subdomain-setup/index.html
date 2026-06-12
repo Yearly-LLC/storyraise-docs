@@ -28,6 +28,12 @@
       z-index: 100;
     }
 
+    .nav-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .logo {
       display: flex;
       align-items: center;
@@ -40,16 +46,12 @@
       display: block;
     }
 
-    .nav-badge {
-      font-size: 0.72rem;
+    .nav-logo-group span {
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: #803BB1;
-      background: rgba(128, 59, 177, 0.08);
-      border: 1px solid rgba(128, 59, 177, 0.2);
-      padding: 4px 12px;
-      border-radius: 100px;
     }
 
     .nav-right {
@@ -238,13 +240,15 @@
 
   <!-- NAV -->
   <nav>
-    <a href="https://docs.storyraise.com" class="logo">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
-        alt="Storyraise"
-      />
-    </a>
-    <div class="nav-badge">Knowledge Base</div>
+    <div class="nav-logo-group">
+      <a href="https://docs.storyraise.com" class="logo">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
+          alt="Storyraise"
+        />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
     <div class="nav-right">
       <a href="https://storyraise.com" class="nav-link">Home</a>
       <a href="https://storyraise.com/support" class="nav-link">Support</a>
