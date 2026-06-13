@@ -2,6 +2,7 @@
 title: Personalized links
 section: Distribution & Engagement
 status: draft
+keywords: qr, qr code, merge tags, for parameter, unique url
 last_reviewed: 2026-06-12
 ---
 

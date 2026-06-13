@@ -2,6 +2,7 @@
 title: AI content generation
 section: Building Reports
 status: draft
+keywords: ai, gpt, generate, draft, write
 last_reviewed: 2026-06-12
 ---
 

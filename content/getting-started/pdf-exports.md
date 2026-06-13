@@ -2,6 +2,7 @@
 title: PDF exports
 section: Getting Started
 status: draft
+keywords: print, download, page size, bleed
 last_reviewed: 2026-06-12
 ---
 

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scenes and personalization — Storyraise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script>
+    // Apply the theme before first paint: stored choice, else system setting.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
+      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
+      mq.addEventListener('change', function (e) {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (err) {}
+        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo-group">
+      <a href="/" class="logo">
+        <img
+          class="logo-light"
+          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
+          alt="Storyraise"
+        />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
+    <div class="nav-right">
+      <div class="search-wrap nav-search" id="searchWrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search docs…"
+          autocomplete="off"
+          aria-label="Search the knowledge base"
+          aria-autocomplete="list"
+          aria-controls="searchDropdown"
+          aria-expanded="false"
+        />
+        <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
+      </div>
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+    </div>
+  </nav>
+
+  <!-- LAYOUT: sidebar tree + main column -->
+  <div class="layout">
+    <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
+
+    <!-- SIDEBAR -->
+    <aside class="sidenav-wrap">
+      <nav class="sidenav" aria-label="Documentation">
+  <details class="sidenav-group">
+    <summary>Getting Started</summary>
+    <ul>
+      <li><a href="/docs/getting-started/">Overview</a></li>
+      <li><a href="/docs/getting-started/what-is-storyraise/">What is Storyraise?</a></li>
+      <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
+      <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
+      <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/pdf-exports/">PDF exports</a></li>
+      <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
+      <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>CRM &amp; Data Connections</summary>
+    <ul>
+      <li><a href="/docs/crm-and-data/">Overview</a></li>
+      <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
+      <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
+      <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
+      <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
+      <li><a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a></li>
+      <li><a href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a></li>
+      <li><a href="/docs/crm-and-data/integrations/givebutter/">Givebutter</a></li>
+      <li><a href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a></li>
+      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
+      <li><a href="/docs/crm-and-data/integrations/civicrm/">CiviCRM</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Building Reports</summary>
+    <ul>
+      <li><a href="/docs/building-reports/">Overview</a></li>
+      <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
+      <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+      <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
+      <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
+      <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
+      <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
+      <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
+      <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
+      <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
+      <li><a href="/docs/building-reports/navigation-options/">Navigation options</a></li>
+      <li><a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a></li>
+      <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Distribution &amp; Engagement</summary>
+    <ul>
+      <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
+      <li><a href="/docs/distribution-and-engagement/sharing-reports/">Sharing reports</a></li>
+      <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
+      <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
+      <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
+      <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Account &amp; Settings</summary>
+    <ul>
+      <li><a href="/docs/account-and-settings/">Overview</a></li>
+      <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
+      <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
+      <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
+      <li><a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group" open>
+    <summary>Storyraise Video</summary>
+    <ul>
+      <li><a href="/docs/storyraise-video/">Overview</a></li>
+      <li><a href="/docs/storyraise-video/what-is-storyraise-video/">What is Storyraise Video?</a></li>
+      <li><a href="/docs/storyraise-video/creating-a-video-message/">Creating a video message</a></li>
+      <li><a href="/docs/storyraise-video/recording-your-video/">Recording your video</a></li>
+      <li><a href="/docs/storyraise-video/scenes-and-personalization/" class="active" aria-current="page">Scenes and personalization</a></li>
+      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Collect</summary>
+    <ul>
+      <li><a href="/docs/storyraise-collect/">Overview</a></li>
+      <li><a href="/docs/storyraise-collect/what-is-storyraise-collect/">What is Storyraise Collect?</a></li>
+      <li><a href="/docs/storyraise-collect/creating-a-collection/">Creating a collection</a></li>
+      <li><a href="/docs/storyraise-collect/form-field-types/">Form field types</a></li>
+      <li><a href="/docs/storyraise-collect/multi-step-forms/">Multi-step forms</a></li>
+      <li><a href="/docs/storyraise-collect/sharing-your-form/">Sharing your form</a></li>
+      <li><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Resources</summary>
+    <ul>
+      <li><a href="/docs/resources/">Overview</a></li>
+      <li><a href="/docs/resources/best-practices/">Best practices</a></li>
+      <li><a href="/docs/resources/faq/">Frequently asked questions</a></li>
+    </ul>
+  </details>
+</nav>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="doc-main">
+      <label for="navtoggle" class="navtoggle-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Documentation menu
+      </label>
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="/">Knowledge Base</a>
+    <span>›</span>
+    <a href="/docs/storyraise-video/">Storyraise Video</a>
+    <span>›</span>
+    Scenes and personalization
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <h1>Scenes and personalization</h1>
+<p class="lead">Scenes are the on-screen text that appears over your video as you speak — and they&#39;re where each recipient&#39;s message becomes personally theirs.</p>
+<h2>What scenes are</h2>
+<p>When you finish recording, Storyraise automatically structures your video into a few <strong>scenes</strong> — timed text overlays with animated headings, sized and styled to match. Each scene appears at the right moment as your video plays.</p>
+<h2>Editing a scene</h2>
+<p>Select any scene to refine it: change its text, adjust its styling, or restyle the layout. You can add new scenes, and <strong>Insert icon</strong> drops in a visual accent. Want a fresh start on the overlay design? <strong>Remake All Scenes</strong> rebuilds them.</p>
+<h2>Personalizing with merge tags</h2>
+<p>This is what sets Storyraise Video apart. Scene text supports merge tags in the <code>@@field_name@@</code> format, so:</p>
+<div class="tip"><p>Hi, @@first_name@@!</p></div>
+<p>becomes &quot;Hi, Maria!&quot; for Maria and &quot;Hi, James!&quot; for James — automatically, from each recipient&#39;s record. Any field on your constituents can be a merge tag: <code>@@first_name@@</code>, <code>@@last_name@@</code>, or custom fields like giving level or program name.</p>
+<p>The same <code>?for=</code> personalization that powers <a href="/docs/distribution-and-engagement/personalized-links/">personalized report links</a> drives video personalization, so the constituent must exist in your <a href="/docs/crm-and-data/importing-constituent-data/">constituent list</a> (matched by email).</p>
+<h2>Tips</h2>
+<ul>
+<li><strong>Put the name on screen early.</strong> Seeing their own name in the first scene tells the viewer instantly that this was made for them.</li>
+<li><strong>Keep overlay text short.</strong> Scenes punctuate your spoken words — a few words land; a paragraph competes with you.</li>
+<li><strong>Check your data first.</strong> A recipient missing a field a scene uses gets a blank where their name should be. Preview before sending — see <a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a>.</li>
+</ul>
+<h2>Next</h2>
+<p><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a> — choose who gets the video and preview each person&#39;s version.</p>
+
+
+        <hr />
+
+        <p style="font-size:0.85rem; color:var(--text-faint);">Need help? <a href="https://storyraise.com/support">Contact our support team</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
+    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+  </footer>
+
+  <script src="/assets/theme.js"></script>
+  <script src="/search-index.js"></script>
+  <script src="/assets/search.js"></script>
+</body>
+</html>

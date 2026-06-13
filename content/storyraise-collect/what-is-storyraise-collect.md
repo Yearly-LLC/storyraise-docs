@@ -51,4 +51,4 @@ Collections exist to feed the rest of Storyraise — as the dashboard puts it: *
 ## Related
 
 - [Importing constituent data](../crm-and-data/importing-constituent-data.md) — the constituent list that powers pre-fill and tagging
-- [What is Storyraise Video?](storyraise-video.md) — another destination for collected stories
+- [What is Storyraise Video?](../storyraise-video/what-is-storyraise-video.md) — another destination for collected stories

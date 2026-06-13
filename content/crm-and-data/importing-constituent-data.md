@@ -2,6 +2,7 @@
 title: Importing constituent data
 section: CRM & Data Connections
 status: draft
+keywords: csv, upload, donors, import
 last_reviewed: 2026-06-12
 ---
 

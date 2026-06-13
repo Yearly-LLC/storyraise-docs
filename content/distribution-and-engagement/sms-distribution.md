@@ -2,6 +2,7 @@
 title: SMS distribution
 section: Distribution & Engagement
 status: draft
+keywords: text message, texting, phone
 last_reviewed: 2026-06-12
 ---
 

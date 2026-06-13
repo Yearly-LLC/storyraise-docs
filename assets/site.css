@@ -1,0 +1,888 @@
+/* ────────────────────────────────────────────────────────────────────
+   Storyraise Knowledge Base — shared stylesheet
+   Used by the home page, every generated doc page (build/template.html),
+   and the standalone email-subdomain-setup page.
+   ──────────────────────────────────────────────────────────────────── */
+
+/* ── BRAND FONTS (PP Fragment) ──
+   Self-hosted and registered for use, but not yet applied to any element —
+   the site still renders in Poppins. Use these families when ready, e.g.
+   font-family: "PPFragment GlareExtraBold", ... for display headings and
+   "PPFragment TextRegular", ... for body copy. */
+@font-face {
+  font-family: "PPFragment GlareExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/assets/fonts/PPFragment-GlareExtraBold.woff2") format("woff2"),
+       url("/assets/fonts/PPFragment-GlareExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "PPFragment TextRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/PPFragment-TextRegular.woff2") format("woff2"),
+       url("/assets/fonts/PPFragment-TextRegular.woff") format("woff");
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── THEME ── */
+:root {
+  color-scheme: light;
+  --bg: #fff;
+  --bg-card: #fff;
+  --bg-input: #fafafa;
+  --border: #f0f0f0;
+  --border-card: #ececec;
+  --border-input: #e0e0e0;
+  --border-result: #f5f5f5;
+  --text: #1a1a1a;
+  --text-body: #444;
+  --text-secondary: #555;
+  --text-muted: #666;
+  --text-soft: #777;
+  --text-faint: #aaa;
+  --brand: #5c2a82;
+  --accent: #803BB1;
+  --accent-text: #803BB1;
+  --badge-bg: #e8e8e8;
+  --note-bg: rgba(221, 255, 30, 0.15);
+  --note-border: #b8d900;
+  --footer-bg: #1a1a1a;
+  --footer-text: #888;
+  --card-shadow: 0 6px 24px rgba(128, 59, 177, 0.1);
+  --dropdown-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16131c;
+  --bg-card: #1c1825;
+  --bg-input: #1c1825;
+  --border: #28222f;
+  --border-card: #2c2539;
+  --border-input: #362e45;
+  --border-result: #28222f;
+  --text: #f2eff6;
+  --text-body: #c8c2d2;
+  --text-secondary: #b3abc1;
+  --text-muted: #a39bb1;
+  --text-soft: #998fa8;
+  --text-faint: #7c7390;
+  --brand: #c39bea;
+  --accent: #803BB1;
+  --accent-text: #b487dd;
+  --badge-bg: #2c2539;
+  --note-bg: rgba(221, 255, 30, 0.07);
+  --note-border: #8aa300;
+  --footer-bg: #0f0d14;
+  --footer-text: #8d8499;
+  --card-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  --dropdown-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+
+.nav-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+/* Dark mode swaps to a variant whose wordmark is light, leaving the icon
+   its brand color. A CSS filter can't recolor part of an <img> SVG, so we
+   show/hide two sources instead. */
+.logo .logo-dark { display: none; }
+[data-theme="dark"] .logo .logo-light { display: none; }
+[data-theme="dark"] .logo .logo-dark { display: block; }
+
+.nav-logo-group span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-link:hover { color: var(--brand); }
+
+.nav-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: #ec355e;
+  padding: 4px 12px;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-input);
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+.theme-toggle:hover { color: var(--brand); border-color: var(--accent-text); }
+.theme-toggle svg { width: 17px; height: 17px; }
+.theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  max-width: 760px;
+  margin: 32px auto 0;
+  padding: 0 48px;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+
+.breadcrumb a {
+  color: var(--brand);
+  text-decoration: none;
+}
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 6px; }
+
+/* ── ARTICLE CONTENT ── */
+.content {
+  max-width: 760px;
+  margin: 32px auto 80px;
+  padding: 0 48px;
+}
+
+.content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.content .lead {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 32px;
+}
+
+.content h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 40px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 28px 0 12px;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--bg);
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.content p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.content a {
+  color: var(--brand);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand) 35%, transparent);
+}
+.content a:hover { border-bottom-color: var(--brand); }
+
+.content ul {
+  list-style: none;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+.content ul li {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  padding: 4px 0 4px 24px;
+  position: relative;
+}
+
+.content ul li::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+.content ol {
+  margin: 0 0 16px 0;
+  padding: 0;
+  counter-reset: steps;
+  list-style: none;
+}
+
+.content ol li {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  padding: 4px 0 4px 36px;
+  position: relative;
+  counter-increment: steps;
+}
+
+.content ol li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content ol li ul,
+.content ul li ul {
+  margin: 4px 0 0;
+}
+
+.content code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.88rem;
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+  color: var(--brand);
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
+.content pre {
+  background: color-mix(in srgb, var(--brand) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand) 14%, transparent);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 0 0 16px;
+  overflow-x: auto;
+}
+
+.content pre code {
+  background: none;
+  padding: 0;
+  color: var(--brand);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 24px;
+  font-size: 0.9rem;
+}
+
+.content table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--brand);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border-bottom: 2px solid color-mix(in srgb, var(--brand) 30%, transparent);
+}
+
+.content table td {
+  padding: 12px 14px;
+  color: var(--text-body);
+  line-height: 1.65;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.content table tr:hover td { background: color-mix(in srgb, var(--brand) 4%, transparent); }
+
+.tip {
+  background: color-mix(in srgb, var(--accent-text) 7%, transparent);
+  border-left: 3px solid var(--brand);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 20px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.tip strong { color: var(--brand); }
+.tip p { margin: 0; font-size: 0.9rem; }
+
+.note {
+  background: var(--note-bg);
+  border-left: 3px solid var(--note-border);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 20px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.note p { margin: 0; font-size: 0.9rem; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 48px 0;
+}
+
+/* Full-width divider between home-page sections. */
+hr.section-divider {
+  max-width: 1040px;
+  margin: 0 auto 64px;
+}
+
+/* ── CARDS ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.content .cards { margin: 0 0 24px; }
+
+.card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+/* Re-assert the card border over the .content a underline rule. */
+.content a.card { border: 1.5px solid var(--border-card); }
+
+.card:hover,
+.content a.card:hover {
+  border-color: var(--accent-text);
+  box-shadow: var(--card-shadow);
+  transform: translateY(-2px);
+}
+
+.card .icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.card p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--badge-bg);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+/* ── HOME: HERO ── */
+.hero {
+  max-width: 800px;
+  margin: 72px auto 64px;
+  padding: 0 48px;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  background: color-mix(in srgb, var(--accent-text) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-text) 25%, transparent);
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  /* color: var(--accent-text); */
+}
+
+.hero .lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+/* ── HOME: SEARCH ── */
+.search-wrap {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 14px 20px 14px 48px;
+  border: 1.5px solid var(--border-input);
+  border-radius: 100px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text-body);
+  background: var(--bg-input);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-wrap input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 12%, transparent);
+  background: var(--bg-card);
+}
+
+.search-wrap input::placeholder { color: var(--text-faint); }
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-input);
+  border-radius: 16px;
+  box-shadow: var(--dropdown-shadow);
+  overflow: hidden;
+  z-index: 200;
+  display: none;
+}
+
+.search-dropdown.visible { display: block; }
+
+.search-result {
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-result);
+  transition: background 0.12s;
+  text-align: left;
+}
+
+.search-result:last-child { border-bottom: none; }
+
+.search-result:hover,
+.search-result.active {
+  background: color-mix(in srgb, var(--brand) 7%, transparent);
+}
+
+.search-result-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.search-result-title mark {
+  background: none;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.search-result-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-no-results {
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+/* ── HOME: SECTIONS ── */
+.section {
+  max-width: 1040px;
+  margin: 0 auto 72px;
+  padding: 0 48px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.section-sub {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+/* ── HOME: BANNER ── */
+.banner {
+  background: var(--accent);
+  border-radius: 20px;
+  max-width: 1040px;
+  margin: 0 auto 80px;
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.banner-text h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.banner-text p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.65;
+}
+
+.banner a {
+  flex-shrink: 0;
+  background: #ec355e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 13px 28px;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.banner a:hover { opacity: 0.9; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 36px 48px;
+  font-size: 0.82rem;
+}
+
+footer a { color: var(--accent-text); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  nav { padding: 14px 24px; }
+  .breadcrumb { padding: 0 24px; }
+  .content { padding: 0 24px; }
+  .hero { padding: 0 24px; margin: 48px auto 48px; }
+  .section { padding: 0 24px; }
+  .banner { padding: 32px 28px; flex-direction: column; text-align: center; }
+  .nav-right .nav-link { display: none; }
+}
+
+/* ── DOC LAYOUT: SIDEBAR + MAIN ── */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.sidenav-wrap {
+  flex-shrink: 0;
+  width: 260px;
+  position: sticky;
+  top: 61px;
+  align-self: flex-start;
+  max-height: calc(100vh - 61px);
+  overflow-y: auto;
+  padding: 26px 10px 48px 24px;
+}
+
+.doc-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* The reading column keeps its own max-width; align it to the left of the
+   main area rather than centering it far from the sidebar. */
+.doc-main .breadcrumb,
+.doc-main .content { margin-left: 8px; margin-right: auto; }
+
+/* ── SIDEBAR TREE ── */
+/* Reset the top-bar `nav` element styles, which would otherwise make the
+   sidebar a sticky flex row. */
+nav.sidenav {
+  display: block;
+  position: static;
+  padding: 0;
+  border-bottom: none;
+  background: none;
+  z-index: auto;
+  font-size: 0.84rem;
+}
+
+.sidenav-group { margin-bottom: 2px; }
+
+.sidenav-group > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  font-weight: 600;
+  color: var(--text);
+  user-select: none;
+}
+.sidenav-group > summary::-webkit-details-marker { display: none; }
+.sidenav-group > summary::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid var(--text-faint);
+  border-bottom: 1.5px solid var(--text-faint);
+  transform: rotate(-45deg);
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+.sidenav-group[open] > summary::after { transform: rotate(45deg); }
+.sidenav-group > summary:hover { background: color-mix(in srgb, var(--brand) 7%, transparent); }
+
+.sidenav ul {
+  list-style: none;
+  margin: 2px 0 8px;
+  padding: 0;
+}
+
+.sidenav li a {
+  display: block;
+  padding: 6px 10px 6px 22px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.sidenav li a:hover { background: color-mix(in srgb, var(--brand) 7%, transparent); color: var(--text); }
+.sidenav li a.active {
+  background: color-mix(in srgb, var(--brand) 13%, transparent);
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* ── MOBILE MENU TOGGLE (hidden on desktop) ── */
+.navtoggle-btn { display: none; }
+
+@media (max-width: 980px) {
+  .layout { display: block; }
+  .navtoggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 24px 24px 0;
+    padding: 9px 16px;
+    border: 1.5px solid var(--border-input);
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .navtoggle-btn:hover { color: var(--brand); border-color: var(--accent-text); }
+  .sidenav-wrap {
+    display: none;
+    position: static;
+    width: auto;
+    max-height: none;
+    padding: 8px 16px 16px;
+  }
+  .navtoggle-cb:checked ~ .sidenav-wrap { display: block; }
+  .doc-main .breadcrumb,
+  .doc-main .content { margin-left: auto; }
+}
+
+/* ── HEADER SEARCH (doc pages) ── */
+.nav-search {
+  margin: 0;
+  width: 230px;
+  max-width: none;
+}
+
+.nav-search input {
+  padding: 8px 16px 8px 38px;
+  font-size: 0.84rem;
+}
+
+.nav-search .search-icon {
+  left: 13px;
+  font-size: 0.85rem;
+}
+
+/* Right-align the dropdown under the compact input and give results room. */
+.nav-search .search-dropdown {
+  left: auto;
+  right: 0;
+  width: 380px;
+}
+
+@media (max-width: 760px) {
+  .nav-search { width: 160px; }
+  .nav-search .search-dropdown { width: 300px; }
+}
+
+@media (max-width: 640px) {
+  .nav-search { display: none; }
+}
+
+
+h1, h2, h3:not(.card h3), h4, h5, h6,
+.section-title{
+  font-family: 'PPFragment TextRegular', 'Poppins', sans-serif;
+  font-weight: 100 !important;
+}
+.content strong{ 
+  font-weight: 600 !important;
+  color: var(--text);
+}

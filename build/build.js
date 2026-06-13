@@ -45,8 +45,8 @@ const SECTIONS = [
     blurb: 'Everything about building and styling reports.',
     order: [
       'adding-sections', 'editing-content', 'using-templates', 'brand-kit', 'fonts-and-colors',
-      'images-and-videos', 'ai-content-generation', 'reordering-sections', 'navigation-options',
-      'mobile-optimization', 'accessibility',
+      'images-and-videos', 'image-sizes-and-dimensions', 'ai-content-generation',
+      'reordering-sections', 'navigation-options', 'mobile-optimization', 'accessibility',
     ],
   },
   {
@@ -59,10 +59,32 @@ const SECTIONS = [
     ],
   },
   {
-    dir: 'products',
-    label: 'Products',
-    blurb: 'Overviews of the Storyraise product family.',
-    order: ['storyraise-video', 'storyraise-collect'],
+    dir: 'account-and-settings',
+    label: 'Account & Settings',
+    blurb: 'Set up your account, team, billing, and sending domain.',
+    order: [
+      'setting-up-your-account', 'organization-settings', 'managing-your-team',
+      'profile-and-security', 'managing-your-subscription', 'email-subdomain-setup',
+      'custom-sending-domain',
+    ],
+  },
+  {
+    dir: 'storyraise-video',
+    label: 'Storyraise Video',
+    blurb: 'Personalized video messages, recorded once and sent to everyone.',
+    order: [
+      'what-is-storyraise-video', 'creating-a-video-message', 'recording-your-video',
+      'scenes-and-personalization', 'sending-and-recipients',
+    ],
+  },
+  {
+    dir: 'storyraise-collect',
+    label: 'Storyraise Collect',
+    blurb: 'Gather stories and data from your community with forms.',
+    order: [
+      'what-is-storyraise-collect', 'creating-a-collection', 'form-field-types',
+      'multi-step-forms', 'sharing-your-form', 'managing-responses',
+    ],
   },
   {
     dir: 'resources',
@@ -73,14 +95,10 @@ const SECTIONS = [
 ];
 
 // Pages that exist outside this build but must stay in the search index.
-const EXTRA_SEARCH_ENTRIES = [
-  {
-    title: 'Setting Up Your Email Sending Subdomain',
-    description: 'Enable email sending from Storyraise by configuring a custom subdomain with SPF, DKIM, and tracking DNS records.',
-    url: '/docs/email-subdomain-setup/',
-    keywords: ['email', 'dns', 'subdomain', 'spf', 'dkim', 'setup', 'sending', 'domain', 'records', 'cloudflare', 'godaddy'],
-  },
-];
+// (The original standalone /docs/email-subdomain-setup/ page was migrated to
+// content/account-and-settings/email-subdomain-setup.md; the old URL is now a
+// redirect stub maintained by hand at docs/email-subdomain-setup/index.html.)
+const EXTRA_SEARCH_ENTRIES = [];
 
 /* ── helpers ────────────────────────────────────────────────────────── */
 
@@ -133,20 +151,56 @@ function truncate(s, n) {
   return s.length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…';
 }
 
-function keywordsFor(title, sectionLabel, slug) {
+const KEYWORD_STOPWORDS = new Set([
+  'the', 'and', 'your', 'with', 'for', 'to', 'of', 'in', 'on', 'at', 'an',
+  'is', 'it', 'by', 'or', 'we', 'up', 'as', 'a',
+]);
+
+// Keywords come from the title, section, and slug, plus an optional
+// comma-separated `keywords:` frontmatter field for terms readers search
+// that don't appear in the title (e.g. "mfa", "qr", "dns").
+function keywordsFor(title, sectionLabel, slug, extra) {
   const words = (title + ' ' + sectionLabel + ' ' + slug.replace(/-/g, ' '))
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
     .split(/\s+/)
-    .filter(w => w.length > 2 && !['the', 'and', 'your', 'with', 'for'].includes(w));
-  return [...new Set(words)];
+    .filter(w => w.length > 1 && !KEYWORD_STOPWORDS.has(w));
+  const extras = (extra || '')
+    .split(',')
+    .map(k => k.trim().toLowerCase())
+    .filter(Boolean);
+  return [...new Set([...words, ...extras])];
 }
 
-function renderPage({ title, breadcrumbHtml, bodyHtml }) {
+function renderPage({ title, breadcrumbHtml, bodyHtml, sidenavHtml }) {
   return TEMPLATE
     .replace('{{TITLE}}', escapeHtml(title))
+    .replace('{{SIDENAV}}', sidenavHtml || '')
     .replace('{{BREADCRUMB}}', breadcrumbHtml)
     .replace('{{BODY}}', bodyHtml);
+}
+
+// Build the left-hand documentation tree. The section containing currentUrl
+// is expanded; the current page's link is marked active. Uses <details> so
+// collapsing needs no JavaScript.
+function buildSidenav(sections, currentUrl) {
+  let html = '<nav class="sidenav" aria-label="Documentation">\n';
+  for (const section of sections) {
+    const inSection = section.articles.some(a => a.url === currentUrl);
+    const landingUrl = `/docs/${section.dir}/`;
+    const isLanding = currentUrl === landingUrl;
+    html += `  <details class="sidenav-group"${inSection || isLanding ? ' open' : ''}>\n`;
+    html += `    <summary>${escapeHtml(section.label)}</summary>\n`;
+    html += `    <ul>\n`;
+    html += `      <li><a href="${landingUrl}"${isLanding ? ' class="active" aria-current="page"' : ''}>Overview</a></li>\n`;
+    for (const a of section.articles) {
+      const active = a.url === currentUrl ? ' class="active" aria-current="page"' : '';
+      html += `      <li><a href="${a.url}"${active}>${escapeHtml(a.title)}</a></li>\n`;
+    }
+    html += `    </ul>\n  </details>\n`;
+  }
+  html += '</nav>';
+  return html;
 }
 
 function writePage(outPath, html) {
@@ -174,7 +228,9 @@ function postProcess(html) {
   return html;
 }
 
-function buildArticle(relDir, file, section) {
+// Parse + render an article's body and metadata. Page HTML is written later
+// (writeArticlePage), once the full section tree exists for the sidebar.
+function prepareArticle(relDir, file, section) {
   const src = fs.readFileSync(path.join(CONTENT_DIR, relDir, file), 'utf8');
   const { meta, body } = parseFrontmatter(src);
   const slug = file.replace(/\.md$/, '');
@@ -188,14 +244,12 @@ function buildArticle(relDir, file, section) {
 
   const title = meta.title || slug;
   const breadcrumbHtml = [
-    `<a href="https://docs.storyraise.com">Knowledge Base</a>`,
+    `<a href="/">Knowledge Base</a>`,
     `<span>›</span>`,
     `<a href="/docs/${section.dir}/">${escapeHtml(section.label)}</a>`,
     `<span>›</span>`,
     escapeHtml(title),
   ].join('\n    ');
-
-  writePage(path.join(OUT_DIR, relDir, slug, 'index.html'), renderPage({ title, breadcrumbHtml, bodyHtml: html }));
 
   return {
     title,
@@ -203,9 +257,21 @@ function buildArticle(relDir, file, section) {
     slug,
     status: meta.status || 'draft',
     description: truncate(firstParagraphText(html), 160),
-    keywords: keywordsFor(title, section.label, slug),
+    keywords: keywordsFor(title, section.label, slug, meta.keywords),
     isIntegration: relDir.endsWith('/integrations'),
+    outPath: path.join(OUT_DIR, relDir, slug, 'index.html'),
+    bodyHtml: html,
+    breadcrumbHtml,
   };
+}
+
+function writeArticlePage(article, sidenavHtml) {
+  writePage(article.outPath, renderPage({
+    title: article.title,
+    breadcrumbHtml: article.breadcrumbHtml,
+    bodyHtml: article.bodyHtml,
+    sidenavHtml,
+  }));
 }
 
 /* ── section landing pages ──────────────────────────────────────────── */
@@ -218,9 +284,9 @@ function cardHtml(article) {
       </a>`;
 }
 
-function buildLanding(section, articles) {
-  const main = articles.filter(a => !a.isIntegration);
-  const integrations = articles.filter(a => a.isIntegration);
+function writeLanding(section, sidenavHtml) {
+  const main = section.articles.filter(a => !a.isIntegration);
+  const integrations = section.articles.filter(a => a.isIntegration);
 
   let body = `<h1>${escapeHtml(section.label)}</h1>\n`;
   body += `<p class="lead">${escapeHtml(section.blurb)}</p>\n`;
@@ -232,18 +298,19 @@ function buildLanding(section, articles) {
   }
 
   const breadcrumbHtml = [
-    `<a href="https://docs.storyraise.com">Knowledge Base</a>`,
+    `<a href="/">Knowledge Base</a>`,
     `<span>›</span>`,
     escapeHtml(section.label),
   ].join('\n    ');
 
-  writePage(path.join(OUT_DIR, section.dir, 'index.html'), renderPage({ title: section.label, breadcrumbHtml, bodyHtml: body }));
+  writePage(path.join(OUT_DIR, section.dir, 'index.html'), renderPage({ title: section.label, breadcrumbHtml, bodyHtml: body, sidenavHtml }));
 }
 
 /* ── main ───────────────────────────────────────────────────────────── */
 
-const searchIndex = [...EXTRA_SEARCH_ENTRIES];
-
+// Pass 1 — parse every article and attach the ordered list to its section,
+// so the sidebar tree (which spans all sections) can be built before any page
+// is written.
 for (const section of SECTIONS) {
   const dirs = [section.dir];
   const integrationsDir = path.join(CONTENT_DIR, section.dir, 'integrations');
@@ -253,22 +320,32 @@ for (const section of SECTIONS) {
   for (const relDir of dirs) {
     const files = fs.readdirSync(path.join(CONTENT_DIR, relDir)).filter(f => f.endsWith('.md')).sort();
     for (const file of files) {
-      articles.push(buildArticle(relDir, file, section));
+      articles.push(prepareArticle(relDir, file, section));
     }
   }
 
-  // Landing pages and search follow the section's reading order;
-  // slugs missing from the order list sort to the end alphabetically.
+  // Reading order from the section's `order` list; unlisted slugs sort to the
+  // end alphabetically. Integrations are ordered too but listed separately on
+  // the landing page.
   const rank = s => { const i = (section.order || []).indexOf(s); return i === -1 ? Infinity : i; };
   articles.sort((a, b) => rank(a.slug) - rank(b.slug) || a.slug.localeCompare(b.slug));
 
-  buildLanding(section, articles);
+  section.articles = articles;
+}
 
-  for (const a of articles) {
+// Pass 2 — write every page with its sidebar (current page/section marked),
+// and collect the search index.
+const searchIndex = [...EXTRA_SEARCH_ENTRIES];
+
+for (const section of SECTIONS) {
+  writeLanding(section, buildSidenav(SECTIONS, `/docs/${section.dir}/`));
+
+  for (const a of section.articles) {
+    writeArticlePage(a, buildSidenav(SECTIONS, a.url));
     searchIndex.push({ title: a.title, description: a.description, url: a.url, keywords: a.keywords });
   }
 
-  console.log(`${section.label}: ${articles.length} articles`);
+  console.log(`${section.label}: ${section.articles.length} articles`);
 }
 
 fs.writeFileSync(

@@ -2,6 +2,7 @@
 title: Sharing reports
 section: Distribution & Engagement
 status: draft
+keywords: embed, iframe, qr, copy link, social
 last_reviewed: 2026-06-12
 ---
 

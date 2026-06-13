@@ -11,7 +11,7 @@ last_reviewed: 2026-06-12
 
 ## In the meantime
 
-[Storyraise Video](../products/storyraise-video.md) lets you send personalized video messages to constituents by email, each with their own viewing link. While video-specific metrics aren't available yet, you can still measure the campaign around the video:
+[Storyraise Video](../storyraise-video/what-is-storyraise-video.md) lets you send personalized video messages to constituents by email, each with their own viewing link. While video-specific metrics aren't available yet, you can still measure the campaign around the video:
 
 - **Pair the video with a report.** If your message links to a report via [personalized links](personalized-links.md), report [Insights](understanding-report-metrics.md) shows which constituents followed through.
 - **Host on YouTube or Vimeo where it makes sense.** Videos embedded in reports through those platforms carry their own view counts on the hosting side, and clicks on embedded videos appear as intent signals in report metrics.

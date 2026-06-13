@@ -2,6 +2,7 @@
 title: Email distribution
 section: Distribution & Engagement
 status: draft
+keywords: send, campaign, newsletter, blast
 last_reviewed: 2026-06-12
 ---
 
@@ -39,7 +40,7 @@ When everything looks right, confirm the send — the button shows exactly how m
 
 ## Sending addresses and your domain
 
-By default, messages are delivered from a Storyraise sending address. To send from your own domain (so emails come from `you@email.yourdomain.org`), set up a custom sending subdomain — see [Setting Up Your Email Sending Subdomain](/docs/email-subdomain-setup/).
+By default, messages are delivered from a Storyraise sending address. To send from your own domain (so emails come from `you@email.yourdomain.org`), set up a custom sending subdomain — see [Setting up your email sending subdomain](../account-and-settings/email-subdomain-setup.md).
 
 ## Good to know
 

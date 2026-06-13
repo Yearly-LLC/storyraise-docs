@@ -5,420 +5,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sharing reports — Storyraise</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #fff;
-      color: #1a1a1a;
-      min-height: 100vh;
-    }
-
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 48px;
-      border-bottom: 1px solid #f0f0f0;
-      position: sticky;
-      top: 0;
-      background: #fff;
-      z-index: 100;
-    }
-
-    .nav-logo-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .logo img {
-      height: 28px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-logo-group span {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #5c2a82;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-link {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: #555;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .nav-link:hover { color: #5c2a82; }
-
-    .nav-cta {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #fff;
-      background: #803BB1;
-      padding: 9px 22px;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.85; }
-
-    /* ── BREADCRUMB ── */
-    .breadcrumb {
-      max-width: 760px;
-      margin: 32px auto 0;
-      padding: 0 48px;
-      font-size: 0.8rem;
-      color: #aaa;
-    }
-
-    .breadcrumb a {
-      color: #5c2a82;
-      text-decoration: none;
-    }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb span { margin: 0 6px; }
-
-    /* ── CONTENT ── */
-    .content {
-      max-width: 760px;
-      margin: 32px auto 80px;
-      padding: 0 48px;
-    }
-
-    .content h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 12px;
-      line-height: 1.25;
-    }
-
-    .content .lead {
-      font-size: 1rem;
-      color: #666;
-      line-height: 1.75;
-      margin-bottom: 40px;
-      border-bottom: 1px solid #f0f0f0;
-      padding-bottom: 32px;
-    }
-
-    .content h2 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin: 40px 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .content h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin: 28px 0 12px;
-    }
-
-    .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #5c2a82;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .content p {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.8;
-      margin-bottom: 14px;
-    }
-
-    .content a {
-      color: #5c2a82;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(92, 42, 130, 0.3);
-    }
-    .content a:hover { border-bottom-color: #5c2a82; }
-
-    .content ul {
-      list-style: none;
-      margin: 0 0 16px 0;
-      padding: 0;
-    }
-
-    .content ul li {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.8;
-      padding: 4px 0 4px 24px;
-      position: relative;
-    }
-
-    .content ul li::before {
-      content: '';
-      position: absolute;
-      left: 8px;
-      top: 13px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #5c2a82;
-    }
-
-    .content ol {
-      margin: 0 0 16px 0;
-      padding: 0;
-      counter-reset: steps;
-      list-style: none;
-    }
-
-    .content ol li {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.8;
-      padding: 4px 0 4px 36px;
-      position: relative;
-      counter-increment: steps;
-    }
-
-    .content ol li::before {
-      content: counter(steps);
-      position: absolute;
-      left: 0;
-      top: 7px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #5c2a82;
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .content ol li ul,
-    .content ul li ul {
-      margin: 4px 0 0;
-    }
-
-    .content code {
-      font-family: 'Courier New', monospace;
-      font-size: 0.88rem;
-      background: rgba(92, 42, 130, 0.08);
-      color: #5c2a82;
-      padding: 2px 7px;
-      border-radius: 5px;
-    }
-
-    .content pre {
-      background: rgba(92, 42, 130, 0.05);
-      border: 1px solid rgba(92, 42, 130, 0.12);
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 0 0 16px;
-      overflow-x: auto;
-    }
-
-    .content pre code {
-      background: none;
-      padding: 0;
-      color: #5c2a82;
-      font-size: 0.85rem;
-      line-height: 1.7;
-    }
-
-    .content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 0 0 24px;
-      font-size: 0.9rem;
-    }
-
-    .content table th {
-      text-align: left;
-      font-weight: 600;
-      color: #5c2a82;
-      font-size: 0.78rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 10px 14px;
-      border-bottom: 2px solid rgba(92, 42, 130, 0.25);
-    }
-
-    .content table td {
-      padding: 12px 14px;
-      color: #444;
-      line-height: 1.65;
-      border-bottom: 1px solid #f0f0f0;
-      vertical-align: top;
-    }
-
-    .content table tr:hover td { background: rgba(92, 42, 130, 0.025); }
-
-    .tip {
-      background: rgba(128, 59, 177, 0.05);
-      border-left: 3px solid #5c2a82;
-      border-radius: 0 10px 10px 0;
-      padding: 14px 20px;
-      margin: 16px 0;
-      font-size: 0.9rem;
-      color: #444;
-      line-height: 1.7;
-    }
-
-    .tip strong { color: #5c2a82; }
-    .tip p { margin: 0; font-size: 0.9rem; }
-
-    .note {
-      background: rgba(221, 255, 30, 0.15);
-      border-left: 3px solid #b8d900;
-      border-radius: 0 10px 10px 0;
-      padding: 14px 20px;
-      margin: 16px 0;
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.7;
-    }
-
-    .note p { margin: 0; font-size: 0.9rem; }
-
-    hr {
-      border: none;
-      border-top: 1px solid #f0f0f0;
-      margin: 48px 0;
-    }
-
-    /* ── SECTION LANDING CARDS ── */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
-      margin: 0 0 24px;
-    }
-
-    .content a.card {
-      background: #fff;
-      border: 1.5px solid #ececec;
-      border-radius: 16px;
-      padding: 28px 24px;
-      text-decoration: none;
-      display: block;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
-    }
-
-    .content a.card:hover {
-      border-color: #803BB1;
-      box-shadow: 0 6px 24px rgba(128, 59, 177, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin: 0 0 8px;
-    }
-
-    .card p {
-      font-size: 0.82rem;
-      color: #555;
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-top: 14px;
-      font-size: 0.66rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #555;
-      background: #e8e8e8;
-      padding: 3px 10px;
-      border-radius: 100px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #1a1a1a;
-      color: #888;
-      text-align: center;
-      padding: 36px 48px;
-      font-size: 0.82rem;
-    }
-
-    footer a { color: #803BB1; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 640px) {
-      nav { padding: 14px 24px; }
-      .breadcrumb { padding: 0 24px; }
-      .content { padding: 0 24px; }
-      .nav-right .nav-link { display: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script>
+    // Apply the theme before first paint: stored choice, else system setting.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
+      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
+      mq.addEventListener('change', function (e) {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (err) {}
+        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
     <div class="nav-logo-group">
-      <a href="https://docs.storyraise.com" class="logo">
+      <a href="/" class="logo">
         <img
+          class="logo-light"
           src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
           alt="Storyraise"
         />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
       </a>
       <span>Knowledge Base</span>
     </div>
     <div class="nav-right">
+      <div class="search-wrap nav-search" id="searchWrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search docs…"
+          autocomplete="off"
+          aria-label="Search the knowledge base"
+          aria-autocomplete="list"
+          aria-controls="searchDropdown"
+          aria-expanded="false"
+        />
+        <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
+      </div>
       <a href="https://storyraise.com" class="nav-link">Home</a>
       <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
     </div>
   </nav>
 
-  <!-- BREADCRUMB -->
-  <div class="breadcrumb">
-    <a href="https://docs.storyraise.com">Knowledge Base</a>
+  <!-- LAYOUT: sidebar tree + main column -->
+  <div class="layout">
+    <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
+
+    <!-- SIDEBAR -->
+    <aside class="sidenav-wrap">
+      <nav class="sidenav" aria-label="Documentation">
+  <details class="sidenav-group">
+    <summary>Getting Started</summary>
+    <ul>
+      <li><a href="/docs/getting-started/">Overview</a></li>
+      <li><a href="/docs/getting-started/what-is-storyraise/">What is Storyraise?</a></li>
+      <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
+      <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
+      <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/pdf-exports/">PDF exports</a></li>
+      <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
+      <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>CRM &amp; Data Connections</summary>
+    <ul>
+      <li><a href="/docs/crm-and-data/">Overview</a></li>
+      <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
+      <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
+      <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
+      <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
+      <li><a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a></li>
+      <li><a href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a></li>
+      <li><a href="/docs/crm-and-data/integrations/givebutter/">Givebutter</a></li>
+      <li><a href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a></li>
+      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
+      <li><a href="/docs/crm-and-data/integrations/civicrm/">CiviCRM</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Building Reports</summary>
+    <ul>
+      <li><a href="/docs/building-reports/">Overview</a></li>
+      <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
+      <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+      <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
+      <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
+      <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
+      <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
+      <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
+      <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
+      <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
+      <li><a href="/docs/building-reports/navigation-options/">Navigation options</a></li>
+      <li><a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a></li>
+      <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group" open>
+    <summary>Distribution &amp; Engagement</summary>
+    <ul>
+      <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
+      <li><a href="/docs/distribution-and-engagement/sharing-reports/" class="active" aria-current="page">Sharing reports</a></li>
+      <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
+      <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
+      <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
+      <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Account &amp; Settings</summary>
+    <ul>
+      <li><a href="/docs/account-and-settings/">Overview</a></li>
+      <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
+      <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
+      <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
+      <li><a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Video</summary>
+    <ul>
+      <li><a href="/docs/storyraise-video/">Overview</a></li>
+      <li><a href="/docs/storyraise-video/what-is-storyraise-video/">What is Storyraise Video?</a></li>
+      <li><a href="/docs/storyraise-video/creating-a-video-message/">Creating a video message</a></li>
+      <li><a href="/docs/storyraise-video/recording-your-video/">Recording your video</a></li>
+      <li><a href="/docs/storyraise-video/scenes-and-personalization/">Scenes and personalization</a></li>
+      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Collect</summary>
+    <ul>
+      <li><a href="/docs/storyraise-collect/">Overview</a></li>
+      <li><a href="/docs/storyraise-collect/what-is-storyraise-collect/">What is Storyraise Collect?</a></li>
+      <li><a href="/docs/storyraise-collect/creating-a-collection/">Creating a collection</a></li>
+      <li><a href="/docs/storyraise-collect/form-field-types/">Form field types</a></li>
+      <li><a href="/docs/storyraise-collect/multi-step-forms/">Multi-step forms</a></li>
+      <li><a href="/docs/storyraise-collect/sharing-your-form/">Sharing your form</a></li>
+      <li><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Resources</summary>
+    <ul>
+      <li><a href="/docs/resources/">Overview</a></li>
+      <li><a href="/docs/resources/best-practices/">Best practices</a></li>
+      <li><a href="/docs/resources/faq/">Frequently asked questions</a></li>
+    </ul>
+  </details>
+</nav>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="doc-main">
+      <label for="navtoggle" class="navtoggle-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Documentation menu
+      </label>
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="/">Knowledge Base</a>
     <span>›</span>
     <a href="/docs/distribution-and-engagement/">Distribution &amp; Engagement</a>
     <span>›</span>
     Sharing reports
-  </div>
+      </div>
 
-  <!-- CONTENT -->
-  <div class="content">
-    <h1>Sharing reports</h1>
+      <!-- CONTENT -->
+      <div class="content">
+        <h1>Sharing reports</h1>
 <p class="lead">Publishing puts your report on the web — sharing puts it in front of your audience. Storyraise gives you several ways to distribute a published report, all available from the <strong>Share</strong> options in the builder.</p>
 <h2>The Share menu</h2>
 <p>Open your published report in the builder and click <strong>Share</strong>. From there you can:</p>
@@ -459,9 +237,11 @@
 <p>Every visit counts toward your report&#39;s engagement data, but your own team&#39;s views are automatically excluded — so feel free to review and share internally before the big announcement. See <a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a>.</p>
 
 
-    <hr />
+        <hr />
 
-    <p style="font-size:0.85rem; color:#aaa;">Need help? <a href="https://storyraise.com/support" style="color:#5c2a82;">Contact our support team</a>.</p>
+        <p style="font-size:0.85rem; color:var(--text-faint);">Need help? <a href="https://storyraise.com/support">Contact our support team</a>.</p>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -472,5 +252,8 @@
     <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
   </footer>
 
+  <script src="/assets/theme.js"></script>
+  <script src="/search-index.js"></script>
+  <script src="/assets/search.js"></script>
 </body>
 </html>
