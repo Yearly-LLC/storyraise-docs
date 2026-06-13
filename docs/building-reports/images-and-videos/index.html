@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Images and videos — Storyraise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      border-bottom: 1px solid #f0f0f0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+
+    .nav-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-logo-group span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #5c2a82;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-link:hover { color: #5c2a82; }
+
+    .nav-cta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      background: #803BB1;
+      padding: 9px 22px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      max-width: 760px;
+      margin: 32px auto 0;
+      padding: 0 48px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .breadcrumb a {
+      color: #5c2a82;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 760px;
+      margin: 32px auto 80px;
+      padding: 0 48px;
+    }
+
+    .content h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .content .lead {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.75;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #f0f0f0;
+      padding-bottom: 32px;
+    }
+
+    .content h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 28px 0 12px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #5c2a82;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .content p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .content a {
+      color: #5c2a82;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(92, 42, 130, 0.3);
+    }
+    .content a:hover { border-bottom-color: #5c2a82; }
+
+    .content ul {
+      list-style: none;
+      margin: 0 0 16px 0;
+      padding: 0;
+    }
+
+    .content ul li {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.8;
+      padding: 4px 0 4px 24px;
+      position: relative;
+    }
+
+    .content ul li::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #5c2a82;
+    }
+
+    .content ol {
+      margin: 0 0 16px 0;
+      padding: 0;
+      counter-reset: steps;
+      list-style: none;
+    }
+
+    .content ol li {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.8;
+      padding: 4px 0 4px 36px;
+      position: relative;
+      counter-increment: steps;
+    }
+
+    .content ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #5c2a82;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content ol li ul,
+    .content ul li ul {
+      margin: 4px 0 0;
+    }
+
+    .content code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      background: rgba(92, 42, 130, 0.08);
+      color: #5c2a82;
+      padding: 2px 7px;
+      border-radius: 5px;
+    }
+
+    .content pre {
+      background: rgba(92, 42, 130, 0.05);
+      border: 1px solid rgba(92, 42, 130, 0.12);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 0 0 16px;
+      overflow-x: auto;
+    }
+
+    .content pre code {
+      background: none;
+      padding: 0;
+      color: #5c2a82;
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    .content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 0 24px;
+      font-size: 0.9rem;
+    }
+
+    .content table th {
+      text-align: left;
+      font-weight: 600;
+      color: #5c2a82;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-bottom: 2px solid rgba(92, 42, 130, 0.25);
+    }
+
+    .content table td {
+      padding: 12px 14px;
+      color: #444;
+      line-height: 1.65;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+
+    .content table tr:hover td { background: rgba(92, 42, 130, 0.025); }
+
+    .tip {
+      background: rgba(128, 59, 177, 0.05);
+      border-left: 3px solid #5c2a82;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .tip strong { color: #5c2a82; }
+    .tip p { margin: 0; font-size: 0.9rem; }
+
+    .note {
+      background: rgba(221, 255, 30, 0.15);
+      border-left: 3px solid #b8d900;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .note p { margin: 0; font-size: 0.9rem; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #f0f0f0;
+      margin: 48px 0;
+    }
+
+    /* ── SECTION LANDING CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 0 0 24px;
+    }
+
+    .content a.card {
+      background: #fff;
+      border: 1.5px solid #ececec;
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+
+    .content a.card:hover {
+      border-color: #803BB1;
+      box-shadow: 0 6px 24px rgba(128, 59, 177, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #555;
+      background: #e8e8e8;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a1a;
+      color: #888;
+      text-align: center;
+      padding: 36px 48px;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: #803BB1; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      nav { padding: 14px 24px; }
+      .breadcrumb { padding: 0 24px; }
+      .content { padding: 0 24px; }
+      .nav-right .nav-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo-group">
+      <a href="https://docs.storyraise.com" class="logo">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
+          alt="Storyraise"
+        />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
+    <div class="nav-right">
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="https://docs.storyraise.com">Knowledge Base</a>
+    <span>›</span>
+    <a href="/docs/building-reports/">Building Reports</a>
+    <span>›</span>
+    Images and videos
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <h1>Images and videos</h1>
+<p class="lead">Photos and video carry the emotional weight of a report. This page covers getting media in, making it look great, and keeping it fast.</p>
+<h2>Adding images</h2>
+<p>There are a few ways to get an image into your report:</p>
+<ul>
+<li><strong>Upload from your device</strong> — click an image element and choose a file, or drag and drop straight onto the uploader.</li>
+<li><strong>Your image library</strong> — every upload joins your organization&#39;s library, so teammates can reuse photos without re-uploading. Brand kit <strong>Logos</strong> and <strong>Images</strong> panels are available right in the editing sidebar.</li>
+<li><strong>Generate with AI</strong> — describe the image you want and let Storyraise create it. See <a href="/docs/building-reports/ai-content-generation/">AI content generation</a>.</li>
+</ul>
+<p>Storyraise serves images through a CDN and optimizes them automatically, so you can upload high-resolution originals without slowing your report down.</p>
+<h2>Image settings</h2>
+<p>Select an image to adjust:</p>
+<ul>
+<li><strong>Width and justification</strong> — how much space it takes and where it sits</li>
+<li><strong>Fill space</strong> — let the image expand to fill its container</li>
+<li><strong>Corner roundness</strong> — square to fully rounded</li>
+<li><strong>Shadow and margins</strong> — depth and breathing room</li>
+</ul>
+<h2>Editing images</h2>
+<p>Storyraise includes a built-in image editor — crop, rotate, apply filters, and annotate without leaving the builder or round-tripping through other software.</p>
+<h2>Adding video</h2>
+<ol>
+<li>Add a <strong>Video</strong> element (or a Video section for a full-page treatment).</li>
+<li>Paste your video&#39;s URL — YouTube and Vimeo links work.</li>
+<li>Pick an aspect ratio that fits your layout: widescreen 16:9, square 1:1, vertical 9:16, and several in between.</li>
+</ol>
+<p>The video plays right inside your report. Host the file on YouTube or Vimeo (an unlisted video works fine if you don&#39;t want it discoverable there).</p>
+<h2>Audio and social media</h2>
+<p>Beyond images and video, you can embed:</p>
+<ul>
+<li><strong>Audio</strong> — an audio player for interviews, messages, or ambient sound</li>
+<li><strong>Twitter and Facebook posts</strong> — show real social proof inside the report</li>
+<li><strong>Anything embeddable</strong> — the generic Embed element accepts other embeddable content</li>
+</ul>
+<h2>Tips</h2>
+<ul>
+<li><strong>Lead with people.</strong> Faces outperform buildings and logos; choose photos of the people your work serves (with their permission).</li>
+<li><strong>One hero per section.</strong> A single strong image beats a collage of small ones — use a Gallery section when you genuinely have a set.</li>
+<li><strong>Vertical video has a place.</strong> The 9:16 ratio suits phone-shot footage and mobile readers.</li>
+</ul>
+
+
+    <hr />
+
+    <p style="font-size:0.85rem; color:#aaa;">Need help? <a href="https://storyraise.com/support" style="color:#5c2a82;">Contact our support team</a>.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
+    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+  </footer>
+
+</body>
+</html>

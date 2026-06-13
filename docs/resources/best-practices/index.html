@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best practices — Storyraise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      border-bottom: 1px solid #f0f0f0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+
+    .nav-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-logo-group span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #5c2a82;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #555;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-link:hover { color: #5c2a82; }
+
+    .nav-cta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      background: #803BB1;
+      padding: 9px 22px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      max-width: 760px;
+      margin: 32px auto 0;
+      padding: 0 48px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .breadcrumb a {
+      color: #5c2a82;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 760px;
+      margin: 32px auto 80px;
+      padding: 0 48px;
+    }
+
+    .content h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .content .lead {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.75;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #f0f0f0;
+      padding-bottom: 32px;
+    }
+
+    .content h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 28px 0 12px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #5c2a82;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .content p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .content a {
+      color: #5c2a82;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(92, 42, 130, 0.3);
+    }
+    .content a:hover { border-bottom-color: #5c2a82; }
+
+    .content ul {
+      list-style: none;
+      margin: 0 0 16px 0;
+      padding: 0;
+    }
+
+    .content ul li {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.8;
+      padding: 4px 0 4px 24px;
+      position: relative;
+    }
+
+    .content ul li::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #5c2a82;
+    }
+
+    .content ol {
+      margin: 0 0 16px 0;
+      padding: 0;
+      counter-reset: steps;
+      list-style: none;
+    }
+
+    .content ol li {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.8;
+      padding: 4px 0 4px 36px;
+      position: relative;
+      counter-increment: steps;
+    }
+
+    .content ol li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #5c2a82;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content ol li ul,
+    .content ul li ul {
+      margin: 4px 0 0;
+    }
+
+    .content code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      background: rgba(92, 42, 130, 0.08);
+      color: #5c2a82;
+      padding: 2px 7px;
+      border-radius: 5px;
+    }
+
+    .content pre {
+      background: rgba(92, 42, 130, 0.05);
+      border: 1px solid rgba(92, 42, 130, 0.12);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 0 0 16px;
+      overflow-x: auto;
+    }
+
+    .content pre code {
+      background: none;
+      padding: 0;
+      color: #5c2a82;
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    .content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 0 24px;
+      font-size: 0.9rem;
+    }
+
+    .content table th {
+      text-align: left;
+      font-weight: 600;
+      color: #5c2a82;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-bottom: 2px solid rgba(92, 42, 130, 0.25);
+    }
+
+    .content table td {
+      padding: 12px 14px;
+      color: #444;
+      line-height: 1.65;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+
+    .content table tr:hover td { background: rgba(92, 42, 130, 0.025); }
+
+    .tip {
+      background: rgba(128, 59, 177, 0.05);
+      border-left: 3px solid #5c2a82;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .tip strong { color: #5c2a82; }
+    .tip p { margin: 0; font-size: 0.9rem; }
+
+    .note {
+      background: rgba(221, 255, 30, 0.15);
+      border-left: 3px solid #b8d900;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 20px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .note p { margin: 0; font-size: 0.9rem; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #f0f0f0;
+      margin: 48px 0;
+    }
+
+    /* ── SECTION LANDING CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 0 0 24px;
+    }
+
+    .content a.card {
+      background: #fff;
+      border: 1.5px solid #ececec;
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+
+    .content a.card:hover {
+      border-color: #803BB1;
+      box-shadow: 0 6px 24px rgba(128, 59, 177, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #555;
+      background: #e8e8e8;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a1a;
+      color: #888;
+      text-align: center;
+      padding: 36px 48px;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: #803BB1; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      nav { padding: 14px 24px; }
+      .breadcrumb { padding: 0 24px; }
+      .content { padding: 0 24px; }
+      .nav-right .nav-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo-group">
+      <a href="https://docs.storyraise.com" class="logo">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
+          alt="Storyraise"
+        />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
+    <div class="nav-right">
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="https://docs.storyraise.com">Knowledge Base</a>
+    <span>›</span>
+    <a href="/docs/resources/">Resources</a>
+    <span>›</span>
+    Best practices
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <h1>Best practices</h1>
+<p class="lead">Patterns that separate the reports people finish from the ones they skim. Distilled from what works across Storyraise customers — use them as defaults, break them on purpose.</p>
+<h2>Structure your report like a story</h2>
+<p>A proven arc for impact and annual reports:</p>
+<ol>
+<li><strong>Hook</strong> — an Intro section with your single strongest image and a clear theme.</li>
+<li><strong>Credibility</strong> — a short Letter from leadership.</li>
+<li><strong>Proof</strong> — Stories, Stats, and Galleries, alternating narrative sections with visual ones so the rhythm never goes flat.</li>
+<li><strong>Gratitude</strong> — Testimonials and your Donor List.</li>
+<li><strong>Ask</strong> — a Donate section <em>after</em> the emotional peak, not before it.</li>
+</ol>
+<p>Put your best story early — many readers won&#39;t reach the end. And keep it to one idea per section; a section doing two jobs does neither well.</p>
+<h2>Design for the skimmer</h2>
+<ul>
+<li><strong>Section titles are navigation.</strong> &quot;Our Impact&quot; beats &quot;A Look Back at Everything We Accomplished Together This Year&quot; — titles double as the report&#39;s menu.</li>
+<li><strong>Aim for 5–9 menu items.</strong> Hide supporting sections from navigation so the menu shows landmarks.</li>
+<li><strong>Numbers want air.</strong> A Stats section with three big figures lands harder than ten cramped ones.</li>
+</ul>
+<h2>Stay relentlessly on brand — and only on brand</h2>
+<p>Set up your <a href="/docs/building-reports/brand-kit/">brand kit</a> before building. Two or three brand colors used consistently look more professional than a full palette; save your brightest accent for buttons and key stats. Stick to your primary and secondary fonts — one-off typefaces are what make a report feel homemade.</p>
+<h2>Always do the mobile pass</h2>
+<p>Many readers open reports from a phone. Before publishing, walk the entire report in mobile preview: headline wraps, image crops, stacking order, button reachability. Then open the published link on your actual phone — two minutes of thumb-scrolling catches what previews miss.</p>
+<h2>Personalize whenever you know the audience</h2>
+<p>For any send where you have the recipient list, use <a href="/docs/distribution-and-engagement/personalized-links/">personalized links</a> instead of the public link:</p>
+<ul>
+<li>Merge tags greet each constituent by name — &quot;Dear friend&quot; is a missed opportunity.</li>
+<li>Every open is attributed, so Insights tells you <em>who</em> engaged, not just how many.</li>
+<li>Check your data for gaps first: a missing field means an awkward blank.</li>
+</ul>
+<h2>Make the report measurable</h2>
+<p>Give readers something to do: a donation button, an RSVP link, a video. Clicks become intent signals in your <a href="/docs/distribution-and-engagement/understanding-report-metrics/">metrics</a>, turning &quot;they read it&quot; into &quot;they acted.&quot; After each report, look at where readers dropped off in Section Retention — that&#39;s your edit list for next time.</p>
+<h2>Close the loop</h2>
+<p>The report isn&#39;t done when you hit Publish:</p>
+<ul>
+<li><strong>Time your sends</strong> using the Engagement Heatmap — meet your audience when they actually read.</li>
+<li><strong>Follow up personally</strong> with your most engaged constituents within the week; a ★★★ donor who clicked your giving button deserves a call, not a quarterly newsletter.</li>
+<li><strong>Reuse what works.</strong> Duplicate last year&#39;s report as next year&#39;s starting point, and keep collecting stories year-round so the material is ready when you are.</li>
+</ul>
+<h2>Keep it accessible</h2>
+<p>High contrast text, real headings, captions on videos, and key facts in text rather than baked into images — the basics in <a href="/docs/building-reports/accessibility/">Accessibility considerations</a> widen your audience and sharpen your design at the same time.</p>
+
+
+    <hr />
+
+    <p style="font-size:0.85rem; color:#aaa;">Need help? <a href="https://storyraise.com/support" style="color:#5c2a82;">Contact our support team</a>.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
+    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+  </footer>
+
+</body>
+</html>
