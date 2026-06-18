@@ -19,8 +19,8 @@ Work through the template in this order:
 
 1. **Apply your brand kit first.** Colors, fonts, and logo — see [Brand kit](brand-kit.md). It instantly makes the whole template feel like yours, and you'll judge the remaining work more accurately.
 2. **Replace content section by section.** Keep the layouts; swap the words and images.
-3. **Prune and add.** Delete sections that don't apply and [add section types](adding-sections.md) the template didn't include.
-4. **Don't fight the layout.** If a section's structure doesn't fit your content, it's usually faster to delete it and add a better-suited section type than to bend it into shape.
+3. **Prune and add.** Delete what doesn't apply and [add the blocks](adding-sections.md) the template didn't include.
+4. **Don't fight the layout.** If a block's structure doesn't fit your content, it's usually faster to delete it and add a better-suited block type than to bend it into shape.
 
 ## Keep the sample content until the end
 

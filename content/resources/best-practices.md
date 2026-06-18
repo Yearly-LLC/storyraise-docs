@@ -13,13 +13,13 @@ Patterns that separate the reports people finish from the ones they skim. Distil
 
 A proven arc for impact and annual reports:
 
-1. **Hook** — an Intro section with your single strongest image and a clear theme.
+1. **Hook** — an Intro block with your single strongest image and a clear theme.
 2. **Credibility** — a short Letter from leadership.
-3. **Proof** — Stories, Stats, and Galleries, alternating narrative sections with visual ones so the rhythm never goes flat.
+3. **Proof** — Stories, Stats, and Galleries, alternating narrative blocks with visual ones so the rhythm never goes flat.
 4. **Gratitude** — Testimonials and your Donor List.
-5. **Ask** — a Donate section *after* the emotional peak, not before it.
+5. **Ask** — a Donate block *after* the emotional peak, not before it.
 
-Put your best story early — many readers won't reach the end. And keep it to one idea per section; a section doing two jobs does neither well.
+Put your best story early — many readers won't reach the end. And keep it to one idea per block; a block doing two jobs does neither well.
 
 ## Design for the skimmer
 

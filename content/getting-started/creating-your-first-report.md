@@ -23,8 +23,8 @@ Your new report opens in the builder.
 ## Get oriented in the builder
 
 - The **canvas** in the middle shows your report exactly as readers will see it. Click any text or image to edit it in place.
-- The **sections panel** lists every section (page) in your report. Use it to jump between sections, reorder them, or add new ones.
-- The **Add new section** button lets you insert ready-made section types — stories, stats, galleries, testimonials, and more. See [Adding sections](../building-reports/adding-sections.md).
+- The **sections panel** lists every section (chapter) in your report. Use it to jump between sections, reorder them, or add new ones.
+- The **Add new section** button lets you insert ready-made blocks — stories, stats, galleries, testimonials, and more. See [Adding sections](../building-reports/adding-sections.md).
 - The **Publish** button in the top bar takes your report live when you're ready.
 
 ## A suggested first-30-minutes path

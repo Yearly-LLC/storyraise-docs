@@ -7,17 +7,19 @@ last_reviewed: 2026-06-12
 
 # Adding sections
 
-Reports are built section by section. Each section is a full-width page of your report with its own layout and purpose — an intro, a story, a stats spread, a donor list. This page covers the section types available and how to add them.
+Reports are built from **blocks** — an intro, a story, a stats spread, a donor list. Each block has its own layout and purpose, and you choose from a range of **block types** as you build. (A **section** is a chapter of your report, made up of one or more blocks; sections are what appear in your report's navigation.) This page covers the block types available and how to add them.
 
-## Add a section
+## Add a block
 
 1. In the builder, click **Add new section**.
-2. Choose a section type from the list (each comes with a short description).
-3. The new section is added to your report with placeholder content ready to edit.
+2. Choose a **block type** from the list (each comes with a short description).
+3. The new block is added to your report with placeholder content ready to edit.
 
-You can also let AI draft a section for you — describe what the section is about and Storyraise builds an outline. See [AI content generation](ai-content-generation.md).
+You can also let AI draft a block for you — describe what it's about and Storyraise builds an outline. See [AI content generation](ai-content-generation.md).
 
-## Section types
+<!-- TEAM REVIEW: confirm the section/block mechanics in the current UI — does "Add new section" add a single block as its own section (chapter), and can a section hold more than one block? Adjust the wording above once confirmed. -->
+
+## Block types
 
 **Openers and narrative**
 
@@ -54,16 +56,16 @@ You can also let AI draft a section for you — describe what the section is abo
 - **Section** — a flexible container for custom layouts
 - **Repeater** — create repeating blocks and elements, useful for lists of similar items
 
-## Managing sections
+## Managing blocks
 
-- **Duplicate** a section to reuse its layout with different content.
-- **Delete** a section you don't need — deleted sections can be restored if you change your mind.
-- **Reorder** sections by dragging — see [Reordering sections](reordering-sections.md).
-- **Hide** a section from the report's navigation menu while keeping it in the report — see [Navigation options](navigation-options.md).
+- **Duplicate** a block to reuse its layout with different content.
+- **Delete** a block you don't need — deleted blocks can be restored if you change your mind.
+- **Reorder** your blocks by dragging — see [Reordering sections](reordering-sections.md).
+- **Hide** a block from the report's navigation menu while keeping it in the report — see [Navigation options](navigation-options.md).
 
-<!-- TEAM REVIEW: confirm where duplicate/delete/restore actions live in the current UI (section menu? right-click?). -->
+<!-- TEAM REVIEW: confirm where duplicate/delete/restore actions live in the current UI (block menu? right-click?), and whether these act on a single block or a whole section. -->
 
 ## Tips
 
-- **One idea per section.** Readers scroll a section at a time; a section that tries to do two jobs usually does neither well.
-- **Vary the rhythm.** Alternate text-heavy sections (Letter, Prose) with visual ones (Gallery, Stats) to keep readers moving.
+- **One idea per block.** Readers scroll a block at a time; a block that tries to do two jobs usually does neither well.
+- **Vary the rhythm.** Alternate text-heavy blocks (Letter, Prose) with visual ones (Gallery, Stats) to keep readers moving.

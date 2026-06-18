@@ -14,20 +14,27 @@ last_reviewed: 2026-06-12
 
 ## What you can send
 
-A Send message is built around your content: write a personal note, attach a report, and deliver it to each constituent with their own personalized link. Your organization's logo and branding frame the message, and a clear call-to-action button takes recipients straight to your content.
+A Send message is built around your content: write a personal note, include a link to your report, and deliver it to each constituent with their own personalized link. Your organization's logo and branding frame the message, and a clear call-to-action takes recipients straight to your content.
+
+## Before you start
+
+Two things to set up in [app.storyraise.com](https://app.storyraise.com) first:
+
+- **Add your constituents.** Your recipients come from your constituent list — import or sync them before you send, since that's also what powers per-recipient personalization. See [Importing constituent data](../crm-and-data/importing-constituent-data.md).
+- **Set up your sending domain.** So email arrives from your own domain rather than a Storyraise address, verify a custom sending domain first. See [Setting up a custom sending domain](../account-and-settings/custom-sending-domain.md).
 
 ## Composing a message
 
-1. Open the compose view and write your message.
+1. Open the editor view and write your message.
 2. **Personalize with merge tags.** Use `@@field_name@@` anywhere in your subject or body — `@@first_name@@`, `@@last_name@@`, or any custom field from your constituent records. Each recipient sees their own values.
-3. **Attach your content.** Choose **Attach a Report** to pick one of your published reports, or **Attach Link Instead** to send any URL.
+3. **Link to your report.** Paste your report's link into the body of your email — when you send, each recipient gets their own [personalized link](personalized-links.md) to it. (You add the link in the message body; there's no separate "attach a report" step.)
 4. Set your subject line and adjust how your logo appears.
 
 ## Choosing recipients
 
-Add recipients by uploading a CSV — click **Upload Recipients** and use the **Constituents Template (CSV)** format (`first_name`, `last_name`, `email`). Recipients map to your constituent records, which is what powers per-recipient personalization.
+Add recipients from your constituents in [app.storyraise.com](https://app.storyraise.com) — they're matched to your constituent records, which is what powers per-recipient personalization.
 
-<!-- TEAM REVIEW: selecting recipients directly from synced Constituents (rather than CSV upload) appears not wired up yet ("Connect to CRM" is disabled in compose). Confirm what ships. -->
+<!-- TEAM REVIEW: confirm the exact recipient-selection flow in the shipped product (choosing from synced constituents vs. CSV upload) and update this section to match. -->
 
 ## Preview before you send
 
@@ -44,8 +51,10 @@ By default, messages are delivered from a Storyraise sending address. To send fr
 
 ## Good to know
 
-- **Sends are immediate.** Scheduling a send for later isn't available yet — compose when you're ready to deliver.
-- **Delivery analytics are coming.** Open and click tracking for sent emails isn't available yet; in the meantime, attach a report and use its [Insights](understanding-report-metrics.md) to see who engaged — personalized report links attribute each open to its constituent.
+- **Schedule ahead.** You can send right away or schedule a send for later — up to 30+ days in advance.
+- **Delivery status, not opens.** You can see the delivery status of your messages. Email **open and click tracking aren't available** — to measure engagement, link to a report and use its [Insights](understanding-report-metrics.md), where personalized links attribute each open to its constituent.
+
+<!-- TEAM REVIEW: confirm the exact scheduling cap (stated here as "30+ days") and the delivery-status states surfaced to customers. -->
 
 ## Tips
 

@@ -17,7 +17,7 @@ There are a few ways to get an image into your report:
 - **Your image library** — every upload joins your organization's library, so teammates can reuse photos without re-uploading. Brand kit **Logos** and **Images** panels are available right in the editing sidebar.
 - **Generate with AI** — describe the image you want and let Storyraise create it. See [AI content generation](ai-content-generation.md).
 
-Storyraise serves images through a CDN and optimizes them automatically, so you can upload high-resolution originals without slowing your report down. For the shape and size each section type expects, see [Image sizes and dimensions](image-sizes-and-dimensions.md).
+Storyraise serves images through a CDN and optimizes them automatically, so you can upload high-resolution originals without slowing your report down. For the shape and size each block type expects, see [Image sizes and dimensions](image-sizes-and-dimensions.md).
 
 ## Image settings
 

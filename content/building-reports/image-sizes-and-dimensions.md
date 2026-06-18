@@ -8,19 +8,19 @@ last_reviewed: 2026-06-12
 
 # Image sizes and dimensions
 
-The right-shaped image makes a section look designed; the wrong-shaped one fights its layout. This guide lists the aspect ratio each section type expects, so you can choose and crop photos with confidence.
+The right-shaped image makes a block look designed; the wrong-shaped one fights its layout. This guide lists the aspect ratio each block type expects, so you can choose and crop photos with confidence.
 
 ## How images behave in reports
 
 A few things to know before the numbers:
 
-- **Reports are responsive.** Many sections crop images differently on desktop and mobile — that's why the table below has two ratio columns. An image that works in both crops keeps its subject near the center.
-- **Backgrounds fill their space.** Background images scale to cover the whole section, cropping the edges as the window changes shape.
+- **Reports are responsive.** Many blocks crop images differently on desktop and mobile — that's why the table below has two ratio columns. An image that works in both crops keeps its subject near the center.
+- **Backgrounds fill their space.** Background images scale to cover the whole block, cropping the edges as the window changes shape.
 - **Upload big — Storyraise optimizes.** Images are automatically resized and compressed for fast delivery, so upload high-resolution originals rather than pre-shrinking them. There's no practical benefit to uploading small files, and large originals stay sharp on big screens.
 
-## Aspect ratios by section type
+## Aspect ratios by block type
 
-| Section | Layout | Desktop | Mobile | Recommended minimum | Notes |
+| Block | Layout | Desktop | Mobile | Recommended minimum | Notes |
 |---|---|---|---|---|---|
 | Intro | — | 16:9 | 8:9 | 1920 × 1080 | Responsive; varies with window size. Center your subject for best results. |
 | Letter | Image Left | 8:9 | 3:4 | 1280 × 1440 | Image beside text. Desktop responsive; varies by content length and window size. |
@@ -36,7 +36,7 @@ A few things to know before the numbers:
 | People | — | 1:1 | 1:1 | 1200 × 1200 | Square portraits; faces centered. |
 | Testimonial | — | 1:1 | 1:1 | 1200 × 1200 | |
 
-The layout names above (**Image Left**, **Centered · Square**, **Full-Width Overlay**, etc.) match the layout picker in the report builder. Each section type with multiple layouts shows these in its **Set Block Style & Layout** panel.
+The layout names above (**Image Left**, **Centered · Square**, **Full-Width Overlay**, etc.) match the layout picker in the report builder. Each block type with multiple layouts shows these in its **Set Block Style & Layout** panel.
 
 <!-- TEAM REVIEW: layout names come from the builder's block_layouts registry (public/js/app.js). Aspect ratios for most rows are from the team's spec sheet; the Letter "Centered · Portrait/Square/Circle" ratios were set to match the crop-shape names (Portrait 3:4, Square 1:1, Circle 1:1) rather than the original sheet values. The "Recommended minimum" pixel sizes are derived from the ratios and the app's CDN delivery widths (content imagery is served up to 1600px wide). Confirm before publishing. -->
 
@@ -48,10 +48,10 @@ The **Gallery** section comes in two layouts — **Grid** and **Slideshow**. Til
 
 ## Background images
 
-Almost every section type accepts a **background image** — including the ones not listed in the table above (Prose, Stats, Infographics, Donor List, Donate, Thank-You Note). For backgrounds:
+Almost every block type accepts a **background image** — including the ones not listed in the table above (Prose, Stats, Infographics, Donor List, Donate, Thank-You Note). For backgrounds:
 
 - Use **16:9** at **1920 × 1080 or larger**.
-- Backgrounds are cropped to fill the section, and the visible area shifts with window size and content length — keep the important part of the image **centered**, and avoid backgrounds where critical detail sits near an edge.
+- Backgrounds are cropped to fill the block, and the visible area shifts with window size and content length — keep the important part of the image **centered**, and avoid backgrounds where critical detail sits near an edge.
 - Busy backgrounds compete with text; favor images with a quiet area where your headline lands, or use a darker photo so overlaid text stays readable.
 
 ## Section thumbnails

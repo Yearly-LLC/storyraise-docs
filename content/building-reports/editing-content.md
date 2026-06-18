@@ -11,11 +11,13 @@ Everything in a Storyraise report is edited directly on the canvas — what you 
 
 ## How content is organized
 
-- A **section** is one page of your report.
-- Inside a section are **blocks** — content areas with their own style and layout settings.
+- A **section** is one chapter of your report — a top-level division that appears in the report's navigation.
+- Inside a section are **blocks** — the building blocks you add, like intros, stories, and stats spreads (see [Adding sections](adding-sections.md)). Each block has its own style and layout settings.
 - Inside blocks are **elements** — the individual pieces of content: text, images, videos, charts, and more.
 
 Click anything on the canvas to select it; the settings panel shows the options for whatever is selected.
+
+> **Headed to print?** Reports are designed for the web, but they also export to PDF. When you export, **each block becomes its own page** in the PDF — so think of a block as a page when you're planning a printed version.
 
 ## Editing text
 

@@ -231,7 +231,7 @@ const SEARCH_INDEX = [
   },
   {
     "title": "Adding sections",
-    "description": "Reports are built section by section. Each section is a full-width page of your report with its own layout and purpose — an intro, a story, a stats spread, a…",
+    "description": "Reports are built from blocks — an intro, a story, a stats spread, a donor list. Each block has its own layout and purpose, and you choose from a range of…",
     "url": "/docs/building-reports/adding-sections/",
     "keywords": [
       "adding",
@@ -297,7 +297,7 @@ const SEARCH_INDEX = [
   },
   {
     "title": "Image sizes and dimensions",
-    "description": "The right-shaped image makes a section look designed; the wrong-shaped one fights its layout. This guide lists the aspect ratio each section type expects, so…",
+    "description": "The right-shaped image makes a block look designed; the wrong-shaped one fights its layout. This guide lists the aspect ratio each block type expects, so you…",
     "url": "/docs/building-reports/image-sizes-and-dimensions/",
     "keywords": [
       "image",

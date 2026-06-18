@@ -11,7 +11,7 @@ Many of your readers will open your report on a phone — often from an email or
 
 ## Responsive by default
 
-Every section type is built to adapt: columns stack, images scale, and the navigation menu collapses into a mobile dropdown. You don't build a separate mobile version.
+Every block is built to adapt: columns stack, images scale, and the navigation menu collapses into a mobile dropdown. You don't build a separate mobile version.
 
 ## Preview and adjust for mobile
 

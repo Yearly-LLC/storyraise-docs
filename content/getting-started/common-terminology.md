@@ -23,8 +23,8 @@ A quick reference for the words you'll see throughout Storyraise.
 | Term | What it means |
 |---|---|
 | **Report** | A single publishable document — an annual report, impact report, thank-you message, and so on. |
-| **Section** | One page of a report. Reports are built section by section; sections appear in the report's navigation. |
-| **Block** | A content area inside a section. Each block has its own style and layout settings. |
+| **Section** | One chapter of a report. A section appears in the report's navigation and is built from one or more blocks. |
+| **Block** | A building block of a section — an intro, letter, story, stats spread, and so on (the "block types" you choose when adding content). Each block has its own style and layout, and becomes a single page when a report is exported to PDF. |
 | **Element** | An individual piece of content inside a block — text, an image, a video, a chart, a button, a counter, and more. |
 | **Template** | A pre-designed, complete report you can copy as a starting point. |
 | **Table of contents** | The ordered list of a report's sections; it drives the reader-facing navigation menu. |

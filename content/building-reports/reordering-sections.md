@@ -25,11 +25,11 @@ Reordering updates the report's **table of contents**, which drives the reader-f
 
 A structure that works for most impact reports:
 
-1. **Hook** — an Intro section with your strongest image and a clear theme
+1. **Hook** — an Intro block with your strongest image and a clear theme
 2. **Credibility** — a Letter from leadership
-3. **Proof** — Stories, Stats, and Galleries, alternating narrative and visual sections
+3. **Proof** — Stories, Stats, and Galleries, alternating narrative and visual blocks
 4. **Gratitude** — Testimonials and your Donor List
-5. **Ask** — a Donate section while the impact is fresh
+5. **Ask** — a Donate block while the impact is fresh
 
 Two practical tips:
 
