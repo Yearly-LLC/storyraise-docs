@@ -1,64 +1,70 @@
-// Live autocomplete search over SEARCH_INDEX (loaded from /search-index.js).
-// Used by the home-page hero search and the header search on doc pages.
-// Expects: #searchWrap > #searchInput + #searchDropdown.
+// Header autocomplete dropdown over the shared search engine (SRSearch).
+// Used by the home-page hero search and the doc-page header search.
+// Expects: #searchWrap > #searchInput + #searchDropdown, and that
+// /assets/search-core.js (window.SRSearch) has loaded.
 (function () {
   var input = document.getElementById('searchInput');
   var dropdown = document.getElementById('searchDropdown');
   var wrap = document.getElementById('searchWrap');
-  if (!input || !dropdown || typeof SEARCH_INDEX === 'undefined') return;
 
+  // Global "/" and Cmd/Ctrl+K focus the search box from anywhere.
+  if (input) {
+    document.addEventListener('keydown', function (e) {
+      var inField = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target.tagName || '')) ||
+        e.target.isContentEditable;
+      if (((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') ||
+          (e.key === '/' && !inField)) {
+        e.preventDefault();
+        input.focus();
+        input.select();
+      }
+    });
+  }
+
+  if (!input || !dropdown || !window.SRSearch) return;
+
+  var MIN_QUERY_LEN = 2;
+  var MAX_RESULTS = 8;
   var activeIdx = -1;
 
-  function highlight(text, query) {
-    if (!query) return text;
-    var escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return text.replace(new RegExp('(' + escaped + ')', 'gi'), '<mark>$1</mark>');
-  }
-
-  function score(item, q) {
-    var ql = q.toLowerCase();
-    var titleL = item.title.toLowerCase();
-    var descL = item.description.toLowerCase();
-    var kwMatch = item.keywords.some(function (k) { return k.startsWith(ql); });
-    if (titleL.startsWith(ql)) return 3;
-    if (titleL.includes(ql)) return 2;
-    if (descL.includes(ql) || kwMatch) return 1;
-    return 0;
-  }
+  function searchUrl(q) { return '/search/?q=' + encodeURIComponent(q); }
 
   function renderDropdown(query) {
     var q = query.trim();
     dropdown.innerHTML = '';
     activeIdx = -1;
 
-    if (!q) {
+    if (q.length < MIN_QUERY_LEN) {
       dropdown.classList.remove('visible');
       input.setAttribute('aria-expanded', 'false');
       return;
     }
 
-    var results = SEARCH_INDEX
-      .map(function (item) { return { item: item, s: score(item, q) }; })
-      .filter(function (r) { return r.s > 0; })
-      .sort(function (a, b) { return b.s - a.s; })
-      .map(function (r) { return r.item; });
+    var terms = SRSearch.queryTerms(q);
+    var hits = SRSearch.search(q).slice(0, MAX_RESULTS);
 
-    if (results.length === 0) {
+    if (!hits.length) {
       var none = document.createElement('div');
       none.className = 'search-no-results';
       none.innerHTML = 'No results for <strong></strong>';
       none.querySelector('strong').textContent = q;
       dropdown.appendChild(none);
     } else {
-      results.forEach(function (item, i) {
+      hits.forEach(function (hit, i) {
         var a = document.createElement('a');
         a.className = 'search-result';
-        a.href = item.url;
+        a.href = hit.url;
         a.setAttribute('role', 'option');
         a.setAttribute('id', 'sr-' + i);
+
+        var section = hit.section
+          ? '<span class="search-result-section">' + SRSearch.escapeHtml(hit.section) + '</span>'
+          : '';
+        var snip = SRSearch.snippet(hit.body, terms) || SRSearch.escapeHtml(hit.description);
+
         a.innerHTML =
-          '<div class="search-result-title">' + highlight(item.title, q) + '</div>' +
-          '<div class="search-result-desc">' + item.description + '</div>';
+          '<div class="search-result-title">' + SRSearch.highlight(hit.title, terms) + section + '</div>' +
+          '<div class="search-result-desc">' + snip + '</div>';
         dropdown.appendChild(a);
       });
     }
@@ -70,6 +76,12 @@
   input.addEventListener('input', function (e) { renderDropdown(e.target.value); });
 
   input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && activeIdx < 0) {
+      // No item highlighted → go to the full results page.
+      var q = input.value.trim();
+      if (q) { e.preventDefault(); window.location.href = searchUrl(q); }
+      return;
+    }
     var items = dropdown.querySelectorAll('.search-result');
     if (!items.length) return;
     if (e.key === 'ArrowDown') {

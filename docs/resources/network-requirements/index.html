@@ -38,6 +38,7 @@
       <span>Knowledge Base</span>
     </div>
     <div class="nav-right">
+      <!-- NAV-SEARCH -->
       <div class="search-wrap nav-search" id="searchWrap">
         <span class="search-icon">🔍</span>
         <input
@@ -52,6 +53,12 @@
         />
         <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
       </div>
+      <!-- /NAV-SEARCH -->
+      <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
+      <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </label>
+      <div class="nav-menu">
       <a href="https://storyraise.com" class="nav-link">Home</a>
       <a href="https://storyraise.com/support" class="nav-link">Support</a>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
@@ -59,6 +66,7 @@
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
       <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+      </div>
     </div>
   </nav>
 
@@ -313,6 +321,8 @@ use.typekit.net
 
   <script src="/assets/theme.js"></script>
   <script src="/search-index.js"></script>
+  <script src="/assets/minisearch.min.js"></script>
+  <script src="/assets/search-core.js"></script>
   <script src="/assets/search.js"></script>
 </body>
 </html>
