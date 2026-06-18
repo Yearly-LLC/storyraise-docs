@@ -36,7 +36,10 @@ const SECTIONS = [
     order: [
       'connecting-a-crm', 'importing-constituent-data', 'mapping-fields', 'data-refreshes',
       'troubleshooting-sync-issues', 'supported-integrations',
-      'blackbaud-raisers-edge-nxt', 'bloomerang', 'givebutter', 'virtuous', 'hubspot', 'civicrm',
+      'connections-overview', 'syncing-data-to-collections', 'managing-connections',
+      'blackbaud-raisers-edge-nxt', 'bloomerang', 'salesforce', 'virtuous', 'civicrm', 'slate',
+      'ellucian', 'little-green-light', 'donorperfect', 'neon-crm', 'funraise',
+      'givebutter', 'donorbox', 'fundraise-up', 'mailchimp', 'hubspot',
     ],
   },
   {

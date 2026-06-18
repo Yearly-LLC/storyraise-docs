@@ -9,6 +9,8 @@ last_reviewed: 2026-06-12
 
 Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging.
 
+> **Two ways to connect.** Storyraise is rolling out a redesigned **Connections** tab that brings every integration into one place. If your dashboard has it, see [Connecting via the Connections tab](#connecting-via-the-connections-tab) below; otherwise use the current steps first.
+
 ## What you'll need
 
 A **Bloomerang API key**. Bloomerang's guide to finding or creating one: [Where can I find my Bloomerang API key?](https://support.bloomerang.co/s/article/13000076351#new)
@@ -23,6 +25,10 @@ A **Bloomerang API key**. Bloomerang's guide to finding or creating one: [Where 
 4. Click **Sync constituents**.
 
 Storyraise pulls in your Bloomerang constituents — names, emails, addresses, phone numbers, and other profile fields. Synced constituents appear in your constituent list tagged **Bloomerang**.
+
+## Connecting via the Connections tab
+
+If your dashboard has the **Connections** tab, connect there instead: open **Connections**, find **Bloomerang**, click **Connect**, paste your API key, and choose **Connect & sync**. The connection then shows as **Live**, with **Sync now** and daily auto-sync options — see [The Connections tab](../connections-overview.md) and [Managing connections](../managing-connections.md).
 
 ## What gets synced
 

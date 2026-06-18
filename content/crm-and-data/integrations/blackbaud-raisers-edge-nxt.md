@@ -9,6 +9,10 @@ last_reviewed: 2026-06-12
 
 Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging.
 
+> **Two ways to connect.** Storyraise is rolling out a redesigned **Connections** tab that brings every integration into one place. If your dashboard has it, see [Connecting via the Connections tab](#connecting-via-the-connections-tab) below; otherwise use the current steps first.
+>
+> <!-- TEAM REVIEW: confirm Connections-tab availability; once it's the default for everyone, this page can lead with that flow and retire the per-tab steps. -->
+
 ## What you'll need
 
 - A Blackbaud account with access to your organization's Raiser's Edge NXT environment and the constituent lists you want to sync.
@@ -24,6 +28,14 @@ Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so 
 6. Start the sync. Storyraise pulls in each constituent's name and email, along with custom fields from your RE NXT environment.
 
 Synced constituents appear in your constituent list tagged **Blackbaud**.
+
+## Connecting via the Connections tab
+
+If your dashboard has the **Connections** tab, connect there instead:
+
+1. Open **Connections** and find **Raiser's Edge NXT** under **Add a connection**.
+2. Click **Connect**, sign in to Blackbaud, and authorize Storyraise.
+3. Storyraise imports your constituents; the connection shows as **Live**, and you can **Sync now** or turn on daily auto-sync. See [The Connections tab](../connections-overview.md) and [Managing connections](../managing-connections.md).
 
 ## What gets synced
 

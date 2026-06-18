@@ -110,7 +110,7 @@ const SEARCH_INDEX = [
       "data",
       "connections"
     ],
-    "body": "Connecting a CRM Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each constituent, generate personalized QR codes and links, and see in Insights which constituents actually opened your reports. What a connection does When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization's constituent list. Storyraise reads from your CRM — it never writes back or modifies your CRM data. Before you start You'll need credentials for your CRM — either admin access to authorize the connection (Blackbaud) or an API key (Bloomerang). The per-CRM guides below cover exactly what to gather. Constituent records are matched by email address , so the more complete your CRM's email data, the better. Connect your CRM From the dashboard, open your Constituents area and choose the option to sync constituents. Pick your CRM's tab — Blackbaud or Bloomerang — and follow the prompts: Blackbaud — click Connect , sign in to Blackbaud, and approve access. Then choose which constituent list to sync. Full guide: Blackbaud (Raiser's Edge NXT) . Bloomerang — paste your Bloomerang API key and click Sync constituents . Full guide: Bloomerang . Storyraise imports your constituents. Each record is tagged with its source (Blackbaud, Bloomerang, or CSV), so you always know where data came from. No CRM? No problem If your CRM isn't supported yet…"
+    "body": "Connecting a CRM Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each constituent, generate personalized QR codes and links, and see in Insights which constituents actually opened your reports. New: the Connections tab. Storyraise is rolling out a redesigned Connections tab that unifies every integration — many more systems than the two below — in one place. If your dashboard has it, start there; this page describes the current setup until it reaches your account. What a connection does When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization's constituent list. Storyraise reads from your CRM — it never writes back or modifies your CRM data. Before you start You'll need credentials for your CRM — either admin access to authorize the connection (Blackbaud) or an API key (Bloomerang). The per-CRM guides below cover exactly what to gather. Constituent records are matched by email address , so the more complete your CRM's email data, the better. Connect your CRM From the dashboard, open your Constituents area and choose the option to sync constituents. Pick your CRM's tab — Blackbaud or Bloomerang — and follow the prompts: Blackbaud — click Connect , sign in to Blackbaud, and approve access. Then choose which constituent list to sync. Full guide: Blackbaud (Raiser's Edge NXT) . Bloomerang — paste your…"
   },
   {
     "title": "Importing constituent data",
@@ -184,7 +184,66 @@ const SEARCH_INDEX = [
       "data",
       "connections"
     ],
-    "body": "Supported integrations Here's where Storyraise's data connections stand today, and what's on the way. Available now Integration Type What it does Blackbaud (Raiser's Edge NXT) Constituent sync Connect your Blackbaud account and sync a constituent list into Storyraise. Bloomerang Constituent sync Sync your Bloomerang constituents with an API key. Givebutter Donations Embed your Givebutter giving experience directly in a report. CSV import Constituent import Upload constituents from any system via CSV file. Blackbaud and Bloomerang also support donation form embeds, so readers can give without leaving your report. Coming soon Integration Status Virtuous Planned HubSpot Planned CiviCRM Planned Using a CRM that isn't listed? You can almost always export constituents to CSV and import them directly — you'll get the same personalization and insights features as a native integration. And let us know which CRM you'd like to see next; customer requests drive our integration roadmap. What integrations can access Storyraise integrations are read-only : they pull constituent records into Storyraise and never write back to your CRM. You can disconnect at any time."
+    "body": "Supported integrations Here's where Storyraise's data connections stand today, and what's on the way. Many more integrations are arriving with the new Connections tab — a unified hub for Salesforce, Virtuous, CiviCRM, Slate, Ellucian, Little Green Light, DonorPerfect, Neon CRM, Funraise, Donorbox, Fundraise Up, Mailchimp, and more, alongside Raiser's Edge NXT and Bloomerang. It's rolling out now; the table below reflects what's broadly available today. Available now Available now Integration Type What it does Blackbaud (Raiser's Edge NXT) Constituent sync Connect your Blackbaud account and sync a constituent list into Storyraise. Bloomerang Constituent sync Sync your Bloomerang constituents with an API key. Givebutter Donations Embed your Givebutter giving experience directly in a report. CSV import Constituent import Upload constituents from any system via CSV file. Blackbaud and Bloomerang also support donation form embeds, so readers can give without leaving your report. Rolling out via Connections These connect through the new Connections tab as it reaches your account: Integration Status Virtuous Via Connections (rolling out) CiviCRM Via Connections (rolling out) Salesforce , Slate , Ellucian , Little Green Light , DonorPerfect , Neon CRM , Funraise , Donorbox , Fundraise Up , Mailchimp Via Connections (rolling out) HubSpot Planned Using a CRM that isn't listed? You can almost always export constituents to CSV and import them directly — you'll get the same…"
+  },
+  {
+    "title": "The Connections tab",
+    "description": "Connections is your hub for bringing donor data into Storyraise. Connect a system once and Storyraise imports your constituents — then you can sync additional…",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/connections-overview/",
+    "keywords": [
+      "connections",
+      "tab",
+      "crm",
+      "data",
+      "overview",
+      "integrations",
+      "sync",
+      "connect",
+      "hub"
+    ],
+    "body": "The Connections tab Connections is your hub for bringing donor data into Storyraise. Connect a system once and Storyraise imports your constituents — then you can sync additional data (like giving history or email engagement) into collections for use in your reports. Bring your donor data into Storyraise. Connect a system to import constituents, then sync the rest into collections. How it relates to your current setup Connections is the new, unified home for every integration. It replaces the separate per-system steps in the Constituents area. If your dashboard has a Connections tab, use these guides; if it doesn't yet, follow Connecting a CRM for the current setup. CSV import stays in the Constituents area either way — see Importing constituent data . What you can connect Connections groups integrations into three categories: CRM — import your constituents from your system of record: Raiser's Edge NXT , Bloomerang , Salesforce , Virtuous , CiviCRM , Slate , Ellucian , Little Green Light , DonorPerfect , Neon CRM , and Funraise . Giving — import contacts and sync donations: Givebutter , Donorbox , and Fundraise Up . Email — import your audience and sync email engagement: Mailchimp . How connecting works Open the Connections tab and find the system you want under Add a connection (search by name). Click Connect . What happens next depends on the system: Sign-in (OAuth) — for Raiser's Edge NXT and Salesforce, you're sent to the provider to sign in and authorize Storyraise,…"
+  },
+  {
+    "title": "Syncing data to collections",
+    "description": "Connecting a system imports your constituents. But your systems hold far more than names and emails — giving history, event attendance, email engagement,…",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/syncing-data-to-collections/",
+    "keywords": [
+      "syncing",
+      "data",
+      "collections",
+      "crm",
+      "connections",
+      "extended data",
+      "collect",
+      "sync",
+      "gifts",
+      "donations",
+      "fields",
+      "data sync"
+    ],
+    "body": "Syncing data to collections Connecting a system imports your constituents. But your systems hold far more than names and emails — giving history, event attendance, email engagement, membership details, and whatever custom data you track. Syncing data to collections lets you pull any of that into Storyraise, where it's available for your reports. What it does From any connected system, you choose a set of data to bring in. Storyraise writes it to a collection — the same kind of collection Storyraise Collect uses — and relates each row to a constituent by their ID. The result is structured data, tied to the right people, ready to pull into reports. Pick any data this connection exposes. It's written to a Collect collection, related to each constituent by id. This is deliberately open-ended: gifts, donations, and email engagement are common examples, but the data you can sync is whatever your connected system exposes — not a fixed list. Add data to a collection On a connected system, choose Add data . A short four-step flow walks you through it: Choose data. Pick which object the connection exposes — for example gifts, donations, event registrations, or email activity. Fields. Select the specific fields you want to bring in. Shape. Decide how rows come across — keep them all, keep only the most recent, or summarize (for example, a total or a count per constituent). Destination. Send the data to an existing collection or create a new one. Storyraise imports the data and relates…"
+  },
+  {
+    "title": "Managing connections",
+    "description": "Once a system is connected, the Connections tab is where you keep it healthy — check its status, refresh data, adjust credentials, and turn on automatic…",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/managing-connections/",
+    "keywords": [
+      "managing",
+      "connections",
+      "crm",
+      "data",
+      "sync now",
+      "auto-sync",
+      "disconnect",
+      "reconnect",
+      "status",
+      "last synced",
+      "refresh"
+    ],
+    "body": "Managing connections Once a system is connected, the Connections tab is where you keep it healthy — check its status, refresh data, adjust credentials, and turn on automatic syncing. Connection status Each connected system shows: A status indicator — Live when everything's working, or Error if the last sync failed (with a short message about what went wrong). The data it's syncing — Constituents , plus any collections you've added, with row counts (for example, Recent gifts: 43 ). When it last synced — synced 2 hours ago . A daily badge if auto-sync is on. Keeping data current Sync now. Trigger an immediate refresh — useful right before a mailing or a board report. Re-syncing updates existing records rather than duplicating them (constituents are matched by email). Auto-sync daily. Toggle this on (under the connection's ⋯ More menu) and Storyraise refreshes the connection once a day on its own. Refresh a collection. If you've synced extra data into collections, refresh each one from the same menu. See Syncing data to collections . Updating credentials If an API key is rotated or a connection falls into an Error state, choose Edit credentials (for API-key connections) and paste the new key. For sign-in (OAuth) systems like Raiser's Edge NXT and Salesforce, reconnect by authorizing again. Disconnecting Disconnecting stops future syncs. Constituents and collection data already imported into Storyraise stay put — disconnecting doesn't delete what you've already brought in.…"
   },
   {
     "title": "Blackbaud (Raiser's Edge NXT)",
@@ -201,7 +260,7 @@ const SEARCH_INDEX = [
       "connections",
       "raisers"
     ],
-    "body": "Blackbaud (Raiser's Edge NXT) Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging. What you'll need A Blackbaud account with access to your organization's Raiser's Edge NXT environment and the constituent lists you want to sync. A constituent list in Raiser's Edge NXT containing the people you want in Storyraise. If you don't have one yet, create a list in RE NXT first — syncing works list by list, which keeps you in control of exactly who comes over. Connect and sync From the Storyraise dashboard, open the Constituents area and choose to sync constituents. Select the Blackbaud tab. Click Connect . You'll be sent to Blackbaud to sign in and authorize Storyraise. Approve the authorization. You'll return to Storyraise automatically. Choose the constituent list you want to sync. Start the sync. Storyraise pulls in each constituent's name and email, along with custom fields from your RE NXT environment. Synced constituents appear in your constituent list tagged Blackbaud . What gets synced First name, last name, and email for each constituent in the selected list Custom fields configured in your Raiser's Edge NXT environment Records are matched by email address — constituents without an email in RE NXT can't be synced, and re-syncs update existing records rather than duplicating them. Keeping it fresh Syncs run when you trigger them. Re-sync before mailings or personalized publishes…"
+    "body": "Blackbaud (Raiser's Edge NXT) Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging. Two ways to connect. Storyraise is rolling out a redesigned Connections tab that brings every integration into one place. If your dashboard has it, see Connecting via the Connections tab below; otherwise use the current steps first. What you'll need A Blackbaud account with access to your organization's Raiser's Edge NXT environment and the constituent lists you want to sync. A constituent list in Raiser's Edge NXT containing the people you want in Storyraise. If you don't have one yet, create a list in RE NXT first — syncing works list by list, which keeps you in control of exactly who comes over. Connect and sync From the Storyraise dashboard, open the Constituents area and choose to sync constituents. Select the Blackbaud tab. Click Connect . You'll be sent to Blackbaud to sign in and authorize Storyraise. Approve the authorization. You'll return to Storyraise automatically. Choose the constituent list you want to sync. Start the sync. Storyraise pulls in each constituent's name and email, along with custom fields from your RE NXT environment. Synced constituents appear in your constituent list tagged Blackbaud . Connecting via the Connections tab If your dashboard has the Connections tab, connect there instead: Open Connections and find Raiser's Edge NXT under Add a connection . Click Connect ,…"
   },
   {
     "title": "Bloomerang",
@@ -214,7 +273,157 @@ const SEARCH_INDEX = [
       "data",
       "connections"
     ],
-    "body": "Bloomerang Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging. What you'll need A Bloomerang API key . Bloomerang's guide to finding or creating one: Where can I find my Bloomerang API key? API keys belong to a Bloomerang user account. Use a key from an account that will stay active — if that user is deactivated, the key stops working. Connect and sync From the Storyraise dashboard, open the Constituents area and choose to sync constituents. Select the Bloomerang tab. Paste your API key into the key field (it looks like aaead1d4-7075-57df-ec7f-11e717c7bdd1 ). Click Sync constituents . Storyraise pulls in your Bloomerang constituents — names, emails, addresses, phone numbers, and other profile fields. Synced constituents appear in your constituent list tagged Bloomerang . What gets synced Name and email for each constituent Profile details such as address and phone fields Other fields from each constituent's Bloomerang record, flattened into individual Storyraise fields you can use as merge tags Records are matched by email address — constituents without an email in Bloomerang can't be synced, and re-syncs update existing records rather than duplicating them. Keeping it fresh Syncs run when you trigger them. Re-run Sync constituents before mailings or personalized publishes to pull the latest data — see Data refreshes . Embedding Bloomerang donation forms You can also embed a Bloomerang donation…"
+    "body": "Bloomerang Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging. Two ways to connect. Storyraise is rolling out a redesigned Connections tab that brings every integration into one place. If your dashboard has it, see Connecting via the Connections tab below; otherwise use the current steps first. What you'll need A Bloomerang API key . Bloomerang's guide to finding or creating one: Where can I find my Bloomerang API key? API keys belong to a Bloomerang user account. Use a key from an account that will stay active — if that user is deactivated, the key stops working. Connect and sync From the Storyraise dashboard, open the Constituents area and choose to sync constituents. Select the Bloomerang tab. Paste your API key into the key field (it looks like aaead1d4-7075-57df-ec7f-11e717c7bdd1 ). Click Sync constituents . Storyraise pulls in your Bloomerang constituents — names, emails, addresses, phone numbers, and other profile fields. Synced constituents appear in your constituent list tagged Bloomerang . Connecting via the Connections tab If your dashboard has the Connections tab, connect there instead: open Connections , find Bloomerang , click Connect , paste your API key, and choose Connect & sync . The connection then shows as Live , with Sync now and daily auto-sync options — see The Connections tab and Managing connections . What gets synced Name and email for each constituent Profile details…"
+  },
+  {
+    "title": "Salesforce / Nonprofit Cloud",
+    "description": "Connect Salesforce to import your contacts into Storyraise as constituents.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/salesforce/",
+    "keywords": [
+      "salesforce",
+      "nonprofit",
+      "cloud",
+      "crm",
+      "data",
+      "connections",
+      "nonprofit cloud",
+      "npsp",
+      "oauth",
+      "contacts"
+    ],
+    "body": "Salesforce / Nonprofit Cloud Connect Salesforce to import your contacts into Storyraise as constituents. What syncs Contacts → your Storyraise constituent list , matched by email. Optionally, additional Salesforce data into collections — see Syncing data to collections . Connect Salesforce uses sign-in (OAuth), so there's no API key to copy: In the Connections tab, find Salesforce / Nonprofit Cloud and click Connect . You're sent to Salesforce to sign in and authorize Storyraise. Approve access — you'll return to Storyraise, and your contacts begin importing. Sign in with a Salesforce account that can see the contacts you want to bring over. Keeping it current Sync on demand with Sync now , or turn on daily auto-sync. See Managing connections . Related The Connections tab Troubleshooting sync issues"
+  },
+  {
+    "title": "Virtuous",
+    "description": "Connect Virtuous with an API key to import your contacts into Storyraise as constituents.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/virtuous/",
+    "keywords": [
+      "virtuous",
+      "crm",
+      "data",
+      "connections",
+      "api key",
+      "contacts"
+    ],
+    "body": "Virtuous Connect Virtuous with an API key to import your contacts into Storyraise as constituents. What syncs Constituents (contacts) → your constituent list , matched by email. Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Virtuous , click Connect , and enter: API Key — your Virtuous API key. Then Connect & sync . Where to find your key In Virtuous, open Settings → API Keys and create a key (pick a permission group). See the Virtuous API key guide . No Connections tab yet? While the native connection rolls out, you can bring Virtuous contacts in today by exporting them to CSV and using CSV import — include First Name , Last Name , and Email columns, plus any custom fields. You'll get the same merge tags, personalized links, and insights. Related The Connections tab Managing connections"
+  },
+  {
+    "title": "CiviCRM",
+    "description": "Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/civicrm/",
+    "keywords": [
+      "civicrm",
+      "crm",
+      "data",
+      "connections",
+      "apiv4",
+      "site key",
+      "api key",
+      "contacts"
+    ],
+    "body": "CiviCRM Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents. What syncs Constituents (contacts) → your constituent list , matched by email. Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find CiviCRM , click Connect , and enter: Site URL — your CiviCRM site address (e.g. https://your-civicrm-site.org ). API Key — set on your CiviCRM user/contact record. Site Key (optional) — the CIVICRM_SITE_KEY from civicrm.settings.php . Then Connect & sync . Where to find these API keys attach to a CiviCRM user; the site key lives in civicrm.settings.php . See the CiviCRM API keys guide . No Connections tab yet? While the native connection rolls out, you can bring CiviCRM contacts in today by exporting them to CSV and using CSV import — include First Name , Last Name , and Email columns, plus any custom fields. Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Slate for Advancement",
+    "description": "Connect a Slate Query web service to import constituents into Storyraise. Because Slate queries are custom, you'll map their columns to Storyraise fields as…",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/slate/",
+    "keywords": [
+      "slate",
+      "advancement",
+      "crm",
+      "data",
+      "connections",
+      "technolutions",
+      "query",
+      "web service"
+    ],
+    "body": "Slate for Advancement Connect a Slate Query web service to import constituents into Storyraise. Because Slate queries are custom, you'll map their columns to Storyraise fields as you import. What syncs Constituents , from the Query you expose — mapped to your constituent list during import. Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Slate for Advancement , click Connect , and provide: Query Web Service URL — build a Query in Slate, output it as a JSON web service, and paste that URL. Service Username — a Slate service account. Service Password — that service account's password. Then Connect & sync . You'll map the query's columns to Storyraise fields on import. Where to find these In Slate, share a Query as a JSON web service, then authenticate with a service account. See the Slate Configurable API docs . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Ellucian Advancement",
+    "description": "Connect via the Ellucian Ethos Integration API to import persons into Storyraise as constituents.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/ellucian/",
+    "keywords": [
+      "ellucian",
+      "advancement",
+      "crm",
+      "data",
+      "connections",
+      "ethos",
+      "higher ed"
+    ],
+    "body": "Ellucian Advancement Connect via the Ellucian Ethos Integration API to import persons into Storyraise as constituents. What syncs Constituents (persons), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Ellucian Advancement , click Connect , and enter: Ethos API Key — from your Ethos Integration admin → Applications. Then Connect & sync . Where to find your key Ask your institution's Ethos Integration administrator for an API key for this application. Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Little Green Light",
+    "description": "Connect Little Green Light with an API token to import your constituents.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/little-green-light/",
+    "keywords": [
+      "little",
+      "green",
+      "light",
+      "crm",
+      "data",
+      "connections",
+      "little green light",
+      "lgl",
+      "api token"
+    ],
+    "body": "Little Green Light Connect Little Green Light with an API token to import your constituents. What syncs Constituents , into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Little Green Light , click Connect , and enter: API Token — your Little Green Light API token. Then Connect & sync . Where to find your token In Little Green Light, go to Settings → Integration Settings → API and generate a token. See the Little Green Light API docs . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "DonorPerfect",
+    "description": "Connect DonorPerfect with an API key to import your donors as constituents.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/donorperfect/",
+    "keywords": [
+      "donorperfect",
+      "crm",
+      "data",
+      "connections",
+      "api key",
+      "donors"
+    ],
+    "body": "DonorPerfect Connect DonorPerfect with an API key to import your donors as constituents. What syncs Constituents (donors), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find DonorPerfect , click Connect , and enter: API Key — your DonorPerfect API key. Then Connect & sync . Where to find your key DonorPerfect issues API keys on request — email support@donorperfect.com . See DonorPerfect API access . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Neon CRM",
+    "description": "Connect Neon CRM with your Organization ID and API key to import accounts as constituents.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/neon-crm/",
+    "keywords": [
+      "neon",
+      "crm",
+      "data",
+      "connections",
+      "neon crm",
+      "neoncrm",
+      "org id",
+      "api key",
+      "accounts"
+    ],
+    "body": "Neon CRM Connect Neon CRM with your Organization ID and API key to import accounts as constituents. What syncs Constituents (accounts), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Neon CRM , click Connect , and enter: Organization ID — from Settings → Organization Profile → Organization ID . API Key — from Settings → User Management → your user → API key . Environment (optional) — production for live accounts, trial for trials. Then Connect & sync . Where to find these Find your Org ID under Organization Profile, then create an API key under User Management. See the Neon CRM API keys guide . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Funraise",
+    "description": "Connect Funraise with an API key to import your supporters as constituents.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/funraise/",
+    "keywords": [
+      "funraise",
+      "crm",
+      "data",
+      "connections",
+      "api key",
+      "supporters"
+    ],
+    "body": "Funraise Connect Funraise with an API key to import your supporters as constituents. Not the same as Fundraise Up. Funraise and Fundraise Up are two different platforms — make sure you're connecting the right one. What syncs Constituents (supporters), into your constituent list . (Funraise imports constituents; it doesn't currently offer the extended data-to-collections sync.) Connect In the Connections tab, find Funraise , click Connect , and enter: API Key — your Funraise API key. Then Connect & sync . Where to find your key In your Funraise dashboard, go to Settings → API and create a key — copy it immediately, as it's shown only once. See the Funraise API guide . Related The Connections tab Managing connections"
   },
   {
     "title": "Givebutter",
@@ -227,20 +436,58 @@ const SEARCH_INDEX = [
       "data",
       "connections"
     ],
-    "body": "Givebutter Embed your Givebutter giving experience directly inside a Storyraise report, so the moment your story moves a reader, they can give — without leaving the page. What the integration does The Givebutter integration is a donation embed : your Givebutter campaign or form appears inside a section of your report. Donations are processed by Givebutter exactly as they are on your own Givebutter page, and gifts show up in your Givebutter account as usual. Looking to sync donor records into Storyraise? Givebutter constituent sync isn't available yet — export your contacts from Givebutter and use CSV import in the meantime. Add Givebutter to a report In the builder, go to the section where you want the giving experience — a Donate section works well. Add the Givebutter element to a block. Paste the URL of your Givebutter campaign or giving form. Preview the section to confirm the form loads and looks right, including on mobile. Tips Place it after the story, not before. Donation embeds convert best right after your most compelling impact section. Keep one clear ask per report. Multiple embedded forms can split attention; one well-placed giving moment usually outperforms several. Test a real gift. Before sharing widely, run a small test donation to confirm the end-to-end flow. Related Supported integrations Publishing and sharing reports"
+    "body": "Givebutter Embed your Givebutter giving experience directly inside a Storyraise report, so the moment your story moves a reader, they can give — without leaving the page. What the integration does Givebutter works with Storyraise in two ways: a donation embed inside a report, and a data connection that imports your contacts and donations. This page covers the embed; the connection is below. The donation embed places your Givebutter campaign or form inside a section of your report. Donations are processed by Givebutter exactly as they are on your own Givebutter page, and gifts show up in your Givebutter account as usual. Add Givebutter to a report In the builder, go to the section where you want the giving experience — a Donate section works well. Add the Givebutter element to a block. Paste the URL of your Givebutter campaign or giving form. Preview the section to confirm the form loads and looks right, including on mobile. Tips Place it after the story, not before. Donation embeds convert best right after your most compelling impact section. Keep one clear ask per report. Multiple embedded forms can split attention; one well-placed giving moment usually outperforms several. Test a real gift. Before sharing widely, run a small test donation to confirm the end-to-end flow. Connecting Givebutter as a data source Separately from the embed, the Connections tab can import your Givebutter data: Contacts → your constituent list . Donations → available to sync into a collection…"
   },
   {
-    "title": "Virtuous",
-    "description": "Coming soon — a native Virtuous integration is on our roadmap and isn't available yet.",
+    "title": "Donorbox",
+    "description": "Connect Donorbox to import your donors and sync their donations into Storyraise.",
     "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/virtuous/",
+    "url": "/docs/crm-and-data/integrations/donorbox/",
     "keywords": [
-      "virtuous",
+      "donorbox",
       "crm",
       "data",
-      "connections"
+      "connections",
+      "giving",
+      "donations",
+      "api key"
     ],
-    "body": "Virtuous Coming soon — a native Virtuous integration is on our roadmap and isn't available yet. In the meantime You can bring your Virtuous contacts into Storyraise today by exporting them to CSV and using CSV import . Include columns for First Name , Last Name , and Email , plus any custom fields you want available for personalization. You'll get the same merge tags, personalized links, and insights as a native integration."
+    "body": "Donorbox Connect Donorbox to import your donors and sync their donations into Storyraise. What syncs Donors → your constituent list . Donations → available to sync into a collection (see Syncing data to collections ). Donation data also powers the Signals tab. (Signals documentation coming soon.) Connect In the Connections tab, find Donorbox , click Connect , and enter: Account Email — the email you sign in to Donorbox with. API Key — your Donorbox API key. Then Connect & sync . Where to find your key Generate an API key under Organization Settings → API & Integrations in Donorbox, and authenticate with your account email. See the Donorbox API docs . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Fundraise Up",
+    "description": "Connect Fundraise Up to import your supporters and sync their donations into Storyraise.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/fundraise-up/",
+    "keywords": [
+      "fundraise",
+      "crm",
+      "data",
+      "connections",
+      "fundraise up",
+      "fundraiseup",
+      "giving",
+      "donations",
+      "api key"
+    ],
+    "body": "Fundraise Up Connect Fundraise Up to import your supporters and sync their donations into Storyraise. Not the same as Funraise. Fundraise Up and Funraise are two different platforms — connect the one you actually use. What syncs Supporters → your constituent list . Donations → available to sync into a collection (see Syncing data to collections ). Donation data also powers the Signals tab. (Signals documentation coming soon.) Connect In the Connections tab, find Fundraise Up , click Connect , and enter: API Key — your Fundraise Up API key. Then Connect & sync . Where to find your key Create an API key under Settings → Integrations → API keys in Fundraise Up. See the Fundraise Up help center . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Mailchimp",
+    "description": "Connect Mailchimp to import your audience and sync email engagement into Storyraise.",
+    "section": "CRM & Data Connections",
+    "url": "/docs/crm-and-data/integrations/mailchimp/",
+    "keywords": [
+      "mailchimp",
+      "crm",
+      "data",
+      "connections",
+      "email",
+      "audience",
+      "engagement",
+      "api key"
+    ],
+    "body": "Mailchimp Connect Mailchimp to import your audience and sync email engagement into Storyraise. What syncs Audience members → your constituent list . Email engagement → available to sync into a collection (see Syncing data to collections ). Engagement data also powers the Signals tab. (Signals documentation coming soon.) Connect In the Connections tab, find Mailchimp , click Connect , and enter: API Key — your Mailchimp API key (it ends in your data center, e.g. xxxxxxxx-us21 ). Then Connect & sync . Where to find your key Create an API key under Account → Extras → API keys in Mailchimp. The suffix after the dash (for example us21 ) is your data center — include it. See the Mailchimp API keys guide . Related The Connections tab Managing connections"
   },
   {
     "title": "HubSpot",
@@ -254,19 +501,6 @@ const SEARCH_INDEX = [
       "connections"
     ],
     "body": "HubSpot Coming soon — a native HubSpot integration is on our roadmap and isn't available yet. In the meantime You can bring your HubSpot contacts into Storyraise today by exporting them to CSV and using CSV import . In HubSpot, go to your contacts list and use Export to download a CSV; make sure it includes columns for First Name , Last Name , and Email , plus any properties you want available for personalization. You'll get the same merge tags, personalized links, and insights as a native integration."
-  },
-  {
-    "title": "CiviCRM",
-    "description": "Coming soon — a native CiviCRM integration is on our roadmap and isn't available yet.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/civicrm/",
-    "keywords": [
-      "civicrm",
-      "crm",
-      "data",
-      "connections"
-    ],
-    "body": "CiviCRM Coming soon — a native CiviCRM integration is on our roadmap and isn't available yet. In the meantime You can bring your CiviCRM contacts into Storyraise today by exporting them to CSV and using CSV import . Use CiviCRM's contact search and Export Contacts action; make sure your export includes columns for First Name , Last Name , and Email , plus any custom fields you want available for personalization. You'll get the same merge tags, personalized links, and insights as a native integration."
   },
   {
     "title": "Adding sections",

@@ -11,9 +11,9 @@ Embed your Givebutter giving experience directly inside a Storyraise report, so 
 
 ## What the integration does
 
-The Givebutter integration is a **donation embed**: your Givebutter campaign or form appears inside a section of your report. Donations are processed by Givebutter exactly as they are on your own Givebutter page, and gifts show up in your Givebutter account as usual.
+Givebutter works with Storyraise in two ways: a **donation embed** inside a report, and a **data connection** that imports your contacts and donations. This page covers the embed; the connection is below.
 
-> Looking to sync donor records into Storyraise? Givebutter constituent sync isn't available yet — export your contacts from Givebutter and use [CSV import](../importing-constituent-data.md) in the meantime.
+The donation embed places your Givebutter campaign or form inside a section of your report. Donations are processed by Givebutter exactly as they are on your own Givebutter page, and gifts show up in your Givebutter account as usual.
 
 ## Add Givebutter to a report
 
@@ -30,7 +30,19 @@ The Givebutter integration is a **donation embed**: your Givebutter campaign or 
 - **Keep one clear ask per report.** Multiple embedded forms can split attention; one well-placed giving moment usually outperforms several.
 - **Test a real gift.** Before sharing widely, run a small test donation to confirm the end-to-end flow.
 
+## Connecting Givebutter as a data source
+
+Separately from the embed, the **Connections** tab can import your Givebutter data:
+
+- **Contacts** → your [constituent list](../importing-constituent-data.md).
+- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)). Donation data also powers the Signals tab. *(Signals documentation coming soon.)*
+
+To connect: in the **Connections** tab, find **Givebutter**, click **Connect**, paste your API key (from **Account → Settings → API Keys** in Givebutter — see the [Givebutter API docs](https://docs.givebutter.com/reference/authentication)), and choose **Connect & sync**.
+
+<!-- TEAM REVIEW: the Givebutter data connection is part of the Connections tab (rolling out / internal). Confirm availability before publishing. -->
+
 ## Related
 
+- [The Connections tab](../connections-overview.md)
 - [Supported integrations](../supported-integrations.md)
 - [Publishing and sharing reports](../../getting-started/publishing-and-sharing.md)

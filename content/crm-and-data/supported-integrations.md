@@ -9,6 +9,12 @@ last_reviewed: 2026-06-12
 
 Here's where Storyraise's data connections stand today, and what's on the way.
 
+> **Many more integrations are arriving with the new [Connections tab](connections-overview.md)** — a unified hub for Salesforce, Virtuous, CiviCRM, Slate, Ellucian, Little Green Light, DonorPerfect, Neon CRM, Funraise, Donorbox, Fundraise Up, Mailchimp, and more, alongside Raiser's Edge NXT and Bloomerang. It's rolling out now; the table below reflects what's broadly available today.
+>
+> <!-- TEAM REVIEW: once the Connections tab is GA, fold this page's lists into the Connections directory and update availability. -->
+
+## Available now
+
 ## Available now
 
 | Integration | Type | What it does |
@@ -20,13 +26,16 @@ Here's where Storyraise's data connections stand today, and what's on the way.
 
 Blackbaud and Bloomerang also support donation form embeds, so readers can give without leaving your report.
 
-## Coming soon
+## Rolling out via Connections
+
+These connect through the new [Connections tab](connections-overview.md) as it reaches your account:
 
 | Integration | Status |
 |---|---|
-| [Virtuous](integrations/virtuous.md) | Planned |
+| [Virtuous](integrations/virtuous.md) | Via Connections (rolling out) |
+| [CiviCRM](integrations/civicrm.md) | Via Connections (rolling out) |
+| [Salesforce](integrations/salesforce.md), [Slate](integrations/slate.md), [Ellucian](integrations/ellucian.md), [Little Green Light](integrations/little-green-light.md), [DonorPerfect](integrations/donorperfect.md), [Neon CRM](integrations/neon-crm.md), [Funraise](integrations/funraise.md), [Donorbox](integrations/donorbox.md), [Fundraise Up](integrations/fundraise-up.md), [Mailchimp](integrations/mailchimp.md) | Via Connections (rolling out) |
 | [HubSpot](integrations/hubspot.md) | Planned |
-| [CiviCRM](integrations/civicrm.md) | Planned |
 
 Using a CRM that isn't listed? You can almost always export constituents to CSV and [import them directly](importing-constituent-data.md) — you'll get the same personalization and insights features as a native integration. And let us know which CRM you'd like to see next; customer requests drive our integration roadmap.
 

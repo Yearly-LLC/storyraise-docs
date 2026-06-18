@@ -9,6 +9,8 @@ last_reviewed: 2026-06-12
 
 Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each constituent, generate personalized QR codes and links, and see in Insights which constituents actually opened your reports.
 
+> **New: the Connections tab.** Storyraise is rolling out a redesigned [Connections tab](connections-overview.md) that unifies every integration — many more systems than the two below — in one place. If your dashboard has it, start there; this page describes the current setup until it reaches your account.
+
 ## What a connection does
 
 When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization's constituent list. Storyraise reads from your CRM — it never writes back or modifies your CRM data.

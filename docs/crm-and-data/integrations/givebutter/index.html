@@ -100,12 +100,25 @@
       <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
       <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
       <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
+      <li><a href="/docs/crm-and-data/connections-overview/">The Connections tab</a></li>
+      <li><a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a></li>
+      <li><a href="/docs/crm-and-data/managing-connections/">Managing connections</a></li>
       <li><a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a></li>
       <li><a href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a></li>
-      <li><a href="/docs/crm-and-data/integrations/givebutter/" class="active" aria-current="page">Givebutter</a></li>
+      <li><a href="/docs/crm-and-data/integrations/salesforce/">Salesforce / Nonprofit Cloud</a></li>
       <li><a href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a></li>
-      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
       <li><a href="/docs/crm-and-data/integrations/civicrm/">CiviCRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/slate/">Slate for Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/ellucian/">Ellucian Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/little-green-light/">Little Green Light</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorperfect/">DonorPerfect</a></li>
+      <li><a href="/docs/crm-and-data/integrations/neon-crm/">Neon CRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/funraise/">Funraise</a></li>
+      <li><a href="/docs/crm-and-data/integrations/givebutter/" class="active" aria-current="page">Givebutter</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
+      <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
+      <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
+      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
     </ul>
   </details>
   <details class="sidenav-group">
@@ -208,8 +221,8 @@
         <h1>Givebutter</h1>
 <p class="lead">Embed your Givebutter giving experience directly inside a Storyraise report, so the moment your story moves a reader, they can give — without leaving the page.</p>
 <h2>What the integration does</h2>
-<p>The Givebutter integration is a <strong>donation embed</strong>: your Givebutter campaign or form appears inside a section of your report. Donations are processed by Givebutter exactly as they are on your own Givebutter page, and gifts show up in your Givebutter account as usual.</p>
-<div class="tip"><p>Looking to sync donor records into Storyraise? Givebutter constituent sync isn&#39;t available yet — export your contacts from Givebutter and use <a href="/docs/crm-and-data/importing-constituent-data/">CSV import</a> in the meantime.</p></div>
+<p>Givebutter works with Storyraise in two ways: a <strong>donation embed</strong> inside a report, and a <strong>data connection</strong> that imports your contacts and donations. This page covers the embed; the connection is below.</p>
+<p>The donation embed places your Givebutter campaign or form inside a section of your report. Donations are processed by Givebutter exactly as they are on your own Givebutter page, and gifts show up in your Givebutter account as usual.</p>
 <h2>Add Givebutter to a report</h2>
 <ol>
 <li>In the builder, go to the section where you want the giving experience — a <strong>Donate</strong> section works well.</li>
@@ -223,8 +236,16 @@
 <li><strong>Keep one clear ask per report.</strong> Multiple embedded forms can split attention; one well-placed giving moment usually outperforms several.</li>
 <li><strong>Test a real gift.</strong> Before sharing widely, run a small test donation to confirm the end-to-end flow.</li>
 </ul>
+<h2>Connecting Givebutter as a data source</h2>
+<p>Separately from the embed, the <strong>Connections</strong> tab can import your Givebutter data:</p>
+<ul>
+<li><strong>Contacts</strong> → your <a href="/docs/crm-and-data/importing-constituent-data/">constituent list</a>.</li>
+<li><strong>Donations</strong> → available to sync into a collection (see <a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a>). Donation data also powers the Signals tab. <em>(Signals documentation coming soon.)</em></li>
+</ul>
+<p>To connect: in the <strong>Connections</strong> tab, find <strong>Givebutter</strong>, click <strong>Connect</strong>, paste your API key (from <strong>Account → Settings → API Keys</strong> in Givebutter — see the <a href="https://docs.givebutter.com/reference/authentication">Givebutter API docs</a>), and choose <strong>Connect &amp; sync</strong>.</p>
 <h2>Related</h2>
 <ul>
+<li><a href="/docs/crm-and-data/connections-overview/">The Connections tab</a></li>
 <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
 <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
 </ul>

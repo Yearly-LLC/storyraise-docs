@@ -1,24 +1,41 @@
 ---
 title: CiviCRM
 section: CRM & Data Connections
-status: stub
+status: draft
+keywords: civicrm, apiv4, site key, api key, contacts, connections
 last_reviewed: 2026-06-12
 ---
 
 # CiviCRM
 
-> **Coming soon** — a native CiviCRM integration is on our roadmap and isn't available yet.
+Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents.
 
-## In the meantime
+<!-- TEAM REVIEW: CiviCRM connects via the Connections tab, which is rolling out (currently internal). Until it reaches your account, use the CSV path below. Confirm availability before publishing. -->
 
-You can bring your CiviCRM contacts into Storyraise today by exporting them to CSV and using [CSV import](../importing-constituent-data.md). Use CiviCRM's contact search and **Export Contacts** action; make sure your export includes columns for **First Name**, **Last Name**, and **Email**, plus any custom fields you want available for personalization. You'll get the same merge tags, personalized links, and insights as a native integration.
+## What syncs
 
----
+- **Constituents** (contacts) → your [constituent list](../importing-constituent-data.md), matched by email.
+- Optionally, additional data into collections — see [Syncing data to collections](../syncing-data-to-collections.md).
 
-<!-- TEAM REVIEW — internal outline for when the integration ships:
-- Authentication (API key + site key? REST API v4?)
-- Self-hosted vs hosted CiviCRM considerations
-- What syncs: contacts, groups, contributions?
-- Click path in the Constituents sync UI (new CiviCRM tab)
-- Matching rules (email), re-sync behavior
--->
+## Connect
+
+In the **Connections** tab, find **CiviCRM**, click **Connect**, and enter:
+
+- **Site URL** — your CiviCRM site address (e.g. `https://your-civicrm-site.org`).
+- **API Key** — set on your CiviCRM user/contact record.
+- **Site Key** (optional) — the `CIVICRM_SITE_KEY` from `civicrm.settings.php`.
+
+Then **Connect & sync**.
+
+## Where to find these
+
+API keys attach to a CiviCRM user; the site key lives in `civicrm.settings.php`. See the [CiviCRM API keys guide](https://docs.civicrm.org/sysadmin/en/latest/setup/api-keys/).
+
+## No Connections tab yet?
+
+While the native connection rolls out, you can bring CiviCRM contacts in today by exporting them to CSV and using [CSV import](../importing-constituent-data.md) — include **First Name**, **Last Name**, and **Email** columns, plus any custom fields.
+
+## Related
+
+- [The Connections tab](../connections-overview.md)
+- [Managing connections](../managing-connections.md)
