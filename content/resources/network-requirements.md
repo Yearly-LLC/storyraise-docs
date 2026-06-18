@@ -96,10 +96,9 @@ The **Console** tab (also under F12) often shows matching "blocked" or "failed t
 
 ## Before you share a report widely
 
-If your own network filters these services, the people you send the report to may be on similar networks (especially other staff at the same organization). A couple of habits prevent surprises:
+If your own network filters these services, the people you send the report to may be on similar networks (especially other staff at the same organization). One habit prevents surprises:
 
 - **Spot-check the published link on cellular** before sending it out, to confirm it renders correctly when nothing is filtered.
-- For an internal reviewer who's stuck behind a strict firewall, you can **export a PDF** of the report from the builder and send them the file directly while IT sorts out the network. See [PDF exports](../getting-started/pdf-exports.md).
 
 ## Still stuck?
 
