@@ -708,6 +708,30 @@ const SEARCH_INDEX = [
     ]
   },
   {
+    "title": "Network requirements and troubleshooting",
+    "description": "Storyraise is a web application, and your published reports are web pages. Both rely on a handful of Google, Firebase, and Storyraise services loading in the…",
+    "url": "/docs/resources/network-requirements/",
+    "keywords": [
+      "network",
+      "requirements",
+      "troubleshooting",
+      "resources",
+      "firewall",
+      "allowlist",
+      "whitelist",
+      "it",
+      "blocked",
+      "not loading",
+      "images missing",
+      "fonts",
+      "logged out",
+      "proxy",
+      "vpn",
+      "school",
+      "corporate"
+    ]
+  },
+  {
     "title": "Frequently asked questions",
     "description": "Quick answers to the questions we hear most. Each links to a fuller guide.",
     "url": "/docs/resources/faq/",

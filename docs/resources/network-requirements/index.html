@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resources — Storyraise</title>
+  <title>Network requirements and troubleshooting — Storyraise</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css" />
   <script>
@@ -170,9 +170,9 @@
   <details class="sidenav-group" open>
     <summary>Resources</summary>
     <ul>
-      <li><a href="/docs/resources/" class="active" aria-current="page">Overview</a></li>
+      <li><a href="/docs/resources/">Overview</a></li>
       <li><a href="/docs/resources/best-practices/">Best practices</a></li>
-      <li><a href="/docs/resources/network-requirements/">Network requirements and troubleshooting</a></li>
+      <li><a href="/docs/resources/network-requirements/" class="active" aria-current="page">Network requirements and troubleshooting</a></li>
       <li><a href="/docs/resources/faq/">Frequently asked questions</a></li>
     </ul>
   </details>
@@ -190,27 +190,111 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    Resources
+    <a href="/docs/resources/">Resources</a>
+    <span>›</span>
+    Network requirements and troubleshooting
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>Resources</h1>
-<p class="lead">Guides and answers that span the whole platform.</p>
-<div class="cards">
-      <a class="card" href="/docs/resources/best-practices/">
-        <h3>Best practices</h3>
-        <p>Patterns that separate the reports people finish from the ones they skim. Distilled from what works across Storyraise customers — use them as defaults, break…</p>
-      </a>
-      <a class="card" href="/docs/resources/network-requirements/">
-        <h3>Network requirements and troubleshooting</h3>
-        <p>Storyraise is a web application, and your published reports are web pages. Both rely on a handful of Google, Firebase, and Storyraise services loading in the…</p>
-      </a>
-      <a class="card" href="/docs/resources/faq/">
-        <h3>Frequently asked questions</h3>
-        <p>Quick answers to the questions we hear most. Each links to a fuller guide.</p>
-      </a>
-    </div>
+        <h1>Network requirements and troubleshooting</h1>
+<p class="lead">Storyraise is a web application, and your published reports are web pages. Both rely on a handful of Google, Firebase, and Storyraise services loading in the browser. Most networks allow these without a second thought — but some <strong>school, hospital, government, and corporate networks</strong> run strict firewalls or content-inspection proxies that block them.</p>
+<p>When that happens, the symptoms are specific and consistent:</p>
+<ul>
+<li>The builder loads slowly, freezes, or <strong>logs you out unexpectedly</strong> and makes you sign back in.</li>
+<li>A published report opens, but <strong>images don&#39;t appear</strong> and <strong>fonts look wrong</strong> (the text falls back to a plain system font).</li>
+<li>It works fine from home or on your phone, but not at the office or on campus.</li>
+</ul>
+<p>If that sounds familiar, the report itself is fine — the network is filtering the services it needs. This guide helps you confirm that and gives your IT team exactly what to allow.</p>
+<h2>First: confirm it&#39;s the network</h2>
+<p>Before involving anyone, run this 30-second test:</p>
+<ol>
+<li>On your phone, turn <strong>Wi-Fi off</strong> so you&#39;re on cellular data.</li>
+<li>Open the report link (or sign in to the builder).</li>
+</ol>
+<p>If everything loads correctly on cellular but not on your work or school Wi-Fi, the cause is confirmed: your network is blocking Storyraise&#39;s services. Share the section below with your IT department.</p>
+<h2>Allowlist for your IT team</h2>
+<p>Ask your IT team to allow the following domains through the firewall and any web filter — for the people who <strong>build</strong> reports <em>and</em> anyone who will <strong>view</strong> a published report.</p>
+<pre><code># Sign-in and the app
+auth.storyraise.com
+yearly-bv3.firebaseapp.com
+yearly-bv3.web.app
+accounts.google.com
+apis.google.com
+
+# Core services (sign-in, live data, image hosting)
+identitytoolkit.googleapis.com
+securetoken.googleapis.com
+firestore.googleapis.com
+firebasestorage.googleapis.com
+www.gstatic.com
+us-central1-yearly-bv3.cloudfunctions.net
+*.firebaseio.com
+
+# Published reports, fonts, and images
+*.yearly.report
+fonts.googleapis.com
+fonts.gstatic.com
+yearlyreport.cloud
+images.unsplash.com
+
+# Front-end libraries
+cdn.jsdelivr.net
+unpkg.com
+cdnjs.cloudflare.com
+code.jquery.com
+use.typekit.net
+</code></pre>
+<h2>Important: allowing the domains may not be enough</h2>
+<p>This is the single most common reason IT troubleshooting &quot;doesn&#39;t stick&quot;:</p>
+<div class="tip"><p>If your network runs <strong>SSL inspection</strong> (also called deep packet inspection, TLS interception, or a content-filtering proxy), it can break Storyraise even when the domains above are technically allowed.</p></div>
+<p>The builder keeps a <strong>live connection</strong> to <code>firestore.googleapis.com</code> to load and save your work, and refreshes your sign-in token through <code>securetoken.googleapis.com</code>. Inspection proxies frequently sever these connections mid-stream — which is exactly what produces the random freezes and surprise logouts. Ask your IT team to <strong>exclude these domains from SSL/content inspection</strong>, not just add them to an allow list.</p>
+<h2>How IT can see exactly what&#39;s blocked</h2>
+<p>Your IT team can get a precise list of what your network is dropping:</p>
+<ol>
+<li>Open the report or builder in Google Chrome on the affected network.</li>
+<li>Press <strong>F12</strong> to open Developer Tools and click the <strong>Network</strong> tab.</li>
+<li>Reload the page.</li>
+<li>Any requests shown in <strong>red</strong> (failed or blocked) name the exact domains being filtered.</li>
+</ol>
+<p>The <strong>Console</strong> tab (also under F12) often shows matching &quot;blocked&quot; or &quot;failed to load&quot; messages. A screenshot of either tab tells IT precisely what to fix.</p>
+<h2>Symptom-to-cause quick reference</h2>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>Usually means</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Builder freezes or logs you out repeatedly</td>
+<td><code>firestore.googleapis.com</code> / <code>securetoken.googleapis.com</code> blocked or SSL-inspected</td>
+</tr>
+<tr>
+<td>Report opens but images are missing</td>
+<td><code>firebasestorage.googleapis.com</code> or <code>yearlyreport.cloud</code> blocked</td>
+</tr>
+<tr>
+<td>Fonts look plain or wrong</td>
+<td><code>fonts.googleapis.com</code> / <code>fonts.gstatic.com</code> blocked</td>
+</tr>
+<tr>
+<td>Can&#39;t sign in at all</td>
+<td><code>auth.storyraise.com</code>, <code>accounts.google.com</code>, or <code>identitytoolkit.googleapis.com</code> blocked</td>
+</tr>
+<tr>
+<td>Works on cellular, not on Wi-Fi</td>
+<td>Network firewall — apply the allowlist above</td>
+</tr>
+</tbody></table>
+<h2>Before you share a report widely</h2>
+<p>If your own network filters these services, the people you send the report to may be on similar networks (especially other staff at the same organization). A couple of habits prevent surprises:</p>
+<ul>
+<li><strong>Spot-check the published link on cellular</strong> before sending it out, to confirm it renders correctly when nothing is filtered.</li>
+<li>For an internal reviewer who&#39;s stuck behind a strict firewall, you can <strong>export a PDF</strong> of the report from the builder and send them the file directly while IT sorts out the network. See <a href="/docs/getting-started/pdf-exports/">PDF exports</a>.</li>
+</ul>
+<h2>Still stuck?</h2>
+<p>If your IT team has applied the allowlist (and excluded the domains from SSL inspection) and you&#39;re still seeing problems, reach out to support with a screenshot of the Chrome <strong>Network</strong> tab from the affected network — it tells us exactly where the traffic is being stopped.</p>
 
 
         <hr />

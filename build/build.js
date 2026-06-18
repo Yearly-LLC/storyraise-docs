@@ -90,7 +90,7 @@ const SECTIONS = [
     dir: 'resources',
     label: 'Resources',
     blurb: 'Guides and answers that span the whole platform.',
-    order: ['best-practices', 'faq'],
+    order: ['best-practices', 'network-requirements', 'faq'],
   },
 ];
 

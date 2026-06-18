@@ -26,6 +26,9 @@ Yes — the Share menu provides embed code (standard and fullscreen iframe varia
 **Can I get a PDF of my report?**
 Yes. **Get PDF** in the Share menu provides a PDF of a published report, and the dedicated [PDF Builder](../getting-started/pdf-exports.md) creates fully designed, print-ready PDF documents with page sizes, bleed, and crop marks.
 
+**The builder keeps logging me out, or a report won't load images and fonts on our network. Why?**
+This is almost always a strict firewall or content-inspection proxy — common on school, hospital, and corporate networks — blocking the services Storyraise relies on. Test it in 30 seconds by opening the link on your phone over cellular: if it works there, it's the network. See [Network requirements and troubleshooting](network-requirements.md) for the exact allowlist to give your IT team.
+
 ## Constituents and personalization
 
 **Which CRMs does Storyraise connect to?**
