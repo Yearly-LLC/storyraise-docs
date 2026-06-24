@@ -511,6 +511,63 @@ hr.section-divider {
   border-radius: 100px;
 }
 
+/* ── HOME: section card count ── */
+.card-count {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-soft);
+}
+
+/* ── HOME: "Start here" quick links ── */
+.start-here {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.start-link {
+  display: block;
+  padding: 16px 20px;
+  border: 1.5px solid var(--border-card);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.15s, transform 0.15s;
+}
+.start-link:hover {
+  border-color: var(--accent-text);
+  color: var(--brand);
+  transform: translateY(-2px);
+}
+
+/* ── HOME: "Connect your CRM" chips ── */
+.crm-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.crm-chip {
+  display: inline-block;
+  padding: 9px 18px;
+  border: 1.5px solid var(--border-card);
+  border-radius: 100px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.15s;
+}
+.crm-chip:hover { border-color: var(--accent-text); color: var(--brand); }
+.crm-chip-all { color: var(--brand); font-weight: 600; }
+
 /* ── HOME: HERO ── */
 .hero {
   max-width: 800px;

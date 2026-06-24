@@ -24,6 +24,7 @@ const SECTIONS = [
     dir: 'getting-started',
     label: 'Getting Started',
     blurb: 'New to Storyraise? Start here.',
+    icon: '🚀',
     order: [
       'what-is-storyraise', 'creating-your-first-report', 'understanding-templates',
       'publishing-and-sharing', 'pdf-exports', 'user-roles-and-permissions', 'common-terminology',
@@ -33,6 +34,7 @@ const SECTIONS = [
     dir: 'crm-and-data',
     label: 'CRM & Data Connections',
     blurb: 'Bring your constituent data into Storyraise.',
+    icon: '🔌',
     order: [
       'connecting-a-crm', 'importing-constituent-data', 'mapping-fields', 'data-refreshes',
       'troubleshooting-sync-issues', 'supported-integrations',
@@ -46,6 +48,7 @@ const SECTIONS = [
     dir: 'building-reports',
     label: 'Building Reports',
     blurb: 'Everything about building and styling reports.',
+    icon: '📊',
     order: [
       'adding-sections', 'editing-content', 'using-templates', 'brand-kit', 'fonts-and-colors',
       'images-and-videos', 'image-sizes-and-dimensions', 'ai-content-generation',
@@ -56,6 +59,7 @@ const SECTIONS = [
     dir: 'distribution-and-engagement',
     label: 'Distribution & Engagement',
     blurb: 'Share your published reports and see who engages.',
+    icon: '📤',
     order: [
       'sharing-reports', 'personalized-links', 'email-distribution', 'sms-distribution',
       'tracking-engagement', 'understanding-report-metrics', 'video-analytics',
@@ -65,6 +69,7 @@ const SECTIONS = [
     dir: 'account-and-settings',
     label: 'Account & Settings',
     blurb: 'Set up your account, team, billing, and sending domain.',
+    icon: '⚙️',
     order: [
       'setting-up-your-account', 'organization-settings', 'managing-your-team',
       'profile-and-security', 'managing-your-subscription', 'email-subdomain-setup',
@@ -75,6 +80,7 @@ const SECTIONS = [
     dir: 'storyraise-video',
     label: 'Storyraise Video',
     blurb: 'Personalized video messages, recorded once and sent to everyone.',
+    icon: '🎬',
     order: [
       'what-is-storyraise-video', 'creating-a-video-message', 'recording-your-video',
       'scenes-and-personalization', 'sending-and-recipients',
@@ -84,6 +90,7 @@ const SECTIONS = [
     dir: 'storyraise-collect',
     label: 'Storyraise Collect',
     blurb: 'Gather stories and data from your community with forms.',
+    icon: '📋',
     order: [
       'what-is-storyraise-collect', 'creating-a-collection', 'form-field-types',
       'multi-step-forms', 'sharing-your-form', 'managing-responses',
@@ -93,6 +100,7 @@ const SECTIONS = [
     dir: 'resources',
     label: 'Resources',
     blurb: 'Guides and answers that span the whole platform.',
+    icon: '💡',
     order: ['best-practices', 'network-requirements', 'faq'],
   },
 ];
@@ -334,6 +342,63 @@ function writeLanding(section, sidenavHtml) {
   writePage(path.join(OUT_DIR, section.dir, 'index.html'), renderPage({ title: section.label, breadcrumbHtml, bodyHtml: body, sidenavHtml }));
 }
 
+/* ── home page (generated regions) ──────────────────────────────────── */
+
+// One card per section for the home "Browse the docs" grid. Counts are derived
+// from section.articles so they track content. CRM mixes core guides with many
+// near-identical integration stubs, so it shows the split rather than a flat
+// total that would overstate the reading material.
+function homeSectionCard(section) {
+  const articles = section.articles;
+  let count;
+  if (section.dir === 'crm-and-data') {
+    const guides = articles.filter(a => !a.isIntegration).length;
+    const integrations = articles.filter(a => a.isIntegration).length;
+    count = `${guides} guides · ${integrations} integrations`;
+  } else {
+    const n = articles.length;
+    count = `${n} article${n === 1 ? '' : 's'}`;
+  }
+  return `      <a class="card" href="/docs/${section.dir}/">
+        <span class="icon">${section.icon}</span>
+        <h3>${escapeHtml(section.label)}</h3>
+        <p>${escapeHtml(section.blurb)}</p>
+        <span class="card-count">${count}</span>
+      </a>`;
+}
+
+// A chip for every integration guide — the home "Connect your CRM" row is the
+// catch-all entry point for all supported platforms. Order follows the section
+// reading order; a new integration guide appears here automatically.
+function homeCrmChips(section) {
+  return section.articles
+    .filter(a => a.isIntegration)
+    .map(a => `      <a class="crm-chip" href="${a.url}">${escapeHtml(a.title)}</a>`)
+    .join('\n');
+}
+
+// Rewrite the two AUTO regions of the hand-maintained index.html in place.
+// Markers are preserved so the replacement is idempotent; a missing marker is
+// a hard error rather than a silent no-op.
+function replaceRegion(html, name, inner) {
+  const re = new RegExp(`(<!-- AUTO:${name} -->)[\\s\\S]*?(<!-- /AUTO:${name} -->)`);
+  if (!re.test(html)) throw new Error(`buildHome: marker AUTO:${name} not found in index.html`);
+  return html.replace(re, `$1\n${inner}\n$2`);
+}
+
+function buildHome() {
+  const homePath = path.join(ROOT, 'index.html');
+  let html = fs.readFileSync(homePath, 'utf8');
+
+  html = replaceRegion(html, 'SECTION-GRID', SECTIONS.map(homeSectionCard).join('\n'));
+
+  const crm = SECTIONS.find(s => s.dir === 'crm-and-data');
+  html = replaceRegion(html, 'CRM-LINKS', homeCrmChips(crm));
+
+  fs.writeFileSync(homePath, html);
+  console.log('index.html: home regions regenerated');
+}
+
 /* ── search results page ────────────────────────────────────────────── */
 
 // A standalone /search/ page that renders a full results list (the header
@@ -414,6 +479,7 @@ for (const section of SECTIONS) {
   console.log(`${section.label}: ${section.articles.length} articles`);
 }
 
+buildHome();
 buildSearchPage();
 
 fs.writeFileSync(
