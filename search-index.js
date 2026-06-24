@@ -277,7 +277,7 @@ const SEARCH_INDEX = [
   },
   {
     "title": "Salesforce / Nonprofit Cloud",
-    "description": "Connect Salesforce to import your contacts into Storyraise as constituents.",
+    "description": "Connect Salesforce to bring your contacts and giving data into Storyraise — and send report engagement back to Salesforce so it lives next to the rest of each…",
     "section": "CRM & Data Connections",
     "url": "/docs/crm-and-data/integrations/salesforce/",
     "keywords": [
@@ -290,9 +290,12 @@ const SEARCH_INDEX = [
       "nonprofit cloud",
       "npsp",
       "oauth",
-      "contacts"
+      "contacts",
+      "gift transaction",
+      "engagement",
+      "write-back"
     ],
-    "body": "Salesforce / Nonprofit Cloud Connect Salesforce to import your contacts into Storyraise as constituents. What syncs Contacts → your Storyraise constituent list , matched by email. Optionally, additional Salesforce data into collections — see Syncing data to collections . Connect Salesforce uses sign-in (OAuth), so there's no API key to copy: In the Connections tab, find Salesforce / Nonprofit Cloud and click Connect . You're sent to Salesforce to sign in and authorize Storyraise. Approve access — you'll return to Storyraise, and your contacts begin importing. Sign in with a Salesforce account that can see the contacts you want to bring over. Keeping it current Sync on demand with Sync now , or turn on daily auto-sync. See Managing connections . Related The Connections tab Troubleshooting sync issues"
+    "body": "Salesforce / Nonprofit Cloud Connect Salesforce to bring your contacts and giving data into Storyraise — and send report engagement back to Salesforce so it lives next to the rest of each donor's record. What syncs Into Storyraise Contacts → your Storyraise constituent list , matched by email. Giving and other objects → Storyraise collections. Storyraise discovers your org's objects and fields at connect time, so you choose exactly what to bring in. This includes Nonprofit Cloud Gift Transactions — Storyraise resolves each gift's Person Account to the right constituent automatically. See Syncing data to collections . Back into Salesforce Report engagement (opens, time spent, link clicks) → logged on each donor's Contact, so your team sees Storyraise activity inside Salesforce. You choose where it lands and who it goes to (see below). Connect Salesforce uses sign-in (OAuth), so there's no API key to copy: In the Connections tab, find Salesforce / Nonprofit Cloud and click Connect . You're sent to Salesforce to sign in and authorize Storyraise. Approve access — you'll return to Storyraise, and your contacts begin importing. Sign in with a Salesforce account that can see the contacts you want to bring over — and, for write-back, that has permission to create the records you choose below. Send engagement to Salesforce On the connected Salesforce card, choose Send to Salesforce to configure write-back: Where to write it — log a completed Activity (Task) on the Contact, or update…"
   },
   {
     "title": "Virtuous",

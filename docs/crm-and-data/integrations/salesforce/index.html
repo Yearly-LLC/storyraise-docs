@@ -219,11 +219,16 @@
       <!-- CONTENT -->
       <div class="content">
         <h1>Salesforce / Nonprofit Cloud</h1>
-<p class="lead">Connect Salesforce to import your contacts into Storyraise as constituents.</p>
+<p class="lead">Connect Salesforce to bring your contacts and giving data into Storyraise — and send report engagement back to Salesforce so it lives next to the rest of each donor&#39;s record.</p>
 <h2>What syncs</h2>
+<p><strong>Into Storyraise</strong></p>
 <ul>
 <li><strong>Contacts</strong> → your Storyraise <a href="/docs/crm-and-data/importing-constituent-data/">constituent list</a>, matched by email.</li>
-<li>Optionally, additional Salesforce data into collections — see <a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a>.</li>
+<li><strong>Giving and other objects</strong> → Storyraise collections. Storyraise discovers your org&#39;s objects and fields at connect time, so you choose exactly what to bring in. This includes <strong>Nonprofit Cloud Gift Transactions</strong> — Storyraise resolves each gift&#39;s <strong>Person Account</strong> to the right constituent automatically. See <a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a>.</li>
+</ul>
+<p><strong>Back into Salesforce</strong></p>
+<ul>
+<li><strong>Report engagement</strong> (opens, time spent, link clicks) → logged on each donor&#39;s Contact, so your team sees Storyraise activity inside Salesforce. You choose where it lands and who it goes to (see below).</li>
 </ul>
 <h2>Connect</h2>
 <p>Salesforce uses sign-in (OAuth), so there&#39;s no API key to copy:</p>
@@ -232,12 +237,22 @@
 <li>You&#39;re sent to Salesforce to sign in and authorize Storyraise.</li>
 <li>Approve access — you&#39;ll return to Storyraise, and your contacts begin importing.</li>
 </ol>
-<p>Sign in with a Salesforce account that can see the contacts you want to bring over.</p>
+<p>Sign in with a Salesforce account that can see the contacts you want to bring over — and, for write-back, that has permission to create the records you choose below.</p>
+<h2>Send engagement to Salesforce</h2>
+<p>On the connected Salesforce card, choose <strong>Send to Salesforce</strong> to configure write-back:</p>
+<ul>
+<li><strong>Where to write it</strong> — log a completed <strong>Activity (Task)</strong> on the Contact, or update <strong>custom fields</strong> on the Contact (you map each Salesforce field to a metric: opens, minutes, link clicks, engagement score, last open, and more).</li>
+<li><strong>Assign to the gift officer</strong> — for Activities, optionally assign each task to the donor&#39;s <strong>Account Owner</strong>, so the right fundraiser is notified.</li>
+<li><strong>Minimum engagement to send</strong> — only send for donors who reached a chosen level (e.g. opened a report, read in depth, or clicked a link).</li>
+</ul>
+<p>Run it on demand with <strong>Save &amp; send now</strong>, or let it run automatically with auto-sync (below).</p>
+<div class="tip"><p>Engagement is matched to the exact Contact using a Storyraise constituent id carried through each personalized report link, not by name — so it lands on the right person.</p></div>
 <h2>Keeping it current</h2>
-<p>Sync on demand with <strong>Sync now</strong>, or turn on daily auto-sync. See <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</p>
+<p>Sync on demand with <strong>Sync now</strong>, or turn on <strong>Auto-sync</strong> and choose <strong>Daily</strong> or <strong>Weekly</strong>. When write-back is enabled, auto-sync also pushes engagement on the same schedule. See <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</p>
 <h2>Related</h2>
 <ul>
 <li><a href="/docs/crm-and-data/connections-overview/">The Connections tab</a></li>
+<li><a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a></li>
 <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
 </ul>
 
