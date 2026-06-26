@@ -12,11 +12,9 @@ last_reviewed: 2026-06-12
 
 > *Bring your donor data into Storyraise. Connect a system to import constituents, then sync the rest into collections.*
 
-<!-- TEAM REVIEW: the Connections tab is rolling out (currently internal/staff). Confirm customer availability before publishing, and how a customer's dashboard exposes the tab. -->
+## The home for every integration
 
-## How it relates to your current setup
-
-Connections is the new, unified home for every integration. It replaces the separate per-system steps in the **Constituents** area. If your dashboard has a **Connections** tab, use these guides; if it doesn't yet, follow [Connecting a CRM](connecting-a-crm.md) for the current setup. CSV import stays in the Constituents area either way — see [Importing constituent data](importing-constituent-data.md).
+Connections is the unified home for your integrations — connect a CRM, giving platform, or email tool, all in one place. (Prefer to upload a file? CSV import lives in the **Constituents** area — see [Importing constituent data](importing-constituent-data.md).)
 
 ## What you can connect
 
@@ -40,7 +38,8 @@ Each integration's page (linked above) lists exactly what it needs and where to 
 
 - **Imports constituents.** Records flow into your shared [constituent list](importing-constituent-data.md), matched by email — the foundation for personalization and insights.
 - **Syncs extra data into collections (optional).** Beyond names and emails, you can pull any data a connection exposes — giving history, email engagement, and more — into a collection. See [Syncing data to collections](syncing-data-to-collections.md).
-- **Keeps itself current (optional).** Turn on daily auto-sync, or sync on demand. See [Managing connections](managing-connections.md).
+- **Keeps itself current (optional).** Turn on auto-sync (daily or weekly), or sync on demand. See [Managing connections](managing-connections.md).
+- **Sends engagement back (Salesforce).** Salesforce connections can also push report engagement back to your CRM, so activity shows up on each donor's record. See [Salesforce](integrations/salesforce.md).
 
 ## Related
 

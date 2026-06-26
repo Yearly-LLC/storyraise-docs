@@ -10,8 +10,6 @@ last_reviewed: 2026-06-12
 
 Connecting a system imports your constituents. But your systems hold far more than names and emails — giving history, event attendance, email engagement, membership details, and whatever custom data you track. **Syncing data to collections** lets you pull *any* of that into Storyraise, where it's available for your reports.
 
-<!-- TEAM REVIEW: part of the Connections tab (rolling out / internal). Confirm availability before publishing. -->
-
 ## What it does
 
 From any connected system, you choose a set of data to bring in. Storyraise writes it to a **collection** — the same kind of collection [Storyraise Collect](../storyraise-collect/what-is-storyraise-collect.md) uses — and relates each row to a constituent by their ID. The result is structured data, tied to the right people, ready to pull into reports.
@@ -22,12 +20,16 @@ This is deliberately open-ended: gifts, donations, and email engagement are comm
 
 ## Add data to a collection
 
-On a connected system, choose **Add data**. A short four-step flow walks you through it:
+On a connected system, choose **Add data**. A short, friendly four-step wizard walks you through it:
 
-1. **Choose data.** Pick which object the connection exposes — for example gifts, donations, event registrations, or email activity.
-2. **Fields.** Select the specific fields you want to bring in.
-3. **Shape.** Decide how rows come across — keep them all, keep only the most recent, or summarize (for example, a total or a count per constituent).
-4. **Destination.** Send the data to an existing collection or create a new one.
+1. **Choose** — *"What do you want to bring in?"* Pick which object the connection exposes (for example gifts, donations, event registrations, or email activity).
+2. **Details** — *"Which details do you want?"* Select the specific fields to include. If the records you picked don't link to a person, Storyraise tells you here so you can choose something that does.
+3. **Summarize** — *"Some people have more than one — how should we show it?"* Choose one:
+   - **Just the most recent one** — keep each person's latest record.
+   - **Add them all up** — total a number (like gift amount) per person.
+   - **Count how many** — the number of records per person.
+   - **Keep every one** — save all records, nothing combined.
+4. **Review** — *"Here's a peek — look right?"* Choose who it covers (**Everyone** or **Just a specific list**), name the collection, and save. For gift-like data, Storyraise asks you to confirm which fields hold the **amount** and the **date**.
 
 Storyraise imports the data and relates each row to its constituent automatically.
 
@@ -37,7 +39,7 @@ Once data lands in a collection, it's available wherever collections are — so 
 
 ## Keeping it current
 
-Re-sync a collection any time from the connection's menu, or turn on daily auto-sync so it refreshes on its own. See [Managing connections](managing-connections.md).
+Re-sync a collection any time from the connection's menu, or turn on auto-sync (daily or weekly) so it refreshes on its own. See [Managing connections](managing-connections.md).
 
 ## Related
 

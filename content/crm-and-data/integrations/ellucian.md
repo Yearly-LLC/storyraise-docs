@@ -10,7 +10,6 @@ last_reviewed: 2026-06-12
 
 Connect via the Ellucian Ethos Integration API to import persons into Storyraise as constituents.
 
-<!-- TEAM REVIEW: Ellucian connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 ## What syncs
 

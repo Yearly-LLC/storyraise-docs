@@ -10,7 +10,6 @@ last_reviewed: 2026-06-12
 
 Connect Neon CRM with your Organization ID and API key to import accounts as constituents.
 
-<!-- TEAM REVIEW: Neon CRM connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 ## What syncs
 

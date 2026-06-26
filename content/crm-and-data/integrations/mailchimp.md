@@ -10,12 +10,11 @@ last_reviewed: 2026-06-12
 
 Connect Mailchimp to import your audience and sync email engagement into Storyraise.
 
-<!-- TEAM REVIEW: Mailchimp connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 ## What syncs
 
 - **Audience** members → your [constituent list](../importing-constituent-data.md).
-- **Email engagement** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)). Engagement data also powers the Signals tab. *(Signals documentation coming soon.)*
+- **Email engagement** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)) and into Insights — see [Understanding report metrics](../../distribution-and-engagement/understanding-report-metrics.md).
 
 ## Connect
 

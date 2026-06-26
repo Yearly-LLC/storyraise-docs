@@ -10,12 +10,11 @@ last_reviewed: 2026-06-12
 
 Connect Donorbox to import your donors and sync their donations into Storyraise.
 
-<!-- TEAM REVIEW: Donorbox connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 ## What syncs
 
 - **Donors** → your [constituent list](../importing-constituent-data.md).
-- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)). Donation data also powers the Signals tab. *(Signals documentation coming soon.)*
+- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)) and into Insights — see [Understanding report metrics](../../distribution-and-engagement/understanding-report-metrics.md).
 
 ## Connect
 

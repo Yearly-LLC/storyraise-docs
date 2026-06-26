@@ -226,16 +226,18 @@
 <li>A status indicator — <strong>Live</strong> when everything&#39;s working, or <strong>Error</strong> if the last sync failed (with a short message about what went wrong).</li>
 <li>The data it&#39;s syncing — <strong>Constituents</strong>, plus any collections you&#39;ve added, with row counts (for example, <em>Recent gifts: 43</em>).</li>
 <li>When it last synced — <em>synced 2 hours ago</em>.</li>
-<li>A <strong>daily</strong> badge if auto-sync is on.</li>
+<li>A badge when auto-sync is on, and (for Salesforce write-back) a note of how many records were last <strong>sent</strong> back to your CRM.</li>
 </ul>
 <h2>Keeping data current</h2>
 <ul>
 <li><strong>Sync now.</strong> Trigger an immediate refresh — useful right before a mailing or a board report. Re-syncing updates existing records rather than duplicating them (constituents are matched by email).</li>
-<li><strong>Auto-sync daily.</strong> Toggle this on (under the connection&#39;s <strong>⋯ More</strong> menu) and Storyraise refreshes the connection once a day on its own.</li>
+<li><strong>Auto-sync.</strong> Turn this on under the connection&#39;s <strong>⋯ More</strong> menu and set the <strong>Frequency</strong> to <strong>Daily</strong> or <strong>Weekly</strong> — Storyraise refreshes the connection on that schedule on its own.</li>
 <li><strong>Refresh a collection.</strong> If you&#39;ve synced extra data into collections, refresh each one from the same menu. See <a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a>.</li>
 </ul>
 <h2>Updating credentials</h2>
 <p>If an API key is rotated or a connection falls into an <strong>Error</strong> state, choose <strong>Edit credentials</strong> (for API-key connections) and paste the new key. For sign-in (OAuth) systems like Raiser&#39;s Edge NXT and Salesforce, reconnect by authorizing again.</p>
+<h2>Sending engagement back (Salesforce)</h2>
+<p>Connections import data <em>into</em> Storyraise — they don&#39;t change your source system. The one exception you can opt into is <strong>Salesforce write-back</strong>: from a connected Salesforce, choose <strong>Send to Salesforce</strong> to log report engagement (opens, time spent, link clicks) on each donor&#39;s Contact. See <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a> for the full setup.</p>
 <h2>Disconnecting</h2>
 <p>Disconnecting stops future syncs. Constituents and collection data already imported into Storyraise stay put — disconnecting doesn&#39;t delete what you&#39;ve already brought in.</p>
 <h2>Troubleshooting</h2>

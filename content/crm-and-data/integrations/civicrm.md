@@ -10,8 +10,6 @@ last_reviewed: 2026-06-12
 
 Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents.
 
-<!-- TEAM REVIEW: CiviCRM connects via the Connections tab, which is rolling out (currently internal). Until it reaches your account, use the CSV path below. Confirm availability before publishing. -->
-
 ## What syncs
 
 - **Constituents** (contacts) → your [constituent list](../importing-constituent-data.md), matched by email.
@@ -31,9 +29,9 @@ Then **Connect & sync**.
 
 API keys attach to a CiviCRM user; the site key lives in `civicrm.settings.php`. See the [CiviCRM API keys guide](https://docs.civicrm.org/sysadmin/en/latest/setup/api-keys/).
 
-## No Connections tab yet?
+## Prefer to upload a file?
 
-While the native connection rolls out, you can bring CiviCRM contacts in today by exporting them to CSV and using [CSV import](../importing-constituent-data.md) — include **First Name**, **Last Name**, and **Email** columns, plus any custom fields.
+You can also bring CiviCRM contacts in by exporting them to CSV and using [CSV import](../importing-constituent-data.md) — include **First Name**, **Last Name**, and **Email** columns, plus any custom fields.
 
 ## Related
 

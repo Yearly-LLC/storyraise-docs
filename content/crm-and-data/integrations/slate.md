@@ -10,7 +10,6 @@ last_reviewed: 2026-06-12
 
 Connect a Slate Query web service to import constituents into Storyraise. Because Slate queries are custom, you'll map their columns to Storyraise fields as you import.
 
-<!-- TEAM REVIEW: Slate connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 ## What syncs
 

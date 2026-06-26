@@ -9,9 +9,7 @@ last_reviewed: 2026-06-12
 
 Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging.
 
-> **Two ways to connect.** Storyraise is rolling out a redesigned **Connections** tab that brings every integration into one place. If your dashboard has it, see [Connecting via the Connections tab](#connecting-via-the-connections-tab) below; otherwise use the current steps first.
->
-> <!-- TEAM REVIEW: confirm Connections-tab availability; once it's the default for everyone, this page can lead with that flow and retire the per-tab steps. -->
+> **Two ways to connect.** You can connect Raiser's Edge NXT from the **[Connections](../connections-overview.md)** tab (recommended — see [Connecting via the Connections tab](#connecting-via-the-connections-tab) below) or from the per-system steps in the **Constituents** area. Both reach the same place.
 
 ## What you'll need
 

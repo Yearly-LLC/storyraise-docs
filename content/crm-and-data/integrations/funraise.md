@@ -10,7 +10,9 @@ last_reviewed: 2026-06-12
 
 Connect Funraise with an API key to import your supporters as constituents.
 
-<!-- TEAM REVIEW: Funraise connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
+> **Coming soon.** The Funraise connection is on its way — it may not be selectable in your Connections tab yet. The steps below are how it works once it's available.
+>
+> <!-- TEAM REVIEW: Funraise is flagged coming_soon in the catalog. Confirm when it goes live. -->
 
 > **Not the same as Fundraise Up.** Funraise and [Fundraise Up](fundraise-up.md) are two different platforms — make sure you're connecting the right one.
 

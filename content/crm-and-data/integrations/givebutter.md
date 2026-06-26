@@ -35,11 +35,9 @@ The donation embed places your Givebutter campaign or form inside a section of y
 Separately from the embed, the **Connections** tab can import your Givebutter data:
 
 - **Contacts** → your [constituent list](../importing-constituent-data.md).
-- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)). Donation data also powers the Signals tab. *(Signals documentation coming soon.)*
+- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)) and into Insights — see [Understanding report metrics](../../distribution-and-engagement/understanding-report-metrics.md).
 
 To connect: in the **Connections** tab, find **Givebutter**, click **Connect**, paste your API key (from **Account → Settings → API Keys** in Givebutter — see the [Givebutter API docs](https://docs.givebutter.com/reference/authentication)), and choose **Connect & sync**.
-
-<!-- TEAM REVIEW: the Givebutter data connection is part of the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 ## Related
 

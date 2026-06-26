@@ -10,7 +10,6 @@ last_reviewed: 2026-06-12
 
 Connect DonorPerfect with an API key to import your donors as constituents.
 
-<!-- TEAM REVIEW: DonorPerfect connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 ## What syncs
 

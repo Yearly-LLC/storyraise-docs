@@ -10,14 +10,13 @@ last_reviewed: 2026-06-12
 
 Connect Fundraise Up to import your supporters and sync their donations into Storyraise.
 
-<!-- TEAM REVIEW: Fundraise Up connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 > **Not the same as Funraise.** [Fundraise Up](fundraise-up.md) and [Funraise](funraise.md) are two different platforms — connect the one you actually use.
 
 ## What syncs
 
 - **Supporters** → your [constituent list](../importing-constituent-data.md).
-- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)). Donation data also powers the Signals tab. *(Signals documentation coming soon.)*
+- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)) and into Insights — see [Understanding report metrics](../../distribution-and-engagement/understanding-report-metrics.md).
 
 ## Connect
 

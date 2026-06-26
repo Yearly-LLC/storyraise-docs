@@ -2,45 +2,48 @@
 title: Supported integrations
 section: CRM & Data Connections
 status: draft
-last_reviewed: 2026-06-12
+keywords: integrations, connections, crm, supported, salesforce, mailchimp, giving
+last_reviewed: 2026-06-24
 ---
 
 # Supported integrations
 
-Here's where Storyraise's data connections stand today, and what's on the way.
+Storyraise connects to your CRM, giving platforms, and email tools through the **[Connections tab](connections-overview.md)** — one hub where you connect a system, import your constituents, and sync the rest (giving history, email engagement, and more) into Storyraise.
 
-> **Many more integrations are arriving with the new [Connections tab](connections-overview.md)** — a unified hub for Salesforce, Virtuous, CiviCRM, Slate, Ellucian, Little Green Light, DonorPerfect, Neon CRM, Funraise, Donorbox, Fundraise Up, Mailchimp, and more, alongside Raiser's Edge NXT and Bloomerang. It's rolling out now; the table below reflects what's broadly available today.
->
-> <!-- TEAM REVIEW: once the Connections tab is GA, fold this page's lists into the Connections directory and update availability. -->
+## CRM
 
-## Available now
-
-## Available now
-
-| Integration | Type | What it does |
-|---|---|---|
-| [Blackbaud (Raiser's Edge NXT)](integrations/blackbaud-raisers-edge-nxt.md) | Constituent sync | Connect your Blackbaud account and sync a constituent list into Storyraise. |
-| [Bloomerang](integrations/bloomerang.md) | Constituent sync | Sync your Bloomerang constituents with an API key. |
-| [Givebutter](integrations/givebutter.md) | Donations | Embed your Givebutter giving experience directly in a report. |
-| [CSV import](importing-constituent-data.md) | Constituent import | Upload constituents from any system via CSV file. |
-
-Blackbaud and Bloomerang also support donation form embeds, so readers can give without leaving your report.
-
-## Rolling out via Connections
-
-These connect through the new [Connections tab](connections-overview.md) as it reaches your account:
-
-| Integration | Status |
+| Integration | What it syncs |
 |---|---|
-| [Virtuous](integrations/virtuous.md) | Via Connections (rolling out) |
-| [CiviCRM](integrations/civicrm.md) | Via Connections (rolling out) |
-| [Salesforce](integrations/salesforce.md), [Slate](integrations/slate.md), [Ellucian](integrations/ellucian.md), [Little Green Light](integrations/little-green-light.md), [DonorPerfect](integrations/donorperfect.md), [Neon CRM](integrations/neon-crm.md), [Funraise](integrations/funraise.md), [Donorbox](integrations/donorbox.md), [Fundraise Up](integrations/fundraise-up.md), [Mailchimp](integrations/mailchimp.md) | Via Connections (rolling out) |
-| [HubSpot](integrations/hubspot.md) | Planned |
+| [Raiser's Edge NXT (Blackbaud)](integrations/blackbaud-raisers-edge-nxt.md) | Constituents from your RE NXT lists |
+| [Bloomerang](integrations/bloomerang.md) | Constituents, plus gifts into Insights |
+| [Salesforce / Nonprofit Cloud](integrations/salesforce.md) | Contacts and giving — and can send report engagement *back* to Salesforce |
+| [Virtuous](integrations/virtuous.md) | Contacts and giving history |
+| [CiviCRM](integrations/civicrm.md) | Contacts (API v4) |
+| [Slate for Advancement](integrations/slate.md) | Constituents from a Slate query (you map the columns) |
+| [Ellucian Advancement](integrations/ellucian.md) | Persons via the Ethos Integration API |
+| [Little Green Light](integrations/little-green-light.md) | Constituents and their giving |
+| [DonorPerfect](integrations/donorperfect.md) | Donors and gift history |
+| [Neon CRM](integrations/neon-crm.md) | Accounts and donations |
+| [Funraise](integrations/funraise.md) | Supporters and giving — *coming soon* |
 
-Using a CRM that isn't listed? You can almost always export constituents to CSV and [import them directly](importing-constituent-data.md) — you'll get the same personalization and insights features as a native integration. And let us know which CRM you'd like to see next; customer requests drive our integration roadmap.
+## Giving
 
-<!-- TEAM REVIEW: confirm the "coming soon" list matches the actual roadmap commitments we're comfortable publishing, and add a feedback/request channel link. -->
+| Integration | What it syncs |
+|---|---|
+| [Givebutter](integrations/givebutter.md) | Contacts, plus donations into Insights (also embeds in reports) |
+| [Donorbox](integrations/donorbox.md) | Donors, plus donations into Insights |
+| [Fundraise Up](integrations/fundraise-up.md) | Supporters, plus donations into Insights |
 
-## What integrations can access
+## Email
 
-Storyraise integrations are **read-only**: they pull constituent records into Storyraise and never write back to your CRM. You can disconnect at any time.
+| Integration | What it syncs |
+|---|---|
+| [Mailchimp](integrations/mailchimp.md) | Audience members and email engagement |
+
+## Not yet supported
+
+[HubSpot](integrations/hubspot.md) isn't a native connection yet. Using a system that isn't listed? You can almost always export your records to CSV and [import them directly](importing-constituent-data.md) — you'll get the same personalization and insights as a native connection. Let us know which integration you'd like next; customer requests drive the roadmap.
+
+## What connections can access
+
+Connections **import** your data into Storyraise — your constituents, and any extra data you choose to [sync into collections](syncing-data-to-collections.md). They don't change anything in your source system, with one exception you opt into: **Salesforce** can also **send report engagement back** to your CRM (logged on each donor's record), so your team sees Storyraise activity where they already work. See [Salesforce](integrations/salesforce.md). You can disconnect any connection at any time.

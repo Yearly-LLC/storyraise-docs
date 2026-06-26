@@ -10,7 +10,6 @@ last_reviewed: 2026-06-12
 
 Connect Little Green Light with an API token to import your constituents.
 
-<!-- TEAM REVIEW: Little Green Light connects via the Connections tab (rolling out / internal). Confirm availability before publishing. -->
 
 ## What syncs
 
