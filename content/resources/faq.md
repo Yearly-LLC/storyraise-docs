@@ -21,7 +21,10 @@ Yes. Keep editing in the builder; your changes stay private until you click **Re
 `https://your-organization.yearly.report/your-report` — based on your organization and the report's title.
 
 **Can I put a report on my own website?**
-Yes — the Share menu provides embed code (standard and fullscreen iframe variants). See [Sharing reports](../distribution-and-engagement/sharing-reports.md).
+Yes — the Share menu provides embed code (standard and fullscreen iframe variants). See [Sharing reports](../distribution-and-engagement/sharing-reports.md). Embedding somewhere with accessibility requirements? See [Accessibility at Storyraise](accessibility.md).
+
+**Is Storyraise accessible / does it meet WCAG?**
+Reports include built-in accessibility features, and how you build a report affects its accessibility too. See [Accessibility at Storyraise](accessibility.md) for what's built in, authoring guidance, and how to request a formal accessibility statement or VPAT.
 
 **Can I get a PDF of my report?**
 Yes. **Get PDF** in the Share menu provides a PDF of a published report, and the dedicated [PDF Builder](../getting-started/pdf-exports.md) creates fully designed, print-ready PDF documents with page sizes, bleed, and crop marks.

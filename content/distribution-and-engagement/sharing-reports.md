@@ -57,6 +57,8 @@ The **fullscreen** variant pins the report over the entire viewport — use it o
         style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 9999;"></iframe>
 ```
 
+If your site has accessibility requirements, give the iframe a descriptive `title` and review [Accessibility at Storyraise](../resources/accessibility.md) before you embed.
+
 ## QR codes for print
 
 **Get QR code** downloads a scannable code for your report — drop it onto mailers, event signage, table tents, or thank-you cards to bridge print and digital. For per-constituent QR codes at scale (each opening a personalized version of the report), use the QR code generator described in [Personalized links](personalized-links.md).

@@ -2,16 +2,18 @@
 title: Accessibility considerations
 section: Building Reports
 status: draft
-last_reviewed: 2026-06-12
+keywords: accessibility, alt text, media description, contrast, overlay, wcag, screen reader
+last_reviewed: 2026-06-24
 ---
 
 # Accessibility considerations
 
-An accessible report reaches your whole audience — including readers with low vision, color blindness, motor differences, or those using screen readers. Most accessibility wins come from choices you make while building. Here's what matters most.
+An accessible report reaches your whole audience — including readers with low vision, color blindness, motor differences, or those using screen readers. Most accessibility wins come from choices you make while building. Here's what matters most. (For Storyraise's built-in accessibility features, embedding, and conformance, see [Accessibility at Storyraise](../resources/accessibility.md).)
 
 ## Color and contrast
 
-- **Keep text contrast high.** Dark text on light backgrounds (or light on dark) should be comfortably readable. Be careful with text over photos — add a solid or tinted background behind it if the image is busy.
+- **Keep text contrast high.** Dark text on light backgrounds (or light on dark) should be comfortably readable.
+- **Add an overlay behind text on photos.** When you place text over an image, use the block's **Overlay Color** control to darken (or lighten) the image behind the text. Increase the overlay opacity until the text is comfortably legible — busy or bright photos need more. Storyraise doesn't measure the contrast ratio for you, so trust your eyes and test on a phone as well as a laptop.
 - **Don't rely on color alone.** If a chart distinguishes categories only by hue, readers with color blindness may lose the thread. Use labels and values alongside color.
 
 ## Typography
@@ -34,10 +36,18 @@ An accessible report reaches your whole audience — including readers with low 
 
 ## Image alt text
 
-> **Coming soon** — a dedicated alt text field for images is on its way. In the meantime, the practices above (essential information in real text, not images) keep your reports usable for screen-reader users.
+Give your images a text description so screen-reader users know what they show. Select an image and fill in **Media Description (alt)** with a short, specific description.
+
+- **Describe the content and its purpose**, not the file. "Volunteers sorting food donations at the spring drive" beats "IMG_2043."
+- **Keep it concise** — a sentence or so. Screen readers read it aloud.
+- **Skip "image of"** — assistive tech already announces that it's an image.
+- **Decorative images** (a texture or divider that adds nothing to the meaning) can have an empty description — leave it blank so screen readers skip them.
+
+**Important — full-bleed background imagery.** Storyraise reports use two kinds of images: standalone images placed in your content, and large full-bleed images that sit *behind* a section's text. For standalone images, the Media Description becomes proper screen-reader alt text. For full-bleed background images, treat the description as a helpful label but **not** a full substitute — so, as below, make sure anything essential in a background photo also appears in real text on the page. When in doubt, keep key information in text, not baked into an image.
 
 ## A quick pre-publish check
 
 1. Squint test: can you still distinguish sections and read headings with your eyes half-closed?
 2. Grayscale test: does the report still communicate if you imagine it without color?
 3. Read your section titles alone — do they tell the report's story?
+4. Alt-text pass: does every meaningful image have a **Media Description**, and is essential info in real text rather than only in a photo?

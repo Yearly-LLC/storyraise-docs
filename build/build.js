@@ -101,7 +101,7 @@ const SECTIONS = [
     label: 'Resources',
     blurb: 'Guides and answers that span the whole platform.',
     icon: '💡',
-    order: ['best-practices', 'network-requirements', 'faq'],
+    order: ['best-practices', 'accessibility', 'network-requirements', 'faq'],
   },
 ];
 

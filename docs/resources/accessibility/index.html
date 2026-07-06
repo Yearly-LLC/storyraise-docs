@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accessibility considerations — Storyraise</title>
+  <title>Accessibility at Storyraise — Storyraise</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css" />
   <script>
@@ -121,7 +121,7 @@
       <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>Building Reports</summary>
     <ul>
       <li><a href="/docs/building-reports/">Overview</a></li>
@@ -136,7 +136,7 @@
       <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
       <li><a href="/docs/building-reports/navigation-options/">Navigation options</a></li>
       <li><a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a></li>
-      <li><a href="/docs/building-reports/accessibility/" class="active" aria-current="page">Accessibility considerations</a></li>
+      <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
     </ul>
   </details>
   <details class="sidenav-group">
@@ -188,12 +188,12 @@
       <li><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Resources</summary>
     <ul>
       <li><a href="/docs/resources/">Overview</a></li>
       <li><a href="/docs/resources/best-practices/">Best practices</a></li>
-      <li><a href="/docs/resources/accessibility/">Accessibility at Storyraise</a></li>
+      <li><a href="/docs/resources/accessibility/" class="active" aria-current="page">Accessibility at Storyraise</a></li>
       <li><a href="/docs/resources/network-requirements/">Network requirements and troubleshooting</a></li>
       <li><a href="/docs/resources/faq/">Frequently asked questions</a></li>
     </ul>
@@ -212,55 +212,40 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    <a href="/docs/building-reports/">Building Reports</a>
+    <a href="/docs/resources/">Resources</a>
     <span>›</span>
-    Accessibility considerations
+    Accessibility at Storyraise
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>Accessibility considerations</h1>
-<p class="lead">An accessible report reaches your whole audience — including readers with low vision, color blindness, motor differences, or those using screen readers. Most accessibility wins come from choices you make while building. Here&#39;s what matters most. (For Storyraise&#39;s built-in accessibility features, embedding, and conformance, see <a href="/docs/resources/accessibility/">Accessibility at Storyraise</a>.)</p>
-<h2>Color and contrast</h2>
+        <h1>Accessibility at Storyraise</h1>
+<p class="lead">We want every report you publish to be usable by everyone in your audience — including people who use screen readers, navigate by keyboard, or need high contrast. This page covers what Storyraise provides, what you control as the author, embedding a report on your own site, and how to request formal accessibility documentation.</p>
+<h2>What&#39;s built in</h2>
+<p>Published Storyraise reports include:</p>
 <ul>
-<li><strong>Keep text contrast high.</strong> Dark text on light backgrounds (or light on dark) should be comfortably readable.</li>
-<li><strong>Add an overlay behind text on photos.</strong> When you place text over an image, use the block&#39;s <strong>Overlay Color</strong> control to darken (or lighten) the image behind the text. Increase the overlay opacity until the text is comfortably legible — busy or bright photos need more. Storyraise doesn&#39;t measure the contrast ratio for you, so trust your eyes and test on a phone as well as a laptop.</li>
-<li><strong>Don&#39;t rely on color alone.</strong> If a chart distinguishes categories only by hue, readers with color blindness may lose the thread. Use labels and values alongside color.</li>
+<li><strong>Semantic structure</strong> — reports use real landmark regions (navigation, main content, footer) so assistive technology can move through them.</li>
+<li><strong>Keyboard-operable navigation</strong> — the report menu and links work with the keyboard, not just the mouse.</li>
+<li><strong>Image descriptions</strong> — you can add a <strong>Media Description (alt)</strong> to images so screen-reader users know what they show.</li>
+<li><strong>A contrast overlay for text on images</strong> — an <strong>Overlay Color</strong> control darkens or lightens a photo behind its text so the words stay legible.</li>
+<li><strong>Responsive, resizable layouts</strong> — reports reflow for phones, tablets, and zoom, with no fixed, unscalable text.</li>
+<li><strong>Captions from your source video</strong> — YouTube and Vimeo embeds carry whatever captions you&#39;ve enabled on the original video.</li>
 </ul>
-<h2>Typography</h2>
+<p>We&#39;re continually improving accessibility; if you hit a barrier, tell us (below).</p>
+<h2>What you control as the author</h2>
+<p>Much of a report&#39;s accessibility comes from how it&#39;s built. The <a href="/docs/building-reports/accessibility/">Accessibility considerations</a> guide covers the essentials: writing image descriptions, keeping strong contrast (including the overlay for text on photos), using real headings, meaningful link text, and keeping essential information in text rather than baked into images. A few minutes of attention there makes a real difference for your readers.</p>
+<h2>Embedding a report on your website</h2>
+<p>When you embed a report, it keeps its own structure and behavior inside your page. That means:</p>
 <ul>
-<li><strong>Favor readable sizes.</strong> Resist shrinking body text to fit more in — if a section feels cramped, split it instead.</li>
-<li><strong>Use real headings.</strong> Structure each section with a clear heading hierarchy rather than enlarged body text; it helps every reader scan, and assistive technology navigate.</li>
-<li><strong>Watch line length and spacing.</strong> Generous line height and moderate line lengths make long passages far easier to read.</li>
+<li><strong>The content&#39;s accessibility is yours to get right</strong> — image descriptions, contrast, headings, and link text all come from how you built the report. Follow the <a href="/docs/building-reports/accessibility/">authoring guide</a> before you embed.</li>
+<li><strong>Test it in place.</strong> Run your organization&#39;s usual accessibility checks (keyboard-only navigation, a screen reader, an automated scanner) on the page once the report is embedded, the same as any other content on your site.</li>
+<li><strong>Give the frame a title.</strong> If your site templates let you set a title on the embed/iframe, use a descriptive one (e.g. &quot;2026 Impact Report&quot;).</li>
 </ul>
-<h2>Media</h2>
-<ul>
-<li><strong>Don&#39;t put essential text inside images.</strong> Text baked into an image can&#39;t be resized, translated, or read by a screen reader. Put key facts in real text elements.</li>
-<li><strong>Caption your videos.</strong> YouTube and Vimeo both support captions — enable them on the source video so embedded players inherit them.</li>
-<li><strong>Keep motion gentle.</strong> Animated counters and media animations add life, but heavy motion can be disorienting; use it as seasoning, not structure.</li>
-</ul>
-<h2>Structure and navigation</h2>
-<ul>
-<li><strong>Descriptive section titles</strong> double as navigation labels — &quot;Financial Summary&quot; tells a screen-reader user where a link goes; &quot;More&quot; doesn&#39;t.</li>
-<li><strong>Meaningful button text.</strong> &quot;Read Maria&#39;s story&quot; beats &quot;Click here.&quot;</li>
-<li><strong>Logical reading order.</strong> Mobile preview shows you the linearized order of side-by-side content — make sure it makes sense read top to bottom. See <a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a>.</li>
-</ul>
-<h2>Image alt text</h2>
-<p>Give your images a text description so screen-reader users know what they show. Select an image and fill in <strong>Media Description (alt)</strong> with a short, specific description.</p>
-<ul>
-<li><strong>Describe the content and its purpose</strong>, not the file. &quot;Volunteers sorting food donations at the spring drive&quot; beats &quot;IMG_2043.&quot;</li>
-<li><strong>Keep it concise</strong> — a sentence or so. Screen readers read it aloud.</li>
-<li><strong>Skip &quot;image of&quot;</strong> — assistive tech already announces that it&#39;s an image.</li>
-<li><strong>Decorative images</strong> (a texture or divider that adds nothing to the meaning) can have an empty description — leave it blank so screen readers skip them.</li>
-</ul>
-<p><strong>Important — full-bleed background imagery.</strong> Storyraise reports use two kinds of images: standalone images placed in your content, and large full-bleed images that sit <em>behind</em> a section&#39;s text. For standalone images, the Media Description becomes proper screen-reader alt text. For full-bleed background images, treat the description as a helpful label but <strong>not</strong> a full substitute — so, as below, make sure anything essential in a background photo also appears in real text on the page. When in doubt, keep key information in text, not baked into an image.</p>
-<h2>A quick pre-publish check</h2>
-<ol>
-<li>Squint test: can you still distinguish sections and read headings with your eyes half-closed?</li>
-<li>Grayscale test: does the report still communicate if you imagine it without color?</li>
-<li>Read your section titles alone — do they tell the report&#39;s story?</li>
-<li>Alt-text pass: does every meaningful image have a <strong>Media Description</strong>, and is essential info in real text rather than only in a photo?</li>
-</ol>
+<h2>Conformance and formal documentation</h2>
+<p>For your organization&#39;s official accessibility posture — including how Storyraise approaches <strong>WCAG 2.1</strong> — see our <strong><a href="https://storyraise.com/accessibility">accessibility statement</a></strong>.</p>
+<p>If your procurement, legal, or compliance team needs a <strong>formal accessibility statement, a VPAT®, or an Accessibility Conformance Report (ACR)</strong>, or has specific questions about a standard, please reach out and we&#39;ll help.</p>
+<h2>Reporting an accessibility issue</h2>
+<p>Found something that&#39;s hard to use with assistive technology, or need an accommodation? Contact our team — we take accessibility seriously and want to hear about it. <a href="https://storyraise.com/support">Contact support</a>.</p>
 
 
         <hr />
