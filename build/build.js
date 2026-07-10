@@ -51,7 +51,8 @@ const SECTIONS = [
     icon: '📊',
     order: [
       'adding-sections', 'editing-content', 'using-templates', 'brand-kit', 'fonts-and-colors',
-      'images-and-videos', 'image-sizes-and-dimensions', 'ai-content-generation',
+      'images-and-videos', 'creating-visualizations', 'build-a-line-chart',
+      'image-sizes-and-dimensions', 'ai-content-generation',
       'reordering-sections', 'navigation-options', 'mobile-optimization', 'accessibility',
     ],
   },

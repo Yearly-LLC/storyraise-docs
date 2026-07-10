@@ -587,6 +587,58 @@ const SEARCH_INDEX = [
     "body": "Images and videos Photos and video carry the emotional weight of a report. This page covers getting media in, making it look great, and keeping it fast. Adding images There are a few ways to get an image into your report: Upload from your device — click an image element and choose a file, or drag and drop straight onto the uploader. Your image library — every upload joins your organization's library, so teammates can reuse photos without re-uploading. Brand kit Logos and Images panels are available right in the editing sidebar. Generate with AI — describe the image you want and let Storyraise create it. See AI content generation . Storyraise serves images through a CDN and optimizes them automatically, so you can upload high-resolution originals without slowing your report down. For the shape and size each block type expects, see Image sizes and dimensions . Image settings Select an image to adjust: Width and justification — how much space it takes and where it sits Fill space — let the image expand to fill its container Corner roundness — square to fully rounded Shadow and margins — depth and breathing room Editing images Storyraise includes a built-in image editor — crop, rotate, apply filters, and annotate without leaving the builder or round-tripping through other software. Adding video Add a Video element (or a Video section for a full-page treatment). Paste your video's URL — YouTube and Vimeo links work. Pick an aspect ratio that fits your layout: widescreen 16:9,…"
   },
   {
+    "title": "Creating visualizations",
+    "description": "A Visualization turns your numbers, lists, and milestones into a clean, on-brand graphic — a pie chart of where funding comes from, a timeline of the year, a…",
+    "section": "Building Reports",
+    "url": "/docs/building-reports/creating-visualizations/",
+    "keywords": [
+      "creating",
+      "visualizations",
+      "building",
+      "reports",
+      "chart",
+      "graph",
+      "infographic",
+      "data",
+      "visualization",
+      "antv",
+      "pie",
+      "donut",
+      "bar",
+      "column",
+      "line",
+      "word cloud",
+      "timeline",
+      "funnel",
+      "sequence",
+      "progress"
+    ],
+    "body": "Creating visualizations A Visualization turns your numbers, lists, and milestones into a clean, on-brand graphic — a pie chart of where funding comes from, a timeline of the year, a word cloud of what supporters said. You build it from data you type in, pick a template, and style it to match your brand, all without leaving the report builder. What you can build Every visualization is created from a template . Templates are grouped into four families, and you can switch between them with the tabs at the top of the editor: Chart — pie, donut, bar, column, and line charts for comparing values over categories or time. List — visual lists such as progress rings, checklists, and badge cards for highlighting a set of related points. Sequence — timelines, funnels, roadmaps, and step \"snakes\" for showing a process or a journey. Word Cloud — a standard or bubble cloud that sizes each word by how often (or how much) it matters. Adding a visualization In the builder, add a Visualization — either drag in the Visualization block, or add a Visualization element from the Insert bar and choose Insert before or Insert after . Select the new block. In the right-hand panel, under Visualization Editor , click Add / Edit Visualization . Inside the editor Clicking Add / Edit Visualization opens the Visualization Editor — a three-panel window: Templates (left) — the template picker, with the All / List / Sequence / Chart / Word Cloud tabs and a thumbnail for each style. The Preview (center) — a…"
+  },
+  {
+    "title": "Build a line chart",
+    "description": "This walkthrough builds a line chart from scratch — the \"Community Engagement Growth\" example — so you can see every part of the Visualization editor in…",
+    "section": "Building Reports",
+    "url": "/docs/building-reports/build-a-line-chart/",
+    "keywords": [
+      "build",
+      "line",
+      "chart",
+      "building",
+      "reports",
+      "line chart",
+      "graph",
+      "visualization",
+      "axis",
+      "monotone",
+      "data points",
+      "antv",
+      "tutorial",
+      "walkthrough"
+    ],
+    "body": "Build a line chart This walkthrough builds a line chart from scratch — the \"Community Engagement Growth\" example — so you can see every part of the Visualization editor in action: choosing a template, styling it to your brand, and editing the data. It takes about five minutes. 1. Add a visualization and pick the Line Chart template Add a Visualization to your report, select it, and click Add / Edit Visualization to open the editor. In the Templates panel on the left, open the Chart tab and choose Line Chart . The chart starts with sample data so you always have something to shape — a title, six months of values, and a colored line. 2. Set the font and color In Your Options on the right, set the Font (here, Poppins) and the Font color — your brand colors lead the swatches, so the chart stays on-palette. 3. Simplify the line The default line uses a different color per point with a soft area fill beneath it. For a cleaner look, turn on Make chart monotone (then pick a Monotone color ) so the whole line is one color, and check Hide area fill to remove the shading. 4. Label the axes Line charts can carry axis labels. Add an X-axis title ( Month ) and a Y-axis title ( Users ), and set an Axis suffix ( k ) so the scale reads 100k, 200k, and so on. 5. Edit your data points Scroll to the Data section. Each row has a Label , a Value , and a Color . Click into any field to change it — here the first point's label becomes January and its value 280 . The preview updates as you type. 6.…"
+  },
+  {
     "title": "Image sizes and dimensions",
     "description": "The right-shaped image makes a block look designed; the wrong-shaped one fights its layout. This guide lists the aspect ratio each block type expects, so you…",
     "section": "Building Reports",
