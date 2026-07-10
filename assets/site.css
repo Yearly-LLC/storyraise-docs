@@ -304,10 +304,12 @@ nav {
   box-shadow: var(--card-shadow);
 }
 
-/* Reserve space for the 16:9 screen recordings before metadata loads,
-   so embedding a video doesn't shift the article text as it sizes. */
+/* Screen recordings: keep them to a modest inline size (not the full
+   reading column) and reserve their 16:9 space up front, so embedding a
+   video doesn't dominate the page or shift the text as it loads. */
 .content video {
   width: 100%;
+  max-width: 480px;
   aspect-ratio: 16 / 9;
   height: auto;
   background: var(--border-result);
