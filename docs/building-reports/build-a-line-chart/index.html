@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build a line chart — Storyraise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css?v=98cc97cb" />
+  <script>
+    // Apply the theme before first paint: stored choice, else system setting.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
+      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
+      mq.addEventListener('change', function (e) {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (err) {}
+        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo-group">
+      <a href="/" class="logo">
+        <img
+          class="logo-light"
+          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
+          alt="Storyraise"
+        />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
+    <div class="nav-right">
+      <!-- NAV-SEARCH -->
+      <div class="search-wrap nav-search" id="searchWrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search docs…"
+          autocomplete="off"
+          aria-label="Search the knowledge base"
+          aria-autocomplete="list"
+          aria-controls="searchDropdown"
+          aria-expanded="false"
+        />
+        <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
+      </div>
+      <!-- /NAV-SEARCH -->
+      <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
+      <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </label>
+      <div class="nav-menu">
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LAYOUT: sidebar tree + main column -->
+  <div class="layout">
+    <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
+
+    <!-- SIDEBAR -->
+    <aside class="sidenav-wrap">
+      <nav class="sidenav" aria-label="Documentation">
+  <details class="sidenav-group">
+    <summary>Getting Started</summary>
+    <ul>
+      <li><a href="/docs/getting-started/">Overview</a></li>
+      <li><a href="/docs/getting-started/what-is-storyraise/">What is Storyraise?</a></li>
+      <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
+      <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
+      <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/pdf-exports/">PDF exports</a></li>
+      <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
+      <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>CRM &amp; Data Connections</summary>
+    <ul>
+      <li><a href="/docs/crm-and-data/">Overview</a></li>
+      <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
+      <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
+      <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
+      <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
+      <li><a href="/docs/crm-and-data/connections-overview/">The Connections tab</a></li>
+      <li><a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a></li>
+      <li><a href="/docs/crm-and-data/managing-connections/">Managing connections</a></li>
+      <li><a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a></li>
+      <li><a href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a></li>
+      <li><a href="/docs/crm-and-data/integrations/salesforce/">Salesforce / Nonprofit Cloud</a></li>
+      <li><a href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a></li>
+      <li><a href="/docs/crm-and-data/integrations/civicrm/">CiviCRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/slate/">Slate for Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/ellucian/">Ellucian Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/little-green-light/">Little Green Light</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorperfect/">DonorPerfect</a></li>
+      <li><a href="/docs/crm-and-data/integrations/neon-crm/">Neon CRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/funraise/">Funraise</a></li>
+      <li><a href="/docs/crm-and-data/integrations/givebutter/">Givebutter</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
+      <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
+      <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
+      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group" open>
+    <summary>Building Reports</summary>
+    <ul>
+      <li><a href="/docs/building-reports/">Overview</a></li>
+      <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
+      <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+      <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
+      <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
+      <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
+      <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
+      <li><a href="/docs/building-reports/creating-visualizations/">Creating visualizations</a></li>
+      <li><a href="/docs/building-reports/build-a-line-chart/" class="active" aria-current="page">Build a line chart</a></li>
+      <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
+      <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
+      <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
+      <li><a href="/docs/building-reports/navigation-options/">Navigation options</a></li>
+      <li><a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a></li>
+      <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Distribution &amp; Engagement</summary>
+    <ul>
+      <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
+      <li><a href="/docs/distribution-and-engagement/sharing-reports/">Sharing reports</a></li>
+      <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
+      <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
+      <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
+      <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Account &amp; Settings</summary>
+    <ul>
+      <li><a href="/docs/account-and-settings/">Overview</a></li>
+      <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
+      <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
+      <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
+      <li><a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Video</summary>
+    <ul>
+      <li><a href="/docs/storyraise-video/">Overview</a></li>
+      <li><a href="/docs/storyraise-video/what-is-storyraise-video/">What is Storyraise Video?</a></li>
+      <li><a href="/docs/storyraise-video/creating-a-video-message/">Creating a video message</a></li>
+      <li><a href="/docs/storyraise-video/recording-your-video/">Recording your video</a></li>
+      <li><a href="/docs/storyraise-video/scenes-and-personalization/">Scenes and personalization</a></li>
+      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Collect</summary>
+    <ul>
+      <li><a href="/docs/storyraise-collect/">Overview</a></li>
+      <li><a href="/docs/storyraise-collect/what-is-storyraise-collect/">What is Storyraise Collect?</a></li>
+      <li><a href="/docs/storyraise-collect/creating-a-collection/">Creating a collection</a></li>
+      <li><a href="/docs/storyraise-collect/form-field-types/">Form field types</a></li>
+      <li><a href="/docs/storyraise-collect/multi-step-forms/">Multi-step forms</a></li>
+      <li><a href="/docs/storyraise-collect/sharing-your-form/">Sharing your form</a></li>
+      <li><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Resources</summary>
+    <ul>
+      <li><a href="/docs/resources/">Overview</a></li>
+      <li><a href="/docs/resources/best-practices/">Best practices</a></li>
+      <li><a href="/docs/resources/accessibility/">Accessibility at Storyraise</a></li>
+      <li><a href="/docs/resources/network-requirements/">Network requirements and troubleshooting</a></li>
+      <li><a href="/docs/resources/faq/">Frequently asked questions</a></li>
+    </ul>
+  </details>
+</nav>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="doc-main">
+      <label for="navtoggle" class="navtoggle-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Documentation menu
+      </label>
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="/">Knowledge Base</a>
+    <span>›</span>
+    <a href="/docs/building-reports/">Building Reports</a>
+    <span>›</span>
+    Build a line chart
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <h1>Build a line chart</h1>
+<p class="lead">This walkthrough builds a line chart from scratch — the &quot;Community Engagement Growth&quot; example — so you can see every part of the <a href="/docs/building-reports/creating-visualizations/">Visualization</a> editor in action: choosing a template, styling it to your brand, and editing the data. It takes about five minutes.</p>
+<p><video controls preload="metadata" src="/assets/img/howto/editing-line-chart.mp4"></video></p>
+<h2>1. Add a visualization and pick the Line Chart template</h2>
+<p>Add a <strong>Visualization</strong> to your report, select it, and click <strong>Add / Edit Visualization</strong> to open the editor. In the <strong>Templates</strong> panel on the left, open the <strong>Chart</strong> tab and choose <strong>Line Chart</strong>.</p>
+<p><img src="/assets/img/howto/choosing_chart_viz.png" alt="The Line Chart template thumbnail in the picker"></p>
+<p>The chart starts with sample data so you always have something to shape — a title, six months of values, and a colored line.</p>
+<p><img src="/assets/img/howto/editing_line01.png" alt="The starting line chart with default sample data"></p>
+<h2>2. Set the font and color</h2>
+<p>In <strong>Your Options</strong> on the right, set the <strong>Font</strong> (here, Poppins) and the <strong>Font color</strong> — your brand colors lead the swatches, so the chart stays on-palette.</p>
+<p><img src="/assets/img/howto/editing_line02.png" alt="Font set to Poppins and font color changed"></p>
+<h2>3. Simplify the line</h2>
+<p>The default line uses a different color per point with a soft area fill beneath it. For a cleaner look, turn on <strong>Make chart monotone</strong> (then pick a <strong>Monotone color</strong>) so the whole line is one color, and check <strong>Hide area fill</strong> to remove the shading.</p>
+<p><img src="/assets/img/howto/editing_line03.png" alt="Make chart monotone and Hide area fill enabled, giving a single-color line"></p>
+<h2>4. Label the axes</h2>
+<p>Line charts can carry axis labels. Add an <strong>X-axis title</strong> (<strong>Month</strong>) and a <strong>Y-axis title</strong> (<strong>Users</strong>), and set an <strong>Axis suffix</strong> (<strong>k</strong>) so the scale reads 100k, 200k, and so on.</p>
+<p><img src="/assets/img/howto/editing_line04.png" alt="Axis suffix and X/Y axis titles added to the chart"></p>
+<h2>5. Edit your data points</h2>
+<p>Scroll to the <strong>Data</strong> section. Each row has a <strong>Label</strong>, a <strong>Value</strong>, and a <strong>Color</strong>. Click into any field to change it — here the first point&#39;s label becomes <strong>January</strong> and its value <strong>280</strong>. The preview updates as you type.</p>
+<p><img src="/assets/img/howto/editing_line05.png" alt="Editing a data point&#39;s label and value in the Data section"></p>
+<h2>6. Remove a data point</h2>
+<p>To drop a point, click the <strong>×</strong> on its row.</p>
+<p><img src="/assets/img/howto/editing_line06.png" alt="The remove (×) button on a data row"></p>
+<p>The chart re-draws without it — the line now begins at the next month.</p>
+<p><img src="/assets/img/howto/editing_line07.png" alt="The chart after removing the first data point"></p>
+<h2>7. Add a data point</h2>
+<p>To extend the series, click the <strong>+</strong> on a row to add a new one below it, then fill in its <strong>Label</strong> and <strong>Value</strong>.</p>
+<p><img src="/assets/img/howto/editing_line08.png" alt="The add (+) button on a data row"></p>
+<p><img src="/assets/img/howto/editing_line09.png" alt="The chart extended with a new data point"></p>
+<h2>8. Put the points in order</h2>
+<p>New and edited points keep the order of your list, so a month can land out of sequence on the axis. Use the up (<strong>▲</strong>) and down (<strong>▼</strong>) arrows on each row to move it into place.</p>
+<p><img src="/assets/img/howto/editing_line10.png" alt="Using the reorder arrows to fix an out-of-order month"></p>
+<p>With the rows in order, the chart reads cleanly from left to right.</p>
+<p><img src="/assets/img/howto/editing_line11.png" alt="The finished line chart with months in order"></p>
+<h2>9. Finish</h2>
+<p>Click <strong>Done</strong> to place the chart in your report. You can reopen the editor any time — select the block and press <strong>Add / Edit Visualization</strong> again to adjust the data or styling.</p>
+<div class="tip"><p><strong>Tip:</strong> The same editor builds every chart type. Try the <strong>Pie</strong>, <strong>Bar</strong>, or <strong>Column</strong> templates with your own data — the data rows, colors, and title work exactly the same way.</p></div>
+<p>For the bigger picture — the other template families, brand styling, and PDF behavior — see <a href="/docs/building-reports/creating-visualizations/">Creating visualizations</a>.</p>
+
+
+        <hr />
+
+        <p style="font-size:0.85rem; color:var(--text-faint);">Need help? <a href="https://storyraise.com/support">Contact our support team</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
+    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+  </footer>
+
+  <script src="/assets/theme.js"></script>
+  <script src="/search-index.js"></script>
+  <script src="/assets/minisearch.min.js"></script>
+  <script src="/assets/search-core.js"></script>
+  <script src="/assets/search.js"></script>
+</body>
+</html>

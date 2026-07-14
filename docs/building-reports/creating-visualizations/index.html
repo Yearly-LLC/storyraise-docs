@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating visualizations — Storyraise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css?v=98cc97cb" />
+  <script>
+    // Apply the theme before first paint: stored choice, else system setting.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
+      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
+      mq.addEventListener('change', function (e) {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (err) {}
+        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo-group">
+      <a href="/" class="logo">
+        <img
+          class="logo-light"
+          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
+          alt="Storyraise"
+        />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
+    <div class="nav-right">
+      <!-- NAV-SEARCH -->
+      <div class="search-wrap nav-search" id="searchWrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search docs…"
+          autocomplete="off"
+          aria-label="Search the knowledge base"
+          aria-autocomplete="list"
+          aria-controls="searchDropdown"
+          aria-expanded="false"
+        />
+        <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
+      </div>
+      <!-- /NAV-SEARCH -->
+      <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
+      <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </label>
+      <div class="nav-menu">
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LAYOUT: sidebar tree + main column -->
+  <div class="layout">
+    <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
+
+    <!-- SIDEBAR -->
+    <aside class="sidenav-wrap">
+      <nav class="sidenav" aria-label="Documentation">
+  <details class="sidenav-group">
+    <summary>Getting Started</summary>
+    <ul>
+      <li><a href="/docs/getting-started/">Overview</a></li>
+      <li><a href="/docs/getting-started/what-is-storyraise/">What is Storyraise?</a></li>
+      <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
+      <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
+      <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/pdf-exports/">PDF exports</a></li>
+      <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
+      <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>CRM &amp; Data Connections</summary>
+    <ul>
+      <li><a href="/docs/crm-and-data/">Overview</a></li>
+      <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
+      <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
+      <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
+      <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
+      <li><a href="/docs/crm-and-data/connections-overview/">The Connections tab</a></li>
+      <li><a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a></li>
+      <li><a href="/docs/crm-and-data/managing-connections/">Managing connections</a></li>
+      <li><a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a></li>
+      <li><a href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a></li>
+      <li><a href="/docs/crm-and-data/integrations/salesforce/">Salesforce / Nonprofit Cloud</a></li>
+      <li><a href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a></li>
+      <li><a href="/docs/crm-and-data/integrations/civicrm/">CiviCRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/slate/">Slate for Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/ellucian/">Ellucian Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/little-green-light/">Little Green Light</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorperfect/">DonorPerfect</a></li>
+      <li><a href="/docs/crm-and-data/integrations/neon-crm/">Neon CRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/funraise/">Funraise</a></li>
+      <li><a href="/docs/crm-and-data/integrations/givebutter/">Givebutter</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
+      <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
+      <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
+      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group" open>
+    <summary>Building Reports</summary>
+    <ul>
+      <li><a href="/docs/building-reports/">Overview</a></li>
+      <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
+      <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+      <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
+      <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
+      <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
+      <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
+      <li><a href="/docs/building-reports/creating-visualizations/" class="active" aria-current="page">Creating visualizations</a></li>
+      <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
+      <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
+      <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
+      <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
+      <li><a href="/docs/building-reports/navigation-options/">Navigation options</a></li>
+      <li><a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a></li>
+      <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Distribution &amp; Engagement</summary>
+    <ul>
+      <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
+      <li><a href="/docs/distribution-and-engagement/sharing-reports/">Sharing reports</a></li>
+      <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
+      <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
+      <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
+      <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Account &amp; Settings</summary>
+    <ul>
+      <li><a href="/docs/account-and-settings/">Overview</a></li>
+      <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
+      <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
+      <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
+      <li><a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Video</summary>
+    <ul>
+      <li><a href="/docs/storyraise-video/">Overview</a></li>
+      <li><a href="/docs/storyraise-video/what-is-storyraise-video/">What is Storyraise Video?</a></li>
+      <li><a href="/docs/storyraise-video/creating-a-video-message/">Creating a video message</a></li>
+      <li><a href="/docs/storyraise-video/recording-your-video/">Recording your video</a></li>
+      <li><a href="/docs/storyraise-video/scenes-and-personalization/">Scenes and personalization</a></li>
+      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Collect</summary>
+    <ul>
+      <li><a href="/docs/storyraise-collect/">Overview</a></li>
+      <li><a href="/docs/storyraise-collect/what-is-storyraise-collect/">What is Storyraise Collect?</a></li>
+      <li><a href="/docs/storyraise-collect/creating-a-collection/">Creating a collection</a></li>
+      <li><a href="/docs/storyraise-collect/form-field-types/">Form field types</a></li>
+      <li><a href="/docs/storyraise-collect/multi-step-forms/">Multi-step forms</a></li>
+      <li><a href="/docs/storyraise-collect/sharing-your-form/">Sharing your form</a></li>
+      <li><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Resources</summary>
+    <ul>
+      <li><a href="/docs/resources/">Overview</a></li>
+      <li><a href="/docs/resources/best-practices/">Best practices</a></li>
+      <li><a href="/docs/resources/accessibility/">Accessibility at Storyraise</a></li>
+      <li><a href="/docs/resources/network-requirements/">Network requirements and troubleshooting</a></li>
+      <li><a href="/docs/resources/faq/">Frequently asked questions</a></li>
+    </ul>
+  </details>
+</nav>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="doc-main">
+      <label for="navtoggle" class="navtoggle-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Documentation menu
+      </label>
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="/">Knowledge Base</a>
+    <span>›</span>
+    <a href="/docs/building-reports/">Building Reports</a>
+    <span>›</span>
+    Creating visualizations
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <h1>Creating visualizations</h1>
+<p class="lead">A <strong>Visualization</strong> turns your numbers, lists, and milestones into a clean, on-brand graphic — a pie chart of where funding comes from, a timeline of the year, a word cloud of what supporters said. You build it from data you type in, pick a template, and style it to match your brand, all without leaving the report builder.</p>
+<h2>What you can build</h2>
+<p>Every visualization is created from a <strong>template</strong>. Templates are grouped into four families, and you can switch between them with the tabs at the top of the editor:</p>
+<ul>
+<li><strong>Chart</strong> — pie, donut, bar, column, and line charts for comparing values over categories or time.</li>
+<li><strong>List</strong> — visual lists such as progress rings, checklists, and badge cards for highlighting a set of related points.</li>
+<li><strong>Sequence</strong> — timelines, funnels, roadmaps, and step &quot;snakes&quot; for showing a process or a journey.</li>
+<li><strong>Word Cloud</strong> — a standard or bubble cloud that sizes each word by how often (or how much) it matters.</li>
+</ul>
+<p><img src="/assets/img/howto/choosing_viz01.png" alt="The Visualization Editor with the Chart templates panel: Pie, Donut, Bar, and Column chart templates"></p>
+<h2>Adding a visualization</h2>
+<ol>
+<li>In the builder, add a <strong>Visualization</strong> — either drag in the <strong>Visualization</strong> block, or add a <strong>Visualization</strong> <a href="/docs/getting-started/common-terminology/">element</a> from the <strong>Insert</strong> bar and choose <strong>Insert before</strong> or <strong>Insert after</strong>.</li>
+<li>Select the new block. In the right-hand panel, under <strong>Visualization Editor</strong>, click <strong>Add / Edit Visualization</strong>.</li>
+</ol>
+<p><video controls preload="metadata" src="/assets/img/howto/finding-visualizations.mp4"></video></p>
+<h2>Inside the editor</h2>
+<p>Clicking <strong>Add / Edit Visualization</strong> opens the <strong>Visualization Editor</strong> — a three-panel window:</p>
+<ul>
+<li><strong>Templates</strong> (left) — the template picker, with the <strong>All / List / Sequence / Chart / Word Cloud</strong> tabs and a thumbnail for each style.</li>
+<li><strong>The Preview</strong> (center) — a live rendering that updates as you make changes.</li>
+<li><strong>Your Options</strong> (right) — the settings for the selected template: fonts and colors, template-specific toggles, the <strong>Title</strong>, and the <strong>Data</strong> you&#39;re charting.</li>
+</ul>
+<p>When you&#39;re happy with the preview, click <strong>Done</strong> to drop it into your report. Reopen the editor any time to make changes — click the block and press <strong>Add / Edit Visualization</strong> again.</p>
+<p><img src="/assets/img/howto/whole_modal_viz01.png" alt="The full Visualization Editor: Templates on the left, a live pie-chart preview in the center, and options plus data on the right"></p>
+<h2>Entering your data</h2>
+<p>Visualizations use data you enter by hand, so you&#39;re never waiting on a connection or an import. In the <strong>Data</strong> section of the options panel, each row is one data point with a <strong>Label</strong>, a <strong>Value</strong>, and its own <strong>Color</strong>. Use the row controls to shape your data:</p>
+<ul>
+<li><strong>Add</strong> (<strong>+</strong>) a new row, or <strong>remove</strong> (<strong>×</strong>) one you don&#39;t need.</li>
+<li><strong>Reorder</strong> rows with the up and down arrows — handy for putting months, quarters, or ranked items in the right order.</li>
+</ul>
+<p>Give the whole graphic a heading with the <strong>Title</strong> field.</p>
+<h2>Styling to your brand</h2>
+<p>Visualizations pick up your organization&#39;s look automatically, and you can fine-tune from there:</p>
+<ul>
+<li><strong>Font</strong> — choose any font available to your report, including your brand fonts.</li>
+<li><strong>Colors</strong> — every color picker leads with your <strong>brand colors</strong>, followed by your <strong>report&#39;s palette</strong> colors, so charts stay on-palette. Set a per-row color, or turn on <strong>Make chart monotone</strong> to render the whole chart in a single color.</li>
+<li><strong>Chart options</strong> vary by type — for example, pie and donut charts offer <strong>Show labels</strong>, <strong>Hide labels below (%)</strong>, and <strong>Show slice outline</strong>; bar and line charts add <strong>X-axis title</strong>, <strong>Y-axis title</strong>, and value or axis <strong>prefix/suffix</strong> (for a <code>$</code> or <code>k</code>).</li>
+</ul>
+<p>Storyraise also protects readability: if a text color would be invisible against the background, it&#39;s automatically nudged to a legible shade. For more on brand styling, see <a href="/docs/building-reports/brand-kit/">Brand kit</a> and <a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a>.</p>
+<div class="tip"><p><strong>Tip:</strong> Fewer data points read better. A chart with five or six clear categories tells a stronger story than one crammed with twenty.</p></div>
+<h2>In PDF and on mobile</h2>
+<p>Visualizations render as crisp vector graphics, so they stay sharp when a report is exported to PDF. Two settings apply to the PDF only — <strong>Vertical alignment</strong> (top, center, or bottom on the page) and <strong>Show page number</strong> — and they live on the block&#39;s traits alongside the visualization. See <a href="/docs/getting-started/pdf-exports/">PDF exports</a>.</p>
+<p>On smaller screens, a visualization scales to the width of its column; you can also set the block&#39;s <strong>Width (%)</strong> to give it more or less room. See <a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a>.</p>
+<h2>Next: build one</h2>
+<p>Ready to try it? Follow the step-by-step <a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a> walkthrough to create your first visualization from scratch.</p>
+
+
+        <hr />
+
+        <p style="font-size:0.85rem; color:var(--text-faint);">Need help? <a href="https://storyraise.com/support">Contact our support team</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
+    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+  </footer>
+
+  <script src="/assets/theme.js"></script>
+  <script src="/search-index.js"></script>
+  <script src="/assets/minisearch.min.js"></script>
+  <script src="/assets/search-core.js"></script>
+  <script src="/assets/search.js"></script>
+</body>
+</html>

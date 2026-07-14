@@ -12,12 +12,30 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { marked } = require('marked');
 
 const ROOT = path.join(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT, 'content');
 const OUT_DIR = path.join(ROOT, 'docs');
-const TEMPLATE = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
+
+// Cache-bust /assets/site.css with a short content hash so a deploy's CSS
+// changes take effect immediately. The <link> is otherwise unversioned, and
+// GitHub Pages / the CDN cache it aggressively — which can serve a stale
+// stylesheet (e.g. missing the media rules that keep article images and
+// videos inside the reading column). The hash changes only when site.css
+// changes, so unrelated builds stay stable. stampAssets is idempotent: it
+// rewrites any existing ?v= too, so re-running the build never stacks them.
+const CSS_VERSION = crypto
+  .createHash('sha1')
+  .update(fs.readFileSync(path.join(ROOT, 'assets', 'site.css')))
+  .digest('hex')
+  .slice(0, 8);
+function stampAssets(html) {
+  return html.replace(/\/assets\/site\.css(\?v=[a-f0-9]+)?/g, `/assets/site.css?v=${CSS_VERSION}`);
+}
+
+const TEMPLATE = stampAssets(fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8'));
 
 const SECTIONS = [
   {
@@ -51,7 +69,8 @@ const SECTIONS = [
     icon: '📊',
     order: [
       'adding-sections', 'editing-content', 'using-templates', 'brand-kit', 'fonts-and-colors',
-      'images-and-videos', 'image-sizes-and-dimensions', 'ai-content-generation',
+      'images-and-videos', 'creating-visualizations', 'build-a-line-chart',
+      'image-sizes-and-dimensions', 'ai-content-generation',
       'reordering-sections', 'navigation-options', 'mobile-optimization', 'accessibility',
     ],
   },
@@ -395,6 +414,7 @@ function buildHome() {
   const crm = SECTIONS.find(s => s.dir === 'crm-and-data');
   html = replaceRegion(html, 'CRM-LINKS', homeCrmChips(crm));
 
+  html = stampAssets(html);
   fs.writeFileSync(homePath, html);
   console.log('index.html: home regions regenerated');
 }
