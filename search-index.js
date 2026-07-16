@@ -74,7 +74,7 @@ const SEARCH_INDEX = [
   },
   {
     "title": "User roles and permissions",
-    "description": "Storyraise is organized around your organization: a shared workspace that holds your reports, folders, constituent data, brand kit, and team. Everyone you…",
+    "description": "Storyraise is organized around your organization: a shared workspace that holds your reports, videos, forms, constituent data, brand kit, and team. Everyone…",
     "section": "Getting Started",
     "url": "/docs/getting-started/user-roles-and-permissions/",
     "keywords": [
@@ -82,9 +82,17 @@ const SEARCH_INDEX = [
       "roles",
       "permissions",
       "getting",
-      "started"
+      "started",
+      "owner",
+      "admin",
+      "editor",
+      "viewer",
+      "custom roles",
+      "access",
+      "team",
+      "invite"
     ],
-    "body": "User roles and permissions Storyraise is organized around your organization : a shared workspace that holds your reports, folders, constituent data, brand kit, and team. Everyone you invite joins your organization and works from the same dashboard. How accounts and organizations relate Each person signs in with their own account. An account can belong to one or more organizations. If you belong to several, you can switch between them from the dashboard. Reports belong to the organization, not to individuals — anyone on the team can pick up where a colleague left off. Inviting your team From the dashboard, open your organization's team settings. Generate an invite link . Copy the link and send it to your colleague. When they open the link and sign in, they join your organization. Working together on reports Teammates can build different reports at the same time, or work in the same report together. To prevent two people from overwriting each other, Storyraise locks a section while someone is editing it — you'll see when a teammate is in a section, and you can edit any other section in the meantime. Roles Today, everyone who joins your organization gets full access to build, edit, and publish reports and to manage constituent data. More granular roles (for example, view-only or approver roles) aren't available yet. What your readers see People who view your published reports are not users — they don't need accounts, and they can't see your dashboard, drafts, or data.…"
+    "body": "User roles and permissions Storyraise is organized around your organization : a shared workspace that holds your reports, videos, forms, constituent data, brand kit, and team. Everyone you invite joins your organization, and their role decides what they can see and do. How accounts and organizations relate Each person signs in with their own account. An account can belong to one or more organizations. If you belong to several, you can switch between them from the dashboard. Reports, videos, and data belong to the organization, not to individuals — anyone with the right role can pick up where a colleague left off. The four built-in roles Every member has one role. In order of access: Role Best for What they can do Owner The person who runs the account Full access to everything, including billing and team management. There's always at least one Owner. Admin Trusted team leads Full access to everything and can view billing, but can't change the subscription. Editor People who build and edit Create and edit reports, videos, forms, constituents, integrations, analytics, brand kit, and tools. Can see the team but not change it. No billing or org settings. Viewer Reviewers and stakeholders Read-only access to content — they can look but not change anything, and can't manage the team or settings. What each role can access Access to each area is one of four levels: — (none) , View , Edit , or Manage (Manage includes creating, editing, and deleting). Area Owner Admin Editor Viewer…"
   },
   {
     "title": "Common terminology",
@@ -866,7 +874,7 @@ const SEARCH_INDEX = [
   },
   {
     "title": "Managing your team",
-    "description": "Storyraise is built for teams. Invite colleagues into your organization so you can build reports together, divide up the work, and review each other's drafts.",
+    "description": "Storyraise is built for teams. Invite colleagues into your organization so you can build reports together, divide up the work, and review each other's drafts…",
     "section": "Account & Settings",
     "url": "/docs/account-and-settings/managing-your-team/",
     "keywords": [
@@ -877,9 +885,14 @@ const SEARCH_INDEX = [
       "invite",
       "collaborators",
       "members",
-      "remove user"
+      "roles",
+      "remove user",
+      "owner",
+      "admin",
+      "editor",
+      "viewer"
     ],
-    "body": "Managing your team Storyraise is built for teams. Invite colleagues into your organization so you can build reports together, divide up the work, and review each other's drafts. Invite a teammate Under Your Team : Find the Invite Link field. Click Copy link . Send the link to your colleague however you like — email, Slack, a message. When they open the link, they'll see \"You've been invited by [your organization] to collaborate\" and can create their account (First Name, Last Name, Work Email, password — or Sign up with Google ). Once they finish, they join your organization and appear in your team list. The invite link looks like https://app.storyraise.com/invite/#/… and is tied to your organization — anyone you share it with can join, so treat it like a shared key. Remove a teammate In the Your Team list, each member has a Remove button. Removing someone revokes their access to your organization's reports and data. Working together without stepping on each other Teammates can build different reports simultaneously, or collaborate on the same one. To prevent overwrites, Storyraise locks a section while someone is editing it — you'll see when a colleague is in a section, and you can work in any other section meanwhile. See Editing content . Tips Give the link only to people who should have full access. Everyone in the organization can build, edit, and publish. Remove departing staff promptly to keep your reports and constituent data secure. Coordinate on big reports. Section…"
+    "body": "Managing your team Storyraise is built for teams. Invite colleagues into your organization so you can build reports together, divide up the work, and review each other's drafts — and give each person the right level of access with roles . Roles at a glance Every member has a role that controls what they can do: Owner — full access, including billing and the team. Admin — full access; can view billing but not change it. Editor — create and edit content; can see the team but not manage it. Viewer — read-only access to content. You can also create custom roles with per-area access. For the full breakdown, see User roles and permissions . Invite a teammate Under Your Team : Find the Invite Link field and pick the role new members should join with (the default is Editor). Click Copy link . Send the link to your colleague however you like — email, Slack, a message. When they open the link, they'll see they've been invited to collaborate and can create their account (First Name, Last Name, Work Email, password — or Sign up with Google ). Once they finish, they join your organization with the role you set and appear in your team list. The invite link looks like https://app.storyraise.com/invite/#/… and is tied to your organization — anyone you share it with can join, so treat it like a shared key. If it's ever shared too widely, click Regenerate to invalidate the old link and create a new one. Change someone's role In the Your Team list, each member shows a role selector. Pick a…"
   },
   {
     "title": "Your profile and security",

@@ -222,26 +222,168 @@
       <!-- CONTENT -->
       <div class="content">
         <h1>User roles and permissions</h1>
-<p class="lead">Storyraise is organized around your <strong>organization</strong>: a shared workspace that holds your reports, folders, constituent data, brand kit, and team. Everyone you invite joins your organization and works from the same dashboard.</p>
+<p class="lead">Storyraise is organized around your <strong>organization</strong>: a shared workspace that holds your reports, videos, forms, constituent data, brand kit, and team. Everyone you invite joins your organization, and their <strong>role</strong> decides what they can see and do.</p>
 <h2>How accounts and organizations relate</h2>
 <ul>
 <li>Each person signs in with their own account.</li>
 <li>An account can belong to one or more organizations. If you belong to several, you can switch between them from the dashboard.</li>
-<li>Reports belong to the organization, not to individuals — anyone on the team can pick up where a colleague left off.</li>
+<li>Reports, videos, and data belong to the organization, not to individuals — anyone with the right role can pick up where a colleague left off.</li>
 </ul>
-<h2>Inviting your team</h2>
-<ol>
-<li>From the dashboard, open your organization&#39;s team settings.</li>
-<li>Generate an <strong>invite link</strong>.</li>
-<li>Copy the link and send it to your colleague.</li>
-<li>When they open the link and sign in, they join your organization.</li>
-</ol>
+<h2>The four built-in roles</h2>
+<p>Every member has one role. In order of access:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Best for</th>
+<th>What they can do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Owner</strong></td>
+<td>The person who runs the account</td>
+<td>Full access to everything, including billing and team management. There&#39;s always at least one Owner.</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Trusted team leads</td>
+<td>Full access to everything and can <em>view</em> billing, but can&#39;t change the subscription.</td>
+</tr>
+<tr>
+<td><strong>Editor</strong></td>
+<td>People who build and edit</td>
+<td>Create and edit reports, videos, forms, constituents, integrations, analytics, brand kit, and tools. Can <em>see</em> the team but not change it. No billing or org settings.</td>
+</tr>
+<tr>
+<td><strong>Viewer</strong></td>
+<td>Reviewers and stakeholders</td>
+<td>Read-only access to content — they can look but not change anything, and can&#39;t manage the team or settings.</td>
+</tr>
+</tbody></table>
+<h2>What each role can access</h2>
+<p>Access to each area is one of four levels: <strong>— (none)</strong>, <strong>View</strong>, <strong>Edit</strong>, or <strong>Manage</strong> (Manage includes creating, editing, and deleting).</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Owner</th>
+<th>Admin</th>
+<th>Editor</th>
+<th>Viewer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Reports &amp; templates</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Videos</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Collect forms</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Constituents (CRM)</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Connections (integrations)</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Health &amp; Actions</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Brand Kit</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>Edit</td>
+<td>View</td>
+</tr>
+<tr>
+<td>Team &amp; roles</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>View</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Billing</td>
+<td>Manage</td>
+<td>View</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Organization settings</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Activity log</td>
+<td>Manage</td>
+<td>Manage</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<h2>Custom roles</h2>
+<p>Beyond the four built-in roles, Owners and Admins can create <strong>custom roles</strong> — pick a name and set the access level for each area individually. Custom roles are useful when someone needs, say, Edit access to Reports and Analytics but only View on Constituents. Assign a custom role to a member exactly like a built-in one.</p>
+<h2>Fine-tuning one person&#39;s access</h2>
+<p>Need an exception for a single teammate without making a whole new role? You can set per-member <strong>overrides</strong> that raise or lower their access in specific areas on top of their role. (Overrides don&#39;t apply to Owners — an Owner always has full access, which protects you from accidentally locking everyone out.)</p>
+<h2>Assigning roles and inviting people</h2>
+<p>You choose a person&#39;s role when you invite them, and you can change it any time from the team list. See <a href="/docs/account-and-settings/managing-your-team/">Managing your team</a> for the step-by-step.</p>
+<p>A few guardrails:</p>
+<ul>
+<li>There must always be at least one <strong>Owner</strong>.</li>
+<li>Only an <strong>Owner</strong> can grant or remove the Owner role.</li>
+</ul>
 <h2>Working together on reports</h2>
 <p>Teammates can build different reports at the same time, or work in the same report together. To prevent two people from overwriting each other, Storyraise locks a section while someone is editing it — you&#39;ll see when a teammate is in a section, and you can edit any other section in the meantime.</p>
-<h2>Roles</h2>
-<p>Today, everyone who joins your organization gets full access to build, edit, and publish reports and to manage constituent data. More granular roles (for example, view-only or approver roles) aren&#39;t available yet.</p>
 <h2>What your readers see</h2>
 <p>People who view your published reports are <strong>not</strong> users — they don&#39;t need accounts, and they can&#39;t see your dashboard, drafts, or data. Publishing only exposes the report itself at its public link.</p>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+<li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
+</ul>
 
 
         <hr />
