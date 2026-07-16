@@ -1,0 +1,46 @@
+# Guards against source/output drift. The built site (docs/, index.html,
+# search-index.js, search/) is committed, so editing content/*.md without
+# running `npm run build` ships stale pages — which has happened before
+# (f30dda5 edited content; 5d45336 exists only to repair the drift).
+#
+# This is a CHECK, not a deploy. Pages publishes from the root of main via
+# branch deploy; adding actions/configure-pages or actions/deploy-pages here
+# would switch the Pages source to Actions and break that. Don't.
+name: Build check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-is-current:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      # `git diff --exit-code` alone would miss untracked files — i.e. a new
+      # article whose generated page was never committed. Staging first makes
+      # additions visible to the diff.
+      - name: Built output must match sources
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            echo "::error::Built output is stale — run 'npm run build' and commit the result."
+            git diff --cached --stat
+            git diff --cached
+            exit 1
+          fi
+          echo "Built output is up to date."
