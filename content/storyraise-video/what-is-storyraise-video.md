@@ -1,6 +1,6 @@
 ---
 title: What is Storyraise Video?
-section: Products
+section: Storyraise Video
 status: draft
 last_reviewed: 2026-06-12
 ---

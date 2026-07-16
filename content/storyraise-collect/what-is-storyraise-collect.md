@@ -1,6 +1,6 @@
 ---
 title: What is Storyraise Collect?
-section: Products
+section: Storyraise Collect
 status: draft
 last_reviewed: 2026-06-12
 ---

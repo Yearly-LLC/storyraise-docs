@@ -382,6 +382,8 @@ function prepareArticle(relDir, file, section) {
     title,
     url,
     slug,
+    srcPath: `content/${relDir}/${file}`,
+    metaSection: meta.section,
     status: meta.status || 'draft',
     description: truncate(firstParagraphText(html), 160),
     section: section.label,
@@ -533,6 +535,75 @@ function buildSearchPage() {
   writePage(path.join(ROOT, 'search', 'index.html'), html);
 }
 
+/* ── validators ─────────────────────────────────────────────────────── */
+
+// Generated pages this build does not own. The original standalone
+// /docs/email-subdomain-setup/ page moved into account-and-settings; the old
+// URL survives as a hand-written redirect stub so existing links, bookmarks
+// and search results keep working.
+const HAND_MAINTAINED = new Set(['docs/email-subdomain-setup/index.html']);
+
+const problems = [];
+
+// `order` drives the sidebar and the reading sequence. An unlisted slug
+// silently sorts to the end and a deleted one silently does nothing, so
+// neither surfaces as a failure — only as a page in the wrong place.
+function checkOrder(section) {
+  const onDisk = new Set(section.articles.map(a => a.slug));
+  const listed = section.order || [];
+  for (const slug of listed) {
+    if (!onDisk.has(slug)) problems.push(`${section.dir}: order lists "${slug}", which has no .md file`);
+  }
+  for (const slug of onDisk) {
+    if (!listed.includes(slug)) problems.push(`${section.dir}: "${slug}" is missing from order (it would sort to the end)`);
+  }
+}
+
+// The build places an article by its directory; `section:` frontmatter is a
+// second, unenforced copy of the same fact, and it has already drifted.
+function checkSectionMeta(article, section) {
+  if (article.metaSection && article.metaSection !== section.label) {
+    problems.push(`${article.srcPath}: section: "${article.metaSection}" but the directory says "${section.label}"`);
+  }
+}
+
+// A page left behind by a renamed or deleted source file stays live, stale and
+// indexable, while quietly vanishing from the sidebar and search.
+function checkOrphans(written) {
+  const walk = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => {
+    const full = path.join(dir, e.name);
+    return e.isDirectory() ? walk(full) : [full];
+  });
+  for (const full of walk(OUT_DIR)) {
+    if (path.basename(full) !== 'index.html') continue;
+    const rel = path.relative(ROOT, full);
+    if (!written.has(rel) && !HAND_MAINTAINED.has(rel)) {
+      problems.push(`${rel}: orphaned page — no source file generates it`);
+    }
+  }
+}
+
+// The build knows every URL it just wrote, so every internal link can be
+// checked for free — including the hand-curated ones on the home page.
+function checkLinks(urls, files) {
+  for (const rel of files) {
+    const full = path.join(ROOT, rel);
+    if (!fs.existsSync(full)) continue;
+    const html = fs.readFileSync(full, 'utf8');
+    for (const m of html.matchAll(/href="(\/docs\/[^"#?]*)"/g)) {
+      const href = m[1].endsWith('/') ? m[1] : m[1] + '/';
+      if (!urls.has(href)) problems.push(`${rel}: links to ${m[1]}, which does not exist`);
+    }
+  }
+}
+
+function reportProblems() {
+  if (!problems.length) return;
+  console.error(`\nBuild found ${problems.length} problem${problems.length === 1 ? '' : 's'}:`);
+  for (const p of problems) console.error(`  • ${p}`);
+  process.exit(1);
+}
+
 /* ── main ───────────────────────────────────────────────────────────── */
 
 // Pass 1 — parse every article and attach the ordered list to its section,
@@ -558,17 +629,27 @@ for (const section of SECTIONS) {
   articles.sort((a, b) => rank(a.slug) - rank(b.slug) || a.slug.localeCompare(b.slug));
 
   section.articles = articles;
+
+  checkOrder(section);
+  for (const a of articles) checkSectionMeta(a, section);
 }
 
 // Pass 2 — write every page with its sidebar (current page/section marked),
 // and collect the search index.
 const searchIndex = [];
+const written = new Set();                                    // repo-relative paths this build owns
+const knownUrls = new Set(['/docs/email-subdomain-setup/']);  // + the hand-kept redirect stub
 
 for (const section of SECTIONS) {
-  writeLanding(section, buildSidenav(SECTIONS, `/docs/${section.dir}/`));
+  const landingUrl = `/docs/${section.dir}/`;
+  writeLanding(section, buildSidenav(SECTIONS, landingUrl));
+  written.add(path.join('docs', section.dir, 'index.html'));
+  knownUrls.add(landingUrl);
 
   for (const a of section.articles) {
     writeArticlePage(a, buildSidenav(SECTIONS, a.url));
+    written.add(path.relative(ROOT, a.outPath));
+    knownUrls.add(a.url);
     searchIndex.push({ title: a.title, description: a.description, section: a.section, url: a.url, keywords: a.keywords, body: a.body });
   }
 
@@ -577,6 +658,10 @@ for (const section of SECTIONS) {
 
 buildHome();
 buildSearchPage();
+
+checkOrphans(written);
+checkLinks(knownUrls, [...written, ...HAND_MAINTAINED, 'index.html', 'search/index.html']);
+reportProblems();
 
 fs.writeFileSync(
   path.join(ROOT, 'search-index.js'),
