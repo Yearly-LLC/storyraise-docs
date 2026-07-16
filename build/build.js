@@ -35,7 +35,9 @@ function stampAssets(html) {
   return html.replace(/\/assets\/site\.css(\?v=[a-f0-9]+)?/g, `/assets/site.css?v=${CSS_VERSION}`);
 }
 
-const TEMPLATE = stampAssets(fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8'));
+// Stamping happens in writePage, not here: the <head> is assembled after the
+// template is read, so anything stamped at read time would miss it.
+const TEMPLATE = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
 
 const SECTIONS = [
   {
@@ -123,12 +125,6 @@ const SECTIONS = [
     order: ['best-practices', 'accessibility', 'network-requirements', 'faq'],
   },
 ];
-
-// Pages that exist outside this build but must stay in the search index.
-// (The original standalone /docs/email-subdomain-setup/ page was migrated to
-// content/account-and-settings/email-subdomain-setup.md; the old URL is now a
-// redirect stub maintained by hand at docs/email-subdomain-setup/index.html.)
-const EXTRA_SEARCH_ENTRIES = [];
 
 /* ── helpers ────────────────────────────────────────────────────────── */
 
@@ -225,12 +221,90 @@ function keywordsFor(title, sectionLabel, slug, extra) {
   return [...new Set([...words, ...extras])];
 }
 
-function renderPage({ title, breadcrumbHtml, bodyHtml, sidenavHtml }) {
-  return TEMPLATE
-    .replace('{{TITLE}}', escapeHtml(title))
-    .replace('{{SIDENAV}}', sidenavHtml || '')
-    .replace('{{BREADCRUMB}}', breadcrumbHtml)
-    .replace('{{BODY}}', bodyHtml);
+// Substitute {{NAME}} in a template.
+//
+// Throws on a missing placeholder: a plain .replace() would no-op silently and
+// ship a page with a hole in it. The value is supplied as a function so that
+// `$&`, `$1`, "$`" etc. occurring in article prose are inserted literally
+// rather than interpreted as replacement patterns.
+function fill(html, name, value) {
+  const token = `{{${name}}}`;
+  if (!html.includes(token)) throw new Error(`template: placeholder ${token} not found`);
+  return html.replace(token, () => value);
+}
+
+// The whole <head>, owned here rather than duplicated between template.html
+// and the hand-maintained index.html (where it used to be kept in sync by
+// hand, inline theme script and all). `title` is the finished <title> text.
+function headHtml({ title }) {
+  return `  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${escapeHtml(title)}</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script>
+    // Apply the theme before first paint: stored choice, else system setting.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
+      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
+      mq.addEventListener('change', function (e) {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (err) {}
+        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>`;
+}
+
+// Optional page chrome. Pages that carry their own in-body search field (the
+// /search results page) pass '' for NAV_SEARCH and SIDENAV_BLOCK instead of
+// having them cut back out of the rendered HTML with regexes.
+const NAV_SEARCH = `<!-- NAV-SEARCH -->
+      <div class="search-wrap nav-search" id="searchWrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search docs…"
+          autocomplete="off"
+          aria-label="Search the knowledge base"
+          aria-autocomplete="list"
+          aria-controls="searchDropdown"
+          aria-expanded="false"
+        />
+        <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
+      </div>
+      <!-- /NAV-SEARCH -->`;
+
+const DOCNAV_TOGGLE = `<label for="navtoggle" class="navtoggle-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Documentation menu
+      </label>`;
+
+const sidenavBlock = sidenavHtml => `<aside class="sidenav-wrap">
+      ${sidenavHtml}
+    </aside>`;
+
+function renderPage({
+  title,
+  breadcrumbHtml,
+  bodyHtml,
+  sidenavHtml,
+  searchScript = '/assets/search.js',
+}) {
+  let html = TEMPLATE;
+  html = fill(html, 'HEAD', headHtml({ title: `${title} — Storyraise` }));
+  html = fill(html, 'NAV_SEARCH', sidenavHtml ? NAV_SEARCH : '');
+  html = fill(html, 'SIDENAV_BLOCK', sidenavHtml ? sidenavBlock(sidenavHtml) : '');
+  html = fill(html, 'DOCNAV_TOGGLE', sidenavHtml ? DOCNAV_TOGGLE : '');
+  html = fill(html, 'BREADCRUMB', breadcrumbHtml);
+  html = fill(html, 'BODY', bodyHtml);
+  html = fill(html, 'SEARCH_SCRIPT', searchScript);
+  return html;
 }
 
 // Build the left-hand documentation tree. The section containing currentUrl
@@ -258,7 +332,7 @@ function buildSidenav(sections, currentUrl) {
 
 function writePage(outPath, html) {
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, html);
+  fs.writeFileSync(outPath, stampAssets(html));
 }
 
 /* ── article conversion ─────────────────────────────────────────────── */
@@ -409,13 +483,14 @@ function buildHome() {
   const homePath = path.join(ROOT, 'index.html');
   let html = fs.readFileSync(homePath, 'utf8');
 
+  // The home page keeps its own <title> — it is the root, not "X — Storyraise".
+  html = replaceRegion(html, 'HEAD', headHtml({ title: 'Storyraise Knowledge Base' }));
   html = replaceRegion(html, 'SECTION-GRID', SECTIONS.map(homeSectionCard).join('\n'));
 
   const crm = SECTIONS.find(s => s.dir === 'crm-and-data');
   html = replaceRegion(html, 'CRM-LINKS', homeCrmChips(crm));
 
-  html = stampAssets(html);
-  fs.writeFileSync(homePath, html);
+  writePage(homePath, html);
   console.log('index.html: home regions regenerated');
 }
 
@@ -423,9 +498,10 @@ function buildHome() {
 
 // A standalone /search/ page that renders a full results list (the header
 // dropdown only previews a few). Reuses the shared nav/footer/theme via the
-// doc template, then makes two targeted swaps: drop the header search box
-// (the page has its own in-body field — and IDs would otherwise collide) and
-// load the results-page controller instead of the dropdown one.
+// doc template. Passing no sidenav drops the header search box (this page has
+// its own in-body field — the ids would otherwise collide), the empty sidebar
+// and its mobile toggle; searchScript loads the results-page controller
+// instead of the dropdown one.
 function buildSearchPage() {
   const body = `<h1>Search the knowledge base</h1>
 <div class="search-wrap search-page-search" id="searchWrap">
@@ -447,13 +523,13 @@ function buildSearchPage() {
     'Search',
   ].join('\n    ');
 
-  let html = renderPage({ title: 'Search', breadcrumbHtml, bodyHtml: body, sidenavHtml: '' });
-  html = html.replace(/<!-- NAV-SEARCH -->[\s\S]*?<!-- \/NAV-SEARCH -->/, '');
-  // No sidebar on this page — drop the empty aside (so the results span full
-  // width) and the mobile "Documentation menu" toggle that opens it.
-  html = html.replace(/<aside class="sidenav-wrap">[\s\S]*?<\/aside>/, '');
-  html = html.replace(/<label for="navtoggle" class="navtoggle-btn">[\s\S]*?<\/label>/, '');
-  html = html.replace('<script src="/assets/search.js"></script>', '<script src="/assets/search-page.js"></script>');
+  const html = renderPage({
+    title: 'Search',
+    breadcrumbHtml,
+    bodyHtml: body,
+    sidenavHtml: '',
+    searchScript: '/assets/search-page.js',
+  });
   writePage(path.join(ROOT, 'search', 'index.html'), html);
 }
 
@@ -486,7 +562,7 @@ for (const section of SECTIONS) {
 
 // Pass 2 — write every page with its sidebar (current page/section marked),
 // and collect the search index.
-const searchIndex = [...EXTRA_SEARCH_ENTRIES];
+const searchIndex = [];
 
 for (const section of SECTIONS) {
   writeLanding(section, buildSidenav(SECTIONS, `/docs/${section.dir}/`));

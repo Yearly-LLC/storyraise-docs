@@ -1,27 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{TITLE}} — Storyraise</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css" />
-  <script>
-    // Apply the theme before first paint: stored choice, else system setting.
-    (function () {
-      var stored = null;
-      try { stored = localStorage.getItem('theme'); } catch (e) {}
-      var mq = window.matchMedia('(prefers-color-scheme: dark)');
-      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
-      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
-      mq.addEventListener('change', function (e) {
-        var s = null;
-        try { s = localStorage.getItem('theme'); } catch (err) {}
-        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
-      });
-    })();
-  </script>
+{{HEAD}}
 </head>
 <body>
 
@@ -39,22 +19,7 @@
       <span>Knowledge Base</span>
     </div>
     <div class="nav-right">
-      <!-- NAV-SEARCH -->
-      <div class="search-wrap nav-search" id="searchWrap">
-        <span class="search-icon">🔍</span>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search docs…"
-          autocomplete="off"
-          aria-label="Search the knowledge base"
-          aria-autocomplete="list"
-          aria-controls="searchDropdown"
-          aria-expanded="false"
-        />
-        <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
-      </div>
-      <!-- /NAV-SEARCH -->
+      {{NAV_SEARCH}}
       <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
       <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -76,16 +41,11 @@
     <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
 
     <!-- SIDEBAR -->
-    <aside class="sidenav-wrap">
-      {{SIDENAV}}
-    </aside>
+    {{SIDENAV_BLOCK}}
 
     <!-- MAIN -->
     <div class="doc-main">
-      <label for="navtoggle" class="navtoggle-btn">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        Documentation menu
-      </label>
+      {{DOCNAV_TOGGLE}}
 
       <!-- BREADCRUMB -->
       <div class="breadcrumb">
@@ -115,6 +75,6 @@
   <script src="/search-index.js"></script>
   <script src="/assets/minisearch.min.js"></script>
   <script src="/assets/search-core.js"></script>
-  <script src="/assets/search.js"></script>
+  <script src="{{SEARCH_SCRIPT}}"></script>
 </body>
 </html>
