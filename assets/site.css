@@ -890,6 +890,13 @@ footer a:hover { text-decoration: underline; }
   .nav-menu .nav-cta { text-align: center; padding: 9px 12px; }
 }
 
+/* Belt and braces for the collapsed header search: a plain link to /search/,
+   which works with no JavaScript at all. Only earns its place on phones. */
+.nav-menu-search { display: none; }
+@media (max-width: 640px) {
+  .nav-menu-search { display: block; }
+}
+
 /* ── DOC LAYOUT: SIDEBAR + MAIN ── */
 .layout {
   display: flex;
@@ -1045,8 +1052,46 @@ nav.sidenav {
   .nav-search .search-dropdown { width: 300px; }
 }
 
+/* Search used to be display:none below 640px, and the hamburger has no search
+   link — so a reader on a phone, on any article, had no way to search at all.
+   It now collapses to a magnifier that expands when focused.
+   :focus-within does the work: tap and keyboard both reach it, there's no JS,
+   and no hidden checkbox to make it keyboard-inaccessible. Focus is also the
+   signal search-boot.js waits for, so the engine loads on the same gesture. */
 @media (max-width: 640px) {
-  .nav-search { display: none; }
+  .nav-search {
+    width: 38px;
+    transition: width 0.18s ease;
+  }
+  .nav-search input {
+    padding-left: 34px;
+    padding-right: 6px;
+    cursor: pointer;
+  }
+  .nav-search .search-icon { left: 11px; }
+  /* No room for it until the field opens. */
+  .nav-search input::placeholder { color: transparent; }
+
+  /* Expanded: lie over the nav rather than squeeze the logo out of it. */
+  .nav-search:focus-within {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    right: 24px;
+    width: auto;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  .nav-search:focus-within input {
+    padding-right: 16px;
+    cursor: text;
+  }
+  .nav-search:focus-within input::placeholder { color: var(--text-faint); }
+  .nav-search:focus-within .search-dropdown {
+    left: 0;
+    right: 0;
+    width: auto;
+  }
 }
 
 
