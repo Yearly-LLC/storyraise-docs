@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const zlib = require('zlib');
 const { marked } = require('marked');
 
 const ROOT = path.join(__dirname, '..');
@@ -177,11 +178,6 @@ function truncate(s, n) {
   return s.length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…';
 }
 
-// Per-article body text cap for the search index. Keeps search-index.js lean
-// (it parses synchronously on every page load); the most distinctive terms
-// cluster near the top of an article, and title/keywords carry the long tail.
-const BODY_MAX_CHARS = 1500;
-
 // Full article text (not just the first paragraph) for the search index.
 // <pre> code blocks are dropped — they bloat the index and pollute fuzzy
 // matches with syntax; inline <code> text is kept (product/field names).
@@ -204,6 +200,27 @@ const KEYWORD_STOPWORDS = new Set([
   'the', 'and', 'your', 'with', 'for', 'to', 'of', 'in', 'on', 'at', 'an',
   'is', 'it', 'by', 'or', 'we', 'up', 'as', 'a',
 ]);
+
+// Words to drop from a reader's QUERY before matching. Shipped to the browser
+// in search-index.js so this list stays the only copy.
+//
+// Matching is AND — every term must appear in the article — so a question
+// typed the way people actually type questions returns nothing: "reset my
+// password" fails on "my" alone. This is deliberately a different list from
+// KEYWORD_STOPWORDS above (which trims generated keywords): it has to cover
+// interrogatives like how/what/why, which a keyword list has no reason to.
+//
+// Nothing here can be a product term — "collect", "video", "report" and
+// friends must survive.
+const QUERY_STOPWORDS = [
+  'a', 'about', 'am', 'an', 'and', 'any', 'are', 'as', 'at', 'be', 'been',
+  'by', 'can', 'could', 'did', 'do', 'does', 'for', 'from', 'had', 'has',
+  'have', 'how', 'i', 'in', 'into', 'is', 'it', 'its', 'me', 'my', 'of',
+  'on', 'or', 'our', 'please', 'should', 'that', 'the', 'their', 'them',
+  'there', 'these', 'they', 'this', 'to', 'was', 'we', 'were', 'what',
+  'when', 'where', 'which', 'who', 'why', 'will', 'with', 'would', 'you',
+  'your',
+];
 
 // Keywords come from the title, section, and slug, plus an optional
 // comma-separated `keywords:` frontmatter field for terms readers search
@@ -289,12 +306,22 @@ const sidenavBlock = sidenavHtml => `<aside class="sidenav-wrap">
       ${sidenavHtml}
     </aside>`;
 
+// The end-of-body scripts, shared with the hand-maintained home page so the
+// two can't drift. Only the theme (tiny, and needed before anything else) and
+// the search boot stub load up front; the boot stub pulls the ~63KB search
+// engine in on demand. See assets/search-boot.js.
+function scriptsHtml({ controller = '/assets/search.js', eager = false } = {}) {
+  return `  <script src="/assets/theme.js"></script>
+  <script src="/assets/search-boot.js" data-controller="${controller}" data-eager="${eager}" defer></script>`;
+}
+
 function renderPage({
   title,
   breadcrumbHtml,
   bodyHtml,
   sidenavHtml,
   searchScript = '/assets/search.js',
+  searchEager = false,
 }) {
   let html = TEMPLATE;
   html = fill(html, 'HEAD', headHtml({ title: `${title} — Storyraise` }));
@@ -303,7 +330,7 @@ function renderPage({
   html = fill(html, 'DOCNAV_TOGGLE', sidenavHtml ? DOCNAV_TOGGLE : '');
   html = fill(html, 'BREADCRUMB', breadcrumbHtml);
   html = fill(html, 'BODY', bodyHtml);
-  html = fill(html, 'SEARCH_SCRIPT', searchScript);
+  html = fill(html, 'SCRIPTS', scriptsHtml({ controller: searchScript, eager: searchEager }));
   return html;
 }
 
@@ -387,7 +414,7 @@ function prepareArticle(relDir, file, section) {
     status: meta.status || 'draft',
     description: truncate(firstParagraphText(html), 160),
     section: section.label,
-    body: truncate(plainText(html), BODY_MAX_CHARS),
+    body: plainText(html),
     keywords: keywordsFor(title, section.label, slug, meta.keywords),
     isIntegration: relDir.endsWith('/integrations'),
     outPath: path.join(OUT_DIR, relDir, slug, 'index.html'),
@@ -487,6 +514,7 @@ function buildHome() {
 
   // The home page keeps its own <title> — it is the root, not "X — Storyraise".
   html = replaceRegion(html, 'HEAD', headHtml({ title: 'Storyraise Knowledge Base' }));
+  html = replaceRegion(html, 'SCRIPTS', scriptsHtml());
   html = replaceRegion(html, 'SECTION-GRID', SECTIONS.map(homeSectionCard).join('\n'));
 
   const crm = SECTIONS.find(s => s.dir === 'crm-and-data');
@@ -531,6 +559,7 @@ function buildSearchPage() {
     bodyHtml: body,
     sidenavHtml: '',
     searchScript: '/assets/search-page.js',
+    searchEager: true,   // arriving here IS the intent — don't wait for a keystroke
   });
   writePage(path.join(ROOT, 'search', 'index.html'), html);
 }
@@ -663,11 +692,19 @@ checkOrphans(written);
 checkLinks(knownUrls, [...written, ...HAND_MAINTAINED, 'index.html', 'search/index.html']);
 reportProblems();
 
-fs.writeFileSync(
-  path.join(ROOT, 'search-index.js'),
+const indexJs =
   '// GENERATED by build/build.js — do not edit by hand.\n' +
   '// Each entry: { title, description, section, url, keywords[], body }.\n' +
-  'const SEARCH_INDEX = ' + JSON.stringify(searchIndex, null, 2) + ';\n'
-);
+  'const SEARCH_INDEX = ' + JSON.stringify(searchIndex, null, 2) + ';\n' +
+  '\n// Dropped from a reader\'s query before matching. See QUERY_STOPWORDS in build.js.\n' +
+  'const SEARCH_STOPWORDS = ' + JSON.stringify(QUERY_STOPWORDS) + ';\n';
 
-console.log(`search-index.js: ${searchIndex.length} entries`);
+fs.writeFileSync(path.join(ROOT, 'search-index.js'), indexJs);
+
+// This file is only fetched when a reader actually searches, so its size is a
+// budget rather than a page-load cost. Report it so growth is noticed.
+const gzipKb = zlib.gzipSync(indexJs).length / 1024;
+console.log(`search-index.js: ${searchIndex.length} entries, ${gzipKb.toFixed(1)}KB gzip`);
+if (gzipKb > 80) {
+  console.warn(`  warning: search index is ${gzipKb.toFixed(0)}KB gzip — readers download this on first search`);
+}
