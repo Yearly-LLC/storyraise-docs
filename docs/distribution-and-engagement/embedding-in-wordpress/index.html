@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CRM &amp; Data Connections — Storyraise</title>
+  <title>Embedding in WordPress — Storyraise</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=98cc97cb" />
   <script>
@@ -90,10 +90,10 @@
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>CRM &amp; Data Connections</summary>
     <ul>
-      <li><a href="/docs/crm-and-data/" class="active" aria-current="page">Overview</a></li>
+      <li><a href="/docs/crm-and-data/">Overview</a></li>
       <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
       <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
       <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
@@ -141,12 +141,12 @@
       <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Distribution &amp; Engagement</summary>
     <ul>
       <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
       <li><a href="/docs/distribution-and-engagement/sharing-reports/">Sharing reports</a></li>
-      <li><a href="/docs/distribution-and-engagement/embedding-in-wordpress/">Embedding in WordPress</a></li>
+      <li><a href="/docs/distribution-and-engagement/embedding-in-wordpress/" class="active" aria-current="page">Embedding in WordPress</a></li>
       <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
       <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
       <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
@@ -215,120 +215,87 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    CRM &amp; Data Connections
+    <a href="/docs/distribution-and-engagement/">Distribution &amp; Engagement</a>
+    <span>›</span>
+    Embedding in WordPress
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>CRM &amp; Data Connections</h1>
-<p class="lead">Bring your constituent data into Storyraise.</p>
-<div class="cards">
-      <a class="card" href="/docs/crm-and-data/connecting-a-crm/">
-        <h3>Connecting a CRM</h3>
-        <p>Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each…</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/importing-constituent-data/">
-        <h3>Importing constituent data</h3>
-        <p>You can bring constituents into Storyraise two ways: sync them from a connected CRM, or upload a CSV file. CSV import works with data exported from any system…</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/mapping-fields/">
-        <h3>Mapping fields</h3>
-        <p>Coming soon — a visual field-mapping step is on our roadmap. Today, Storyraise imports your fields automatically using the rules described below.</p>
-        <span class="badge">Coming soon</span>
-      </a>
-      <a class="card" href="/docs/crm-and-data/data-refreshes/">
-        <h3>Data refreshes</h3>
-        <p>Your CRM data changes constantly — new donors, updated emails, fresh gift records. This page covers how to keep your Storyraise constituent list in step.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/troubleshooting-sync-issues/">
-        <h3>Troubleshooting sync issues</h3>
-        <p>Most sync problems come down to one of a few causes. Work through the section that matches what you're seeing.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/supported-integrations/">
-        <h3>Supported integrations</h3>
-        <p>Storyraise connects to your CRM, giving platforms, and email tools through the Connections tab — one hub where you connect a system, import your constituents,…</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/connections-overview/">
-        <h3>The Connections tab</h3>
-        <p>Connections is your hub for bringing donor data into Storyraise. Connect a system once and Storyraise imports your constituents — then you can sync additional…</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/syncing-data-to-collections/">
-        <h3>Syncing data to collections</h3>
-        <p>Connecting a system imports your constituents. But your systems hold far more than names and emails — giving history, event attendance, email engagement,…</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/managing-connections/">
-        <h3>Managing connections</h3>
-        <p>Once a system is connected, the Connections tab is where you keep it healthy — check its status, refresh data, adjust credentials, and turn on automatic…</p>
-      </a>
-    </div>
-<h2>Integration guides</h2>
-<div class="cards">
-      <a class="card" href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">
-        <h3>Blackbaud (Raiser's Edge NXT)</h3>
-        <p>Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/bloomerang/">
-        <h3>Bloomerang</h3>
-        <p>Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/salesforce/">
-        <h3>Salesforce / Nonprofit Cloud</h3>
-        <p>Connect Salesforce to bring your contacts and giving data into Storyraise — and send report engagement back to Salesforce so it lives next to the rest of each…</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/virtuous/">
-        <h3>Virtuous</h3>
-        <p>Connect Virtuous with an API key to import your contacts and giving history into Storyraise.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/civicrm/">
-        <h3>CiviCRM</h3>
-        <p>Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/slate/">
-        <h3>Slate for Advancement</h3>
-        <p>Connect a Slate Query web service to import constituents into Storyraise. Because Slate queries are custom, you'll map their columns to Storyraise fields as…</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/ellucian/">
-        <h3>Ellucian Advancement</h3>
-        <p>Connect via the Ellucian Ethos Integration API to import persons into Storyraise as constituents.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/little-green-light/">
-        <h3>Little Green Light</h3>
-        <p>Connect Little Green Light with an API token to import your constituents.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/donorperfect/">
-        <h3>DonorPerfect</h3>
-        <p>Connect DonorPerfect with an API key to import your donors as constituents.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/neon-crm/">
-        <h3>Neon CRM</h3>
-        <p>Connect Neon CRM with your Organization ID and API key to import accounts as constituents.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/funraise/">
-        <h3>Funraise</h3>
-        <p>Connect Funraise with an API key to import your supporters as constituents.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/givebutter/">
-        <h3>Givebutter</h3>
-        <p>Embed your Givebutter giving experience directly inside a Storyraise report, so the moment your story moves a reader, they can give — without leaving the page.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/donorbox/">
-        <h3>Donorbox</h3>
-        <p>Connect Donorbox to import your donors and sync their donations into Storyraise.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/fundraise-up/">
-        <h3>Fundraise Up</h3>
-        <p>Connect Fundraise Up to import your supporters and sync their donations into Storyraise.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/mailchimp/">
-        <h3>Mailchimp</h3>
-        <p>Connect Mailchimp to import your audience and sync email engagement into Storyraise.</p>
-      </a>
-      <a class="card" href="/docs/crm-and-data/integrations/hubspot/">
-        <h3>HubSpot</h3>
-        <p>Coming soon — a native HubSpot integration is on our roadmap and isn't available yet.</p>
-        <span class="badge">Coming soon</span>
-      </a>
-    </div>
+        <h1>Embedding in WordPress</h1>
+<p class="lead">WordPress is the most common place teams put a Storyraise report, and it takes about two minutes. Your published report is an ordinary web page, so you embed it the same way you&#39;d embed a video — by pasting a snippet of code onto the page.</p>
+<p>There&#39;s nothing to switch on or approve at our end. Published reports are public and embeddable by default, so you don&#39;t need to ask us to allowlist your domain.</p>
+<p>If you&#39;d rather not embed at all, <a href="/docs/distribution-and-engagement/sharing-reports/">sharing the plain link</a> works just as well — there&#39;s a note at the end of this guide on when that&#39;s the better choice.</p>
+<h2>Step 1 — Copy your embed code</h2>
+<ol>
+<li>Publish your report. Storyraise opens the share screen straight after.</li>
+<li>Click <strong>Embed codes</strong>.</li>
+<li>Pick the version you want and click <strong>Copy</strong>:</li>
+</ol>
+<p><strong>Standard</strong> — the report sits inside one of your pages, with your header, footer, and other content around it:</p>
+<pre><code class="language-html">&lt;iframe src=&quot;https://your-organization.yearly.report/your-report&quot;
+        scrolling=&quot;yes&quot;
+        style=&quot;width: 100%; aspect-ratio: 16/10; border: none;&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+<p><strong>Fullscreen</strong> — the report takes over the whole browser window. Best for a dedicated landing page or a kiosk screen, where the report <em>is</em> the page:</p>
+<pre><code class="language-html">&lt;iframe src=&quot;https://your-organization.yearly.report/your-report&quot;
+        scrolling=&quot;yes&quot;
+        style=&quot;position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 9999;&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+<p>You can reach the same screen later from the dashboard — open a published report&#39;s menu and choose <strong>View Link</strong>.</p>
+<h2>Step 2 — Give it the full width of the page</h2>
+<p>This is the one thing worth getting right, so it&#39;s worth doing before you worry about anything else.</p>
+<p>Your report sizes itself to <strong>the width of the box you put it in</strong>, not to your screen. Drop it into a typical blog column of around 700px and the whole report shrinks to fit — headings still look fine, but body text comes out roughly half size and becomes genuinely hard to read. Give it the full width of the page and it renders exactly as you designed it.</p>
+<p>As a rule of thumb, aim for <strong>at least 1000px of width</strong>, and ideally around 1400px. Every editor below includes the step for this.</p>
+<h2>Gutenberg (the block editor)</h2>
+<ol>
+<li>Open your page and click the <strong>+</strong> to add a block.</li>
+<li>Search for <strong>Custom HTML</strong> and choose it.</li>
+<li>Paste your embed code into the block.</li>
+<li><strong>Set it to full width.</strong> The Custom HTML block has no width control of its own, so either select the block, wrap it in a <strong>Group</strong> block, and set that Group&#39;s alignment to <strong>Full width</strong>; or switch the page to a full-width or blank template under <strong>Page → Template</strong>.</li>
+<li>Click <strong>Preview</strong>, then <strong>Publish</strong>.</li>
+</ol>
+<p>In the editor the block shows your code rather than the report — that&#39;s expected. Click <strong>Preview</strong> (or the block&#39;s <strong>Preview</strong> tab) to see the real thing.</p>
+<h2>Elementor</h2>
+<ol>
+<li>Open the page and click <strong>Edit with Elementor</strong>.</li>
+<li>Search the widget panel for <strong>HTML</strong> and drag the widget onto your page.</li>
+<li>Paste your embed code into the <strong>HTML Code</strong> box.</li>
+<li><strong>Set it to full width.</strong> Select the parent Container or Section, and under <strong>Layout</strong> set <strong>Content Width</strong> to <strong>Full Width</strong> and <strong>Width</strong> to <strong>Full</strong>. Under <strong>Advanced</strong>, set left and right padding to <code>0</code>.</li>
+<li>Click <strong>Publish</strong> or <strong>Update</strong>.</li>
+</ol>
+<h2>Classic editor (the legacy visual editor)</h2>
+<ol>
+<li>Open your page in the editor.</li>
+<li>Click the <strong>Text</strong> tab in the top-right corner — <strong>not</strong> the Visual tab. This step is the one people miss, and it&#39;s the reason most embeds fail here.</li>
+<li>Paste your embed code where you want the report to appear.</li>
+<li>Click <strong>Publish</strong> or <strong>Update</strong>.</li>
+<li><strong>Don&#39;t switch back to the Visual tab.</strong> The visual editor tidies up HTML it doesn&#39;t recognise and can strip or mangle your embed code. If you need to edit the page again, do it in the Text tab.</li>
+</ol>
+<p>Width in the Classic editor is controlled by your theme rather than the editor. If the report looks cramped, choose a full-width or blank page template under <strong>Page Attributes → Template</strong>, or ask whoever maintains your theme for a full-width template.</p>
+<h2>If something looks off</h2>
+<p><strong>The report is small and the text is hard to read.</strong> It&#39;s in too narrow a column. Go back to the full-width step for your editor above — this fixes it almost every time.</p>
+<p><strong>The embed code vanishes when you save.</strong> Something is stripping the code before it&#39;s saved. Usually one of:</p>
+<ul>
+<li><strong>You&#39;re on WordPress.com rather than self-hosted WordPress.</strong> Custom iframe embeds generally need a <strong>Business</strong> plan; lower plans strip them for security.</li>
+<li><strong>Your user role.</strong> WordPress only lets Administrators and Editors post raw HTML. If you&#39;re an Author or Contributor, ask an admin to paste it. On multisite, this is restricted to Super Admins.</li>
+<li><strong>A security or caching plugin.</strong> Jetpack, Wordfence, and some caching plugins filter iframes. Check their settings, or ask your web person to allow iframes from <code>yearly.report</code>.</li>
+</ul>
+<p><strong>You want it taller or shorter.</strong> Change <code>aspect-ratio: 16/10</code> to <code>16/9</code> for a wider, shorter frame, or replace it with a fixed height like <code>height: 800px</code>. The report scrolls inside its own frame either way.</p>
+<p><strong>It works for you but not a colleague.</strong> Almost always caching — ask them to hard-refresh, or clear your caching plugin.</p>
+<h2>Accessibility</h2>
+<p>Add a <code>title</code> to the iframe so screen readers announce what it is:</p>
+<pre><code class="language-html">&lt;iframe src=&quot;https://your-organization.yearly.report/your-report&quot;
+        title=&quot;2024 Annual Report&quot;
+        scrolling=&quot;yes&quot;
+        style=&quot;width: 100%; aspect-ratio: 16/10; border: none;&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+<p>See <a href="/docs/resources/accessibility/">Accessibility at Storyraise</a> if your site has accessibility requirements to meet.</p>
+<h2>Prefer not to embed?</h2>
+<p>You don&#39;t have to. Linking straight to your report gives readers the same experience, works everywhere, and skips all of the above:</p>
+<pre><code>https://your-organization.yearly.report/your-report
+</code></pre>
+<p>A fullscreen embed and a plain link look nearly identical to a reader — so if the embed is fighting your theme, a link and a button are a perfectly good answer. For mailings, <a href="/docs/distribution-and-engagement/personalized-links/">personalized links</a> go one better and tell you who opened it.</p>
 
 
         <hr />

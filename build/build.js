@@ -80,8 +80,8 @@ const SECTIONS = [
     blurb: 'Share your published reports and see who engages.',
     icon: '📤',
     order: [
-      'sharing-reports', 'personalized-links', 'email-distribution', 'sms-distribution',
-      'tracking-engagement', 'understanding-report-metrics', 'video-analytics',
+      'sharing-reports', 'embedding-in-wordpress', 'personalized-links', 'email-distribution',
+      'sms-distribution', 'tracking-engagement', 'understanding-report-metrics', 'video-analytics',
     ],
   },
   {

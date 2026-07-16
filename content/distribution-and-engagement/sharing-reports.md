@@ -59,6 +59,10 @@ The **fullscreen** variant pins the report over the entire viewport — use it o
 
 If your site has accessibility requirements, give the iframe a descriptive `title` and review [Accessibility at Storyraise](../resources/accessibility.md) before you embed.
 
+Whichever version you use, give the report the full width of the page — it sizes itself to the box you put it in, so a narrow column shrinks the whole report and makes body text hard to read.
+
+Using WordPress? See [Embedding in WordPress](embedding-in-wordpress.md) for step-by-step instructions for Gutenberg, Elementor, and the Classic editor.
+
 ## QR codes for print
 
 **Get QR code** downloads a scannable code for your report — drop it onto mailers, event signage, table tents, or thank-you cards to bridge print and digital. For per-constituent QR codes at scale (each opening a personalized version of the report), use the QR code generator described in [Personalized links](personalized-links.md).

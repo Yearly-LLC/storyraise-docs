@@ -761,6 +761,26 @@ const SEARCH_INDEX = [
     "body": "Sharing reports Publishing puts your report on the web — sharing puts it in front of your audience. Storyraise gives you several ways to distribute a published report, all available from the Share options in the builder. The Share menu Open your published report in the builder and click Share . From there you can: Copy link — your report's public web address, ready to paste anywhere. Embed Code (standard) — an iframe snippet that displays the report inside a page on your own website. Embed Code (fullscreen) — an iframe snippet that takes over the whole browser window, for kiosk displays or dedicated landing pages. Get QR code — a downloadable QR code that opens your report when scanned. Get PDF — a link to a PDF version of your report. You can also grab the public link anytime from the dashboard: open a published report's menu and choose View Link . Sharing the link Your report's link looks like: It works on every device with no login or app required, so it's safe to drop into: Email campaigns and newsletters Social media posts Your website's navigation or footer Text messages For mailings to your constituents, consider personalized links instead of the plain link — each recipient gets a version addressed to them, and you'll see exactly who opened it. Embedding on your website Paste the standard embed code into any page on your site: The fullscreen variant pins the report over the entire viewport — use it on a dedicated page where the report is the content: If your site has…"
   },
   {
+    "title": "Embedding in WordPress",
+    "description": "WordPress is the most common place teams put a Storyraise report, and it takes about two minutes. Your published report is an ordinary web page, so you embed…",
+    "section": "Distribution & Engagement",
+    "url": "/docs/distribution-and-engagement/embedding-in-wordpress/",
+    "keywords": [
+      "embedding",
+      "wordpress",
+      "distribution",
+      "engagement",
+      "embed",
+      "iframe",
+      "gutenberg",
+      "elementor",
+      "classic editor",
+      "custom html",
+      "block editor"
+    ],
+    "body": "Embedding in WordPress WordPress is the most common place teams put a Storyraise report, and it takes about two minutes. Your published report is an ordinary web page, so you embed it the same way you'd embed a video — by pasting a snippet of code onto the page. There's nothing to switch on or approve at our end. Published reports are public and embeddable by default, so you don't need to ask us to allowlist your domain. If you'd rather not embed at all, sharing the plain link works just as well — there's a note at the end of this guide on when that's the better choice. Step 1 — Copy your embed code Publish your report. Storyraise opens the share screen straight after. Click Embed codes . Pick the version you want and click Copy : Standard — the report sits inside one of your pages, with your header, footer, and other content around it: Fullscreen — the report takes over the whole browser window. Best for a dedicated landing page or a kiosk screen, where the report is the page: You can reach the same screen later from the dashboard — open a published report's menu and choose View Link . Step 2 — Give it the full width of the page This is the one thing worth getting right, so it's worth doing before you worry about anything else. Your report sizes itself to the width of the box you put it in , not to your screen. Drop it into a typical blog column of around 700px and the whole report shrinks to fit — headings still look fine, but body text comes out roughly half size and…"
+  },
+  {
     "title": "Personalized links",
     "description": "A personalized link opens your report addressed to one specific constituent — their name in the greeting, their details filled into merge tags, and their…",
     "section": "Distribution & Engagement",
