@@ -15,7 +15,7 @@ Everything in a Storyraise report is edited directly on the canvas — what you 
 - Inside a section are **blocks** — the building blocks you add, like intros, stories, and stats spreads (see [Adding sections](adding-sections.md)). Each block has its own style and layout settings.
 - Inside blocks are **elements** — the individual pieces of content: text, images, videos, charts, and more.
 
-Click anything on the canvas to select it; the settings panel shows the options for whatever is selected.
+Click anything on the canvas to select it; the settings panel shows the options for whatever is selected, and [the element bar](element-bar.md) appears above it with the actions you use most.
 
 > **Headed to print?** Reports are designed for the web, but they also export to PDF. When you export, **each block becomes its own page** in the PDF — so think of a block as a page when you're planning a printed version.
 
@@ -53,6 +53,7 @@ Select a block to open **Set Block Style & Layout**, where you control its backg
 
 ## Related
 
+- [The element bar](element-bar.md)
 - [Fonts and colors](fonts-and-colors.md)
 - [Images and videos](images-and-videos.md)
 - [AI content generation](ai-content-generation.md)

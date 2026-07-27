@@ -71,7 +71,7 @@ const SECTIONS = [
     blurb: 'Everything about building and styling reports.',
     icon: '📊',
     order: [
-      'adding-sections', 'editing-content', 'using-templates', 'brand-kit', 'fonts-and-colors',
+      'adding-sections', 'editing-content', 'element-bar', 'using-templates', 'brand-kit', 'fonts-and-colors',
       'images-and-videos', 'creating-visualizations', 'build-a-line-chart',
       'image-sizes-and-dimensions', 'ai-content-generation',
       'reordering-sections', 'navigation-options', 'mobile-optimization', 'accessibility',

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The element bar — Storyraise</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
+  <script>
+    // Apply the theme before first paint: stored choice, else system setting.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
+      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
+      mq.addEventListener('change', function (e) {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (err) {}
+        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo-group">
+      <a href="/" class="logo">
+        <img
+          class="logo-light"
+          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
+          alt="Storyraise"
+        />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
+    <div class="nav-right">
+      <!-- NAV-SEARCH -->
+      <div class="search-wrap nav-search" id="searchWrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search docs…"
+          autocomplete="off"
+          aria-label="Search the knowledge base"
+          aria-autocomplete="list"
+          aria-controls="searchDropdown"
+          aria-expanded="false"
+        />
+        <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
+      </div>
+      <!-- /NAV-SEARCH -->
+      <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
+      <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </label>
+      <div class="nav-menu">
+      <a href="/search/" class="nav-link nav-menu-search">Search</a>
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LAYOUT: sidebar tree + main column -->
+  <div class="layout">
+    <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
+
+    <!-- SIDEBAR -->
+    <aside class="sidenav-wrap">
+      <nav class="sidenav" aria-label="Documentation">
+  <details class="sidenav-group">
+    <summary>Getting Started</summary>
+    <ul>
+      <li><a href="/docs/getting-started/">Overview</a></li>
+      <li><a href="/docs/getting-started/what-is-storyraise/">What is Storyraise?</a></li>
+      <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
+      <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
+      <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/pdf-exports/">PDF exports</a></li>
+      <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
+      <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>CRM &amp; Data Connections</summary>
+    <ul>
+      <li><a href="/docs/crm-and-data/">Overview</a></li>
+      <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
+      <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
+      <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
+      <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
+      <li><a href="/docs/crm-and-data/connections-overview/">The Connections tab</a></li>
+      <li><a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a></li>
+      <li><a href="/docs/crm-and-data/managing-connections/">Managing connections</a></li>
+      <li><a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a></li>
+      <li><a href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a></li>
+      <li><a href="/docs/crm-and-data/integrations/salesforce/">Salesforce / Nonprofit Cloud</a></li>
+      <li><a href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a></li>
+      <li><a href="/docs/crm-and-data/integrations/civicrm/">CiviCRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/slate/">Slate for Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/ellucian/">Ellucian Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/little-green-light/">Little Green Light</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorperfect/">DonorPerfect</a></li>
+      <li><a href="/docs/crm-and-data/integrations/neon-crm/">Neon CRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/funraise/">Funraise</a></li>
+      <li><a href="/docs/crm-and-data/integrations/givebutter/">Givebutter</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
+      <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
+      <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
+      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group" open>
+    <summary>Building Reports</summary>
+    <ul>
+      <li><a href="/docs/building-reports/">Overview</a></li>
+      <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
+      <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+      <li><a href="/docs/building-reports/element-bar/" class="active" aria-current="page">The element bar</a></li>
+      <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
+      <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
+      <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
+      <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
+      <li><a href="/docs/building-reports/creating-visualizations/">Creating visualizations</a></li>
+      <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
+      <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
+      <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
+      <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
+      <li><a href="/docs/building-reports/navigation-options/">Navigation options</a></li>
+      <li><a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a></li>
+      <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Distribution &amp; Engagement</summary>
+    <ul>
+      <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
+      <li><a href="/docs/distribution-and-engagement/sharing-reports/">Sharing reports</a></li>
+      <li><a href="/docs/distribution-and-engagement/embedding-in-wordpress/">Embedding in WordPress</a></li>
+      <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
+      <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
+      <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
+      <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Account &amp; Settings</summary>
+    <ul>
+      <li><a href="/docs/account-and-settings/">Overview</a></li>
+      <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
+      <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
+      <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
+      <li><a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Video</summary>
+    <ul>
+      <li><a href="/docs/storyraise-video/">Overview</a></li>
+      <li><a href="/docs/storyraise-video/what-is-storyraise-video/">What is Storyraise Video?</a></li>
+      <li><a href="/docs/storyraise-video/creating-a-video-message/">Creating a video message</a></li>
+      <li><a href="/docs/storyraise-video/recording-your-video/">Recording your video</a></li>
+      <li><a href="/docs/storyraise-video/scenes-and-personalization/">Scenes and personalization</a></li>
+      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Collect</summary>
+    <ul>
+      <li><a href="/docs/storyraise-collect/">Overview</a></li>
+      <li><a href="/docs/storyraise-collect/what-is-storyraise-collect/">What is Storyraise Collect?</a></li>
+      <li><a href="/docs/storyraise-collect/creating-a-collection/">Creating a collection</a></li>
+      <li><a href="/docs/storyraise-collect/form-field-types/">Form field types</a></li>
+      <li><a href="/docs/storyraise-collect/multi-step-forms/">Multi-step forms</a></li>
+      <li><a href="/docs/storyraise-collect/sharing-your-form/">Sharing your form</a></li>
+      <li><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Resources</summary>
+    <ul>
+      <li><a href="/docs/resources/">Overview</a></li>
+      <li><a href="/docs/resources/best-practices/">Best practices</a></li>
+      <li><a href="/docs/resources/accessibility/">Accessibility at Storyraise</a></li>
+      <li><a href="/docs/resources/network-requirements/">Network requirements and troubleshooting</a></li>
+      <li><a href="/docs/resources/faq/">Frequently asked questions</a></li>
+    </ul>
+  </details>
+</nav>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="doc-main">
+      <label for="navtoggle" class="navtoggle-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Documentation menu
+      </label>
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="/">Knowledge Base</a>
+    <span>›</span>
+    <a href="/docs/building-reports/">Building Reports</a>
+    <span>›</span>
+    The element bar
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <h1>The element bar</h1>
+<p class="lead">Select anything on the canvas and a small blue bar appears just above it. The bar tells you <strong>what</strong> you have selected — and where it sits inside the report — and gives you the actions you use most: move, copy, paste, duplicate, edit, and delete. Everything is one click, so you never have to reach for a keyboard shortcut or drag an element across the page.</p>
+<p>The bar is anchored to the element it belongs to. A small white arrow above it points down at your current selection, and it scrolls with the page as you work.</p>
+<h2>What&#39;s on the bar</h2>
+<p>Reading left to right:</p>
+<ul>
+<li><strong>The element path</strong> — the trail of containers your element sits inside, ending with the element itself</li>
+<li><strong>↑ / ↓</strong> — move the element up or down</li>
+<li><strong>Copy</strong> and <strong>Paste</strong></li>
+<li><strong>Duplicate</strong> — drop a copy directly below</li>
+<li><strong>Pencil</strong> — edit text (text elements only)</li>
+<li><strong>Trash</strong> — delete the element</li>
+</ul>
+<p>Buttons that don&#39;t apply to the current selection are dimmed: the arrows when there&#39;s nowhere left to move, <strong>Paste</strong> until you&#39;ve copied something, and <strong>Trash</strong> on elements that can&#39;t be removed.</p>
+<h2>The element path</h2>
+<p>The left of the bar is a breadcrumb trail of everything your element lives inside — the block first, then each container, and finally the selected element itself as the dark chip on the right.</p>
+<p>Click any earlier crumb to select that container. This is the fastest way to grab something you can&#39;t easily click on directly: click any cell of a table and then click <strong>Table</strong> in the path to select the whole table.</p>
+<p><img src="/assets/img/howto/element_bar_path01.png" alt="A table selected from the element path, with the bar reading Highlight / Table"></p>
+<p>With the container selected, the settings panel on the right switches to that container&#39;s editor — here, the <strong>Table Editor</strong>, with its own style and data options.</p>
+<p><img src="/assets/img/howto/element_bar_path02.png" alt="The Table Editor panel with border and background color fields"></p>
+<p>Set a background color there and it applies to the whole table, not the one cell you started from.</p>
+<p><img src="/assets/img/howto/element_bar_path03.png" alt="The same table with a purple background applied"></p>
+<p>The same trick works anywhere: select a text element inside a row and click <strong>Row</strong> to style the row, or click the block name to select the whole block.</p>
+<div class="tip"><p><strong>Tip:</strong> On a long path — or a narrow canvas, like the mobile preview — the trail folds behind a <strong>…</strong> so the buttons always stay on screen. Click the <strong>…</strong> to see the full path.</p></div>
+<h2>Move up and down</h2>
+<p>The <strong>↑</strong> and <strong>↓</strong> buttons move the selected element one position at a time. It&#39;s the precise alternative to drag and drop, which is worth reaching for on a laptop trackpad where a drag is easy to start and hard to land.</p>
+<p><img src="/assets/img/howto/element_bar_move01.png" alt="The down arrow on the element bar, with the Sample Text heading selected"></p>
+<p>Each press moves the element one place in reading order. The canvas scrolls to follow it, so you can keep pressing and watch it walk down the page.</p>
+<p><img src="/assets/img/howto/element_bar_move02.png" alt="The heading has moved below the paragraph"></p>
+<p>A press does whatever the next position calls for: step past a neighboring element, move into the container next to it (the next row slot, for example), climb out of a container it&#39;s currently inside, or cross into the next block once it reaches the end of the one it&#39;s in. When there&#39;s nothing left in that direction, the arrow dims.</p>
+<p>Select a whole block and the arrows reorder blocks instead — see <a href="/docs/building-reports/reordering-sections/">Reordering sections</a>.</p>
+<div class="tip"><p><strong>Note:</strong> With more than one element selected, the arrows are switched off — a multi-selection has no single destination. Copy, duplicate, and delete still work.</p></div>
+<h2>Copy and paste</h2>
+<p><strong>Copy</strong> puts the selected element on the report clipboard without changing anything on the page.</p>
+<p><img src="/assets/img/howto/element_bar_copy01.png" alt="The copy button on the element bar"></p>
+<p>The button flashes green and a small <strong>Copied</strong> pill confirms it.</p>
+<p><img src="/assets/img/howto/element_bar_copy02.png" alt="The copy button confirming with a Copied — click Paste or Ctrl+V message"></p>
+<p>Now select where you want it and click <strong>Paste</strong>. The copy stays on the clipboard until you copy something else, so you can paste it into as many places as you like — including other blocks.</p>
+<p><img src="/assets/img/howto/element_bar_copy03.png" alt="The paste button on the element bar of a different element"></p>
+<p>Paste places the element after whatever is selected. If you&#39;ve selected an empty container or layout slot, it goes inside it instead; if you&#39;ve selected a box or mini grid that already has content, Storyraise asks whether you want it inside or after. ⌘V / Ctrl+V does exactly the same thing.</p>
+<h2>Duplicate</h2>
+<p><strong>Duplicate</strong> makes a copy of the element and places it directly below the original — one click, no clipboard involved. It&#39;s the quickest way to build a repeating pattern: style one item the way you want it, then duplicate it and change the words.</p>
+<p><img src="/assets/img/howto/element_bar_duplicate.png" alt="A sub heading duplicated directly below itself"></p>
+<h2>Edit text with the pencil</h2>
+<p>Text elements get a <strong>pencil</strong> button, just left of the trash. Click it to start editing — the same thing double-clicking the text does, with the cursor placed at the end so you can type straight away.</p>
+<p>While you&#39;re editing, the formatting toolbar takes the bar&#39;s place, with bold, italic, underline, strikethrough, link, text color, and superscript / subscript.</p>
+<p><img src="/assets/img/howto/element_bar_edit.png" alt="The text formatting toolbar shown while editing a paragraph"></p>
+<p>Click anywhere outside the text to finish; the element bar comes back.</p>
+<h2>Delete</h2>
+<p><strong>Trash</strong> removes the selected element immediately.</p>
+<p><img src="/assets/img/howto/element_bar_delete01.png" alt="The trash button on the element bar of a selected paragraph"></p>
+<p><img src="/assets/img/howto/element_bar_delete02.png" alt="The block after the paragraph has been deleted"></p>
+<p>Changed your mind? Use <strong>Undo</strong> in the top toolbar. Elements that a block depends on — layout slots and other fixed pieces — can&#39;t be removed, and the trash button is dimmed on those.</p>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+<li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
+<li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
+</ul>
+
+
+        <hr />
+
+        <p style="font-size:0.85rem; color:var(--text-faint);">Need help? <a href="https://storyraise.com/support">Contact our support team</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
+    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+  </footer>
+
+  <script src="/assets/theme.js"></script>
+  <script src="/assets/search-boot.js" data-controller="/assets/search.js" data-eager="false" defer></script>
+</body>
+</html>
