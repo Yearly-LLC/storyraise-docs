@@ -37,8 +37,7 @@ You can also let AI draft a block for you — describe what it's about and Story
 **Numbers and data**
 
 - **Stats** — showcase achievements using key figures
-- **Infographics** — visualize data with engaging charts and graphs
-- **Visualization** — rich infographics with lists, sequences, and comparisons
+- **Infographics** — infographics with lists, sequences, and comparisons (see [Creating infographics](creating-infographics.md))
 
 **People and gratitude**
 

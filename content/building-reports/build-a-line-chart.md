@@ -2,19 +2,19 @@
 title: Build a line chart
 section: Building Reports
 status: draft
-keywords: line chart, chart, graph, visualization, axis, monotone, data points, antv, tutorial, walkthrough
-last_reviewed: 2026-07-10
+keywords: line chart, chart, graph, infographic, visualization, axis, monotone, data points, antv, tutorial, walkthrough
+last_reviewed: 2026-07-29
 ---
 
 # Build a line chart
 
-This walkthrough builds a line chart from scratch — the "Community Engagement Growth" example — so you can see every part of the [Visualization](creating-visualizations.md) editor in action: choosing a template, styling it to your brand, and editing the data. It takes about five minutes.
+This walkthrough builds a line chart from scratch — the "Community Engagement Growth" example — so you can see every part of the [Infographic](creating-infographics.md) editor in action: choosing a template, styling it to your brand, and editing the data. It takes about five minutes.
 
 <video controls preload="metadata" src="/assets/img/howto/editing-line-chart.mp4"></video>
 
-## 1. Add a visualization and pick the Line Chart template
+## 1. Add an infographic and pick the Line Chart template
 
-Add a **Visualization** to your report, select it, and click **Add / Edit Visualization** to open the editor. In the **Templates** panel on the left, open the **Chart** tab and choose **Line Chart**.
+Add an **Infographic** to your report, select it, and click **Add / Edit Infographic** to open the editor. In the **Templates** panel on the left, open the **Chart** tab and choose **Line Chart**.
 
 ![The Line Chart template thumbnail in the picker](/assets/img/howto/choosing_chart_viz.png)
 
@@ -76,8 +76,8 @@ With the rows in order, the chart reads cleanly from left to right.
 
 ## 9. Finish
 
-Click **Done** to place the chart in your report. You can reopen the editor any time — select the block and press **Add / Edit Visualization** again to adjust the data or styling.
+Click **Done** to place the chart in your report. You can reopen the editor any time — select the block and press **Add / Edit Infographic** again to adjust the data or styling.
 
 > **Tip:** The same editor builds every chart type. Try the **Pie**, **Bar**, or **Column** templates with your own data — the data rows, colors, and title work exactly the same way.
 
-For the bigger picture — the other template families, brand styling, and PDF behavior — see [Creating visualizations](creating-visualizations.md).
+For the bigger picture — the other template families, brand styling, and PDF behavior — see [Creating infographics](creating-infographics.md).

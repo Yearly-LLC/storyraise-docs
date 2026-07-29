@@ -72,7 +72,7 @@ const SECTIONS = [
     icon: '📊',
     order: [
       'adding-sections', 'editing-content', 'element-bar', 'using-templates', 'brand-kit', 'fonts-and-colors',
-      'images-and-videos', 'creating-visualizations', 'build-a-line-chart',
+      'images-and-videos', 'creating-infographics', 'build-a-line-chart',
       'image-sizes-and-dimensions', 'ai-content-generation',
       'reordering-sections', 'navigation-options', 'mobile-optimization', 'accessibility',
     ],
@@ -567,10 +567,14 @@ function buildSearchPage() {
 /* ── validators ─────────────────────────────────────────────────────── */
 
 // Generated pages this build does not own. The original standalone
-// /docs/email-subdomain-setup/ page moved into account-and-settings; the old
-// URL survives as a hand-written redirect stub so existing links, bookmarks
-// and search results keep working.
-const HAND_MAINTAINED = new Set(['docs/email-subdomain-setup/index.html']);
+// /docs/email-subdomain-setup/ page moved into account-and-settings, and
+// /docs/building-reports/creating-visualizations/ moved to .../creating-infographics/
+// when Visualizations were renamed. Both old URLs survive as hand-written redirect
+// stubs so existing links, bookmarks and search results keep working.
+const HAND_MAINTAINED = new Set([
+  'docs/email-subdomain-setup/index.html',
+  'docs/building-reports/creating-visualizations/index.html',
+]);
 
 const problems = [];
 

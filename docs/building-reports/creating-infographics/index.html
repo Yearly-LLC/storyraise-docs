@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Importing constituent data — Storyraise</title>
+  <title>Creating infographics — Storyraise</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
@@ -92,12 +92,12 @@
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>CRM &amp; Data Connections</summary>
     <ul>
       <li><a href="/docs/crm-and-data/">Overview</a></li>
       <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
-      <li><a href="/docs/crm-and-data/importing-constituent-data/" class="active" aria-current="page">Importing constituent data</a></li>
+      <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
       <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
       <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
       <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
@@ -123,7 +123,7 @@
       <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Building Reports</summary>
     <ul>
       <li><a href="/docs/building-reports/">Overview</a></li>
@@ -134,7 +134,7 @@
       <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
       <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
       <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
-      <li><a href="/docs/building-reports/creating-infographics/">Creating infographics</a></li>
+      <li><a href="/docs/building-reports/creating-infographics/" class="active" aria-current="page">Creating infographics</a></li>
       <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
       <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
       <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
@@ -218,45 +218,69 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    <a href="/docs/crm-and-data/">CRM &amp; Data Connections</a>
+    <a href="/docs/building-reports/">Building Reports</a>
     <span>›</span>
-    Importing constituent data
+    Creating infographics
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>Importing constituent data</h1>
-<p class="lead">You can bring constituents into Storyraise two ways: sync them from a <a href="/docs/crm-and-data/connecting-a-crm/">connected CRM</a>, or upload a CSV file. CSV import works with data exported from any system — or a spreadsheet you maintain by hand.</p>
-<h2>Importing from a CSV file</h2>
-<h3>1. Prepare your file</h3>
-<p>Your CSV needs headers for <strong>First Name</strong>, <strong>Last Name</strong>, and <strong>Email</strong>. Email is the key field — Storyraise uses it to identify each constituent, so rows without an email address can&#39;t be imported.</p>
-<p>The easiest path:</p>
-<ol>
-<li>In the <strong>Constituents</strong> area, open the <strong>CSV File</strong> tab.</li>
-<li>Download the <strong>Constituents Template (CSV)</strong>.</li>
-<li>Open it in Excel, Google Sheets, or Numbers, and fill in your constituent data.</li>
-</ol>
-<p>You can include additional columns beyond the required three — giving level, campaign, salutation, anything you like. Extra columns are imported as custom fields on each constituent and become available as merge tags for personalization.</p>
-<h3>2. Upload it</h3>
-<ol>
-<li>Back in the <strong>CSV File</strong> tab, click <strong>Upload CSV</strong>.</li>
-<li>Select your file. Storyraise imports each row as a constituent.</li>
-</ol>
-<h3>3. Check the results</h3>
-<p>Your constituent list now shows the imported records, each tagged <strong>CSV</strong> so you can tell them apart from CRM-synced constituents. Open any constituent to review their fields.</p>
-<h2>Importing from a CRM</h2>
-<p>If you use Blackbaud or Bloomerang, connect it and sync instead of exporting CSVs by hand — see <a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a>. CRM-synced constituents are tagged with their source and keep the fields your CRM provides.</p>
-<h2>How re-imports work</h2>
-<p>Constituents are identified by email address. If you upload a file containing an email that&#39;s already in your list, that constituent&#39;s record is updated rather than duplicated. This means you can safely re-upload an updated export to refresh your data.</p>
-<h2>What constituent data unlocks</h2>
+        <h1>Creating infographics</h1>
+<p class="lead">An <strong>Infographic</strong> turns your numbers, lists, and milestones into a clean, on-brand graphic — a pie chart of where funding comes from, a timeline of the year, a word cloud of what supporters said. You build it from data you type in, pick a template, and style it to match your brand, all without leaving the report builder.</p>
+<div class="tip"><p><strong>Note:</strong> Infographics were previously called <strong>Visualizations</strong>. Only the name changed — existing reports keep working, and everything below applies to graphics you built under the old name.</p></div>
+<h2>What you can build</h2>
+<p>Every infographic is created from a <strong>template</strong>. Templates are grouped into four families, and you can switch between them with the tabs at the top of the editor:</p>
 <ul>
-<li><strong>Personalized reports</strong> — merge tags like <code>@@first_name@@</code> fill in each constituent&#39;s own information.</li>
-<li><strong>Personalized QR codes and links</strong> — each constituent gets a link to their own version of a report.</li>
-<li><strong>Insights</strong> — see which constituents opened your reports.</li>
+<li><strong>Chart</strong> — pie, donut, bar, column, and line charts for comparing values over categories or time.</li>
+<li><strong>List</strong> — visual lists such as progress rings, checklists, and badge cards for highlighting a set of related points.</li>
+<li><strong>Sequence</strong> — timelines, funnels, roadmaps, and step &quot;snakes&quot; for showing a process or a journey.</li>
+<li><strong>Word Cloud</strong> — a standard or bubble cloud that sizes each word by how often (or how much) it matters.</li>
 </ul>
-<h2>Editing constituent data</h2>
-<p>From the constituent list, open any constituent to view their fields. For constituents imported by CSV, you can edit field values and add or remove fields directly in Storyraise. Fields synced from a CRM are read-only in Storyraise — update them in your CRM and re-sync.</p>
-<div class="tip"><p><strong>Careful when deleting data:</strong> if a personalized report relies on a field you remove, its merge tags will resolve to empty for affected constituents.</p></div>
+<p><img src="/assets/img/howto/choosing_viz01.png" alt="The Infographic Editor with the Chart templates panel: Pie, Donut, Bar, and Column chart templates"></p>
+<h2>Adding an infographic</h2>
+<ol>
+<li>In the builder, add an infographic — either drag in the <strong>Infographics</strong> block, or add an <strong>Infographic</strong> <a href="/docs/getting-started/common-terminology/">element</a> from the <strong>Insert</strong> bar and choose <strong>Insert before</strong> or <strong>Insert after</strong>.</li>
+<li>Select the new block. In the right-hand panel, under <strong>Infographic Editor</strong>, click <strong>Add / Edit Infographic</strong>.</li>
+</ol>
+<p><video controls preload="metadata" src="/assets/img/howto/finding-visualizations.mp4"></video></p>
+<h2>Inside the editor</h2>
+<p>Clicking <strong>Add / Edit Infographic</strong> opens the <strong>Infographic Editor</strong> — a three-panel window:</p>
+<ul>
+<li><strong>Templates</strong> (left) — the template picker, with the <strong>All / List / Sequence / Chart / Word Cloud</strong> tabs and a thumbnail for each style.</li>
+<li><strong>The Preview</strong> (center) — a live rendering that updates as you make changes.</li>
+<li><strong>Your Options</strong> (right) — the settings for the selected template: fonts and colors, template-specific toggles, the <strong>Title</strong>, and the <strong>Data</strong> you&#39;re charting.</li>
+</ul>
+<p>When you&#39;re happy with the preview, click <strong>Done</strong> to drop it into your report. Reopen the editor any time to make changes — click the block and press <strong>Add / Edit Infographic</strong> again.</p>
+<p><img src="/assets/img/howto/whole_modal_viz01.png" alt="The full Infographic Editor: Templates on the left, a live pie-chart preview in the center, and options plus data on the right"></p>
+<h2>Entering your data</h2>
+<p>Infographics use data you enter by hand, so you&#39;re never waiting on a connection or an import. In the <strong>Data</strong> section of the options panel, each row is one data point with a <strong>Label</strong>, a <strong>Value</strong>, and its own <strong>Color</strong>. Use the row controls to shape your data:</p>
+<ul>
+<li><strong>Add</strong> (<strong>+</strong>) a new row, or <strong>remove</strong> (<strong>×</strong>) one you don&#39;t need.</li>
+<li><strong>Reorder</strong> rows with the up and down arrows — handy for putting months, quarters, or ranked items in the right order.</li>
+</ul>
+<p>Give the whole graphic a heading with the <strong>Title</strong> field.</p>
+<h2>Styling to your brand</h2>
+<p>Infographics pick up your organization&#39;s look automatically, and you can fine-tune from there:</p>
+<ul>
+<li><strong>Font</strong> — choose any font available to your report, including your brand fonts.</li>
+<li><strong>Colors</strong> — every color picker leads with your <strong>brand colors</strong>, followed by your <strong>report&#39;s palette</strong> colors, so charts stay on-palette. Set a per-row color, or turn on <strong>Make chart monotone</strong> to render the whole chart in a single color.</li>
+<li><strong>Chart options</strong> vary by type — for example, pie and donut charts offer <strong>Show labels</strong>, <strong>Hide labels below (%)</strong>, and <strong>Show slice outline</strong>; bar and line charts add <strong>X-axis title</strong>, <strong>Y-axis title</strong>, and value or axis <strong>prefix/suffix</strong> (for a <code>$</code> or <code>k</code>).</li>
+</ul>
+<p>Storyraise also protects readability: if a text color would be invisible against the background, it&#39;s automatically nudged to a legible shade. For more on brand styling, see <a href="/docs/building-reports/brand-kit/">Brand kit</a> and <a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a>.</p>
+<div class="tip"><p><strong>Tip:</strong> Fewer data points read better. A chart with five or six clear categories tells a stronger story than one crammed with twenty.</p></div>
+<h2>Block layouts</h2>
+<p>The <strong>Infographics</strong> block offers four layouts, chosen from the block&#39;s <strong>Layout</strong> setting:</p>
+<ul>
+<li><strong>Standard</strong> — heading and body text above a single infographic.</li>
+<li><strong>Chart Right</strong> — text on the left, infographic on the right.</li>
+<li><strong>Two Charts</strong> — heading and body text above two infographics side by side.</li>
+<li><strong>Chart Left</strong> — infographic on the left, text on the right.</li>
+</ul>
+<h2>In PDF and on mobile</h2>
+<p>Infographics render as crisp vector graphics, so they stay sharp when a report is exported to PDF. Two settings apply to the PDF only — <strong>Vertical alignment</strong> (top, center, or bottom on the page) and <strong>Show page number</strong> — and they live on the block&#39;s traits alongside the infographic. See <a href="/docs/getting-started/pdf-exports/">PDF exports</a>.</p>
+<p>On smaller screens, an infographic scales to the width of its column; you can also set the block&#39;s <strong>Width (%)</strong> to give it more or less room. See <a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a>.</p>
+<h2>Next: build one</h2>
+<p>Ready to try it? Follow the step-by-step <a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a> walkthrough to create your first infographic from scratch.</p>
 
 
         <hr />

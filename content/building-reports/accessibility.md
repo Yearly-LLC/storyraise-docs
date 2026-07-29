@@ -14,7 +14,7 @@ An accessible report reaches your whole audience — including readers with low 
 
 - **Keep text contrast high.** Dark text on light backgrounds (or light on dark) should be comfortably readable.
 - **Add an overlay behind text on photos.** When you place text over an image, use the block's **Overlay Color** control to darken (or lighten) the image behind the text. Increase the overlay opacity until the text is comfortably legible — busy or bright photos need more. Storyraise doesn't measure the contrast ratio for you, so trust your eyes and test on a phone as well as a laptop.
-- **Don't rely on color alone.** If a chart distinguishes categories only by hue, readers with color blindness may lose the thread. Use labels and values alongside color.
+- **Don't rely on color alone.** If an infographic distinguishes categories only by hue, readers with color blindness may lose the thread. Use labels and values alongside color.
 
 ## Typography
 

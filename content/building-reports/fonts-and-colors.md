@@ -48,7 +48,7 @@ Every color picker in the builder offers:
 
 - **Section and block backgrounds** — the biggest lever for visual variety. Alternating background colors between sections gives a report rhythm.
 - **Text** — headings and body text color per element.
-- **Elements** — buttons, charts, counters, and dividers take color settings too.
+- **Elements** — buttons, infographics, counters, and dividers take color settings too.
 
 You can also apply your brand's theme colors to a whole block at once instead of coloring each element.
 

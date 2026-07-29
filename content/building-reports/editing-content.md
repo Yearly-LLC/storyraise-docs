@@ -13,7 +13,7 @@ Everything in a Storyraise report is edited directly on the canvas — what you 
 
 - A **section** is one chapter of your report — a top-level division that appears in the report's navigation.
 - Inside a section are **blocks** — the building blocks you add, like intros, stories, and stats spreads (see [Adding sections](adding-sections.md)). Each block has its own style and layout settings.
-- Inside blocks are **elements** — the individual pieces of content: text, images, videos, charts, and more.
+- Inside blocks are **elements** — the individual pieces of content: text, images, videos, infographics, and more.
 
 Click anything on the canvas to select it; the settings panel shows the options for whatever is selected, and [the element bar](element-bar.md) appears above it with the actions you use most.
 
@@ -32,7 +32,7 @@ Click into any text and type. You can adjust a text element's font, size, color,
 - **Video** — YouTube and Vimeo embeds
 - **Audio** — audio player
 - **Counter** — animated numbers, great for key stats
-- **Chart** — pie, bar, and line charts
+- **Infographic** — charts, visual lists, sequences, and word clouds (see [Creating infographics](creating-infographics.md))
 - **Table** — tabular data
 - **Accordion** — collapsible content for FAQs and details
 - **Card** — framed content container
@@ -41,6 +41,8 @@ Click into any text and type. You can adjust a text element's font, size, color,
 - **Embed** — any other embeddable content via iframe
 - **Layout helpers** — Box, Row, and Mini Grid for arranging elements side by side
 - **Repeater element** — repeating items inside a Repeater block
+
+> **Note:** The legacy **Chart** element (pie, bar, and line charts) has been replaced by **Infographic** and is no longer in the **Insert** bar. Charts already placed in your reports keep working and stay editable — use **Infographic** for anything new.
 
 ## Styling blocks
 
