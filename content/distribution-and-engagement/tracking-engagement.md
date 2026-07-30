@@ -34,6 +34,8 @@ Storyraise also recognizes return visits from the same device, so a constituent 
 
 Views from your own organization's team members are automatically recognized and excluded from report analytics — even when a staff member opens a constituent's personalized link to check it. Preview, proofread, and share internally as much as you like; your metrics reflect your real audience.
 
+Need to share a published report internally with people *outside* your app team — a board member, a partner, a consultant? See [Analytics exclusion](analytics-exclusion.md) for how automatic exclusion works and how to exclude specific emails or domains.
+
 ## Engagement signals
 
 Beyond raw views, Storyraise classifies what readers *do* into intent signals — actions like **Clicked Donation CTA**, **Clicked Event RSVP**, **Clicked Volunteer**, **Watched YouTube**, **Visited Facebook**, and **Revisited Report**. These signals feed each constituent's engagement score, helping you spot the people who didn't just read, but acted. See [Understanding report metrics](understanding-report-metrics.md).

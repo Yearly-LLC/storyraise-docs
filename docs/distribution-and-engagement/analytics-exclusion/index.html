@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sharing your form — Storyraise</title>
+  <title>Analytics exclusion — Storyraise</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
@@ -144,7 +144,7 @@
       <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Distribution &amp; Engagement</summary>
     <ul>
       <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
@@ -154,7 +154,7 @@
       <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
       <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
       <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
-      <li><a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-exclusion/" class="active" aria-current="page">Analytics exclusion</a></li>
       <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
       <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
     </ul>
@@ -183,7 +183,7 @@
       <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>Storyraise Collect</summary>
     <ul>
       <li><a href="/docs/storyraise-collect/">Overview</a></li>
@@ -191,7 +191,7 @@
       <li><a href="/docs/storyraise-collect/creating-a-collection/">Creating a collection</a></li>
       <li><a href="/docs/storyraise-collect/form-field-types/">Form field types</a></li>
       <li><a href="/docs/storyraise-collect/multi-step-forms/">Multi-step forms</a></li>
-      <li><a href="/docs/storyraise-collect/sharing-your-form/" class="active" aria-current="page">Sharing your form</a></li>
+      <li><a href="/docs/storyraise-collect/sharing-your-form/">Sharing your form</a></li>
       <li><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a></li>
     </ul>
   </details>
@@ -219,35 +219,60 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    <a href="/docs/storyraise-collect/">Storyraise Collect</a>
+    <a href="/docs/distribution-and-engagement/">Distribution &amp; Engagement</a>
     <span>›</span>
-    Sharing your form
+    Analytics exclusion
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>Sharing your form</h1>
-<p class="lead">Once your form is built, share its link and the responses start flowing in. This page covers getting the form to people and what they experience filling it out.</p>
-<h2>Share the link</h2>
-<p>Each collection has its own form link you can share anywhere — email, your website, social media, a QR code on printed materials. Respondents don&#39;t need a Storyraise account; they just open the link and fill it out.</p>
-<h2>What respondents experience</h2>
+        <h1>Analytics exclusion</h1>
+<p class="lead">Your report analytics should reflect your real audience — the constituents you&#39;re trying to reach — not your own team clicking through to proofread. Storyraise keeps internal views out of your numbers in two ways:</p>
 <ul>
-<li>A <strong>clean, branded form</strong> with your logo and an introduction.</li>
-<li>For <a href="/docs/storyraise-collect/multi-step-forms/">multi-step forms</a>, a <strong>progress bar</strong> and Back / Next navigation.</li>
-<li><strong>Draft autosave</strong> — answers are kept as they type, so an interruption doesn&#39;t mean starting over.</li>
-<li><strong>File uploads</strong> open the device&#39;s file picker for photos, videos, or documents.</li>
-<li>On submit, a confirmation that their response came through.</li>
+<li><strong>Automatically</strong> for your Storyraise team.</li>
+<li><strong>Manually</strong> for anyone else you share a report with internally — a board member, a partner, a consultant — using the email exclusion feature.</li>
 </ul>
-<h2>Smart pre-fill for known constituents</h2>
-<p>If a respondent is already in your <a href="/docs/crm-and-data/importing-constituent-data/">constituent list</a>, Storyraise recognizes them by email and <strong>pre-fills what it already knows</strong> — so a donor sharing a story doesn&#39;t re-enter their own name and details. It&#39;s less work for them and cleaner data for you.</p>
-<h2>Tips</h2>
+<h2>Your team is excluded automatically</h2>
+<p>Views from your organization&#39;s own team members are recognized and left out of your report analytics — whether the visit is anonymous or <a href="/docs/distribution-and-engagement/personalized-links/">identified by name</a>. Preview, proofread, and share a published report around your team as much as you like; those visits won&#39;t touch your numbers. There&#39;s nothing to switch on.</p>
+<h3>It&#39;s tied to the browser and device you sign in on</h3>
+<p>Storyraise recognizes a teammate by the browser and computer they use for <code>app.storyraise.com</code>. Automatic exclusion works <strong>as long as they open the report on that same browser and machine.</strong></p>
+<p>If a teammate opens the report on a different device, in a different browser, or in a private/incognito window, Storyraise can&#39;t tell it&#39;s them, and that view will be counted. For those cases — and for people who help with your reports but don&#39;t sign into Storyraise at all — use the manual exclusion below.</p>
+<h3>Where to see who&#39;s covered</h3>
+<p>On the <strong>Account</strong> page, the <strong>Exclude from Analytics</strong> panel lists your signed-in teammates as already covered — you&#39;re always included in your own org. <strong>Owners, Admins, and Editors</strong> can see and edit this panel.</p>
+<h2>Excluding people outside your app team</h2>
+<p>Sometimes you share a published report internally with people who aren&#39;t on your Storyraise team — a board member reviewing before it goes out, a colleague at a partner organization, an external consultant. Because they never sign into <code>app.storyraise.com</code>, automatic exclusion doesn&#39;t cover them, and their visits would otherwise count as real audience engagement.</p>
+<p>The email exclusion feature handles this. It&#39;s <strong>two steps</strong>: add their email or domain to your exclusion list, then send them a report link tagged with that email.</p>
+<h3>1. Add the email or domain</h3>
+<p>On the <strong>Account</strong> page, open <strong>Exclude from Analytics</strong> and use <strong>Add an email or domain</strong>:</p>
 <ul>
-<li><strong>Tell people why.</strong> A sentence about how their story will be used (and that it might appear in a report) lifts both response rate and quality.</li>
-<li><strong>Make it mobile-easy.</strong> Most people open links on a phone — keep forms short and file uploads optional where you can.</li>
-<li><strong>Put the link where the moment is.</strong> A QR code on an event thank-you card collects stories while the experience is fresh.</li>
+<li><strong>An email</strong> — <code>colleague@partner.org</code> — excludes just that one person.</li>
+<li><strong>A domain wildcard</strong> — <code>*@partner.org</code> — excludes everyone whose email is on that domain, including subdomains like <code>mail.partner.org</code>.</li>
 </ul>
-<h2>Next</h2>
-<p><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a> — review, edit, and use what you&#39;ve collected.</p>
+<div class="tip"><p><strong>Use domain wildcards carefully.</strong> <code>*@partner.org</code> drops <em>every</em> visitor with that domain. If any of your real audience shares it — for example, everyone at a university or a large company on the same domain — their views would be excluded from your analytics too. When in doubt, add individual emails instead.</p></div>
+<p><strong>Owners, Admins, and Editors</strong> can edit the list. Changes save immediately and apply to all of your published reports.</p>
+<h3>2. Send the report link with their email</h3>
+<p>Adding someone to the list isn&#39;t enough on its own — Storyraise can only match a visit to your list when it can see the visitor&#39;s email. It sees that email when the report link carries it in the <code>?for=</code> parameter. So when you share the report with an excluded person, send them a link with <code>?for=</code> followed by their email:</p>
+<pre><code>https://your-org.yearly.report/your-report?for=colleague@partner.org
+</code></pre>
+<p>This is the same <code>?for=</code> parameter used for <a href="/docs/distribution-and-engagement/personalized-links/">personalized links</a> — it does double duty here: it identifies the visitor so their email can be checked against your exclusion list. If the email (or its domain) is on the list, the visit is dropped.</p>
+<h4>Put <code>?for=</code> before any <code>#</code> in the link</h4>
+<p>Published report links can include a <code>#</code> fragment (for example, a link that jumps to a particular section). The <code>?for=</code> parameter <strong>must come before that <code>#</code>.</strong> Placed after it, the browser treats the email as part of the page anchor and never sends it to Storyraise — so the view gets counted anyway.</p>
+<pre><code># ✅ Correct — the email is in the query string, before the #
+https://your-org.yearly.report/your-report?for=colleague@partner.org
+
+# ✅ Also correct — ?for= still comes before the #
+https://your-org.yearly.report/your-report?for=colleague@partner.org#/p/3
+
+# ❌ Incorrect — ?for= is after the #, so it&#39;s ignored and the view is counted
+https://your-org.yearly.report/your-report#/p/3?for=colleague@partner.org
+</code></pre>
+<p>If you&#39;re unsure, the safest habit is to start from the plain report link and add <code>?for=&lt;their email&gt;</code> right after it, before doing anything else.</p>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a> — what&#39;s recorded on every published report.</li>
+<li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a> — the <code>?for=</code> parameter and how it identifies visitors.</li>
+<li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a> — reading the numbers your real audience generates.</li>
+</ul>
 
 
         <hr />
