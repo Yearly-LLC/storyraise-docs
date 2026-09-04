@@ -3,7 +3,7 @@ title: Mailchimp
 section: CRM & Data Connections
 status: draft
 keywords: mailchimp, email, audience, engagement, api key, connections
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Mailchimp
@@ -14,7 +14,7 @@ Connect Mailchimp to import your audience and sync email engagement into Storyra
 ## What syncs
 
 - **Audience** members → your [constituent list](../importing-constituent-data.md).
-- **Email engagement** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)) and into Insights — see [Understanding report metrics](../../distribution-and-engagement/understanding-report-metrics.md).
+- **Email engagement** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)) and into Analytics — see [Understanding report metrics](../../distribution-and-engagement/understanding-report-metrics.md).
 
 ## Connect
 

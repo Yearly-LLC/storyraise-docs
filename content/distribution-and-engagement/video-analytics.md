@@ -2,7 +2,7 @@
 title: Video analytics
 section: Distribution & Engagement
 status: stub
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Video analytics
@@ -13,7 +13,7 @@ last_reviewed: 2026-06-12
 
 [Storyraise Video](../storyraise-video/what-is-storyraise-video.md) lets you send personalized video messages to constituents by email, each with their own viewing link. While video-specific metrics aren't available yet, you can still measure the campaign around the video:
 
-- **Pair the video with a report.** If your message links to a report via [personalized links](personalized-links.md), report [Insights](understanding-report-metrics.md) shows which constituents followed through.
+- **Pair the video with a report.** If your message links to a report via [personalized links](personalized-links.md), the report's [Analytics](understanding-report-metrics.md) shows which constituents followed through.
 - **Host on YouTube or Vimeo where it makes sense.** Videos embedded in reports through those platforms carry their own view counts on the hosting side, and clicks on embedded videos appear as intent signals in report metrics.
 
 ---
@@ -24,5 +24,5 @@ last_reviewed: 2026-06-12
 - Per-scene drop-off (where viewers stop watching)
 - Per-constituent viewing attribution via ?for= links
 - Caption usage
-- How metrics surface: per-video insights page mirroring report Insights
+- How metrics surface: per-video analytics page mirroring report Analytics
 -->

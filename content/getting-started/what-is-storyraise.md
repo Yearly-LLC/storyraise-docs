@@ -2,7 +2,7 @@
 title: What is Storyraise?
 section: Getting Started
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # What is Storyraise?
@@ -18,7 +18,7 @@ Instead of mailing a static PDF or burying your story in a newsletter, you build
 - **Stay on brand.** Save your organization's logos, colors, and fonts in a brand kit and apply them across every report.
 - **Publish to the web.** Every published report gets its own link you can share anywhere — email, social media, your website, or a QR code.
 - **Connect your donor data.** Sync constituents from your CRM or a CSV file to personalize reports and understand who's reading them.
-- **See what's working.** Insights show you how many people opened your report and which constituents engaged with it.
+- **See what's working.** Analytics shows you how many people opened your report and which constituents engaged with it.
 
 ## How a report comes together
 
@@ -31,7 +31,7 @@ Instead of mailing a static PDF or burying your story in a newsletter, you build
 
 ## Where everything lives
 
-- **The dashboard** ([app.storyraise.com](https://app.storyraise.com)) is home base: your reports, folders, constituents, insights, and organization settings.
+- **The dashboard** ([app.storyraise.com](https://app.storyraise.com)) is home base: your reports, folders, constituents, analytics, and organization settings.
 - **The builder** opens when you edit a report. It's where you add sections and edit content.
 - **Your published reports** live at your organization's own web address, one link per report.
 

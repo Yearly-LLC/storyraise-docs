@@ -3,7 +3,7 @@ title: SMS distribution
 section: Distribution & Engagement
 status: draft
 keywords: text message, texting, phone
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # SMS distribution
@@ -53,4 +53,4 @@ A practical split that works for most organizations:
 
 - **Front-load the value.** The first line decides whether the link gets tapped: "Maria, your 2026 impact report is ready" beats "Hello from the team at…".
 - **Test on your own phone.** Add yourself as a recipient and check how the message, image, and link render before the full send.
-- **Watch engagement through the report.** Open tracking for texts isn't available yet — but if you attach a report via personalized links, [Insights](understanding-report-metrics.md) shows exactly which constituents opened it.
+- **Watch engagement through the report.** Open tracking for texts isn't available yet — but if you attach a report via personalized links, the report's [Analytics](understanding-report-metrics.md) shows exactly which constituents opened it.

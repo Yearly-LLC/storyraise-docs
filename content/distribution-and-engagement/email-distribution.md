@@ -3,7 +3,7 @@ title: Email distribution
 section: Distribution & Engagement
 status: draft
 keywords: send, campaign, newsletter, blast
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Email distribution
@@ -52,7 +52,7 @@ By default, messages are delivered from a Storyraise sending address. To send fr
 ## Good to know
 
 - **Schedule ahead.** You can send right away or schedule a send for later — up to 30+ days in advance.
-- **Delivery status, not opens.** You can see the delivery status of your messages. Email **open and click tracking aren't available** — to measure engagement, link to a report and use its [Insights](understanding-report-metrics.md), where personalized links attribute each open to its constituent.
+- **Delivery status, not opens.** You can see the delivery status of your messages. Email **open and click tracking aren't available** — to measure engagement, link to a report and use its [Analytics](understanding-report-metrics.md), where personalized links attribute each open to its constituent.
 
 <!-- TEAM REVIEW: confirm the exact scheduling cap (stated here as "30+ days") and the delivery-status states surfaced to customers. -->
 

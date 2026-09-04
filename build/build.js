@@ -84,7 +84,8 @@ const SECTIONS = [
     icon: '📤',
     order: [
       'sharing-reports', 'embedding-in-wordpress', 'personalized-links', 'email-distribution',
-      'sms-distribution', 'tracking-engagement', 'analytics-exclusion', 'understanding-report-metrics',
+      'sms-distribution', 'analytics-overview', 'tracking-engagement', 'analytics-exclusion',
+      'understanding-report-metrics', 'acting-on-analytics', 'analytics-for-older-reports',
       'video-analytics',
     ],
   },

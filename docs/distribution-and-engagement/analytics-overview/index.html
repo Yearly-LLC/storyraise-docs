@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapping fields — Storyraise</title>
+  <title>Analytics overview — Storyraise</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
@@ -92,13 +92,13 @@
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>CRM &amp; Data Connections</summary>
     <ul>
       <li><a href="/docs/crm-and-data/">Overview</a></li>
       <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
       <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
-      <li><a href="/docs/crm-and-data/mapping-fields/" class="active" aria-current="page">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
       <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
       <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
       <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
@@ -144,7 +144,7 @@
       <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Distribution &amp; Engagement</summary>
     <ul>
       <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
@@ -153,7 +153,7 @@
       <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
       <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
       <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
-      <li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-overview/" class="active" aria-current="page">Analytics overview</a></li>
       <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
       <li><a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a></li>
       <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
@@ -222,26 +222,52 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    <a href="/docs/crm-and-data/">CRM &amp; Data Connections</a>
+    <a href="/docs/distribution-and-engagement/">Distribution &amp; Engagement</a>
     <span>›</span>
-    Mapping fields
+    Analytics overview
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>Mapping fields</h1>
-<div class="note"><p><strong>Coming soon</strong> — a visual field-mapping step is on our roadmap. Today, Storyraise imports your fields automatically using the rules described below.</p></div>
-<h2>How fields work today</h2>
-<p>You don&#39;t need to map anything manually:</p>
+        <h1>Analytics overview</h1>
+<p class="lead">Publishing your report isn&#39;t the end of the story. Storyraise Analytics helps you understand what happens next: who is reading, what holds their attention, what inspires action, and where a personal follow-up might make a difference.</p>
+<h2>What&#39;s new</h2>
+<p>Storyraise now gives you a clearer picture of reader engagement. Instead of a running page-view total, Analytics distinguishes between individual readers and repeat visits, and shows how people move through your report.</p>
 <ul>
-<li><strong>CSV imports</strong> use your column headers as field names. <strong>First Name</strong>, <strong>Last Name</strong>, and <strong>Email</strong> are recognized as the core identity fields; every other column becomes a custom field with the column header as its name.</li>
-<li><strong>CRM syncs</strong> bring over the fields your CRM provides — including custom fields — using the CRM&#39;s own field names. Nested CRM fields (like address parts) are flattened into individual fields.</li>
+<li><strong>Deeper engagement insights.</strong> Unique Visitors, Return Visitors, and Average Time Spent; Where the Clicks Go; Section Retention and Reader Flow; the When They Visit heatmap and Visits Over Time; and star-rated Engagement Scores with intent badges for personalized links.</li>
+<li><strong>More accurate measurement.</strong> Repeat page loads are no longer counted as separate readers, and your team&#39;s own views are excluded when Storyraise recognizes a signed-in teammate.</li>
+<li><strong>Named reader signals.</strong> With <a href="/docs/distribution-and-engagement/personalized-links/">personalized links</a>, you can see which constituents are returning, reading deeply, and taking action.</li>
 </ul>
-<p>Every imported field is available as a merge tag for personalization. Open any constituent from your constituent list to see exactly which fields they have and what each is called.</p>
-<h3>Tips for clean fields</h3>
+<h2>Why your numbers may look lower</h2>
+<div class="tip"><p><strong>Lower isn&#39;t worse.</strong> Your new totals may look smaller than older page-view counts. That doesn&#39;t mean performance declined — it means the measurement got more honest.</p></div>
+<p>Older reports counted repeat page loads, so one person opening a report four times added four to the total. Analytics de-duplicates that activity to give you a truer picture of reach and engagement. Compare newer reports with other newer reports, not with legacy totals — see <a href="/docs/distribution-and-engagement/analytics-for-older-reports/">Analytics for older reports</a>.</p>
+<h2>Start with your Home tab</h2>
+<p>Your <strong>Home</strong> tab gives you a quick look at reader activity across your whole organization:</p>
 <ul>
-<li>Keep CSV column headers short and consistent (<code>Giving Level</code>, not <code>2025 GIVING LEVEL (updated)</code>), since headers become merge tag names.</li>
-<li>Use the same headers every time you re-upload, so values update the same fields instead of creating new ones.</li>
+<li><strong>Most Read</strong> — which reports are attracting the most attention.</li>
+<li><strong>Reader Activity</strong> — 30 days of reading across your organization.</li>
+<li><strong>Who&#39;s Been Reading</strong> — named constituents who opened personalized reports.</li>
+</ul>
+<p>Treat the Home tab as a <em>weekly</em> check-in. It&#39;s how you spot a report that&#39;s still gaining traction, a piece worth resharing, or a constituent who may be ready for a personal touch.</p>
+<h2>Then open a report&#39;s Analytics tab</h2>
+<p>For the deeper story on a single report, open it and select <strong>Analytics</strong>. You&#39;ll find two views:</p>
+<ul>
+<li><strong>The Numbers</strong> — where readers are, when they visit, what they click, how they move through your report, and where they stop. See <a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a>.</li>
+<li><strong>The Story</strong> — everything brought together in a plain-English PDF summary, including key takeaways, people worth contacting, and recommended next steps. It&#39;s ready to read aloud in a staff meeting or hand to your board.</li>
+</ul>
+<h2>How fresh the data is</h2>
+<ul>
+<li><strong>A report&#39;s Analytics tab is near-live.</strong> Reader activity shows up within minutes.</li>
+<li><strong>Home tab cards refresh overnight</strong>, covering activity through the previous night. If today&#39;s numbers look flat on the Home tab, check the report&#39;s own Analytics tab.</li>
+</ul>
+<p>Keep in mind that a visit is recorded once the reader <em>leaves</em> your report — so someone still reading right now won&#39;t appear yet. See <a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a> for the full picture of what is and isn&#39;t captured.</p>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a> — what every metric means and what to do about it.</li>
+<li><a href="/docs/distribution-and-engagement/acting-on-analytics/">Acting on analytics</a> — turning engagement into stewardship.</li>
+<li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a> — what&#39;s recorded on every published report.</li>
+<li><a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a> — keeping your own team out of the numbers.</li>
+<li><a href="/docs/distribution-and-engagement/analytics-for-older-reports/">Analytics for older reports</a> — what to expect from reports published before late May 2026.</li>
 </ul>
 
 

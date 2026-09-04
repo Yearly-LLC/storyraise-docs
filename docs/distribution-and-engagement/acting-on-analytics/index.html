@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapping fields — Storyraise</title>
+  <title>Acting on analytics — Storyraise</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
@@ -92,13 +92,13 @@
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>CRM &amp; Data Connections</summary>
     <ul>
       <li><a href="/docs/crm-and-data/">Overview</a></li>
       <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
       <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
-      <li><a href="/docs/crm-and-data/mapping-fields/" class="active" aria-current="page">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
       <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
       <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
       <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
@@ -144,7 +144,7 @@
       <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Distribution &amp; Engagement</summary>
     <ul>
       <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
@@ -157,7 +157,7 @@
       <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
       <li><a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a></li>
       <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
-      <li><a href="/docs/distribution-and-engagement/acting-on-analytics/">Acting on analytics</a></li>
+      <li><a href="/docs/distribution-and-engagement/acting-on-analytics/" class="active" aria-current="page">Acting on analytics</a></li>
       <li><a href="/docs/distribution-and-engagement/analytics-for-older-reports/">Analytics for older reports</a></li>
       <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
     </ul>
@@ -222,26 +222,46 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    <a href="/docs/crm-and-data/">CRM &amp; Data Connections</a>
+    <a href="/docs/distribution-and-engagement/">Distribution &amp; Engagement</a>
     <span>›</span>
-    Mapping fields
+    Acting on analytics
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>Mapping fields</h1>
-<div class="note"><p><strong>Coming soon</strong> — a visual field-mapping step is on our roadmap. Today, Storyraise imports your fields automatically using the rules described below.</p></div>
-<h2>How fields work today</h2>
-<p>You don&#39;t need to map anything manually:</p>
+        <h1>Acting on analytics</h1>
+<p class="lead">Numbers are only useful when they change what you do next. Once you&#39;ve read your report&#39;s <a href="/docs/distribution-and-engagement/understanding-report-metrics/">Analytics</a>, here are five ways to turn reader engagement into stronger stewardship.</p>
+<h2>Five ways to follow up</h2>
+<h3>1. Reach out to engaged readers</h3>
+<p>Someone returned, spent meaningful time reading, or clicked to take action? Reconnect while the interest is fresh. Reference what caught their attention so the conversation feels relevant rather than generic — &quot;I saw you spent some time with the clinic story&quot; lands very differently from a quarterly blast.</p>
+<p>Your <strong>Most Engaged Constituents</strong> list is the starting point, but use it alongside what you already know about each person. Stars reflect engagement with one report, not a constituent&#39;s overall value or relationship with your organization.</p>
+<h3>2. Follow up based on intent</h3>
+<p>Use a reader&#39;s action to shape your next move. Storyraise groups clicks by what they mean:</p>
 <ul>
-<li><strong>CSV imports</strong> use your column headers as field names. <strong>First Name</strong>, <strong>Last Name</strong>, and <strong>Email</strong> are recognized as the core identity fields; every other column becomes a custom field with the column header as its name.</li>
-<li><strong>CRM syncs</strong> bring over the fields your CRM provides — including custom fields — using the CRM&#39;s own field names. Nested CRM fields (like address parts) are flattened into individual fields.</li>
+<li>A <strong>Donate</strong> click may call for a fundraising conversation.</li>
+<li>A <strong>Get Involved</strong> click is an opening to share upcoming ways to participate.</li>
+<li>An <strong>event RSVP</strong> or <strong>Contact</strong> click tells you exactly which door someone knocked on.</li>
 </ul>
-<p>Every imported field is available as a merge tag for personalization. Open any constituent from your constituent list to see exactly which fields they have and what each is called.</p>
-<h3>Tips for clean fields</h3>
+<p>Reading shows attention. Clicking shows intent — so let the click choose the follow-up.</p>
+<h3>3. Build on what resonated</h3>
+<p>Repurpose a high-interest story in an email, a social post, a donor conversation, or a campaign. If your Section Retention shows one story held readers all the way through, that&#39;s not just a good section — it&#39;s a topic and a format worth carrying into your next report.</p>
+<h3>4. Start gathering the next story now</h3>
+<p>Analytics reveals what&#39;s missing as much as what worked. Share those findings with your development, communications, leadership, and program teams so they can start collecting the stories, data, photos, and calls to action you&#39;ll need next time. The best time to commission a photo is a year before you need it.</p>
+<h3>5. Look for patterns over time</h3>
+<p>One day is a snapshot. Three months, six months, or a year reveals what consistently captures attention, brings readers back, and inspires action. Watch for:</p>
 <ul>
-<li>Keep CSV column headers short and consistent (<code>Giving Level</code>, not <code>2025 GIVING LEVEL (updated)</code>), since headers become merge tag names.</li>
-<li>Use the same headers every time you re-upload, so values update the same fields instead of creating new ones.</li>
+<li><strong>Timing patterns</strong> — the hours and days your audience actually reads, which often defy conventional email-marketing advice.</li>
+<li><strong>Geographic clusters</strong> — pockets of interest that may justify a regional event or a local volunteer group.</li>
+<li><strong>Format patterns</strong> — whether your audience finishes long narrative pieces or drops off in favor of short, visual ones.</li>
+</ul>
+<h2>Your report keeps working</h2>
+<p>Your report doesn&#39;t stop working when someone finishes reading it. Use Analytics to keep the conversation going — and to make your next story stronger than the last one.</p>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a> — what each metric means before you act on it.</li>
+<li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a> — where to look, and how fresh the data is.</li>
+<li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a> — how to know <em>who</em> engaged, not just how many.</li>
+<li><a href="/docs/resources/best-practices/">Best practices</a> — planning and building reports people finish.</li>
 </ul>
 
 

@@ -153,9 +153,12 @@
       <li><a href="/docs/distribution-and-engagement/personalized-links/" class="active" aria-current="page">Personalized links</a></li>
       <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
       <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a></li>
       <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
       <li><a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a></li>
       <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
+      <li><a href="/docs/distribution-and-engagement/acting-on-analytics/">Acting on analytics</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-for-older-reports/">Analytics for older reports</a></li>
       <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
     </ul>
   </details>
@@ -227,7 +230,7 @@
       <!-- CONTENT -->
       <div class="content">
         <h1>Personalized links</h1>
-<p class="lead">A personalized link opens your report addressed to one specific constituent — their name in the greeting, their details filled into merge tags, and their visit attributed to them in your Insights. It&#39;s the difference between &quot;Dear friend&quot; and &quot;Dear Maria.&quot;</p>
+<p class="lead">A personalized link opens your report addressed to one specific constituent — their name in the greeting, their details filled into merge tags, and their visit attributed to them in your Analytics. It&#39;s the difference between &quot;Dear friend&quot; and &quot;Dear Maria.&quot;</p>
 <h2>How personalized links work</h2>
 <p>Take your report&#39;s public link and add <code>?for=</code> followed by a constituent&#39;s email address:</p>
 <pre><code>https://your-organization.yearly.report/your-report?for=maria@example.com
@@ -235,7 +238,7 @@
 <p>When Maria opens that link, Storyraise looks up her constituent record and:</p>
 <ul>
 <li><strong>Fills in merge tags.</strong> Anywhere your report says <code>@@first_name@@</code>, Maria sees &quot;Maria&quot; — and the same goes for any field on her record (<code>@@last_name@@</code>, custom fields like giving level, and so on).</li>
-<li><strong>Attributes the visit.</strong> Her open shows up in your report&#39;s Insights as <em>Maria</em> — not an anonymous visitor — so you know exactly who engaged. See <a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a>.</li>
+<li><strong>Attributes the visit.</strong> Her open shows up in your report&#39;s Analytics as <em>Maria</em> — not an anonymous visitor — so you know exactly who engaged. See <a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a>.</li>
 </ul>
 <p>The constituent must exist in your Storyraise constituent list (matched by email address), so <a href="/docs/crm-and-data/importing-constituent-data/">import your constituents</a> first.</p>
 <h2>Adding merge tags to a report</h2>
@@ -260,8 +263,18 @@
 <li><strong>Donor thank-yous</strong> — a year-end report that greets each donor by name and reflects their giving.</li>
 <li><strong>Direct mail</strong> — printed cards with a personal QR code feel individually made.</li>
 <li><strong>Email campaigns</strong> — merge the <code>report_url_used</code> column into your email platform so each recipient&#39;s button opens their version.</li>
-<li><strong>Knowing who engaged</strong> — after the send, Insights shows which constituents opened the report. See <a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a>.</li>
+<li><strong>Knowing who engaged</strong> — after the send, Analytics shows which constituents opened the report. See <a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a>.</li>
 </ul>
+<h2>What personalized links unlock in Analytics</h2>
+<p>Anonymous links tell you how your report performed. Personalized links tell you who to call on Monday.</p>
+<p>Both link types record the same overall activity — opens, time spent, sections viewed, clicks, location, device, and visit timing. Personalized links connect that activity to a specific constituent, which additionally gives you:</p>
+<ul>
+<li><strong>Named readers in Most Engaged Constituents</strong> — the per-report list of who engaged most deeply.</li>
+<li><strong>Engagement stars and intent badges tied to a person</strong> — so you can see not just that someone clicked Donate, but who.</li>
+<li><strong>Who&#39;s Been Reading on your Home tab</strong> — named constituents across all your reports.</li>
+</ul>
+<p>Anonymous readers still count in your overall numbers; they just can&#39;t be named.</p>
+<div class="tip"><p><strong>A forwarded link is attributed to its original recipient.</strong> If a constituent passes their link to a friend, that friend&#39;s reading appears under the original name. Treat named engagement as a conversation starter, not proof of who completed every action.</p></div>
 <h2>Privacy note</h2>
 <p>A personalized link reveals whatever constituent data your merge tags display. Treat each link as belonging to its constituent — don&#39;t post personalized links publicly, and use the plain public link for social media and websites.</p>
 

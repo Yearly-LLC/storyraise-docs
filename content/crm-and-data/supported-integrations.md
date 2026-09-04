@@ -3,7 +3,7 @@ title: Supported integrations
 section: CRM & Data Connections
 status: draft
 keywords: integrations, connections, crm, supported, salesforce, mailchimp, giving
-last_reviewed: 2026-06-24
+last_reviewed: 2026-09-04
 ---
 
 # Supported integrations
@@ -15,7 +15,7 @@ Storyraise connects to your CRM, giving platforms, and email tools through the *
 | Integration | What it syncs |
 |---|---|
 | [Raiser's Edge NXT (Blackbaud)](integrations/blackbaud-raisers-edge-nxt.md) | Constituents from your RE NXT lists |
-| [Bloomerang](integrations/bloomerang.md) | Constituents, plus gifts into Insights |
+| [Bloomerang](integrations/bloomerang.md) | Constituents, plus gifts into Analytics |
 | [Salesforce / Nonprofit Cloud](integrations/salesforce.md) | Contacts and giving — and can send report engagement *back* to Salesforce |
 | [Virtuous](integrations/virtuous.md) | Contacts and giving history |
 | [CiviCRM](integrations/civicrm.md) | Contacts (API v4) |
@@ -30,9 +30,11 @@ Storyraise connects to your CRM, giving platforms, and email tools through the *
 
 | Integration | What it syncs |
 |---|---|
-| [Givebutter](integrations/givebutter.md) | Contacts, plus donations into Insights (also embeds in reports) |
-| [Donorbox](integrations/donorbox.md) | Donors, plus donations into Insights |
-| [Fundraise Up](integrations/fundraise-up.md) | Supporters, plus donations into Insights |
+| [Givebutter](integrations/givebutter.md) | Contacts, plus donations into Analytics (also embeds in reports) |
+| [Donorbox](integrations/donorbox.md) | Donors, plus donations into Analytics |
+| [Fundraise Up](integrations/fundraise-up.md) | Supporters, plus donations into Analytics |
+
+<!-- TEAM REVIEW: "gifts/donations into Analytics" was previously "into Insights" and has been renamed for consistency. Confirm this data actually surfaces in a report's Analytics tab and not some other dashboard area — if it is a different surface, these rows need their own name. -->
 
 ## Email
 

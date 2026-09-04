@@ -153,9 +153,12 @@
       <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
       <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
       <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a></li>
       <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
       <li><a href="/docs/distribution-and-engagement/analytics-exclusion/" class="active" aria-current="page">Analytics exclusion</a></li>
       <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
+      <li><a href="/docs/distribution-and-engagement/acting-on-analytics/">Acting on analytics</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-for-older-reports/">Analytics for older reports</a></li>
       <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
     </ul>
   </details>
@@ -249,6 +252,7 @@
 <li><strong>A domain wildcard</strong> — <code>*@partner.org</code> — excludes everyone whose email is on that domain, including subdomains like <code>mail.partner.org</code>.</li>
 </ul>
 <div class="tip"><p><strong>Use domain wildcards carefully.</strong> <code>*@partner.org</code> drops <em>every</em> visitor with that domain. If any of your real audience shares it — for example, everyone at a university or a large company on the same domain — their views would be excluded from your analytics too. When in doubt, add individual emails instead.</p></div>
+<p><strong>Your own organization&#39;s domain is the safe wildcard.</strong> Adding <code>*@your-org.org</code> covers every colleague, including subdomains like <code>mail.your-org.org</code>, and catches staff whose views automatic exclusion misses — someone reading on a personal phone, or in an incognito window. It&#39;s a useful belt-and-braces alongside automatic exclusion, as long as your constituents aren&#39;t on your own domain.</p>
 <p><strong>Owners, Admins, and Editors</strong> can edit the list. Changes save immediately and apply to all of your published reports.</p>
 <h3>2. Send the report link with their email</h3>
 <p>Adding someone to the list isn&#39;t enough on its own — Storyraise can only match a visit to your list when it can see the visitor&#39;s email. It sees that email when the report link carries it in the <code>?for=</code> parameter. So when you share the report with an excluded person, send them a link with <code>?for=</code> followed by their email:</p>
@@ -269,6 +273,7 @@ https://your-org.yearly.report/your-report#/p/3?for=colleague@partner.org
 <p>If you&#39;re unsure, the safest habit is to start from the plain report link and add <code>?for=&lt;their email&gt;</code> right after it, before doing anything else.</p>
 <h2>Related</h2>
 <ul>
+<li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a> — where your numbers live and how fresh they are.</li>
 <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a> — what&#39;s recorded on every published report.</li>
 <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a> — the <code>?for=</code> parameter and how it identifies visitors.</li>
 <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a> — reading the numbers your real audience generates.</li>

@@ -2,7 +2,7 @@
 title: Best practices
 section: Resources
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Best practices
@@ -40,7 +40,7 @@ Many readers open reports from a phone. Before publishing, walk the entire repor
 For any send where you have the recipient list, use [personalized links](../distribution-and-engagement/personalized-links.md) instead of the public link:
 
 - Merge tags greet each constituent by name — "Dear friend" is a missed opportunity.
-- Every open is attributed, so Insights tells you *who* engaged, not just how many.
+- Every open is attributed, so Analytics tells you *who* engaged, not just how many.
 - Check your data for gaps first: a missing field means an awkward blank.
 
 ## Make the report measurable

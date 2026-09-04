@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mapping fields — Storyraise</title>
+  <title>Analytics for older reports — Storyraise</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
@@ -92,13 +92,13 @@
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>CRM &amp; Data Connections</summary>
     <ul>
       <li><a href="/docs/crm-and-data/">Overview</a></li>
       <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
       <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
-      <li><a href="/docs/crm-and-data/mapping-fields/" class="active" aria-current="page">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
       <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
       <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
       <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
@@ -144,7 +144,7 @@
       <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Distribution &amp; Engagement</summary>
     <ul>
       <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
@@ -158,7 +158,7 @@
       <li><a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a></li>
       <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
       <li><a href="/docs/distribution-and-engagement/acting-on-analytics/">Acting on analytics</a></li>
-      <li><a href="/docs/distribution-and-engagement/analytics-for-older-reports/">Analytics for older reports</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-for-older-reports/" class="active" aria-current="page">Analytics for older reports</a></li>
       <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
     </ul>
   </details>
@@ -222,26 +222,44 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    <a href="/docs/crm-and-data/">CRM &amp; Data Connections</a>
+    <a href="/docs/distribution-and-engagement/">Distribution &amp; Engagement</a>
     <span>›</span>
-    Mapping fields
+    Analytics for older reports
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>Mapping fields</h1>
-<div class="note"><p><strong>Coming soon</strong> — a visual field-mapping step is on our roadmap. Today, Storyraise imports your fields automatically using the rules described below.</p></div>
-<h2>How fields work today</h2>
-<p>You don&#39;t need to map anything manually:</p>
+        <h1>Analytics for older reports</h1>
+<p class="lead">Reports first published before <strong>late May 2026</strong> were measured with Storyraise&#39;s earlier page-view counter. Their history is preserved, but they won&#39;t show the full set of newer Analytics features — so a report you published last year can look sparse next to one you published last month.</p>
+<h2>What older reports still show</h2>
 <ul>
-<li><strong>CSV imports</strong> use your column headers as field names. <strong>First Name</strong>, <strong>Last Name</strong>, and <strong>Email</strong> are recognized as the core identity fields; every other column becomes a custom field with the column header as its name.</li>
-<li><strong>CRM syncs</strong> bring over the fields your CRM provides — including custom fields — using the CRM&#39;s own field names. Nested CRM fields (like address parts) are flattened into individual fields.</li>
+<li><strong>Lifetime Opens</strong> — the running total the old counter recorded.</li>
+<li><strong>A regional reading summary</strong> — approximate geography for the readers it saw.</li>
+<li><strong>Legacy constituent engagement</strong> — the identified readers it captured.</li>
+<li><strong>The Story</strong> — the plain-English summary, which is written to work with whatever data exists.</li>
 </ul>
-<p>Every imported field is available as a merge tag for personalization. Open any constituent from your constituent list to see exactly which fields they have and what each is called.</p>
-<h3>Tips for clean fields</h3>
+<p>If an older report&#39;s Analytics tab looks empty, <strong>The Story</strong> tab is the place to go. It&#39;s built for exactly this case.</p>
+<h2>What they may not show</h2>
+<p>The newer measurements simply weren&#39;t being recorded at the time, so they can&#39;t be backfilled:</p>
 <ul>
-<li>Keep CSV column headers short and consistent (<code>Giving Level</code>, not <code>2025 GIVING LEVEL (updated)</code>), since headers become merge tag names.</li>
-<li>Use the same headers every time you re-upload, so values update the same fields instead of creating new ones.</li>
+<li>Unique Visitors and Return Visitors</li>
+<li>Average Time Spent</li>
+<li>Detailed click activity by category</li>
+<li>Section Retention and Reader Flow</li>
+<li>Visit timing (the When They Visit heatmap)</li>
+<li>The star-rated Engagement Score</li>
+</ul>
+<h2>Figures labeled &quot;estimated&quot;</h2>
+<p>Where The Story needs a number the old counter never captured, it may present a figure labeled <strong>estimated</strong>. Treat these as helpful indicators, not direct measurements — they&#39;re useful for a sense of scale, but don&#39;t quote them as precise results in a board report.</p>
+<h2>Don&#39;t compare old Opens with new Opens</h2>
+<div class="tip"><p><strong>They&#39;re counted differently.</strong> The old counter incremented on every page load; the new engine de-duplicates repeat loads from the same reader. An older report&#39;s Opens will look inflated next to a newer report&#39;s — that&#39;s a change in measurement, not in performance.</p></div>
+<p>Compare newer reports with other newer reports. For year-over-year storytelling, lean on qualitative comparisons or on metrics both eras share, and note the methodology change wherever the numbers appear side by side.</p>
+<p>If you have questions about a specific older report — or you&#39;d like us to look at whether more of its history can be recovered — <a href="https://storyraise.com/support">contact the Storyraise team</a>.</p>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a> — what changed and where to look now.</li>
+<li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a> — the metrics newer reports collect.</li>
+<li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a> — what&#39;s recorded on every published report today.</li>
 </ul>
 
 

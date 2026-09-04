@@ -2,7 +2,7 @@
 title: Data refreshes
 section: CRM & Data Connections
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Data refreshes
@@ -25,7 +25,7 @@ A good rule of thumb: refresh right before you do anything that depends on the d
 
 - before generating personalized links or QR codes for a mailing,
 - before publishing a personalized report,
-- before reviewing constituent engagement in Insights for a board update.
+- before reviewing constituent engagement in Analytics for a board update.
 
 ## Automatic refreshes
 

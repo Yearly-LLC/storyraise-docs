@@ -3,7 +3,7 @@ title: Analytics exclusion
 section: Distribution & Engagement
 status: draft
 keywords: exclude, exclusion, internal views, team views, exclude email, exclude domain, board, partner, for parameter
-last_reviewed: 2026-07-30
+last_reviewed: 2026-09-04
 ---
 
 # Analytics exclusion
@@ -42,6 +42,8 @@ On the **Account** page, open **Exclude from Analytics** and use **Add an email 
 
 > **Use domain wildcards carefully.** `*@partner.org` drops *every* visitor with that domain. If any of your real audience shares it — for example, everyone at a university or a large company on the same domain — their views would be excluded from your analytics too. When in doubt, add individual emails instead.
 
+**Your own organization's domain is the safe wildcard.** Adding `*@your-org.org` covers every colleague, including subdomains like `mail.your-org.org`, and catches staff whose views automatic exclusion misses — someone reading on a personal phone, or in an incognito window. It's a useful belt-and-braces alongside automatic exclusion, as long as your constituents aren't on your own domain.
+
 **Owners, Admins, and Editors** can edit the list. Changes save immediately and apply to all of your published reports.
 
 ### 2. Send the report link with their email
@@ -73,6 +75,7 @@ If you're unsure, the safest habit is to start from the plain report link and ad
 
 ## Related
 
+- [Analytics overview](analytics-overview.md) — where your numbers live and how fresh they are.
 - [Tracking engagement](tracking-engagement.md) — what's recorded on every published report.
 - [Personalized links](personalized-links.md) — the `?for=` parameter and how it identifies visitors.
 - [Understanding report metrics](understanding-report-metrics.md) — reading the numbers your real audience generates.

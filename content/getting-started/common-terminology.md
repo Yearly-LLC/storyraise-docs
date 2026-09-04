@@ -2,7 +2,7 @@
 title: Common terminology
 section: Getting Started
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Common terminology
@@ -14,7 +14,7 @@ A quick reference for the words you'll see throughout Storyraise.
 | Term | What it means |
 |---|---|
 | **Organization** | Your team's shared workspace. It holds your reports, folders, constituents, brand kit, and members. |
-| **Dashboard** | Home base at app.storyraise.com — where you create reports, manage constituents, and view insights. |
+| **Dashboard** | Home base at app.storyraise.com — where you create reports, manage constituents, and view analytics. |
 | **Builder** | The editor that opens when you work on a report. |
 | **Folder** | A way to group reports on the dashboard, e.g. by year or program. |
 
@@ -46,8 +46,10 @@ A quick reference for the words you'll see throughout Storyraise.
 | **Publish / Republish** | Putting your report (or its latest edits) live on the web at its public link. |
 | **Report link** | The public web address of a published report: `your-organization.yearly.report/your-report`. |
 | **Embed** | Displaying your published report inside a page on your own website. |
-| **Opens** | How many times a published report has been viewed. |
-| **Insights** | The dashboard area showing engagement for a published report — opens and, with constituent data synced, who viewed it. |
+| **Opens** | How much reading activity a published report generated. One reader can produce several opens by returning. |
+| **Unique visitor** | One distinct reader, identified by device. **Return visitors** are the ones who came back for another look. |
+| **Analytics** | The area showing engagement for a published report — opens, unique and return visitors, time spent, clicks, reader flow, and, with constituent data synced, who viewed it. Previously called **Insights**. |
+| **Engagement Score** | A 0–3 star rating given to identified constituents on a report, benchmarked against the median reading time for that report. |
 
 ## Constituents and data
 

@@ -3,7 +3,7 @@ title: Fundraise Up
 section: CRM & Data Connections
 status: draft
 keywords: fundraise up, fundraiseup, giving, donations, api key, connections
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Fundraise Up
@@ -16,7 +16,7 @@ Connect Fundraise Up to import your supporters and sync their donations into Sto
 ## What syncs
 
 - **Supporters** → your [constituent list](../importing-constituent-data.md).
-- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)) and into Insights — see [Understanding report metrics](../../distribution-and-engagement/understanding-report-metrics.md).
+- **Donations** → available to sync into a collection (see [Syncing data to collections](../syncing-data-to-collections.md)) and into Analytics — see [Understanding report metrics](../../distribution-and-engagement/understanding-report-metrics.md).
 
 ## Connect
 

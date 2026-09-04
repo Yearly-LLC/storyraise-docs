@@ -2,7 +2,7 @@
 title: Frequently asked questions
 section: Resources
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Frequently asked questions
@@ -48,11 +48,26 @@ No — integrations are read-only. Storyraise pulls constituent records in and n
 
 ## Analytics
 
-**Do my own team's views count in report metrics?**
-No. Views from your organization's team members are automatically excluded — even when staff open a constituent's personalized link to check it. See [Tracking engagement](../distribution-and-engagement/tracking-engagement.md).
+**Why are my numbers lower than last year?**
+They're more accurate. The old counter included repeat page loads from the same person; the new one counts people. Nothing about your performance changed. See [Analytics overview](../distribution-and-engagement/analytics-overview.md).
+
+**Why does my older report look empty?**
+It was published before the new engine and only ever recorded a running total. Open **The Story** tab, which is written for exactly this case. See [Analytics for older reports](../distribution-and-engagement/analytics-for-older-reports.md), and contact support if you'd like us to look at recovering more.
 
 **Can I see exactly who opened my report?**
-For constituents who opened a personalized link, yes — they appear by name in Insights. Visitors using the public link appear anonymously. See [Understanding report metrics](../distribution-and-engagement/understanding-report-metrics.md).
+Only for constituents who opened a personalized link — they appear by name. Visitors using the public link are counted but stay anonymous. See [Personalized links](../distribution-and-engagement/personalized-links.md).
+
+**Do my own team's views count in report metrics?**
+No. Views from your organization's team members are automatically excluded — even when staff open a constituent's personalized link to check it. If teammates are still showing up, add their addresses or your whole domain under **Account**. See [Analytics exclusion](../distribution-and-engagement/analytics-exclusion.md).
+
+**I opened my own report to test it and nothing happened.**
+That's correct — your own views aren't recorded.
+
+**How fresh is the data?**
+A report's Analytics tab is near-live. Home tab cards refresh overnight, covering activity through the previous night.
+
+**What do the stars mean?**
+How much attention someone gave *this report* compared with everyone else who read it. One star is above-average reading time; two stars means they also read half of it; three stars means they also took an action. See [Understanding report metrics](../distribution-and-engagement/understanding-report-metrics.md).
 
 ## Account and team
 

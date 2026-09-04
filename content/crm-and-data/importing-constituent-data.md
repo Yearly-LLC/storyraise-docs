@@ -3,7 +3,7 @@ title: Importing constituent data
 section: CRM & Data Connections
 status: draft
 keywords: csv, upload, donors, import
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Importing constituent data
@@ -47,7 +47,7 @@ Constituents are identified by email address. If you upload a file containing an
 
 - **Personalized reports** — merge tags like `@@first_name@@` fill in each constituent's own information.
 - **Personalized QR codes and links** — each constituent gets a link to their own version of a report.
-- **Insights** — see which constituents opened your reports.
+- **Analytics** — see which constituents opened your reports.
 
 ## Editing constituent data
 

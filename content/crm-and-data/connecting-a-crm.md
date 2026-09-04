@@ -2,12 +2,12 @@
 title: Connecting a CRM
 section: CRM & Data Connections
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Connecting a CRM
 
-Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each constituent, generate personalized QR codes and links, and see in Insights which constituents actually opened your reports.
+Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each constituent, generate personalized QR codes and links, and see in Analytics which constituents actually opened your reports.
 
 > **Connect from the Connections tab.** The [Connections tab](connections-overview.md) is the unified home for every integration — many more systems than the two examples below. Start there; this page covers the general approach.
 

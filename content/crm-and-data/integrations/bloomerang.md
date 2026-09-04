@@ -2,14 +2,14 @@
 title: Bloomerang
 section: CRM & Data Connections
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Bloomerang
 
 Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging.
 
-> **Two ways to connect.** You can connect Bloomerang from the **[Connections](../connections-overview.md)** tab (recommended — see [Connecting via the Connections tab](#connecting-via-the-connections-tab) below) or from the per-system steps in the **Constituents** area. Bloomerang also syncs gifts into [Insights](../../distribution-and-engagement/understanding-report-metrics.md).
+> **Two ways to connect.** You can connect Bloomerang from the **[Connections](../connections-overview.md)** tab (recommended — see [Connecting via the Connections tab](#connecting-via-the-connections-tab) below) or from the per-system steps in the **Constituents** area. Bloomerang also syncs gifts into [Analytics](../../distribution-and-engagement/understanding-report-metrics.md).
 
 ## What you'll need
 

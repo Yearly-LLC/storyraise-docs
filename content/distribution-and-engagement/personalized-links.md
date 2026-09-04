@@ -3,12 +3,12 @@ title: Personalized links
 section: Distribution & Engagement
 status: draft
 keywords: qr, qr code, merge tags, for parameter, unique url
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-04
 ---
 
 # Personalized links
 
-A personalized link opens your report addressed to one specific constituent — their name in the greeting, their details filled into merge tags, and their visit attributed to them in your Insights. It's the difference between "Dear friend" and "Dear Maria."
+A personalized link opens your report addressed to one specific constituent — their name in the greeting, their details filled into merge tags, and their visit attributed to them in your Analytics. It's the difference between "Dear friend" and "Dear Maria."
 
 ## How personalized links work
 
@@ -21,7 +21,7 @@ https://your-organization.yearly.report/your-report?for=maria@example.com
 When Maria opens that link, Storyraise looks up her constituent record and:
 
 - **Fills in merge tags.** Anywhere your report says `@@first_name@@`, Maria sees "Maria" — and the same goes for any field on her record (`@@last_name@@`, custom fields like giving level, and so on).
-- **Attributes the visit.** Her open shows up in your report's Insights as *Maria* — not an anonymous visitor — so you know exactly who engaged. See [Tracking engagement](tracking-engagement.md).
+- **Attributes the visit.** Her open shows up in your report's Analytics as *Maria* — not an anonymous visitor — so you know exactly who engaged. See [Tracking engagement](tracking-engagement.md).
 
 The constituent must exist in your Storyraise constituent list (matched by email address), so [import your constituents](../crm-and-data/importing-constituent-data.md) first.
 
@@ -55,7 +55,21 @@ You get:
 - **Donor thank-yous** — a year-end report that greets each donor by name and reflects their giving.
 - **Direct mail** — printed cards with a personal QR code feel individually made.
 - **Email campaigns** — merge the `report_url_used` column into your email platform so each recipient's button opens their version.
-- **Knowing who engaged** — after the send, Insights shows which constituents opened the report. See [Understanding report metrics](understanding-report-metrics.md).
+- **Knowing who engaged** — after the send, Analytics shows which constituents opened the report. See [Understanding report metrics](understanding-report-metrics.md).
+
+## What personalized links unlock in Analytics
+
+Anonymous links tell you how your report performed. Personalized links tell you who to call on Monday.
+
+Both link types record the same overall activity — opens, time spent, sections viewed, clicks, location, device, and visit timing. Personalized links connect that activity to a specific constituent, which additionally gives you:
+
+- **Named readers in Most Engaged Constituents** — the per-report list of who engaged most deeply.
+- **Engagement stars and intent badges tied to a person** — so you can see not just that someone clicked Donate, but who.
+- **Who's Been Reading on your Home tab** — named constituents across all your reports.
+
+Anonymous readers still count in your overall numbers; they just can't be named.
+
+> **A forwarded link is attributed to its original recipient.** If a constituent passes their link to a friend, that friend's reading appears under the original name. Treat named engagement as a conversation starter, not proof of who completed every action.
 
 ## Privacy note
 
