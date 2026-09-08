@@ -74,7 +74,7 @@ The **Infographics** block offers four layouts, chosen from the block's **Layout
 
 ## In PDF and on mobile
 
-Infographics render as crisp vector graphics, so they stay sharp when a report is exported to PDF. Two settings apply to the PDF only — **Vertical alignment** (top, center, or bottom on the page) and **Show page number** — and they live on the block's traits alongside the infographic. See [PDF exports](../getting-started/pdf-exports.md).
+Infographics render as crisp vector graphics, so they stay sharp when a report is exported to PDF. Two settings apply to the PDF only — **Vertical alignment** (top, center, or bottom on the page) and **Show page number** — and they live on the block's traits alongside the infographic.
 
 On smaller screens, an infographic scales to the width of its column; you can also set the block's **Width (%)** to give it more or less room. See [Mobile optimization](mobile-optimization.md).
 

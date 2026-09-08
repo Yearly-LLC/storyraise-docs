@@ -27,7 +27,7 @@ Yes — the Share menu provides embed code (standard and fullscreen iframe varia
 Reports include built-in accessibility features, and how you build a report affects its accessibility too. See [Accessibility at Storyraise](accessibility.md) for what's built in, authoring guidance, and how to request a formal accessibility statement or VPAT.
 
 **Can I get a PDF of my report?**
-Yes. **Get PDF** in the Share menu provides a PDF of a published report, and the dedicated [PDF Builder](../getting-started/pdf-exports.md) creates fully designed, print-ready PDF documents with page sizes, bleed, and crop marks.
+Yes. **Get PDF** in the Share menu provides a PDF of a published report. Each block becomes its own page in the export — see [Sharing reports](../distribution-and-engagement/sharing-reports.md).
 
 **The builder keeps logging me out, or a report won't load images and fonts on our network. Why?**
 This is almost always a strict firewall or content-inspection proxy — common on school, hospital, and corporate networks — blocking the services Storyraise relies on. Test it in 30 seconds by opening the link on your phone over cellular: if it works there, it's the network. See [Network requirements and troubleshooting](network-requirements.md) for the exact allowlist to give your IT team.

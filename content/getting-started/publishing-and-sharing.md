@@ -57,5 +57,4 @@ Once a report is published, its dashboard card shows how many times it's been op
 ## Next steps
 
 - [Sharing reports](../distribution-and-engagement/sharing-reports.md) — links, embeds, QR codes, and more
-- [PDF exports](pdf-exports.md) — produce a printable version of your report
 - [Importing constituent data](../crm-and-data/importing-constituent-data.md) — unlock personalization and reader insights

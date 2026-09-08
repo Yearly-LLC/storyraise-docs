@@ -48,7 +48,7 @@ const SECTIONS = [
     icon: '🚀',
     order: [
       'what-is-storyraise', 'creating-your-first-report', 'understanding-templates',
-      'publishing-and-sharing', 'pdf-exports', 'user-roles-and-permissions', 'common-terminology',
+      'publishing-and-sharing', 'user-roles-and-permissions', 'common-terminology',
     ],
   },
   {
