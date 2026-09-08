@@ -87,6 +87,7 @@
       <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
       <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
       <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/report-folders/">Report folders</a></li>
       <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
@@ -119,7 +120,6 @@
       <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
       <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
       <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
-      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
     </ul>
   </details>
   <details class="sidenav-group">
@@ -129,12 +129,15 @@
       <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
       <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
       <li><a href="/docs/building-reports/element-bar/">The element bar</a></li>
+      <li><a href="/docs/building-reports/review-comments/">Review comments</a></li>
       <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
       <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
       <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
       <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
       <li><a href="/docs/building-reports/creating-infographics/">Creating infographics</a></li>
       <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
+      <li><a href="/docs/building-reports/adding-a-poll/">Adding a poll</a></li>
+      <li><a href="/docs/building-reports/embedding-a-collect-form/">Embedding a Collect form</a></li>
       <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
       <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
       <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
@@ -168,6 +171,7 @@
       <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
       <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
       <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/single-sign-on/">Single sign-on (SSO)</a></li>
       <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
       <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
       <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
@@ -246,7 +250,14 @@
 <li>before reviewing constituent engagement in Analytics for a board update.</li>
 </ul>
 <h2>Automatic refreshes</h2>
-<div class="note"><p><strong>Coming soon</strong> — scheduled background syncs, so your constituent list stays current without manual refreshes.</p></div>
+<p>Storyraise can refresh a connection on a schedule, so you&#39;re not relying on someone remembering to press <strong>Sync now</strong>.</p>
+<p>Turn it on per connection: in the <strong>Connections</strong> tab, open a connection&#39;s menu and switch on <strong>Auto-sync</strong>. Pick <strong>Daily</strong> or <strong>Weekly</strong>, and the card then shows when it last ran.</p>
+<p>Each scheduled run does two things, in this order:</p>
+<ul>
+<li><strong>Re-pulls your constituents</strong> from the source system, so a donor added to your CRM last week becomes a constituent without anyone opening the dashboard.</li>
+<li><strong>Refreshes your synced collections</strong>, using the constituent list it just updated — so someone added tonight is linked to their rows in the same run rather than waiting for the next one.</li>
+</ul>
+<p>Auto-sync is off until you turn it on, and it&#39;s set per connection, so you can leave a hand-curated source alone while a busy one refreshes nightly.</p>
 <h2>Related</h2>
 <ul>
 <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
@@ -270,6 +281,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="83dd7db8" data-engine-v="8a90bc08" defer></script>
+  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="53dac7dc" data-engine-v="8a90bc08" defer></script>
 </body>
 </html>

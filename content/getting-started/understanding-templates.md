@@ -2,7 +2,7 @@
 title: Understanding templates
 section: Getting Started
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Understanding templates
@@ -13,28 +13,31 @@ Templates give you a complete, professionally designed report structure to start
 
 A template is a full report: a cover, a set of sections in a sensible order, sample text and imagery, and layouts tuned for that kind of communication. When you create a report from a template, you get your own editable copy — change anything you like without affecting the template itself.
 
-## Template categories
+## Finding your way around the gallery
 
-Storyraise includes templates for the communications nonprofits send most:
+The gallery opens on a row of four **entry points**, which answer "which part of my job is this for?"
 
-- **Impact Reports** — showcase your organization's or a program's impact and outcomes
-- **Annual Reports** — your year in review, including financial performance
-- **Event Recaps** — summarize the key moments and outcomes of an event
-- **Endowment Reports** — report on the performance and management of an endowment fund
-- **Donor Reports** — show donors their contributions and the impact of their support
-- **Capital Campaigns** — funding requests and solicitations
-- **Event Invitations** — invite stakeholders and donors to upcoming events
-- **Thank You Messages** — express gratitude to donors, stakeholders, and partners
-- **Newsletter Landing Pages** — regular updates and communications
-- **Proposals** — present and pitch new funding projects
-- **Philanthropy Reports** — detail philanthropic activities and their impact
+- **Fundraising** — appeals and solicitations
+- **Donor Relations & Stewardship** — donor reports and thank yous
+- **Communications** — newsletters, events, and video
+- **Annual & Impact** — annual reports, impact reports, endowment and philanthropy reports
+
+Picking one narrows the page to the shelves that belong to it. Leave them alone and you see everything.
+
+Below that, templates sit on **shelves** by category: Annual & Impact Reports, Fundraising & Appeals, Donor Relations, Events, Newsletters & Updates, Thank Yous, and Video. Each shelf scrolls sideways — drag it, or use the arrows at either end.
+
+Any templates your own team has saved appear first, above the rest, under **Your templates**.
+
+> **Note:** The **Video** shelf only appears if your organization has Storyraise Video. Shelves with nothing on them are hidden rather than shown empty.
 
 ## Choosing a template
 
 1. From the dashboard, start a new report and choose **Report from template**.
-2. Browse the gallery. Use the filters to narrow by report type.
+2. Pick an entry point, or browse the shelves.
 3. Click a template to preview it as a real report.
 4. When you've found the right one, create your report from it.
+
+The preview shows the template in its own design. You can switch on your brand colors and fonts to see it in yours — both toggles start off, so you always see the template as it was designed before you judge it against your brand.
 
 ### Tips for picking
 

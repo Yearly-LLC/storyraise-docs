@@ -2,7 +2,7 @@
 title: Sharing your form
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Sharing your form
@@ -36,3 +36,7 @@ If a respondent is already in your [constituent list](../crm-and-data/importing-
 ## Next
 
 [Managing responses](managing-responses.md) — review, edit, and use what you've collected.
+
+## Related
+
+- [Embedding a Collect form in a report](../building-reports/embedding-a-collect-form.md)

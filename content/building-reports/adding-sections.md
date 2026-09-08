@@ -2,7 +2,7 @@
 title: Adding sections
 section: Building Reports
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Adding sections
@@ -38,6 +38,7 @@ You can also let AI draft a block for you — describe what it's about and Story
 
 - **Stats** — showcase achievements using key figures
 - **Infographics** — infographics with lists, sequences, and comparisons (see [Creating infographics](creating-infographics.md))
+- **Poll** — ask readers a question and give it a page of its own (see [Adding a poll](adding-a-poll.md))
 
 **People and gratitude**
 
@@ -54,6 +55,8 @@ You can also let AI draft a block for you — describe what it's about and Story
 
 - **Section** — a flexible container for custom layouts
 - **Repeater** — create repeating blocks and elements, useful for lists of similar items
+
+> **Note:** **Repeater** needs a Precision plan with Storyraise Collect active. It won't appear in the block list otherwise.
 
 ## Managing blocks
 

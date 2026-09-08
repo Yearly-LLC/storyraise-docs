@@ -2,7 +2,7 @@
 title: Publishing and sharing reports
 section: Getting Started
 status: draft
-last_reviewed: 2026-09-04
+last_reviewed: 2026-09-08
 ---
 
 # Publishing and sharing reports
@@ -39,6 +39,14 @@ Publishing isn't one-and-done. You can keep editing after you publish — your c
 3. Confirm to publish your latest draft.
 
 Readers always see the most recently published version; works-in-progress stay private until you republish.
+
+## Search engine visibility
+
+Published reports are hidden from Google and other search engines by default, so donor and supporter communications don't turn up in a search.
+
+To let the public find a report by searching, open the report's **Sharing & Privacy** settings and tick **Allow search engines to index this report**. It takes effect within a minute, and you don't need to republish.
+
+> **Note:** Hiding a report from search engines is not the same as making it private. Anyone with the link can still open it without signing in. If a report shouldn't be readable at all, don't publish it.
 
 ## Ways to share
 

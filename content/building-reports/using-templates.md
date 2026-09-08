@@ -2,16 +2,29 @@
 title: Using templates
 section: Building Reports
 status: draft
-last_reviewed: 2026-06-12
+keywords: templates, gallery, shelves, browse templates, preview, brand colors, brand fonts, your templates, carousel
+last_reviewed: 2026-09-08
 ---
 
 # Using templates
 
 Templates do the design work so you can focus on the story. This page covers working with templates while you build. (New to templates? Start with [Understanding templates](../getting-started/understanding-templates.md).)
 
+## Browsing the gallery
+
+Choose **Report from template** and the gallery opens on four entry points — Fundraising, Donor Relations & Stewardship, Communications, and Annual & Impact — over shelves grouped by category. Any templates your team has saved sit first, under **Your templates**.
+
+Each shelf scrolls sideways. Drag it, or use the arrows at either end.
+
+## Previewing before you commit
+
+Click a template to open it as a real report rather than a thumbnail, so you can scroll it the way a reader would.
+
+Two toggles in the preview swap in your **brand colors** and **brand fonts**. Both start off, which is deliberate: see the template as it was designed first, then check it against your brand. A template that looks wrong in your colors is usually telling you something about the colors, not the template.
+
 ## Starting from a template
 
-When you create a report and choose **Report from template**, you get a complete editable copy: cover, sections, layouts, and sample content. From there, building is mostly replacing — your words for the sample words, your photos for the stock photos.
+When you create a report from a template, you get a complete editable copy: cover, sections, layouts, and sample content. From there, building is mostly replacing — your words for the sample words, your photos for the stock photos.
 
 ## Make a template yours
 

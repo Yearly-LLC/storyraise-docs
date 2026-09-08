@@ -3,7 +3,7 @@ title: Managing connections
 section: CRM & Data Connections
 status: draft
 keywords: sync now, auto-sync, disconnect, reconnect, status, last synced, refresh
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Managing connections
@@ -35,9 +35,15 @@ Connections import data *into* Storyraise — they don't change your source syst
 
 ## Disconnecting
 
-Disconnecting stops future syncs. Constituents and collection data already imported into Storyraise stay put — disconnecting doesn't delete what you've already brought in.
+Open the connection's menu in the **Connections** tab and choose **Disconnect**.
 
-<!-- TEAM REVIEW: confirm the disconnect control's label/location and exactly what it removes vs. retains. -->
+Storyraise deletes the credentials it stored, stops syncing, and asks the other system to revoke our access. You can reconnect later.
+
+**Your data stays by default.** Constituents and synced collections you've already imported stay exactly as they are; they just stop updating. Reports built on them keep working.
+
+The confirmation offers **Also delete the data it synced** as an option. Tick it and Storyraise permanently deletes the collections this connection synced, along with any constituents it was the only source for — and reports built on that data lose it. It can't be undone, so leave it unticked unless removing the data is the reason you're disconnecting.
+
+Disconnecting needs the same access as connecting: Owners, Admins, and Editors can do it, Viewers can't.
 
 ## Troubleshooting
 

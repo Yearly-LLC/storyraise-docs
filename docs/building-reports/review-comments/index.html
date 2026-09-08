@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HubSpot — Storyraise</title>
+  <title>Review comments — Storyraise</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
@@ -87,11 +87,12 @@
       <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
       <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
       <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/report-folders/">Report folders</a></li>
       <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>CRM &amp; Data Connections</summary>
     <ul>
       <li><a href="/docs/crm-and-data/">Overview</a></li>
@@ -119,22 +120,24 @@
       <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
       <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
       <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
-      <li><a href="/docs/crm-and-data/integrations/hubspot/" class="active" aria-current="page">HubSpot</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Building Reports</summary>
     <ul>
       <li><a href="/docs/building-reports/">Overview</a></li>
       <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
       <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
       <li><a href="/docs/building-reports/element-bar/">The element bar</a></li>
+      <li><a href="/docs/building-reports/review-comments/" class="active" aria-current="page">Review comments</a></li>
       <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
       <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
       <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
       <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
       <li><a href="/docs/building-reports/creating-infographics/">Creating infographics</a></li>
       <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
+      <li><a href="/docs/building-reports/adding-a-poll/">Adding a poll</a></li>
+      <li><a href="/docs/building-reports/embedding-a-collect-form/">Embedding a Collect form</a></li>
       <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
       <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
       <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
@@ -168,6 +171,7 @@
       <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
       <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
       <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/single-sign-on/">Single sign-on (SSO)</a></li>
       <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
       <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
       <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
@@ -221,17 +225,48 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    <a href="/docs/crm-and-data/">CRM &amp; Data Connections</a>
+    <a href="/docs/building-reports/">Building Reports</a>
     <span>›</span>
-    HubSpot
+    Review comments
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>HubSpot</h1>
-<div class="note"><p><strong>Coming soon</strong> — a native HubSpot integration is on our roadmap and isn&#39;t available yet.</p></div>
-<h2>In the meantime</h2>
-<p>You can bring your HubSpot contacts into Storyraise today by exporting them to CSV and using <a href="/docs/crm-and-data/importing-constituent-data/">CSV import</a>. In HubSpot, go to your contacts list and use <strong>Export</strong> to download a CSV; make sure it includes columns for <strong>First Name</strong>, <strong>Last Name</strong>, and <strong>Email</strong>, plus any properties you want available for personalization. You&#39;ll get the same merge tags, personalized links, and insights as a native integration.</p>
+        <h1>Review comments</h1>
+<p class="lead">Comments let your team review a report inside the builder instead of in a separate email thread. Everyone reads the same draft, and the note sits on the section it&#39;s about.</p>
+<p>Comments are private to your team. They live in the builder only — readers never see them, and they don&#39;t travel to the published report.</p>
+<h2>Opening the comments panel</h2>
+<p>Click the <strong>Comments</strong> icon in the builder&#39;s top toolbar. A panel slides in from the side, and the icon carries a count once the report has comments on it.</p>
+<div class="tip"><p><strong>Note:</strong> Comments are part of Platinum and Precision. On other plans the icon opens an upgrade prompt instead.</p></div>
+<h2>Comments belong to a section</h2>
+<p>The panel shows the comments for <strong>the section you&#39;re looking at</strong>, not the whole report. Move to another section and the panel changes with it.</p>
+<p>That&#39;s the part worth knowing before you start: a note about the donor list won&#39;t be visible while a teammate is sitting on the cover. Navigate to the section you&#39;re commenting on first, then write.</p>
+<h2>Leaving a comment</h2>
+<ol>
+<li>Open the section you want to comment on.</li>
+<li>Open the <strong>Comments</strong> panel.</li>
+<li>Write your note in the box at the bottom and click <strong>Post comment</strong>.</li>
+</ol>
+<p>Your name and the date and time are attached automatically. Your own comments appear on one side of the panel and your teammates&#39; on the other, so a long thread stays readable.</p>
+<h2>Editing and removing</h2>
+<ul>
+<li><strong>Edit</strong> appears on your own comments, so you can fix a typo or sharpen a note without deleting and reposting it.</li>
+<li><strong>Delete</strong> is available on any comment, including a teammate&#39;s. It&#39;s meant for clearing a note once the change has been made, so the panel shows what&#39;s still outstanding rather than the whole history.</li>
+</ul>
+<p>Deleting a comment can&#39;t be undone, so clear notes as you resolve them rather than tidying up in bulk at the end.</p>
+<h2>Getting a review done</h2>
+<ul>
+<li><strong>Comment where the change is.</strong> A note on the right section is far faster to act on than &quot;the third page looks off&quot;.</li>
+<li><strong>Say what you want, not just what&#39;s wrong.</strong> &quot;Cut this to two sentences&quot; saves a round trip that &quot;too long&quot; doesn&#39;t.</li>
+<li><strong>Clear each note as you act on it.</strong> An empty panel is a finished review, and that&#39;s a much clearer signal than a message saying you think you got everything.</li>
+</ul>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+<li><a href="/docs/building-reports/element-bar/">The element bar</a></li>
+<li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+<li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing</a></li>
+</ul>
 
 
         <hr />
@@ -250,6 +285,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="83dd7db8" data-engine-v="8a90bc08" defer></script>
+  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="53dac7dc" data-engine-v="8a90bc08" defer></script>
 </body>
 </html>

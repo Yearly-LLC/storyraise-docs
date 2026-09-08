@@ -2,25 +2,22 @@
 title: Funraise
 section: CRM & Data Connections
 status: draft
-keywords: funraise, api key, supporters, connections
-last_reviewed: 2026-06-12
+keywords: funraise, api key, supporters, donations, connections, crm
+last_reviewed: 2026-09-08
 ---
 
 # Funraise
 
-Connect Funraise with an API key to import your supporters as constituents.
-
-> **Coming soon.** The Funraise connection is on its way — it may not be selectable in your Connections tab yet. The steps below are how it works once it's available.
->
-> <!-- TEAM REVIEW: Funraise is flagged coming_soon in the catalog. Confirm when it goes live. -->
+Connect Funraise with an API key to import your supporters as constituents, along with their giving, so you can personalize reports and see who engages.
 
 > **Not the same as Fundraise Up.** Funraise and [Fundraise Up](fundraise-up.md) are two different platforms — make sure you're connecting the right one.
 
 ## What syncs
 
-- **Constituents** (supporters), into your [constituent list](../importing-constituent-data.md).
+- **Supporters**, into your [constituent list](../importing-constituent-data.md).
+- **Donations**, alongside them.
 
-(Funraise imports constituents; it doesn't currently offer the extended [data-to-collections](../syncing-data-to-collections.md) sync.)
+<!-- TEAM REVIEW: the catalog marks Funraise as supporting the extended data sync. Confirm exactly which Funraise data can be synced into collections before we describe it here. -->
 
 ## Connect
 
@@ -28,7 +25,7 @@ In the **Connections** tab, find **Funraise**, click **Connect**, and enter:
 
 - **API Key** — your Funraise API key.
 
-Then **Connect & sync**.
+Then **Connect & sync**. The connection shows as **Live**, with **Sync now** and nightly auto-sync — see [Managing connections](../managing-connections.md).
 
 ## Where to find your key
 
@@ -38,3 +35,4 @@ In your Funraise dashboard, go to **Settings → API** and create a key — copy
 
 - [The Connections tab](../connections-overview.md)
 - [Managing connections](../managing-connections.md)
+- [Data refreshes](../data-refreshes.md)

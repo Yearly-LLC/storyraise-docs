@@ -2,7 +2,7 @@
 title: Images and videos
 section: Building Reports
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Images and videos
@@ -28,6 +28,10 @@ Select an image to adjust:
 - **Corner roundness** — square to fully rounded
 - **Shadow and margins** — depth and breathing room
 
+**What wins when two settings disagree.** A width you set explicitly beats **Fill space**, and a margin you set explicitly beats **Justification**. Both used to be the other way round, which made the width and margin controls look broken. Set a value and it holds.
+
+**Margins can go negative.** Every margin control accepts a negative value, which is how you pull an element outward or overlap it with the one above. Padding can't — a negative padding isn't a real thing — and the shorthand margin on Gallery and Stats blocks stays at zero or above, because a negative value there breaks their grid.
+
 ## Editing images
 
 Storyraise includes a built-in image editor — crop, rotate, apply filters, and annotate without leaving the builder or round-tripping through other software.
@@ -41,6 +45,16 @@ Storyraise includes a built-in image editor — crop, rotate, apply filters, and
 3. Pick an aspect ratio that fits your layout: widescreen 16:9, square 1:1, vertical 9:16, and several in between.
 
 The video plays right inside your report. Host the file on YouTube or Vimeo (an unlisted video works fine if you don't want it discoverable there).
+
+## Personalizing images and video
+
+On the **Personalize** tab, **Override Media** swaps a piece of media out per reader, using a merge tag rather than a fixed file.
+
+It works on images, on section backgrounds, and on video elements — for a video you can override both the file it plays and its poster frame. The static media you placed is what everyone else sees; the merge tag only takes over when the report is opened through a [personalized link](../distribution-and-engagement/personalized-links.md) and the tag resolves to a real URL.
+
+That makes it possible to send one report where each donor sees a photo of the program they funded, or a thank-you video recorded for their region.
+
+<!-- TEAM REVIEW: needs a screenshot of the Override Media card on the Personalize tab with a video selected. -->
 
 ## Audio and social media
 

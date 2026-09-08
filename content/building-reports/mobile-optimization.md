@@ -2,7 +2,7 @@
 title: Mobile optimization
 section: Building Reports
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Mobile optimization
@@ -29,7 +29,7 @@ Walk the whole report in mobile preview before publishing, watching for:
 
 - **Text size** — headlines that fit on one desktop line can wrap awkwardly on a phone; shorten or resize.
 - **Image crops** — wide images lose their edges as they scale; make sure faces and focal points survive.
-- **Side-by-side layouts** — multi-column blocks stack on mobile; confirm the stacking order still tells the story.
+- **Side-by-side layouts** — multi-column blocks stack on mobile; confirm the stacking order still tells the story. On Story, Letter, and Highlight blocks you control it directly with **Content Stack Order (Mobile)**: choose **Media First** to lead with the image, or **Content First** to lead with the words.
 - **Buttons** — keep them comfortably tappable and above the fold of key sections.
 - **Navigation** — long section titles truncate in the mobile menu; see [Navigation options](navigation-options.md).
 

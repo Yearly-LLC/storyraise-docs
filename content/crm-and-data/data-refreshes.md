@@ -2,7 +2,7 @@
 title: Data refreshes
 section: CRM & Data Connections
 status: draft
-last_reviewed: 2026-09-04
+last_reviewed: 2026-09-08
 ---
 
 # Data refreshes
@@ -29,13 +29,20 @@ A good rule of thumb: refresh right before you do anything that depends on the d
 
 ## Automatic refreshes
 
-> **Coming soon** — scheduled background syncs, so your constituent list stays current without manual refreshes.
+Storyraise can refresh a connection on a schedule, so you're not relying on someone remembering to press **Sync now**.
 
-<!-- TEAM REVIEW — internal outline for when scheduled sync ships:
-- Default sync frequency and whether it's configurable
-- How sync status/last-synced time is surfaced in the UI
-- Notifications on sync failures (e.g., expired Blackbaud authorization)
--->
+Turn it on per connection: in the **Connections** tab, open a connection's menu and switch on **Auto-sync**. Pick **Daily** or **Weekly**, and the card then shows when it last ran.
+
+Each scheduled run does two things, in this order:
+
+- **Re-pulls your constituents** from the source system, so a donor added to your CRM last week becomes a constituent without anyone opening the dashboard.
+- **Refreshes your synced collections**, using the constituent list it just updated — so someone added tonight is linked to their rows in the same run rather than waiting for the next one.
+
+Auto-sync is off until you turn it on, and it's set per connection, so you can leave a hand-curated source alone while a busy one refreshes nightly.
+
+<!-- TEAM REVIEW: a connection can also be set to refresh collections without re-pulling constituents, for orgs that curate their constituent list by hand. Confirm whether that is exposed in the UI anywhere before documenting it. -->
+
+<!-- TEAM REVIEW: confirm what a customer sees when a scheduled sync fails (e.g. an expired Blackbaud authorization) — is there a notification, or only the connection's status in the tab? -->
 
 ## Related
 

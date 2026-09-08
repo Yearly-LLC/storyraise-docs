@@ -87,6 +87,7 @@
       <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
       <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
       <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/report-folders/">Report folders</a></li>
       <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
@@ -119,7 +120,6 @@
       <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
       <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
       <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
-      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
     </ul>
   </details>
   <details class="sidenav-group">
@@ -129,12 +129,15 @@
       <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
       <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
       <li><a href="/docs/building-reports/element-bar/">The element bar</a></li>
+      <li><a href="/docs/building-reports/review-comments/">Review comments</a></li>
       <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
       <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
       <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
       <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
       <li><a href="/docs/building-reports/creating-infographics/">Creating infographics</a></li>
       <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
+      <li><a href="/docs/building-reports/adding-a-poll/">Adding a poll</a></li>
+      <li><a href="/docs/building-reports/embedding-a-collect-form/">Embedding a Collect form</a></li>
       <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
       <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
       <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
@@ -168,6 +171,7 @@
       <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
       <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
       <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/single-sign-on/">Single sign-on (SSO)</a></li>
       <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
       <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
       <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
@@ -249,7 +253,11 @@
 <h2>Sending engagement back (Salesforce)</h2>
 <p>Connections import data <em>into</em> Storyraise — they don&#39;t change your source system. The one exception you can opt into is <strong>Salesforce write-back</strong>: from a connected Salesforce, choose <strong>Send to Salesforce</strong> to log report engagement (opens, time spent, link clicks) on each donor&#39;s Contact. See <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a> for the full setup.</p>
 <h2>Disconnecting</h2>
-<p>Disconnecting stops future syncs. Constituents and collection data already imported into Storyraise stay put — disconnecting doesn&#39;t delete what you&#39;ve already brought in.</p>
+<p>Open the connection&#39;s menu in the <strong>Connections</strong> tab and choose <strong>Disconnect</strong>.</p>
+<p>Storyraise deletes the credentials it stored, stops syncing, and asks the other system to revoke our access. You can reconnect later.</p>
+<p><strong>Your data stays by default.</strong> Constituents and synced collections you&#39;ve already imported stay exactly as they are; they just stop updating. Reports built on them keep working.</p>
+<p>The confirmation offers <strong>Also delete the data it synced</strong> as an option. Tick it and Storyraise permanently deletes the collections this connection synced, along with any constituents it was the only source for — and reports built on that data lose it. It can&#39;t be undone, so leave it unticked unless removing the data is the reason you&#39;re disconnecting.</p>
+<p>Disconnecting needs the same access as connecting: Owners, Admins, and Editors can do it, Viewers can&#39;t.</p>
 <h2>Troubleshooting</h2>
 <p>Most issues are the same ones covered in <a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a>: an expired or mistyped key, missing email addresses, or a provider that needs reauthorizing. An <strong>Error</strong> badge with its message is your starting point.</p>
 <h2>Related</h2>
@@ -275,6 +283,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="83dd7db8" data-engine-v="8a90bc08" defer></script>
+  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="53dac7dc" data-engine-v="8a90bc08" defer></script>
 </body>
 </html>

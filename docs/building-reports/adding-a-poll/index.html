@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding a poll — Storyraise</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
+  <script>
+    // Apply the theme before first paint: stored choice, else system setting.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
+      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
+      mq.addEventListener('change', function (e) {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (err) {}
+        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo-group">
+      <a href="/" class="logo">
+        <img
+          class="logo-light"
+          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
+          alt="Storyraise"
+        />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
+    <div class="nav-right">
+      <!-- NAV-SEARCH -->
+      <div class="search-wrap nav-search" id="searchWrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search docs…"
+          autocomplete="off"
+          aria-label="Search the knowledge base"
+          aria-autocomplete="list"
+          aria-controls="searchDropdown"
+          aria-expanded="false"
+        />
+        <div class="search-dropdown" id="searchDropdown" role="listbox"></div>
+      </div>
+      <!-- /NAV-SEARCH -->
+      <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
+      <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </label>
+      <div class="nav-menu">
+      <a href="/search/" class="nav-link nav-menu-search">Search</a>
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LAYOUT: sidebar tree + main column -->
+  <div class="layout">
+    <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
+
+    <!-- SIDEBAR -->
+    <aside class="sidenav-wrap">
+      <nav class="sidenav" aria-label="Documentation">
+  <details class="sidenav-group">
+    <summary>Getting Started</summary>
+    <ul>
+      <li><a href="/docs/getting-started/">Overview</a></li>
+      <li><a href="/docs/getting-started/what-is-storyraise/">What is Storyraise?</a></li>
+      <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
+      <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
+      <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/report-folders/">Report folders</a></li>
+      <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
+      <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>CRM &amp; Data Connections</summary>
+    <ul>
+      <li><a href="/docs/crm-and-data/">Overview</a></li>
+      <li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a></li>
+      <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
+      <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
+      <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
+      <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
+      <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
+      <li><a href="/docs/crm-and-data/connections-overview/">The Connections tab</a></li>
+      <li><a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a></li>
+      <li><a href="/docs/crm-and-data/managing-connections/">Managing connections</a></li>
+      <li><a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a></li>
+      <li><a href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a></li>
+      <li><a href="/docs/crm-and-data/integrations/salesforce/">Salesforce / Nonprofit Cloud</a></li>
+      <li><a href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a></li>
+      <li><a href="/docs/crm-and-data/integrations/civicrm/">CiviCRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/slate/">Slate for Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/ellucian/">Ellucian Advancement</a></li>
+      <li><a href="/docs/crm-and-data/integrations/little-green-light/">Little Green Light</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorperfect/">DonorPerfect</a></li>
+      <li><a href="/docs/crm-and-data/integrations/neon-crm/">Neon CRM</a></li>
+      <li><a href="/docs/crm-and-data/integrations/funraise/">Funraise</a></li>
+      <li><a href="/docs/crm-and-data/integrations/givebutter/">Givebutter</a></li>
+      <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
+      <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
+      <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group" open>
+    <summary>Building Reports</summary>
+    <ul>
+      <li><a href="/docs/building-reports/">Overview</a></li>
+      <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
+      <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+      <li><a href="/docs/building-reports/element-bar/">The element bar</a></li>
+      <li><a href="/docs/building-reports/review-comments/">Review comments</a></li>
+      <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
+      <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
+      <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
+      <li><a href="/docs/building-reports/images-and-videos/">Images and videos</a></li>
+      <li><a href="/docs/building-reports/creating-infographics/">Creating infographics</a></li>
+      <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
+      <li><a href="/docs/building-reports/adding-a-poll/" class="active" aria-current="page">Adding a poll</a></li>
+      <li><a href="/docs/building-reports/embedding-a-collect-form/">Embedding a Collect form</a></li>
+      <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
+      <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
+      <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
+      <li><a href="/docs/building-reports/navigation-options/">Navigation options</a></li>
+      <li><a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a></li>
+      <li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Distribution &amp; Engagement</summary>
+    <ul>
+      <li><a href="/docs/distribution-and-engagement/">Overview</a></li>
+      <li><a href="/docs/distribution-and-engagement/sharing-reports/">Sharing reports</a></li>
+      <li><a href="/docs/distribution-and-engagement/embedding-in-wordpress/">Embedding in WordPress</a></li>
+      <li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
+      <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/sms-distribution/">SMS distribution</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a></li>
+      <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a></li>
+      <li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a></li>
+      <li><a href="/docs/distribution-and-engagement/acting-on-analytics/">Acting on analytics</a></li>
+      <li><a href="/docs/distribution-and-engagement/analytics-for-older-reports/">Analytics for older reports</a></li>
+      <li><a href="/docs/distribution-and-engagement/video-analytics/">Video analytics</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Account &amp; Settings</summary>
+    <ul>
+      <li><a href="/docs/account-and-settings/">Overview</a></li>
+      <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
+      <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/single-sign-on/">Single sign-on (SSO)</a></li>
+      <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
+      <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
+      <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
+      <li><a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Video</summary>
+    <ul>
+      <li><a href="/docs/storyraise-video/">Overview</a></li>
+      <li><a href="/docs/storyraise-video/what-is-storyraise-video/">What is Storyraise Video?</a></li>
+      <li><a href="/docs/storyraise-video/creating-a-video-message/">Creating a video message</a></li>
+      <li><a href="/docs/storyraise-video/recording-your-video/">Recording your video</a></li>
+      <li><a href="/docs/storyraise-video/scenes-and-personalization/">Scenes and personalization</a></li>
+      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Storyraise Collect</summary>
+    <ul>
+      <li><a href="/docs/storyraise-collect/">Overview</a></li>
+      <li><a href="/docs/storyraise-collect/what-is-storyraise-collect/">What is Storyraise Collect?</a></li>
+      <li><a href="/docs/storyraise-collect/creating-a-collection/">Creating a collection</a></li>
+      <li><a href="/docs/storyraise-collect/form-field-types/">Form field types</a></li>
+      <li><a href="/docs/storyraise-collect/multi-step-forms/">Multi-step forms</a></li>
+      <li><a href="/docs/storyraise-collect/sharing-your-form/">Sharing your form</a></li>
+      <li><a href="/docs/storyraise-collect/managing-responses/">Managing responses</a></li>
+    </ul>
+  </details>
+  <details class="sidenav-group">
+    <summary>Resources</summary>
+    <ul>
+      <li><a href="/docs/resources/">Overview</a></li>
+      <li><a href="/docs/resources/best-practices/">Best practices</a></li>
+      <li><a href="/docs/resources/accessibility/">Accessibility at Storyraise</a></li>
+      <li><a href="/docs/resources/network-requirements/">Network requirements and troubleshooting</a></li>
+      <li><a href="/docs/resources/faq/">Frequently asked questions</a></li>
+    </ul>
+  </details>
+</nav>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="doc-main">
+      <label for="navtoggle" class="navtoggle-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Documentation menu
+      </label>
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="/">Knowledge Base</a>
+    <span>›</span>
+    <a href="/docs/building-reports/">Building Reports</a>
+    <span>›</span>
+    Adding a poll
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <h1>Adding a poll</h1>
+<p class="lead">A poll asks your readers a question inside the report and shows the answers as a bar chart. It&#39;s the quickest way to turn a report from something people read into something they take part in.</p>
+<p>Answers collect under <strong>Poll Results</strong> in that report&#39;s Analytics, where you can see them per person and export them.</p>
+<h2>Adding a poll</h2>
+<ol>
+<li>In the builder, open the <strong>Insert</strong> bar and choose <strong>Poll</strong>.</li>
+<li>Click the poll to open its editor.</li>
+<li>Type your question and fill in the answers.</li>
+<li>Click <strong>Done</strong>.</li>
+</ol>
+<p>A new poll starts empty on purpose: no sample question, no sample answers. An unedited poll shows nothing at all to a reader, so a poll you forgot to finish can never reach a donor with placeholder wording in it.</p>
+<p>You can also add a whole <strong>Poll</strong> section from <strong>Add new section</strong>, which gives the poll a page of its own rather than sitting it inside another block.</p>
+<h2>Answers</h2>
+<p>A poll needs at least two answers and takes up to ten. Past ten the bars stop being readable stacked in a column, so the editor won&#39;t add more.</p>
+<p>Each answer gets an accent color, seeded from a set that works together. You can change any of them.</p>
+<div class="tip"><p><strong>Tip:</strong> Keep answers short. Past about 32 characters an answer wraps to a second line and the layout moves the text above its bar instead of beside it. The editor warns you on the answer that&#39;s about to trigger it.</p></div>
+<h2>Settings</h2>
+<p>Open the poll&#39;s settings panel to control how it behaves and how it looks.</p>
+<p><strong>How it behaves</strong></p>
+<ul>
+<li><strong>Selection</strong> — <strong>Single choice</strong> for one answer per reader, <strong>Multiple choice</strong> to let them pick several.</li>
+<li><strong>After Voting</strong> — <strong>Show everyone the results</strong> reveals the full tally once someone answers. <strong>Confirm the viewer&#39;s answer only</strong> shows them what they chose and keeps everyone else&#39;s answers to you.</li>
+<li><strong>Question</strong> — show or hide the question above the chart, for when the surrounding copy already asks it.</li>
+</ul>
+<p><strong>How it reads</strong></p>
+<ul>
+<li><strong>Show Values As</strong> — counts, percentages, or both.</li>
+<li><strong>Value Position</strong> — after the bar, inside it, or hidden.</li>
+<li><strong>Answers/Options Text</strong> — <strong>Automatic</strong> places each answer beside its bar and moves it above when it&#39;s too long. You can also force <strong>Beside</strong>, <strong>Above</strong>, or <strong>Inside the bar</strong>.</li>
+</ul>
+<p>Font, text color, bar height, roundness, and spacing are all in the same panel, and brand kit colors appear in every color picker.</p>
+<h2>What readers see</h2>
+<p>A reader picks an answer and the bars animate to the result straight away. Nothing waits on the network, so it feels instant even on a slow connection.</p>
+<p>Votes are only recorded on the <strong>published</strong> report. Answering a poll while you&#39;re proofing in the builder, in preview, in print view, or in a PDF export does not count — a poll you clicked through while checking your work will never appear in your results.</p>
+<h2>Seeing the results</h2>
+<p>Open the report&#39;s <strong>Analytics</strong> and choose the <strong>Poll Results</strong> tab. It appears on any report that contains a poll.</p>
+<p>For each poll you get the question, the tally per answer, and a list of who answered. A reader who opened a <a href="/docs/distribution-and-engagement/personalized-links/">personalized link</a> is named; anyone else shows as <strong>Anonymous</strong>. Use the export button on a poll to download its votes as a CSV.</p>
+<div class="tip"><p><strong>Note:</strong> Because a personalized link identifies the reader, poll answers on a personalized report are attributable to a named constituent. Say so in the question if the answer is something people would expect to give anonymously.</p></div>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
+<li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
+<li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
+<li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a></li>
+</ul>
+
+
+        <hr />
+
+        <p style="font-size:0.85rem; color:var(--text-faint);">Need help? <a href="https://storyraise.com/support">Contact our support team</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
+    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+  </footer>
+
+  <script src="/assets/theme.js"></script>
+  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="53dac7dc" data-engine-v="8a90bc08" defer></script>
+</body>
+</html>

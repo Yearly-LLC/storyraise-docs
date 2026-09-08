@@ -3,7 +3,7 @@ title: User roles and permissions
 section: Getting Started
 status: draft
 keywords: roles, permissions, owner, admin, editor, viewer, custom roles, access, team, invite
-last_reviewed: 2026-07-13
+last_reviewed: 2026-09-08
 ---
 
 # User roles and permissions
@@ -46,6 +46,13 @@ Access to each area is one of four levels: **— (none)**, **View**, **Edit**, o
 | Billing | Manage | View | — | — |
 | Organization settings | Manage | Manage | — | — |
 | Activity log | Manage | Manage | — | — |
+
+## Restricting a single folder
+
+Roles set what someone can do across the whole organization. On top of that, an individual report folder can be limited to named people, so a work-in-progress stays off everyone else's dashboard.
+
+It filters what people see; it isn't a permission boundary. Anyone with a report's link can still open it, and published reports stay public to the web. See [Report folders](report-folders.md).
+
 
 ## Custom roles
 

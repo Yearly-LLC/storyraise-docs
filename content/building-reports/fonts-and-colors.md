@@ -2,7 +2,7 @@
 title: Fonts and colors
 section: Building Reports
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Fonts and colors
@@ -27,6 +27,8 @@ When you edit text, you can apply either with the "Aa" font swatches, so the who
 ### Per-element typography
 
 Each text element can also be tuned individually: size, weight, color, alignment, line height, and letter spacing. Use this for fine-tuning — lean on your brand fonts for the big decisions.
+
+The **Weight** control names each weight rather than numbering it — Light, Regular, Medium, Semibold, Bold — and only offers the weights the font family actually has. If a weight you expect isn't in the list, that family doesn't publish it. Every weight a family does offer is loaded with the report, so a heading set in Bold renders in real Bold rather than a browser's thickened approximation of Regular.
 
 ### Choosing fonts that work
 

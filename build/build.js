@@ -88,7 +88,7 @@ const SECTIONS = [
     icon: '🚀',
     order: [
       'what-is-storyraise', 'creating-your-first-report', 'understanding-templates',
-      'publishing-and-sharing', 'user-roles-and-permissions', 'common-terminology',
+      'publishing-and-sharing', 'report-folders', 'user-roles-and-permissions', 'common-terminology',
     ],
   },
   {
@@ -102,7 +102,7 @@ const SECTIONS = [
       'connections-overview', 'syncing-data-to-collections', 'managing-connections',
       'blackbaud-raisers-edge-nxt', 'bloomerang', 'salesforce', 'virtuous', 'civicrm', 'slate',
       'ellucian', 'little-green-light', 'donorperfect', 'neon-crm', 'funraise',
-      'givebutter', 'donorbox', 'fundraise-up', 'mailchimp', 'hubspot',
+      'givebutter', 'donorbox', 'fundraise-up', 'mailchimp',
     ],
   },
   {
@@ -111,8 +111,10 @@ const SECTIONS = [
     blurb: 'Everything about building and styling reports.',
     icon: '📊',
     order: [
-      'adding-sections', 'editing-content', 'element-bar', 'using-templates', 'brand-kit', 'fonts-and-colors',
+      'adding-sections', 'editing-content', 'element-bar', 'review-comments',
+      'using-templates', 'brand-kit', 'fonts-and-colors',
       'images-and-videos', 'creating-infographics', 'build-a-line-chart',
+      'adding-a-poll', 'embedding-a-collect-form',
       'image-sizes-and-dimensions', 'ai-content-generation',
       'reordering-sections', 'navigation-options', 'mobile-optimization', 'accessibility',
     ],
@@ -136,7 +138,7 @@ const SECTIONS = [
     icon: '⚙️',
     order: [
       'setting-up-your-account', 'organization-settings', 'managing-your-team',
-      'profile-and-security', 'managing-your-subscription', 'email-subdomain-setup',
+      'single-sign-on', 'profile-and-security', 'managing-your-subscription', 'email-subdomain-setup',
       'custom-sending-domain',
     ],
   },

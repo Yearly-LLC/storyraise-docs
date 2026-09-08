@@ -3,7 +3,7 @@ title: Creating infographics
 section: Building Reports
 status: draft
 keywords: infographic, infographics, visualization, chart, graph, data, antv, pie, donut, bar, column, line, word cloud, timeline, funnel, sequence, progress
-last_reviewed: 2026-07-29
+last_reviewed: 2026-09-08
 ---
 
 # Creating infographics
@@ -50,6 +50,14 @@ Infographics use data you enter by hand, so you're never waiting on a connection
 - **Reorder** rows with the up and down arrows — handy for putting months, quarters, or ranked items in the right order.
 
 Give the whole graphic a heading with the **Title** field.
+
+### Personalizing a value
+
+A row's **Label** and **Value** can be bound to a merge tag instead of a fixed number, so the graphic reads differently for each person who opens the report. Type the tag into the field — the field offers the tags available to your report as you type — and the row uses it whenever the report is opened through a [personalized link](../distribution-and-engagement/personalized-links.md).
+
+The static value you typed is what everyone else sees, so fill it in as well and treat the merge tag as the personalized override.
+
+<!-- TEAM REVIEW: needs a screenshot of a Data row with a merge tag in the Value field and the tag list showing. -->
 
 ## Styling to your brand
 

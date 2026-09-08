@@ -2,8 +2,8 @@
 title: Your profile and security
 section: Account & Settings
 status: draft
-keywords: mfa, 2fa, two-step verification, authenticator, password reset, login, sign in
-last_reviewed: 2026-06-12
+keywords: mfa, 2fa, two-step verification, authenticator, password reset, login, sign in, session timeout, idle, inactivity, signed out, sso
+last_reviewed: 2026-09-08
 ---
 
 # Your profile and security
@@ -48,6 +48,12 @@ Once enrolled, you'll be asked for a code from your chosen method each time you 
 
 <!-- TEAM REVIEW: confirm exact navigation to the Two-step verification page and whether both MFA methods are available to all customers. -->
 
+## Session timeout
+
+Storyraise signs you out after **15 minutes** of inactivity, so an unattended machine doesn't leave your reports and constituent data open.
+
+Two minutes before that you get a warning with a countdown, and any activity clears it — nothing in the builder is lost without you being told first. Activity counts across every Storyraise tab you have open, so working in one tab won't get you signed out by another sitting idle.
+
 ## Tips
 
 - **Turn on two-step verification** — your reports and constituent data are worth the extra ten seconds at sign-in.
@@ -58,3 +64,4 @@ Once enrolled, you'll be asked for a code from your chosen method each time you 
 
 - [Setting up your account](setting-up-your-account.md)
 - [Managing your team](managing-your-team.md)
+- [Single sign-on (SSO)](single-sign-on.md)

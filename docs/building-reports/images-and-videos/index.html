@@ -87,6 +87,7 @@
       <li><a href="/docs/getting-started/creating-your-first-report/">Creating your first report</a></li>
       <li><a href="/docs/getting-started/understanding-templates/">Understanding templates</a></li>
       <li><a href="/docs/getting-started/publishing-and-sharing/">Publishing and sharing reports</a></li>
+      <li><a href="/docs/getting-started/report-folders/">Report folders</a></li>
       <li><a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a></li>
       <li><a href="/docs/getting-started/common-terminology/">Common terminology</a></li>
     </ul>
@@ -119,7 +120,6 @@
       <li><a href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a></li>
       <li><a href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a></li>
       <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
-      <li><a href="/docs/crm-and-data/integrations/hubspot/">HubSpot</a></li>
     </ul>
   </details>
   <details class="sidenav-group" open>
@@ -129,12 +129,15 @@
       <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
       <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
       <li><a href="/docs/building-reports/element-bar/">The element bar</a></li>
+      <li><a href="/docs/building-reports/review-comments/">Review comments</a></li>
       <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
       <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
       <li><a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a></li>
       <li><a href="/docs/building-reports/images-and-videos/" class="active" aria-current="page">Images and videos</a></li>
       <li><a href="/docs/building-reports/creating-infographics/">Creating infographics</a></li>
       <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
+      <li><a href="/docs/building-reports/adding-a-poll/">Adding a poll</a></li>
+      <li><a href="/docs/building-reports/embedding-a-collect-form/">Embedding a Collect form</a></li>
       <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
       <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
       <li><a href="/docs/building-reports/reordering-sections/">Reordering sections</a></li>
@@ -168,6 +171,7 @@
       <li><a href="/docs/account-and-settings/setting-up-your-account/">Setting up your account</a></li>
       <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
       <li><a href="/docs/account-and-settings/managing-your-team/">Managing your team</a></li>
+      <li><a href="/docs/account-and-settings/single-sign-on/">Single sign-on (SSO)</a></li>
       <li><a href="/docs/account-and-settings/profile-and-security/">Your profile and security</a></li>
       <li><a href="/docs/account-and-settings/managing-your-subscription/">Managing your subscription</a></li>
       <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
@@ -246,6 +250,8 @@
 <li><strong>Corner roundness</strong> — square to fully rounded</li>
 <li><strong>Shadow and margins</strong> — depth and breathing room</li>
 </ul>
+<p><strong>What wins when two settings disagree.</strong> A width you set explicitly beats <strong>Fill space</strong>, and a margin you set explicitly beats <strong>Justification</strong>. Both used to be the other way round, which made the width and margin controls look broken. Set a value and it holds.</p>
+<p><strong>Margins can go negative.</strong> Every margin control accepts a negative value, which is how you pull an element outward or overlap it with the one above. Padding can&#39;t — a negative padding isn&#39;t a real thing — and the shorthand margin on Gallery and Stats blocks stays at zero or above, because a negative value there breaks their grid.</p>
 <h2>Editing images</h2>
 <p>Storyraise includes a built-in image editor — crop, rotate, apply filters, and annotate without leaving the builder or round-tripping through other software.</p>
 <h2>Adding video</h2>
@@ -255,6 +261,10 @@
 <li>Pick an aspect ratio that fits your layout: widescreen 16:9, square 1:1, vertical 9:16, and several in between.</li>
 </ol>
 <p>The video plays right inside your report. Host the file on YouTube or Vimeo (an unlisted video works fine if you don&#39;t want it discoverable there).</p>
+<h2>Personalizing images and video</h2>
+<p>On the <strong>Personalize</strong> tab, <strong>Override Media</strong> swaps a piece of media out per reader, using a merge tag rather than a fixed file.</p>
+<p>It works on images, on section backgrounds, and on video elements — for a video you can override both the file it plays and its poster frame. The static media you placed is what everyone else sees; the merge tag only takes over when the report is opened through a <a href="/docs/distribution-and-engagement/personalized-links/">personalized link</a> and the tag resolves to a real URL.</p>
+<p>That makes it possible to send one report where each donor sees a photo of the program they funded, or a thank-you video recorded for their region.</p>
 <h2>Audio and social media</h2>
 <p>Beyond images and video, you can embed:</p>
 <ul>
@@ -286,6 +296,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="83dd7db8" data-engine-v="8a90bc08" defer></script>
+  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="53dac7dc" data-engine-v="8a90bc08" defer></script>
 </body>
 </html>

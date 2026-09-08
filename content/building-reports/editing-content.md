@@ -2,7 +2,7 @@
 title: Editing content
 section: Building Reports
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Editing content
@@ -32,14 +32,15 @@ Click into any text and type. You can adjust a text element's font, size, color,
 - **Video** — YouTube and Vimeo embeds
 - **Audio** — audio player
 - **Counter** — animated numbers, great for key stats
+- **Poll** — ask readers a question and show the answers (see [Adding a poll](adding-a-poll.md))
+- **Collect Form** — a Storyraise Collect form readers can answer without leaving the report (see [Embedding a Collect form](embedding-a-collect-form.md))
 - **Infographic** — charts, visual lists, sequences, and word clouds (see [Creating infographics](creating-infographics.md))
 - **Table** — tabular data
 - **Accordion** — collapsible content for FAQs and details
-- **Card** — framed content container
 - **Horizontal rule** — a visual divider
 - **Twitter / Facebook embeds** — social posts inside your report
 - **Embed** — any other embeddable content via iframe
-- **Layout helpers** — Box, Row, and Mini Grid for arranging elements side by side
+- **Layout helpers** — Box and Row for arranging elements side by side
 - **Repeater element** — repeating items inside a Repeater block
 
 > **Note:** The legacy **Chart** element (pie, bar, and line charts) has been replaced by **Infographic** and is no longer in the **Insert** bar. Charts already placed in your reports keep working and stay editable — use **Infographic** for anything new.
@@ -56,6 +57,8 @@ Select a block to open **Set Block Style & Layout**, where you control its backg
 ## Related
 
 - [The element bar](element-bar.md)
+- [Adding a poll](adding-a-poll.md)
+- [Embedding a Collect form](embedding-a-collect-form.md)
 - [Fonts and colors](fonts-and-colors.md)
 - [Images and videos](images-and-videos.md)
 - [AI content generation](ai-content-generation.md)
