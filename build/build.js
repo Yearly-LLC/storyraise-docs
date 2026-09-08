@@ -91,6 +91,31 @@ function stampAssets(html) {
 // template is read, so anything stamped at read time would miss it.
 const TEMPLATE = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
 
+// ── ICONS ────────────────────────────────────────────────────────────
+// Material Symbols (outlined, 24px), inlined as path data rather than loaded
+// as a webfont or from a CDN. Emoji were previously used here: they render as
+// a different icon set on every operating system, and they landed in each
+// card link's accessible name. Inlining keeps this working behind the strict
+// firewalls documented in resources/network-requirements.md.
+const ICON_PATHS = {
+  database: 'M480-120q-151 0-255.5-46.5T120-280v-400q0-66 105.5-113T480-840q149 0 254.5 47T840-680v400q0 67-104.5 113.5T480-120Zm0-479q89 0 179-25.5T760-679q-11-29-100.5-55T480-760q-91 0-178.5 25.5T200-679q14 30 101.5 55T480-599Zm0 199q42 0 81-4t74.5-11.5q35.5-7.5 67-18.5t57.5-25v-120q-26 14-57.5 25t-67 18.5Q600-528 561-524t-81 4q-42 0-82-4t-75.5-11.5Q287-543 256-554t-56-25v120q25 14 56 25t66.5 18.5Q358-408 398-404t82 4Zm0 200q46 0 93.5-7t87.5-18.5q40-11.5 67-26t32-29.5v-98q-26 14-57.5 25t-67 18.5Q600-328 561-324t-81 4q-42 0-82-4t-75.5-11.5Q287-343 256-354t-56-25v99q5 15 31.5 29t66.5 25.5q40 11.5 88 18.5t94 7Z',
+  assignment: 'M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h168q13-36 43.5-58t68.5-22q38 0 68.5 22t43.5 58h168q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm80-80h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm221.5-198.5Q510-807 510-820t-8.5-21.5Q493-850 480-850t-21.5 8.5Q450-833 450-820t8.5 21.5Q467-790 480-790t21.5-8.5ZM200-200v-560 560Z',
+  edit_document: 'M560-80v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-300L683-80H560Zm300-263-37-37 37 37ZM620-140h38l121-122-18-19-19-18-122 121v38ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v120h-80v-80H520v-200H240v640h240v80H240Zm280-400Zm241 199-19-18 37 37-18-19Z',
+  menu_book: 'M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z',
+  rocket_launch: 'm226-559 78 33q14-28 29-54t33-52l-56-11-84 84Zm142 83 114 113q42-16 90-49t90-75q70-70 109.5-155.5T806-800q-72-5-158 34.5T492-656q-42 42-75 90t-49 90Zm155-121.5q0-33.5 23-56.5t57-23q34 0 57 23t23 56.5q0 33.5-23 56.5t-57 23q-34 0-57-23t-23-56.5ZM565-220l84-84-11-56q-26 18-52 32.5T532-299l33 79Zm313-653q19 121-23.5 235.5T708-419l20 99q4 20-2 39t-20 33L538-80l-84-197-171-171-197-84 167-168q14-14 33.5-20t39.5-2l99 20q104-104 218-147t235-24ZM157-321q35-35 85.5-35.5T328-322q35 35 34.5 85.5T327-151q-25 25-83.5 43T82-76q14-103 32-161.5t43-83.5Zm57 56q-10 10-20 36.5T180-175q27-4 53.5-13.5T270-208q12-12 13-29t-11-29q-12-12-29-11.5T214-265Z',
+  search: 'M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z',
+  send: 'M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z',
+  settings: 'm370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z',
+  videocam: 'M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z',
+};
+
+// Decorative by definition — every icon here sits beside a text label.
+function icon(name, cls = 'icon') {
+  const d = ICON_PATHS[name];
+  if (!d) throw new Error(`icon: unknown name "${name}"`);
+  return `<svg class="${cls}" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="${d}"/></svg>`;
+}
+
 // Ordered to follow the journey rather than the product's architecture:
 // start → build → send/measure → the two sibling products → data → admin →
 // reference. This array drives both the home page grid and the sidebar tree on
@@ -108,7 +133,7 @@ const SECTIONS = [
     dir: 'getting-started',
     label: 'Getting Started',
     blurb: 'Sign up, build your first report, and publish it — start to finish in about 90 minutes.',
-    icon: '🚀',
+    icon: 'rocket_launch',
     order: [
       'what-is-storyraise', 'creating-your-first-report', 'first-report-in-90-minutes',
       'what-goes-in-an-annual-report', 'understanding-templates',
@@ -119,7 +144,7 @@ const SECTIONS = [
     dir: 'building-reports',
     label: 'Building Reports',
     blurb: 'Writing, photos, colors, charts, and donor lists — and making it all work on a phone.',
-    icon: '📊',
+    icon: 'edit_document',
     order: [
       'using-templates', 'brand-kit', 'adding-sections', 'editing-content',
       'element-bar', 'fonts-and-colors', 'donor-lists',
@@ -134,7 +159,7 @@ const SECTIONS = [
     dir: 'distribution-and-engagement',
     label: 'Sharing & Analytics',
     blurb: 'Send by email, SMS, link, QR code, or PDF — then see which donors read it and who to call.',
-    icon: '📤',
+    icon: 'send',
     order: [
       'sharing-reports', 'pdf-export', 'embedding-in-wordpress', 'personalized-links',
       'proofing-personalized-reports', 'email-distribution',
@@ -147,7 +172,7 @@ const SECTIONS = [
     dir: 'storyraise-collect',
     label: 'Storyraise Collect',
     blurb: 'Gather stories, photos, and consent from the people you work with, using branded forms.',
-    icon: '📋',
+    icon: 'assignment',
     order: [
       'what-is-storyraise-collect', 'creating-a-collection', 'form-field-types',
       'multi-step-forms', 'sharing-your-form', 'what-respondents-experience',
@@ -158,7 +183,7 @@ const SECTIONS = [
     dir: 'storyraise-video',
     label: 'Storyraise Video',
     blurb: 'Record one thank-you and send a personalized version to every donor, by name.',
-    icon: '🎬',
+    icon: 'videocam',
     order: [
       'what-is-storyraise-video', 'creating-a-video-message', 'recording-your-video',
       'scenes-and-personalization', 'sending-and-recipients',
@@ -168,7 +193,7 @@ const SECTIONS = [
     dir: 'crm-and-data',
     label: 'Donor Data & CRM',
     blurb: 'Connect your CRM or upload a spreadsheet. Read-only everywhere except Salesforce, which can optionally write engagement back.',
-    icon: '🔌',
+    icon: 'database',
     order: [
       'connecting-a-crm', 'importing-constituent-data', 'mapping-fields', 'data-refreshes',
       'data-governance', 'troubleshooting-sync-issues', 'supported-integrations',
@@ -182,7 +207,7 @@ const SECTIONS = [
     dir: 'account-and-settings',
     label: 'Account & Settings',
     blurb: 'Your team and who can see donor data, sign-in security, your sending domain, and billing.',
-    icon: '⚙️',
+    icon: 'settings',
     order: [
       'setting-up-your-account', 'organization-settings', 'managing-your-team',
       'single-sign-on', 'profile-and-security', 'managing-your-subscription', 'email-subdomain-setup',
@@ -193,7 +218,7 @@ const SECTIONS = [
     dir: 'resources',
     label: 'Best Practices & Reference',
     blurb: 'What makes a report people finish, plus FAQs, accessibility, security, and notes for your IT team.',
-    icon: '💡',
+    icon: 'menu_book',
     order: [
       'best-practices', 'faq', 'accessibility', 'accessibility-conformance',
       'security-and-data', 'network-requirements',
@@ -431,7 +456,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 // having them cut back out of the rendered HTML with regexes.
 const NAV_SEARCH = `<!-- NAV-SEARCH -->
       <div class="search-wrap nav-search" id="searchWrap">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        ${icon('search', 'search-icon')}
         <input
           type="search"
           id="searchInput"
@@ -646,10 +671,8 @@ function homeSectionCard(section) {
     const n = articles.length;
     count = `${n} article${n === 1 ? '' : 's'}`;
   }
-  // aria-hidden: the emoji is decoration, and without it it lands in the
-  // card link's accessible name ("rocket Getting Started New to Storyraise…").
   return `      <a class="card" href="/docs/${section.dir}/">
-        <span class="icon" aria-hidden="true">${section.icon}</span>
+        ${icon(section.icon)}
         <h3>${escapeHtml(section.label)}</h3>
         <p>${escapeHtml(section.blurb)}</p>
         <span class="card-count">${count}</span>
@@ -761,7 +784,7 @@ function buildHome() {
 function buildSearchPage() {
   const body = `<h1>Search the knowledge base</h1>
 <div class="search-wrap search-page-search" id="searchWrap">
-  <span class="search-icon" aria-hidden="true">🔍</span>
+  ${icon('search', 'search-icon')}
   <input
     type="search"
     id="searchInput"
