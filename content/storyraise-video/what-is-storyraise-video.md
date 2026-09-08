@@ -2,20 +2,20 @@
 title: What is Storyraise Video?
 section: Storyraise Video
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # What is Storyraise Video?
 
 Storyraise Video turns one recording into hundreds of personal video messages. Record once, and every constituent receives a version addressed to them — their name on screen, a message in their inbox, and a viewing link that's theirs alone.
 
-<!-- TEAM REVIEW: Storyraise Video is pre-release (storyraise-video branch). Confirm availability and entry points before publishing. -->
+<!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Video should be described as generally available, and the exact dashboard entry point. -->
 
 ## How it works
 
 ### 1. Choose your message type
 
-Start by picking what kind of message you're sending: **Thank You!**, **Case for Giving**, **Make an Appeal**, **Invitation**, **Event Recap**, or **Just an Update**. Your choice shapes the suggested talking points and scene layouts.
+Start by picking what kind of message you're sending: **Thank you!**, **Case for giving**, **Invitation**, **Event recap**, or **Just an update**. Your choice shapes the suggested talking points and scene layouts.
 
 ### 2. Record your message
 

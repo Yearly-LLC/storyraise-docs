@@ -239,6 +239,14 @@
 <p>Steps reduce the intimidation of a long form and let you group related questions — &quot;About you,&quot; &quot;Your story,&quot; &quot;Photos&quot; — into digestible chunks.</p>
 <h2>Collecting one-to-many data</h2>
 <p>Sometimes one respondent needs to give you several sets of the same information — a program officer reporting on multiple funds, or a leader submitting several stories. Storyraise Collect supports this <strong>grouped</strong> structure: the respondent works through the repeating sections, and each is saved as its own response record, so your results table stays tidy and one row equals one item.</p>
+<p>You don&#39;t build this by hand. It&#39;s set up from the data you import: when a CSV has <strong>more than one row per recipient</strong>, Storyraise notices and opens <strong>Configure Import</strong> — <em>&quot;We detected multiple rows per recipient. Choose how to group them into form steps.&quot;</em></p>
+<p>Two choices there decide the shape of the form:</p>
+<ul>
+<li><strong>Recipient email column</strong> — which column identifies the person, so their rows are gathered into one form.</li>
+<li><strong>Section label for each step</strong> — which column names each step. Pick the column holding the fund, program, or story title and the respondent sees that as the step&#39;s heading. Choose <strong>None</strong> to leave the steps unlabelled.</li>
+</ul>
+<p>Then <strong>Import &amp; Build</strong> generates the form.</p>
+<div class="tip"><p><strong>Tip:</strong> Pick a section label column your respondent will recognize. &quot;Rivera Scholarship Fund&quot; as a step heading tells them exactly which set of answers they&#39;re on; &quot;Row 3&quot; doesn&#39;t.</p></div>
 <h2>Tips</h2>
 <ul>
 <li><strong>Order steps by effort.</strong> Put easy fields first; momentum carries people into the harder ones.</li>
@@ -268,6 +276,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="53dac7dc" data-engine-v="8a90bc08" defer></script>
+  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="b5a20779" data-engine-v="8a90bc08" defer></script>
 </body>
 </html>

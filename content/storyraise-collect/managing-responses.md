@@ -2,14 +2,12 @@
 title: Managing responses
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Managing responses
 
 Everything people submit lands in a spreadsheet-style table you can actually work in — search it, clean it up, connect responses to constituents, and export it.
-
-<!-- TEAM REVIEW: Storyraise Collect is pre-release. Confirm response-table and editor labels before publishing. -->
 
 ## The response table
 

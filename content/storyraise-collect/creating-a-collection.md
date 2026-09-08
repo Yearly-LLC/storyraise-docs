@@ -2,14 +2,14 @@
 title: Creating a collection
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Creating a collection
 
 A **collection** is a form plus everything it gathers. This guide takes you from an empty Collections view to a form ready to share.
 
-<!-- TEAM REVIEW: Storyraise Collect is pre-release (storyraise-collect branch). Confirm availability and entry points before publishing. -->
+<!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Collect should be described as generally available, and the exact dashboard entry point. -->
 
 ## Start a new collection
 

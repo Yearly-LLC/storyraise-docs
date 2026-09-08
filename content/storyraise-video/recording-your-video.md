@@ -2,14 +2,12 @@
 title: Recording your video
 section: Storyraise Video
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Recording your video
 
 The video is the human heart of your message. Storyraise makes recording it painless — and handles transcription and captions for you afterward.
-
-<!-- TEAM REVIEW: Storyraise Video is pre-release. Confirm recording UI labels before publishing. -->
 
 ## Record or upload
 

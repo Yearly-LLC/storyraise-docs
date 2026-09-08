@@ -2,14 +2,14 @@
 title: Creating a video message
 section: Storyraise Video
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Creating a video message
 
 A Storyraise Video message is one short recording, automatically personalized into a unique video for every recipient. This page is the end-to-end overview; the pages that follow go deeper on each step.
 
-<!-- TEAM REVIEW: Storyraise Video is pre-release (storyraise-video branch). Confirm availability and entry points before publishing. -->
+<!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Video should be described as generally available, and the exact dashboard entry point. -->
 
 ## The flow at a glance
 
@@ -23,12 +23,11 @@ A Storyraise Video message is one short recording, automatically personalized in
 
 Start with **What kind of message are you sending?** and pick the one that fits:
 
-- **Thank You!**
-- **Case for Giving**
-- **Make an Appeal**
+- **Thank you!**
+- **Case for giving**
 - **Invitation**
-- **Event Recap**
-- **Just an Update**
+- **Event recap**
+- **Just an update**
 
 Your choice tailors the suggested talking points and the starting scene layouts, so you're never staring at a blank screen.
 

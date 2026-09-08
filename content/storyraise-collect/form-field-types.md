@@ -2,14 +2,12 @@
 title: Form field types
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Form field types
 
 Storyraise Collect gives you a full toolkit of fields, so your form can ask for exactly what you need — a quick quote, a long story, a photo, a date, a choice from a list.
-
-<!-- TEAM REVIEW: Storyraise Collect is pre-release. Confirm the field-type list and option labels before publishing. -->
 
 ## Question fields
 

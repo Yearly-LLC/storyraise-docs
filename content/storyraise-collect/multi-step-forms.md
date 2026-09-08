@@ -2,14 +2,12 @@
 title: Multi-step forms
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Multi-step forms
 
 A long form on one page feels like a chore. Splitting it into steps makes it feel quick — and lets you collect repeating, one-to-many data cleanly.
-
-<!-- TEAM REVIEW: Storyraise Collect is pre-release. Confirm multi-step / grouping UI labels before publishing. -->
 
 ## Breaking a form into steps
 
@@ -21,7 +19,16 @@ Steps reduce the intimidation of a long form and let you group related questions
 
 Sometimes one respondent needs to give you several sets of the same information — a program officer reporting on multiple funds, or a leader submitting several stories. Storyraise Collect supports this **grouped** structure: the respondent works through the repeating sections, and each is saved as its own response record, so your results table stays tidy and one row equals one item.
 
-<!-- TEAM REVIEW: confirm how grouped/one-to-many forms are configured (auto-detected from an uploaded CSV vs. set up manually) so we can document the exact setup steps. -->
+You don't build this by hand. It's set up from the data you import: when a CSV has **more than one row per recipient**, Storyraise notices and opens **Configure Import** — *"We detected multiple rows per recipient. Choose how to group them into form steps."*
+
+Two choices there decide the shape of the form:
+
+- **Recipient email column** — which column identifies the person, so their rows are gathered into one form.
+- **Section label for each step** — which column names each step. Pick the column holding the fund, program, or story title and the respondent sees that as the step's heading. Choose **None** to leave the steps unlabelled.
+
+Then **Import & Build** generates the form.
+
+> **Tip:** Pick a section label column your respondent will recognize. "Rivera Scholarship Fund" as a step heading tells them exactly which set of answers they're on; "Row 3" doesn't.
 
 ## Tips
 

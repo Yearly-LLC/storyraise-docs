@@ -2,14 +2,14 @@
 title: What is Storyraise Collect?
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # What is Storyraise Collect?
 
 Storyraise Collect gathers the raw material your stories are made of. Build a form, share the link, and collect stories, thank-yous, photos, and data from your community — then put what you collect to work in your reports and videos.
 
-<!-- TEAM REVIEW: Storyraise Collect is pre-release (storyraise-collect branch). Confirm availability and entry points before publishing. -->
+<!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Collect should be described as generally available, and the exact dashboard entry point. -->
 
 ## Start a collection
 

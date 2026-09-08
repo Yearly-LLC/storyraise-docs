@@ -9,11 +9,15 @@ last_reviewed: 2026-09-08
 
 Once your form is built, share its link and the responses start flowing in. This page covers getting the form to people and what they experience filling it out.
 
-<!-- TEAM REVIEW: Storyraise Collect is pre-release. Confirm how the form link is obtained and shared from the editor. -->
+## Two kinds of link
 
-## Share the link
+Open your form and you're offered two, for two different jobs.
 
-Each collection has its own form link you can share anywhere — email, your website, social media, a QR code on printed materials. Respondents don't need a Storyraise account; they just open the link and fill it out.
+**Standard Link (non-personalized)** is the plain form link. Share it anywhere — email, your website, social media, a QR code on printed materials. **Copy form link** puts it on your clipboard, and **View form** opens it so you can check it the way a respondent will. Respondents don't need a Storyraise account.
+
+**Dynamic Link** is for a mail merge, where each person should get a link that already knows who they are. Name the platform you're sending from and Storyraise builds the link with that platform's own email merge field already in it, ready to paste into your campaign.
+
+> **Note:** Check the merge field before you send. The link carries the recipient's email between `?for=` and `/`, and that's the piece your platform substitutes. If it's the wrong variable, everyone gets the same pre-filled form.
 
 ## What respondents experience
 

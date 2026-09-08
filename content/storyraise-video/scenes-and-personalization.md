@@ -2,14 +2,12 @@
 title: Scenes and personalization
 section: Storyraise Video
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Scenes and personalization
 
 Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs.
-
-<!-- TEAM REVIEW: Storyraise Video is pre-release. Confirm scene-editor labels before publishing. -->
 
 ## What scenes are
 
@@ -17,7 +15,11 @@ When you finish recording, Storyraise automatically structures your video into a
 
 ## Editing a scene
 
-Select any scene to refine it: change its text, adjust its styling, or restyle the layout. You can add new scenes, and **Insert icon** drops in a visual accent. Want a fresh start on the overlay design? **Remake All Scenes** rebuilds them.
+Select a scene from **Select a Scene to Edit** to refine it: change its text, adjust its styling, or restyle the layout. **Insert icon** drops in a visual accent.
+
+To add one, play the video to the moment you want it and click **Add scene at** — the button carries the current timestamp, so the new scene lands where you're paused rather than at the end. Generating it takes a moment.
+
+Want a fresh start on the overlay design? **Remake all scenes** rebuilds them from your recording.
 
 ## Personalizing with merge tags
 

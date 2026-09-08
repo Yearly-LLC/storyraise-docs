@@ -2,14 +2,12 @@
 title: Sending and recipients
 section: Storyraise Video
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-09-08
 ---
 
 # Sending and recipients
 
 Your video is recorded and your scenes are personalized — now choose who receives it and send.
-
-<!-- TEAM REVIEW: Storyraise Video is pre-release. Confirm recipient/send UI labels before publishing. -->
 
 ## Add recipients
 
