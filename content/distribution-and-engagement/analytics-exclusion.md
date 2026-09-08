@@ -1,6 +1,6 @@
 ---
 title: Analytics exclusion
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
 keywords: exclude, exclusion, internal views, team views, exclude email, exclude domain, board, partner, for parameter
 last_reviewed: 2026-09-04

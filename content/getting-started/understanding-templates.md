@@ -1,5 +1,6 @@
 ---
 title: Understanding templates
+keywords: annual report, impact report, appeal, campaign, capital campaign, year end, donor update
 section: Getting Started
 status: draft
 last_reviewed: 2026-09-08

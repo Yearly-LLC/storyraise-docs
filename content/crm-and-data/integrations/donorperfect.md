@@ -1,6 +1,6 @@
 ---
 title: DonorPerfect
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: donorperfect, api key, donors, connections
 last_reviewed: 2026-06-12

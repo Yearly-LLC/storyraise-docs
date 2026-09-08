@@ -20,6 +20,17 @@ const ROOT = path.join(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT, 'content');
 const OUT_DIR = path.join(ROOT, 'docs');
 
+// Absolute origin for canonical URLs, Open Graph and JSON-LD. Social cards and
+// <link rel="canonical"> both require absolute URLs, so relative paths can't be
+// used. Matches CNAME.
+const SITE_URL = 'https://docs.storyraise.com';
+
+// Fallback description for pages whose first paragraph yields nothing usable.
+const SITE_DESCRIPTION =
+  'Step-by-step guides for nonprofit teams using Storyraise — build on-brand ' +
+  'impact reports, connect your CRM, distribute by email, SMS, and embed, and ' +
+  'measure who engaged.';
+
 // Cache-bust /assets/site.css with a short content hash so a deploy's CSS
 // changes take effect immediately. The <link> is otherwise unversioned, and
 // GitHub Pages / the CDN cache it aggressively — which can serve a stale
@@ -80,72 +91,73 @@ function stampAssets(html) {
 // template is read, so anything stamped at read time would miss it.
 const TEMPLATE = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8');
 
+// Ordered to follow the journey rather than the product's architecture:
+// start → build → send/measure → the two sibling products → data → admin →
+// reference. This array drives both the home page grid and the sidebar tree on
+// every generated page, so the two can't drift.
+//
+// TEAM REVIEW: Storyraise Collect now sits in the top row of the home grid.
+// adding-sections.md states that the Repeater block "needs a Precision plan
+// with Storyraise Collect active", which implies Collect is plan-gated — but no
+// page says so directly. If Collect is not available on every plan, this card
+// should carry a plan badge, otherwise the grid promotes something a large
+// share of readers can't use. Confirm and either add the badge or state
+// availability on what-is-storyraise-collect.md.
 const SECTIONS = [
   {
     dir: 'getting-started',
     label: 'Getting Started',
-    blurb: 'New to Storyraise? Start here.',
+    blurb: 'Sign up, build your first report, and publish it — start to finish in about 90 minutes.',
     icon: '🚀',
     order: [
-      'what-is-storyraise', 'creating-your-first-report', 'understanding-templates',
+      'what-is-storyraise', 'creating-your-first-report', 'first-report-in-90-minutes',
+      'what-goes-in-an-annual-report', 'understanding-templates',
       'publishing-and-sharing', 'report-folders', 'user-roles-and-permissions', 'common-terminology',
-    ],
-  },
-  {
-    dir: 'crm-and-data',
-    label: 'CRM & Data Connections',
-    blurb: 'Bring your constituent data into Storyraise.',
-    icon: '🔌',
-    order: [
-      'connecting-a-crm', 'importing-constituent-data', 'mapping-fields', 'data-refreshes',
-      'troubleshooting-sync-issues', 'supported-integrations',
-      'connections-overview', 'syncing-data-to-collections', 'managing-connections',
-      'blackbaud-raisers-edge-nxt', 'bloomerang', 'salesforce', 'virtuous', 'civicrm', 'slate',
-      'ellucian', 'little-green-light', 'donorperfect', 'neon-crm', 'funraise',
-      'givebutter', 'donorbox', 'fundraise-up', 'mailchimp',
     ],
   },
   {
     dir: 'building-reports',
     label: 'Building Reports',
-    blurb: 'Everything about building and styling reports.',
+    blurb: 'Writing, photos, colors, charts, and donor lists — and making it all work on a phone.',
     icon: '📊',
     order: [
-      'adding-sections', 'editing-content', 'element-bar', 'review-comments',
-      'using-templates', 'brand-kit', 'fonts-and-colors',
+      'using-templates', 'brand-kit', 'adding-sections', 'editing-content',
+      'element-bar', 'fonts-and-colors', 'donor-lists',
       'images-and-videos', 'creating-infographics', 'build-a-line-chart',
       'adding-a-poll', 'embedding-a-collect-form',
       'image-sizes-and-dimensions', 'ai-content-generation',
-      'reordering-sections', 'navigation-options', 'mobile-optimization', 'accessibility',
+      'reordering-sections', 'navigation-options', 'mobile-optimization',
+      'review-comments', 'accessibility',
     ],
   },
   {
     dir: 'distribution-and-engagement',
-    label: 'Distribution & Engagement',
-    blurb: 'Share your published reports and see who engages.',
+    label: 'Sharing & Analytics',
+    blurb: 'Send by email, SMS, link, QR code, or PDF — then see which donors read it and who to call.',
     icon: '📤',
     order: [
-      'sharing-reports', 'embedding-in-wordpress', 'personalized-links', 'email-distribution',
+      'sharing-reports', 'pdf-export', 'embedding-in-wordpress', 'personalized-links',
+      'proofing-personalized-reports', 'email-distribution',
       'sms-distribution', 'analytics-overview', 'tracking-engagement', 'analytics-exclusion',
-      'understanding-report-metrics', 'acting-on-analytics', 'analytics-for-older-reports',
-      'video-analytics',
+      'understanding-report-metrics', 'acting-on-analytics', 'reporting-to-leadership',
+      'analytics-for-older-reports', 'video-analytics',
     ],
   },
   {
-    dir: 'account-and-settings',
-    label: 'Account & Settings',
-    blurb: 'Set up your account, team, billing, and sending domain.',
-    icon: '⚙️',
+    dir: 'storyraise-collect',
+    label: 'Storyraise Collect',
+    blurb: 'Gather stories, photos, and consent from the people you work with, using branded forms.',
+    icon: '📋',
     order: [
-      'setting-up-your-account', 'organization-settings', 'managing-your-team',
-      'single-sign-on', 'profile-and-security', 'managing-your-subscription', 'email-subdomain-setup',
-      'custom-sending-domain',
+      'what-is-storyraise-collect', 'creating-a-collection', 'form-field-types',
+      'multi-step-forms', 'sharing-your-form', 'what-respondents-experience',
+      'consent-and-permissions', 'managing-responses', 'using-responses-in-a-report',
     ],
   },
   {
     dir: 'storyraise-video',
     label: 'Storyraise Video',
-    blurb: 'Personalized video messages, recorded once and sent to everyone.',
+    blurb: 'Record one thank-you and send a personalized version to every donor, by name.',
     icon: '🎬',
     order: [
       'what-is-storyraise-video', 'creating-a-video-message', 'recording-your-video',
@@ -153,21 +165,39 @@ const SECTIONS = [
     ],
   },
   {
-    dir: 'storyraise-collect',
-    label: 'Storyraise Collect',
-    blurb: 'Gather stories and data from your community with forms.',
-    icon: '📋',
+    dir: 'crm-and-data',
+    label: 'Donor Data & CRM',
+    blurb: 'Connect your CRM or upload a spreadsheet. Read-only everywhere except Salesforce, which can optionally write engagement back.',
+    icon: '🔌',
     order: [
-      'what-is-storyraise-collect', 'creating-a-collection', 'form-field-types',
-      'multi-step-forms', 'sharing-your-form', 'managing-responses',
+      'connecting-a-crm', 'importing-constituent-data', 'mapping-fields', 'data-refreshes',
+      'data-governance', 'troubleshooting-sync-issues', 'supported-integrations',
+      'connections-overview', 'syncing-data-to-collections', 'managing-connections',
+      'blackbaud-raisers-edge-nxt', 'bloomerang', 'salesforce', 'virtuous', 'civicrm', 'slate',
+      'ellucian', 'little-green-light', 'donorperfect', 'neon-crm', 'funraise',
+      'givebutter', 'donorbox', 'fundraise-up', 'mailchimp',
+    ],
+  },
+  {
+    dir: 'account-and-settings',
+    label: 'Account & Settings',
+    blurb: 'Your team and who can see donor data, sign-in security, your sending domain, and billing.',
+    icon: '⚙️',
+    order: [
+      'setting-up-your-account', 'organization-settings', 'managing-your-team',
+      'single-sign-on', 'profile-and-security', 'managing-your-subscription', 'email-subdomain-setup',
+      'custom-sending-domain', 'email-compliance',
     ],
   },
   {
     dir: 'resources',
-    label: 'Resources',
-    blurb: 'Guides and answers that span the whole platform.',
+    label: 'Best Practices & Reference',
+    blurb: 'What makes a report people finish, plus FAQs, accessibility, security, and notes for your IT team.',
     icon: '💡',
-    order: ['best-practices', 'accessibility', 'network-requirements', 'faq'],
+    order: [
+      'best-practices', 'faq', 'accessibility', 'accessibility-conformance',
+      'security-and-data', 'network-requirements',
+    ],
   },
 ];
 
@@ -297,11 +327,86 @@ function fill(html, name, value) {
 // The whole <head>, owned here rather than duplicated between template.html
 // and the hand-maintained index.html (where it used to be kept in sync by
 // hand, inline theme script and all). `title` is the finished <title> text.
-function headHtml({ title }) {
+// `url` is the site-relative path of the page being written ('/' for home);
+// `description` is the page's own summary, falling back to the site blurb.
+// `siteName` marks the home page, which carries the site-level JSON-LD.
+function headHtml({ title, description, url = '/', isHome = false }) {
+  const desc = (description || SITE_DESCRIPTION).trim();
+  const canonical = `${SITE_URL}${url}`;
+  const ogImage = `${SITE_URL}/assets/og-card.png`;
+
+  // Home carries Organization + WebSite (with the sitelinks SearchAction);
+  // article and section pages carry a lighter WebPage node pointing back at it.
+  const jsonLd = isHome
+    ? {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': 'https://storyraise.com/#org',
+            name: 'Storyraise',
+            url: 'https://storyraise.com',
+            logo: `${SITE_URL}/assets/logo-light.svg`,
+          },
+          {
+            '@type': 'WebSite',
+            '@id': `${SITE_URL}/#site`,
+            name: 'Storyraise Knowledge Base',
+            url: `${SITE_URL}/`,
+            publisher: { '@id': 'https://storyraise.com/#org' },
+            inLanguage: 'en-US',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate: `${SITE_URL}/search/?q={search_term_string}`,
+              },
+              'query-input': 'required name=search_term_string',
+            },
+          },
+        ],
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: title,
+        description: desc,
+        url: canonical,
+        inLanguage: 'en-US',
+        isPartOf: { '@id': `${SITE_URL}/#site` },
+        publisher: { '@id': 'https://storyraise.com/#org' },
+      };
+
   return `  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(desc)}" />
+  <link rel="canonical" href="${escapeHtml(canonical)}" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#16131c" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Storyraise Knowledge Base" />
+  <meta property="og:title" content="${escapeHtml(title)}" />
+  <meta property="og:description" content="${escapeHtml(desc)}" />
+  <meta property="og:url" content="${escapeHtml(canonical)}" />
+  <meta property="og:image" content="${escapeHtml(ogImage)}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Storyraise Knowledge Base" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escapeHtml(title)}" />
+  <meta name="twitter:description" content="${escapeHtml(desc)}" />
+  <meta name="twitter:image" content="${escapeHtml(ogImage)}" />
+
+  <script type="application/ld+json">
+${JSON.stringify(jsonLd, null, 2)}
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css" />
   <script>
@@ -326,10 +431,12 @@ function headHtml({ title }) {
 // having them cut back out of the rendered HTML with regexes.
 const NAV_SEARCH = `<!-- NAV-SEARCH -->
       <div class="search-wrap nav-search" id="searchWrap">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon" aria-hidden="true">🔍</span>
         <input
-          type="text"
+          type="search"
           id="searchInput"
+          role="combobox"
+          aria-haspopup="listbox"
           placeholder="Search docs…"
           autocomplete="off"
           aria-label="Search the knowledge base"
@@ -361,6 +468,8 @@ function scriptsHtml({ controller = '/assets/search.js', eager = false } = {}) {
 
 function renderPage({
   title,
+  description,
+  url = '/',
   breadcrumbHtml,
   bodyHtml,
   sidenavHtml,
@@ -368,7 +477,7 @@ function renderPage({
   searchEager = false,
 }) {
   let html = TEMPLATE;
-  html = fill(html, 'HEAD', headHtml({ title: `${title} — Storyraise` }));
+  html = fill(html, 'HEAD', headHtml({ title: `${title} — Storyraise`, description, url }));
   html = fill(html, 'NAV_SEARCH', sidenavHtml ? NAV_SEARCH : '');
   html = fill(html, 'SIDENAV_BLOCK', sidenavHtml ? sidenavBlock(sidenavHtml) : '');
   html = fill(html, 'DOCNAV_TOGGLE', sidenavHtml ? DOCNAV_TOGGLE : '');
@@ -470,6 +579,8 @@ function prepareArticle(relDir, file, section) {
 function writeArticlePage(article, sidenavHtml) {
   writePage(article.outPath, renderPage({
     title: article.title,
+    description: article.description,
+    url: article.url,
     breadcrumbHtml: article.breadcrumbHtml,
     bodyHtml: article.bodyHtml,
     sidenavHtml,
@@ -492,6 +603,9 @@ function writeLanding(section, sidenavHtml) {
 
   let body = `<h1>${escapeHtml(section.label)}</h1>\n`;
   body += `<p class="lead">${escapeHtml(section.blurb)}</p>\n`;
+  // Without this the card <h3>s hang straight off the <h1> with no <h2>
+  // between them, which reads as a broken outline to a screen reader.
+  body += `<h2>${escapeHtml(integrations.length ? 'Guides' : 'Articles')}</h2>\n`;
   body += `<div class="cards">\n${main.map(cardHtml).join('\n')}\n    </div>\n`;
 
   if (integrations.length) {
@@ -505,7 +619,14 @@ function writeLanding(section, sidenavHtml) {
     escapeHtml(section.label),
   ].join('\n    ');
 
-  writePage(path.join(OUT_DIR, section.dir, 'index.html'), renderPage({ title: section.label, breadcrumbHtml, bodyHtml: body, sidenavHtml }));
+  writePage(path.join(OUT_DIR, section.dir, 'index.html'), renderPage({
+    title: section.label,
+    description: section.blurb,
+    url: `/docs/${section.dir}/`,
+    breadcrumbHtml,
+    bodyHtml: body,
+    sidenavHtml,
+  }));
 }
 
 /* ── home page (generated regions) ──────────────────────────────────── */
@@ -525,8 +646,10 @@ function homeSectionCard(section) {
     const n = articles.length;
     count = `${n} article${n === 1 ? '' : 's'}`;
   }
+  // aria-hidden: the emoji is decoration, and without it it lands in the
+  // card link's accessible name ("rocket Getting Started New to Storyraise…").
   return `      <a class="card" href="/docs/${section.dir}/">
-        <span class="icon">${section.icon}</span>
+        <span class="icon" aria-hidden="true">${section.icon}</span>
         <h3>${escapeHtml(section.label)}</h3>
         <p>${escapeHtml(section.blurb)}</p>
         <span class="card-count">${count}</span>
@@ -536,11 +659,70 @@ function homeSectionCard(section) {
 // A chip for every integration guide — the home "Connect your CRM" row is the
 // catch-all entry point for all supported platforms. Order follows the section
 // reading order; a new integration guide appears here automatically.
+// Integrations were previously one flat row of equally weighted chips under
+// "any supported platform", which reads as a promise that every system is
+// equally supported. They are grouped by what the system is for, and Salesforce
+// carries a badge because it is the one integration that can write back — a
+// fact evaluators need before they plan a project, not on page three.
+const CRM_GROUPS = [
+  {
+    label: 'System of record',
+    slugs: [
+      'blackbaud-raisers-edge-nxt', 'bloomerang', 'salesforce', 'virtuous',
+      'donorperfect', 'neon-crm', 'little-green-light', 'civicrm',
+    ],
+  },
+  { label: 'Higher education', slugs: ['slate', 'ellucian'] },
+  { label: 'Giving platforms', slugs: ['givebutter', 'donorbox', 'fundraise-up', 'funraise'] },
+  { label: 'Email', slugs: ['mailchimp'] },
+];
+
+// Only claims we can source from the integration pages themselves.
+const CRM_NOTES = {
+  salesforce: { label: 'Read + write-back', title: 'Reads contacts and gifts; can optionally write engagement back to Salesforce' },
+  civicrm: { label: 'Self-hosted', title: 'Self-hosted CiviCRM — your server must be reachable by Storyraise' },
+  slate: { label: 'Manual mapping', title: 'Query columns are mapped by hand during setup' },
+};
+
 function homeCrmChips(section) {
-  return section.articles
-    .filter(a => a.isIntegration)
-    .map(a => `      <a class="crm-chip" href="${a.url}">${escapeHtml(a.title)}</a>`)
-    .join('\n');
+  const bySlug = new Map(
+    section.articles.filter(a => a.isIntegration).map(a => [a.slug, a])
+  );
+  const out = [];
+  const seen = new Set();
+
+  for (const group of CRM_GROUPS) {
+    const chips = group.slugs
+      .map(slug => {
+        const a = bySlug.get(slug);
+        if (!a) return null;
+        seen.add(slug);
+        const note = CRM_NOTES[slug];
+        const badge = note
+          ? `<span class="chip-note" title="${escapeHtml(note.title)}">${escapeHtml(note.label)}</span>`
+          : '';
+        return `        <a class="crm-chip" href="${a.url}">${escapeHtml(a.title)}${badge}</a>`;
+      })
+      .filter(Boolean);
+    if (!chips.length) continue;
+    out.push(`      <div class="crm-group">`);
+    out.push(`        <h3 class="crm-group-label">${escapeHtml(group.label)}</h3>`);
+    out.push(...chips);
+    out.push(`      </div>`);
+  }
+
+  // Anything added to content/ but not yet placed in a group still appears,
+  // rather than silently vanishing from the home page.
+  const ungrouped = [...bySlug.values()].filter(a => !seen.has(a.slug));
+  if (ungrouped.length) {
+    out.push(`      <div class="crm-group">`);
+    out.push(`        <h3 class="crm-group-label">More</h3>`);
+    for (const a of ungrouped) {
+      out.push(`        <a class="crm-chip" href="${a.url}">${escapeHtml(a.title)}</a>`);
+    }
+    out.push(`      </div>`);
+  }
+  return out.join('\n');
 }
 
 // Rewrite the two AUTO regions of the hand-maintained index.html in place.
@@ -557,7 +739,7 @@ function buildHome() {
   let html = fs.readFileSync(homePath, 'utf8');
 
   // The home page keeps its own <title> — it is the root, not "X — Storyraise".
-  html = replaceRegion(html, 'HEAD', headHtml({ title: 'Storyraise Knowledge Base' }));
+  html = replaceRegion(html, 'HEAD', headHtml({ title: 'Storyraise Knowledge Base', url: '/', isHome: true }));
   html = replaceRegion(html, 'SCRIPTS', scriptsHtml());
   html = replaceRegion(html, 'SECTION-GRID', SECTIONS.map(homeSectionCard).join('\n'));
 
@@ -579,9 +761,9 @@ function buildHome() {
 function buildSearchPage() {
   const body = `<h1>Search the knowledge base</h1>
 <div class="search-wrap search-page-search" id="searchWrap">
-  <span class="search-icon">🔍</span>
+  <span class="search-icon" aria-hidden="true">🔍</span>
   <input
-    type="text"
+    type="search"
     id="searchInput"
     placeholder="Search articles, guides, and answers…"
     autocomplete="off"
@@ -599,6 +781,8 @@ function buildSearchPage() {
 
   const html = renderPage({
     title: 'Search',
+    description: 'Search every Storyraise guide, tutorial, and answer.',
+    url: '/search/',
     breadcrumbHtml,
     bodyHtml: body,
     sidenavHtml: '',

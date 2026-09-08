@@ -1,6 +1,6 @@
 ---
 title: Network requirements and troubleshooting
-section: Resources
+section: Best Practices & Reference
 status: draft
 last_reviewed: 2026-06-18
 keywords: firewall, allowlist, whitelist, IT, network, blocked, not loading, images missing, fonts, logged out, proxy, VPN, school, corporate

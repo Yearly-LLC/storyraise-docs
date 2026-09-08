@@ -4,9 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Search — Storyraise</title>
+  <meta name="description" content="Search every Storyraise guide, tutorial, and answer." />
+  <link rel="canonical" href="https://docs.storyraise.com/search/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#16131c" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Storyraise Knowledge Base" />
+  <meta property="og:title" content="Search — Storyraise" />
+  <meta property="og:description" content="Search every Storyraise guide, tutorial, and answer." />
+  <meta property="og:url" content="https://docs.storyraise.com/search/" />
+  <meta property="og:image" content="https://docs.storyraise.com/assets/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Storyraise Knowledge Base" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Search — Storyraise" />
+  <meta name="twitter:description" content="Search every Storyraise guide, tutorial, and answer." />
+  <meta name="twitter:image" content="https://docs.storyraise.com/assets/og-card.png" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Search — Storyraise",
+  "description": "Search every Storyraise guide, tutorial, and answer.",
+  "url": "https://docs.storyraise.com/search/",
+  "inLanguage": "en-US",
+  "isPartOf": {
+    "@id": "https://docs.storyraise.com/#site"
+  },
+  "publisher": {
+    "@id": "https://storyraise.com/#org"
+  }
+}
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
+  <link rel="stylesheet" href="/assets/site.css?v=b2031f37" />
   <script>
     // Apply the theme before first paint: stored choice, else system setting.
     (function () {
@@ -24,6 +63,8 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
 
   <!-- NAV -->
   <nav>
@@ -31,16 +72,16 @@
       <a href="/" class="logo">
         <img
           class="logo-light"
-          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
-          alt="Storyraise"
+          src="/assets/logo-light.svg"
+          alt="Storyraise Knowledge Base — home"
         />
-        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="" />
       </a>
       <span>Knowledge Base</span>
     </div>
     <div class="nav-right">
       
-      <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
+      <input type="checkbox" id="navmenu" class="navmenu-cb" />
       <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </label>
@@ -59,13 +100,13 @@
 
   <!-- LAYOUT: sidebar tree + main column -->
   <div class="layout">
-    <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
+    <input type="checkbox" id="navtoggle" class="navtoggle-cb" />
 
     <!-- SIDEBAR -->
     
 
     <!-- MAIN -->
-    <div class="doc-main">
+    <main class="doc-main" id="main">
       
 
       <!-- BREADCRUMB -->
@@ -79,9 +120,9 @@
       <div class="content">
         <h1>Search the knowledge base</h1>
 <div class="search-wrap search-page-search" id="searchWrap">
-  <span class="search-icon">🔍</span>
+  <span class="search-icon" aria-hidden="true">🔍</span>
   <input
-    type="text"
+    type="search"
     id="searchInput"
     placeholder="Search articles, guides, and answers…"
     autocomplete="off"
@@ -95,18 +136,25 @@
 
         <p style="font-size:0.85rem; color:var(--text-faint);">Need help? <a href="https://storyraise.com/support">Contact our support team</a>.</p>
       </div>
-    </div>
+    </main>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
-    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
-    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
-    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+    <div class="footer-links">
+      <a href="https://storyraise.com">storyraise.com</a>
+      <a href="https://storyraise.com/support">Support</a>
+      <a href="/docs/resources/security-and-data/">Security &amp; data</a>
+      <a href="/docs/resources/accessibility-conformance/">Accessibility</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://storyraise.com/privacy-policy">Privacy Policy</a>
+      <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-meta">&copy; 2026 Storyraise Technology Inc.</div>
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search-page.js" data-eager="true" data-index-v="b5a20779" data-engine-v="8a90bc08" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search-page.js" data-eager="true" data-index-v="849ab5a9" data-engine-v="676be165" defer></script>
 </body>
 </html>

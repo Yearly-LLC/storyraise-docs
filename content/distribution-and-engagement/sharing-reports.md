@@ -1,8 +1,8 @@
 ---
 title: Sharing reports
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
-keywords: embed, iframe, qr, copy link, social
+keywords: embed, iframe, qr, copy link, social, pdf, print, board meeting, board packet, download
 last_reviewed: 2026-06-12
 ---
 

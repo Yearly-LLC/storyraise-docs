@@ -1,6 +1,6 @@
 ---
 title: Mapping fields
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: stub
 last_reviewed: 2026-06-12
 ---

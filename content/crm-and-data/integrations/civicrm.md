@@ -1,6 +1,6 @@
 ---
 title: CiviCRM
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: civicrm, apiv4, site key, api key, contacts, connections
 last_reviewed: 2026-06-12

@@ -1,6 +1,6 @@
 ---
 title: Connecting a CRM
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 last_reviewed: 2026-09-04
 ---
@@ -13,7 +13,9 @@ Connecting your CRM brings your constituents — donors, members, volunteers —
 
 ## What a connection does
 
-When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization's constituent list. Storyraise reads from your CRM — it never writes back or modifies your CRM data.
+When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization's constituent list.
+
+Every integration is **read-only by default** — Storyraise reads from your CRM and does not modify your CRM data. The one exception is [Salesforce](integrations/salesforce.md), which can optionally write report engagement back to your Contacts. Write-back is off until you turn it on and choose what it creates; see [Salesforce](integrations/salesforce.md) for exactly what it writes.
 
 ## Before you start
 

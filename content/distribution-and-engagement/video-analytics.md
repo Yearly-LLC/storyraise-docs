@@ -1,6 +1,6 @@
 ---
 title: Video analytics
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: stub
 last_reviewed: 2026-09-04
 ---

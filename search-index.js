@@ -10,7 +10,12 @@ const SEARCH_INDEX = [
       "what",
       "storyraise",
       "getting",
-      "started"
+      "started",
+      "annual report",
+      "impact report",
+      "donor report",
+      "what is storyraise",
+      "overview"
     ],
     "body": "What is Storyraise? Storyraise helps nonprofits turn their impact into beautiful, interactive web reports — annual reports, impact reports, donor updates, event recaps, and more — without a designer or developer. Instead of mailing a static PDF or burying your story in a newsletter, you build a report once in Storyraise and share it as a live web page that works on any device. When you need a printed or attachable version, you can also produce a PDF. What you can do with Storyraise Build reports visually. Assemble your report from ready-made sections — stories, stats, galleries, testimonials, donor lists, and more — and edit everything right on the page. Start from a template. Choose from professionally designed templates for the most common nonprofit communications, like Annual Reports, Impact Reports, and Capital Campaigns. Stay on brand. Save your organization's logos, colors, and fonts in a brand kit and apply them across every report. Publish to the web. Every published report gets its own link you can share anywhere — email, social media, your website, or a QR code. Connect your donor data. Sync constituents from your CRM or a CSV file to personalize reports and understand who's reading them. See what's working. Analytics shows you how many people opened your report and which constituents engaged with it. How a report comes together Create a report from a template or start from a blank canvas. Build it section by section — add your stories, photos, videos, and numbers. Brand it with your organization's colors, fonts, and logos. Publish it to get a shareable link on the web. Share the link with donors, supporters, and stakeholders. Learn from insights about who opened and engaged with your report. Where everything lives The dashboard ( app.storyraise.com ) is home base: your reports, folders, constituents, analytics, and organization settings. The builder opens when you edit a report. It's where you add sections and edit content. Your published reports live at your organization's own web address, one link per report. Ready to build? Start with Creating your first report ."
   },
@@ -24,9 +29,68 @@ const SEARCH_INDEX = [
       "first",
       "report",
       "getting",
-      "started"
+      "started",
+      "annual report",
+      "impact report",
+      "appeal",
+      "newsletter",
+      "how long",
+      "time",
+      "deadline",
+      "checklist",
+      "get started",
+      "first report"
     ],
     "body": "Creating your first report You can have a working draft of your first report in just a few minutes. This guide walks you from an empty dashboard to a report you're ready to fill in. Start a new report Sign in at app.storyraise.com . From the dashboard, choose Create your first report (or the new report button if you already have reports). Pick how you want to start: Report from template — browse professionally designed templates and start with a full report structure already in place. Recommended for your first report. Blank report — start from an empty canvas and add every section yourself. If you start from a blank report, enter a title when prompted. You can change it later. Your new report opens in the builder. Get oriented in the builder The canvas in the middle shows your report exactly as readers will see it. Click any text or image to edit it in place. The sections panel lists every section (chapter) in your report. Use it to jump between sections, reorder them, or add new ones. The Add new section button lets you insert ready-made blocks — stories, stats, galleries, testimonials, and more. See Adding sections . The Publish button in the top bar takes your report live when you're ready. A suggested first-30-minutes path Replace the placeholder text. Click into headings and paragraphs and type over the sample content. Swap in your photos. Click an image and upload your own. See Images and videos . Apply your brand. Set up your brand kit with your logo, colors, and fonts so every section matches your organization. See Brand kit . Add one more section. Try adding a Stats or Testimonial section to get a feel for how sections work. Preview on mobile. Use the mobile preview to check how your report reads on a phone. See Mobile optimization . Don't aim for perfect — aim for a rough version of the whole report first, then refine. Saving Your work is saved to the cloud as you build. You can close the builder and pick up where you left off from the dashboard. Organizing reports Back on the dashboard, you can create folders to organize reports — for example by year or by program. Each report card shows its status ( Draft or Published ) and, once published, how many times it's been opened. Next steps Understanding templates Publishing and sharing reports"
+  },
+  {
+    "title": "Your first report in 90 minutes",
+    "description": "If you have a deadline and no designer, this is the path. It skips everything optional and gets a real, publishable report out the door.",
+    "section": "Getting Started",
+    "url": "/docs/getting-started/first-report-in-90-minutes/",
+    "keywords": [
+      "first",
+      "report",
+      "90",
+      "minutes",
+      "getting",
+      "started",
+      "how long",
+      "time",
+      "deadline",
+      "quick start",
+      "minimum",
+      "annual report",
+      "checklist",
+      "tonight",
+      "fast"
+    ],
+    "body": "Your first report in 90 minutes If you have a deadline and no designer, this is the path. It skips everything optional and gets a real, publishable report out the door. You do not need to connect your CRM, import constituents, personalize anything, or learn merge tags to publish your first report. All of that can wait. The budget Step Time What you're doing 1. Pick a template 5 min Choose one that matches your goal , not one that looks prettiest 2. Set your brand 10 min Logo and two colors in your brand kit . Stop there 3. Delete what you can't fill 5 min Remove sections you have no content for 4. Write your words 40 min The letter and two stories — see What goes in an annual report 5. Add photos 15 min Phone photos are fine 6. Check it on a phone 10 min Switch to mobile view and read it top to bottom 7. Publish 5 min Publish and copy the link Ninety minutes is realistic for a first report on a template you don't customize heavily. A polished annual report with original photography and a full donor list is a longer job — but you can publish this one, then keep editing and republish. What to skip your first time You have permission to ignore all of this: Connecting your CRM. It's a separate project, usually with your database admin. A report doesn't need it. Importing constituents. Only needed if you want to personalize or track who read it. Personalized links and merge tags. Powerful, and not a first-report feature. Custom fonts and a full color palette. Logo and two colors is enough to look intentional. Infographics and charts. One or two big numbers as text beats a chart you fought with. Polls, embedded forms, and video. Later. A custom sending domain. Only matters when you start emailing from Storyraise. The one rule Delete more than you add. Templates ship with more sections than most organizations can fill well. A short report that is finished and true beats a long one with placeholder text in it. If you can't fill a section with something real, remove it. When you have more time Once this one is out, the natural next steps are: Import your constituents so you can see who's reading. Personalize the report so each donor sees their own name. Look at your analytics and follow up with the people who engaged."
+  },
+  {
+    "title": "What goes in an annual report",
+    "description": "Knowing where to click is the easy part. This page is about what to write.",
+    "section": "Getting Started",
+    "url": "/docs/getting-started/what-goes-in-an-annual-report/",
+    "keywords": [
+      "what",
+      "goes",
+      "annual",
+      "report",
+      "getting",
+      "started",
+      "annual report",
+      "what to write",
+      "impact report",
+      "sections",
+      "structure",
+      "word count",
+      "examples",
+      "blank page",
+      "leadership letter",
+      "donor list"
+    ],
+    "body": "What goes in an annual report Knowing where to click is the easy part. This page is about what to write. Most nonprofit annual reports need seven sections. You can publish a good one with five. Each section below says what it's for, roughly how long it should be, and the one question to answer if you're staring at a blank screen. 1. Cover What it's for: Telling someone what this is and making them want to open it. Length: A title, your year, and one image. Use your strongest photograph — a person, looking at the camera, doing something real. Not your building. Not a stock handshake. Title it plainly: 2026 Annual Report or Your impact in 2026 . 2. Letter from leadership What it's for: A human voice, early, thanking the reader before asking anything of them. Length: 200–300 words. About four short paragraphs. If you're stuck, answer this: What surprised you this year? A good letter names one specific thing that happened, admits one hard thing, and thanks the reader. Avoid \"It has been a year of unprecedented challenges.\" Write the way you'd talk to a donor across a table. 3. The numbers What it's for: Credibility. Proof that the story you're about to tell is representative, not cherry-picked. Length: Three numbers. Not ten. If you're stuck, answer this: What three numbers would make a skeptical board member nod? Pick numbers that mean something to an outsider — 1,847 animals placed in homes , not a 4% increase in throughput . Give each one a short label underneath. Three big numbers with air around them read better than a table. 4. Stories What it's for: The emotional core. This is the part people remember. Length: Two stories, 150–250 words each. If you're stuck, answer this: Who is one person your work changed this year, and what specifically changed for them? One person, named (with their permission), with a beginning and an end. Resist the urge to tell six stories — two told well beat six summarized. Pair each with a photograph of the person, not of your staff. Read Best practices for the story arc that works: hook, credibility, proof, gratitude, ask. 5. Financials What it's for: Answering \"where did my money go\" before anyone has to ask. Length: One simple breakdown. A single donut or a short list — program, administration, fundraising — with percentages. If you have an audited statement, link to it rather than reproducing it. 6. Donor list What it's for: Recognition. For many readers this is the first page they look for. Length: However many donors you're recognizing. Get the names right. Check spellings, joint names, corporate names, and anyone who asked to be listed anonymously or \"as\" something specific. A misspelled name on an honor roll costs you a phone call. See Donor lists and honor rolls . 7. Thank you, and one ask What it's for: Ending on gratitude, then giving people something to do. Length: Two or three sentences plus one button. Put the ask after the emotional peak, not before it. One action — give, volunteer, share — not four. The shape of it If you only have time for five sections, use: cover, letter, numbers, one story, donor list. That's a complete, honest report. A few things that consistently help: Put your best story early. Many readers won't reach the end. Write the letter last. It's easier once you can see what the report says. Read it out loud before publishing. You'll catch the jargon. Cut every sentence that could appear in any other organization's report. Next Your first report in 90 minutes — the time budget Understanding templates — picking the right starting point Best practices — what makes a report people finish"
   },
   {
     "title": "Understanding templates",
@@ -37,7 +101,14 @@ const SEARCH_INDEX = [
       "understanding",
       "templates",
       "getting",
-      "started"
+      "started",
+      "annual report",
+      "impact report",
+      "appeal",
+      "campaign",
+      "capital campaign",
+      "year end",
+      "donor update"
     ],
     "body": "Understanding templates Templates give you a complete, professionally designed report structure to start from — sections, layouts, and sample content are already in place, so you can focus on telling your story instead of designing from scratch. What's in a template A template is a full report: a cover, a set of sections in a sensible order, sample text and imagery, and layouts tuned for that kind of communication. When you create a report from a template, you get your own editable copy — change anything you like without affecting the template itself. Finding your way around the gallery The gallery opens on a row of four entry points , which answer \"which part of my job is this for?\" Fundraising — appeals and solicitations Donor Relations & Stewardship — donor reports and thank yous Communications — newsletters, events, and video Annual & Impact — annual reports, impact reports, endowment and philanthropy reports Picking one narrows the page to the shelves that belong to it. Leave them alone and you see everything. Below that, templates sit on shelves by category: Annual & Impact Reports, Fundraising & Appeals, Donor Relations, Events, Newsletters & Updates, Thank Yous, and Video. Each shelf scrolls sideways — drag it, or use the arrows at either end. Any templates your own team has saved appear first, above the rest, under Your templates . Note: The Video shelf only appears if your organization has Storyraise Video. Shelves with nothing on them are hidden rather than shown empty. Choosing a template From the dashboard, start a new report and choose Report from template . Pick an entry point, or browse the shelves. Click a template to preview it as a real report. When you've found the right one, create your report from it. The preview shows the template in its own design. You can switch on your brand colors and fonts to see it in yours — both toggles start off, so you always see the template as it was designed before you judge it against your brand. Tips for picking Match the goal, not the look. Pick by what you're communicating (gratitude, results, an ask) — you'll restyle colors, fonts, and images to match your brand anyway. More structure beats less. It's easier to delete a section you don't need than to design a new one. When in doubt, choose the fuller template. After you choose Everything in a template is editable: Replace sample text and images with your own. Add, remove, and reorder sections — see Adding sections . Apply your brand kit so colors and fonts match your organization. Personalized templates Some templates have Personalized variants designed to work with your constituent data, so each reader can see a version tailored to them — for example, a donor report that greets each donor by name. To use these, you'll first want to import your constituent data ."
   },
@@ -115,401 +186,38 @@ const SEARCH_INDEX = [
     "body": "Common terminology A quick reference for the words you'll see throughout Storyraise. Your workspace Term What it means Organization Your team's shared workspace. It holds your reports, folders, constituents, brand kit, and members. Dashboard Home base at app.storyraise.com — where you create reports, manage constituents, and view analytics. Builder The editor that opens when you work on a report. Folder A way to group reports on the dashboard, e.g. by year or program. Reports and their parts Term What it means Report A single publishable document — an annual report, impact report, thank-you message, and so on. Section One chapter of a report. A section appears in the report's navigation and is built from one or more blocks. Block A building block of a section — an intro, letter, story, stats spread, and so on (the \"block types\" you choose when adding content). Each block has its own style and layout, and becomes a single page when a report is exported to PDF. Element An individual piece of content inside a block — text, an image, a video, an infographic, a button, a counter, and more. Infographic A data graphic built inside the report builder from data you type in — a chart, visual list, sequence, or word cloud. Previously called a Visualization . Template A pre-designed, complete report you can copy as a starting point. Table of contents The ordered list of a report's sections; it drives the reader-facing navigation menu. Branding Term What it means Brand kit Your organization's saved logos, images, colors, and fonts, available in every report. Primary font Your brand's leading typeface, typically used for headlines and emphasis. Secondary font Your brand's supporting typeface, typically used for longer passages of text. Publishing and audience Term What it means Draft A report that hasn't been published — only your team can see it. Publish / Republish Putting your report (or its latest edits) live on the web at its public link. Report link The public web address of a published report: your-organization.yearly.report/your-report . Embed Displaying your published report inside a page on your own website. Opens How much reading activity a published report generated. One reader can produce several opens by returning. Unique visitor One distinct reader, identified by device. Return visitors are the ones who came back for another look. Analytics The area showing engagement for a published report — opens, unique and return visitors, time spent, clicks, reader flow, and, with constituent data synced, who viewed it. Previously called Insights . Engagement Score A 0–3 star rating given to identified constituents on a report, benchmarked against the median reading time for that report. Constituents and data Term What it means Constituent A person in your audience — a donor, member, volunteer, or stakeholder. Constituents come from your CRM or a CSV upload. Sync Pulling constituent records from a connected CRM into Storyraise. Merge tag A placeholder (like @@first_name@@ ) that fills in each constituent's own data in a personalized report. Personalized report A report that adapts to each constituent — for example, greeting each donor by name via their own link or QR code."
   },
   {
-    "title": "Connecting a CRM",
-    "description": "Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each…",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/connecting-a-crm/",
+    "title": "Using templates",
+    "description": "Templates do the design work so you can focus on the story. This page covers working with templates while you build. (New to templates? Start with…",
+    "section": "Building Reports",
+    "url": "/docs/building-reports/using-templates/",
     "keywords": [
-      "connecting",
-      "crm",
-      "data",
-      "connections"
+      "using",
+      "templates",
+      "building",
+      "reports",
+      "gallery",
+      "shelves",
+      "browse templates",
+      "preview",
+      "brand colors",
+      "brand fonts",
+      "your templates",
+      "carousel"
     ],
-    "body": "Connecting a CRM Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each constituent, generate personalized QR codes and links, and see in Analytics which constituents actually opened your reports. Connect from the Connections tab. The Connections tab is the unified home for every integration — many more systems than the two examples below. Start there; this page covers the general approach. What a connection does When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization's constituent list. Storyraise reads from your CRM — it never writes back or modifies your CRM data. Before you start You'll need credentials for your CRM — either admin access to authorize the connection (Blackbaud) or an API key (Bloomerang). The per-CRM guides below cover exactly what to gather. Constituent records are matched by email address , so the more complete your CRM's email data, the better. Connect your CRM From the dashboard, open your Constituents area and choose the option to sync constituents. Pick your CRM's tab — Blackbaud or Bloomerang — and follow the prompts: Blackbaud — click Connect , sign in to Blackbaud, and approve access. Then choose which constituent list to sync. Full guide: Blackbaud (Raiser's Edge NXT) . Bloomerang — paste your Bloomerang API key and click Sync constituents . Full guide: Bloomerang . Storyraise imports your constituents. Each record is tagged with its source (Blackbaud, Bloomerang, or CSV), so you always know where data came from. No CRM? No problem If your CRM isn't supported yet — or you don't use one — you can import constituents from a CSV file . It unlocks the same personalization and insights features. Keeping data current Connections don't update themselves automatically yet. When your CRM data changes, re-run the sync to pull in the latest records — see Data refreshes . Related Supported integrations — what's available today and what's coming Troubleshooting sync issues"
+    "body": "Using templates Templates do the design work so you can focus on the story. This page covers working with templates while you build. (New to templates? Start with Understanding templates .) Browsing the gallery Choose Report from template and the gallery opens on four entry points — Fundraising, Donor Relations & Stewardship, Communications, and Annual & Impact — over shelves grouped by category. Any templates your team has saved sit first, under Your templates . Each shelf scrolls sideways. Drag it, or use the arrows at either end. Previewing before you commit Click a template to open it as a real report rather than a thumbnail, so you can scroll it the way a reader would. Two toggles in the preview swap in your brand colors and brand fonts . Both start off, which is deliberate: see the template as it was designed first, then check it against your brand. A template that looks wrong in your colors is usually telling you something about the colors, not the template. Starting from a template When you create a report from a template, you get a complete editable copy: cover, sections, layouts, and sample content. From there, building is mostly replacing — your words for the sample words, your photos for the stock photos. Make a template yours Work through the template in this order: Apply your brand kit first. Colors, fonts, and logo — see Brand kit . It instantly makes the whole template feel like yours, and you'll judge the remaining work more accurately. Replace content section by section. Keep the layouts; swap the words and images. Prune and add. Delete what doesn't apply and add the blocks the template didn't include. Don't fight the layout. If a block's structure doesn't fit your content, it's usually faster to delete it and add a better-suited block type than to bend it into shape. Keep the sample content until the end Sample text shows you the intended length and tone for each spot — a heading meant for five words reads badly with twenty. Replace content piece by piece rather than clearing everything first, so you always have the design's \"intent\" in view. Reusing your own work Your best template is often last year's report. Duplicate a past report from the dashboard and update it — structure, branding, and recurring sections (letters, donor lists, financials) carry over, and you only rewrite what changed."
   },
   {
-    "title": "Importing constituent data",
-    "description": "You can bring constituents into Storyraise two ways: sync them from a connected CRM, or upload a CSV file. CSV import works with data exported from any system…",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/importing-constituent-data/",
+    "title": "Brand kit",
+    "description": "Your brand kit stores your organization's logos, images, colors, and fonts in one place, available in every report. Set it up once and every report you build…",
+    "section": "Building Reports",
+    "url": "/docs/building-reports/brand-kit/",
     "keywords": [
-      "importing",
-      "constituent",
-      "data",
-      "crm",
-      "connections",
-      "csv",
-      "upload",
-      "donors",
-      "import"
+      "brand",
+      "kit",
+      "building",
+      "reports"
     ],
-    "body": "Importing constituent data You can bring constituents into Storyraise two ways: sync them from a connected CRM , or upload a CSV file. CSV import works with data exported from any system — or a spreadsheet you maintain by hand. Importing from a CSV file 1. Prepare your file Your CSV needs headers for First Name , Last Name , and Email . Email is the key field — Storyraise uses it to identify each constituent, so rows without an email address can't be imported. The easiest path: In the Constituents area, open the CSV File tab. Download the Constituents Template (CSV) . Open it in Excel, Google Sheets, or Numbers, and fill in your constituent data. You can include additional columns beyond the required three — giving level, campaign, salutation, anything you like. Extra columns are imported as custom fields on each constituent and become available as merge tags for personalization. 2. Upload it Back in the CSV File tab, click Upload CSV . Select your file. Storyraise imports each row as a constituent. 3. Check the results Your constituent list now shows the imported records, each tagged CSV so you can tell them apart from CRM-synced constituents. Open any constituent to review their fields. Importing from a CRM If you use Blackbaud or Bloomerang, connect it and sync instead of exporting CSVs by hand — see Connecting a CRM . CRM-synced constituents are tagged with their source and keep the fields your CRM provides. How re-imports work Constituents are identified by email address. If you upload a file containing an email that's already in your list, that constituent's record is updated rather than duplicated. This means you can safely re-upload an updated export to refresh your data. What constituent data unlocks Personalized reports — merge tags like @@first_name@@ fill in each constituent's own information. Personalized QR codes and links — each constituent gets a link to their own version of a report. Analytics — see which constituents opened your reports. Editing constituent data From the constituent list, open any constituent to view their fields. For constituents imported by CSV, you can edit field values and add or remove fields directly in Storyraise. Fields synced from a CRM are read-only in Storyraise — update them in your CRM and re-sync. Careful when deleting data: if a personalized report relies on a field you remove, its merge tags will resolve to empty for affected constituents."
-  },
-  {
-    "title": "Mapping fields",
-    "description": "Coming soon — a visual field-mapping step is on our roadmap. Today, Storyraise imports your fields automatically using the rules described below.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/mapping-fields/",
-    "keywords": [
-      "mapping",
-      "fields",
-      "crm",
-      "data",
-      "connections"
-    ],
-    "body": "Mapping fields Coming soon — a visual field-mapping step is on our roadmap. Today, Storyraise imports your fields automatically using the rules described below. How fields work today You don't need to map anything manually: CSV imports use your column headers as field names. First Name , Last Name , and Email are recognized as the core identity fields; every other column becomes a custom field with the column header as its name. CRM syncs bring over the fields your CRM provides — including custom fields — using the CRM's own field names. Nested CRM fields (like address parts) are flattened into individual fields. Every imported field is available as a merge tag for personalization. Open any constituent from your constituent list to see exactly which fields they have and what each is called. Tips for clean fields Keep CSV column headers short and consistent ( Giving Level , not 2025 GIVING LEVEL (updated) ), since headers become merge tag names. Use the same headers every time you re-upload, so values update the same fields instead of creating new ones."
-  },
-  {
-    "title": "Data refreshes",
-    "description": "Your CRM data changes constantly — new donors, updated emails, fresh gift records. This page covers how to keep your Storyraise constituent list in step.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/data-refreshes/",
-    "keywords": [
-      "data",
-      "refreshes",
-      "crm",
-      "connections"
-    ],
-    "body": "Data refreshes Your CRM data changes constantly — new donors, updated emails, fresh gift records. This page covers how to keep your Storyraise constituent list in step. Refreshing today: re-run the sync Storyraise pulls constituent data when you ask it to. To refresh: Bloomerang — open the Constituents area, go to the Bloomerang tab, and click Sync constituents again. Blackbaud — open the Blackbaud tab and re-sync your selected constituent list. If your authorization has expired, you may be asked to reconnect first. CSV — export a fresh file from your system and upload it again. Because constituents are identified by email address, refreshed records update existing constituents rather than creating duplicates. New people in the source are added. When to refresh A good rule of thumb: refresh right before you do anything that depends on the data — before generating personalized links or QR codes for a mailing, before publishing a personalized report, before reviewing constituent engagement in Analytics for a board update. Automatic refreshes Storyraise can refresh a connection on a schedule, so you're not relying on someone remembering to press Sync now . Turn it on per connection: in the Connections tab, open a connection's menu and switch on Auto-sync . Pick Daily or Weekly , and the card then shows when it last ran. Each scheduled run does two things, in this order: Re-pulls your constituents from the source system, so a donor added to your CRM last week becomes a constituent without anyone opening the dashboard. Refreshes your synced collections , using the constituent list it just updated — so someone added tonight is linked to their rows in the same run rather than waiting for the next one. Auto-sync is off until you turn it on, and it's set per connection, so you can leave a hand-curated source alone while a busy one refreshes nightly. Related Troubleshooting sync issues Importing constituent data"
-  },
-  {
-    "title": "Troubleshooting sync issues",
-    "description": "Most sync problems come down to one of a few causes. Work through the section that matches what you're seeing.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/troubleshooting-sync-issues/",
-    "keywords": [
-      "troubleshooting",
-      "sync",
-      "issues",
-      "crm",
-      "data",
-      "connections"
-    ],
-    "body": "Troubleshooting sync issues Most sync problems come down to one of a few causes. Work through the section that matches what you're seeing. \"My Blackbaud connection stopped working\" Blackbaud authorizations expire periodically. Storyraise refreshes them automatically behind the scenes, but if a sync fails with an authorization error: Open the Constituents area and go to the Blackbaud tab. Click Connect to re-authorize with your Blackbaud account. Re-select your constituent list and sync again. Make sure you authorize with a Blackbaud account that has access to the constituent lists you want to sync. \"Bloomerang says my API key is invalid\" Double-check you copied the entire key with no leading or trailing spaces. Keys look like aaead1d4-7075-57df-ec7f-11e717c7bdd1 . API keys belong to a Bloomerang user. If that user was deactivated or their key was regenerated, the old key stops working — create or copy a fresh key in Bloomerang and try again. Bloomerang's guide: Where can I find my Bloomerang API key? \"Some constituents didn't import\" The most common cause is a missing email address . Storyraise identifies each constituent by email, so records without one are skipped. In your CRM, fill in email addresses where you can, then re-sync. For CSV uploads, check that your file has a properly spelled Email header and that each row has a value in it. \"I have duplicate constituents\" Storyraise matches records by email address, so duplicates usually mean the same person exists under two different emails (in your CRM, or between your CRM and a CSV upload). Consolidate to one email in the source data and re-sync. \"A constituent's information looks outdated\" Syncs run when you trigger them — they don't update automatically yet. Re-run the sync to pull the latest data; see Data refreshes . \"My CSV won't upload\" Save the file as .csv (not .xlsx or .numbers). Every spreadsheet app has an \"Export as CSV\" or \"Save as CSV\" option. Check the required headers are present: First Name , Last Name , Email . If your data contains commas (like \"Smith, Jr.\" ), make sure your spreadsheet app is doing the export — it will quote fields correctly. Avoid hand-editing CSVs in a plain text editor. When in doubt, start from the Constituents Template (CSV) available in the CSV File tab. \"Merge tags show up empty in a personalized report\" The constituent is missing that field. Check the constituent's record to see which fields they have; fill gaps in your CRM or CSV and re-import. Also note that deleting a field from constituents will blank out any merge tags that used it. Still stuck? Contact support and include: which CRM (or CSV), roughly how many constituents you expected vs. got, and what error message you saw, if any."
-  },
-  {
-    "title": "Supported integrations",
-    "description": "Storyraise connects to your CRM, giving platforms, and email tools through the Connections tab — one hub where you connect a system, import your constituents,…",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/supported-integrations/",
-    "keywords": [
-      "supported",
-      "integrations",
-      "crm",
-      "data",
-      "connections",
-      "salesforce",
-      "mailchimp",
-      "giving"
-    ],
-    "body": "Supported integrations Storyraise connects to your CRM, giving platforms, and email tools through the Connections tab — one hub where you connect a system, import your constituents, and sync the rest (giving history, email engagement, and more) into Storyraise. CRM Integration What it syncs Raiser's Edge NXT (Blackbaud) Constituents from your RE NXT lists Bloomerang Constituents, plus gifts into Analytics Salesforce / Nonprofit Cloud Contacts and giving — and can send report engagement back to Salesforce Virtuous Contacts and giving history CiviCRM Contacts (API v4) Slate for Advancement Constituents from a Slate query (you map the columns) Ellucian Advancement Persons via the Ethos Integration API Little Green Light Constituents and their giving DonorPerfect Donors and gift history Neon CRM Accounts and donations Funraise Supporters and giving EveryAction Constituents from a saved list — coming soon Giving Integration What it syncs Givebutter Contacts, plus donations into Analytics (also embeds in reports) Donorbox Donors, plus donations into Analytics Fundraise Up Supporters, plus donations into Analytics Email Integration What it syncs Mailchimp Audience members and email engagement Not yet supported Using a system that isn't listed? You can almost always export your records to CSV and import them directly — you'll get the same personalization and insights as a native connection. Let us know which integration you'd like next; customer requests drive the roadmap. What connections can access Connections import your data into Storyraise — your constituents, and any extra data you choose to sync into collections . They don't change anything in your source system, with one exception you opt into: Salesforce can also send report engagement back to your CRM (logged on each donor's record), so your team sees Storyraise activity where they already work. See Salesforce . You can disconnect any connection at any time."
-  },
-  {
-    "title": "The Connections tab",
-    "description": "Connections is your hub for bringing donor data into Storyraise. Connect a system once and Storyraise imports your constituents — then you can sync additional…",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/connections-overview/",
-    "keywords": [
-      "connections",
-      "tab",
-      "crm",
-      "data",
-      "overview",
-      "integrations",
-      "sync",
-      "connect",
-      "hub"
-    ],
-    "body": "The Connections tab Connections is your hub for bringing donor data into Storyraise. Connect a system once and Storyraise imports your constituents — then you can sync additional data (like giving history or email engagement) into collections for use in your reports. Bring your donor data into Storyraise. Connect a system to import constituents, then sync the rest into collections. The home for every integration Connections is the unified home for your integrations — connect a CRM, giving platform, or email tool, all in one place. (Prefer to upload a file? CSV import lives in the Constituents area — see Importing constituent data .) What you can connect Connections groups integrations into three categories: CRM — import your constituents from your system of record: Raiser's Edge NXT , Bloomerang , Salesforce , Virtuous , CiviCRM , Slate , Ellucian , Little Green Light , DonorPerfect , Neon CRM , and Funraise . Giving — import contacts and sync donations: Givebutter , Donorbox , and Fundraise Up . Email — import your audience and sync email engagement: Mailchimp . How connecting works Open the Connections tab and find the system you want under Add a connection (search by name). Click Connect . What happens next depends on the system: Sign-in (OAuth) — for Raiser's Edge NXT and Salesforce, you're sent to the provider to sign in and authorize Storyraise, then returned automatically. API key / credentials — for everything else, a Connect {system} dialog asks for an API key (and sometimes a URL or account email). Each dialog includes a hint on exactly where to find your key in that provider, plus a link to their documentation. Click Connect & sync . Storyraise imports your constituents and the connection appears under your connected systems, marked Live . Each integration's page (linked above) lists exactly what it needs and where to find it. What a connection does Imports constituents. Records flow into your shared constituent list , matched by email — the foundation for personalization and insights. Syncs extra data into collections (optional). Beyond names and emails, you can pull any data a connection exposes — giving history, email engagement, and more — into a collection. See Syncing data to collections . Keeps itself current (optional). Turn on auto-sync (daily or weekly), or sync on demand. See Managing connections . Sends engagement back (Salesforce). Salesforce connections can also push report engagement back to your CRM, so activity shows up on each donor's record. See Salesforce . Related Syncing data to collections Managing connections Supported integrations"
-  },
-  {
-    "title": "Syncing data to collections",
-    "description": "Connecting a system imports your constituents. But your systems hold far more than names and emails — giving history, event attendance, email engagement,…",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/syncing-data-to-collections/",
-    "keywords": [
-      "syncing",
-      "data",
-      "collections",
-      "crm",
-      "connections",
-      "extended data",
-      "collect",
-      "sync",
-      "gifts",
-      "donations",
-      "fields",
-      "data sync"
-    ],
-    "body": "Syncing data to collections Connecting a system imports your constituents. But your systems hold far more than names and emails — giving history, event attendance, email engagement, membership details, and whatever custom data you track. Syncing data to collections lets you pull any of that into Storyraise, where it's available for your reports. What it does From any connected system, you choose a set of data to bring in. Storyraise writes it to a collection — the same kind of collection Storyraise Collect uses — and relates each row to a constituent by their ID. The result is structured data, tied to the right people, ready to pull into reports. Pick any data this connection exposes. It's written to a Collect collection, related to each constituent by id. This is deliberately open-ended: gifts, donations, and email engagement are common examples, but the data you can sync is whatever your connected system exposes — not a fixed list. Add data to a collection On a connected system, choose Add data . A short, friendly four-step wizard walks you through it: Choose — \"What do you want to bring in?\" Pick which object the connection exposes (for example gifts, donations, event registrations, or email activity). Details — \"Which details do you want?\" Select the specific fields to include. If the records you picked don't link to a person, Storyraise tells you here so you can choose something that does. Summarize — \"Some people have more than one — how should we show it?\" Choose one: Just the most recent one — keep each person's latest record. Add them all up — total a number (like gift amount) per person. Count how many — the number of records per person. Keep every one — save all records, nothing combined. Review — \"Here's a peek — look right?\" Choose who it covers ( Everyone or Just a specific list ), name the collection, and save. For gift-like data, Storyraise asks you to confirm which fields hold the amount and the date . Storyraise imports the data and relates each row to its constituent automatically. Using the data in reports Once data lands in a collection, it's available wherever collections are — so you can surface giving totals, recent gifts, or engagement counts in a report, personalized per constituent through personalized links . Keeping it current Re-sync a collection any time from the connection's menu, or turn on auto-sync (daily or weekly) so it refreshes on its own. See Managing connections . Related The Connections tab What is Storyraise Collect? Managing connections"
-  },
-  {
-    "title": "Managing connections",
-    "description": "Once a system is connected, the Connections tab is where you keep it healthy — check its status, refresh data, adjust credentials, and turn on automatic…",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/managing-connections/",
-    "keywords": [
-      "managing",
-      "connections",
-      "crm",
-      "data",
-      "sync now",
-      "auto-sync",
-      "disconnect",
-      "reconnect",
-      "status",
-      "last synced",
-      "refresh"
-    ],
-    "body": "Managing connections Once a system is connected, the Connections tab is where you keep it healthy — check its status, refresh data, adjust credentials, and turn on automatic syncing. Connection status Each connected system shows: A status indicator — Live when everything's working, or Error if the last sync failed (with a short message about what went wrong). The data it's syncing — Constituents , plus any collections you've added, with row counts (for example, Recent gifts: 43 ). When it last synced — synced 2 hours ago . A badge when auto-sync is on, and (for Salesforce write-back) a note of how many records were last sent back to your CRM. Keeping data current Sync now. Trigger an immediate refresh — useful right before a mailing or a board report. Re-syncing updates existing records rather than duplicating them (constituents are matched by email). Auto-sync. Turn this on under the connection's ⋯ More menu and set the Frequency to Daily or Weekly — Storyraise refreshes the connection on that schedule on its own. Refresh a collection. If you've synced extra data into collections, refresh each one from the same menu. See Syncing data to collections . Updating credentials If an API key is rotated or a connection falls into an Error state, choose Edit credentials (for API-key connections) and paste the new key. For sign-in (OAuth) systems like Raiser's Edge NXT and Salesforce, reconnect by authorizing again. Sending engagement back (Salesforce) Connections import data into Storyraise — they don't change your source system. The one exception you can opt into is Salesforce write-back : from a connected Salesforce, choose Send to Salesforce to log report engagement (opens, time spent, link clicks) on each donor's Contact. See Salesforce for the full setup. Disconnecting Open the connection's menu in the Connections tab and choose Disconnect . Storyraise deletes the credentials it stored, stops syncing, and asks the other system to revoke our access. You can reconnect later. Your data stays by default. Constituents and synced collections you've already imported stay exactly as they are; they just stop updating. Reports built on them keep working. The confirmation offers Also delete the data it synced as an option. Tick it and Storyraise permanently deletes the collections this connection synced, along with any constituents it was the only source for — and reports built on that data lose it. It can't be undone, so leave it unticked unless removing the data is the reason you're disconnecting. Disconnecting needs the same access as connecting: Owners, Admins, and Editors can do it, Viewers can't. Troubleshooting Most issues are the same ones covered in Troubleshooting sync issues : an expired or mistyped key, missing email addresses, or a provider that needs reauthorizing. An Error badge with its message is your starting point. Related The Connections tab Syncing data to collections"
-  },
-  {
-    "title": "Blackbaud (Raiser's Edge NXT)",
-    "description": "Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/",
-    "keywords": [
-      "blackbaud",
-      "raiser",
-      "edge",
-      "nxt",
-      "crm",
-      "data",
-      "connections",
-      "raisers"
-    ],
-    "body": "Blackbaud (Raiser's Edge NXT) Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging. Two ways to connect. You can connect Raiser's Edge NXT from the Connections tab (recommended — see Connecting via the Connections tab below) or from the per-system steps in the Constituents area. Both reach the same place. What you'll need A Blackbaud account with access to your organization's Raiser's Edge NXT environment and the constituent lists you want to sync. A constituent list in Raiser's Edge NXT containing the people you want in Storyraise. If you don't have one yet, create a list in RE NXT first — syncing works list by list, which keeps you in control of exactly who comes over. Connect and sync From the Storyraise dashboard, open the Constituents area and choose to sync constituents. Select the Blackbaud tab. Click Connect . You'll be sent to Blackbaud to sign in and authorize Storyraise. Approve the authorization. You'll return to Storyraise automatically. Choose the constituent list you want to sync. Start the sync. Storyraise pulls in each constituent's name and email, along with custom fields from your RE NXT environment. Synced constituents appear in your constituent list tagged Blackbaud . Connecting via the Connections tab If your dashboard has the Connections tab, connect there instead: Open Connections and find Raiser's Edge NXT under Add a connection . Click Connect , sign in to Blackbaud, and authorize Storyraise. Storyraise imports your constituents; the connection shows as Live , and you can Sync now or turn on daily auto-sync. See The Connections tab and Managing connections . What gets synced First name, last name, and email for each constituent in the selected list Custom fields configured in your Raiser's Edge NXT environment Records are matched by email address — constituents without an email in RE NXT can't be synced, and re-syncs update existing records rather than duplicating them. Keeping it fresh Syncs run when you trigger them. Re-sync before mailings or personalized publishes to pull the latest data — see Data refreshes . Storyraise refreshes your Blackbaud authorization automatically; if it ever fully expires, just click Connect again. Embedding Blackbaud donation forms Beyond constituent data, you can embed a Blackbaud donation form inside a report: add the donation form element in the builder and paste your Donation Form URL from Blackbaud. Readers can give without leaving your report. Troubleshooting Authorization errors — reconnect via the Connect button, using a Blackbaud account with access to your lists. Missing constituents — check that they're in the synced list and have an email address in RE NXT. More help: Troubleshooting sync issues ."
-  },
-  {
-    "title": "Bloomerang",
-    "description": "Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/bloomerang/",
-    "keywords": [
-      "bloomerang",
-      "crm",
-      "data",
-      "connections"
-    ],
-    "body": "Bloomerang Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging. Two ways to connect. You can connect Bloomerang from the Connections tab (recommended — see Connecting via the Connections tab below) or from the per-system steps in the Constituents area. Bloomerang also syncs gifts into Analytics . What you'll need A Bloomerang API key . Bloomerang's guide to finding or creating one: Where can I find my Bloomerang API key? API keys belong to a Bloomerang user account. Use a key from an account that will stay active — if that user is deactivated, the key stops working. Connect and sync From the Storyraise dashboard, open the Constituents area and choose to sync constituents. Select the Bloomerang tab. Paste your API key into the key field (it looks like aaead1d4-7075-57df-ec7f-11e717c7bdd1 ). Click Sync constituents . Storyraise pulls in your Bloomerang constituents — names, emails, addresses, phone numbers, and other profile fields. Synced constituents appear in your constituent list tagged Bloomerang . Connecting via the Connections tab If your dashboard has the Connections tab, connect there instead: open Connections , find Bloomerang , click Connect , paste your API key, and choose Connect & sync . The connection then shows as Live , with Sync now and daily auto-sync options — see The Connections tab and Managing connections . What gets synced Name and email for each constituent Profile details such as address and phone fields Other fields from each constituent's Bloomerang record, flattened into individual Storyraise fields you can use as merge tags Records are matched by email address — constituents without an email in Bloomerang can't be synced, and re-syncs update existing records rather than duplicating them. Keeping it fresh Syncs run when you trigger them. Re-run Sync constituents before mailings or personalized publishes to pull the latest data — see Data refreshes . Embedding Bloomerang donation forms You can also embed a Bloomerang donation form inside a report: add the donation form element in the builder and paste your form's URL. Readers can give without leaving your report. Troubleshooting Invalid key — re-copy the full key with no extra spaces; regenerate it in Bloomerang if needed. Missing constituents — check that they have an email address in Bloomerang. More help: Troubleshooting sync issues ."
-  },
-  {
-    "title": "Salesforce / Nonprofit Cloud",
-    "description": "Connect Salesforce to bring your contacts and giving data into Storyraise — and send report engagement back to Salesforce so it lives next to the rest of each…",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/salesforce/",
-    "keywords": [
-      "salesforce",
-      "nonprofit",
-      "cloud",
-      "crm",
-      "data",
-      "connections",
-      "nonprofit cloud",
-      "npsp",
-      "oauth",
-      "contacts",
-      "gift transaction",
-      "engagement",
-      "write-back"
-    ],
-    "body": "Salesforce / Nonprofit Cloud Connect Salesforce to bring your contacts and giving data into Storyraise — and send report engagement back to Salesforce so it lives next to the rest of each donor's record. What syncs Into Storyraise Contacts → your Storyraise constituent list , matched by email. Giving and other objects → Storyraise collections. Storyraise discovers your org's objects and fields at connect time, so you choose exactly what to bring in. This includes Nonprofit Cloud Gift Transactions — Storyraise resolves each gift's Person Account to the right constituent automatically. See Syncing data to collections . Back into Salesforce Report engagement (opens, time spent, link clicks) → logged on each donor's Contact, so your team sees Storyraise activity inside Salesforce. You choose where it lands and who it goes to (see below). Connect Salesforce uses sign-in (OAuth), so there's no API key to copy: In the Connections tab, find Salesforce / Nonprofit Cloud and click Connect . You're sent to Salesforce to sign in and authorize Storyraise. Approve access — you'll return to Storyraise, and your contacts begin importing. Sign in with a Salesforce account that can see the contacts you want to bring over — and, for write-back, that has permission to create the records you choose below. Send engagement to Salesforce On the connected Salesforce card, choose Send to Salesforce to configure write-back: Where to write it — log a completed Activity (Task) on the Contact, or update custom fields on the Contact (you map each Salesforce field to a metric: opens, minutes, link clicks, engagement score, last open, and more). Assign to the gift officer — for Activities, optionally assign each task to the donor's Account Owner , so the right fundraiser is notified. Minimum engagement to send — only send for donors who reached a chosen level (e.g. opened a report, read in depth, or clicked a link). Run it on demand with Save & send now , or let it run automatically with auto-sync (below). Engagement is matched to the exact Contact using a Storyraise constituent id carried through each personalized report link, not by name — so it lands on the right person. Keeping it current Sync on demand with Sync now , or turn on Auto-sync and choose Daily or Weekly . When write-back is enabled, auto-sync also pushes engagement on the same schedule. See Managing connections . Related The Connections tab Syncing data to collections Troubleshooting sync issues"
-  },
-  {
-    "title": "Virtuous",
-    "description": "Connect Virtuous with an API key to import your contacts and giving history into Storyraise.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/virtuous/",
-    "keywords": [
-      "virtuous",
-      "crm",
-      "data",
-      "connections",
-      "api key",
-      "contacts"
-    ],
-    "body": "Virtuous Connect Virtuous with an API key to import your contacts and giving history into Storyraise. What syncs Constituents (contacts) → your constituent list , matched by email. Giving history and other data → into collections; see Syncing data to collections . Connect In the Connections tab, find Virtuous , click Connect , and enter: API Key — your Virtuous API key. Then Connect & sync . Where to find your key In Virtuous, open Settings → API Keys and create a key (pick a permission group). See the Virtuous API key guide . Prefer to upload a file? You can also bring Virtuous contacts in by exporting them to CSV and using CSV import — include First Name , Last Name , and Email columns, plus any custom fields. You'll get the same merge tags, personalized links, and insights. Related The Connections tab Managing connections"
-  },
-  {
-    "title": "CiviCRM",
-    "description": "Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/civicrm/",
-    "keywords": [
-      "civicrm",
-      "crm",
-      "data",
-      "connections",
-      "apiv4",
-      "site key",
-      "api key",
-      "contacts"
-    ],
-    "body": "CiviCRM Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents. What syncs Constituents (contacts) → your constituent list , matched by email. Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find CiviCRM , click Connect , and enter: Site URL — your CiviCRM site address (e.g. https://your-civicrm-site.org ). API Key — set on your CiviCRM user/contact record. Site Key (optional) — the CIVICRM_SITE_KEY from civicrm.settings.php . Then Connect & sync . Where to find these API keys attach to a CiviCRM user; the site key lives in civicrm.settings.php . See the CiviCRM API keys guide . Prefer to upload a file? You can also bring CiviCRM contacts in by exporting them to CSV and using CSV import — include First Name , Last Name , and Email columns, plus any custom fields. Related The Connections tab Managing connections"
-  },
-  {
-    "title": "Slate for Advancement",
-    "description": "Connect a Slate Query web service to import constituents into Storyraise. Because Slate queries are custom, you'll map their columns to Storyraise fields as…",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/slate/",
-    "keywords": [
-      "slate",
-      "advancement",
-      "crm",
-      "data",
-      "connections",
-      "technolutions",
-      "query",
-      "web service"
-    ],
-    "body": "Slate for Advancement Connect a Slate Query web service to import constituents into Storyraise. Because Slate queries are custom, you'll map their columns to Storyraise fields as you import. What syncs Constituents , from the Query you expose — mapped to your constituent list during import. Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Slate for Advancement , click Connect , and provide: Query Web Service URL — build a Query in Slate, output it as a JSON web service, and paste that URL. Service Username — a Slate service account. Service Password — that service account's password. Then Connect & sync . You'll map the query's columns to Storyraise fields on import. Where to find these In Slate, share a Query as a JSON web service, then authenticate with a service account. See the Slate Configurable API docs . Related The Connections tab Managing connections"
-  },
-  {
-    "title": "Ellucian Advancement",
-    "description": "Connect via the Ellucian Ethos Integration API to import persons into Storyraise as constituents.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/ellucian/",
-    "keywords": [
-      "ellucian",
-      "advancement",
-      "crm",
-      "data",
-      "connections",
-      "ethos",
-      "higher ed"
-    ],
-    "body": "Ellucian Advancement Connect via the Ellucian Ethos Integration API to import persons into Storyraise as constituents. What syncs Constituents (persons), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Ellucian Advancement , click Connect , and enter: Ethos API Key — from your Ethos Integration admin → Applications. Then Connect & sync . Where to find your key Ask your institution's Ethos Integration administrator for an API key for this application. Related The Connections tab Managing connections"
-  },
-  {
-    "title": "Little Green Light",
-    "description": "Connect Little Green Light with an API token to import your constituents.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/little-green-light/",
-    "keywords": [
-      "little",
-      "green",
-      "light",
-      "crm",
-      "data",
-      "connections",
-      "little green light",
-      "lgl",
-      "api token"
-    ],
-    "body": "Little Green Light Connect Little Green Light with an API token to import your constituents. What syncs Constituents , into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Little Green Light , click Connect , and enter: API Token — your Little Green Light API token. Then Connect & sync . Where to find your token In Little Green Light, go to Settings → Integration Settings → API and generate a token. See the Little Green Light API docs . Related The Connections tab Managing connections"
-  },
-  {
-    "title": "DonorPerfect",
-    "description": "Connect DonorPerfect with an API key to import your donors as constituents.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/donorperfect/",
-    "keywords": [
-      "donorperfect",
-      "crm",
-      "data",
-      "connections",
-      "api key",
-      "donors"
-    ],
-    "body": "DonorPerfect Connect DonorPerfect with an API key to import your donors as constituents. What syncs Constituents (donors), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find DonorPerfect , click Connect , and enter: API Key — your DonorPerfect API key. Then Connect & sync . Where to find your key DonorPerfect issues API keys on request — email support@donorperfect.com . See DonorPerfect API access . Related The Connections tab Managing connections"
-  },
-  {
-    "title": "Neon CRM",
-    "description": "Connect Neon CRM with your Organization ID and API key to import accounts as constituents.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/neon-crm/",
-    "keywords": [
-      "neon",
-      "crm",
-      "data",
-      "connections",
-      "neon crm",
-      "neoncrm",
-      "org id",
-      "api key",
-      "accounts"
-    ],
-    "body": "Neon CRM Connect Neon CRM with your Organization ID and API key to import accounts as constituents. What syncs Constituents (accounts), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Neon CRM , click Connect , and enter: Organization ID — from Settings → Organization Profile → Organization ID . API Key — from Settings → User Management → your user → API key . Environment (optional) — production for live accounts, trial for trials. Then Connect & sync . Where to find these Find your Org ID under Organization Profile, then create an API key under User Management. See the Neon CRM API keys guide . Related The Connections tab Managing connections"
-  },
-  {
-    "title": "Funraise",
-    "description": "Connect Funraise with an API key to import your supporters as constituents, along with their giving, so you can personalize reports and see who engages.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/funraise/",
-    "keywords": [
-      "funraise",
-      "crm",
-      "data",
-      "connections",
-      "api key",
-      "supporters",
-      "donations"
-    ],
-    "body": "Funraise Connect Funraise with an API key to import your supporters as constituents, along with their giving, so you can personalize reports and see who engages. Not the same as Fundraise Up. Funraise and Fundraise Up are two different platforms — make sure you're connecting the right one. What syncs Supporters , into your constituent list . Donations , alongside them. Connect In the Connections tab, find Funraise , click Connect , and enter: API Key — your Funraise API key. Then Connect & sync . The connection shows as Live , with Sync now and nightly auto-sync — see Managing connections . Where to find your key In your Funraise dashboard, go to Settings → API and create a key — copy it immediately, as it's shown only once. See the Funraise API guide . Related The Connections tab Managing connections Data refreshes"
-  },
-  {
-    "title": "Givebutter",
-    "description": "Embed your Givebutter giving experience directly inside a Storyraise report, so the moment your story moves a reader, they can give — without leaving the page.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/givebutter/",
-    "keywords": [
-      "givebutter",
-      "crm",
-      "data",
-      "connections"
-    ],
-    "body": "Givebutter Embed your Givebutter giving experience directly inside a Storyraise report, so the moment your story moves a reader, they can give — without leaving the page. What the integration does Givebutter works with Storyraise in two ways: a donation embed inside a report, and a data connection that imports your contacts and donations. This page covers the embed; the connection is below. The donation embed places your Givebutter campaign or form inside a section of your report. Donations are processed by Givebutter exactly as they are on your own Givebutter page, and gifts show up in your Givebutter account as usual. Add Givebutter to a report In the builder, go to the section where you want the giving experience — a Donate section works well. Add the Givebutter element to a block. Paste the URL of your Givebutter campaign or giving form. Preview the section to confirm the form loads and looks right, including on mobile. Tips Place it after the story, not before. Donation embeds convert best right after your most compelling impact section. Keep one clear ask per report. Multiple embedded forms can split attention; one well-placed giving moment usually outperforms several. Test a real gift. Before sharing widely, run a small test donation to confirm the end-to-end flow. Connecting Givebutter as a data source Separately from the embed, the Connections tab can import your Givebutter data: Contacts → your constituent list . Donations → available to sync into a collection (see Syncing data to collections ) and into Analytics — see Understanding report metrics . To connect: in the Connections tab, find Givebutter , click Connect , paste your API key (from Account → Settings → API Keys in Givebutter — see the Givebutter API docs ), and choose Connect & sync . Related The Connections tab Supported integrations Publishing and sharing reports"
-  },
-  {
-    "title": "Donorbox",
-    "description": "Connect Donorbox to import your donors and sync their donations into Storyraise.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/donorbox/",
-    "keywords": [
-      "donorbox",
-      "crm",
-      "data",
-      "connections",
-      "giving",
-      "donations",
-      "api key"
-    ],
-    "body": "Donorbox Connect Donorbox to import your donors and sync their donations into Storyraise. What syncs Donors → your constituent list . Donations → available to sync into a collection (see Syncing data to collections ) and into Analytics — see Understanding report metrics . Connect In the Connections tab, find Donorbox , click Connect , and enter: Account Email — the email you sign in to Donorbox with. API Key — your Donorbox API key. Then Connect & sync . Where to find your key Generate an API key under Organization Settings → API & Integrations in Donorbox, and authenticate with your account email. See the Donorbox API docs . Related The Connections tab Managing connections"
-  },
-  {
-    "title": "Fundraise Up",
-    "description": "Connect Fundraise Up to import your supporters and sync their donations into Storyraise.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/fundraise-up/",
-    "keywords": [
-      "fundraise",
-      "crm",
-      "data",
-      "connections",
-      "fundraise up",
-      "fundraiseup",
-      "giving",
-      "donations",
-      "api key"
-    ],
-    "body": "Fundraise Up Connect Fundraise Up to import your supporters and sync their donations into Storyraise. Not the same as Funraise. Fundraise Up and Funraise are two different platforms — connect the one you actually use. What syncs Supporters → your constituent list . Donations → available to sync into a collection (see Syncing data to collections ) and into Analytics — see Understanding report metrics . Connect In the Connections tab, find Fundraise Up , click Connect , and enter: API Key — your Fundraise Up API key. Then Connect & sync . Where to find your key Create an API key under Settings → Integrations → API keys in Fundraise Up. See the Fundraise Up help center . Related The Connections tab Managing connections"
-  },
-  {
-    "title": "Mailchimp",
-    "description": "Connect Mailchimp to import your audience and sync email engagement into Storyraise.",
-    "section": "CRM & Data Connections",
-    "url": "/docs/crm-and-data/integrations/mailchimp/",
-    "keywords": [
-      "mailchimp",
-      "crm",
-      "data",
-      "connections",
-      "email",
-      "audience",
-      "engagement",
-      "api key"
-    ],
-    "body": "Mailchimp Connect Mailchimp to import your audience and sync email engagement into Storyraise. What syncs Audience members → your constituent list . Email engagement → available to sync into a collection (see Syncing data to collections ) and into Analytics — see Understanding report metrics . Connect In the Connections tab, find Mailchimp , click Connect , and enter: API Key — your Mailchimp API key (it ends in your data center, e.g. xxxxxxxx-us21 ). Then Connect & sync . Where to find your key Create an API key under Account → Extras → API keys in Mailchimp. The suffix after the dash (for example us21 ) is your data center — include it. See the Mailchimp API keys guide . Related The Connections tab Managing connections"
+    "body": "Brand kit Your brand kit stores your organization's logos, images, colors, and fonts in one place, available in every report. Set it up once and every report you build starts on brand. What's in the brand kit Logos — your organization's logo files, ready to drop into any section. Images — a shared library of photos and graphics your whole team can reuse. Colors — your brand palette. Brand colors appear in every color picker in the builder, alongside the default palette. Fonts — your primary and secondary typefaces. The primary font leads (headlines, emphasis); the secondary font supports (longer text). Setting it up Open your brand kit settings. Upload your logos — the versions you use most (full color, white/reversed). Add brand colors — your primary palette. If you have brand guidelines, pull the exact hex values from them. Choose your fonts — pick your primary and secondary fonts from the font library (you'll see live \"Aa\" previews of each). Using it while you build Colors : every color picker shows your brand colors first — one click to stay on palette. Logos and images : when editing image content, open the Logos and Images panels in the sidebar to drop in brand assets without re-uploading. Fonts : apply your primary or secondary font to text from the styling controls, or rely on section defaults that follow your brand fonts. Theme colors : you can apply your brand colors to a block in one step rather than coloring element by element. Tips Less is more with colors. Two or three brand colors used consistently look more professional than a full rainbow palette. Upload a reversed logo. A white version of your logo earns its keep on photo and dark-color backgrounds. Decide fonts once. Resist styling individual text elements with one-off fonts; keeping to primary/secondary is what makes a report feel designed. Related Fonts and colors Images and videos"
   },
   {
     "title": "Adding sections",
@@ -520,7 +228,14 @@ const SEARCH_INDEX = [
       "adding",
       "sections",
       "building",
-      "reports"
+      "reports",
+      "donor list",
+      "honor roll",
+      "recognition levels",
+      "giving levels",
+      "donor wall",
+      "acknowledgment",
+      "block types"
     ],
     "body": "Adding sections Reports are built from blocks — an intro, a story, a stats spread, a donor list. Each block has its own layout and purpose, and you choose from a range of block types as you build. (A section is a chapter of your report, made up of one or more blocks; sections are what appear in your report's navigation.) This page covers the block types available and how to add them. Add a block In the builder, click Add new section . Choose a block type from the list (each comes with a short description). The new block is added to your report with placeholder content ready to edit. You can also let AI draft a block for you — describe what it's about and Storyraise builds an outline. See AI content generation . Block types Openers and narrative Intro — set the stage with a captivating title for your report Letter — heartfelt messages from your organization's leaders Story — spotlight your organization's compelling stories Prose — dive deep into topics with detailed text passages Highlight — draw attention to important content with a striking image-and-text pairing Visual Gallery — showcase images in a sleek, customizable photo gallery Video — set the stage with captivating footage Numbers and data Stats — showcase achievements using key figures Infographics — infographics with lists, sequences, and comparisons (see Creating infographics ) Poll — ask readers a question and give it a page of its own (see Adding a poll ) People and gratitude Testimonial — share praise from supporters to boost credibility People — introduce your team to build trust Donor List — acknowledge and celebrate your contributors Thank-You Note — express gratitude directly Action Donate — encourage support by linking to your donation form Flexible Section — a flexible container for custom layouts Repeater — create repeating blocks and elements, useful for lists of similar items Note: Repeater needs a Precision plan with Storyraise Collect active. It won't appear in the block list otherwise. Managing blocks Duplicate a block to reuse its layout with different content. Delete a block you don't need — deleted blocks can be restored if you change your mind. Reorder your blocks by dragging — see Reordering sections . Hide a block from the report's navigation menu while keeping it in the report — see Navigation options . Tips One idea per block. Readers scroll a block at a time; a block that tries to do two jobs usually does neither well. Vary the rhythm. Alternate text-heavy blocks (Letter, Prose) with visual ones (Gallery, Stats) to keep readers moving."
   },
@@ -571,64 +286,6 @@ const SEARCH_INDEX = [
     "body": "The element bar Select anything on the canvas and a small blue bar appears just above it. The bar tells you what you have selected — and where it sits inside the report — and gives you the actions you use most: move, copy, paste, duplicate, edit, and delete. Everything is one click, so you never have to reach for a keyboard shortcut or drag an element across the page. The bar is anchored to the element it belongs to. A small white arrow above it points down at your current selection, and it scrolls with the page as you work. What's on the bar Reading left to right: The element path — the trail of containers your element sits inside, ending with the element itself ↑ / ↓ — move the element up or down Copy and Paste Duplicate — drop a copy directly below Pencil — edit text (text elements only) Trash — delete the element Buttons that don't apply to the current selection are dimmed: the arrows when there's nowhere left to move, Paste until you've copied something, and Trash on elements that can't be removed. The element path The left of the bar is a breadcrumb trail of everything your element lives inside — the block first, then each container, and finally the selected element itself as the dark chip on the right. Click any earlier crumb to select that container. This is the fastest way to grab something you can't easily click on directly: click any cell of a table and then click Table in the path to select the whole table. With the container selected, the settings panel on the right switches to that container's editor — here, the Table Editor , with its own style and data options. Set a background color there and it applies to the whole table, not the one cell you started from. The same trick works anywhere: select a text element inside a row and click Row to style the row, or click the block name to select the whole block. Tip: On a long path — or a narrow canvas, like the mobile preview — the trail folds behind a … so the buttons always stay on screen. Click the … to see the full path. Move up and down The ↑ and ↓ buttons move the selected element one position at a time. It's the precise alternative to drag and drop, which is worth reaching for on a laptop trackpad where a drag is easy to start and hard to land. Each press moves the element one place in reading order. The canvas scrolls to follow it, so you can keep pressing and watch it walk down the page. A press does whatever the next position calls for: step past a neighboring element, move into the container next to it (the next row slot, for example), climb out of a container it's currently inside, or cross into the next block once it reaches the end of the one it's in. When there's nothing left in that direction, the arrow dims. Select a whole block and the arrows reorder blocks instead — see Reordering sections . Note: With more than one element selected, the arrows are switched off — a multi-selection has no single destination. Copy, duplicate, and delete still work. Copy and paste Copy puts the selected element on the report clipboard without changing anything on the page. The button flashes green and a small Copied pill confirms it. Now select where you want it and click Paste . The copy stays on the clipboard until you copy something else, so you can paste it into as many places as you like — including other blocks. Paste places the element after whatever is selected. If you've selected an empty container or layout slot, it goes inside it instead; if you've selected a box or mini grid that already has content, Storyraise asks whether you want it inside or after. ⌘V / Ctrl+V does exactly the same thing. Duplicate Duplicate makes a copy of the element and places it directly below the original — one click, no clipboard involved. It's the quickest way to build a repeating pattern: style one item the way you want it, then duplicate it and change the words. Edit text with the pencil Text elements get a pencil button, just left of the trash. Click it to start editing — the same thing double-clicking the text does, with the cursor placed at the end so you can type straight away. While you're editing, the formatting toolbar takes the bar's place, with bold, italic, underline, strikethrough, link, text color, and superscript / subscript. Click anywhere outside the text to finish; the element bar comes back. Delete Trash removes the selected element immediately. Changed your mind? Use Undo in the top toolbar. Elements that a block depends on — layout slots and other fixed pieces — can't be removed, and the trash button is dimmed on those. Related Editing content Reordering sections Adding sections"
   },
   {
-    "title": "Review comments",
-    "description": "Comments let your team review a report inside the builder instead of in a separate email thread. Everyone reads the same draft, and the note sits on the…",
-    "section": "Building Reports",
-    "url": "/docs/building-reports/review-comments/",
-    "keywords": [
-      "review",
-      "comments",
-      "building",
-      "reports",
-      "comment",
-      "feedback",
-      "approval",
-      "sign off",
-      "collaborate",
-      "collaboration",
-      "team",
-      "drawer",
-      "notes",
-      "proofing",
-      "markup"
-    ],
-    "body": "Review comments Comments let your team review a report inside the builder instead of in a separate email thread. Everyone reads the same draft, and the note sits on the section it's about. Comments are private to your team. They live in the builder only — readers never see them, and they don't travel to the published report. Opening the comments panel Click the Comments icon in the builder's top toolbar. A panel slides in from the side, and the icon carries a count once the report has comments on it. Note: Comments are part of Platinum and Precision. On other plans the icon opens an upgrade prompt instead. Comments belong to a section The panel shows the comments for the section you're looking at , not the whole report. Move to another section and the panel changes with it. That's the part worth knowing before you start: a note about the donor list won't be visible while a teammate is sitting on the cover. Navigate to the section you're commenting on first, then write. Leaving a comment Open the section you want to comment on. Open the Comments panel. Write your note in the box at the bottom and click Post comment . Your name and the date and time are attached automatically. Your own comments appear on one side of the panel and your teammates' on the other, so a long thread stays readable. Editing and removing Edit appears on your own comments, so you can fix a typo or sharpen a note without deleting and reposting it. Delete is available on any comment, including a teammate's. It's meant for clearing a note once the change has been made, so the panel shows what's still outstanding rather than the whole history. Deleting a comment can't be undone, so clear notes as you resolve them rather than tidying up in bulk at the end. Getting a review done Comment where the change is. A note on the right section is far faster to act on than \"the third page looks off\". Say what you want, not just what's wrong. \"Cut this to two sentences\" saves a round trip that \"too long\" doesn't. Clear each note as you act on it. An empty panel is a finished review, and that's a much clearer signal than a message saying you think you got everything. Related Editing content The element bar Managing your team Publishing and sharing"
-  },
-  {
-    "title": "Using templates",
-    "description": "Templates do the design work so you can focus on the story. This page covers working with templates while you build. (New to templates? Start with…",
-    "section": "Building Reports",
-    "url": "/docs/building-reports/using-templates/",
-    "keywords": [
-      "using",
-      "templates",
-      "building",
-      "reports",
-      "gallery",
-      "shelves",
-      "browse templates",
-      "preview",
-      "brand colors",
-      "brand fonts",
-      "your templates",
-      "carousel"
-    ],
-    "body": "Using templates Templates do the design work so you can focus on the story. This page covers working with templates while you build. (New to templates? Start with Understanding templates .) Browsing the gallery Choose Report from template and the gallery opens on four entry points — Fundraising, Donor Relations & Stewardship, Communications, and Annual & Impact — over shelves grouped by category. Any templates your team has saved sit first, under Your templates . Each shelf scrolls sideways. Drag it, or use the arrows at either end. Previewing before you commit Click a template to open it as a real report rather than a thumbnail, so you can scroll it the way a reader would. Two toggles in the preview swap in your brand colors and brand fonts . Both start off, which is deliberate: see the template as it was designed first, then check it against your brand. A template that looks wrong in your colors is usually telling you something about the colors, not the template. Starting from a template When you create a report from a template, you get a complete editable copy: cover, sections, layouts, and sample content. From there, building is mostly replacing — your words for the sample words, your photos for the stock photos. Make a template yours Work through the template in this order: Apply your brand kit first. Colors, fonts, and logo — see Brand kit . It instantly makes the whole template feel like yours, and you'll judge the remaining work more accurately. Replace content section by section. Keep the layouts; swap the words and images. Prune and add. Delete what doesn't apply and add the blocks the template didn't include. Don't fight the layout. If a block's structure doesn't fit your content, it's usually faster to delete it and add a better-suited block type than to bend it into shape. Keep the sample content until the end Sample text shows you the intended length and tone for each spot — a heading meant for five words reads badly with twenty. Replace content piece by piece rather than clearing everything first, so you always have the design's \"intent\" in view. Reusing your own work Your best template is often last year's report. Duplicate a past report from the dashboard and update it — structure, branding, and recurring sections (letters, donor lists, financials) carry over, and you only rewrite what changed."
-  },
-  {
-    "title": "Brand kit",
-    "description": "Your brand kit stores your organization's logos, images, colors, and fonts in one place, available in every report. Set it up once and every report you build…",
-    "section": "Building Reports",
-    "url": "/docs/building-reports/brand-kit/",
-    "keywords": [
-      "brand",
-      "kit",
-      "building",
-      "reports"
-    ],
-    "body": "Brand kit Your brand kit stores your organization's logos, images, colors, and fonts in one place, available in every report. Set it up once and every report you build starts on brand. What's in the brand kit Logos — your organization's logo files, ready to drop into any section. Images — a shared library of photos and graphics your whole team can reuse. Colors — your brand palette. Brand colors appear in every color picker in the builder, alongside the default palette. Fonts — your primary and secondary typefaces. The primary font leads (headlines, emphasis); the secondary font supports (longer text). Setting it up Open your brand kit settings. Upload your logos — the versions you use most (full color, white/reversed). Add brand colors — your primary palette. If you have brand guidelines, pull the exact hex values from them. Choose your fonts — pick your primary and secondary fonts from the font library (you'll see live \"Aa\" previews of each). Using it while you build Colors : every color picker shows your brand colors first — one click to stay on palette. Logos and images : when editing image content, open the Logos and Images panels in the sidebar to drop in brand assets without re-uploading. Fonts : apply your primary or secondary font to text from the styling controls, or rely on section defaults that follow your brand fonts. Theme colors : you can apply your brand colors to a block in one step rather than coloring element by element. Tips Less is more with colors. Two or three brand colors used consistently look more professional than a full rainbow palette. Upload a reversed logo. A white version of your logo earns its keep on photo and dark-color backgrounds. Decide fonts once. Resist styling individual text elements with one-off fonts; keeping to primary/secondary is what makes a report feel designed. Related Fonts and colors Images and videos"
-  },
-  {
     "title": "Fonts and colors",
     "description": "Typography and color do most of the visual work in a report. This page covers how to choose and apply both.",
     "section": "Building Reports",
@@ -640,6 +297,32 @@ const SEARCH_INDEX = [
       "reports"
     ],
     "body": "Fonts and colors Typography and color do most of the visual work in a report. This page covers how to choose and apply both. Fonts The font library Storyraise's font picker is backed by the Google Fonts library — hundreds of professionally designed, web-safe typefaces. Search by name and preview each font live before choosing. Primary and secondary fonts Set your two brand fonts in the brand kit : Primary — your leading typeface, used for headlines and emphasis. Secondary — your supporting typeface, used for longer passages. When you edit text, you can apply either with the \"Aa\" font swatches, so the whole team uses the same two typefaces without hunting through the library each time. Per-element typography Each text element can also be tuned individually: size, weight, color, alignment, line height, and letter spacing. Use this for fine-tuning — lean on your brand fonts for the big decisions. The Weight control names each weight rather than numbering it — Light, Regular, Medium, Semibold, Bold — and only offers the weights the font family actually has. If a weight you expect isn't in the list, that family doesn't publish it. Every weight a family does offer is loaded with the report, so a heading set in Bold renders in real Bold rather than a browser's thickened approximation of Regular. Choosing fonts that work Pair a distinctive primary with a quiet, highly readable secondary. If your brand guidelines name fonts that exist in Google Fonts, use those exact ones. If not, pick the closest match — e.g., Lato or Inter stand in well for Helvetica-family brands. Body text reads best at a comfortable size with generous line height; resist shrinking text to fit more in. Colors Where colors come from Every color picker in the builder offers: Your brand colors — from your brand kit, always first. The default palette — Storyraise's built-in colors. Custom colors — pick or enter any hex value. What you can color Section and block backgrounds — the biggest lever for visual variety. Alternating background colors between sections gives a report rhythm. Text — headings and body text color per element. Elements — buttons, infographics, counters, and dividers take color settings too. You can also apply your brand's theme colors to a whole block at once instead of coloring each element. Color tips Contrast is king. Dark text on light backgrounds (or the reverse) keeps your report readable for everyone — see Accessibility considerations . Use accent color sparingly. Save your brightest brand color for buttons, links, and key stats so it draws the eye where it matters. Check on mobile. Colors that look subtle on a big screen can disappear on a phone — preview both. See Mobile optimization ."
+  },
+  {
+    "title": "Donor lists and honor rolls",
+    "description": "The Donor List block acknowledges and celebrates your contributors — see Adding sections. For many readers it's the first page they look for, and it's the one…",
+    "section": "Building Reports",
+    "url": "/docs/building-reports/donor-lists/",
+    "keywords": [
+      "donor",
+      "lists",
+      "honor",
+      "rolls",
+      "building",
+      "reports",
+      "donor list",
+      "honor roll",
+      "recognition levels",
+      "giving levels",
+      "donor wall",
+      "anonymous donor",
+      "listed as",
+      "deceased",
+      "joint names",
+      "acknowledgment",
+      "thank you"
+    ],
+    "body": "Donor lists and honor rolls The Donor List block acknowledges and celebrates your contributors — see Adding sections . For many readers it's the first page they look for, and it's the one place in a report where a small mistake costs you a phone call. Getting names in Getting the names right This is the part worth slowing down for. Before a donor list goes anywhere near publish: Anonymous donors. Anyone who asked to be anonymous must not appear. If your CRM flags this, check the flag — don't rely on memory. Consider a line at the end of the relevant level: \"and 12 donors who wish to remain anonymous.\" \"Listed as\" preferences. Many donors want to appear differently from how their record reads — a couple listed jointly, a family foundation, a maiden name, initials. Use the recognition name, not the record name. Joint and household gifts. Mr. and Mrs. conventions vary and increasingly annoy people. Follow whatever your organization has agreed, and apply it consistently. Corporate and foundation names. Check the legal name and the punctuation. The Smith Foundation and Smith Foundation are different organizations to the person who runs one. Deceased donors. Decide in advance whether to include them and how — many organizations use a symbol with a key, or a separate memorial section. Check with anyone who might be reading before you publish. Spelling and accents. Names with accents, hyphens, and capitalisation inside them ( McAllister , van der Berg , O'Neill ) are the ones that get flattened. Choosing levels Recognition levels are an editorial decision more than a design one: Fewer levels read better. Four or five bands is usually plenty. Give the bands names people can say out loud, and put the range next to the name if you use one. Order within a level is almost always alphabetical by surname. Anything else invites questions. Consider whether you want dollar ranges published at all. Some organizations list levels by name only. Layout A long list in one narrow column scrolls forever on a phone. Break it by level, with a heading for each. On the PDF export , each block becomes its own page — so a very long list will run past one page. Splitting the list into one block per recognition level gives you control over where the breaks land. Set the names at a comfortable reading size. This is the section people scan for their own name and their friends' names, not body copy to be read through. Before you publish Anonymous donors removed, and accounted for if you're counting them \"Listed as\" preferences applied Spellings checked against the CRM, not typed from memory Deceased donors handled the way your organization has agreed Someone other than you has read the whole list Checked on a phone and in the PDF Related Adding sections — the Donor List block among the others What goes in an annual report — where the list sits in the whole PDF and print — how a long list breaks across pages"
   },
   {
     "title": "Images and videos",
@@ -774,7 +457,12 @@ const SEARCH_INDEX = [
       "resolution",
       "crop",
       "pixels",
-      "photo size"
+      "photo size",
+      "phone photos",
+      "camera",
+      "iphone",
+      "android",
+      "bad photos"
     ],
     "body": "Image sizes and dimensions The right-shaped image makes a block look designed; the wrong-shaped one fights its layout. This guide lists the aspect ratio each block type expects, so you can choose and crop photos with confidence. How images behave in reports A few things to know before the numbers: Reports are responsive. Many blocks crop images differently on desktop and mobile — that's why the table below has two ratio columns. An image that works in both crops keeps its subject near the center. Backgrounds fill their space. Background images scale to cover the whole block, cropping the edges as the window changes shape. Upload big — Storyraise optimizes. Images are automatically resized and compressed for fast delivery, so upload high-resolution originals rather than pre-shrinking them. There's no practical benefit to uploading small files, and large originals stay sharp on big screens. Aspect ratios by block type Block Layout Desktop Mobile Recommended minimum Notes Intro — 16:9 8:9 1920 × 1080 Responsive; varies with window size. Center your subject for best results. Letter Image Left 8:9 3:4 1280 × 1440 Image beside text. Desktop responsive; varies by content length and window size. Letter Image Right 12:16 12:16 1200 × 1600 Image beside text, mirrored. Letter Centered · Portrait 3:4 3:4 1200 × 1600 Portrait image centered above the text. Letter Centered · Square 1:1 1:1 1200 × 1200 Square image centered above the text. Letter Centered · Circle 1:1 1:1 1200 × 1200 Circular crop of a square image; keep your subject centered. Story Image Left 8:9 3:4 1280 × 1440 Image beside text. Desktop responsive; varies by content length and window size. Story Image Right 8:9 3:4 1280 × 1440 Image beside text, mirrored. Desktop responsive. Story Full-Width Overlay 16:6 16:6 1920 × 720 A wide, cinematic banner with text overlaid. Video — 16:9 16:9 — Standard widescreen video. Highlight — 1:1 1:1 1200 × 1200 People — 1:1 1:1 1200 × 1200 Square portraits; faces centered. Testimonial — 1:1 1:1 1200 × 1200 The layout names above ( Image Left , Centered · Square , Full-Width Overlay , etc.) match the layout picker in the report builder. Each block type with multiple layouts shows these in its Set Block Style & Layout panel. Gallery images The Gallery section comes in two layouts — Grid and Slideshow . Tiles default to square (1:1) , and you can choose a different shape per gallery: portrait options (9:16, 3:5, 2:3, 3:4, 4:5) or landscape options (16:9, 5:3, 3:2, 4:3, 5:4). Because every image in the gallery is displayed at the shape you pick, choose photos that crop well to it, and aim for at least 1200px on the long edge . Background images Almost every block type accepts a background image — including the ones not listed in the table above (Prose, Stats, Infographics, Donor List, Donate, Thank-You Note). For backgrounds: Use 16:9 at 1920 × 1080 or larger . Backgrounds are cropped to fill the block, and the visible area shifts with window size and content length — keep the important part of the image centered , and avoid backgrounds where critical detail sits near an edge. Busy backgrounds compete with text; favor images with a quiet area where your headline lands, or use a darker photo so overlaid text stays readable. Section thumbnails Each section can have a thumbnail image that appears in the published report's navigation menu . Use 16:9 — a simple, recognizable crop reads best at small sizes. Logos Logos come from your brand kit rather than per-section uploads: Upload SVG if you have it — it stays crisp at every size. Otherwise use a high-resolution PNG with a transparent background . Add a reversed (white) version too; it's what works over photos and dark section colors. Avoid logos with baked-in white boxes — transparency is what lets a logo sit cleanly on any background. Quick tips Center your subjects. Desktop and mobile crops differ, and the center is the safe zone in both. Check mobile preview before publishing. A crop that flatters on desktop can decapitate a portrait on a phone — see Mobile optimization . JPG and PNG both work. Use JPG for photos and PNG for graphics with sharp edges or transparency; delivery is optimized automatically either way. When in doubt, go bigger. An oversized image is resized for you; an undersized one looks soft on large screens. Related Images and videos — uploading, editing, and the image library Brand kit — logos, brand photos, and colors"
   },
@@ -836,6 +524,30 @@ const SEARCH_INDEX = [
     "body": "Mobile optimization Many of your readers will open your report on a phone — often from an email or social link. Storyraise reports are responsive out of the box, and the builder gives you tools to fine-tune the mobile experience. Responsive by default Every block is built to adapt: columns stack, images scale, and the navigation menu collapses into a mobile dropdown. You don't build a separate mobile version. Preview and adjust for mobile The builder includes a mobile preview — view and adjust styles for mobile : Switch the canvas to the mobile view. Scroll your report as a phone reader would. Adjust styles while in mobile view to fine-tune how things look on small screens, without affecting the desktop layout. Some settings are mobile-specific by design — for example, sections can reduce their height on mobile, and element visibility can be set per device (including Mobile Only content). What to check in mobile view Walk the whole report in mobile preview before publishing, watching for: Text size — headlines that fit on one desktop line can wrap awkwardly on a phone; shorten or resize. Image crops — wide images lose their edges as they scale; make sure faces and focal points survive. Side-by-side layouts — multi-column blocks stack on mobile; confirm the stacking order still tells the story. On Story, Letter, and Highlight blocks you control it directly with Content Stack Order (Mobile) : choose Media First to lead with the image, or Content First to lead with the words. Buttons — keep them comfortably tappable and above the fold of key sections. Navigation — long section titles truncate in the mobile menu; see Navigation options . Tips Edit desktop first, then polish mobile. Build the report in desktop view, then do a dedicated mobile pass at the end — and again after any big edits. Test on a real phone. Before announcing your report, open the published link on your own phone. Two minutes of thumb-scrolling catches what previews miss."
   },
   {
+    "title": "Review comments",
+    "description": "Comments let your team review a report inside the builder instead of in a separate email thread. Everyone reads the same draft, and the note sits on the…",
+    "section": "Building Reports",
+    "url": "/docs/building-reports/review-comments/",
+    "keywords": [
+      "review",
+      "comments",
+      "building",
+      "reports",
+      "comment",
+      "feedback",
+      "approval",
+      "sign off",
+      "collaborate",
+      "collaboration",
+      "team",
+      "drawer",
+      "notes",
+      "proofing",
+      "markup"
+    ],
+    "body": "Review comments Comments let your team review a report inside the builder instead of in a separate email thread. Everyone reads the same draft, and the note sits on the section it's about. Comments are private to your team. They live in the builder only — readers never see them, and they don't travel to the published report. Opening the comments panel Click the Comments icon in the builder's top toolbar. A panel slides in from the side, and the icon carries a count once the report has comments on it. Note: Comments are part of Platinum and Precision. On other plans the icon opens an upgrade prompt instead. Comments belong to a section The panel shows the comments for the section you're looking at , not the whole report. Move to another section and the panel changes with it. That's the part worth knowing before you start: a note about the donor list won't be visible while a teammate is sitting on the cover. Navigate to the section you're commenting on first, then write. Leaving a comment Open the section you want to comment on. Open the Comments panel. Write your note in the box at the bottom and click Post comment . Your name and the date and time are attached automatically. Your own comments appear on one side of the panel and your teammates' on the other, so a long thread stays readable. Editing and removing Edit appears on your own comments, so you can fix a typo or sharpen a note without deleting and reposting it. Delete is available on any comment, including a teammate's. It's meant for clearing a note once the change has been made, so the panel shows what's still outstanding rather than the whole history. Deleting a comment can't be undone, so clear notes as you resolve them rather than tidying up in bulk at the end. Getting a review done Comment where the change is. A note on the right section is far faster to act on than \"the third page looks off\". Say what you want, not just what's wrong. \"Cut this to two sentences\" saves a round trip that \"too long\" doesn't. Clear each note as you act on it. An empty panel is a finished review, and that's a much clearer signal than a message saying you think you got everything. Related Editing content The element bar Managing your team Publishing and sharing"
+  },
+  {
     "title": "Accessibility considerations",
     "description": "An accessible report reaches your whole audience — including readers with low vision, color blindness, motor differences, or those using screen readers. Most…",
     "section": "Building Reports",
@@ -857,31 +569,56 @@ const SEARCH_INDEX = [
   {
     "title": "Sharing reports",
     "description": "Publishing puts your report on the web — sharing puts it in front of your audience. Storyraise gives you several ways to distribute a published report, all…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/sharing-reports/",
     "keywords": [
       "sharing",
       "reports",
-      "distribution",
-      "engagement",
+      "analytics",
       "embed",
       "iframe",
       "qr",
       "copy link",
-      "social"
+      "social",
+      "pdf",
+      "print",
+      "board meeting",
+      "board packet",
+      "download"
     ],
     "body": "Sharing reports Publishing puts your report on the web — sharing puts it in front of your audience. Storyraise gives you several ways to distribute a published report, all available from the Share options in the builder. The Share menu Open your published report in the builder and click Share . From there you can: Copy link — your report's public web address, ready to paste anywhere. Embed Code (standard) — an iframe snippet that displays the report inside a page on your own website. Embed Code (fullscreen) — an iframe snippet that takes over the whole browser window, for kiosk displays or dedicated landing pages. Get QR code — a downloadable QR code that opens your report when scanned. Get PDF — a link to a PDF version of your report. You can also grab the public link anytime from the dashboard: open a published report's menu and choose View Link . Sharing the link Your report's link looks like: It works on every device with no login or app required, so it's safe to drop into: Email campaigns and newsletters Social media posts Your website's navigation or footer Text messages For mailings to your constituents, consider personalized links instead of the plain link — each recipient gets a version addressed to them, and you'll see exactly who opened it. Embedding on your website Paste the standard embed code into any page on your site: The fullscreen variant pins the report over the entire viewport — use it on a dedicated page where the report is the content: If your site has accessibility requirements, give the iframe a descriptive title and review Accessibility at Storyraise before you embed. Whichever version you use, give the report the full width of the page — it sizes itself to the box you put it in, so a narrow column shrinks the whole report and makes body text hard to read. Using WordPress? See Embedding in WordPress for step-by-step instructions for Gutenberg, Elementor, and the Classic editor. QR codes for print Get QR code downloads a scannable code for your report — drop it onto mailers, event signage, table tents, or thank-you cards to bridge print and digital. For per-constituent QR codes at scale (each opening a personalized version of the report), use the QR code generator described in Personalized links . Timing your share Every visit counts toward your report's engagement data, but your own team's views are automatically excluded — so feel free to review and share internally before the big announcement. See Tracking engagement ."
   },
   {
+    "title": "PDF and print",
+    "description": "Storyraise reports are built for the web, but plenty of situations still need a file: a board packet, an email attachment, a printed piece for an event, a…",
+    "section": "Sharing & Analytics",
+    "url": "/docs/distribution-and-engagement/pdf-export/",
+    "keywords": [
+      "pdf",
+      "print",
+      "sharing",
+      "analytics",
+      "export",
+      "get pdf",
+      "board packet",
+      "board meeting",
+      "download",
+      "attachment",
+      "mail",
+      "printer"
+    ],
+    "body": "PDF and print Storyraise reports are built for the web, but plenty of situations still need a file: a board packet, an email attachment, a printed piece for an event, a grant appendix. Getting the PDF Get PDF in the Share menu produces a PDF of a report — see Sharing reports . You have to publish first. Get PDF works on a published report. If you're preparing something for a board meeting, publish it before the meeting — you can hide it from search engines so it isn't indexed while still having a link and a PDF. One block, one page When a report exports, each block becomes its own page in the PDF. That single rule is the whole trick to a good printed version. When you're planning something that will be printed, think of a block as a page: A block holding one big statement makes a strong page. A block holding three unrelated things makes a cluttered one. Very long blocks — a donor list with 400 names, a long story — will run past a single page. Split them into several blocks if you want control over where the breaks land. Blocks you added purely for web rhythm (a thin spacer, a decorative divider) become their own near-empty pages. Remove them from a print-bound version. If print matters, make a print version The cleanest approach is usually to duplicate the report and adapt the copy rather than trying to make one report perfect in both places: Duplicate the published report. Remove anything that only works on the web — polls, embedded forms, video, anything with a hover or a click. Replace \"click here to give\" style calls to action with something a reader can act on from paper: a short URL, a QR code, a reply address. Split or merge blocks so the page breaks fall where you want them. Publish, then Get PDF. Before you send it to a printer Open the PDF and read every page — the export is where spacing problems become visible. Check that images still look sharp at full page size. See Image sizes and dimensions . Check the donor list carefully. Names are the thing people notice. Anything interactive is inert on paper. Make sure nothing important lived only in a poll or a form. What a PDF doesn't do No analytics. A PDF that's emailed around tells you nothing about who read it. If you want to know that, share the link and use tracking . No personalization. Merge tags render for whoever the export was made as, not per recipient. For each donor to see their own name, use personalized links . No updates. A PDF is a snapshot. Republishing the report doesn't change a PDF someone already downloaded. Related Sharing reports — every way to distribute a report Publishing and sharing — publishing, republishing, and search visibility Editing content — how blocks work"
+  },
+  {
     "title": "Embedding in WordPress",
     "description": "WordPress is the most common place teams put a Storyraise report, and it takes about two minutes. Your published report is an ordinary web page, so you embed…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/embedding-in-wordpress/",
     "keywords": [
       "embedding",
       "wordpress",
-      "distribution",
-      "engagement",
+      "sharing",
+      "analytics",
       "embed",
       "iframe",
       "gutenberg",
@@ -895,30 +632,64 @@ const SEARCH_INDEX = [
   {
     "title": "Personalized links",
     "description": "A personalized link opens your report addressed to one specific constituent — their name in the greeting, their details filled into merge tags, and their…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/personalized-links/",
     "keywords": [
       "personalized",
       "links",
-      "distribution",
-      "engagement",
+      "sharing",
+      "analytics",
       "qr",
       "qr code",
       "merge tags",
       "for parameter",
-      "unique url"
+      "unique url",
+      "honor roll",
+      "major donor",
+      "stewardship",
+      "endowment report",
+      "gift acknowledgment",
+      "salutation",
+      "pledge",
+      "personalization"
     ],
     "body": "Personalized links A personalized link opens your report addressed to one specific constituent — their name in the greeting, their details filled into merge tags, and their visit attributed to them in your Analytics. It's the difference between \"Dear friend\" and \"Dear Maria.\" How personalized links work Take your report's public link and add ?for= followed by a constituent's email address: When Maria opens that link, Storyraise looks up her constituent record and: Fills in merge tags. Anywhere your report says @@first_name@@ , Maria sees \"Maria\" — and the same goes for any field on her record ( @@last_name@@ , custom fields like giving level, and so on). Attributes the visit. Her open shows up in your report's Analytics as Maria — not an anonymous visitor — so you know exactly who engaged. See Tracking engagement . The constituent must exist in your Storyraise constituent list (matched by email address), so import your constituents first. Adding merge tags to a report Type a merge tag anywhere in your report's text using the @@field_name@@ format — for example: Thank you, @@first_name@@ — supporters like you made this year possible. Any field on your constituent records can be a merge tag. Open a constituent from your Constituents list to see their available fields and exact field names. A field that's missing on a constituent's record can't be filled in — check your data for gaps (especially custom fields) before a big personalized mailing. See Troubleshooting sync issues . Generating personalized links and QR codes at scale For a mailing, you don't build links by hand — the Generate QR codes tool creates one personalized link and QR code per constituent: Upload constituents CSV. Export a CSV from your Constituents tab (or build one with first_name , last_name , and email headers). Paste your report link. The tool appends ?for=email to it for each constituent. Preview and download. Review the per-constituent URLs, then click Download ZIP . You get: A ZIP of QR codes — one folder per constituent, each containing a print-ready SVG QR code that opens their personalized report. A CSV of links — your original file plus a report_url_used column with each constituent's personalized URL, ready to mail-merge into your email platform. Where personalized links shine Donor thank-yous — a year-end report that greets each donor by name and reflects their giving. Direct mail — printed cards with a personal QR code feel individually made. Email campaigns — merge the report_url_used column into your email platform so each recipient's button opens their version. Knowing who engaged — after the send, Analytics shows which constituents opened the report. See Understanding report metrics . What personalized links unlock in Analytics Anonymous links tell you how your report performed. Personalized links tell you who to call on Monday. Both link types record the same overall activity — opens, time spent, sections viewed, clicks, location, device, and visit timing. Personalized links connect that activity to a specific constituent, which additionally gives you: Named readers in Most Engaged Constituents — the per-report list of who engaged most deeply. Engagement stars and intent badges tied to a person — so you can see not just that someone clicked Donate, but who. Who's Been Reading on your Home tab — named constituents across all your reports. Anonymous readers still count in your overall numbers; they just can't be named. A forwarded link is attributed to its original recipient. If a constituent passes their link to a friend, that friend's reading appears under the original name. Treat named engagement as a conversation starter, not proof of who completed every action. Privacy note A personalized link reveals whatever constituent data your merge tags display. Treat each link as belonging to its constituent — don't post personalized links publicly, and use the plain public link for social media and websites."
   },
   {
+    "title": "Proofing a personalized report",
+    "description": "Before a report that carries a donor's name — or their gift — goes out to a few hundred people, you want to see exactly what they'll see. This page is the…",
+    "section": "Sharing & Analytics",
+    "url": "/docs/distribution-and-engagement/proofing-personalized-reports/",
+    "keywords": [
+      "proofing",
+      "personalized",
+      "report",
+      "sharing",
+      "analytics",
+      "reports",
+      "proof",
+      "preview",
+      "test",
+      "check before sending",
+      "merge tag",
+      "blank field",
+      "salutation",
+      "major donor",
+      "stewardship",
+      "quality check"
+    ],
+    "body": "Proofing a personalized report Before a report that carries a donor's name — or their gift — goes out to a few hundred people, you want to see exactly what they'll see. This page is the check to run first. The stakes are asymmetric. A typo in body copy is forgettable; a wrong salutation or a wrong amount in front of a major donor is a phone call from a board member. Open the report as a specific constituent A personalized link renders the report as it will appear for one person: Substitute a real constituent's email and open it. That's what they'll see. See Personalized links for how the links are built. Check the ?for= sits before any # . If the URL has a section anchor, ?for= must come before it or the personalization is silently dropped and everyone gets the same generic report. This is the most common mistake in a personalized send. Proof against the worst records, not the best Testing with your own record proves very little — your data is complete. The failure modes live in the incomplete records: A constituent with no first name. What does the greeting look like? A constituent missing whatever field you merged. Best practices warns that a missing field means an awkward blank — look at exactly how awkward. A very long name or organization name. Does it wrap or overflow? Someone with an unusual character in their name — an accent, an apostrophe, a hyphen. The plain link with no ?for= at all. Someone will open it. Make sure it reads sensibly. Pick four or five real records that break in different ways and open the report as each. Check the numbers, not just the names If the report merges giving data — an amount, a level, a fund name, a date — proof that separately and harder: Is the amount formatted the way you'd write it in a letter, or is it raw? Is the date readable? Does the figure match what the donor believes they gave? A pledge, a matched gift, or a gift made by a family foundation can all read as surprising to the person named. Keep your proofing out of the numbers Opening the report a dozen times while checking it will show up in analytics as engagement. Add yourself and your reviewers to the analytics exclusion list before you start proofing, or your launch-day numbers will include your own team. A word on forwarding A personalized link renders that constituent's merged data for anyone who opens it. If your report includes giving amounts or capacity-related fields, a forwarded link hands a third party private information about the original recipient. Two practical rules: Don't merge sensitive financial detail into a report you expect to be forwarded or posted. Treat a personalized link as confidential correspondence, and say so when you send it. See the privacy note in Personalized links . The pre-send checklist Opened the report as at least four real constituents, including incomplete records Opened the plain link with no ?for= Every merged number checked for formatting and accuracy ?for= placed before any # in the URL you're actually sending Reviewers on the analytics exclusion list Read on a phone, not just a laptop Someone other than the author has read it Related Personalized links — building the links Analytics exclusion — keeping internal views out Email distribution — sending the finished thing"
+  },
+  {
     "title": "Email distribution",
     "description": "Storyraise Send lets you deliver your reports and messages to constituents by email, right from Storyraise — personalized for each recipient, with no separate…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/email-distribution/",
     "keywords": [
       "email",
       "distribution",
-      "engagement",
+      "sharing",
+      "analytics",
       "send",
       "campaign",
       "newsletter",
@@ -929,12 +700,13 @@ const SEARCH_INDEX = [
   {
     "title": "SMS distribution",
     "description": "Text messages get seen — most are read within minutes. Storyraise Send lets you deliver your reports and messages to constituents by SMS, each text…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/sms-distribution/",
     "keywords": [
       "sms",
       "distribution",
-      "engagement",
+      "sharing",
+      "analytics",
       "text message",
       "texting",
       "phone"
@@ -944,13 +716,12 @@ const SEARCH_INDEX = [
   {
     "title": "Analytics overview",
     "description": "Publishing your report isn't the end of the story. Storyraise Analytics helps you understand what happens next: who is reading, what holds their attention,…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/analytics-overview/",
     "keywords": [
       "analytics",
       "overview",
-      "distribution",
-      "engagement",
+      "sharing",
       "home tab",
       "most read",
       "reader activity",
@@ -966,25 +737,25 @@ const SEARCH_INDEX = [
   {
     "title": "Tracking engagement",
     "description": "Every published Storyraise report quietly keeps score: who opened it, what they read, and what they did next. There's nothing to configure — tracking is built…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/tracking-engagement/",
     "keywords": [
       "tracking",
       "engagement",
-      "distribution"
+      "sharing",
+      "analytics"
     ],
     "body": "Tracking engagement Every published Storyraise report quietly keeps score: who opened it, what they read, and what they did next. There's nothing to configure — tracking is built in from the moment you publish. This page explains what's recorded and how to get the most signal from it. What gets tracked When someone views your published report, Storyraise records: Opens — each visit to the report, including return visits. Unique and return visitors — Storyraise separates how many people read from how much reading happened , so a reader who opens the report four times counts as one visitor with four opens. Sections viewed — which sections of the report each visitor reached, and the path they took between them. Time spent — how long visitors engage, totalled across all their visits. Link clicks — taps on donation buttons, event links, social links, and any other link in your report, grouped by what they mean: Donate, Get Involved, Contact, Watch, Social, and Documents. Location — the visitor's approximate region and city (never a precise address). Device — mobile or desktop, so you know how your audience actually reads. Visit timing — when people read, bucketed by weekday and time of day in your organization's timezone. All of this feeds the Analytics tab of each published report — see Understanding report metrics . Anonymous visitors vs. constituents By default, a visitor is anonymous — you'll see the visit, its location, and reading behavior, but not a name. The upgrade comes from personalized links : when a constituent opens their ?for= link, the visit is attributed to them by name. That's what powers the Most Engaged Constituents list, the star-rated Engagement Score, and Who's Been Reading on your Home tab — and it's why personalized links are worth the small extra effort for any mailing where you care who engaged. Storyraise also recognizes return visits from the same device, so a constituent who opens their link on Tuesday and comes back Friday counts as one engaged person, not two strangers. A forwarded personalized link is attributed to the original recipient. If a board member forwards their link to a colleague, that colleague's reading shows up under the board member's name. Treat named engagement as a conversation starter, not proof of who did what. What the numbers can and can't see Engagement tracking is good, not omniscient. A few things are worth knowing before you read too much into a single number: Visitors are identified by device. One person reading on a phone and again on a laptop may count as two visitors; two people sharing one device may count as one. Privacy settings and ad blockers can prevent Storyraise from recognizing a returning reader, so some return visits will be counted as new ones. A visit is recorded once the reader leaves. If someone closes their laptop mid-read or is interrupted, that session may not be fully captured — and someone reading right now won't appear yet. Location is approximate. Internet providers, mobile networks, corporate networks, and VPNs all affect city-level accuracy. Read regions, not cities. None of this undermines the picture. It just means patterns across weeks are more trustworthy than any single day's figure. Your team doesn't pollute the numbers Views from your own organization's team members are automatically recognized and excluded from report analytics — even when a staff member opens a constituent's personalized link to check it. Preview, proofread, and share internally as much as you like; your metrics reflect your real audience. Need to share a published report internally with people outside your app team — a board member, a partner, a consultant? See Analytics exclusion for how automatic exclusion works and how to exclude specific emails or domains. Engagement signals Beyond raw views, Storyraise classifies what readers do into intent signals — actions like Clicked Donation CTA , Clicked Event RSVP , Clicked Volunteer , Watched YouTube , Visited Facebook , and Revisited Report . These signals feed each constituent's engagement score, helping you spot the people who didn't just read, but acted. See Understanding report metrics . Intent signals are awarded on their own merits, not on top of a reading-time threshold — a reader who spent ten seconds in the report but clicked your donation button still earns a Donation badge. A meaningful action is never hidden behind a time bar. Getting better data Use personalized links for mailings. Anonymous links tell you how many ; personalized links tell you who . Give readers something to click. Donation buttons, RSVP links, and video embeds turn passive reads into measurable intent. Keep constituent emails current. Attribution is matched through your constituent records — see Importing constituent data . What readers should know Tracking is for understanding engagement, not surveillance: no precise locations are collected, and analytics are only visible to your organization. If your organization publishes a privacy policy covering communications, report engagement tracking is worth a line there. Related Analytics overview — where to find all of this, and how fresh it is. Understanding report metrics — what each metric means. Analytics exclusion — keeping internal views out of your numbers. Acting on analytics — what to do with what you learn."
   },
   {
     "title": "Analytics exclusion",
     "description": "Your report analytics should reflect your real audience — the constituents you're trying to reach — not your own team clicking through to proofread.…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/analytics-exclusion/",
     "keywords": [
       "analytics",
       "exclusion",
-      "distribution",
-      "engagement",
+      "sharing",
       "exclude",
       "internal views",
       "team views",
@@ -999,14 +770,14 @@ const SEARCH_INDEX = [
   {
     "title": "Understanding report metrics",
     "description": "Once your report is published and shared, open it and select Analytics to see how it's performing. This page walks through every metric you'll find there —…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/understanding-report-metrics/",
     "keywords": [
       "understanding",
       "report",
       "metrics",
-      "distribution",
-      "engagement",
+      "sharing",
+      "analytics",
       "opens",
       "unique visitors",
       "return visitors",
@@ -1025,13 +796,12 @@ const SEARCH_INDEX = [
   {
     "title": "Acting on analytics",
     "description": "Numbers are only useful when they change what you do next. Once you've read your report's Analytics, here are five ways to turn reader engagement into…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/acting-on-analytics/",
     "keywords": [
       "acting",
       "analytics",
-      "distribution",
-      "engagement",
+      "sharing",
       "stewardship",
       "follow up",
       "outreach",
@@ -1043,16 +813,40 @@ const SEARCH_INDEX = [
     "body": "Acting on analytics Numbers are only useful when they change what you do next. Once you've read your report's Analytics , here are five ways to turn reader engagement into stronger stewardship. Five ways to follow up 1. Reach out to engaged readers Someone returned, spent meaningful time reading, or clicked to take action? Reconnect while the interest is fresh. Reference what caught their attention so the conversation feels relevant rather than generic — \"I saw you spent some time with the clinic story\" lands very differently from a quarterly blast. Your Most Engaged Constituents list is the starting point, but use it alongside what you already know about each person. Stars reflect engagement with one report, not a constituent's overall value or relationship with your organization. 2. Follow up based on intent Use a reader's action to shape your next move. Storyraise groups clicks by what they mean: A Donate click may call for a fundraising conversation. A Get Involved click is an opening to share upcoming ways to participate. An event RSVP or Contact click tells you exactly which door someone knocked on. Reading shows attention. Clicking shows intent — so let the click choose the follow-up. 3. Build on what resonated Repurpose a high-interest story in an email, a social post, a donor conversation, or a campaign. If your Section Retention shows one story held readers all the way through, that's not just a good section — it's a topic and a format worth carrying into your next report. 4. Start gathering the next story now Analytics reveals what's missing as much as what worked. Share those findings with your development, communications, leadership, and program teams so they can start collecting the stories, data, photos, and calls to action you'll need next time. The best time to commission a photo is a year before you need it. 5. Look for patterns over time One day is a snapshot. Three months, six months, or a year reveals what consistently captures attention, brings readers back, and inspires action. Watch for: Timing patterns — the hours and days your audience actually reads, which often defy conventional email-marketing advice. Geographic clusters — pockets of interest that may justify a regional event or a local volunteer group. Format patterns — whether your audience finishes long narrative pieces or drops off in favor of short, visual ones. Your report keeps working Your report doesn't stop working when someone finishes reading it. Use Analytics to keep the conversation going — and to make your next story stronger than the last one. Related Understanding report metrics — what each metric means before you act on it. Analytics overview — where to look, and how fresh the data is. Personalized links — how to know who engaged, not just how many. Best practices — planning and building reports people finish."
   },
   {
+    "title": "Reporting your numbers to leadership",
+    "description": "At some point someone asks for the numbers in a deck. This page covers what you can get out of Storyraise, what you can't, and how to build a defensible…",
+    "section": "Sharing & Analytics",
+    "url": "/docs/distribution-and-engagement/reporting-to-leadership/",
+    "keywords": [
+      "reporting",
+      "numbers",
+      "leadership",
+      "sharing",
+      "analytics",
+      "export",
+      "board report",
+      "cmo",
+      "metrics",
+      "utm",
+      "google analytics",
+      "ga4",
+      "data export",
+      "quarterly",
+      "comparison",
+      "benchmark"
+    ],
+    "body": "Reporting your numbers to leadership At some point someone asks for the numbers in a deck. This page covers what you can get out of Storyraise, what you can't, and how to build a defensible summary from what's available. What you can get out today You want Available? How A narrative summary of a report's performance Yes The Story — a plain-English PDF summary. See Analytics overview Per-constituent engagement Yes, in the dashboard Tracking engagement Poll results as data Yes CSV export from the poll — see Adding a poll Form responses as data Yes CSV export from the collection — see Managing responses A raw analytics export (CSV of opens, sessions, engagement) No — Email open and click rates No Not available; see Email distribution Engagement written back to your CRM Salesforce only Optional write-back — see Salesforce Define your metrics before you present them Numbers that aren't defined get challenged in the room. Two worth being precise about: Opens are activity, not people. Understanding report metrics describes Opens as the clearest read on whether distribution worked — how many people arrived. It isn't a count of unique individuals, and visitors are identified by device, so one person on a phone and a laptop can appear twice. The Engagement Score is relative, not absolute. It's benchmarked against the median reading time among identified constituents on that report . That makes it useful for ranking readers within one report and misleading if you compare it across reports or against last year — every report is scored against its own median. If you put it in a deck, say what it's relative to. Named engagement is a conversation starter, not proof. A forwarded personalized link is attributed to the original recipient, so \"Maria read it for six minutes\" may mean Maria's colleague did. Tracking engagement is explicit about this, and it's better to say it yourself than have someone discover it later. Location is approximate. Read regions, not cities. A quarterly summary that holds up Built only from what's actually available: Reach — Opens, with the caveat above stated once. Depth — time spent and how far through the report people got, as a measure of whether the content held. Named engagement — how many identified constituents engaged, and the list of who, for follow-up. This is the number that matters most to fundraising leadership and it's the one Storyraise is strongest on. Action — clicks on your donate or contact calls to action. What you did about it — who was followed up with and what happened. See Acting on analytics . Point 5 is the one that changes the conversation. Most channel reporting stops at reach; this product's advantage is that it tells you which named people to call. What to say about channel attribution Opens are not currently broken down by source, so you can't split \"arrived from email\" from \"arrived from LinkedIn\" inside Storyraise. If channel attribution matters to your leadership, either: Publish separate report links per channel so each has its own numbers, or Track the click side in the tools you already own — your email platform's click stats and your social scheduler's link stats — and treat Storyraise's numbers as what happened after the click. Related Analytics overview — what the dashboard shows Understanding report metrics — what each number means Acting on analytics — turning engagement into follow-up Analytics exclusion — keeping your own team out of the numbers"
+  },
+  {
     "title": "Analytics for older reports",
     "description": "Reports first published before late May 2026 were measured with Storyraise's earlier page-view counter. Their history is preserved, but they won't show the…",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/analytics-for-older-reports/",
     "keywords": [
       "analytics",
       "older",
       "reports",
-      "distribution",
-      "engagement",
+      "sharing",
       "legacy",
       "older reports",
       "page views",
@@ -1066,15 +860,663 @@ const SEARCH_INDEX = [
   {
     "title": "Video analytics",
     "description": "Coming soon — viewing analytics for Storyraise Video are in development and not yet available.",
-    "section": "Distribution & Engagement",
+    "section": "Sharing & Analytics",
     "url": "/docs/distribution-and-engagement/video-analytics/",
     "keywords": [
       "video",
       "analytics",
-      "distribution",
-      "engagement"
+      "sharing"
     ],
     "body": "Video analytics Coming soon — viewing analytics for Storyraise Video are in development and not yet available. In the meantime Storyraise Video lets you send personalized video messages to constituents by email, each with their own viewing link. While video-specific metrics aren't available yet, you can still measure the campaign around the video: Pair the video with a report. If your message links to a report via personalized links , the report's Analytics shows which constituents followed through. Host on YouTube or Vimeo where it makes sense. Videos embedded in reports through those platforms carry their own view counts on the hosting side, and clicks on embedded videos appear as intent signals in report metrics."
+  },
+  {
+    "title": "What is Storyraise Collect?",
+    "description": "Storyraise Collect gathers the raw material your stories are made of. Build a form, share the link, and collect stories, thank-yous, photos, and data from…",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/what-is-storyraise-collect/",
+    "keywords": [
+      "what",
+      "storyraise",
+      "collect"
+    ],
+    "body": "What is Storyraise Collect? Storyraise Collect gathers the raw material your stories are made of. Build a form, share the link, and collect stories, thank-yous, photos, and data from your community — then put what you collect to work in your reports and videos. Start a collection From the Collections view, click Start new collection and choose what you want to collect: Thank-yous from beneficiaries Stories from program leaders Stories from the field Stories from our community General information I want to upload information — start from a CSV instead of a form Each starting point pre-builds a sensible form you can customize. Build your form The form editor gives you a full toolkit of field types: Short text , Long text , Email , Phone , Choose one , Choose many , Dropdown list , Number , Date , and File upload (photos, videos, or documents) — plus Heading , Paragraph , and New Section elements for structure. Every field can have its own label, placeholder, description, and required setting. Longer forms can be split into steps : respondents see a progress bar (\"Step 1 of 3\"), can move back and forth, and can jump between sections. Drafts save automatically as people type, so a closed tab doesn't mean a lost story. What respondents experience A clean, branded form with your logo and introduction — no account needed. If a respondent is already in your constituent list, Storyraise recognizes them by email and pre-fills their information , so a donor sharing a story doesn't have to retype their own name. Work with what you collect Responses land in a spreadsheet-style table you can actually work in: Search and filter responses by keyword; show or hide columns. Edit any response — click a row to open the editor, fix typos, or fill gaps. Tag responses to constituents with Assign to... — connect a submitted story to the donor or volunteer it came from. Import CSV to merge existing data into a collection (append, update matching rows, or replace). Export CSV to take everything with you. Where it fits Collections exist to feed the rest of Storyraise — as the dashboard puts it: store collections of information here to use in your reports and videos. Gather beneficiary thank-yous in spring, and they're ready as testimonials in your fall report ; collect field stories year-round and your annual report writes itself from real voices. Related Importing constituent data — the constituent list that powers pre-fill and tagging What is Storyraise Video? — another destination for collected stories"
+  },
+  {
+    "title": "Creating a collection",
+    "description": "A collection is a form plus everything it gathers. This guide takes you from an empty Collections view to a form ready to share.",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/creating-a-collection/",
+    "keywords": [
+      "creating",
+      "collection",
+      "storyraise",
+      "collect"
+    ],
+    "body": "Creating a collection A collection is a form plus everything it gathers. This guide takes you from an empty Collections view to a form ready to share. Start a new collection From the Collections view, click Start new collection and choose what you want to collect. Each option pre-builds a sensible form you can customize: Thank-yous from beneficiaries Stories from program leaders Stories from the field Stories from our community General information I want to upload information — start from existing data via CSV instead of a form Build out your form Your starting form opens in the editor. From here you can add, remove, and reorder fields, and set each field's label, help text, and whether it's required. The full catalog of field types is covered in Form field types . For longer or repeating data, you can split a form into steps — see Multi-step forms . Add people (optional) If you're collecting from known constituents, you can add recipients up front by uploading a CSV (using the Constituents Template format). When a respondent's email matches a constituent, Storyraise pre-fills what it already knows, so people don't retype their own details. You can also skip this and simply share the form link with anyone. Empty until responses arrive A new collection shows \"Nothing collected yet. Share your form to start gathering responses, or upload a CSV to begin from existing data.\" — with Open form editor and Upload a CSV to get going. Next Form field types — the building blocks of your form Sharing your form — get it in front of respondents"
+  },
+  {
+    "title": "Form field types",
+    "description": "Storyraise Collect gives you a full toolkit of fields, so your form can ask for exactly what you need — a quick quote, a long story, a photo, a date, a choice…",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/form-field-types/",
+    "keywords": [
+      "form",
+      "field",
+      "types",
+      "storyraise",
+      "collect"
+    ],
+    "body": "Form field types Storyraise Collect gives you a full toolkit of fields, so your form can ask for exactly what you need — a quick quote, a long story, a photo, a date, a choice from a list. Question fields Short text — a single line: a name, a title, a city. Long text — a paragraph or more: a story, a reflection, a testimonial. Email — an email address. Phone — a phone number. Choose one — pick a single option (radio buttons). Choose many — pick several options (checkboxes). Dropdown list — pick one from a longer list, in a compact menu. Number — a numeric answer. Date — a date, with a date picker. File upload — a photo, video, or document. You can limit what's accepted (image, video, or document). Layout fields These don't ask a question — they shape and explain your form: Heading — a section title. Paragraph — descriptive text or instructions. New Section — a divider that breaks a longer form into steps . Field settings Each field can be configured with: A label (the question), placeholder , and description (helper text). Required — make an answer mandatory. A default value and a custom error message . For Choose one / Choose many / Dropdown , the list of options (one per line). For File upload , the accepted type (image, video, or document). Tips Ask for the least you need. Every extra field lowers completion. A great story plus a name beats a ten-field interrogation. Use Long text for stories, Short text for facts. Matching the field to the answer sets expectations and improves what you get back. Label clearly, explain briefly. A one-line description under a tricky question saves you cleanup later. Mark only the essentials required. Over-requiring fields makes people abandon the form. Next Multi-step forms — break longer forms into manageable steps Managing responses — work with what you collect"
+  },
+  {
+    "title": "Multi-step forms",
+    "description": "A long form on one page feels like a chore. Splitting it into steps makes it feel quick — and lets you collect repeating, one-to-many data cleanly.",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/multi-step-forms/",
+    "keywords": [
+      "multi",
+      "step",
+      "forms",
+      "storyraise",
+      "collect"
+    ],
+    "body": "Multi-step forms A long form on one page feels like a chore. Splitting it into steps makes it feel quick — and lets you collect repeating, one-to-many data cleanly. Breaking a form into steps Add New Section dividers to your form, and Storyraise turns each section into its own step. Respondents see a progress bar (\"Step 1 of 3\"), can move Back and Next between steps, and can Jump to… a specific section. Their answers are saved as a draft as they go, so a closed tab doesn't lose their work. Steps reduce the intimidation of a long form and let you group related questions — \"About you,\" \"Your story,\" \"Photos\" — into digestible chunks. Collecting one-to-many data Sometimes one respondent needs to give you several sets of the same information — a program officer reporting on multiple funds, or a leader submitting several stories. Storyraise Collect supports this grouped structure: the respondent works through the repeating sections, and each is saved as its own response record, so your results table stays tidy and one row equals one item. You don't build this by hand. It's set up from the data you import: when a CSV has more than one row per recipient , Storyraise notices and opens Configure Import — \"We detected multiple rows per recipient. Choose how to group them into form steps.\" Two choices there decide the shape of the form: Recipient email column — which column identifies the person, so their rows are gathered into one form. Section label for each step — which column names each step. Pick the column holding the fund, program, or story title and the respondent sees that as the step's heading. Choose None to leave the steps unlabelled. Then Import & Build generates the form. Tip: Pick a section label column your respondent will recognize. \"Rivera Scholarship Fund\" as a step heading tells them exactly which set of answers they're on; \"Row 3\" doesn't. Tips Order steps by effort. Put easy fields first; momentum carries people into the harder ones. Keep each step focused. One topic per step is the whole point — resist cramming. Name your sections clearly. Section names label the steps and the Jump-to menu, so \"Your Story\" beats \"Section 2.\" Related Form field types Sharing your form"
+  },
+  {
+    "title": "Sharing your form",
+    "description": "Once your form is built, share its link and the responses start flowing in. This page covers getting the form to people and what they experience filling it out.",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/sharing-your-form/",
+    "keywords": [
+      "sharing",
+      "form",
+      "storyraise",
+      "collect"
+    ],
+    "body": "Sharing your form Once your form is built, share its link and the responses start flowing in. This page covers getting the form to people and what they experience filling it out. Two kinds of link Open your form and you're offered two, for two different jobs. Standard Link (non-personalized) is the plain form link. Share it anywhere — email, your website, social media, a QR code on printed materials. Copy form link puts it on your clipboard, and View form opens it so you can check it the way a respondent will. Respondents don't need a Storyraise account. Dynamic Link is for a mail merge, where each person should get a link that already knows who they are. Name the platform you're sending from and Storyraise builds the link with that platform's own email merge field already in it, ready to paste into your campaign. Note: Check the merge field before you send. The link carries the recipient's email between ?for= and / , and that's the piece your platform substitutes. If it's the wrong variable, everyone gets the same pre-filled form. What respondents experience A clean, branded form with your logo and an introduction. For multi-step forms , a progress bar and Back / Next navigation. Draft autosave — answers are kept as they type, so an interruption doesn't mean starting over. File uploads open the device's file picker for photos, videos, or documents. On submit, a confirmation that their response came through. Smart pre-fill for known constituents If a respondent is already in your constituent list , Storyraise recognizes them by email and pre-fills what it already knows — so a donor sharing a story doesn't re-enter their own name and details. It's less work for them and cleaner data for you. Tips Tell people why. A sentence about how their story will be used (and that it might appear in a report) lifts both response rate and quality. Make it mobile-easy. Most people open links on a phone — keep forms short and file uploads optional where you can. Put the link where the moment is. A QR code on an event thank-you card collects stories while the experience is fresh. Next Managing responses — review, edit, and use what you've collected. Related Embedding a Collect form in a report"
+  },
+  {
+    "title": "What respondents experience",
+    "description": "Most of this section is written for the person building a form. This page is about the person filling one in — usually on a phone, often on a poor connection,…",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/what-respondents-experience/",
+    "keywords": [
+      "what",
+      "respondents",
+      "experience",
+      "storyraise",
+      "collect",
+      "respondent",
+      "submit a story",
+      "phone",
+      "mobile",
+      "upload",
+      "draft",
+      "autosave",
+      "browser",
+      "offline",
+      "volunteer",
+      "field staff"
+    ],
+    "body": "What respondents experience Most of this section is written for the person building a form. This page is about the person filling one in — usually on a phone, often on a poor connection, and usually without a Storyraise account. It's written so you can send this link to a volunteer or a colleague as-is. You don't need an account A Storyraise form is a web page. Open the link in any browser on any device. There's nothing to install, no login, and no app. What the form looks like Your organization's branding, so it looks like it came from them A progress bar, if the form has more than one step One question at a time on a phone, rather than a wall of fields A confirmation message when you submit Longer forms are often split into steps — see Multi-step forms . Adding a photo or a video Questions that accept a file open your device's normal file picker, so you can choose an existing photo or record something new, depending on your phone. The person who built the form chooses what each question accepts — an image, a video, or a document. If you're on a slow or unreliable connection, a large video may take a long time or fail partway. If that happens: record a shorter clip, or wait until you have wifi and submit then. Finishing later Answers are saved as you type, so a form you've started isn't lost if you close the tab by accident. If the form won't submit Check that every question marked required has an answer — the form will point at anything missing. If a file is still uploading, wait for it to finish. If you're on a very weak connection, move somewhere with better signal and try again. If it still fails, contact whoever sent you the form. Your answers may still be saved on the device. Pre-filled forms If the link you were sent was personalized for you, some fields may already be filled in. You can correct anything that's wrong before submitting. Because a personalized link identifies you, treat it as yours — a forwarded link carries your details to whoever opens it. Your story and your consent If you're being asked to share a personal story, you're entitled to know what will happen to it. A well-built form asks you separately whether your story, your photograph, and your real name may be used, and you can say yes to some and no to others. If you want your story removed later, contact the organization that sent you the form. See Consent, releases, and dignity for how organizations are asked to handle this. For the person sending the form Sharing your form — links, QR codes, and personalization Consent, releases, and dignity — asking properly Network requirements — if a whole office can't load the form"
+  },
+  {
+    "title": "Consent, releases, and dignity",
+    "description": "Storyraise Collect gathers stories, photographs, and video from real people — often the people your organization serves. This page covers how to ask for…",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/consent-and-permissions/",
+    "keywords": [
+      "consent",
+      "releases",
+      "dignity",
+      "storyraise",
+      "collect",
+      "permissions",
+      "photo release",
+      "permission",
+      "minors",
+      "guardian",
+      "anonymous",
+      "safeguarding",
+      "ethics",
+      "withdraw",
+      "remove my story",
+      "gdpr",
+      "privacy"
+    ],
+    "body": "Consent, releases, and dignity Storyraise Collect gathers stories, photographs, and video from real people — often the people your organization serves. This page covers how to ask for consent properly, and what to do when someone changes their mind. What Storyraise does and doesn't do. Storyraise stores what you ask for and shows it to the people in your organization who have access. It does not verify that consent was given, check whether a subject is a minor, or track what someone agreed to. Consent is your organization's responsibility, and the practices below are how you build it into the form itself. Ask for consent inside the form, not beside it The most common mistake is collecting consent somewhere else — a paper form, a verbal agreement, an email — and the story here. Six months later, nobody can match one to the other. Put consent on the same row as the story: Add a Paragraph field containing your organization's full release language. This is the text people are agreeing to, and it lives with the response permanently. Add a Choose one field, marked Required , with your agreement options. Store both alongside the submission, so any story in your response table carries its own permission record. See Form field types for how to add each of these. Ask for three permissions, not one People routinely agree to one of these and not the others. A single \"I consent\" checkbox can't record that, and treating it as though it can is how organizations end up publishing something a person didn't agree to. The story — may we share what you told us? The image — may we use your photograph or video? The name — may we use your real name, or would you prefer a first name only, a different name, or anonymous? A workable pattern is three Choose one questions, each with a plain yes/no and, for the name, an option to write in how they'd like to be credited. Minors and safeguarding If a respondent may be under 18, you need consent from a parent or guardian as well as assent from the young person. Add a field asking whether the respondent is under 18, and route accordingly. Capture the guardian's name and their agreement as separate fields. Collect less identifying detail, not more. A first name and an age is usually enough; a school name, a neighbourhood, and a photograph together are often too much. If your organization has a safeguarding policy, the form should follow it. If it doesn't, write one before you collect from children. Ask for the least you need Form field types recommends short forms because they get completed. There's a second reason: every field you add is something a person has to disclose. A story and a first name is often the whole requirement. Resist collecting dates of birth, addresses, case details, or diagnoses because they might be useful later. Anonymous and pseudonymous stories A powerful story does not require a real name. If someone agrees to share but not to be identified: Record the name they want used, or \"anonymous,\" in a dedicated field so the person publishing the report doesn't have to guess. Check the photograph too — an anonymised name with a clearly identifiable face is not anonymous. Be careful with detail. A pseudonym plus a specific location, role, and date can identify someone in a small community. When someone asks you to remove their story People change their minds, and they are entitled to. Decide in advance who handles this and how fast. Find the response in your response table and remove it. If the story is already live in a published report, edit the report to remove it and republish — a published report stays live until you republish it. See Publishing and sharing . Check whether the story was also used anywhere outside Storyraise — a newsletter, social media, a PDF you emailed. Tell the person when it's done. Who can see submissions Access to Collect responses is granted per role across your whole organization, not per collection — see User roles and permissions . Anyone on your team with access to Collect can read every response in every collection. That matters when collections hold sensitive material. If some stories should be seen by two people and not twenty, review your team list before you start collecting. Exports are a risk, not only a backup Managing responses suggests periodic CSV exports as a safety net, and that's sound advice for durability. Be aware of what the file is: a spreadsheet of identified personal stories sitting on someone's laptop, outside every access control you just set up. If you export, agree where the file lives, who may open it, and when it gets deleted. A short checklist Before you send a form that collects stories from the people you serve: The release language is in the form itself Story, image, and name are asked separately There's a route for under-18 respondents Nothing is collected that you can't explain a use for Someone owns removal requests, and respondents are told how to make one The team list has been reviewed against how sensitive the collection is Related Form field types — the fields to build this with What respondents experience — what the person filling it in sees Managing responses — reviewing what comes back"
+  },
+  {
+    "title": "Managing responses",
+    "description": "Everything people submit lands in a spreadsheet-style table you can actually work in — search it, clean it up, connect responses to constituents, and export it.",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/managing-responses/",
+    "keywords": [
+      "managing",
+      "responses",
+      "storyraise",
+      "collect"
+    ],
+    "body": "Managing responses Everything people submit lands in a spreadsheet-style table you can actually work in — search it, clean it up, connect responses to constituents, and export it. The response table Open a collection to see its responses as a table, one row per submission. You can: Search by keyword to find a specific response. Show or hide columns to focus on the fields that matter. Truncate long text for a tidier overview, or expand it to read in full. Editing a response Click a row to open the Make Edits editor, where you can: Edit any field under Response Details — fix a typo, fill a gap, tidy a quote for use. Assign to… one or more constituents — connect a submitted story to the donor, volunteer, or beneficiary it came from. Search your constituents and select the right people. Click Save and Close when you're done. Tagging responses to constituents is what turns a pile of submissions into usable material — you'll know whose story is whose when you pull a testimonial into a report. Importing and exporting Import CSV to bring existing data into a collection — append new rows, update rows that match, or replace everything. Export CSV to download all responses (with their fields as columns) for use elsewhere. Putting responses to work Collected stories and quotes are raw material for the rest of Storyraise — drop a beneficiary thank-you into a report Testimonial section , or use submitted details to personalize a video message . Tips Tag as you review. Assigning responses to constituents while they're fresh saves a scramble later. Clean before you use. A quick edit pass — fixing typos, trimming a long quote — makes responses report-ready. Export for backup. A periodic CSV export is a simple safety net for collected stories. Related Creating a collection What is Storyraise Collect?"
+  },
+  {
+    "title": "Using responses in a report",
+    "description": "Collecting stories is only half of it. This page traces one story from submission to a published report.",
+    "section": "Storyraise Collect",
+    "url": "/docs/storyraise-collect/using-responses-in-a-report/",
+    "keywords": [
+      "using",
+      "responses",
+      "report",
+      "storyraise",
+      "collect",
+      "repeater",
+      "testimonial",
+      "collection",
+      "story into report",
+      "quotes",
+      "from form to report",
+      "precision plan"
+    ],
+    "body": "Using responses in a report Collecting stories is only half of it. This page traces one story from submission to a published report. There are two ways to get collected material into a report: copy it in by hand, which works on any plan, or bind a Repeater block to the collection, which keeps the report in step with the responses. Before you start Tidy the response first. Raw submissions are rarely publishable as-is: Fix spelling and trim the quote to its strongest two or three sentences Check the consent record — story, image, and name are separate permissions Confirm how the person wants to be credited Use Assign to… in the response table to connect the response to the constituent it came from, so you know whose story is whose later Option 1 — copy it into a Testimonial block Works on every plan, and is the right choice for a handful of hand-picked stories. Open the response in your collection and copy the quote you want. In the report builder, add a Testimonial block — see Adding sections . Paste the quote, add the attribution the person agreed to, and add their photograph if they consented to it. There is no automatic \"insert from collection\" picker for Testimonial blocks; this is a copy-and-paste workflow. For two or three stories in an annual report, that's usually the right amount of control anyway. Option 2 — bind a Repeater to the collection Better when you have many similar items — a list of quotes, a roll of participants, a set of project summaries — and you'd rather not paste each one. The Repeater block creates repeating blocks and elements from a list, so one layout renders once per item. Plan requirement. Repeater needs a Precision plan with Storyraise Collect active. If you don't have it, the block won't appear in the block list at all, and Option 1 is your route. Photographs submitted through a form If you collected photographs alongside stories, check the consent record before using them — agreeing to share a story is not the same as agreeing to appear in a photograph. Keeping the story true The person who wrote it is not in the room when you edit it. A few habits that keep the result honest: Trim, don't rewrite. If you find yourself improving their phrasing, you're writing your own copy in their voice. Don't merge two people's stories into a composite and present it as one person's. If you use AI to help draft surrounding copy, keep the quoted material untouched — see AI content generation . Send the person the published link. It's the difference between a subject and a participant. Related Managing responses — reviewing and tidying submissions Consent, releases, and dignity — what you're allowed to publish Adding sections — Testimonial and Repeater blocks"
+  },
+  {
+    "title": "What is Storyraise Video?",
+    "description": "Storyraise Video turns one recording into hundreds of personal video messages. Record once, and every constituent receives a version addressed to them — their…",
+    "section": "Storyraise Video",
+    "url": "/docs/storyraise-video/what-is-storyraise-video/",
+    "keywords": [
+      "what",
+      "storyraise",
+      "video"
+    ],
+    "body": "What is Storyraise Video? Storyraise Video turns one recording into hundreds of personal video messages. Record once, and every constituent receives a version addressed to them — their name on screen, a message in their inbox, and a viewing link that's theirs alone. How it works 1. Choose your message type Start by picking what kind of message you're sending: Thank you! , Case for giving , Invitation , Event recap , or Just an update . Your choice shapes the suggested talking points and scene layouts. 2. Record your message Record with your webcam right in the browser, or upload a video you've already made. Storyraise generates talking points for you based on your message type and organization — a short, warm script designed for a 45–60 second message. A few practical pointers the recorder will give you: good lighting, a clean background, camera at eye level. After you record, Storyraise automatically: Transcribes your video. Generates captions , broken into natural phrases and synced to your speech. Captures a thumbnail for the email. 3. Edit your scenes Your video is automatically structured into scenes — timed text overlays that appear as you speak, with animated headings and styling you can adjust. This is where personalization happens: scene text supports merge tags, so Hi, @@first_name@@! greets each recipient by their own name. Refine any scene, add new ones, or click Remake All Scenes to start the overlay design fresh. 4. Add recipients Add your audience two ways: Select Recipients — choose from your organization's constituents. Upload a CSV — using the standard format ( first_name , last_name , email , plus any custom fields you want available as merge tags). 5. Preview and send Click Preview & send to review the exact video each recipient will see — step through recipients or search for a specific person, with every merge tag resolved to their real data. Then send: each constituent receives an email with your video thumbnail, your message, and a button to their personal viewing page. Prefer to send through your own email platform? Get a link gives you either a Standard Link (the same for everyone) or a Dynamic Link with a personalization variable you map to your CRM or email tool's merge field. What recipients experience A clean, mobile-friendly viewing page with your video, synced captions they can toggle, playback controls, and your message below — logo, text, and any links you attached. No account, app, or download required. What it's for Donor thank-yous that feel hand-delivered, at scale Appeals and cases for giving with a human face Event invitations and recaps that get watched, not skimmed Program updates that build connection between mailings Related Personalized links — the same ?for= personalization powers video links Importing constituent data — the fields that drive merge tags Video analytics — viewing metrics (coming soon)"
+  },
+  {
+    "title": "Creating a video message",
+    "description": "A Storyraise Video message is one short recording, automatically personalized into a unique video for every recipient. This page is the end-to-end overview;…",
+    "section": "Storyraise Video",
+    "url": "/docs/storyraise-video/creating-a-video-message/",
+    "keywords": [
+      "creating",
+      "video",
+      "message",
+      "storyraise"
+    ],
+    "body": "Creating a video message A Storyraise Video message is one short recording, automatically personalized into a unique video for every recipient. This page is the end-to-end overview; the pages that follow go deeper on each step. The flow at a glance Choose a message type — what kind of message you're sending. Record your message — webcam or upload, with auto-generated talking points. Edit your scenes — the personalized text that appears as you speak. Add recipients — from your constituents or a CSV. Preview and send — check each person's version, then deliver. 1. Choose your message type Start with What kind of message are you sending? and pick the one that fits: Thank you! Case for giving Invitation Event recap Just an update Your choice tailors the suggested talking points and the starting scene layouts, so you're never staring at a blank screen. 2–5. Build, personalize, and send From there you'll record, refine the on-screen scenes, choose who receives it, and send. Each step has its own guide: Recording your video — capturing or uploading your footage, plus automatic captions. Scenes and personalization — the personalized text overlays and merge tags. Sending and recipients — recipients, per-person preview, and delivery. Tips for a great message Keep it short. Aim for 45–60 seconds. The personalization, not the length, is what makes it land. Talk to one person. Even though hundreds receive it, record as if you're speaking to a single supporter — because each of them sees a version made for them. Lead with warmth. A genuine thank-you in the first few seconds earns the rest of the watch. Related What is Storyraise Video?"
+  },
+  {
+    "title": "Recording your video",
+    "description": "The video is the human heart of your message. Storyraise makes recording it painless — and handles transcription and captions for you afterward.",
+    "section": "Storyraise Video",
+    "url": "/docs/storyraise-video/recording-your-video/",
+    "keywords": [
+      "recording",
+      "video",
+      "storyraise"
+    ],
+    "body": "Recording your video The video is the human heart of your message. Storyraise makes recording it painless — and handles transcription and captions for you afterward. Record or upload You have two options: Use webcam — record directly in your browser, no software to install. Upload video — use footage you've already recorded. Talking points Not sure what to say? Storyraise generates talking points for you based on your message type and organization — a short, warm script sized for a 45–60 second message. Use them as a teleprompter while you record, or just as a starting point and speak naturally. Recording tips A few seconds of setup makes a big difference: Lighting — face a window or light source; avoid a bright window behind you. Background — a clean wall or tidy space keeps the focus on you. Camera height — at eye level, with you centered in the frame. Sound — record somewhere quiet; built-in mics pick up echo and traffic. Phone or tablet works great if its camera is better than your computer's. You can re-record as many times as you need before saving. Automatic transcription and captions After you record, Storyraise automatically: Transcribes your video. Generates captions — broken into natural, readable phrases and synced to your words. Captures a thumbnail for the delivery email. Captions matter: many people watch with the sound off, and captions also make your message accessible to viewers who are deaf or hard of hearing. Recipients can toggle captions on or off while watching. Next With your video recorded, move on to Scenes and personalization to set the on-screen text each recipient will see."
+  },
+  {
+    "title": "Scenes and personalization",
+    "description": "Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs.",
+    "section": "Storyraise Video",
+    "url": "/docs/storyraise-video/scenes-and-personalization/",
+    "keywords": [
+      "scenes",
+      "personalization",
+      "storyraise",
+      "video"
+    ],
+    "body": "Scenes and personalization Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs. What scenes are When you finish recording, Storyraise automatically structures your video into a few scenes — timed text overlays with animated headings, sized and styled to match. Each scene appears at the right moment as your video plays. Editing a scene Select a scene from Select a Scene to Edit to refine it: change its text, adjust its styling, or restyle the layout. Insert icon drops in a visual accent. To add one, play the video to the moment you want it and click Add scene at — the button carries the current timestamp, so the new scene lands where you're paused rather than at the end. Generating it takes a moment. Want a fresh start on the overlay design? Remake all scenes rebuilds them from your recording. Personalizing with merge tags This is what sets Storyraise Video apart. Scene text supports merge tags in the @@field_name@@ format, so: Hi, @@first_name@@! becomes \"Hi, Maria!\" for Maria and \"Hi, James!\" for James — automatically, from each recipient's record. Any field on your constituents can be a merge tag: @@first_name@@ , @@last_name@@ , or custom fields like giving level or program name. The same ?for= personalization that powers personalized report links drives video personalization, so the constituent must exist in your constituent list (matched by email). Tips Put the name on screen early. Seeing their own name in the first scene tells the viewer instantly that this was made for them. Keep overlay text short. Scenes punctuate your spoken words — a few words land; a paragraph competes with you. Check your data first. A recipient missing a field a scene uses gets a blank where their name should be. Preview before sending — see Sending and recipients . Next Sending and recipients — choose who gets the video and preview each person's version."
+  },
+  {
+    "title": "Sending and recipients",
+    "description": "Your video is recorded and your scenes are personalized — now choose who receives it and send.",
+    "section": "Storyraise Video",
+    "url": "/docs/storyraise-video/sending-and-recipients/",
+    "keywords": [
+      "sending",
+      "recipients",
+      "storyraise",
+      "video"
+    ],
+    "body": "Sending and recipients Your video is recorded and your scenes are personalized — now choose who receives it and send. Add recipients Two ways to build your audience: Select Recipients — choose from your organization's constituents. Upload a CSV — use the standard recipient format ( first_name , last_name , email , plus any custom fields you want available as merge tags). Your recipients become the people each personalized video is generated for. The more complete their records, the better the personalization — see Importing constituent data . Preview each person's version Click Preview & send to watch the exact video a recipient will receive — their name in the scenes, their data in every merge tag. Step through recipients or search for a specific person. Previewing a few people, especially those with the least-complete records, is the surest way to catch a blank merge tag before it goes out. Send Send directly from Storyraise, and each recipient gets an email with your video thumbnail, your message, and a button to their personal viewing page. There's no app or login for them — it just plays. Sending through your own platform Prefer your existing email or CRM tool? Use Get a link to generate either: Standard Link — the same video for everyone (no personalization). Dynamic Link — a personalized link with a placeholder you map to your platform's merge field, so each contact opens their own version. When you use a dynamic link, check the part of the URL between ?for= and the next / — it must be the right merge variable from your email tool or CRM, or everyone will see the same version. What recipients experience A clean, mobile-friendly viewing page: your personalized video with captions they can toggle, scene-by-scene navigation, and your message below it — logo, text, and any links you attached. Related Personalized links — the same personalization, for reports Video analytics — viewing metrics (coming soon)"
+  },
+  {
+    "title": "Connecting a CRM",
+    "description": "Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/connecting-a-crm/",
+    "keywords": [
+      "connecting",
+      "crm",
+      "donor",
+      "data"
+    ],
+    "body": "Connecting a CRM Connecting your CRM brings your constituents — donors, members, volunteers — into Storyraise. Once they're in, you can personalize reports for each constituent, generate personalized QR codes and links, and see in Analytics which constituents actually opened your reports. Connect from the Connections tab. The Connections tab is the unified home for every integration — many more systems than the two examples below. Start there; this page covers the general approach. What a connection does When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization's constituent list. Every integration is read-only by default — Storyraise reads from your CRM and does not modify your CRM data. The one exception is Salesforce , which can optionally write report engagement back to your Contacts. Write-back is off until you turn it on and choose what it creates; see Salesforce for exactly what it writes. Before you start You'll need credentials for your CRM — either admin access to authorize the connection (Blackbaud) or an API key (Bloomerang). The per-CRM guides below cover exactly what to gather. Constituent records are matched by email address , so the more complete your CRM's email data, the better. Connect your CRM From the dashboard, open your Constituents area and choose the option to sync constituents. Pick your CRM's tab — Blackbaud or Bloomerang — and follow the prompts: Blackbaud — click Connect , sign in to Blackbaud, and approve access. Then choose which constituent list to sync. Full guide: Blackbaud (Raiser's Edge NXT) . Bloomerang — paste your Bloomerang API key and click Sync constituents . Full guide: Bloomerang . Storyraise imports your constituents. Each record is tagged with its source (Blackbaud, Bloomerang, or CSV), so you always know where data came from. No CRM? No problem If your CRM isn't supported yet — or you don't use one — you can import constituents from a CSV file . It unlocks the same personalization and insights features. Keeping data current Connections don't update themselves automatically yet. When your CRM data changes, re-run the sync to pull in the latest records — see Data refreshes . Related Supported integrations — what's available today and what's coming Troubleshooting sync issues"
+  },
+  {
+    "title": "Importing constituent data",
+    "description": "You can bring constituents into Storyraise two ways: sync them from a connected CRM, or upload a CSV file. CSV import works with data exported from any system…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/importing-constituent-data/",
+    "keywords": [
+      "importing",
+      "constituent",
+      "data",
+      "donor",
+      "crm",
+      "csv",
+      "upload",
+      "donors",
+      "import"
+    ],
+    "body": "Importing constituent data You can bring constituents into Storyraise two ways: sync them from a connected CRM , or upload a CSV file. CSV import works with data exported from any system — or a spreadsheet you maintain by hand. Importing from a CSV file 1. Prepare your file Your CSV needs headers for First Name , Last Name , and Email . Email is the key field — Storyraise uses it to identify each constituent, so rows without an email address can't be imported. The easiest path: In the Constituents area, open the CSV File tab. Download the Constituents Template (CSV) . Open it in Excel, Google Sheets, or Numbers, and fill in your constituent data. You can include additional columns beyond the required three — giving level, campaign, salutation, anything you like. Extra columns are imported as custom fields on each constituent and become available as merge tags for personalization. 2. Upload it Back in the CSV File tab, click Upload CSV . Select your file. Storyraise imports each row as a constituent. 3. Check the results Your constituent list now shows the imported records, each tagged CSV so you can tell them apart from CRM-synced constituents. Open any constituent to review their fields. Importing from a CRM If you use Blackbaud or Bloomerang, connect it and sync instead of exporting CSVs by hand — see Connecting a CRM . CRM-synced constituents are tagged with their source and keep the fields your CRM provides. How re-imports work Constituents are identified by email address. If you upload a file containing an email that's already in your list, that constituent's record is updated rather than duplicated. This means you can safely re-upload an updated export to refresh your data. What constituent data unlocks Personalized reports — merge tags like @@first_name@@ fill in each constituent's own information. Personalized QR codes and links — each constituent gets a link to their own version of a report. Analytics — see which constituents opened your reports. Editing constituent data From the constituent list, open any constituent to view their fields. For constituents imported by CSV, you can edit field values and add or remove fields directly in Storyraise. Fields synced from a CRM are read-only in Storyraise — update them in your CRM and re-sync. Careful when deleting data: if a personalized report relies on a field you remove, its merge tags will resolve to empty for affected constituents."
+  },
+  {
+    "title": "Mapping fields",
+    "description": "Coming soon — a visual field-mapping step is on our roadmap. Today, Storyraise imports your fields automatically using the rules described below.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/mapping-fields/",
+    "keywords": [
+      "mapping",
+      "fields",
+      "donor",
+      "data",
+      "crm"
+    ],
+    "body": "Mapping fields Coming soon — a visual field-mapping step is on our roadmap. Today, Storyraise imports your fields automatically using the rules described below. How fields work today You don't need to map anything manually: CSV imports use your column headers as field names. First Name , Last Name , and Email are recognized as the core identity fields; every other column becomes a custom field with the column header as its name. CRM syncs bring over the fields your CRM provides — including custom fields — using the CRM's own field names. Nested CRM fields (like address parts) are flattened into individual fields. Every imported field is available as a merge tag for personalization. Open any constituent from your constituent list to see exactly which fields they have and what each is called. Tips for clean fields Keep CSV column headers short and consistent ( Giving Level , not 2025 GIVING LEVEL (updated) ), since headers become merge tag names. Use the same headers every time you re-upload, so values update the same fields instead of creating new ones."
+  },
+  {
+    "title": "Data refreshes",
+    "description": "Your CRM data changes constantly — new donors, updated emails, fresh gift records. This page covers how to keep your Storyraise constituent list in step.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/data-refreshes/",
+    "keywords": [
+      "data",
+      "refreshes",
+      "donor",
+      "crm"
+    ],
+    "body": "Data refreshes Your CRM data changes constantly — new donors, updated emails, fresh gift records. This page covers how to keep your Storyraise constituent list in step. Refreshing today: re-run the sync Storyraise pulls constituent data when you ask it to. To refresh: Bloomerang — open the Constituents area, go to the Bloomerang tab, and click Sync constituents again. Blackbaud — open the Blackbaud tab and re-sync your selected constituent list. If your authorization has expired, you may be asked to reconnect first. CSV — export a fresh file from your system and upload it again. Because constituents are identified by email address, refreshed records update existing constituents rather than creating duplicates. New people in the source are added. When to refresh A good rule of thumb: refresh right before you do anything that depends on the data — before generating personalized links or QR codes for a mailing, before publishing a personalized report, before reviewing constituent engagement in Analytics for a board update. Automatic refreshes Storyraise can refresh a connection on a schedule, so you're not relying on someone remembering to press Sync now . Turn it on per connection: in the Connections tab, open a connection's menu and switch on Auto-sync . Pick Daily or Weekly , and the card then shows when it last ran. Each scheduled run does two things, in this order: Re-pulls your constituents from the source system, so a donor added to your CRM last week becomes a constituent without anyone opening the dashboard. Refreshes your synced collections , using the constituent list it just updated — so someone added tonight is linked to their rows in the same run rather than waiting for the next one. Auto-sync is off until you turn it on, and it's set per connection, so you can leave a hand-curated source alone while a busy one refreshes nightly. Related Troubleshooting sync issues Importing constituent data"
+  },
+  {
+    "title": "Data governance and CRM flags",
+    "description": "Your CRM carries flags that exist to stop things happening — anonymous, do not contact, do not solicit, deceased, opted out. This page is about what happens…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/data-governance/",
+    "keywords": [
+      "data",
+      "governance",
+      "crm",
+      "flags",
+      "donor",
+      "anonymous",
+      "do not contact",
+      "do not solicit",
+      "do not email",
+      "deceased",
+      "opted out",
+      "suppression",
+      "exclusions",
+      "data hygiene"
+    ],
+    "body": "Data governance and CRM flags Your CRM carries flags that exist to stop things happening — anonymous, do not contact, do not solicit, deceased, opted out. This page is about what happens to them when constituent data reaches Storyraise, and what you have to handle yourself. The short version: treat every flag as something Storyraise does not act on for you. Storyraise imports the fields you map and does not interpret them as suppression rules. If a constituent must not be contacted or must not be named, that has to be enforced by what you sync and who you send to. The flags that matter Flag What it must prevent Where it can go wrong in a report Anonymous The donor's name appearing publicly An anonymous donor printed in a donor list or honor roll Do Not Contact / Do Not Solicit Outreach reaching them at all Their inclusion in an email or SMS recipient list Do Not Email Email specifically Same, for the email channel Deceased A report addressed to them reaching a household A personalized greeting arriving at a bereaved address Opted out / unsubscribed Further mailings Re-adding them by importing a fresh list Practical handling Until flag handling is documented as a product behaviour, the reliable pattern is to filter at the source : Sync a filtered list, not your whole database. Several integrations sync from a saved list or query — build that list in your CRM with the exclusions already applied, so flagged records never arrive in Storyraise. This is far safer than importing everything and remembering to exclude later. Bring the flag across as a field where you can, so anyone building a report can see it on the constituent record. Re-check before every send. A list synced in March reflects March's flags. Re-sync before a send, or re-export from your CRM. Check donor lists by hand. A donor list is typed or pasted into a report and is not governed by anything your CRM knows. Someone has to check it against the anonymous flag every time. Keep a suppression check in your launch process rather than relying on any single person's memory. Deletion at the source If someone is deleted or suppressed in your CRM, confirm what happens to their Storyraise record before you rely on it. Currently the only documented deletion path is at the connection level — disconnecting an integration can permanently delete the collections it synced and any constituents it was the only source for. See Managing connections . Sync only what you need The strongest governance control available to you is the mapping step. Fields you don't sync can't be exposed, can't appear in a merge tag, and can't be seen by a colleague with View access — access is per area, not per field . Before connecting, agree with whoever owns your data which fields have a reason to be in a reporting tool. Capacity ratings, solicitor notes, and giving history often don't. Related Connecting a CRM — what a connection does Mapping fields — choosing what comes across Security and data governance — the wider data picture Managing connections — disconnecting and deleting"
+  },
+  {
+    "title": "Troubleshooting sync issues",
+    "description": "Most sync problems come down to one of a few causes. Work through the section that matches what you're seeing.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/troubleshooting-sync-issues/",
+    "keywords": [
+      "troubleshooting",
+      "sync",
+      "issues",
+      "donor",
+      "data",
+      "crm"
+    ],
+    "body": "Troubleshooting sync issues Most sync problems come down to one of a few causes. Work through the section that matches what you're seeing. \"My Blackbaud connection stopped working\" Blackbaud authorizations expire periodically. Storyraise refreshes them automatically behind the scenes, but if a sync fails with an authorization error: Open the Constituents area and go to the Blackbaud tab. Click Connect to re-authorize with your Blackbaud account. Re-select your constituent list and sync again. Make sure you authorize with a Blackbaud account that has access to the constituent lists you want to sync. \"Bloomerang says my API key is invalid\" Double-check you copied the entire key with no leading or trailing spaces. Keys look like aaead1d4-7075-57df-ec7f-11e717c7bdd1 . API keys belong to a Bloomerang user. If that user was deactivated or their key was regenerated, the old key stops working — create or copy a fresh key in Bloomerang and try again. Bloomerang's guide: Where can I find my Bloomerang API key? \"Some constituents didn't import\" The most common cause is a missing email address . Storyraise identifies each constituent by email, so records without one are skipped. In your CRM, fill in email addresses where you can, then re-sync. For CSV uploads, check that your file has a properly spelled Email header and that each row has a value in it. \"I have duplicate constituents\" Storyraise matches records by email address, so duplicates usually mean the same person exists under two different emails (in your CRM, or between your CRM and a CSV upload). Consolidate to one email in the source data and re-sync. \"A constituent's information looks outdated\" Syncs run when you trigger them — they don't update automatically yet. Re-run the sync to pull the latest data; see Data refreshes . \"My CSV won't upload\" Save the file as .csv (not .xlsx or .numbers). Every spreadsheet app has an \"Export as CSV\" or \"Save as CSV\" option. Check the required headers are present: First Name , Last Name , Email . If your data contains commas (like \"Smith, Jr.\" ), make sure your spreadsheet app is doing the export — it will quote fields correctly. Avoid hand-editing CSVs in a plain text editor. When in doubt, start from the Constituents Template (CSV) available in the CSV File tab. \"Merge tags show up empty in a personalized report\" The constituent is missing that field. Check the constituent's record to see which fields they have; fill gaps in your CRM or CSV and re-import. Also note that deleting a field from constituents will blank out any merge tags that used it. Still stuck? Contact support and include: which CRM (or CSV), roughly how many constituents you expected vs. got, and what error message you saw, if any."
+  },
+  {
+    "title": "Supported integrations",
+    "description": "Storyraise connects to your CRM, giving platforms, and email tools through the Connections tab — one hub where you connect a system, import your constituents,…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/supported-integrations/",
+    "keywords": [
+      "supported",
+      "integrations",
+      "donor",
+      "data",
+      "crm",
+      "connections",
+      "salesforce",
+      "mailchimp",
+      "giving"
+    ],
+    "body": "Supported integrations Storyraise connects to your CRM, giving platforms, and email tools through the Connections tab — one hub where you connect a system, import your constituents, and sync the rest (giving history, email engagement, and more) into Storyraise. CRM Integration What it syncs Raiser's Edge NXT (Blackbaud) Constituents from your RE NXT lists Bloomerang Constituents, plus gifts into Analytics Salesforce / Nonprofit Cloud Contacts and giving — and can send report engagement back to Salesforce Virtuous Contacts and giving history CiviCRM Contacts (API v4) Slate for Advancement Constituents from a Slate query (you map the columns) Ellucian Advancement Persons via the Ethos Integration API Little Green Light Constituents and their giving DonorPerfect Donors and gift history Neon CRM Accounts and donations Funraise Supporters and giving EveryAction Constituents from a saved list — coming soon Giving Integration What it syncs Givebutter Contacts, plus donations into Analytics (also embeds in reports) Donorbox Donors, plus donations into Analytics Fundraise Up Supporters, plus donations into Analytics Email Integration What it syncs Mailchimp Audience members and email engagement Not yet supported Using a system that isn't listed? You can almost always export your records to CSV and import them directly — you'll get the same personalization and insights as a native connection. Let us know which integration you'd like next; customer requests drive the roadmap. What connections can access Connections import your data into Storyraise — your constituents, and any extra data you choose to sync into collections . They don't change anything in your source system, with one exception you opt into: Salesforce can also send report engagement back to your CRM (logged on each donor's record), so your team sees Storyraise activity where they already work. See Salesforce . You can disconnect any connection at any time."
+  },
+  {
+    "title": "The Connections tab",
+    "description": "Connections is your hub for bringing donor data into Storyraise. Connect a system once and Storyraise imports your constituents — then you can sync additional…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/connections-overview/",
+    "keywords": [
+      "connections",
+      "tab",
+      "donor",
+      "data",
+      "crm",
+      "overview",
+      "integrations",
+      "sync",
+      "connect",
+      "hub"
+    ],
+    "body": "The Connections tab Connections is your hub for bringing donor data into Storyraise. Connect a system once and Storyraise imports your constituents — then you can sync additional data (like giving history or email engagement) into collections for use in your reports. Bring your donor data into Storyraise. Connect a system to import constituents, then sync the rest into collections. The home for every integration Connections is the unified home for your integrations — connect a CRM, giving platform, or email tool, all in one place. (Prefer to upload a file? CSV import lives in the Constituents area — see Importing constituent data .) What you can connect Connections groups integrations into three categories: CRM — import your constituents from your system of record: Raiser's Edge NXT , Bloomerang , Salesforce , Virtuous , CiviCRM , Slate , Ellucian , Little Green Light , DonorPerfect , Neon CRM , and Funraise . Giving — import contacts and sync donations: Givebutter , Donorbox , and Fundraise Up . Email — import your audience and sync email engagement: Mailchimp . How connecting works Open the Connections tab and find the system you want under Add a connection (search by name). Click Connect . What happens next depends on the system: Sign-in (OAuth) — for Raiser's Edge NXT and Salesforce, you're sent to the provider to sign in and authorize Storyraise, then returned automatically. API key / credentials — for everything else, a Connect {system} dialog asks for an API key (and sometimes a URL or account email). Each dialog includes a hint on exactly where to find your key in that provider, plus a link to their documentation. Click Connect & sync . Storyraise imports your constituents and the connection appears under your connected systems, marked Live . Each integration's page (linked above) lists exactly what it needs and where to find it. What a connection does Imports constituents. Records flow into your shared constituent list , matched by email — the foundation for personalization and insights. Syncs extra data into collections (optional). Beyond names and emails, you can pull any data a connection exposes — giving history, email engagement, and more — into a collection. See Syncing data to collections . Keeps itself current (optional). Turn on auto-sync (daily or weekly), or sync on demand. See Managing connections . Sends engagement back (Salesforce). Salesforce connections can also push report engagement back to your CRM, so activity shows up on each donor's record. See Salesforce . Related Syncing data to collections Managing connections Supported integrations"
+  },
+  {
+    "title": "Syncing data to collections",
+    "description": "Connecting a system imports your constituents. But your systems hold far more than names and emails — giving history, event attendance, email engagement,…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/syncing-data-to-collections/",
+    "keywords": [
+      "syncing",
+      "data",
+      "collections",
+      "donor",
+      "crm",
+      "extended data",
+      "collect",
+      "sync",
+      "gifts",
+      "donations",
+      "fields",
+      "data sync"
+    ],
+    "body": "Syncing data to collections Connecting a system imports your constituents. But your systems hold far more than names and emails — giving history, event attendance, email engagement, membership details, and whatever custom data you track. Syncing data to collections lets you pull any of that into Storyraise, where it's available for your reports. What it does From any connected system, you choose a set of data to bring in. Storyraise writes it to a collection — the same kind of collection Storyraise Collect uses — and relates each row to a constituent by their ID. The result is structured data, tied to the right people, ready to pull into reports. Pick any data this connection exposes. It's written to a Collect collection, related to each constituent by id. This is deliberately open-ended: gifts, donations, and email engagement are common examples, but the data you can sync is whatever your connected system exposes — not a fixed list. Add data to a collection On a connected system, choose Add data . A short, friendly four-step wizard walks you through it: Choose — \"What do you want to bring in?\" Pick which object the connection exposes (for example gifts, donations, event registrations, or email activity). Details — \"Which details do you want?\" Select the specific fields to include. If the records you picked don't link to a person, Storyraise tells you here so you can choose something that does. Summarize — \"Some people have more than one — how should we show it?\" Choose one: Just the most recent one — keep each person's latest record. Add them all up — total a number (like gift amount) per person. Count how many — the number of records per person. Keep every one — save all records, nothing combined. Review — \"Here's a peek — look right?\" Choose who it covers ( Everyone or Just a specific list ), name the collection, and save. For gift-like data, Storyraise asks you to confirm which fields hold the amount and the date . Storyraise imports the data and relates each row to its constituent automatically. Using the data in reports Once data lands in a collection, it's available wherever collections are — so you can surface giving totals, recent gifts, or engagement counts in a report, personalized per constituent through personalized links . Keeping it current Re-sync a collection any time from the connection's menu, or turn on auto-sync (daily or weekly) so it refreshes on its own. See Managing connections . Related The Connections tab What is Storyraise Collect? Managing connections"
+  },
+  {
+    "title": "Managing connections",
+    "description": "Once a system is connected, the Connections tab is where you keep it healthy — check its status, refresh data, adjust credentials, and turn on automatic…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/managing-connections/",
+    "keywords": [
+      "managing",
+      "connections",
+      "donor",
+      "data",
+      "crm",
+      "sync now",
+      "auto-sync",
+      "disconnect",
+      "reconnect",
+      "status",
+      "last synced",
+      "refresh"
+    ],
+    "body": "Managing connections Once a system is connected, the Connections tab is where you keep it healthy — check its status, refresh data, adjust credentials, and turn on automatic syncing. Connection status Each connected system shows: A status indicator — Live when everything's working, or Error if the last sync failed (with a short message about what went wrong). The data it's syncing — Constituents , plus any collections you've added, with row counts (for example, Recent gifts: 43 ). When it last synced — synced 2 hours ago . A badge when auto-sync is on, and (for Salesforce write-back) a note of how many records were last sent back to your CRM. Keeping data current Sync now. Trigger an immediate refresh — useful right before a mailing or a board report. Re-syncing updates existing records rather than duplicating them (constituents are matched by email). Auto-sync. Turn this on under the connection's ⋯ More menu and set the Frequency to Daily or Weekly — Storyraise refreshes the connection on that schedule on its own. Refresh a collection. If you've synced extra data into collections, refresh each one from the same menu. See Syncing data to collections . Updating credentials If an API key is rotated or a connection falls into an Error state, choose Edit credentials (for API-key connections) and paste the new key. For sign-in (OAuth) systems like Raiser's Edge NXT and Salesforce, reconnect by authorizing again. Sending engagement back (Salesforce) Connections import data into Storyraise — they don't change your source system. The one exception you can opt into is Salesforce write-back : from a connected Salesforce, choose Send to Salesforce to log report engagement (opens, time spent, link clicks) on each donor's Contact. See Salesforce for the full setup. Disconnecting Open the connection's menu in the Connections tab and choose Disconnect . Storyraise deletes the credentials it stored, stops syncing, and asks the other system to revoke our access. You can reconnect later. Your data stays by default. Constituents and synced collections you've already imported stay exactly as they are; they just stop updating. Reports built on them keep working. The confirmation offers Also delete the data it synced as an option. Tick it and Storyraise permanently deletes the collections this connection synced, along with any constituents it was the only source for — and reports built on that data lose it. It can't be undone, so leave it unticked unless removing the data is the reason you're disconnecting. Disconnecting needs the same access as connecting: Owners, Admins, and Editors can do it, Viewers can't. Troubleshooting Most issues are the same ones covered in Troubleshooting sync issues : an expired or mistyped key, missing email addresses, or a provider that needs reauthorizing. An Error badge with its message is your starting point. Related The Connections tab Syncing data to collections"
+  },
+  {
+    "title": "Blackbaud (Raiser's Edge NXT)",
+    "description": "Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/",
+    "keywords": [
+      "blackbaud",
+      "raiser",
+      "edge",
+      "nxt",
+      "donor",
+      "data",
+      "crm",
+      "raisers"
+    ],
+    "body": "Blackbaud (Raiser's Edge NXT) Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging. Two ways to connect. You can connect Raiser's Edge NXT from the Connections tab (recommended — see Connecting via the Connections tab below) or from the per-system steps in the Constituents area. Both reach the same place. What you'll need A Blackbaud account with access to your organization's Raiser's Edge NXT environment and the constituent lists you want to sync. A constituent list in Raiser's Edge NXT containing the people you want in Storyraise. If you don't have one yet, create a list in RE NXT first — syncing works list by list, which keeps you in control of exactly who comes over. Connect and sync From the Storyraise dashboard, open the Constituents area and choose to sync constituents. Select the Blackbaud tab. Click Connect . You'll be sent to Blackbaud to sign in and authorize Storyraise. Approve the authorization. You'll return to Storyraise automatically. Choose the constituent list you want to sync. Start the sync. Storyraise pulls in each constituent's name and email, along with custom fields from your RE NXT environment. Synced constituents appear in your constituent list tagged Blackbaud . Connecting via the Connections tab If your dashboard has the Connections tab, connect there instead: Open Connections and find Raiser's Edge NXT under Add a connection . Click Connect , sign in to Blackbaud, and authorize Storyraise. Storyraise imports your constituents; the connection shows as Live , and you can Sync now or turn on daily auto-sync. See The Connections tab and Managing connections . What gets synced First name, last name, and email for each constituent in the selected list Custom fields configured in your Raiser's Edge NXT environment Records are matched by email address — constituents without an email in RE NXT can't be synced, and re-syncs update existing records rather than duplicating them. Keeping it fresh Syncs run when you trigger them. Re-sync before mailings or personalized publishes to pull the latest data — see Data refreshes . Storyraise refreshes your Blackbaud authorization automatically; if it ever fully expires, just click Connect again. Embedding Blackbaud donation forms Beyond constituent data, you can embed a Blackbaud donation form inside a report: add the donation form element in the builder and paste your Donation Form URL from Blackbaud. Readers can give without leaving your report. Troubleshooting Authorization errors — reconnect via the Connect button, using a Blackbaud account with access to your lists. Missing constituents — check that they're in the synced list and have an email address in RE NXT. More help: Troubleshooting sync issues ."
+  },
+  {
+    "title": "Bloomerang",
+    "description": "Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/bloomerang/",
+    "keywords": [
+      "bloomerang",
+      "donor",
+      "data",
+      "crm"
+    ],
+    "body": "Bloomerang Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who's engaging. Two ways to connect. You can connect Bloomerang from the Connections tab (recommended — see Connecting via the Connections tab below) or from the per-system steps in the Constituents area. Bloomerang also syncs gifts into Analytics . What you'll need A Bloomerang API key . Bloomerang's guide to finding or creating one: Where can I find my Bloomerang API key? API keys belong to a Bloomerang user account. Use a key from an account that will stay active — if that user is deactivated, the key stops working. Connect and sync From the Storyraise dashboard, open the Constituents area and choose to sync constituents. Select the Bloomerang tab. Paste your API key into the key field (it looks like aaead1d4-7075-57df-ec7f-11e717c7bdd1 ). Click Sync constituents . Storyraise pulls in your Bloomerang constituents — names, emails, addresses, phone numbers, and other profile fields. Synced constituents appear in your constituent list tagged Bloomerang . Connecting via the Connections tab If your dashboard has the Connections tab, connect there instead: open Connections , find Bloomerang , click Connect , paste your API key, and choose Connect & sync . The connection then shows as Live , with Sync now and daily auto-sync options — see The Connections tab and Managing connections . What gets synced Name and email for each constituent Profile details such as address and phone fields Other fields from each constituent's Bloomerang record, flattened into individual Storyraise fields you can use as merge tags Records are matched by email address — constituents without an email in Bloomerang can't be synced, and re-syncs update existing records rather than duplicating them. Keeping it fresh Syncs run when you trigger them. Re-run Sync constituents before mailings or personalized publishes to pull the latest data — see Data refreshes . Embedding Bloomerang donation forms You can also embed a Bloomerang donation form inside a report: add the donation form element in the builder and paste your form's URL. Readers can give without leaving your report. Troubleshooting Invalid key — re-copy the full key with no extra spaces; regenerate it in Bloomerang if needed. Missing constituents — check that they have an email address in Bloomerang. More help: Troubleshooting sync issues ."
+  },
+  {
+    "title": "Salesforce / Nonprofit Cloud",
+    "description": "Connect Salesforce to bring your contacts and giving data into Storyraise — and send report engagement back to Salesforce so it lives next to the rest of each…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/salesforce/",
+    "keywords": [
+      "salesforce",
+      "nonprofit",
+      "cloud",
+      "donor",
+      "data",
+      "crm",
+      "nonprofit cloud",
+      "npsp",
+      "oauth",
+      "contacts",
+      "gift transaction",
+      "engagement",
+      "write-back",
+      "connections"
+    ],
+    "body": "Salesforce / Nonprofit Cloud Connect Salesforce to bring your contacts and giving data into Storyraise — and send report engagement back to Salesforce so it lives next to the rest of each donor's record. What syncs Into Storyraise Contacts → your Storyraise constituent list , matched by email. Giving and other objects → Storyraise collections. Storyraise discovers your org's objects and fields at connect time, so you choose exactly what to bring in. This includes Nonprofit Cloud Gift Transactions — Storyraise resolves each gift's Person Account to the right constituent automatically. See Syncing data to collections . Back into Salesforce Report engagement (opens, time spent, link clicks) → logged on each donor's Contact, so your team sees Storyraise activity inside Salesforce. You choose where it lands and who it goes to (see below). Connect Salesforce uses sign-in (OAuth), so there's no API key to copy: In the Connections tab, find Salesforce / Nonprofit Cloud and click Connect . You're sent to Salesforce to sign in and authorize Storyraise. Approve access — you'll return to Storyraise, and your contacts begin importing. Sign in with a Salesforce account that can see the contacts you want to bring over — and, for write-back, that has permission to create the records you choose below. Send engagement to Salesforce On the connected Salesforce card, choose Send to Salesforce to configure write-back: Where to write it — log a completed Activity (Task) on the Contact, or update custom fields on the Contact (you map each Salesforce field to a metric: opens, minutes, link clicks, engagement score, last open, and more). Assign to the gift officer — for Activities, optionally assign each task to the donor's Account Owner , so the right fundraiser is notified. Minimum engagement to send — only send for donors who reached a chosen level (e.g. opened a report, read in depth, or clicked a link). Run it on demand with Save & send now , or let it run automatically with auto-sync (below). Engagement is matched to the exact Contact using a Storyraise constituent id carried through each personalized report link, not by name — so it lands on the right person. Keeping it current Sync on demand with Sync now , or turn on Auto-sync and choose Daily or Weekly . When write-back is enabled, auto-sync also pushes engagement on the same schedule. See Managing connections . Related The Connections tab Syncing data to collections Troubleshooting sync issues"
+  },
+  {
+    "title": "Virtuous",
+    "description": "Connect Virtuous with an API key to import your contacts and giving history into Storyraise.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/virtuous/",
+    "keywords": [
+      "virtuous",
+      "donor",
+      "data",
+      "crm",
+      "api key",
+      "contacts",
+      "connections"
+    ],
+    "body": "Virtuous Connect Virtuous with an API key to import your contacts and giving history into Storyraise. What syncs Constituents (contacts) → your constituent list , matched by email. Giving history and other data → into collections; see Syncing data to collections . Connect In the Connections tab, find Virtuous , click Connect , and enter: API Key — your Virtuous API key. Then Connect & sync . Where to find your key In Virtuous, open Settings → API Keys and create a key (pick a permission group). See the Virtuous API key guide . Prefer to upload a file? You can also bring Virtuous contacts in by exporting them to CSV and using CSV import — include First Name , Last Name , and Email columns, plus any custom fields. You'll get the same merge tags, personalized links, and insights. Related The Connections tab Managing connections"
+  },
+  {
+    "title": "CiviCRM",
+    "description": "Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/civicrm/",
+    "keywords": [
+      "civicrm",
+      "donor",
+      "data",
+      "crm",
+      "apiv4",
+      "site key",
+      "api key",
+      "contacts",
+      "connections"
+    ],
+    "body": "CiviCRM Connect your CiviCRM site (APIv4) to import contacts into Storyraise as constituents. What syncs Constituents (contacts) → your constituent list , matched by email. Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find CiviCRM , click Connect , and enter: Site URL — your CiviCRM site address (e.g. https://your-civicrm-site.org ). API Key — set on your CiviCRM user/contact record. Site Key (optional) — the CIVICRM_SITE_KEY from civicrm.settings.php . Then Connect & sync . Where to find these API keys attach to a CiviCRM user; the site key lives in civicrm.settings.php . See the CiviCRM API keys guide . Prefer to upload a file? You can also bring CiviCRM contacts in by exporting them to CSV and using CSV import — include First Name , Last Name , and Email columns, plus any custom fields. Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Slate for Advancement",
+    "description": "Connect a Slate Query web service to import constituents into Storyraise. Because Slate queries are custom, you'll map their columns to Storyraise fields as…",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/slate/",
+    "keywords": [
+      "slate",
+      "advancement",
+      "donor",
+      "data",
+      "crm",
+      "technolutions",
+      "query",
+      "web service",
+      "connections"
+    ],
+    "body": "Slate for Advancement Connect a Slate Query web service to import constituents into Storyraise. Because Slate queries are custom, you'll map their columns to Storyraise fields as you import. What syncs Constituents , from the Query you expose — mapped to your constituent list during import. Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Slate for Advancement , click Connect , and provide: Query Web Service URL — build a Query in Slate, output it as a JSON web service, and paste that URL. Service Username — a Slate service account. Service Password — that service account's password. Then Connect & sync . You'll map the query's columns to Storyraise fields on import. Where to find these In Slate, share a Query as a JSON web service, then authenticate with a service account. See the Slate Configurable API docs . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Ellucian Advancement",
+    "description": "Connect via the Ellucian Ethos Integration API to import persons into Storyraise as constituents.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/ellucian/",
+    "keywords": [
+      "ellucian",
+      "advancement",
+      "donor",
+      "data",
+      "crm",
+      "ethos",
+      "higher ed",
+      "connections"
+    ],
+    "body": "Ellucian Advancement Connect via the Ellucian Ethos Integration API to import persons into Storyraise as constituents. What syncs Constituents (persons), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Ellucian Advancement , click Connect , and enter: Ethos API Key — from your Ethos Integration admin → Applications. Then Connect & sync . Where to find your key Ask your institution's Ethos Integration administrator for an API key for this application. Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Little Green Light",
+    "description": "Connect Little Green Light with an API token to import your constituents.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/little-green-light/",
+    "keywords": [
+      "little",
+      "green",
+      "light",
+      "donor",
+      "data",
+      "crm",
+      "little green light",
+      "lgl",
+      "api token",
+      "connections"
+    ],
+    "body": "Little Green Light Connect Little Green Light with an API token to import your constituents. What syncs Constituents , into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Little Green Light , click Connect , and enter: API Token — your Little Green Light API token. Then Connect & sync . Where to find your token In Little Green Light, go to Settings → Integration Settings → API and generate a token. See the Little Green Light API docs . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "DonorPerfect",
+    "description": "Connect DonorPerfect with an API key to import your donors as constituents.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/donorperfect/",
+    "keywords": [
+      "donorperfect",
+      "donor",
+      "data",
+      "crm",
+      "api key",
+      "donors",
+      "connections"
+    ],
+    "body": "DonorPerfect Connect DonorPerfect with an API key to import your donors as constituents. What syncs Constituents (donors), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find DonorPerfect , click Connect , and enter: API Key — your DonorPerfect API key. Then Connect & sync . Where to find your key DonorPerfect issues API keys on request — email support@donorperfect.com . See DonorPerfect API access . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Neon CRM",
+    "description": "Connect Neon CRM with your Organization ID and API key to import accounts as constituents.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/neon-crm/",
+    "keywords": [
+      "neon",
+      "crm",
+      "donor",
+      "data",
+      "neon crm",
+      "neoncrm",
+      "org id",
+      "api key",
+      "accounts",
+      "connections"
+    ],
+    "body": "Neon CRM Connect Neon CRM with your Organization ID and API key to import accounts as constituents. What syncs Constituents (accounts), into your constituent list . Optionally, additional data into collections — see Syncing data to collections . Connect In the Connections tab, find Neon CRM , click Connect , and enter: Organization ID — from Settings → Organization Profile → Organization ID . API Key — from Settings → User Management → your user → API key . Environment (optional) — production for live accounts, trial for trials. Then Connect & sync . Where to find these Find your Org ID under Organization Profile, then create an API key under User Management. See the Neon CRM API keys guide . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Funraise",
+    "description": "Connect Funraise with an API key to import your supporters as constituents, along with their giving, so you can personalize reports and see who engages.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/funraise/",
+    "keywords": [
+      "funraise",
+      "donor",
+      "data",
+      "crm",
+      "api key",
+      "supporters",
+      "donations",
+      "connections"
+    ],
+    "body": "Funraise Connect Funraise with an API key to import your supporters as constituents, along with their giving, so you can personalize reports and see who engages. Not the same as Fundraise Up. Funraise and Fundraise Up are two different platforms — make sure you're connecting the right one. What syncs Supporters , into your constituent list . Donations , alongside them. Connect In the Connections tab, find Funraise , click Connect , and enter: API Key — your Funraise API key. Then Connect & sync . The connection shows as Live , with Sync now and nightly auto-sync — see Managing connections . Where to find your key In your Funraise dashboard, go to Settings → API and create a key — copy it immediately, as it's shown only once. See the Funraise API guide . Related The Connections tab Managing connections Data refreshes"
+  },
+  {
+    "title": "Givebutter",
+    "description": "Embed your Givebutter giving experience directly inside a Storyraise report, so the moment your story moves a reader, they can give — without leaving the page.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/givebutter/",
+    "keywords": [
+      "givebutter",
+      "donor",
+      "data",
+      "crm"
+    ],
+    "body": "Givebutter Embed your Givebutter giving experience directly inside a Storyraise report, so the moment your story moves a reader, they can give — without leaving the page. What the integration does Givebutter works with Storyraise in two ways: a donation embed inside a report, and a data connection that imports your contacts and donations. This page covers the embed; the connection is below. The donation embed places your Givebutter campaign or form inside a section of your report. Donations are processed by Givebutter exactly as they are on your own Givebutter page, and gifts show up in your Givebutter account as usual. Add Givebutter to a report In the builder, go to the section where you want the giving experience — a Donate section works well. Add the Givebutter element to a block. Paste the URL of your Givebutter campaign or giving form. Preview the section to confirm the form loads and looks right, including on mobile. Tips Place it after the story, not before. Donation embeds convert best right after your most compelling impact section. Keep one clear ask per report. Multiple embedded forms can split attention; one well-placed giving moment usually outperforms several. Test a real gift. Before sharing widely, run a small test donation to confirm the end-to-end flow. Connecting Givebutter as a data source Separately from the embed, the Connections tab can import your Givebutter data: Contacts → your constituent list . Donations → available to sync into a collection (see Syncing data to collections ) and into Analytics — see Understanding report metrics . To connect: in the Connections tab, find Givebutter , click Connect , paste your API key (from Account → Settings → API Keys in Givebutter — see the Givebutter API docs ), and choose Connect & sync . Related The Connections tab Supported integrations Publishing and sharing reports"
+  },
+  {
+    "title": "Donorbox",
+    "description": "Connect Donorbox to import your donors and sync their donations into Storyraise.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/donorbox/",
+    "keywords": [
+      "donorbox",
+      "donor",
+      "data",
+      "crm",
+      "giving",
+      "donations",
+      "api key",
+      "connections"
+    ],
+    "body": "Donorbox Connect Donorbox to import your donors and sync their donations into Storyraise. What syncs Donors → your constituent list . Donations → available to sync into a collection (see Syncing data to collections ) and into Analytics — see Understanding report metrics . Connect In the Connections tab, find Donorbox , click Connect , and enter: Account Email — the email you sign in to Donorbox with. API Key — your Donorbox API key. Then Connect & sync . Where to find your key Generate an API key under Organization Settings → API & Integrations in Donorbox, and authenticate with your account email. See the Donorbox API docs . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Fundraise Up",
+    "description": "Connect Fundraise Up to import your supporters and sync their donations into Storyraise.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/fundraise-up/",
+    "keywords": [
+      "fundraise",
+      "donor",
+      "data",
+      "crm",
+      "fundraise up",
+      "fundraiseup",
+      "giving",
+      "donations",
+      "api key",
+      "connections"
+    ],
+    "body": "Fundraise Up Connect Fundraise Up to import your supporters and sync their donations into Storyraise. Not the same as Funraise. Fundraise Up and Funraise are two different platforms — connect the one you actually use. What syncs Supporters → your constituent list . Donations → available to sync into a collection (see Syncing data to collections ) and into Analytics — see Understanding report metrics . Connect In the Connections tab, find Fundraise Up , click Connect , and enter: API Key — your Fundraise Up API key. Then Connect & sync . Where to find your key Create an API key under Settings → Integrations → API keys in Fundraise Up. See the Fundraise Up help center . Related The Connections tab Managing connections"
+  },
+  {
+    "title": "Mailchimp",
+    "description": "Connect Mailchimp to import your audience and sync email engagement into Storyraise.",
+    "section": "Donor Data & CRM",
+    "url": "/docs/crm-and-data/integrations/mailchimp/",
+    "keywords": [
+      "mailchimp",
+      "donor",
+      "data",
+      "crm",
+      "email",
+      "audience",
+      "engagement",
+      "api key",
+      "connections"
+    ],
+    "body": "Mailchimp Connect Mailchimp to import your audience and sync email engagement into Storyraise. What syncs Audience members → your constituent list . Email engagement → available to sync into a collection (see Syncing data to collections ) and into Analytics — see Understanding report metrics . Connect In the Connections tab, find Mailchimp , click Connect , and enter: API Key — your Mailchimp API key (it ends in your data center, e.g. xxxxxxxx-us21 ). Then Connect & sync . Where to find your key Create an API key under Account → Extras → API keys in Mailchimp. The suffix after the dash (for example us21 ) is your data center — include it. See the Mailchimp API keys guide . Related The Connections tab Managing connections"
   },
   {
     "title": "Setting up your account",
@@ -1239,168 +1681,81 @@ const SEARCH_INDEX = [
     "body": "Setting up a custom sending domain When you send email through Storyraise, verifying your own sending domain makes your messages come clearly from your organization — and helps them reach the inbox instead of the spam folder. This guide walks through the setup wizard. Why verify a domain? Inbox providers (Gmail, Outlook, and the rest) trust messages more when the sending domain proves the sender is who they claim to be. Verifying your domain: Makes emails clearly come from your organization , not a generic address. Improves deliverability so updates actually reach donors. Brands the tracking links in your emails with your own domain. You'll set up DNS records — small, safe entries at your domain host. This does not affect your website. What you'll need The domain you'll send from (e.g. example.org — you'll send from something like updates@example.org ). Access to your domain's DNS settings (at GoDaddy, Cloudflare, Squarespace, or wherever your domain is managed). Not technical? You can forward the records to whoever manages your DNS. The four steps 1. Verify your sending domain Enter your organization identifier and your sending domain . Storyraise prepares the records your domain will need. 2. Add DNS records Storyraise shows a table of DNS records to add — typically CNAME, MX, and TXT entries covering: SPF — authorizes Storyraise to send on your behalf. DKIM — cryptographically signs your mail so it's trusted. Tracking — brands the links in your emails with your domain. Each row has Copy host and Copy value buttons. Log in to your domain host and add each record exactly as shown. DNS changes can take a few minutes to a few hours to take effect. That's normal — you can move on and check back. 3. Verify setup Once you've added the records, click Check verification . Storyraise looks up your DNS and confirms which records it can see, marking each Verified or still Missing . If something's missing, double-check that record at your host and check again. 4. You're ready to send When everything verifies, you'll see You're ready to send — emails will now come from your domain. From here, set up your From address and make sure donor updates include an unsubscribe footer. Tips Copy, don't retype. DNS values are long and unforgiving — use the copy buttons. Hand it to IT if you're unsure. Forwarding the records page to your web person is a perfectly normal step. Be patient with verification. If a record doesn't verify immediately, wait a bit and re-check before assuming it's wrong. Related Email distribution Organization settings"
   },
   {
-    "title": "What is Storyraise Video?",
-    "description": "Storyraise Video turns one recording into hundreds of personal video messages. Record once, and every constituent receives a version addressed to them — their…",
-    "section": "Storyraise Video",
-    "url": "/docs/storyraise-video/what-is-storyraise-video/",
+    "title": "Email compliance and deliverability",
+    "description": "If you send donor communications from your own domain through Storyraise, two things matter: that the mail arrives, and that it meets the rules for commercial…",
+    "section": "Account & Settings",
+    "url": "/docs/account-and-settings/email-compliance/",
     "keywords": [
-      "what",
-      "storyraise",
-      "video"
+      "email",
+      "compliance",
+      "deliverability",
+      "account",
+      "settings",
+      "dmarc",
+      "spf",
+      "dkim",
+      "unsubscribe",
+      "can-spam",
+      "spam",
+      "bounce",
+      "suppression",
+      "from address",
+      "reply-to",
+      "sender reputation"
     ],
-    "body": "What is Storyraise Video? Storyraise Video turns one recording into hundreds of personal video messages. Record once, and every constituent receives a version addressed to them — their name on screen, a message in their inbox, and a viewing link that's theirs alone. How it works 1. Choose your message type Start by picking what kind of message you're sending: Thank you! , Case for giving , Invitation , Event recap , or Just an update . Your choice shapes the suggested talking points and scene layouts. 2. Record your message Record with your webcam right in the browser, or upload a video you've already made. Storyraise generates talking points for you based on your message type and organization — a short, warm script designed for a 45–60 second message. A few practical pointers the recorder will give you: good lighting, a clean background, camera at eye level. After you record, Storyraise automatically: Transcribes your video. Generates captions , broken into natural phrases and synced to your speech. Captures a thumbnail for the email. 3. Edit your scenes Your video is automatically structured into scenes — timed text overlays that appear as you speak, with animated headings and styling you can adjust. This is where personalization happens: scene text supports merge tags, so Hi, @@first_name@@! greets each recipient by their own name. Refine any scene, add new ones, or click Remake All Scenes to start the overlay design fresh. 4. Add recipients Add your audience two ways: Select Recipients — choose from your organization's constituents. Upload a CSV — using the standard format ( first_name , last_name , email , plus any custom fields you want available as merge tags). 5. Preview and send Click Preview & send to review the exact video each recipient will see — step through recipients or search for a specific person, with every merge tag resolved to their real data. Then send: each constituent receives an email with your video thumbnail, your message, and a button to their personal viewing page. Prefer to send through your own email platform? Get a link gives you either a Standard Link (the same for everyone) or a Dynamic Link with a personalization variable you map to your CRM or email tool's merge field. What recipients experience A clean, mobile-friendly viewing page with your video, synced captions they can toggle, playback controls, and your message below — logo, text, and any links you attached. No account, app, or download required. What it's for Donor thank-yous that feel hand-delivered, at scale Appeals and cases for giving with a human face Event invitations and recaps that get watched, not skimmed Program updates that build connection between mailings Related Personalized links — the same ?for= personalization powers video links Importing constituent data — the fields that drive merge tags Video analytics — viewing metrics (coming soon)"
-  },
-  {
-    "title": "Creating a video message",
-    "description": "A Storyraise Video message is one short recording, automatically personalized into a unique video for every recipient. This page is the end-to-end overview;…",
-    "section": "Storyraise Video",
-    "url": "/docs/storyraise-video/creating-a-video-message/",
-    "keywords": [
-      "creating",
-      "video",
-      "message",
-      "storyraise"
-    ],
-    "body": "Creating a video message A Storyraise Video message is one short recording, automatically personalized into a unique video for every recipient. This page is the end-to-end overview; the pages that follow go deeper on each step. The flow at a glance Choose a message type — what kind of message you're sending. Record your message — webcam or upload, with auto-generated talking points. Edit your scenes — the personalized text that appears as you speak. Add recipients — from your constituents or a CSV. Preview and send — check each person's version, then deliver. 1. Choose your message type Start with What kind of message are you sending? and pick the one that fits: Thank you! Case for giving Invitation Event recap Just an update Your choice tailors the suggested talking points and the starting scene layouts, so you're never staring at a blank screen. 2–5. Build, personalize, and send From there you'll record, refine the on-screen scenes, choose who receives it, and send. Each step has its own guide: Recording your video — capturing or uploading your footage, plus automatic captions. Scenes and personalization — the personalized text overlays and merge tags. Sending and recipients — recipients, per-person preview, and delivery. Tips for a great message Keep it short. Aim for 45–60 seconds. The personalization, not the length, is what makes it land. Talk to one person. Even though hundreds receive it, record as if you're speaking to a single supporter — because each of them sees a version made for them. Lead with warmth. A genuine thank-you in the first few seconds earns the rest of the watch. Related What is Storyraise Video?"
-  },
-  {
-    "title": "Recording your video",
-    "description": "The video is the human heart of your message. Storyraise makes recording it painless — and handles transcription and captions for you afterward.",
-    "section": "Storyraise Video",
-    "url": "/docs/storyraise-video/recording-your-video/",
-    "keywords": [
-      "recording",
-      "video",
-      "storyraise"
-    ],
-    "body": "Recording your video The video is the human heart of your message. Storyraise makes recording it painless — and handles transcription and captions for you afterward. Record or upload You have two options: Use webcam — record directly in your browser, no software to install. Upload video — use footage you've already recorded. Talking points Not sure what to say? Storyraise generates talking points for you based on your message type and organization — a short, warm script sized for a 45–60 second message. Use them as a teleprompter while you record, or just as a starting point and speak naturally. Recording tips A few seconds of setup makes a big difference: Lighting — face a window or light source; avoid a bright window behind you. Background — a clean wall or tidy space keeps the focus on you. Camera height — at eye level, with you centered in the frame. Sound — record somewhere quiet; built-in mics pick up echo and traffic. Phone or tablet works great if its camera is better than your computer's. You can re-record as many times as you need before saving. Automatic transcription and captions After you record, Storyraise automatically: Transcribes your video. Generates captions — broken into natural, readable phrases and synced to your words. Captures a thumbnail for the delivery email. Captions matter: many people watch with the sound off, and captions also make your message accessible to viewers who are deaf or hard of hearing. Recipients can toggle captions on or off while watching. Next With your video recorded, move on to Scenes and personalization to set the on-screen text each recipient will see."
-  },
-  {
-    "title": "Scenes and personalization",
-    "description": "Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs.",
-    "section": "Storyraise Video",
-    "url": "/docs/storyraise-video/scenes-and-personalization/",
-    "keywords": [
-      "scenes",
-      "personalization",
-      "storyraise",
-      "video"
-    ],
-    "body": "Scenes and personalization Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs. What scenes are When you finish recording, Storyraise automatically structures your video into a few scenes — timed text overlays with animated headings, sized and styled to match. Each scene appears at the right moment as your video plays. Editing a scene Select a scene from Select a Scene to Edit to refine it: change its text, adjust its styling, or restyle the layout. Insert icon drops in a visual accent. To add one, play the video to the moment you want it and click Add scene at — the button carries the current timestamp, so the new scene lands where you're paused rather than at the end. Generating it takes a moment. Want a fresh start on the overlay design? Remake all scenes rebuilds them from your recording. Personalizing with merge tags This is what sets Storyraise Video apart. Scene text supports merge tags in the @@field_name@@ format, so: Hi, @@first_name@@! becomes \"Hi, Maria!\" for Maria and \"Hi, James!\" for James — automatically, from each recipient's record. Any field on your constituents can be a merge tag: @@first_name@@ , @@last_name@@ , or custom fields like giving level or program name. The same ?for= personalization that powers personalized report links drives video personalization, so the constituent must exist in your constituent list (matched by email). Tips Put the name on screen early. Seeing their own name in the first scene tells the viewer instantly that this was made for them. Keep overlay text short. Scenes punctuate your spoken words — a few words land; a paragraph competes with you. Check your data first. A recipient missing a field a scene uses gets a blank where their name should be. Preview before sending — see Sending and recipients . Next Sending and recipients — choose who gets the video and preview each person's version."
-  },
-  {
-    "title": "Sending and recipients",
-    "description": "Your video is recorded and your scenes are personalized — now choose who receives it and send.",
-    "section": "Storyraise Video",
-    "url": "/docs/storyraise-video/sending-and-recipients/",
-    "keywords": [
-      "sending",
-      "recipients",
-      "storyraise",
-      "video"
-    ],
-    "body": "Sending and recipients Your video is recorded and your scenes are personalized — now choose who receives it and send. Add recipients Two ways to build your audience: Select Recipients — choose from your organization's constituents. Upload a CSV — use the standard recipient format ( first_name , last_name , email , plus any custom fields you want available as merge tags). Your recipients become the people each personalized video is generated for. The more complete their records, the better the personalization — see Importing constituent data . Preview each person's version Click Preview & send to watch the exact video a recipient will receive — their name in the scenes, their data in every merge tag. Step through recipients or search for a specific person. Previewing a few people, especially those with the least-complete records, is the surest way to catch a blank merge tag before it goes out. Send Send directly from Storyraise, and each recipient gets an email with your video thumbnail, your message, and a button to their personal viewing page. There's no app or login for them — it just plays. Sending through your own platform Prefer your existing email or CRM tool? Use Get a link to generate either: Standard Link — the same video for everyone (no personalization). Dynamic Link — a personalized link with a placeholder you map to your platform's merge field, so each contact opens their own version. When you use a dynamic link, check the part of the URL between ?for= and the next / — it must be the right merge variable from your email tool or CRM, or everyone will see the same version. What recipients experience A clean, mobile-friendly viewing page: your personalized video with captions they can toggle, scene-by-scene navigation, and your message below it — logo, text, and any links you attached. Related Personalized links — the same personalization, for reports Video analytics — viewing metrics (coming soon)"
-  },
-  {
-    "title": "What is Storyraise Collect?",
-    "description": "Storyraise Collect gathers the raw material your stories are made of. Build a form, share the link, and collect stories, thank-yous, photos, and data from…",
-    "section": "Storyraise Collect",
-    "url": "/docs/storyraise-collect/what-is-storyraise-collect/",
-    "keywords": [
-      "what",
-      "storyraise",
-      "collect"
-    ],
-    "body": "What is Storyraise Collect? Storyraise Collect gathers the raw material your stories are made of. Build a form, share the link, and collect stories, thank-yous, photos, and data from your community — then put what you collect to work in your reports and videos. Start a collection From the Collections view, click Start new collection and choose what you want to collect: Thank-yous from beneficiaries Stories from program leaders Stories from the field Stories from our community General information I want to upload information — start from a CSV instead of a form Each starting point pre-builds a sensible form you can customize. Build your form The form editor gives you a full toolkit of field types: Short text , Long text , Email , Phone , Choose one , Choose many , Dropdown list , Number , Date , and File upload (photos, videos, or documents) — plus Heading , Paragraph , and New Section elements for structure. Every field can have its own label, placeholder, description, and required setting. Longer forms can be split into steps : respondents see a progress bar (\"Step 1 of 3\"), can move back and forth, and can jump between sections. Drafts save automatically as people type, so a closed tab doesn't mean a lost story. What respondents experience A clean, branded form with your logo and introduction — no account needed. If a respondent is already in your constituent list, Storyraise recognizes them by email and pre-fills their information , so a donor sharing a story doesn't have to retype their own name. Work with what you collect Responses land in a spreadsheet-style table you can actually work in: Search and filter responses by keyword; show or hide columns. Edit any response — click a row to open the editor, fix typos, or fill gaps. Tag responses to constituents with Assign to... — connect a submitted story to the donor or volunteer it came from. Import CSV to merge existing data into a collection (append, update matching rows, or replace). Export CSV to take everything with you. Where it fits Collections exist to feed the rest of Storyraise — as the dashboard puts it: store collections of information here to use in your reports and videos. Gather beneficiary thank-yous in spring, and they're ready as testimonials in your fall report ; collect field stories year-round and your annual report writes itself from real voices. Related Importing constituent data — the constituent list that powers pre-fill and tagging What is Storyraise Video? — another destination for collected stories"
-  },
-  {
-    "title": "Creating a collection",
-    "description": "A collection is a form plus everything it gathers. This guide takes you from an empty Collections view to a form ready to share.",
-    "section": "Storyraise Collect",
-    "url": "/docs/storyraise-collect/creating-a-collection/",
-    "keywords": [
-      "creating",
-      "collection",
-      "storyraise",
-      "collect"
-    ],
-    "body": "Creating a collection A collection is a form plus everything it gathers. This guide takes you from an empty Collections view to a form ready to share. Start a new collection From the Collections view, click Start new collection and choose what you want to collect. Each option pre-builds a sensible form you can customize: Thank-yous from beneficiaries Stories from program leaders Stories from the field Stories from our community General information I want to upload information — start from existing data via CSV instead of a form Build out your form Your starting form opens in the editor. From here you can add, remove, and reorder fields, and set each field's label, help text, and whether it's required. The full catalog of field types is covered in Form field types . For longer or repeating data, you can split a form into steps — see Multi-step forms . Add people (optional) If you're collecting from known constituents, you can add recipients up front by uploading a CSV (using the Constituents Template format). When a respondent's email matches a constituent, Storyraise pre-fills what it already knows, so people don't retype their own details. You can also skip this and simply share the form link with anyone. Empty until responses arrive A new collection shows \"Nothing collected yet. Share your form to start gathering responses, or upload a CSV to begin from existing data.\" — with Open form editor and Upload a CSV to get going. Next Form field types — the building blocks of your form Sharing your form — get it in front of respondents"
-  },
-  {
-    "title": "Form field types",
-    "description": "Storyraise Collect gives you a full toolkit of fields, so your form can ask for exactly what you need — a quick quote, a long story, a photo, a date, a choice…",
-    "section": "Storyraise Collect",
-    "url": "/docs/storyraise-collect/form-field-types/",
-    "keywords": [
-      "form",
-      "field",
-      "types",
-      "storyraise",
-      "collect"
-    ],
-    "body": "Form field types Storyraise Collect gives you a full toolkit of fields, so your form can ask for exactly what you need — a quick quote, a long story, a photo, a date, a choice from a list. Question fields Short text — a single line: a name, a title, a city. Long text — a paragraph or more: a story, a reflection, a testimonial. Email — an email address. Phone — a phone number. Choose one — pick a single option (radio buttons). Choose many — pick several options (checkboxes). Dropdown list — pick one from a longer list, in a compact menu. Number — a numeric answer. Date — a date, with a date picker. File upload — a photo, video, or document. You can limit what's accepted (image, video, or document). Layout fields These don't ask a question — they shape and explain your form: Heading — a section title. Paragraph — descriptive text or instructions. New Section — a divider that breaks a longer form into steps . Field settings Each field can be configured with: A label (the question), placeholder , and description (helper text). Required — make an answer mandatory. A default value and a custom error message . For Choose one / Choose many / Dropdown , the list of options (one per line). For File upload , the accepted type (image, video, or document). Tips Ask for the least you need. Every extra field lowers completion. A great story plus a name beats a ten-field interrogation. Use Long text for stories, Short text for facts. Matching the field to the answer sets expectations and improves what you get back. Label clearly, explain briefly. A one-line description under a tricky question saves you cleanup later. Mark only the essentials required. Over-requiring fields makes people abandon the form. Next Multi-step forms — break longer forms into manageable steps Managing responses — work with what you collect"
-  },
-  {
-    "title": "Multi-step forms",
-    "description": "A long form on one page feels like a chore. Splitting it into steps makes it feel quick — and lets you collect repeating, one-to-many data cleanly.",
-    "section": "Storyraise Collect",
-    "url": "/docs/storyraise-collect/multi-step-forms/",
-    "keywords": [
-      "multi",
-      "step",
-      "forms",
-      "storyraise",
-      "collect"
-    ],
-    "body": "Multi-step forms A long form on one page feels like a chore. Splitting it into steps makes it feel quick — and lets you collect repeating, one-to-many data cleanly. Breaking a form into steps Add New Section dividers to your form, and Storyraise turns each section into its own step. Respondents see a progress bar (\"Step 1 of 3\"), can move Back and Next between steps, and can Jump to… a specific section. Their answers are saved as a draft as they go, so a closed tab doesn't lose their work. Steps reduce the intimidation of a long form and let you group related questions — \"About you,\" \"Your story,\" \"Photos\" — into digestible chunks. Collecting one-to-many data Sometimes one respondent needs to give you several sets of the same information — a program officer reporting on multiple funds, or a leader submitting several stories. Storyraise Collect supports this grouped structure: the respondent works through the repeating sections, and each is saved as its own response record, so your results table stays tidy and one row equals one item. You don't build this by hand. It's set up from the data you import: when a CSV has more than one row per recipient , Storyraise notices and opens Configure Import — \"We detected multiple rows per recipient. Choose how to group them into form steps.\" Two choices there decide the shape of the form: Recipient email column — which column identifies the person, so their rows are gathered into one form. Section label for each step — which column names each step. Pick the column holding the fund, program, or story title and the respondent sees that as the step's heading. Choose None to leave the steps unlabelled. Then Import & Build generates the form. Tip: Pick a section label column your respondent will recognize. \"Rivera Scholarship Fund\" as a step heading tells them exactly which set of answers they're on; \"Row 3\" doesn't. Tips Order steps by effort. Put easy fields first; momentum carries people into the harder ones. Keep each step focused. One topic per step is the whole point — resist cramming. Name your sections clearly. Section names label the steps and the Jump-to menu, so \"Your Story\" beats \"Section 2.\" Related Form field types Sharing your form"
-  },
-  {
-    "title": "Sharing your form",
-    "description": "Once your form is built, share its link and the responses start flowing in. This page covers getting the form to people and what they experience filling it out.",
-    "section": "Storyraise Collect",
-    "url": "/docs/storyraise-collect/sharing-your-form/",
-    "keywords": [
-      "sharing",
-      "form",
-      "storyraise",
-      "collect"
-    ],
-    "body": "Sharing your form Once your form is built, share its link and the responses start flowing in. This page covers getting the form to people and what they experience filling it out. Two kinds of link Open your form and you're offered two, for two different jobs. Standard Link (non-personalized) is the plain form link. Share it anywhere — email, your website, social media, a QR code on printed materials. Copy form link puts it on your clipboard, and View form opens it so you can check it the way a respondent will. Respondents don't need a Storyraise account. Dynamic Link is for a mail merge, where each person should get a link that already knows who they are. Name the platform you're sending from and Storyraise builds the link with that platform's own email merge field already in it, ready to paste into your campaign. Note: Check the merge field before you send. The link carries the recipient's email between ?for= and / , and that's the piece your platform substitutes. If it's the wrong variable, everyone gets the same pre-filled form. What respondents experience A clean, branded form with your logo and an introduction. For multi-step forms , a progress bar and Back / Next navigation. Draft autosave — answers are kept as they type, so an interruption doesn't mean starting over. File uploads open the device's file picker for photos, videos, or documents. On submit, a confirmation that their response came through. Smart pre-fill for known constituents If a respondent is already in your constituent list , Storyraise recognizes them by email and pre-fills what it already knows — so a donor sharing a story doesn't re-enter their own name and details. It's less work for them and cleaner data for you. Tips Tell people why. A sentence about how their story will be used (and that it might appear in a report) lifts both response rate and quality. Make it mobile-easy. Most people open links on a phone — keep forms short and file uploads optional where you can. Put the link where the moment is. A QR code on an event thank-you card collects stories while the experience is fresh. Next Managing responses — review, edit, and use what you've collected. Related Embedding a Collect form in a report"
-  },
-  {
-    "title": "Managing responses",
-    "description": "Everything people submit lands in a spreadsheet-style table you can actually work in — search it, clean it up, connect responses to constituents, and export it.",
-    "section": "Storyraise Collect",
-    "url": "/docs/storyraise-collect/managing-responses/",
-    "keywords": [
-      "managing",
-      "responses",
-      "storyraise",
-      "collect"
-    ],
-    "body": "Managing responses Everything people submit lands in a spreadsheet-style table you can actually work in — search it, clean it up, connect responses to constituents, and export it. The response table Open a collection to see its responses as a table, one row per submission. You can: Search by keyword to find a specific response. Show or hide columns to focus on the fields that matter. Truncate long text for a tidier overview, or expand it to read in full. Editing a response Click a row to open the Make Edits editor, where you can: Edit any field under Response Details — fix a typo, fill a gap, tidy a quote for use. Assign to… one or more constituents — connect a submitted story to the donor, volunteer, or beneficiary it came from. Search your constituents and select the right people. Click Save and Close when you're done. Tagging responses to constituents is what turns a pile of submissions into usable material — you'll know whose story is whose when you pull a testimonial into a report. Importing and exporting Import CSV to bring existing data into a collection — append new rows, update rows that match, or replace everything. Export CSV to download all responses (with their fields as columns) for use elsewhere. Putting responses to work Collected stories and quotes are raw material for the rest of Storyraise — drop a beneficiary thank-you into a report Testimonial section , or use submitted details to personalize a video message . Tips Tag as you review. Assigning responses to constituents while they're fresh saves a scramble later. Clean before you use. A quick edit pass — fixing typos, trimming a long quote — makes responses report-ready. Export for backup. A periodic CSV export is a simple safety net for collected stories. Related Creating a collection What is Storyraise Collect?"
+    "body": "Email compliance and deliverability If you send donor communications from your own domain through Storyraise, two things matter: that the mail arrives, and that it meets the rules for commercial and nonprofit bulk email. Set up your domain first — see Custom sending domain . Authentication: SPF, DKIM, and DMARC Custom sending domain covers the SPF and DKIM records Storyraise needs. Two things that page doesn't say, and that commonly break a setup: A domain can only have one SPF record. If your domain already publishes SPF for Google Workspace or Microsoft 365, you must merge Storyraise's include into the existing record, not add a second TXT record. Two SPF records is a hard failure — mail from both senders starts failing checks. If you publish DMARC, alignment matters. If your organization has a DMARC policy at p=quarantine or p=reject , mail sent through Storyraise must align on SPF or DKIM to pass. Sending from a subdomain that inherits your organizational DMARC policy is the usual arrangement. Check your policy before your first send rather than after, and consider monitoring DMARC reports around a large send. If you don't publish DMARC at all today, sending from a dedicated subdomain keeps this send stream separate from your main corporate mail — which is the point of using a subdomain. Unsubscribe Every bulk donor communication needs a working way out. Include an unsubscribe footer in donor updates — see Custom sending domain . What the law requires Not legal advice, but the requirements that catch nonprofits out most often: A working unsubscribe that is honoured promptly — ten business days under CAN-SPAM, and immediately in practice. A physical postal address for your organization in the message. Accurate headers and subject lines. The From name, From address, and subject must not mislead about who is writing or what the message is. No sending to someone who has opted out , including via a freshly imported list. Re-importing a list does not reset an opt-out. See Data governance and CRM flags . Requirements differ outside the US — GDPR and PECR in Europe, CASL in Canada — and are generally stricter about prior consent. If you mail internationally, check with whoever advises your organization. From name, From address, and Reply-to From name: your organization's name as donors know it, not an individual they don't recognize. From address: on your verified sending domain. Consistency across sends builds sender reputation; changing it frequently damages it. Reply-to: a monitored mailbox. Donors reply to stewardship email far more than to marketing email, and a reply that bounces or vanishes is a worse outcome than a lower open rate. Protecting deliverability Send to people who know you. The single biggest driver of deliverability is engagement. A clean list of engaged donors outperforms a large stale one. Clean out hard bounces. Repeatedly mailing dead addresses damages your sending reputation. Warm up a new domain. A brand-new sending subdomain that suddenly sends 40,000 messages looks exactly like a compromised domain. Start with smaller, engaged segments. Test before the real send. See Email distribution . Watch what happens after. Note that Storyraise does not currently provide email open and click tracking, so deliverability signals will come from your own domain monitoring rather than from Storyraise reporting. Related Custom sending domain — DNS setup Email distribution — sending a report SMS distribution — consent rules for text"
   },
   {
     "title": "Best practices",
     "description": "Patterns that separate the reports people finish from the ones they skim. Distilled from what works across Storyraise customers — use them as defaults, break…",
-    "section": "Resources",
+    "section": "Best Practices & Reference",
     "url": "/docs/resources/best-practices/",
     "keywords": [
       "best",
       "practices",
-      "resources"
+      "reference",
+      "annual report",
+      "what to write",
+      "storytelling",
+      "story arc",
+      "structure",
+      "examples",
+      "checklist"
     ],
     "body": "Best practices Patterns that separate the reports people finish from the ones they skim. Distilled from what works across Storyraise customers — use them as defaults, break them on purpose. Structure your report like a story A proven arc for impact and annual reports: Hook — an Intro block with your single strongest image and a clear theme. Credibility — a short Letter from leadership. Proof — Stories, Stats, and Galleries, alternating narrative blocks with visual ones so the rhythm never goes flat. Gratitude — Testimonials and your Donor List. Ask — a Donate block after the emotional peak, not before it. Put your best story early — many readers won't reach the end. And keep it to one idea per block; a block doing two jobs does neither well. Design for the skimmer Section titles are navigation. \"Our Impact\" beats \"A Look Back at Everything We Accomplished Together This Year\" — titles double as the report's menu. Aim for 5–9 menu items. Hide supporting sections from navigation so the menu shows landmarks. Numbers want air. A Stats section with three big figures lands harder than ten cramped ones. Stay relentlessly on brand — and only on brand Set up your brand kit before building. Two or three brand colors used consistently look more professional than a full palette; save your brightest accent for buttons and key stats. Stick to your primary and secondary fonts — one-off typefaces are what make a report feel homemade. Always do the mobile pass Many readers open reports from a phone. Before publishing, walk the entire report in mobile preview: headline wraps, image crops, stacking order, button reachability. Then open the published link on your actual phone — two minutes of thumb-scrolling catches what previews miss. Personalize whenever you know the audience For any send where you have the recipient list, use personalized links instead of the public link: Merge tags greet each constituent by name — \"Dear friend\" is a missed opportunity. Every open is attributed, so Analytics tells you who engaged, not just how many. Check your data for gaps first: a missing field means an awkward blank. Make the report measurable Give readers something to do: a donation button, an RSVP link, a video. Clicks become intent signals in your metrics , turning \"they read it\" into \"they acted.\" After each report, look at where readers dropped off in Section Retention — that's your edit list for next time. Close the loop The report isn't done when you hit Publish: Time your sends using the Engagement Heatmap — meet your audience when they actually read. Follow up personally with your most engaged constituents within the week; a ★★★ donor who clicked your giving button deserves a call, not a quarterly newsletter. Reuse what works. Duplicate last year's report as next year's starting point, and keep collecting stories year-round so the material is ready when you are. Keep it accessible High contrast text, real headings, captions on videos, and key facts in text rather than baked into images — the basics in Accessibility considerations widen your audience and sharpen your design at the same time."
   },
   {
+    "title": "Frequently asked questions",
+    "description": "Quick answers to the questions we hear most. Each links to a fuller guide.",
+    "section": "Best Practices & Reference",
+    "url": "/docs/resources/faq/",
+    "keywords": [
+      "frequently",
+      "asked",
+      "questions",
+      "best",
+      "practices",
+      "reference",
+      "faq",
+      "pdf",
+      "print",
+      "board",
+      "help",
+      "troubleshooting"
+    ],
+    "body": "Frequently asked questions Quick answers to the questions we hear most. Each links to a fuller guide. Reports Do my readers need a Storyraise account? No. Published reports are regular web pages — readers just open the link on any device. No login, app, or download. Can I edit a report after publishing? Yes. Keep editing in the builder; your changes stay private until you click Republish . Readers always see the last published version. See Publishing and sharing . What does my report's link look like? https://your-organization.yearly.report/your-report — based on your organization and the report's title. Can I put a report on my own website? Yes — the Share menu provides embed code (standard and fullscreen iframe variants). See Sharing reports . Embedding somewhere with accessibility requirements? See Accessibility at Storyraise . Is Storyraise accessible / does it meet WCAG? Reports include built-in accessibility features, and how you build a report affects its accessibility too. See Accessibility at Storyraise for what's built in, authoring guidance, and how to request a formal accessibility statement or VPAT. Can I get a PDF of my report? Yes. Get PDF in the Share menu provides a PDF of a published report. Each block becomes its own page in the export — see Sharing reports . The builder keeps logging me out, or a report won't load images and fonts on our network. Why? This is almost always a strict firewall or content-inspection proxy — common on school, hospital, and corporate networks — blocking the services Storyraise relies on. Test it in 30 seconds by opening the link on your phone over cellular: if it works there, it's the network. See Network requirements and troubleshooting for the exact allowlist to give your IT team. Constituents and personalization Which CRMs does Storyraise connect to? A lot of them — through the Connections tab : Raiser's Edge NXT, Bloomerang, Salesforce, Virtuous, CiviCRM, Slate, Ellucian, Little Green Light, DonorPerfect, and Neon CRM, plus giving platforms (Givebutter, Donorbox, Fundraise Up) and Mailchimp. Anything else works via CSV export/import. See Supported integrations . How does personalization work? Add merge tags like @@first_name@@ to your report, then share each constituent's personalized link (their email appended as ?for= ). Their data fills in when they open it. See Personalized links . Why is a merge tag showing up blank? That constituent is missing the field. Check their record in your Constituents list and fill the gap in your CRM or CSV, then re-sync. See Troubleshooting sync issues . Does Storyraise change data in my CRM? Not unless you ask it to. Every integration is read-only by default — Storyraise pulls constituent records in and doesn't write back. The one exception is Salesforce , which offers optional engagement write-back: when you enable it, Storyraise can log a completed Activity (Task) on a Contact or update custom fields you map. It stays off until you configure it. Analytics Why are my numbers lower than last year? They're more accurate. The old counter included repeat page loads from the same person; the new one counts people. Nothing about your performance changed. See Analytics overview . Why does my older report look empty? It was published before the new engine and only ever recorded a running total. Open The Story tab, which is written for exactly this case. See Analytics for older reports , and contact support if you'd like us to look at recovering more. Can I see exactly who opened my report? Only for constituents who opened a personalized link — they appear by name. Visitors using the public link are counted but stay anonymous. See Personalized links . Do my own team's views count in report metrics? No. Views from your organization's team members are automatically excluded — even when staff open a constituent's personalized link to check it. If teammates are still showing up, add their addresses or your whole domain under Account . See Analytics exclusion . I opened my own report to test it and nothing happened. That's correct — your own views aren't recorded. How fresh is the data? A report's Analytics tab is near-live. Home tab cards refresh overnight, covering activity through the previous night. What do the stars mean? How much attention someone gave this report compared with everyone else who read it. One star is above-average reading time; two stars means they also read half of it; three stars means they also took an action. See Understanding report metrics . Account and team Can my colleagues work on reports with me? Yes — invite them to your organization with an invite link. Sections lock while a teammate edits them, so you won't overwrite each other. See User roles and permissions . Who can see my drafts and data? Only members of your organization. Publishing exposes the report itself at its public link — never your dashboard, drafts, or constituent data. Still have a question? Contact our support team — we're happy to help."
+  },
+  {
     "title": "Accessibility at Storyraise",
     "description": "We want every report you publish to be usable by everyone in your audience — including people who use screen readers, navigate by keyboard, or need high…",
-    "section": "Resources",
+    "section": "Best Practices & Reference",
     "url": "/docs/resources/accessibility/",
     "keywords": [
       "accessibility",
       "storyraise",
-      "resources",
+      "best",
+      "practices",
+      "reference",
       "wcag",
       "508",
       "vpat",
@@ -1414,15 +1769,68 @@ const SEARCH_INDEX = [
     "body": "Accessibility at Storyraise We want every report you publish to be usable by everyone in your audience — including people who use screen readers, navigate by keyboard, or need high contrast. This page covers what Storyraise provides, what you control as the author, embedding a report on your own site, and how to request formal accessibility documentation. What's built in Published Storyraise reports include: Semantic structure — reports use real landmark regions (navigation, main content, footer) so assistive technology can move through them. Keyboard-operable navigation — the report menu and links work with the keyboard, not just the mouse. Image descriptions — you can add a Media Description (alt) to images so screen-reader users know what they show. A contrast overlay for text on images — an Overlay Color control darkens or lightens a photo behind its text so the words stay legible. Responsive, resizable layouts — reports reflow for phones, tablets, and zoom, with no fixed, unscalable text. Captions from your source video — YouTube and Vimeo embeds carry whatever captions you've enabled on the original video. We're continually improving accessibility; if you hit a barrier, tell us (below). What you control as the author Much of a report's accessibility comes from how it's built. The Accessibility considerations guide covers the essentials: writing image descriptions, keeping strong contrast (including the overlay for text on photos), using real headings, meaningful link text, and keeping essential information in text rather than baked into images. A few minutes of attention there makes a real difference for your readers. Embedding a report on your website When you embed a report, it keeps its own structure and behavior inside your page. That means: The content's accessibility is yours to get right — image descriptions, contrast, headings, and link text all come from how you built the report. Follow the authoring guide before you embed. Test it in place. Run your organization's usual accessibility checks (keyboard-only navigation, a screen reader, an automated scanner) on the page once the report is embedded, the same as any other content on your site. Give the frame a title. If your site templates let you set a title on the embed/iframe, use a descriptive one (e.g. \"2026 Impact Report\"). Conformance and formal documentation For your organization's official accessibility posture — including how Storyraise approaches WCAG 2.1 — see our accessibility statement . If your procurement, legal, or compliance team needs a formal accessibility statement, a VPAT®, or an Accessibility Conformance Report (ACR) , or has specific questions about a standard, please reach out and we'll help. Reporting an accessibility issue Found something that's hard to use with assistive technology, or need an accommodation? Contact our team — we take accessibility seriously and want to hear about it. Contact support ."
   },
   {
+    "title": "Accessibility conformance",
+    "description": "This page is for procurement, legal, and compliance reviewers who need to know what Storyraise claims about accessibility — and what it doesn't.",
+    "section": "Best Practices & Reference",
+    "url": "/docs/resources/accessibility-conformance/",
+    "keywords": [
+      "accessibility",
+      "conformance",
+      "best",
+      "practices",
+      "reference",
+      "vpat",
+      "acr",
+      "wcag",
+      "aa",
+      "procurement",
+      "accessibility statement",
+      "section 508",
+      "known issues",
+      "contrast",
+      "screen reader"
+    ],
+    "body": "Accessibility conformance This page is for procurement, legal, and compliance reviewers who need to know what Storyraise claims about accessibility — and what it doesn't. For authoring guidance (how to build an accessible report), see Accessibility when building reports . For what's built into published reports, see Accessibility at Storyraise . Current conformance position Storyraise does not currently publish a specific WCAG conformance level for its published reports or its builder. That is a deliberate position rather than an oversight: we would rather tell you there is no verified claim than publish a level we haven't audited against. If your review requires a formal statement, a VPAT® , or an Accessibility Conformance Report (ACR) , contact our support team with your deadline and the standard you're evaluating against. Known limitations These are stated in our own documentation and are worth surfacing here rather than leaving a reviewer to find them: Area Current position Colour contrast Storyraise does not measure contrast ratios for you. Brand colours applied to a report are not checked against a minimum ratio, so an author can produce a report that fails. See the guidance in Accessibility when building reports . Background images For full-bleed background images, the image description functions as a label rather than a full text alternative. Essential information should be placed in real text, not only in a background image. Infographic colour Text that would be invisible against its background is automatically adjusted to a legible shade. This helps legibility but means a rendered colour may differ from the one an author chose. Interactive components Keyboard operability is documented for report navigation and links. Polls, charts, galleries, and embedded elements are not separately documented for keyboard operation or screen-reader behaviour. PDF export Whether the PDF export is tagged for reading order and alternative text is not currently documented. Captions Guidance covers enabling captions on embedded YouTube and Vimeo videos. Automatic captions generated by Storyraise Video are not documented as reviewable or editable. What is built in See Accessibility at Storyraise for the features present in every published report — responsive and resizable layouts, keyboard-operable navigation, semantic structure, and image description support. What authors control A large share of a report's accessibility is determined by the person building it: writing meaningful image descriptions, using real headings, writing descriptive link text, choosing legible colour combinations, and enabling captions on embedded video. Accessibility when building reports is the working checklist, and it belongs in your review process before publishing rather than after. Requesting documentation Contact support for a formal accessibility statement, a VPAT or ACR, or to report an accessibility barrier in a published report or in the builder. Please include the URL and the assistive technology involved — it makes the issue far faster to reproduce."
+  },
+  {
+    "title": "Security and data governance",
+    "description": "If you're evaluating Storyraise for an organization that holds donor records, this page is the starting point — what the product does with constituent data,…",
+    "section": "Best Practices & Reference",
+    "url": "/docs/resources/security-and-data/",
+    "keywords": [
+      "security",
+      "data",
+      "governance",
+      "best",
+      "practices",
+      "reference",
+      "privacy",
+      "data governance",
+      "retention",
+      "deletion",
+      "gdpr",
+      "dpa",
+      "subprocessors",
+      "encryption",
+      "compliance",
+      "procurement",
+      "it review",
+      "data protection"
+    ],
+    "body": "Security and data governance If you're evaluating Storyraise for an organization that holds donor records, this page is the starting point — what the product does with constituent data, what's documented, and what to request from us directly. Formal documentation. For a Data Processing Agreement, a subprocessor list, security documentation, or a completed vendor security questionnaire, contact our support team and say what your review requires. These are provided on request rather than published here. What Storyraise holds When you connect a CRM or import a file, Storyraise stores the constituent records you bring in — names, email addresses, and whichever other fields you choose to bring across — in your organization's constituent list. It also stores engagement generated by your reports: which constituents opened them, and what they did there. See Tracking engagement . The scope is set by you. Storyraise imports the fields you map; if a field shouldn't leave your CRM, don't sync it. Direction of data flow Every integration is read-only by default — Storyraise reads from your system of record and does not modify it. The exception is Salesforce , which offers optional engagement write-back. When you enable and configure it, Storyraise can log a completed Activity (Task) on a Contact, or update custom fields you map. It is off until you turn it on. See Connecting a CRM . Access inside your organization Access is granted per area, not per field . Anyone with View access to Constituents can see every field on every constituent, including any giving data you've synced. There is no field-level restriction, so the practical control is what you choose to sync and who you add to your team. Folder restrictions filter what people see in the reports list, but as Report folders states plainly, that is not a security control. Review User roles and permissions before adding anyone, and note that single sign-on creates accounts on first login without an invitation — so whoever your identity provider lets through is in. What your readers can see A personalized link carries a constituent's email address in the URL and renders that person's merged fields. Anyone who receives a forwarded link sees that data. Don't merge restricted fields into a report you distribute this way, and treat personalized links as confidential correspondence. Published reports are hidden from search engines by default, but as Publishing and sharing says, that is not the same as private — anyone with the link can open it. Deleting data Disconnecting an integration optionally deletes the collections it synced, along with any constituents it was the only source for. This can't be undone. See Managing connections . For your IT team Network requirements — the domains to allowlist, and why SSL inspection is the most common cause of trouble. This is the page to forward to a network administrator. Single sign-on — SAML setup and what happens on first login. Profile and security — multi-factor authentication for individual accounts. For your accessibility reviewer See Accessibility conformance for what Storyraise does and doesn't currently claim, and how to request a VPAT or Accessibility Conformance Report."
+  },
+  {
     "title": "Network requirements and troubleshooting",
     "description": "Storyraise is a web application, and your published reports are web pages. Both rely on a handful of Google, Firebase, and Storyraise services loading in the…",
-    "section": "Resources",
+    "section": "Best Practices & Reference",
     "url": "/docs/resources/network-requirements/",
     "keywords": [
       "network",
       "requirements",
       "troubleshooting",
-      "resources",
+      "best",
+      "practices",
+      "reference",
       "firewall",
       "allowlist",
       "whitelist",
@@ -1438,20 +1846,6 @@ const SEARCH_INDEX = [
       "corporate"
     ],
     "body": "Network requirements and troubleshooting Storyraise is a web application, and your published reports are web pages. Both rely on a handful of Google, Firebase, and Storyraise services loading in the browser. Most networks allow these without a second thought — but some school, hospital, government, and corporate networks run strict firewalls or content-inspection proxies that block them. When that happens, the symptoms are specific and consistent: The builder loads slowly, freezes, or logs you out unexpectedly and makes you sign back in. A published report opens, but images don't appear and fonts look wrong (the text falls back to a plain system font). It works fine from home or on your phone, but not at the office or on campus. If that sounds familiar, the report itself is fine — the network is filtering the services it needs. This guide helps you confirm that and gives your IT team exactly what to allow. First: confirm it's the network Before involving anyone, run this 30-second test: On your phone, turn Wi-Fi off so you're on cellular data. Open the report link (or sign in to the builder). If everything loads correctly on cellular but not on your work or school Wi-Fi, the cause is confirmed: your network is blocking Storyraise's services. Share the section below with your IT department. Allowlist for your IT team Ask your IT team to allow the following domains through the firewall and any web filter — for the people who build reports and anyone who will view a published report. Important: allowing the domains may not be enough This is the single most common reason IT troubleshooting \"doesn't stick\": If your network runs SSL inspection (also called deep packet inspection, TLS interception, or a content-filtering proxy), it can break Storyraise even when the domains above are technically allowed. The builder keeps a live connection to firestore.googleapis.com to load and save your work, and refreshes your sign-in token through securetoken.googleapis.com . Inspection proxies frequently sever these connections mid-stream — which is exactly what produces the random freezes and surprise logouts. Ask your IT team to exclude these domains from SSL/content inspection , not just add them to an allow list. How IT can see exactly what's blocked Your IT team can get a precise list of what your network is dropping: Open the report or builder in Google Chrome on the affected network. Press F12 to open Developer Tools and click the Network tab. Reload the page. Any requests shown in red (failed or blocked) name the exact domains being filtered. The Console tab (also under F12) often shows matching \"blocked\" or \"failed to load\" messages. A screenshot of either tab tells IT precisely what to fix. Symptom-to-cause quick reference What you see Usually means Builder freezes or logs you out repeatedly firestore.googleapis.com / securetoken.googleapis.com blocked or SSL-inspected Report opens but images are missing firebasestorage.googleapis.com or yearlyreport.cloud blocked Fonts look plain or wrong fonts.googleapis.com / fonts.gstatic.com blocked Can't sign in at all auth.storyraise.com , accounts.google.com , or identitytoolkit.googleapis.com blocked Works on cellular, not on Wi-Fi Network firewall — apply the allowlist above Before you share a report widely If your own network filters these services, the people you send the report to may be on similar networks (especially other staff at the same organization). One habit prevents surprises: Spot-check the published link on cellular before sending it out, to confirm it renders correctly when nothing is filtered. Still stuck? If your IT team has applied the allowlist (and excluded the domains from SSL inspection) and you're still seeing problems, reach out to support with a screenshot of the Chrome Network tab from the affected network — it tells us exactly where the traffic is being stopped."
-  },
-  {
-    "title": "Frequently asked questions",
-    "description": "Quick answers to the questions we hear most. Each links to a fuller guide.",
-    "section": "Resources",
-    "url": "/docs/resources/faq/",
-    "keywords": [
-      "frequently",
-      "asked",
-      "questions",
-      "resources",
-      "faq"
-    ],
-    "body": "Frequently asked questions Quick answers to the questions we hear most. Each links to a fuller guide. Reports Do my readers need a Storyraise account? No. Published reports are regular web pages — readers just open the link on any device. No login, app, or download. Can I edit a report after publishing? Yes. Keep editing in the builder; your changes stay private until you click Republish . Readers always see the last published version. See Publishing and sharing . What does my report's link look like? https://your-organization.yearly.report/your-report — based on your organization and the report's title. Can I put a report on my own website? Yes — the Share menu provides embed code (standard and fullscreen iframe variants). See Sharing reports . Embedding somewhere with accessibility requirements? See Accessibility at Storyraise . Is Storyraise accessible / does it meet WCAG? Reports include built-in accessibility features, and how you build a report affects its accessibility too. See Accessibility at Storyraise for what's built in, authoring guidance, and how to request a formal accessibility statement or VPAT. Can I get a PDF of my report? Yes. Get PDF in the Share menu provides a PDF of a published report. Each block becomes its own page in the export — see Sharing reports . The builder keeps logging me out, or a report won't load images and fonts on our network. Why? This is almost always a strict firewall or content-inspection proxy — common on school, hospital, and corporate networks — blocking the services Storyraise relies on. Test it in 30 seconds by opening the link on your phone over cellular: if it works there, it's the network. See Network requirements and troubleshooting for the exact allowlist to give your IT team. Constituents and personalization Which CRMs does Storyraise connect to? A lot of them — through the Connections tab : Raiser's Edge NXT, Bloomerang, Salesforce, Virtuous, CiviCRM, Slate, Ellucian, Little Green Light, DonorPerfect, and Neon CRM, plus giving platforms (Givebutter, Donorbox, Fundraise Up) and Mailchimp. Anything else works via CSV export/import. See Supported integrations . How does personalization work? Add merge tags like @@first_name@@ to your report, then share each constituent's personalized link (their email appended as ?for= ). Their data fills in when they open it. See Personalized links . Why is a merge tag showing up blank? That constituent is missing the field. Check their record in your Constituents list and fill the gap in your CRM or CSV, then re-sync. See Troubleshooting sync issues . Does Storyraise change data in my CRM? No — integrations are read-only. Storyraise pulls constituent records in and never writes back. Analytics Why are my numbers lower than last year? They're more accurate. The old counter included repeat page loads from the same person; the new one counts people. Nothing about your performance changed. See Analytics overview . Why does my older report look empty? It was published before the new engine and only ever recorded a running total. Open The Story tab, which is written for exactly this case. See Analytics for older reports , and contact support if you'd like us to look at recovering more. Can I see exactly who opened my report? Only for constituents who opened a personalized link — they appear by name. Visitors using the public link are counted but stay anonymous. See Personalized links . Do my own team's views count in report metrics? No. Views from your organization's team members are automatically excluded — even when staff open a constituent's personalized link to check it. If teammates are still showing up, add their addresses or your whole domain under Account . See Analytics exclusion . I opened my own report to test it and nothing happened. That's correct — your own views aren't recorded. How fresh is the data? A report's Analytics tab is near-live. Home tab cards refresh overnight, covering activity through the previous night. What do the stars mean? How much attention someone gave this report compared with everyone else who read it. One star is above-average reading time; two stars means they also read half of it; three stars means they also took an action. See Understanding report metrics . Account and team Can my colleagues work on reports with me? Yes — invite them to your organization with an invite link. Sections lock while a teammate edits them, so you won't overwrite each other. See User roles and permissions . Who can see my drafts and data? Only members of your organization. Publishing exposes the report itself at its public link — never your dashboard, drafts, or constituent data. Still have a question? Contact our support team — we're happy to help."
   }
 ];
 

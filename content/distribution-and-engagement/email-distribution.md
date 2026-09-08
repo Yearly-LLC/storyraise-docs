@@ -1,6 +1,6 @@
 ---
 title: Email distribution
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
 keywords: send, campaign, newsletter, blast
 last_reviewed: 2026-09-04

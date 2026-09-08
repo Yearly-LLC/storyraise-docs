@@ -4,6 +4,8 @@
 {{HEAD}}
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
 
   <!-- NAV -->
   <nav>
@@ -11,16 +13,16 @@
       <a href="/" class="logo">
         <img
           class="logo-light"
-          src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a"
-          alt="Storyraise"
+          src="/assets/logo-light.svg"
+          alt="Storyraise Knowledge Base — home"
         />
-        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="" />
       </a>
       <span>Knowledge Base</span>
     </div>
     <div class="nav-right">
       {{NAV_SEARCH}}
-      <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
+      <input type="checkbox" id="navmenu" class="navmenu-cb" />
       <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </label>
@@ -39,13 +41,13 @@
 
   <!-- LAYOUT: sidebar tree + main column -->
   <div class="layout">
-    <input type="checkbox" id="navtoggle" class="navtoggle-cb" hidden />
+    <input type="checkbox" id="navtoggle" class="navtoggle-cb" />
 
     <!-- SIDEBAR -->
     {{SIDENAV_BLOCK}}
 
     <!-- MAIN -->
-    <div class="doc-main">
+    <main class="doc-main" id="main">
       {{DOCNAV_TOGGLE}}
 
       <!-- BREADCRUMB -->
@@ -61,15 +63,22 @@
 
         <p style="font-size:0.85rem; color:var(--text-faint);">Need help? <a href="https://storyraise.com/support">Contact our support team</a>.</p>
       </div>
-    </div>
+    </main>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
-    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
-    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
-    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+    <div class="footer-links">
+      <a href="https://storyraise.com">storyraise.com</a>
+      <a href="https://storyraise.com/support">Support</a>
+      <a href="/docs/resources/security-and-data/">Security &amp; data</a>
+      <a href="/docs/resources/accessibility-conformance/">Accessibility</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://storyraise.com/privacy-policy">Privacy Policy</a>
+      <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-meta">&copy; 2026 Storyraise Technology Inc.</div>
   </footer>
 
 {{SCRIPTS}}

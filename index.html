@@ -5,9 +5,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Storyraise Knowledge Base</title>
+  <meta name="description" content="Step-by-step guides for nonprofit teams using Storyraise — build on-brand impact reports, connect your CRM, distribute by email, SMS, and embed, and measure who engaged." />
+  <link rel="canonical" href="https://docs.storyraise.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#16131c" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Storyraise Knowledge Base" />
+  <meta property="og:title" content="Storyraise Knowledge Base" />
+  <meta property="og:description" content="Step-by-step guides for nonprofit teams using Storyraise — build on-brand impact reports, connect your CRM, distribute by email, SMS, and embed, and measure who engaged." />
+  <meta property="og:url" content="https://docs.storyraise.com/" />
+  <meta property="og:image" content="https://docs.storyraise.com/assets/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Storyraise Knowledge Base" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Storyraise Knowledge Base" />
+  <meta name="twitter:description" content="Step-by-step guides for nonprofit teams using Storyraise — build on-brand impact reports, connect your CRM, distribute by email, SMS, and embed, and measure who engaged." />
+  <meta name="twitter:image" content="https://docs.storyraise.com/assets/og-card.png" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://storyraise.com/#org",
+      "name": "Storyraise",
+      "url": "https://storyraise.com",
+      "logo": "https://docs.storyraise.com/assets/logo-light.svg"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://docs.storyraise.com/#site",
+      "name": "Storyraise Knowledge Base",
+      "url": "https://docs.storyraise.com/",
+      "publisher": {
+        "@id": "https://storyraise.com/#org"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://docs.storyraise.com/search/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css?v=b1b4bb96" />
+  <link rel="stylesheet" href="/assets/site.css?v=b2031f37" />
   <script>
     // Apply the theme before first paint: stored choice, else system setting.
     (function () {
@@ -26,18 +81,20 @@
 <!-- /AUTO:HEAD -->
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
 
   <!-- NAV -->
   <nav>
     <div class="nav-logo-group">
       <a href="/" class="logo">
-        <img class="logo-light" src="https://firebasestorage.googleapis.com/v0/b/yearly-bv3.appspot.com/o/Qv5LVkDakgLMEIxCotpz%2Flogos%2Ffile_9s8OW_Storyraise%20%E2%80%94%20Logos_Storyraise%20Logo%20%E2%80%94%20Heavy%20Icon%20Black%20Text.svg?alt=media&token=d6cf5dd9-6a30-4050-a94d-955bcd6c534a" alt="Storyraise" />
-        <img class="logo-dark" src="/assets/logo-dark.svg" alt="Storyraise" />
+        <img class="logo-light" src="/assets/logo-light.svg" alt="Storyraise Knowledge Base — home" />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="" />
       </a>
       <span>Knowledge Base</span>
     </div>
     <div class="nav-right">
-      <input type="checkbox" id="navmenu" class="navmenu-cb" hidden />
+      <input type="checkbox" id="navmenu" class="navmenu-cb" />
       <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </label>
@@ -53,19 +110,23 @@
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- HERO -->
   <div class="hero">
-    <div class="tag">Help &amp; Documentation</div>
-    <h1>Welcome to the<br><em>Storyraise</em> <span style="color: var(--brand);">Knowledge Base</span>.</h1>
+    <h1>Build, send, and <span style="color: var(--brand);">measure</span><br>your impact reports.</h1>
     <p class="lead">
-      Guides, tutorials, and answers to help you get the most out of every Storyraise product.
+      Step-by-step guides for nonprofit teams — from your first annual report to
+      the numbers you'll take to your board.
     </p>
     <div class="search-wrap" id="searchWrap">
-      <span class="search-icon">🔍</span>
+      <span class="search-icon" aria-hidden="true">&#128269;</span>
       <input
-        type="text"
+        type="search"
         id="searchInput"
-        placeholder="Search the knowledge base…"
+        role="combobox"
+        aria-haspopup="listbox"
+        placeholder="Search the knowledge base&hellip;"
         autocomplete="off"
         aria-label="Search the knowledge base"
         aria-autocomplete="list"
@@ -76,105 +137,209 @@
     </div>
   </div>
 
+  <!-- START HERE (static, curated — first-time visitors) -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Never used Storyraise? Start here.</h2>
+      <div class="section-sub">Five steps, about 90 minutes, and your report is live.</div>
+    </div>
+    <ol class="start-path">
+      <li>
+        <a href="/docs/getting-started/what-is-storyraise/">
+          <span class="step-num" aria-hidden="true">1</span>
+          <span class="step-body">
+            <strong>See what you're making</strong>
+            <em>3 min read</em>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="/docs/getting-started/understanding-templates/">
+          <span class="step-num" aria-hidden="true">2</span>
+          <span class="step-body">
+            <strong>Pick a template &mdash; don't start from blank</strong>
+            <em>5 min</em>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="/docs/building-reports/brand-kit/">
+          <span class="step-num" aria-hidden="true">3</span>
+          <span class="step-body">
+            <strong>Add your logo and two colors</strong>
+            <em>10 min</em>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="/docs/getting-started/what-goes-in-an-annual-report/">
+          <span class="step-num" aria-hidden="true">4</span>
+          <span class="step-body">
+            <strong>Write your words &mdash; what each section needs</strong>
+            <em>40 min</em>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="/docs/getting-started/publishing-and-sharing/">
+          <span class="step-num" aria-hidden="true">5</span>
+          <span class="step-body">
+            <strong>Check it on a phone, then publish</strong>
+            <em>15 min</em>
+          </span>
+        </a>
+      </li>
+    </ol>
+    <p class="start-note">
+      On a deadline? <a href="/docs/getting-started/first-report-in-90-minutes/">Your first report in 90 minutes</a>
+      &mdash; what to do, and what you can safely skip the first time round.
+      You don't need to connect your CRM to publish your first report.
+    </p>
+  </div>
+
   <!-- COMMON QUESTIONS (static, curated) -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Common questions</div>
-      <div class="section-sub">Quick answers to what people ask most.</div>
+      <h2 class="section-title">Common questions</h2>
+      <div class="section-sub">Once your first report is out, these are what come up next.</div>
     </div>
     <div class="start-here">
-      <a class="start-link" href="/docs/getting-started/creating-your-first-report/">How do I create a digital report?</a>
-      <a class="start-link" href="/docs/storyraise-video/creating-a-video-message/">How do I create a personalized video?</a>
-      <a class="start-link" href="/docs/storyraise-collect/what-is-storyraise-collect/">How do I collect stories with forms?</a>
+      <a class="start-link" href="/docs/distribution-and-engagement/personalized-links/">How do I send donors their own personalized version?</a>
+      <a class="start-link" href="/docs/distribution-and-engagement/proofing-personalized-reports/">How do I check what a donor sees before I send?</a>
+      <a class="start-link" href="/docs/building-reports/donor-lists/">How do I build a donor list or honor roll?</a>
+      <a class="start-link" href="/docs/distribution-and-engagement/pdf-export/">Can I get a PDF to print for the board?</a>
+      <a class="start-link" href="/docs/distribution-and-engagement/acting-on-analytics/">Who opened my report, and who should I call?</a>
       <a class="start-link" href="/docs/crm-and-data/importing-constituent-data/">How do I import my constituents?</a>
-      <a class="start-link" href="/docs/distribution-and-engagement/tracking-engagement/">How do I track engagement?</a>
-      <a class="start-link" href="/docs/crm-and-data/supported-integrations/">What integrations are supported?</a>
     </div>
   </div>
 
   <!-- BROWSE THE DOCS (section grid generated by build/build.js) -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Browse the docs</div>
-      <div class="section-sub">Every section of the knowledge base</div>
+      <h2 class="section-title">Browse the docs</h2>
+      <div class="section-sub">Browse by what you’re working on.</div>
     </div>
     <div class="cards">
 <!-- AUTO:SECTION-GRID -->
       <a class="card" href="/docs/getting-started/">
-        <span class="icon">🚀</span>
+        <span class="icon" aria-hidden="true">🚀</span>
         <h3>Getting Started</h3>
-        <p>New to Storyraise? Start here.</p>
-        <span class="card-count">7 articles</span>
-      </a>
-      <a class="card" href="/docs/crm-and-data/">
-        <span class="icon">🔌</span>
-        <h3>CRM &amp; Data Connections</h3>
-        <p>Bring your constituent data into Storyraise.</p>
-        <span class="card-count">9 guides · 15 integrations</span>
+        <p>Sign up, build your first report, and publish it — start to finish in about 90 minutes.</p>
+        <span class="card-count">9 articles</span>
       </a>
       <a class="card" href="/docs/building-reports/">
-        <span class="icon">📊</span>
+        <span class="icon" aria-hidden="true">📊</span>
         <h3>Building Reports</h3>
-        <p>Everything about building and styling reports.</p>
-        <span class="card-count">18 articles</span>
+        <p>Writing, photos, colors, charts, and donor lists — and making it all work on a phone.</p>
+        <span class="card-count">19 articles</span>
       </a>
       <a class="card" href="/docs/distribution-and-engagement/">
-        <span class="icon">📤</span>
-        <h3>Distribution &amp; Engagement</h3>
-        <p>Share your published reports and see who engages.</p>
-        <span class="card-count">12 articles</span>
-      </a>
-      <a class="card" href="/docs/account-and-settings/">
-        <span class="icon">⚙️</span>
-        <h3>Account &amp; Settings</h3>
-        <p>Set up your account, team, billing, and sending domain.</p>
-        <span class="card-count">8 articles</span>
-      </a>
-      <a class="card" href="/docs/storyraise-video/">
-        <span class="icon">🎬</span>
-        <h3>Storyraise Video</h3>
-        <p>Personalized video messages, recorded once and sent to everyone.</p>
-        <span class="card-count">5 articles</span>
+        <span class="icon" aria-hidden="true">📤</span>
+        <h3>Sharing &amp; Analytics</h3>
+        <p>Send by email, SMS, link, QR code, or PDF — then see which donors read it and who to call.</p>
+        <span class="card-count">15 articles</span>
       </a>
       <a class="card" href="/docs/storyraise-collect/">
-        <span class="icon">📋</span>
+        <span class="icon" aria-hidden="true">📋</span>
         <h3>Storyraise Collect</h3>
-        <p>Gather stories and data from your community with forms.</p>
-        <span class="card-count">6 articles</span>
+        <p>Gather stories, photos, and consent from the people you work with, using branded forms.</p>
+        <span class="card-count">9 articles</span>
+      </a>
+      <a class="card" href="/docs/storyraise-video/">
+        <span class="icon" aria-hidden="true">🎬</span>
+        <h3>Storyraise Video</h3>
+        <p>Record one thank-you and send a personalized version to every donor, by name.</p>
+        <span class="card-count">5 articles</span>
+      </a>
+      <a class="card" href="/docs/crm-and-data/">
+        <span class="icon" aria-hidden="true">🔌</span>
+        <h3>Donor Data &amp; CRM</h3>
+        <p>Connect your CRM or upload a spreadsheet. Read-only everywhere except Salesforce, which can optionally write engagement back.</p>
+        <span class="card-count">10 guides · 15 integrations</span>
+      </a>
+      <a class="card" href="/docs/account-and-settings/">
+        <span class="icon" aria-hidden="true">⚙️</span>
+        <h3>Account &amp; Settings</h3>
+        <p>Your team and who can see donor data, sign-in security, your sending domain, and billing.</p>
+        <span class="card-count">9 articles</span>
       </a>
       <a class="card" href="/docs/resources/">
-        <span class="icon">💡</span>
-        <h3>Resources</h3>
-        <p>Guides and answers that span the whole platform.</p>
-        <span class="card-count">4 articles</span>
+        <span class="icon" aria-hidden="true">💡</span>
+        <h3>Best Practices &amp; Reference</h3>
+        <p>What makes a report people finish, plus FAQs, accessibility, security, and notes for your IT team.</p>
+        <span class="card-count">6 articles</span>
       </a>
 <!-- /AUTO:SECTION-GRID -->
+    </div>
+  </div>
+
+  <!-- ROLE-SCOPED (static, curated — visitors who aren't building anything) -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Not building a report?</h2>
+      <div class="section-sub">If someone sent you a link, start here. No account needed.</div>
+    </div>
+    <div class="quiet-links">
+      <a href="/docs/storyraise-collect/what-respondents-experience/">I was asked to submit a story</a>
+      <a href="/docs/storyraise-collect/consent-and-permissions/">Questions about how my story will be used</a>
+      <a href="/docs/storyraise-video/recording-your-video/">I'm recording a video message</a>
+    </div>
+  </div>
+
+  <!-- TRUST & COMPLIANCE (static, curated) -->
+  <div class="section panel">
+    <div class="section-header">
+      <h2 class="section-title">For IT, security, and compliance</h2>
+      <div class="section-sub">What to hand your reviewers before you connect a system.</div>
+    </div>
+    <div class="start-here">
+      <a class="start-link" href="/docs/resources/security-and-data/">How Storyraise handles donor data</a>
+      <a class="start-link" href="/docs/getting-started/user-roles-and-permissions/">Who on my team can see what</a>
+      <a class="start-link" href="/docs/crm-and-data/data-governance/">Anonymous, do-not-contact, and deceased flags</a>
+      <a class="start-link" href="/docs/resources/accessibility-conformance/">Accessibility conformance and VPAT requests</a>
+      <a class="start-link" href="/docs/resources/network-requirements/">Network and firewall requirements</a>
+      <a class="start-link" href="/docs/account-and-settings/single-sign-on/">Single sign-on setup</a>
     </div>
   </div>
 
   <!-- INTEGRATIONS (chips generated by build/build.js) -->
   <div class="section">
     <div class="section-header">
-      <div class="section-title">Integrations</div>
-      <div class="section-sub">Sync constituent data from any supported platform</div>
+      <h2 class="section-title">Works with your CRM</h2>
+      <div class="section-sub">
+        15 supported systems. What syncs and how often varies &mdash; check the guide
+        before you plan a project. You don't need any of these to publish your first report.
+      </div>
     </div>
     <div class="crm-chips">
 <!-- AUTO:CRM-LINKS -->
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/salesforce/">Salesforce / Nonprofit Cloud</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/civicrm/">CiviCRM</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/slate/">Slate for Advancement</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/ellucian/">Ellucian Advancement</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/little-green-light/">Little Green Light</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/donorperfect/">DonorPerfect</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/neon-crm/">Neon CRM</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/funraise/">Funraise</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/givebutter/">Givebutter</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a>
-      <a class="crm-chip" href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a>
+      <div class="crm-group">
+        <h3 class="crm-group-label">System of record</h3>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Blackbaud (Raiser's Edge NXT)</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/salesforce/">Salesforce / Nonprofit Cloud<span class="chip-note" title="Reads contacts and gifts; can optionally write engagement back to Salesforce">Read + write-back</span></a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/virtuous/">Virtuous</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/donorperfect/">DonorPerfect</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/neon-crm/">Neon CRM</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/little-green-light/">Little Green Light</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/civicrm/">CiviCRM<span class="chip-note" title="Self-hosted CiviCRM — your server must be reachable by Storyraise">Self-hosted</span></a>
+      </div>
+      <div class="crm-group">
+        <h3 class="crm-group-label">Higher education</h3>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/slate/">Slate for Advancement<span class="chip-note" title="Query columns are mapped by hand during setup">Manual mapping</span></a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/ellucian/">Ellucian Advancement</a>
+      </div>
+      <div class="crm-group">
+        <h3 class="crm-group-label">Giving platforms</h3>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/givebutter/">Givebutter</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/donorbox/">Donorbox</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/fundraise-up/">Fundraise Up</a>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/funraise/">Funraise</a>
+      </div>
+      <div class="crm-group">
+        <h3 class="crm-group-label">Email</h3>
+        <a class="crm-chip" href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a>
+      </div>
 <!-- /AUTO:CRM-LINKS -->
     </div>
   </div>
@@ -190,17 +355,26 @@
     </div>
   </div>
 
+  </main>
+
   <!-- FOOTER -->
   <footer>
-    &copy; 2026 Storyraise Technology Inc. &nbsp;&mdash;&nbsp;
-    <a href="https://storyraise.com">storyraise.com</a> &nbsp;&middot;&nbsp;
-    <a href="https://storyraise.com/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
-    <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+    <div class="footer-links">
+      <a href="https://storyraise.com">storyraise.com</a>
+      <a href="https://storyraise.com/support">Support</a>
+      <a href="/docs/resources/security-and-data/">Security &amp; data</a>
+      <a href="/docs/resources/accessibility-conformance/">Accessibility</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://storyraise.com/privacy-policy">Privacy Policy</a>
+      <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-meta">&copy; 2026 Storyraise Technology Inc.</div>
   </footer>
 
 <!-- AUTO:SCRIPTS -->
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=8a90bc08" data-controller="/assets/search.js" data-eager="false" data-index-v="b5a20779" data-engine-v="8a90bc08" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="849ab5a9" data-engine-v="676be165" defer></script>
 <!-- /AUTO:SCRIPTS -->
 </body>
 </html>

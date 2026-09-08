@@ -1,6 +1,6 @@
 ---
 title: Funraise
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: funraise, api key, supporters, donations, connections, crm
 last_reviewed: 2026-09-08

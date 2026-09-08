@@ -1,6 +1,6 @@
 ---
 title: Managing connections
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: sync now, auto-sync, disconnect, reconnect, status, last synced, refresh
 last_reviewed: 2026-09-08

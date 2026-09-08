@@ -1,6 +1,6 @@
 ---
 title: Virtuous
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: virtuous, api key, contacts, crm, connections
 last_reviewed: 2026-06-12

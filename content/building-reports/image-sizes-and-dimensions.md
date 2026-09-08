@@ -2,7 +2,7 @@
 title: Image sizes and dimensions
 section: Building Reports
 status: draft
-keywords: image size, dimensions, aspect ratio, resolution, crop, pixels, photo size
+keywords: image size, dimensions, aspect ratio, resolution, crop, pixels, photo size, phone photos, camera, iphone, android, bad photos
 last_reviewed: 2026-06-12
 ---
 

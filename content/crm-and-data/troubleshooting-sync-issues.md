@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting sync issues
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 last_reviewed: 2026-06-12
 ---

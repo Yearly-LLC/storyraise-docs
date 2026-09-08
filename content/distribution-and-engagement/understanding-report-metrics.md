@@ -1,6 +1,6 @@
 ---
 title: Understanding report metrics
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
 keywords: opens, unique visitors, return visitors, average time spent, section retention, reader flow, clicks, engagement score, stars, intent badges, heatmap, regions
 last_reviewed: 2026-09-04

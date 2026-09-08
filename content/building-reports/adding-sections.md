@@ -1,5 +1,6 @@
 ---
 title: Adding sections
+keywords: donor list, honor roll, recognition levels, giving levels, donor wall, acknowledgment, block types
 section: Building Reports
 status: draft
 last_reviewed: 2026-09-08

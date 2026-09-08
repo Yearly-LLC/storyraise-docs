@@ -1,6 +1,6 @@
 ---
 title: Supported integrations
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: integrations, connections, crm, supported, salesforce, mailchimp, giving
 last_reviewed: 2026-09-08

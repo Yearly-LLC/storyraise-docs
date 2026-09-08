@@ -1,6 +1,6 @@
 ---
 title: The Connections tab
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: connections, integrations, crm, sync, connect, hub
 last_reviewed: 2026-06-12

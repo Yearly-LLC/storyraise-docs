@@ -1,6 +1,6 @@
 ---
 title: Accessibility at Storyraise
-section: Resources
+section: Best Practices & Reference
 status: draft
 keywords: accessibility, wcag, 508, vpat, conformance, alt text, contrast, screen reader, embedding, ada
 last_reviewed: 2026-06-24

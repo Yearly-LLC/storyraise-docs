@@ -1,6 +1,6 @@
 ---
 title: Data refreshes
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 last_reviewed: 2026-09-08
 ---

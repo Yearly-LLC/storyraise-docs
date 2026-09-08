@@ -1,5 +1,6 @@
 ---
 title: Creating your first report
+keywords: annual report, impact report, appeal, newsletter, how long, time, deadline, checklist, get started, first report
 section: Getting Started
 status: draft
 last_reviewed: 2026-06-12

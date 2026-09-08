@@ -1,6 +1,6 @@
 ---
 title: Embedding in WordPress
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
 keywords: wordpress, embed, iframe, gutenberg, elementor, classic editor, custom html, block editor
 last_reviewed: 2026-07-16

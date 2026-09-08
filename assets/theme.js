@@ -7,6 +7,7 @@
   function syncLabel() {
     var dark = document.documentElement.getAttribute('data-theme') === 'dark';
     btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
   }
 
   syncLabel();

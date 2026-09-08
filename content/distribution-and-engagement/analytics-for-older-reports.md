@@ -1,6 +1,6 @@
 ---
 title: Analytics for older reports
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
 keywords: legacy, older reports, page views, migration, estimated, empty analytics, lower numbers
 last_reviewed: 2026-09-04

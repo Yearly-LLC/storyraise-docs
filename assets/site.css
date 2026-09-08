@@ -5,10 +5,10 @@
    ──────────────────────────────────────────────────────────────────── */
 
 /* ── BRAND FONTS (PP Fragment) ──
-   Self-hosted and registered for use, but not yet applied to any element —
-   the site still renders in Poppins. Use these families when ready, e.g.
-   font-family: "PPFragment GlareExtraBold", ... for display headings and
-   "PPFragment TextRegular", ... for body copy. */
+   Self-hosted. TextRegular is applied to the nav wordmark and to all headings
+   (see the heading rule further down); body and UI text are Poppins.
+   GlareExtraBold is declared but not applied to any element — an unused
+   @font-face is never fetched, so it costs nothing. */
 @font-face {
   font-family: "PPFragment GlareExtraBold";
   font-style: normal;
@@ -35,15 +35,15 @@
   --bg-card: #fff;
   --bg-input: #fafafa;
   --border: #f0f0f0;
-  --border-card: #ececec;
-  --border-input: #e0e0e0;
+  --border-card: #949494;
+  --border-input: #919191;
   --border-result: #f5f5f5;
   --text: #1a1a1a;
   --text-body: #444;
   --text-secondary: #555;
   --text-muted: #666;
-  --text-soft: #777;
-  --text-faint: #aaa;
+  --text-soft: #6b6b6b;
+  --text-faint: #767676;
   --brand: #5c2a82;
   --accent: #803BB1;
   --accent-text: #803BB1;
@@ -52,6 +52,8 @@
   --note-border: #b8d900;
   --footer-bg: #1a1a1a;
   --footer-text: #888;
+  --footer-link: #b487dd;
+  --cta: #c9203f;
   --card-shadow: 0 6px 24px rgba(128, 59, 177, 0.1);
   --dropdown-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
@@ -62,15 +64,15 @@
   --bg-card: #1c1825;
   --bg-input: #1c1825;
   --border: #28222f;
-  --border-card: #2c2539;
-  --border-input: #362e45;
+  --border-card: #6f6879;
+  --border-input: #6f6879;
   --border-result: #28222f;
   --text: #f2eff6;
   --text-body: #c8c2d2;
   --text-secondary: #b3abc1;
   --text-muted: #a39bb1;
   --text-soft: #998fa8;
-  --text-faint: #7c7390;
+  --text-faint: #8d84a1;
   --brand: #e1c2ff; /*#c39bea;*/
   --accent: #803BB1;
   --accent-text: #b487dd;
@@ -81,6 +83,8 @@
   --footer-text: #8d8499;
   --card-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
   --dropdown-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --footer-link: #b487dd;
+  --cta: #c9203f;
 }
 
 body {
@@ -155,7 +159,7 @@ nav {
   font-size: 0.85rem;
   font-weight: 600;
   color: #fff;
-  background: #ec355e;
+  background: var(--cta);
   padding: 4px 12px;
   border-radius: 0.3rem;
   text-decoration: none;
@@ -571,9 +575,7 @@ hr.section-divider {
 
 /* ── HOME: "Connect your CRM" chips ── */
 .crm-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: block;
 }
 
 .crm-chip {
@@ -790,7 +792,8 @@ hr.section-divider {
 .section-header {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 6px 12px;
   margin-bottom: 28px;
 }
 
@@ -798,6 +801,7 @@ hr.section-divider {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text);
+  flex-shrink: 0;
 }
 
 .section-sub {
@@ -827,13 +831,14 @@ hr.section-divider {
 
 .banner-text p {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
+  /* .75 alpha over the banner's purple lands at 4.46:1 — just under AA. */
+  color: rgba(255, 255, 255, 0.87);
   line-height: 1.65;
 }
 
 .banner a {
   flex-shrink: 0;
-  background: #ec355e;
+  background: var(--cta);
   color: #fff;
   font-weight: 700;
   font-size: 0.9rem;
@@ -855,7 +860,7 @@ footer {
   font-size: 0.82rem;
 }
 
-footer a { color: var(--accent-text); text-decoration: none; }
+footer a { color: var(--footer-link); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
 /* ── MOBILE ── */
@@ -1103,4 +1108,223 @@ h1, h2, h3:not(.card h3), h4, h5, h6,
 .content strong{ 
   font-weight: 600 !important;
   color: var(--text);
+}
+/* ── ACCESSIBILITY ───────────────────────────────────────────────────
+   Added after an audit found no focus indicator anywhere except the search
+   box, no skip link, and a mobile menu that could not be opened by keyboard. */
+
+/* Every interactive element had a bespoke :hover and no :focus state; the
+   base input rule also sets `outline: none`. One global rule covers the lot.
+   :focus-visible (not :focus) keeps the ring off mouse clicks. */
+:focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 3px;
+  border-radius: inherit;
+}
+
+/* Mirror the hover affordances so keyboard users get the same feedback. */
+.card:focus-visible,
+.start-link:focus-visible,
+.crm-chip:focus-visible { border-color: var(--accent-text); }
+
+/* The nav is sticky, so an in-page target would otherwise land underneath it. */
+[id] { scroll-margin-top: 88px; }
+
+/* Skip link: off-screen until focused, then pinned over the nav. */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -100px;
+  z-index: 300;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--bg-card);
+  color: var(--accent-text);
+  border: 2px solid var(--accent-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s;
+}
+.skip-link:focus { top: 8px; }
+
+/* The two menu checkboxes used `hidden`, which computes to display:none and
+   drops them out of the tab order — so on a phone the nav menu and the whole
+   sidebar tree were unreachable by keyboard. Visually hidden but focusable
+   instead, with the ring drawn on the adjacent label. */
+.navmenu-cb,
+.navtoggle-cb {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.navmenu-cb:focus-visible + .navmenu-btn,
+.navtoggle-cb:focus-visible + .navtoggle-btn {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 3px;
+}
+
+/* Two columns of full-sentence links at 320px: the quick-links grid had no
+   mobile override, so it never collapsed. */
+@media (max-width: 640px) {
+  .start-here { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── START HERE PATH ──────────────────────────────────────────────────
+   A numbered first-run route, visually distinct from the section cards so it
+   doesn't read as another equally-weighted choice. */
+.start-path {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  counter-reset: none;
+}
+.start-path li { margin: 0; }
+.start-path a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1.5px solid var(--border-card);
+  border-radius: 14px;
+  background: var(--bg-card);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.start-path a:hover,
+.start-path a:focus-visible { border-color: var(--accent-text); transform: translateY(-1px); }
+.start-path .step-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--bg);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.start-path .step-body {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.start-path strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.start-path em {
+  font-style: normal;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+.start-note {
+  margin-top: 16px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.start-note a { color: var(--brand); font-weight: 600; }
+
+/* ── INTEGRATION GROUPS ───────────────────────────────────────────────
+   Grouped rather than one flat row, so the list stops implying that every
+   system is supported to the same depth. */
+.crm-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.crm-group-label {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+.chip-note {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: var(--badge-bg);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── FOOTER ───────────────────────────────────────────────────────────── */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin-bottom: 10px;
+}
+.footer-meta { margin-top: 14px; opacity: 0.75; font-size: 0.82rem; }
+
+/* ── QUIET LINKS ──────────────────────────────────────────────────────
+   A lighter treatment than .start-here, for a block aimed at a minority of
+   visitors. Three consecutive sections were previously rendering as identical
+   grids of bordered pills, which flattened the page's hierarchy. */
+.quiet-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+.quiet-links a {
+  font-size: 0.92rem;
+  color: var(--brand);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand) 30%, transparent);
+  padding-bottom: 2px;
+}
+.quiet-links a:hover,
+.quiet-links a:focus-visible { border-bottom-color: var(--brand); }
+
+/* ── PANEL SECTION ────────────────────────────────────────────────────
+   For a block addressed to a different reader than the rest of the page —
+   evaluators rather than builders. Sets it apart without competing. */
+.section.panel {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px 36px;
+  border: 1.5px solid var(--border-card);
+  border-radius: 18px;
+  background: var(--bg-input);
+}
+.section.panel .section-header { margin-bottom: 20px; }
+.section.panel .start-link {
+  background: var(--bg-card);
+}
+@media (max-width: 640px) {
+  .section.panel {
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 24px 20px;
+  }
 }

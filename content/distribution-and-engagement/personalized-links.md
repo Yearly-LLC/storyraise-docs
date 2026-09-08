@@ -1,8 +1,8 @@
 ---
 title: Personalized links
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
-keywords: qr, qr code, merge tags, for parameter, unique url
+keywords: qr, qr code, merge tags, for parameter, unique url, honor roll, major donor, stewardship, endowment report, gift acknowledgment, salutation, pledge, personalization
 last_reviewed: 2026-09-04
 ---
 

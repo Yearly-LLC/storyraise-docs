@@ -1,6 +1,6 @@
 ---
 title: Neon CRM
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: neon crm, neoncrm, org id, api key, accounts, connections
 last_reviewed: 2026-06-12

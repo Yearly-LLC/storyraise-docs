@@ -1,6 +1,6 @@
 ---
 title: Acting on analytics
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
 keywords: stewardship, follow up, outreach, intent, next steps, donor conversation, repurpose
 last_reviewed: 2026-09-04

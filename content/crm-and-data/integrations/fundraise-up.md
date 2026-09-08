@@ -1,6 +1,6 @@
 ---
 title: Fundraise Up
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: fundraise up, fundraiseup, giving, donations, api key, connections
 last_reviewed: 2026-09-04

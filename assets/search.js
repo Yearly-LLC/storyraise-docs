@@ -33,6 +33,7 @@
     var q = query.trim();
     dropdown.innerHTML = '';
     activeIdx = -1;
+    input.removeAttribute('aria-activedescendant');
 
     if (q.length < MIN_QUERY_LEN) {
       dropdown.classList.remove('visible');
@@ -97,18 +98,21 @@
     } else if (e.key === 'Escape') {
       dropdown.classList.remove('visible');
       input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
       return;
     }
     items.forEach(function (el, i) {
       el.classList.toggle('active', i === activeIdx);
       if (i === activeIdx) input.setAttribute('aria-activedescendant', el.id);
     });
+    if (activeIdx < 0) input.removeAttribute('aria-activedescendant');
   });
 
   document.addEventListener('click', function (e) {
     if (wrap && !wrap.contains(e.target)) {
       dropdown.classList.remove('visible');
       input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
     }
   });
 })();

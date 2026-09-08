@@ -1,6 +1,6 @@
 ---
 title: Donorbox
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: donorbox, giving, donations, api key, connections
 last_reviewed: 2026-09-04

@@ -1,6 +1,6 @@
 ---
 title: Little Green Light
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: little green light, lgl, api token, connections
 last_reviewed: 2026-06-12

@@ -1,6 +1,6 @@
 ---
 title: Analytics overview
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
 keywords: analytics, home tab, most read, reader activity, who's been reading, unique visitors, return visitors, data freshness, the story, the numbers
 last_reviewed: 2026-09-04

@@ -1,6 +1,6 @@
 ---
 title: Ellucian Advancement
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: ellucian, ethos, advancement, higher ed, connections
 last_reviewed: 2026-06-12

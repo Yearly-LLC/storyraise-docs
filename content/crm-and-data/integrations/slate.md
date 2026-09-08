@@ -1,6 +1,6 @@
 ---
 title: Slate for Advancement
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: slate, technolutions, advancement, query, web service, connections
 last_reviewed: 2026-06-12

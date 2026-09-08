@@ -1,6 +1,7 @@
 ---
 title: Best practices
-section: Resources
+keywords: annual report, what to write, storytelling, story arc, structure, examples, checklist
+section: Best Practices & Reference
 status: draft
 last_reviewed: 2026-09-04
 ---

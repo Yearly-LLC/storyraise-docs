@@ -1,5 +1,6 @@
 ---
 title: What is Storyraise?
+keywords: annual report, impact report, donor report, what is storyraise, overview
 section: Getting Started
 status: draft
 last_reviewed: 2026-09-04

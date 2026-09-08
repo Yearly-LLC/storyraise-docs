@@ -1,6 +1,6 @@
 ---
 title: Tracking engagement
-section: Distribution & Engagement
+section: Sharing & Analytics
 status: draft
 last_reviewed: 2026-09-04
 ---

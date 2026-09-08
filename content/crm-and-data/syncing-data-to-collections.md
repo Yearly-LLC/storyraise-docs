@@ -1,6 +1,6 @@
 ---
 title: Syncing data to collections
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: draft
 keywords: extended data, collections, collect, sync, gifts, donations, fields, data sync
 last_reviewed: 2026-06-12

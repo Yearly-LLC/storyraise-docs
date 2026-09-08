@@ -1,6 +1,6 @@
 ---
 title: Salesforce / Nonprofit Cloud
-section: CRM & Data Connections
+section: Donor Data & CRM
 status: published
 keywords: salesforce, nonprofit cloud, npsp, oauth, contacts, gift transaction, engagement, write-back, connections
 last_reviewed: 2026-06-24
