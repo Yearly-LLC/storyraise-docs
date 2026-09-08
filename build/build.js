@@ -27,13 +27,53 @@ const OUT_DIR = path.join(ROOT, 'docs');
 // videos inside the reading column). The hash changes only when site.css
 // changes, so unrelated builds stay stable. stampAssets is idempotent: it
 // rewrites any existing ?v= too, so re-running the build never stacks them.
-const CSS_VERSION = crypto
-  .createHash('sha1')
-  .update(fs.readFileSync(path.join(ROOT, 'assets', 'site.css')))
-  .digest('hex')
-  .slice(0, 8);
+function listMarkdownFiles(dir) {
+  const out = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...listMarkdownFiles(full));
+    else if (entry.name.endsWith('.md')) out.push(full);
+  }
+  return out;
+}
+
+function hashFiles(files) {
+  const h = crypto.createHash('sha1');
+  for (const f of files) h.update(fs.readFileSync(f));
+  return h.digest('hex').slice(0, 8);
+}
+
+const ASSETS = path.join(ROOT, 'assets');
+const CSS_VERSION = hashFiles([path.join(ASSETS, 'site.css')]);
+
+// The search engine is cache-busted for the same reason as the CSS, but it
+// needs two versions because the chain is loaded in two different ways.
+//
+// SEARCH_INDEX_VERSION covers /search-index.js, which is regenerated on every
+// content change. Without it a reader who searched in the last max-age window
+// keeps a stale index and can click a result for a page that has since moved
+// or been deleted — landing on a 404. It hashes the markdown sources rather
+// than the built index because pages are written before the index exists;
+// content is what the index is derived from, so the two change together.
+//
+// SEARCH_ENGINE_VERSION covers the engine scripts, which change rarely. It is
+// kept separate so a content edit doesn't force readers to re-download
+// MiniSearch (~18KB) along with the index.
+const SEARCH_INDEX_VERSION = hashFiles(
+  listMarkdownFiles(CONTENT_DIR).sort()
+);
+const SEARCH_ENGINE_VERSION = hashFiles(
+  ['search-boot.js', 'search-core.js', 'minisearch.min.js', 'search.js', 'search-page.js']
+    .map(f => path.join(ASSETS, f))
+);
+
+// search-boot.js is referenced from generated HTML, so it is stamped here; the
+// rest of the chain is fetched by search-boot at runtime and gets its versions
+// through the data attributes in scriptsHtml().
 function stampAssets(html) {
-  return html.replace(/\/assets\/site\.css(\?v=[a-f0-9]+)?/g, `/assets/site.css?v=${CSS_VERSION}`);
+  return html
+    .replace(/\/assets\/site\.css(\?v=[a-f0-9]+)?/g, `/assets/site.css?v=${CSS_VERSION}`)
+    .replace(/\/assets\/search-boot\.js(\?v=[a-f0-9]+)?/g, `/assets/search-boot.js?v=${SEARCH_ENGINE_VERSION}`);
 }
 
 // Stamping happens in writePage, not here: the <head> is assembled after the
@@ -314,7 +354,7 @@ const sidenavBlock = sidenavHtml => `<aside class="sidenav-wrap">
 // engine in on demand. See assets/search-boot.js.
 function scriptsHtml({ controller = '/assets/search.js', eager = false } = {}) {
   return `  <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js" data-controller="${controller}" data-eager="${eager}" defer></script>`;
+  <script src="/assets/search-boot.js" data-controller="${controller}" data-eager="${eager}" data-index-v="${SEARCH_INDEX_VERSION}" data-engine-v="${SEARCH_ENGINE_VERSION}" defer></script>`;
 }
 
 function renderPage({

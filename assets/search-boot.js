@@ -16,14 +16,26 @@
   var controller = self.getAttribute('data-controller');
   var eager = self.getAttribute('data-eager') === 'true';
 
+  // Cache-busting versions stamped in by build.js. These URLs are fetched at
+  // runtime rather than being written into the HTML, so they can't be stamped
+  // the way /assets/site.css is — without a version a reader keeps whatever
+  // the CDN handed them last, and a stale index links to pages that may have
+  // moved or been deleted. The index and engine are versioned separately so a
+  // content edit doesn't also re-download MiniSearch.
+  var indexV = self.getAttribute('data-index-v');
+  var engineV = self.getAttribute('data-engine-v');
+  function v(src, version) {
+    return version ? src + '?v=' + version : src;
+  }
+
   // Loaded in order, and the order is load-bearing: search-core.js reads
   // SEARCH_INDEX and MiniSearch as it parses, and the controller reads
   // window.SRSearch as it parses.
   var CHAIN = [
-    '/search-index.js',
-    '/assets/minisearch.min.js',
-    '/assets/search-core.js',
-    controller
+    v('/search-index.js', indexV),
+    v('/assets/minisearch.min.js', engineV),
+    v('/assets/search-core.js', engineV),
+    v(controller, engineV)
   ];
 
   var booting = null;
