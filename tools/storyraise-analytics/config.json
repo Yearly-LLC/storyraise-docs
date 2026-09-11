@@ -1,0 +1,31 @@
+{
+  "builder": {
+    "path": "/Applications/MAMP/htdocs/yearly-v3/builder",
+    "sha": "4aa768229ba83fbcd9585c11dfaa011fef5448ea"
+  },
+  "source": {
+    "org_slug": "ramsey",
+    "report_slug": "engagement-demo",
+    "report_id": "--OtFDNdpzJfTOKmi81Cm",
+    "summary_endpoint": "https://us-central1-yearly-bv3.cloudfunctions.net/get_report_insights_summary",
+    "narrative_endpoint": "https://us-central1-yearly-bv3.cloudfunctions.net/generate_report_analytics_summary"
+  },
+  "identity": {
+    "org_name": "Harbor Lights Community Foundation",
+    "org_slug": "harbor-lights",
+    "report_title": "2026 Impact Report",
+    "report_slug": "2026-impact-report",
+    "link_host": "harborlights.example"
+  },
+  "rename": [
+    { "from": "https://ramsey.org", "to": "https://harborlights.example" },
+    { "from": "ramsey.org", "to": "harborlights.example" },
+    { "from": "Engagement Demo", "to": "2026 Impact Report" }
+  ],
+  "capture": {
+    "timezone": "America/New_York",
+    "locale": "en-US",
+    "viewport": { "width": 1440, "height": 900 },
+    "port": 5050
+  }
+}

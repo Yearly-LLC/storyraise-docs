@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s03-template">
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; }
+        .head { position: absolute; left: 150px; top: 130px; width: 1620px; }
+        .title { font-size: 92px; line-height: 1.05; margin-top: 20px; }
+        .cards { position: absolute; left: 150px; top: 430px; width: 1620px; height: 480px; display: flex; gap: 30px; }
+        .card { flex: 1; height: 480px; padding: 40px 42px; box-sizing: border-box; }
+        .card h3 { font: 600 32px/1.2 "Poppins", sans-serif; color: #ffffff; margin: 0 0 6px; }
+        .card .sub { font: 400 22px/1.3 "Poppins", sans-serif; color: #a99fbb; margin: 0 0 30px; }
+        .rep { margin-bottom: 26px; }
+        .rep-name { font: 500 25px/1 "Poppins", sans-serif; color: #ece6f6; margin: 0 0 12px; }
+        .rep-track { height: 18px; border-radius: 9px; background: rgba(255, 255, 255, 0.05); }
+        .rep-bar { display: block; height: 18px; border-radius: 9px; background: linear-gradient(90deg, #2c7f8a, #7fc55f); transform-origin: 0 50%; }
+        .spark { display: block; width: 100%; height: 260px; }
+        .reader { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
+        .avatar { width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: 600 22px/1 "Poppins", sans-serif; color: #1b1d21; flex-shrink: 0; }
+        .reader-name { font: 500 26px/1.2 "Poppins", sans-serif; color: #f4f0fa; margin: 0; }
+        .reader-name span { display: block; font-size: 20px; font-weight: 400; color: #a99fbb; margin-top: 4px; }
+      </style>
+
+      <div id="root" data-composition-id="s03" data-width="1920" data-height="1080">
+        <div class="head" id="s03-head">
+          <p class="sr-kicker" id="s03-kicker">Your Home tab</p>
+          <p class="sr-display title" id="s03-title">What's being read across <span class="sr-accent">all of your reports</span></p>
+        </div>
+        <div class="cards" id="s03-cards">
+          <div class="card sr-card" id="s03-c1">
+            <h3>Most read.</h3>
+            <p class="sub">Last 30 days</p>
+            <div class="rep"><p class="rep-name">2026 Impact Report</p><div class="rep-track"><span class="rep-bar" style="width:100%"></span></div></div>
+            <div class="rep"><p class="rep-name">Spring Newsletter</p><div class="rep-track"><span class="rep-bar" style="width:62%"></span></div></div>
+            <div class="rep"><p class="rep-name">Gala Recap</p><div class="rep-track"><span class="rep-bar" style="width:41%"></span></div></div>
+          </div>
+          <div class="card sr-card" id="s03-c2">
+            <h3>Reader activity.</h3>
+            <p class="sub">30 days across your organization</p>
+            <svg class="spark" id="s03-spark" viewBox="0 0 480 260" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="s03-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#f5e04e" stop-opacity="0.38" />
+                  <stop offset="100%" stop-color="#2c7f8a" stop-opacity="0.02" />
+                </linearGradient>
+              </defs>
+              <path d="M0,210 C40,190 60,130 100,150 S160,220 200,175 S260,60 300,95 S360,170 400,125 S450,70 480,55 L480,260 L0,260 Z" fill="url(#s03-fill)" />
+              <path d="M0,210 C40,190 60,130 100,150 S160,220 200,175 S260,60 300,95 S360,170 400,125 S450,70 480,55" fill="none" stroke="#c3d04e" stroke-width="5" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="card sr-card" id="s03-c3">
+            <h3>Who's Been Reading</h3>
+            <p class="sub">Named constituents</p>
+            <div class="reader"><div class="avatar" style="background:#c79bf2">SB</div><p class="reader-name">Saoirse Brennan<span>read 2026 Impact Report</span></p></div>
+            <div class="reader"><div class="avatar" style="background:#7fc55f">MS</div><p class="reader-name">Mateo Salinas<span>read 2026 Impact Report</span></p></div>
+            <div class="reader"><div class="avatar" style="background:#f5d63d">CD</div><p class="reader-name">Claire Donnelly<span>read 2026 Impact Report</span></p></div>
+          </div>
+        </div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var S = window.SR_TIMELINE.scenes.s03;
+          var H = window.SR_TIMELINE.hosts.s03;
+          var cue = function (name) { return S.cues[name] - H.start; };
+          var tl = gsap.timeline({ paused: true });
+
+          var home = cue('home');
+          tl.fromTo('#s03-kicker', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, Math.max(0, home - 0.2));
+          tl.fromTo('#s03-title', { autoAlpha: 0, y: 36 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, Math.max(0, home - 0.05));
+          tl.fromTo('#s03-cards .card', { autoAlpha: 0, y: 60 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.14 }, home + 0.35);
+          tl.fromTo('#s03-c1 .rep-bar', { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: 'power2.out', stagger: 0.12 }, home + 0.7);
+          tl.fromTo('#s03-spark', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1.2, ease: 'power1.inOut' }, home + 0.8);
+          tl.fromTo('#s03-c3 .reader', { autoAlpha: 0, x: 30 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: 'power3.out', stagger: 0.14 }, home + 0.95);
+
+          // "Open any report's Analytics": the Analytics page rises up in front.
+          var open = cue('open');
+          tl.to('#s03-head', { autoAlpha: 0, y: -30, duration: 0.4, ease: 'power2.in' }, open - 0.65);
+          tl.to('#s03-cards', { autoAlpha: 0, scale: 0.92, duration: 0.45, ease: 'power2.in' }, open - 0.6);
+
+          window.__timelines['s03'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

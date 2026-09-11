@@ -2,19 +2,21 @@
 title: Analytics overview
 section: Sharing & Analytics
 status: draft
-keywords: analytics, home tab, most read, reader activity, who's been reading, unique visitors, return visitors, data freshness, the story, the numbers
-last_reviewed: 2026-09-04
+keywords: analytics, home tab, most read, reader activity, who's been reading, constituents opened, constituent returns, views, data freshness, the story, the numbers, video tour, demo
+last_reviewed: 2026-09-10
 ---
 
 # Analytics overview
 
 Publishing your report isn't the end of the story. Storyraise Analytics helps you understand what happens next: who is reading, what holds their attention, what inspires action, and where a personal follow-up might make a difference.
 
+> **Tip:** Prefer to see it? [Watch the two-minute tour and explore the interactive demo](/storyraise-analytics/) — the real Analytics page, with sample data you can click through.
+
 ## What's new
 
 Storyraise now gives you a clearer picture of reader engagement. Instead of a running page-view total, Analytics distinguishes between individual readers and repeat visits, and shows how people move through your report.
 
-- **Deeper engagement insights.** Unique Visitors, Return Visitors, and Average Time Spent; Where the Clicks Go; Section Retention and Reader Flow; the When They Visit heatmap and Visits Over Time; and star-rated Engagement Scores with intent badges for personalized links.
+- **Deeper engagement insights.** Constituents Opened, Constituent Returns, Views, and Avg. Time Spent; Where The Clicks Go; How They Read and Section Retention; Top Visit Times and Visits Over Time; and star-rated Engagement Scores with intent badges for personalized links.
 - **More accurate measurement.** Repeat page loads are no longer counted as separate readers, and your team's own views are excluded when Storyraise recognizes a signed-in teammate.
 - **Named reader signals.** With [personalized links](personalized-links.md), you can see which constituents are returning, reading deeply, and taking action.
 
@@ -28,15 +30,15 @@ Older reports counted repeat page loads, so one person opening a report four tim
 
 Your **Home** tab gives you a quick look at reader activity across your whole organization:
 
-- **Most Read** — which reports are attracting the most attention.
-- **Reader Activity** — 30 days of reading across your organization.
+- **Most read** — which reports are attracting the most attention.
+- **Reader activity** — 30 days of reading across your organization.
 - **Who's Been Reading** — named constituents who opened personalized reports.
 
 Treat the Home tab as a *weekly* check-in. It's how you spot a report that's still gaining traction, a piece worth resharing, or a constituent who may be ready for a personal touch.
 
 ## Then open a report's Analytics tab
 
-For the deeper story on a single report, open it and select **Analytics**. You'll find two views:
+For the deeper story on a single report, select **Analytics** in the sidebar and choose the report. You'll find two views:
 
 - **The Numbers** — where readers are, when they visit, what they click, how they move through your report, and where they stop. See [Understanding report metrics](understanding-report-metrics.md).
 - **The Story** — everything brought together in a plain-English PDF summary, including key takeaways, people worth contacting, and recommended next steps. It's ready to read aloud in a staff meeting or hand to your board.

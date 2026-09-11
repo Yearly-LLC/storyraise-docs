@@ -1,0 +1,449 @@
+{
+  "about": "Tour stops for the interactive Storyraise Analytics demo. Copy uses the product's own labels; every claim is checked against the code cited in `source` (builder repo). American English, no em dashes.",
+  "builderSha": "4aa768229ba83fbcd9585c11dfaa011fef5448ea",
+  "stops": [
+    {
+      "id": "tabs",
+      "marker": "after",
+      "uiLabel": [
+        "The Numbers",
+        "The Story"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Two ways to read your results",
+      "tells": "The Numbers breaks down who read your report and how they read it. The Story turns the same results into a plain-English summary.",
+      "why": "Not everyone on your team wants charts. The Story gives leadership and board members the takeaways without any digging.",
+      "next": "Use The Numbers when you want detail, and switch to The Story when you need something to share.",
+      "keepInMind": [
+        "Everything on this page covers one report. Your Home tab shows reading activity across all of your reports."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/analytics-overview/",
+        "label": "Analytics overview"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3379-3381"
+        }
+      ]
+    },
+    {
+      "id": "highlights",
+      "uiLabel": [
+        "Readers peak on",
+        "of visits end after",
+        "Most visits from",
+        "of constituents come back"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Highlights, written for you",
+      "tells": "Storyraise scans your results and calls out what stands out: when readers peak, where visits tend to end, where readers are, and how many constituents come back.",
+      "why": "It is the fastest way to spot something worth acting on before you dig into the charts.",
+      "next": "Treat each highlight as a starting question. If most visits end after one section, Section Retention below shows you why.",
+      "keepInMind": [
+        "Highlights only appear once there is enough activity for them to mean something."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/understanding-report-metrics/",
+        "label": "Understanding report metrics"
+      },
+      "source": [
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "3284-3385",
+          "note": "insights_highlights thresholds"
+        }
+      ]
+    },
+    {
+      "id": "constituents",
+      "uiLabel": [
+        "Constituents Opened",
+        "Constituent Returns"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Constituents Opened and Constituent Returns",
+      "tells": "How many people on your list opened their personalized link, and how many of them came back for another visit.",
+      "why": "A return visit is a strong signal. Someone may have come back to finish reading, share the report, or think about giving.",
+      "next": "Look for returning names in Most Engaged Constituents and reach out while your report is still fresh in their mind.",
+      "keepInMind": [
+        "These counts come from personalized links, so they include only the people you sent a personal link to.",
+        "If someone forwards their link, the visit still counts toward the person you sent it to."
+      ],
+      "demoValue": "30 opened, 8 came back",
+      "kb": {
+        "href": "/docs/distribution-and-engagement/personalized-links/",
+        "label": "Personalized links"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3407-3425"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "14689-14705",
+          "note": "constituent_count, constituent_return_visitors"
+        }
+      ]
+    },
+    {
+      "id": "views",
+      "uiLabel": [
+        "Views"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Views",
+      "tells": "Every visit to your report, including repeat visits from the same reader.",
+      "why": "Views show how much reading your outreach created, whether readers arrived from an email, a social post, a QR code, or your website.",
+      "next": "Compare views with the size of the audience you reached. If activity is lower than you expected, revisit your subject line, timing, or where you shared the link.",
+      "keepInMind": [
+        "Views count visits to the report itself. They are not email opens.",
+        "Your own team is left out when Storyraise recognizes a signed-in teammate, and you can exclude staff email addresses or your whole domain.",
+        "Reports published before late May 2026 used an older counter, so compare newer reports with other newer reports."
+      ],
+      "demoValue": "249",
+      "kb": {
+        "href": "/docs/distribution-and-engagement/analytics-exclusion/",
+        "label": "Analytics exclusion"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3426-3432"
+        },
+        {
+          "file": "functions/index.js",
+          "note": "views = SUM(ARRAY_LENGTH(dates_opened))"
+        }
+      ]
+    },
+    {
+      "id": "avg-time",
+      "uiLabel": [
+        "Avg. Time Spent"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Avg. Time Spent",
+      "tells": "The average total time a reader spent with your report, added up across all of their visits.",
+      "why": "Compare it with how long your report takes to read. If it takes six minutes and readers average 40 seconds, most are skimming.",
+      "next": "If readers move quickly, lead with your impact, shorten the opening, and break up long sections.",
+      "keepInMind": [
+        "More time is not always better. A long time on a form can mean confusion rather than interest.",
+        "A visit is recorded after the reader leaves, so an interrupted visit may not be fully counted."
+      ],
+      "demoValue": "2m 11s",
+      "kb": {
+        "href": "/docs/distribution-and-engagement/understanding-report-metrics/",
+        "label": "Understanding report metrics"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3433-3437"
+        },
+        {
+          "file": "functions/index.js",
+          "note": "AVG(total_seconds_viewed)"
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "uiLabel": [
+        "Where They're Reading",
+        "See more"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Where They're Reading",
+      "tells": "The approximate places readers opened your report from. Select See more for every region and city.",
+      "why": "Location can reveal interest you did not expect, like alumni who moved away or a board member's wider network.",
+      "next": "Look for patterns over several weeks, then use clusters to plan regional events or targeted outreach.",
+      "keepInMind": [
+        "Location is approximate. Mobile networks, workplaces, and VPNs can shift city-level results, so focus on broad regions."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/understanding-report-metrics/",
+        "label": "Understanding report metrics"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3451-3479, 5669-5704"
+        }
+      ]
+    },
+    {
+      "id": "engaged",
+      "uiLabel": [
+        "Most Engaged Constituents",
+        "How it works"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Most Engaged Constituents",
+      "tells": "The people who stood out on this report, each with an Engagement Score of zero to three stars.",
+      "why": "It turns your list into a short, prioritized list for personal follow-up.",
+      "next": "Start with your three-star readers, and mention what caught their attention so the conversation feels personal.",
+      "keepInMind": [
+        "One star: they spent more time reading than most constituents who opened this report. Two stars: they also viewed at least half of it. Three stars: they also clicked a link or came back.",
+        "Stars reflect engagement with this one report, not a person's overall value or relationship with you.",
+        "Names appear only for personalized links."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/understanding-report-metrics/",
+        "label": "How stars are earned"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3481-3514"
+        },
+        {
+          "file": "functions/index.js",
+          "lines": "11819-11899",
+          "note": "median benchmark, half the sections, link click or return"
+        }
+      ]
+    },
+    {
+      "id": "badges",
+      "marker": "before",
+      "uiLabel": [
+        "Clicked Donation CTA",
+        "Revisited Report"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Intent badges",
+      "tells": "Badges flag meaningful actions, like clicking a donation link or returning to the report.",
+      "why": "An action tells you what someone cares about, even if they only read for a few seconds.",
+      "next": "Match your follow-up to the action. A donation click might call for a giving conversation, while a return visit might call for a friendly check-in.",
+      "keepInMind": [
+        "Badges are separate from stars, so a quick reader who clicks Donate still gets a badge."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/acting-on-analytics/",
+        "label": "Acting on analytics"
+      },
+      "source": [
+        {
+          "file": "public/js/utils/intent-badges.js"
+        },
+        {
+          "file": "public/index.html",
+          "lines": "5747-5750"
+        }
+      ]
+    },
+    {
+      "id": "clicks",
+      "uiLabel": [
+        "Where The Clicks Go",
+        "Clicks by Intent",
+        "clicked a link"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Where The Clicks Go",
+      "tells": "Which links readers clicked, grouped by what they wanted to do, from donating to opening a document.",
+      "why": "Reading shows attention. Clicking shows intent.",
+      "next": "Use clicks to shape follow-up and to test your calls to action. If few readers click, make your ask easier to find.",
+      "keepInMind": [
+        "The percentage in the middle is out of everyone who opened the report, including readers who never clicked."
+      ],
+      "demoValue": "11% clicked a link (21 of 200 readers)",
+      "kb": {
+        "href": "/docs/distribution-and-engagement/understanding-report-metrics/",
+        "label": "Understanding report metrics"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3537-3583"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "3854-3984",
+          "note": "denominator unique_visitors + anonymous_sessions"
+        }
+      ]
+    },
+    {
+      "id": "how-they-read",
+      "uiLabel": [
+        "How They Read",
+        "Avg. Sections Viewed",
+        "Avg. Time per Section",
+        "Sections in Report"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "How They Read",
+      "tells": "How many sections readers typically view, roughly how long they spend on each, and how many sections your report has.",
+      "why": "It shows whether readers explore your report or read one part and leave.",
+      "next": "If readers view only a section or two, make sure your most important story appears early.",
+      "keepInMind": [
+        "Compare sections viewed with sections in the report. Two of eight means most readers never see the back half."
+      ],
+      "demoValue": "2.0 of 8 sections",
+      "kb": {
+        "href": "/docs/distribution-and-engagement/understanding-report-metrics/",
+        "label": "Understanding report metrics"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3585-3607"
+        }
+      ]
+    },
+    {
+      "id": "retention",
+      "uiLabel": [
+        "Section Retention",
+        "Visit ended here"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Section Retention",
+      "tells": "The path readers take from section to section. Bigger squares mean more readers, ribbons show where they went next, and the red edge marks where visits ended.",
+      "why": "It shows where your storytelling holds attention and where readers lose interest.",
+      "next": "Here, 130 of the 192 readers who started with the Welcome Letter left right after it. Leading with impact could keep more of them reading.",
+      "keepInMind": [
+        "Drag sideways or use the arrow to see later steps."
+      ],
+      "demoValue": "Welcome Letter 192, 130 ended there",
+      "kb": {
+        "href": "/docs/distribution-and-engagement/understanding-report-metrics/",
+        "label": "Understanding report metrics"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3614-3660"
+        },
+        {
+          "file": "fixtures/insights-summary.json",
+          "note": "section_flow col 0 Welcome Letter v=192 drop=130"
+        }
+      ]
+    },
+    {
+      "id": "heatmap",
+      "uiLabel": [
+        "Top Visit Times",
+        "7 days",
+        "30 days",
+        "3 Months",
+        "6 Months",
+        "1 Year"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Top Visit Times",
+      "tells": "The days and times of day people read your report, starting from when you first published it. Brighter squares mean more visits.",
+      "why": "Your readers' habits may surprise you. Evenings and weekends are often busy, even though they fall outside typical email advice.",
+      "next": "Try the date ranges above the chart, then time your next send or reminder for when your readers tend to show up.",
+      "keepInMind": [
+        "Times are shown in your own time zone, so Evening means evening where you are.",
+        "Morning is 6 to 11am, Midday 11am to 3pm, Afternoon 3 to 6pm, Evening 6pm to midnight, and Overnight midnight to 6am."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/understanding-report-metrics/",
+        "label": "Understanding report metrics"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3666-3713"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "3152-3277",
+          "note": "window starts at first publish; viewer's local time zone"
+        }
+      ]
+    },
+    {
+      "id": "trend",
+      "uiLabel": [
+        "Visits Over Time",
+        "follows the range above"
+      ],
+      "prepare": {
+        "tab": "overview"
+      },
+      "title": "Visits Over Time",
+      "tells": "Visits to your report over the date range you picked for Top Visit Times, by day or, for longer ranges, by week.",
+      "why": "Spikes usually line up with a send, a reminder, or a post, so you can see which outreach brought readers in.",
+      "next": "Note when each email or post went out. If a reminder created a spike, plan one for your next report.",
+      "keepInMind": [],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/acting-on-analytics/",
+        "label": "Acting on analytics"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3717-3747"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "3391-3466"
+        }
+      ]
+    },
+    {
+      "id": "story",
+      "uiLabel": [
+        "The Story",
+        "Download this summary"
+      ],
+      "prepare": {
+        "tab": "summary"
+      },
+      "title": "The Story",
+      "tells": "A plain-English summary of this report's results: what stood out, people worth a follow-up, and ideas for next time.",
+      "why": "It is ready to share with leadership, your board, or program staff, with no chart reading required.",
+      "next": "Download it as a PDF and bring it to your next team meeting.",
+      "keepInMind": [
+        "The Story is written from the numbers on this page. Read it alongside what you already know about your constituents."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/analytics-overview/",
+        "label": "Analytics overview"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "3775-3820"
+        },
+        {
+          "file": "functions/index.js",
+          "lines": "15897-15941",
+          "note": "narrative prompt headings"
+        }
+      ]
+    }
+  ]
+}

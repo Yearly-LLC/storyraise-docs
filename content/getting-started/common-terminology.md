@@ -46,9 +46,9 @@ A quick reference for the words you'll see throughout Storyraise.
 | **Publish / Republish** | Putting your report (or its latest edits) live on the web at its public link. |
 | **Report link** | The public web address of a published report: `your-organization.yearly.report/your-report`. |
 | **Embed** | Displaying your published report inside a page on your own website. |
-| **Opens** | How much reading activity a published report generated. One reader can produce several opens by returning. |
-| **Unique visitor** | One distinct reader, identified by device. **Return visitors** are the ones who came back for another look. |
-| **Analytics** | The area showing engagement for a published report — opens, unique and return visitors, time spent, clicks, reader flow, and, with constituent data synced, who viewed it. Previously called **Insights**. |
+| **Views** | Every visit to a published report, including repeat visits from the same reader. Views count visits to the report itself, not email opens. |
+| **Constituents Opened** | How many people you sent a personalized link to opened it. **Constituent Returns** are the ones who came back for another visit. |
+| **Analytics** | The area showing engagement for a published report — views, constituents who opened and returned, time spent, clicks, section retention, visit times, and, with personalized links, who read it. Previously called **Insights**. |
 | **Engagement Score** | A 0–3 star rating given to identified constituents on a report, benchmarked against the median reading time for that report. |
 
 ## Constituents and data

@@ -1,3 +1,14 @@
 node_modules/
 .DS_Store
 .playwright-mcp/
+
+# Storyraise Analytics page tooling (tools/storyraise-analytics). Secrets never live in
+# this repo; caches, local binaries and draft renders are regenerated on demand.
+.env
+.env.*
+!.env.example
+tools/storyraise-analytics/.cache/
+tools/storyraise-analytics/.bin/
+tools/storyraise-analytics/video/renders/
+tools/storyraise-analytics/video/snapshots/
+tools/storyraise-analytics/video/audio/.cache/

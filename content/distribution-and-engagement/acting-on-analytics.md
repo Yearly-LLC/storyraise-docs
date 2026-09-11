@@ -50,6 +50,7 @@ Your report doesn't stop working when someone finishes reading it. Use Analytics
 
 ## Related
 
+- [Storyraise Analytics tour and demo](/storyraise-analytics/) — a short video, and the real Analytics page to click through with sample data.
 - [Understanding report metrics](understanding-report-metrics.md) — what each metric means before you act on it.
 - [Analytics overview](analytics-overview.md) — where to look, and how fresh the data is.
 - [Personalized links](personalized-links.md) — how to know *who* engaged, not just how many.

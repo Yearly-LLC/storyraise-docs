@@ -822,9 +822,13 @@ function buildSearchPage() {
 // /docs/building-reports/creating-visualizations/ moved to .../creating-infographics/
 // when Visualizations were renamed. Both old URLs survive as hand-written redirect
 // stubs so existing links, bookmarks and search results keep working.
+// storyraise-analytics/index.html is the hand-written Analytics landing page (video +
+// interactive demo, sources in tools/storyraise-analytics). Listing it here gets its
+// /docs/ links checked; it sits outside docs/, so the orphan check never sees it.
 const HAND_MAINTAINED = new Set([
   'docs/email-subdomain-setup/index.html',
   'docs/building-reports/creating-visualizations/index.html',
+  'storyraise-analytics/index.html',
 ]);
 
 const problems = [];

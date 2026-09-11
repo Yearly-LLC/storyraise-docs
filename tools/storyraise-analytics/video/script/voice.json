@@ -1,0 +1,41 @@
+{
+  "_about": "ElevenLabs settings for the narration. voice_id is Vince's own voice (chosen 2026-09-10); candidates are the premade voices auditioned first.",
+  "voice_id": "SjaO2IJ8mwmbmtw7Eqpt",
+  "model_id": "eleven_multilingual_v2",
+  "output_format": "mp3_44100_192",
+  "seed": 20260910,
+  "voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true,
+    "speed": 1
+  },
+  "candidates": [
+    {
+      "name": "matilda",
+      "voice_id": "XrExE9yKIg1WjnnlVkGX",
+      "note": "female, American, knowledgeable and professional"
+    },
+    {
+      "name": "bella",
+      "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+      "note": "female, American, professional, bright and warm"
+    },
+    {
+      "name": "eric",
+      "voice_id": "cjVigY5qzO86Huf0OWal",
+      "note": "male, American, smooth and trustworthy"
+    },
+    {
+      "name": "chris",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "note": "male, American, charming and down to earth"
+    }
+  ],
+  "chosen": {
+    "name": "vince",
+    "voice_id": "SjaO2IJ8mwmbmtw7Eqpt",
+    "note": "chosen by Vince over the premade samples"
+  }
+}

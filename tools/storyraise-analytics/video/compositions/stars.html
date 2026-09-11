@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="stars-template">
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; }
+        .card { position: absolute; left: 1070px; top: 170px; width: 710px; padding: 46px 48px 40px; box-sizing: border-box; }
+        .title { font-size: 64px; line-height: 1.05; margin: 12px 0 26px; }
+        .row { display: flex; align-items: center; gap: 28px; padding: 22px 0; border-top: 1.5px solid rgba(255, 255, 255, 0.08); }
+        .row .sr-stars { display: block; width: 160px; flex-shrink: 0; font-size: 42px; }
+        .row h4 { font: 600 31px/1.1 "Poppins", sans-serif; color: #ffffff; margin: 0 0 6px; }
+        .row p { font: 400 24px/1.35 "Poppins", sans-serif; color: #bdb4cc; margin: 0; }
+        .badges { display: flex; flex-wrap: wrap; gap: 14px; padding-top: 26px; border-top: 1.5px solid rgba(255, 255, 255, 0.08); }
+        .badges-label { width: 100%; font: 600 20px/1 "Poppins", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #a99fbb; margin: 0 0 4px; }
+      </style>
+
+      <div id="root" data-composition-id="stars" data-width="1920" data-height="1080">
+        <div class="card sr-card" id="stars-card">
+          <p class="sr-kicker">Engagement Score</p>
+          <p class="sr-display title">How stars are earned</p>
+          <div class="row" id="stars-r1">
+            <span class="sr-stars"><span class="on">★</span>★★</span>
+            <div><h4>Attention</h4><p>Read longer than most constituents on this report</p></div>
+          </div>
+          <div class="row" id="stars-r2">
+            <span class="sr-stars"><span class="on">★★</span>★</span>
+            <div><h4>Depth</h4><p>Also viewed at least half of the report</p></div>
+          </div>
+          <div class="row" id="stars-r3">
+            <span class="sr-stars"><span class="on">★★★</span></span>
+            <div><h4>Intent</h4><p>Also clicked a link or came back</p></div>
+          </div>
+          <div class="badges" id="stars-badges">
+            <p class="badges-label">Intent badges</p>
+            <span class="sr-badge"><svg viewBox="0 -960 960 960"><path d="M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Z"/></svg>Clicked Donation CTA</span>
+            <span class="sr-badge"><svg viewBox="0 -960 960 960"><path d="M480-80q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-440h80q0 117 81.5 198.5T480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720h-6l62 62-56 58-160-160 160-160 56 58-62 62h6q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-440q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-80Z"/></svg>Revisited Report</span>
+          </div>
+        </div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var S = window.SR_TIMELINE.scenes.s06;
+          var H = window.SR_TIMELINE.hosts.stars;
+          var cue = function (name) { return S.cues[name] - H.start; };
+          var tl = gsap.timeline({ paused: true });
+
+          tl.fromTo('#stars-card', { autoAlpha: 0, x: 70 }, { autoAlpha: 1, x: 0, duration: 0.6, ease: 'power3.out' }, 0);
+          [['#stars-r1', 'star1'], ['#stars-r2', 'star2'], ['#stars-r3', 'star3']].forEach(function (pair) {
+            tl.fromTo(pair[0], { autoAlpha: 0.15 }, { autoAlpha: 1, duration: 0.35, ease: 'power1.out' }, cue(pair[1]) - 0.1);
+            tl.fromTo(pair[0] + ' .on', { autoAlpha: 0, scale: 0.4 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, cue(pair[1]));
+          });
+          tl.fromTo('#stars-badges', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, cue('badges') - 0.05);
+          tl.to('#stars-card', { autoAlpha: 0, x: 40, duration: 0.45, ease: 'power2.in' }, H.duration - 0.5);
+
+          window.__timelines['stars'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
