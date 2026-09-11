@@ -449,6 +449,9 @@
   .sra-frame-url, .sra-dots { display: none; }
   .sra-frame-bar { justify-content: space-between; }
   .sra .cards { grid-template-columns: 1fr; }
+  /* Phones get the video and the guides; the interactive demo needs a bigger screen. */
+  .sra-hero-actions, .sra-demo { display: none; }
+  .sra-hero .lead { margin-bottom: 0; }
 }
 @media (max-width: 699px) {
   .sra-popover { position: static; width: auto; margin-top: 12px; }

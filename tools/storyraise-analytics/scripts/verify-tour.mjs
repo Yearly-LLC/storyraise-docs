@@ -15,11 +15,11 @@ import { DOCS_ROOT, SITE_DIR, readJson } from './lib/identity.mjs';
 import { serveStatic } from './lib/static-server.mjs';
 
 const { stops } = readJson(path.join(SITE_DIR, 'annotations.json'));
+// Phones (760px and narrower) don't get the demo; that is checked separately below.
 const VIEWPORTS = [
     { name: 'desktop', width: 1440, height: 900 },
     { name: 'laptop', width: 1024, height: 768 },
     { name: 'tablet', width: 768, height: 1024 },
-    { name: 'phone', width: 390, height: 844 },
 ];
 const SCHEMES = ['light', 'dark'];
 
@@ -100,6 +100,20 @@ for (const vp of VIEWPORTS) {
     if (title !== 'Views') note('deep link', `?step=views opened "${title}"`);
     await page.close();
 }
+
+// Phones: the demo and the hero buttons are hidden, and the demo is never downloaded.
+{
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const demoRequests = [];
+    page.on('request', (r) => { if (r.url().includes('/storyraise-analytics/demo/')) demoRequests.push(r.url()); });
+    await page.goto(`${server.url}/storyraise-analytics/`, { waitUntil: 'load' });
+    for (let y = 0; y < 12000; y += 700) { await page.evaluate((top) => window.scrollTo(0, top), y); await page.waitForTimeout(120); }
+    await page.waitForTimeout(1000);
+    const shown = await page.evaluate(() => ['.sra-hero-actions', '#demo'].filter((s) => getComputedStyle(document.querySelector(s)).display !== 'none'));
+    if (shown.length) note('phone', `still visible: ${shown.join(', ')}`);
+    if (demoRequests.length) note('phone', `${demoRequests.length} demo requests (first: ${demoRequests[0]})`);
+    await page.close();
+}
 await browser.close();
 
 // Chapter chips, in real Chrome.
@@ -129,4 +143,4 @@ if (failures.length) {
     console.log(`${failures.length} problem(s):\n  ${failures.join('\n  ')}`);
     process.exit(1);
 }
-console.log(`demo OK: ${stops.length} markers and stops x ${VIEWPORTS.length} sizes x ${SCHEMES.length} themes, deep link; chapter chips seek`);
+console.log(`demo OK: ${stops.length} markers and stops x ${VIEWPORTS.length} sizes x ${SCHEMES.length} themes, deep link, hidden on phones; chapter chips seek`);

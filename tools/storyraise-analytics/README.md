@@ -53,7 +53,7 @@ node video/tools/post-render.mjs "$X/renders/storyraise-analytics-tour.mp4"   # 
 ## How the pieces fit
 
 - **The replica is captured, not rebuilt.** The real dashboard renders locally against the frozen summary with its auth redirect disabled. `build-replica.mjs` keeps only the analytics content, trims the product CSS with PurgeCSS, and adds `data-tour` anchors. `demo/replica.js` restores the safe interactions and exposes `window.SRReplica` for the tour.
-- **The tour** (`storyraise-analytics/analytics.js`) runs on the landing page, outside the scaled iframe, so popovers stay readable. Copy lives in `storyraise-analytics/annotations.json`, and each claim cites the product code it was checked against.
+- **The tour** (`storyraise-analytics/analytics.js`) runs on the landing page, outside the scaled iframe, so popovers stay readable. At 760px and narrower the demo section and the hero buttons are hidden (Vince's call), and the lazy iframe never downloads. Copy lives in `storyraise-analytics/annotations.json`, and each claim cites the product code it was checked against.
 - **The video.** Narration sets the clock: `build-timeline.mjs` turns ElevenLabs character timings into scene lengths and `[[cue:name]]` times. The UI scenes put the replica markup inside a HyperFrames composition under a GSAP camera, whose moves are computed from `targets.json`, so nothing measures the DOM while rendering.
 
 ## Traps
