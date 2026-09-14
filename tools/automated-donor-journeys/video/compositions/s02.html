@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s02-template">
+      <style>
+        #s02-root { position: absolute; inset: 0; overflow: hidden; }
+        #s02-kicker { position: absolute; left: 0; top: 190px; width: 1920px; text-align: center; font-size: 30px; opacity: 0; visibility: hidden; }
+        .s02-card { position: absolute; top: 330px; width: 470px; height: 420px; box-sizing: border-box; padding: 46px 44px; opacity: 0; visibility: hidden; }
+        #s02-crm { left: 150px; }
+        #s02-report { left: 725px; }
+        #s02-email { left: 1300px; }
+        .s02-icon { width: 104px; height: 104px; border-radius: 26px; background: rgba(199, 155, 242, 0.16); display: flex; align-items: center; justify-content: center; }
+        .s02-icon svg { width: 60px; height: 60px; }
+        .s02-title { font-size: 52px; line-height: 1.06; margin: 34px 0 0; }
+        .s02-sub { font: 400 28px/1.4 "Poppins", sans-serif; color: #cfc7dc; margin: 16px 0 0; }
+        .s02-arrow { position: absolute; top: 535px; width: 86px; height: 10px; transform-origin: 0 50%; opacity: 0; visibility: hidden; }
+        .s02-arrow svg { display: block; width: 86px; height: 10px; }
+        #s02-arrow-1 { left: 632px; }
+        #s02-arrow-2 { left: 1207px; }
+      </style>
+
+      <div id="s02-root" data-composition-id="s02" data-width="1920" data-height="1080">
+        <p class="sr-kicker" id="s02-kicker">Three things you may already have</p>
+
+        <div class="sr-card s02-card" id="s02-crm">
+          <div class="s02-icon"><svg viewBox="0 0 48 48" fill="none" stroke="#e1c2ff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><ellipse cx="24" cy="11" rx="15" ry="6"/><path d="M9 11v26c0 3.3 6.7 6 15 6s15-2.7 15-6V11"/><path d="M9 24c0 3.3 6.7 6 15 6s15-2.7 15-6"/></svg></div>
+          <p class="sr-display s02-title">Your CRM</p>
+          <p class="s02-sub">Where your donors already live.</p>
+        </div>
+        <div class="s02-arrow" id="s02-arrow-1"><svg viewBox="0 0 86 10" aria-hidden="true"><path d="M0 5h76" stroke="#c79bf2" stroke-width="3"/><path d="M74 0l12 5-12 5z" fill="#c79bf2"/></svg></div>
+
+        <div class="sr-card s02-card" id="s02-report">
+          <div class="s02-icon"><svg viewBox="0 0 48 48" fill="none" stroke="#e1c2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="5" width="28" height="38" rx="4"/><path d="M16 15h16M16 22h10"/><path d="M24 36.5c-4.5-3-7-5.2-7-8a3.6 3.6 0 0 1 7-1.2 3.6 3.6 0 0 1 7 1.2c0 2.8-2.5 5-7 8z" fill="#ff7a99" stroke="none"/></svg></div>
+          <p class="sr-display s02-title">A personalized report</p>
+          <p class="s02-sub">Built once in Storyraise.</p>
+        </div>
+        <div class="s02-arrow" id="s02-arrow-2"><svg viewBox="0 0 86 10" aria-hidden="true"><path d="M0 5h76" stroke="#c79bf2" stroke-width="3"/><path d="M74 0l12 5-12 5z" fill="#c79bf2"/></svg></div>
+
+        <div class="sr-card s02-card" id="s02-email">
+          <div class="s02-icon"><svg viewBox="0 0 48 48" fill="none" stroke="#e1c2ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="38" height="27" rx="4"/><path d="M6 13l18 13 18-13"/></svg></div>
+          <p class="sr-display s02-title">Your email platform</p>
+          <p class="s02-sub">With automations or journeys.</p>
+        </div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var S = window.SR_TIMELINE.scenes.s02;
+          var cue = function (name) { return S.cues[name] - S.start; };
+          var tl = gsap.timeline({ paused: true });
+          var rise = { autoAlpha: 1, y: 0, duration: 0.65, ease: 'power3.out' };
+
+          tl.fromTo('#s02-kicker', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, Math.max(0.05, cue('pieces')));
+          tl.fromTo('#s02-crm', { autoAlpha: 0, y: 60 }, rise, cue('crm') - 0.15);
+          tl.fromTo('#s02-arrow-1', { autoAlpha: 0, scaleX: 0 }, { autoAlpha: 1, scaleX: 1, duration: 0.45, ease: 'power2.out' }, cue('report') - 0.3);
+          tl.fromTo('#s02-report', { autoAlpha: 0, y: 60 }, rise, cue('report') - 0.15);
+          tl.fromTo('#s02-arrow-2', { autoAlpha: 0, scaleX: 0 }, { autoAlpha: 1, scaleX: 1, duration: 0.45, ease: 'power2.out' }, cue('email') - 0.3);
+          tl.fromTo('#s02-email', { autoAlpha: 0, y: 60 }, rise, cue('email') - 0.15);
+
+          tl.to('#s02-root > *', { autoAlpha: 0, duration: 0.45, ease: 'power2.in' }, S.duration - 0.5);
+          window.__timelines['s02'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

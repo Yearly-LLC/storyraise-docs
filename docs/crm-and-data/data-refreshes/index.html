@@ -290,12 +290,13 @@
       <div class="content">
         <h1>Data refreshes</h1>
 <p class="lead">Your CRM data changes constantly — new donors, updated emails, fresh gift records. This page covers how to keep your Storyraise constituent list in step.</p>
-<h2>Refreshing today: re-run the sync</h2>
-<p>Storyraise pulls constituent data when you ask it to. To refresh:</p>
+<h2>Refreshing on demand</h2>
+<p>To refresh a connection right now, open the <strong>Connections</strong> tab and click <strong>Sync now</strong> (the sync icon) on its card.</p>
 <ul>
-<li><strong>Bloomerang</strong> — open the <strong>Constituents</strong> area, go to the <strong>Bloomerang</strong> tab, and click <strong>Sync constituents</strong> again.</li>
-<li><strong>Blackbaud</strong> — open the <strong>Blackbaud</strong> tab and re-sync your selected constituent list. If your authorization has expired, you may be asked to reconnect first.</li>
-<li><strong>CSV</strong> — export a fresh file from your system and upload it again.</li>
+<li><strong>Raiser&#39;s Edge NXT</strong> asks which constituent list to sync. If your authorization has expired, you may be asked to reconnect first.</li>
+<li><strong>Salesforce</strong> asks who should sync: everyone, or one of your Contact List Views.</li>
+<li><strong>Slate</strong> asks you to map your query&#39;s columns to first name, last name, and email.</li>
+<li><strong>CSV</strong> — export a fresh file from your system and upload it again from the <strong>Constituents</strong> area.</li>
 </ul>
 <p>Because constituents are identified by email address, refreshed records <strong>update</strong> existing constituents rather than creating duplicates. New people in the source are added.</p>
 <h2>When to refresh</h2>
@@ -313,11 +314,14 @@
 <li><strong>Re-pulls your constituents</strong> from the source system, so a donor added to your CRM last week becomes a constituent without anyone opening the dashboard.</li>
 <li><strong>Refreshes your synced collections</strong>, using the constituent list it just updated — so someone added tonight is linked to their rows in the same run rather than waiting for the next one.</li>
 </ul>
+<p>A scheduled run brings in the same people as your last <strong>Sync now</strong>: the Salesforce List View, the Raiser&#39;s Edge NXT list, or the Slate column mapping you chose. For Raiser&#39;s Edge NXT and Slate, run <strong>Sync now</strong> once after turning on Auto-sync, so Storyraise knows which list or mapping to use.</p>
 <p>Auto-sync is off until you turn it on, and it&#39;s set per connection, so you can leave a hand-curated source alone while a busy one refreshes nightly.</p>
+<div class="tip"><p><strong>Personalized links pick up new donors automatically.</strong> A report looks each reader up when they open their link, so a donor who syncs in tonight can open a report you published months ago. There&#39;s nothing to republish.</p></div>
 <h2>Related</h2>
 <ul>
 <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
 <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
+<li><a href="/automated-donor-journeys/">Automated donor journeys</a> — personalized reports sent by your email platform&#39;s automations, for donors who sync in overnight.</li>
 </ul>
 
 
@@ -344,6 +348,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="0bac8164" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="4fee20d6" data-engine-v="676be165" defer></script>
 </body>
 </html>

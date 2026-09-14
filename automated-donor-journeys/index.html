@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automated donor journeys: the right report at the right moment | Storyraise</title>
+  <meta name="description" content="Pair a personalized Storyraise report with your email platform's automations. New donors sync in from your CRM, and each one opens a report made just for them." />
+  <link rel="canonical" href="https://docs.storyraise.com/automated-donor-journeys/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#16131c" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Storyraise Knowledge Base" />
+  <meta property="og:title" content="Automated donor journeys: the right report at the right moment" />
+  <meta property="og:description" content="New donors sync in from your CRM, your email platform sends the email, and every donor opens a report made just for them." />
+  <meta property="og:url" content="https://docs.storyraise.com/automated-donor-journeys/" />
+  <meta property="og:image" content="https://docs.storyraise.com/automated-donor-journeys/media/og-automated-donor-journeys.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A welcome email with a Storyraise report that greets the donor by name" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Automated donor journeys: the right report at the right moment" />
+  <meta name="twitter:description" content="New donors sync in from your CRM, your email platform sends the email, and every donor opens a report made just for them." />
+  <meta name="twitter:image" content="https://docs.storyraise.com/automated-donor-journeys/media/og-automated-donor-journeys.png" />
+
+<!-- AUTO:LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://docs.storyraise.com/automated-donor-journeys/#page",
+      "url": "https://docs.storyraise.com/automated-donor-journeys/",
+      "name": "Automated donor journeys",
+      "isPartOf": {
+        "@id": "https://docs.storyraise.com/#site"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Automated donor journeys with Storyraise",
+      "description": "How a personalized Storyraise report, a CRM that syncs daily, and an email platform's automations send the right report at the right moment, to every donor, by name.",
+      "thumbnailUrl": "https://docs.storyraise.com/automated-donor-journeys/media/automated-donor-journeys-tour-poster.jpg",
+      "contentUrl": "https://docs.storyraise.com/automated-donor-journeys/media/automated-donor-journeys-tour.mp4",
+      "uploadDate": "2026-09-14",
+      "duration": "PT1M41S",
+      "publisher": {
+        "@id": "https://storyraise.com/#org"
+      }
+    }
+  ]
+}
+  </script>
+      <!-- /AUTO:LD -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css?v=44e25550" />
+  <link rel="stylesheet" href="journeys.css?v=1" />
+  <script>
+    // Apply the theme before first paint: stored choice, else system setting.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function apply(theme) { document.documentElement.setAttribute('data-theme', theme); }
+      apply(stored === 'dark' || stored === 'light' ? stored : (mq.matches ? 'dark' : 'light'));
+      mq.addEventListener('change', function (e) {
+        var s = null;
+        try { s = localStorage.getItem('theme'); } catch (err) {}
+        if (s !== 'dark' && s !== 'light') apply(e.matches ? 'dark' : 'light');
+      });
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAV (matches the knowledge base home page) -->
+  <nav>
+    <div class="nav-logo-group">
+      <a href="/" class="logo">
+        <img class="logo-light" src="/assets/logo-light.svg" alt="Storyraise Knowledge Base home" />
+        <img class="logo-dark" src="/assets/logo-dark.svg" alt="" />
+      </a>
+      <span>Knowledge Base</span>
+    </div>
+    <div class="nav-right">
+      <input type="checkbox" id="navmenu" class="navmenu-cb" />
+      <label for="navmenu" class="navmenu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </label>
+      <div class="nav-menu">
+      <a href="https://storyraise.com" class="nav-link">Home</a>
+      <a href="/search/" class="nav-link">Search</a>
+      <a href="https://storyraise.com/support" class="nav-link">Support</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="https://app.storyraise.com" class="nav-cta">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="sra">
+
+    <!-- HERO -->
+    <header class="hero sra-hero">
+      <span class="tag">Automated donor journeys</span>
+      <h1>Send the right report at the <span class="sra-accent">right moment</span>.</h1>
+      <p class="lead">Pair a personalized Storyraise report with your email platform's automations. New donors sync in from your CRM, and each one opens a report made just for them, even if they gave long after you published it.</p>
+      <div class="sra-hero-actions">
+        <a class="sra-btn sra-btn--primary" href="#tour">
+          <svg viewBox="0 -960 960 960" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M320-200v-560l440 280-440 280Z"/></svg>
+          Watch the video
+        </a>
+        <a class="sra-btn sra-btn--ghost" href="#setup">Set it up</a>
+      </div>
+    </header>
+
+    <!-- VIDEO -->
+    <section class="section sra-tour" id="tour" aria-label="Automated donor journeys walkthrough video">
+      <div class="sra-video">
+        <video id="tour-video" controls playsinline preload="none" poster="media/automated-donor-journeys-tour-poster.jpg">
+          <source src="media/automated-donor-journeys-tour.mp4" type="video/mp4" />
+          <track kind="captions" src="media/automated-donor-journeys-tour.en.vtt" srclang="en" label="English" />
+          <track kind="chapters" src="media/chapters.en.vtt" srclang="en" label="Chapters" />
+        </video>
+      </div>
+      <ol class="sra-chapters" id="tour-chapters" aria-label="Jump to a chapter" hidden></ol>
+      <details class="sra-transcript">
+        <summary>Read the transcript</summary>
+        <div class="sra-transcript-body">
+<!-- AUTO:TRANSCRIPT -->
+        <p>A first-time donor gives on a Tuesday. Two weeks later, a welcome arrives with a report made just for them. And nobody on your team had to press send.</p>
+        <p>It takes three things you may already have: your CRM, a personalized Storyraise report, and an email platform with automations or journeys.</p>
+        <p>Start with one report. Merge tags, like a first name, fill in differently for every donor who opens it. You publish it once.</p>
+        <p>Next, connect your CRM in the Connections tab, and turn on Auto-sync. New donors in your CRM become Storyraise constituents on their own, with no uploads and no one opening the dashboard.</p>
+        <p>Now choose Send in an email on your report. Paste your email platform's merge tag for the donor's email address, and copy the link. Every email carries that one link, and each donor's copy fills in with their own address.</p>
+        <p>In your email platform, build the journey the way you already do. A first gift starts it, it waits two weeks, then it sends a welcome email with a button that uses your link. Your platform decides who gets it, and when.</p>
+        <p>When a donor clicks, Storyraise looks them up right then, and the report greets them by name. That includes donors who joined long after you published, so there's nothing to republish.</p>
+        <p>And because every link is personal, Analytics shows you who read their welcome, by name, so you know who to thank next.</p>
+        <p>The same setup works for other moments, too: a giving anniversary, a year-end impact report, or a check-in with a donor you haven't heard from.</p>
+        <p>The step-by-step setup is right here on this page.</p>
+      <!-- /AUTO:TRANSCRIPT -->
+        </div>
+      </details>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" aria-labelledby="how-title">
+      <div class="section-header">
+        <h2 class="section-title" id="how-title">How it works</h2>
+        <div class="section-sub">Three pieces you may already have, working together.</div>
+      </div>
+      <div class="cards">
+        <div class="card sra-static-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13"/><path d="M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg>
+          <h3>Your CRM keeps donors current</h3>
+          <p>Connect it in the Connections tab and turn on Auto-sync. New and updated donors come in on the schedule you choose, daily or weekly.</p>
+        </div>
+        <div class="card sra-static-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 7.5h7M8.5 11h4.5"/><path d="M12 18.2c-2.3-1.5-3.5-2.6-3.5-4a1.8 1.8 0 0 1 3.5-.6 1.8 1.8 0 0 1 3.5.6c0 1.4-1.2 2.5-3.5 4z"/></svg>
+          <h3>One personalized report</h3>
+          <p>Add merge tags like <code>@@first_name@@</code> and publish once. Each donor's copy fills in the moment they open their link.</p>
+        </div>
+        <div class="card sra-static-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6l9 7 9-7"/></svg>
+          <h3>Your email platform sends it</h3>
+          <p>Build the journey where you already email donors. Your platform decides who gets the report, and when.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SET IT UP -->
+    <section class="section" id="setup" aria-labelledby="setup-title">
+      <div class="section-header">
+        <h2 class="section-title" id="setup-title">Set it up</h2>
+        <div class="section-sub">Five steps, and then the journey runs on its own.</div>
+      </div>
+      <ol class="sra-plays">
+        <li><span class="sra-play-num" aria-hidden="true">1</span><div><strong>Connect your CRM and turn on Auto-sync.</strong><p>In Storyraise, open <b>Connections</b>, find your CRM under <b>Add a connection</b>, and click <b>Connect</b>. Then open the connection's <b>More</b> menu, switch on <b>Auto-sync</b>, and pick a <b>Frequency</b>. <a href="/docs/crm-and-data/managing-connections/">Managing connections</a></p></div></li>
+        <li><span class="sra-play-num" aria-hidden="true">2</span><div><strong>Personalize and publish your report.</strong><p>Type merge tags such as <code>@@first_name@@</code> wherever you want a donor's details, using the field names on your constituent records. Then publish. <a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></p></div></li>
+        <li><span class="sra-play-num" aria-hidden="true">3</span><div><strong>Copy the personalized link.</strong><p>On the published report, choose <b>Send in an email</b>. Under <b>Email tool</b>, pick Mailchimp, or choose <b>Other</b> and paste your platform's merge tag for the contact's email address. Then click <b>Copy link</b>.</p></div></li>
+        <li><span class="sra-play-num" aria-hidden="true">4</span><div><strong>Build the journey in your email platform.</strong><p>Create an automation or journey that starts from the moment you care about, such as a first gift. Add a wait if you like, then send an email whose button uses the link you copied.</p></div></li>
+        <li><span class="sra-play-num" aria-hidden="true">5</span><div><strong>Test it with a real record.</strong><p>Send a test to someone who is also a constituent in Storyraise, and open the link. The report should greet them by name.</p></div></li>
+      </ol>
+      <div class="sra-notes">
+        <p class="sra-note"><strong>Timing.</strong> A donor's record needs to reach Storyraise before they click. A daily sync is comfortably ahead of any wait of a day or more. <a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></p>
+        <p class="sra-note"><strong>Raiser's Edge NXT and Slate.</strong> Run <b>Sync now</b> once after turning on Auto-sync, so Storyraise knows which list or column mapping to bring in each time.</p>
+      </div>
+    </section>
+
+    <!-- MERGE TAGS: taken off the page 2026-09-14 (Vince). Kept commented out so it can be
+         restored; remove the comment markers around the section to bring it back.
+    <section class="section" aria-labelledby="tags-title">
+      <div class="section-header">
+        <h2 class="section-title" id="tags-title">Merge tags for popular email platforms</h2>
+        <div class="section-sub">The merge tag goes where the donor's email address belongs. Your platform swaps in each recipient's address when it sends.</div>
+      </div>
+      <div class="sra-table-wrap">
+        <table class="sra-table">
+          <thead><tr><th scope="col">Email platform</th><th scope="col">Email address merge tag</th></tr></thead>
+          <tbody>
+            <tr><td>Mailchimp</td><td><code>*|EMAIL|*</code> (also built into Send in an email)</td></tr>
+            <tr><td>ActiveCampaign</td><td><code>%EMAIL%</code></td></tr>
+            <tr><td>HubSpot</td><td><code>{{ contact.email }}</code></td></tr>
+            <tr><td>Klaviyo</td><td><code>{{ email }}</code></td></tr>
+            <tr><td>Salesforce Marketing Cloud</td><td><code>%%emailaddr%%</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sra-table-note">Using another platform? Look for its merge tag, personalization tag, or personalization string for a contact's email address, and copy it exactly as the platform documents it. A mistyped tag looks fine but won't personalize, so send yourself a test first.</p>
+    </section>
+    END MERGE TAGS -->
+
+
+    <!-- JOURNEY IDEAS -->
+    <section class="section" aria-labelledby="ideas-title">
+      <div class="section-header">
+        <h2 class="section-title" id="ideas-title">Journeys worth building</h2>
+        <div class="section-sub">The same setup works for any moment your email platform can start a journey from.</div>
+      </div>
+      <div class="cards">
+        <div class="card sra-static-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>
+          <h3>Giving anniversary</h3>
+          <p>On the anniversary of a donor's first gift, show them what a year of their support made possible.</p>
+        </div>
+        <div class="card sra-static-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 20V12M10 20V6M15 20v-9M20 20V4"/></svg>
+          <h3>Year-end impact report</h3>
+          <p>Send every donor this year's report, each one opening with their own name and the details you merged in.</p>
+        </div>
+        <div class="card sra-static-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4A8 8 0 1 1 20 12z"/></svg>
+          <h3>Lapsed donor check-in</h3>
+          <p>When a donor hasn't given in a while, remind them of the difference they made, by name.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANALYTICS BAND -->
+    <section class="section" aria-labelledby="engaged-title">
+      <div class="sra-band">
+        <h2 id="engaged-title">Know who opened their welcome</h2>
+        <p class="sra-quote">Every link is personal, so Analytics shows you who read their report, by name, and who might be ready to hear from you next.</p>
+        <p class="sra-band-note">See it in action on the <a href="/storyraise-analytics/">Storyraise Analytics</a> page.</p>
+      </div>
+    </section>
+
+    <!-- BANNER -->
+    <div class="section">
+      <div class="banner">
+        <div class="banner-text">
+          <h2>Ready to build your first journey?</h2>
+          <p>Connect your CRM in Storyraise, then choose Send in an email on any published report.</p>
+        </div>
+        <a href="https://app.storyraise.com">Open Storyraise</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER (matches the knowledge base home page) -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://storyraise.com">storyraise.com</a>
+      <a href="https://storyraise.com/support">Support</a>
+      <a href="/docs/resources/security-and-data/">Security &amp; data</a>
+      <a href="/docs/resources/accessibility-conformance/">Accessibility</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://storyraise.com/privacy-policy">Privacy Policy</a>
+      <a href="https://storyraise.com/terms-conditions">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-meta">&copy; 2026 Storyraise Technology Inc.</div>
+  </footer>
+
+  <script src="/assets/theme.js"></script>
+  <script src="journeys.js?v=1" defer></script>
+</body>
+</html>

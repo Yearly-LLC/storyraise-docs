@@ -1,0 +1,195 @@
+/* Automated donor journeys page. Builds on /assets/site.css (tokens, nav, cards, banner)
+   and follows the Storyraise Analytics page; everything here is scoped under .sra. */
+
+.sra [hidden] { display: none !important; }
+
+/* ── Buttons ── */
+.sra-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 0.6rem;
+  border: 1.5px solid transparent;
+  font: 600 0.9rem/1.2 'Poppins', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, opacity 0.15s;
+}
+.sra-btn--primary { background: var(--accent); color: #fff; }
+.sra-btn--primary:hover { opacity: 0.9; }
+.sra-btn--ghost { background: transparent; color: var(--text); border-color: var(--border-card); }
+.sra-btn--ghost:hover { border-color: var(--accent-text); color: var(--accent-text); }
+
+/* ── Hero ── */
+.sra-hero { margin-bottom: 56px; }
+.sra-hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.sra-accent { color: var(--brand); }
+.sra-hero .lead { margin-bottom: 32px; }
+.sra-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* Wider sections than the knowledge base default (1040px), on this page only. */
+.sra .section { max-width: 1240px; }
+/* Three cards across on this page; they stack on small screens (see below). */
+.sra .cards { grid-template-columns: repeat(3, 1fr); }
+.sra-static-card:hover { transform: none; box-shadow: none; border-color: var(--border-card); }
+
+/* ── Video ── */
+.sra-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0f0d14;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+}
+.sra-video video { display: block; width: 100%; height: 100%; background: #0f0d14; }
+
+.sra-chapters {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.sra-chapters button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 6px;
+  border-radius: 100px;
+  border: 1px solid var(--border-card);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font: 500 0.8rem/1.3 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+.sra-chapters button:hover { border-color: var(--accent-text); color: var(--text); }
+.sra-chapters button[aria-current="true"] {
+  border-color: var(--accent-text);
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent-text) 10%, var(--bg-card));
+}
+.sra-chapter-time {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  background: var(--badge-bg);
+  border-radius: 100px;
+  padding: 2px 8px;
+}
+
+.sra-transcript { margin-top: 18px; }
+.sra-transcript summary {
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-text);
+}
+.sra-transcript-body { margin-top: 12px; max-width: 720px; }
+.sra-transcript-body p { font-size: 0.9rem; line-height: 1.75; color: var(--text-body); margin: 0 0 10px; }
+
+/* ── Inline code (merge tags, links) ── */
+.sra code {
+  font: 500 0.86em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text);
+  background: var(--badge-bg);
+  border-radius: 6px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+/* ── Setup steps ── */
+.sra-plays { list-style: none; display: grid; gap: 10px; }
+.sra-plays li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 22px;
+  border: 1.5px solid var(--border-card);
+  border-radius: 14px;
+  background: var(--bg-card);
+}
+.sra-play-num {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--bg);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.sra-plays strong { display: block; font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.sra-plays p { font-size: 0.9rem; color: var(--text-body); line-height: 1.7; margin: 0; }
+.sra-plays a { color: var(--accent-text); font-weight: 600; }
+
+.sra-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+.sra-note {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-left: 4px solid var(--accent-text);
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: var(--text-body);
+}
+.sra-note strong { color: var(--text); font-weight: 600; }
+
+/* ── Merge tag table ── */
+.sra-table-wrap {
+  overflow-x: auto;
+  border: 1.5px solid var(--border-card);
+  border-radius: 16px;
+  background: var(--bg-card);
+}
+.sra-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.sra-table th,
+.sra-table td { text-align: left; padding: 14px 22px; border-bottom: 1px solid var(--border); color: var(--text-body); }
+.sra-table th {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+.sra-table td:first-child { color: var(--text); font-weight: 500; }
+.sra-table tr:last-child td { border-bottom: 0; }
+.sra-table-note { margin-top: 14px; font-size: 0.84rem; line-height: 1.7; color: var(--text-secondary); max-width: 820px; }
+
+/* ── Analytics band ── */
+.sra-band {
+  background:
+    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+    var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: 22px;
+  padding: 44px 48px 36px;
+}
+.sra-band h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--text); margin-bottom: 14px; }
+.sra-band .sra-quote {
+  font-family: 'PPFragment TextRegular', 'Poppins', sans-serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--brand);
+  max-width: 760px;
+  margin-bottom: 20px;
+}
+.sra-band-note { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+.sra-band-note a { color: var(--accent-text); font-weight: 600; }
+
+/* ── Small screens ── */
+@media (max-width: 760px) {
+  .sra .cards { grid-template-columns: 1fr; }
+  .sra-notes { grid-template-columns: 1fr; }
+  .sra-band { padding: 28px 22px; }
+  .sra-hero-actions { display: none; }
+  .sra-hero .lead { margin-bottom: 0; }
+}

@@ -1,0 +1,4 @@
+{
+  "filter": "afftdn=nr=10:nf=-44:tn=1",
+  "note": "Noise reduction applied to each take before the voice chain; chosen by Vince in an A/B listen, 2026-09-10."
+}

@@ -55,6 +55,7 @@ You get:
 - **Donor thank-yous** — a year-end report that greets each donor by name and reflects their giving.
 - **Direct mail** — printed cards with a personal QR code feel individually made.
 - **Email campaigns** — merge the `report_url_used` column into your email platform so each recipient's button opens their version.
+- **Automated donor journeys** — let your email platform's automations send the report at the right moment, such as a welcome two weeks after a first gift. See [Automated donor journeys](/automated-donor-journeys/).
 - **Knowing who engaged** — after the send, Analytics shows which constituents opened the report. See [Understanding report metrics](understanding-report-metrics.md).
 
 ## What personalized links unlock in Analytics

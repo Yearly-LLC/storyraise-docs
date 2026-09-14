@@ -24,11 +24,11 @@ Every integration is **read-only by default** — Storyraise reads from your CRM
 
 ## Connect your CRM
 
-1. From the dashboard, open your **Constituents** area and choose the option to sync constituents.
-2. Pick your CRM's tab — **Blackbaud** or **Bloomerang** — and follow the prompts:
-   - **Blackbaud** — click **Connect**, sign in to Blackbaud, and approve access. Then choose which constituent list to sync. Full guide: [Blackbaud (Raiser's Edge NXT)](integrations/blackbaud-raisers-edge-nxt.md).
-   - **Bloomerang** — paste your Bloomerang API key and click **Sync constituents**. Full guide: [Bloomerang](integrations/bloomerang.md).
-3. Storyraise imports your constituents. Each record is tagged with its source (Blackbaud, Bloomerang, or CSV), so you always know where data came from.
+1. Open the **Connections** tab and find your CRM under **Add a connection**.
+2. Click **Connect** and follow the prompts:
+   - **Raiser's Edge NXT** and **Salesforce** — sign in and approve access. Raiser's Edge NXT then asks which constituent list to sync. Full guides: [Raiser's Edge NXT](integrations/blackbaud-raisers-edge-nxt.md) and [Salesforce](integrations/salesforce.md).
+   - **API-key systems** such as Bloomerang — paste your key and click **Connect & sync**. Full guide: [Bloomerang](integrations/bloomerang.md).
+3. Storyraise imports your constituents. Each record is tagged with its source, so you always know where data came from.
 
 ## No CRM? No problem
 
@@ -36,7 +36,7 @@ If your CRM isn't supported yet — or you don't use one — you can [import con
 
 ## Keeping data current
 
-Connections don't update themselves automatically yet. When your CRM data changes, re-run the sync to pull in the latest records — see [Data refreshes](data-refreshes.md).
+Turn on **Auto-sync** for a connection and Storyraise re-pulls your constituents daily or weekly, so new donors in your CRM arrive on their own. You can also click **Sync now** at any time — see [Data refreshes](data-refreshes.md).
 
 ## Related
 

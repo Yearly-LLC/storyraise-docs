@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s10-template">
+      <style>
+        #s10-root { position: absolute; inset: 0; overflow: hidden; }
+        #s10-wrap { position: absolute; left: 0; top: 220px; width: 1920px; text-align: center; }
+        #s10-logo { display: block; height: 96px; margin: 0 auto 64px; opacity: 0; visibility: hidden; }
+        #s10-head { font-size: 120px; line-height: 1.04; opacity: 0; visibility: hidden; }
+        #s10-url {
+          display: inline-flex; align-items: center; gap: 16px; margin-top: 54px;
+          font: 500 38px/1 "Poppins", sans-serif; color: #ffffff;
+          background: rgba(255, 255, 255, 0.07); border: 1.5px solid rgba(255, 255, 255, 0.16);
+          border-radius: 100px; padding: 22px 40px; opacity: 0; visibility: hidden;
+        }
+        #s10-url svg { width: 40px; height: 40px; }
+        #s10-note { margin: 36px 0 0; font: 400 28px/1.4 "Poppins", sans-serif; color: #a99fbb; opacity: 0; visibility: hidden; }
+      </style>
+
+      <div id="s10-root" data-composition-id="s10" data-width="1920" data-height="1080">
+        <div id="s10-wrap">
+          <img id="s10-logo" src="assets/logo-wordmark-dark.svg" alt="Storyraise" />
+          <p class="sr-display" id="s10-head">Set up your <span class="sr-accent">first journey</span></p>
+          <div id="s10-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c79bf2" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+            docs.storyraise.com/automated-donor-journeys
+          </div>
+          <p id="s10-note">Five steps, and then the journey runs on its own.</p>
+        </div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var S = window.SR_TIMELINE.scenes.s10;
+          var cta = Math.max(0.3, S.cues.cta - S.start);
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo('#s10-logo', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15);
+          tl.fromTo('#s10-head', { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, cta);
+          tl.fromTo('#s10-url', { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.6, ease: 'back.out(1.6)' }, cta + 0.6);
+          tl.fromTo('#s10-note', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, cta + 1.1);
+          window.__timelines['s10'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

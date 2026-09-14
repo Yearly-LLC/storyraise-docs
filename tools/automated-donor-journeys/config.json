@@ -1,0 +1,39 @@
+{
+  "builder": {
+    "path": "/Applications/MAMP/htdocs/yearly-v3/builder-auto-sync",
+    "sha": "1ddc2f57d1b00c7113ff19effab7db325ee8f5b5"
+  },
+  "reader": {
+    "path": "/Users/computer/Sites/published-reports"
+  },
+  "source": {
+    "org_slug": "demo",
+    "report_slug": "thank-you-note-demo",
+    "report_title": "Thank-You Note (Demo)",
+    "report_id": "-OyjaQjHUF8shFeF-e1a",
+    "page_id": "-NyzpMtopxZkKL4x6fiX"
+  },
+  "donor": {
+    "first_name": "Maria",
+    "last_name": "Alvarez",
+    "email": "maria.alvarez@harborlights.example",
+    "dollar_amount": "$50"
+  },
+  "identity": {
+    "org_name": "Harbor Lights Community Foundation",
+    "org_slug": "harbor-lights",
+    "report_title": "Welcome to Harbor Lights",
+    "report_slug": "welcome",
+    "link_host": "harborlights.example"
+  },
+  "rename": [
+    { "from": "Thank-You Note (Demo)", "to": "Welcome to Harbor Lights" },
+    { "from": "thank-you-note-demo", "to": "welcome" }
+  ],
+  "capture": {
+    "timezone": "America/New_York",
+    "locale": "en-US",
+    "viewport": { "width": 1440, "height": 900 },
+    "port": 5050
+  }
+}

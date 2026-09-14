@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s06-template">
+      <style>
+        #s06-root { position: absolute; inset: 0; overflow: hidden; }
+        #s06-canvas { position: absolute; left: 190px; top: 120px; width: 980px; height: 840px; box-sizing: border-box; padding: 40px 48px; opacity: 0; visibility: hidden; }
+        #s06-canvas .s06-head { display: flex; justify-content: space-between; align-items: center; }
+        #s06-canvas .s06-name { font: 600 30px/1 "Poppins", sans-serif; color: #ffffff; margin: 0; }
+        .s06-node { position: absolute; left: 48px; width: 884px; box-sizing: border-box; border-radius: 22px; background: rgba(255, 255, 255, 0.05); border: 1.5px solid rgba(255, 255, 255, 0.12); padding: 26px 32px; display: flex; align-items: center; gap: 26px; opacity: 0; visibility: hidden; }
+        #s06-trigger { top: 130px; }
+        #s06-wait { top: 330px; }
+        #s06-send { top: 530px; align-items: flex-start; }
+        .s06-badge { flex-shrink: 0; width: 86px; height: 86px; border-radius: 22px; display: flex; align-items: center; justify-content: center; }
+        .s06-badge svg { width: 48px; height: 48px; }
+        .s06-kind { display: block; font: 600 20px/1 "Poppins", sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: #a99fbb; }
+        .s06-what { display: block; font: 600 38px/1.2 "Poppins", sans-serif; color: #ffffff; margin-top: 10px; }
+        .s06-link { display: inline-block; margin-top: 18px; font: 500 24px/1 "Poppins", sans-serif; color: #ff7a99; background: rgba(237, 53, 94, 0.12); border-radius: 10px; padding: 12px 16px; white-space: nowrap; }
+        .s06-button { display: inline-block; margin-top: 16px; margin-right: 14px; font: 600 24px/1 "Poppins", sans-serif; color: #ffffff; background: #803bb1; border-radius: 12px; padding: 14px 22px; }
+        .s06-line { position: absolute; left: 91px; width: 3px; height: 70px; background: #c79bf2; transform-origin: 50% 0; opacity: 0; visibility: hidden; }
+        #s06-line-1 { top: 262px; }
+        #s06-line-2 { top: 462px; }
+        #s06-yours { position: absolute; left: 1250px; top: 400px; width: 520px; font-size: 64px; line-height: 1.1; opacity: 0; visibility: hidden; }
+      </style>
+
+      <div id="s06-root" data-composition-id="s06" data-width="1920" data-height="1080">
+        <div class="sr-card" id="s06-canvas">
+          <div class="s06-head">
+            <p class="s06-name">First-gift welcome journey</p>
+            <p class="sr-kicker">In your email platform</p>
+          </div>
+
+          <div class="s06-node" id="s06-trigger">
+            <div class="s06-badge" style="background: rgba(237, 53, 94, 0.2);"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5c-5-3.4-8-6.2-8-9.6A4.4 4.4 0 0 1 12 8.4a4.4 4.4 0 0 1 8 2.5c0 3.4-3 6.2-8 9.6z" fill="#ff7a99"/></svg></div>
+            <div><span class="s06-kind">Starts when</span><span class="s06-what">A donor makes a first gift</span></div>
+          </div>
+          <div class="s06-line" id="s06-line-1"></div>
+
+          <div class="s06-node" id="s06-wait">
+            <div class="s06-badge" style="background: rgba(199, 155, 242, 0.18);"><svg viewBox="0 0 24 24" fill="none" stroke="#e1c2ff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+            <div><span class="s06-kind">Wait</span><span class="s06-what">14 days</span></div>
+          </div>
+          <div class="s06-line" id="s06-line-2"></div>
+
+          <div class="s06-node" id="s06-send">
+            <div class="s06-badge" style="background: rgba(69, 178, 123, 0.2);"><svg viewBox="0 0 24 24" fill="none" stroke="#7fd4a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg></div>
+            <div>
+              <span class="s06-kind">Send email</span>
+              <span class="s06-what">Welcome to Harbor Lights</span>
+              <span class="s06-button">View your report</span><span class="s06-link">…/welcome?for={{email}}</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="sr-display" id="s06-yours">Your platform decides <span class="sr-accent">who gets it, and when.</span></p>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var S = window.SR_TIMELINE.scenes.s06;
+          var cue = function (name) { return S.cues[name] - S.start; };
+          var tl = gsap.timeline({ paused: true });
+          var node = { autoAlpha: 1, x: 0, duration: 0.55, ease: 'power3.out' };
+
+          tl.fromTo('#s06-canvas', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, Math.max(0.05, cue('journey')));
+          tl.fromTo('#s06-trigger', { autoAlpha: 0, x: -40 }, node, cue('trigger') - 0.15);
+          tl.fromTo('#s06-line-1', { autoAlpha: 0, scaleY: 0 }, { autoAlpha: 1, scaleY: 1, duration: 0.35, ease: 'power2.out' }, cue('wait') - 0.4);
+          tl.fromTo('#s06-wait', { autoAlpha: 0, x: -40 }, node, cue('wait') - 0.15);
+          tl.fromTo('#s06-line-2', { autoAlpha: 0, scaleY: 0 }, { autoAlpha: 1, scaleY: 1, duration: 0.35, ease: 'power2.out' }, cue('send') - 0.4);
+          tl.fromTo('#s06-send', { autoAlpha: 0, x: -40 }, node, cue('send') - 0.15);
+          tl.fromTo('#s06-yours', { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' }, cue('yours') - 0.1);
+
+          tl.to(['#s06-canvas', '#s06-yours'], { autoAlpha: 0, duration: 0.45, ease: 'power2.in' }, S.duration - 0.5);
+          window.__timelines['s06'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

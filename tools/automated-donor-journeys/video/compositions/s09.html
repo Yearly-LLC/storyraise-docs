@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s09-template">
+      <style>
+        #s09-root { position: absolute; inset: 0; overflow: hidden; }
+        #s09-head { position: absolute; left: 0; top: 230px; width: 1920px; text-align: center; font-size: 104px; line-height: 1.05; opacity: 0; visibility: hidden; }
+        .s09-card { position: absolute; top: 500px; width: 500px; height: 300px; box-sizing: border-box; padding: 44px 42px; opacity: 0; visibility: hidden; }
+        #s09-p1 { left: 170px; }
+        #s09-p2 { left: 710px; }
+        #s09-p3 { left: 1250px; }
+        .s09-icon { width: 92px; height: 92px; border-radius: 24px; background: rgba(199, 155, 242, 0.16); display: flex; align-items: center; justify-content: center; }
+        .s09-icon svg { width: 52px; height: 52px; }
+        .s09-title { font: 600 40px/1.18 "Poppins", sans-serif; color: #ffffff; margin: 30px 0 0; }
+      </style>
+
+      <div id="s09-root" data-composition-id="s09" data-width="1920" data-height="1080">
+        <p class="sr-display" id="s09-head">Same setup, <span class="sr-accent">more moments</span></p>
+
+        <div class="sr-card s09-card" id="s09-p1">
+          <div class="s09-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e1c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M12 17.2c-2-1.4-3.2-2.4-3.2-3.6a1.6 1.6 0 0 1 3.2-.5 1.6 1.6 0 0 1 3.2.5c0 1.2-1.2 2.2-3.2 3.6z" fill="#ff7a99" stroke="none"/></svg></div>
+          <p class="s09-title">A giving anniversary</p>
+        </div>
+        <div class="sr-card s09-card" id="s09-p2">
+          <div class="s09-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e1c2ff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 20V12M10 20V6M15 20v-9M20 20V4"/></svg></div>
+          <p class="s09-title">A year-end impact report</p>
+        </div>
+        <div class="sr-card s09-card" id="s09-p3">
+          <div class="s09-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e1c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4A8 8 0 1 1 20 12z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/></svg></div>
+          <p class="s09-title">A check-in with a donor you haven't heard from</p>
+        </div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var S = window.SR_TIMELINE.scenes.s09;
+          var cue = function (name) { return S.cues[name] - S.start; };
+          var tl = gsap.timeline({ paused: true });
+          var rise = { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' };
+
+          tl.fromTo('#s09-head', { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, Math.max(0.05, cue('more')));
+          tl.fromTo('#s09-p1', { autoAlpha: 0, y: 50 }, rise, cue('p1') - 0.15);
+          tl.fromTo('#s09-p2', { autoAlpha: 0, y: 50 }, rise, cue('p2') - 0.15);
+          tl.fromTo('#s09-p3', { autoAlpha: 0, y: 50 }, rise, cue('p3') - 0.15);
+
+          tl.to('#s09-root > *', { autoAlpha: 0, duration: 0.45, ease: 'power2.in' }, S.duration - 0.5);
+          window.__timelines['s09'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

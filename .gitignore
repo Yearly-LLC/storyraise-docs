@@ -12,3 +12,14 @@ tools/storyraise-analytics/.bin/
 tools/storyraise-analytics/video/renders/
 tools/storyraise-analytics/video/snapshots/
 tools/storyraise-analytics/video/audio/.cache/
+
+# Automated donor journeys page tooling (tools/automated-donor-journeys), same rules.
+# node_modules and .bin are symlinks to the Analytics kit's, so no trailing slash.
+tools/automated-donor-journeys/.cache/
+tools/automated-donor-journeys/.bin
+tools/automated-donor-journeys/node_modules
+tools/automated-donor-journeys/video/renders/
+tools/automated-donor-journeys/video/snapshots/
+tools/automated-donor-journeys/video/audio/.cache/
+# Copies of the captured product screens (3x PNGs, rebuilt by build-compositions.mjs).
+tools/automated-donor-journeys/video/assets/img/

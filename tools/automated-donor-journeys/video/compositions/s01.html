@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s01-template">
+      <style>
+        #s01-root { position: absolute; inset: 0; overflow: hidden; }
+        #s01-cal { position: absolute; left: 190px; top: 170px; width: 740px; box-sizing: border-box; padding: 46px 50px 50px; opacity: 0; visibility: hidden; }
+        #s01-cal .cal-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 28px; }
+        #s01-cal .cal-month { font-size: 60px; line-height: 1; }
+        #s01-cal .cal-dow, #s01-cal .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+        #s01-cal .cal-dow span { font: 600 19px/1 "Poppins", sans-serif; color: #8f86a3; text-align: center; letter-spacing: 0.1em; }
+        #s01-cal .cal-grid { margin-top: 18px; }
+        #s01-cal .cal-cell { position: relative; height: 92px; border-radius: 16px; background: rgba(255, 255, 255, 0.04); border: 1.5px solid rgba(255, 255, 255, 0.07); }
+        #s01-cal .cal-cell b { position: relative; z-index: 2; display: block; font: 500 26px/92px "Poppins", sans-serif; color: #cfc7dc; text-align: center; }
+        #s01-cal .cal-cell.muted b { color: #5d566b; }
+        #s01-cal .cal-lit { position: absolute; inset: 0; border-radius: 16px; background: rgba(199, 155, 242, 0.24); opacity: 0; visibility: hidden; }
+        #s01-cal .cal-mark { position: absolute; inset: -3px; border-radius: 16px; border: 3px solid #ff7a99; background: rgba(237, 53, 94, 0.3); opacity: 0; visibility: hidden; }
+        .s01-pill { position: absolute; top: 900px; font: 500 30px/1 "Poppins", sans-serif; color: #ece6f6; background: rgba(255, 255, 255, 0.07); border: 1.5px solid rgba(255, 255, 255, 0.16); border-radius: 100px; padding: 16px 28px; white-space: nowrap; opacity: 0; visibility: hidden; }
+        #s01-pill-gift { left: 230px; }
+        #s01-pill-wait { left: 480px; }
+        #s01-email { position: absolute; left: 1010px; top: 170px; width: 720px; box-sizing: border-box; padding: 40px 46px 46px; opacity: 0; visibility: hidden; }
+        #s01-email .em-from { font: 500 24px/1.3 "Poppins", sans-serif; color: #a99fbb; margin: 16px 0 0; }
+        #s01-email .em-subject { font-size: 50px; line-height: 1.08; margin: 12px 0 0; }
+        #s01-email .em-thumb { display: block; width: 628px; height: 300px; object-fit: cover; object-position: 50% 62%; border-radius: 16px; margin-top: 26px; }
+        #s01-email .em-button { display: inline-block; margin-top: 26px; font: 600 28px/1 "Poppins", sans-serif; color: #ffffff; background: #803bb1; border-radius: 14px; padding: 20px 34px; }
+        #s01-sent { position: absolute; left: 1010px; top: 900px; display: flex; align-items: center; gap: 14px; font: 600 32px/1 "Poppins", sans-serif; color: #ffffff; background: rgba(69, 178, 123, 0.2); border: 1.5px solid rgba(69, 178, 123, 0.6); border-radius: 100px; padding: 16px 30px 16px 20px; white-space: nowrap; opacity: 0; visibility: hidden; }
+        #s01-sent svg { width: 40px; height: 40px; }
+      </style>
+
+      <div id="s01-root" data-composition-id="s01" data-width="1920" data-height="1080">
+        <div class="sr-card" id="s01-cal">
+          <div class="cal-head">
+            <p class="sr-display cal-month">September</p>
+            <p class="sr-kicker">2026</p>
+          </div>
+          <div class="cal-dow"><span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span></div>
+          <div class="cal-grid" id="s01-grid"></div>
+        </div>
+        <div class="s01-pill" id="s01-pill-gift">Tuesday: a first gift</div>
+        <div class="s01-pill" id="s01-pill-wait">Two weeks later</div>
+
+        <div class="sr-card" id="s01-email">
+          <p class="sr-kicker">New email</p>
+          <p class="em-from">Harbor Lights Community Foundation</p>
+          <p class="sr-display em-subject">Welcome to Harbor Lights, Maria</p>
+          <img class="em-thumb" src="assets/img/reader-personal.png" alt="" />
+          <span class="em-button">View your report</span>
+        </div>
+        <div id="s01-sent">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#45b27b"/><path d="M6.5 12.5l3.5 3.5 7.5-8" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sent automatically
+        </div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var S = window.SR_TIMELINE.scenes.s01;
+          var cue = function (name) { return S.cues[name] - S.start; };
+
+          // September 2026 starts on a Tuesday. The first gift lands on Tuesday the 8th;
+          // the welcome goes out two weeks later, on the 22nd.
+          var days = [30, 31];
+          for (var d = 1; d <= 26; d++) days.push(d);
+          var grid = document.getElementById('s01-grid');
+          days.forEach(function (day, i) {
+            var cell = document.createElement('div');
+            cell.className = 'cal-cell' + (i < 2 ? ' muted' : '');
+            cell.setAttribute('data-day', i < 2 ? '' : String(day));
+            cell.innerHTML = '<span class="cal-lit"></span><span class="cal-mark"></span><b>' + day + '</b>';
+            grid.appendChild(cell);
+          });
+          var cell = function (day) { return grid.querySelector('[data-day="' + day + '"]'); };
+
+          var tl = gsap.timeline({ paused: true });
+          var gift = cue('gift');
+          var wait = cue('wait');
+          var welcome = cue('welcome');
+          var nobody = cue('nobody');
+
+          tl.fromTo('#s01-cal', { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.05);
+          tl.fromTo(cell(8).querySelector('.cal-mark'), { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2)' }, gift + 0.45);
+          tl.fromTo('#s01-pill-gift', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power3.out' }, gift + 0.6);
+
+          // Two weeks pass, a day at a time.
+          for (var day = 9; day <= 21; day++) {
+            tl.fromTo(cell(day).querySelector('.cal-lit'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2, ease: 'power1.out' }, wait + (day - 9) * 0.045);
+          }
+          tl.fromTo(cell(22).querySelector('.cal-mark'), { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2)' }, wait + 0.6);
+          tl.to('#s01-pill-gift', { autoAlpha: 0, duration: 0.25 }, wait);
+          tl.fromTo('#s01-pill-wait', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power3.out' }, wait + 0.1);
+
+          // The welcome arrives.
+          tl.to('#s01-cal', { autoAlpha: 0.45, duration: 0.5, ease: 'power1.inOut' }, welcome);
+          tl.to('#s01-pill-wait', { autoAlpha: 0, duration: 0.3 }, welcome);
+          tl.fromTo('#s01-email', { autoAlpha: 0, x: 90 }, { autoAlpha: 1, x: 0, duration: 0.7, ease: 'power3.out' }, welcome + 0.05);
+
+          // Nobody pressed send.
+          tl.fromTo('#s01-sent', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'back.out(1.6)' }, nobody + 0.4);
+
+          tl.to(['#s01-cal', '#s01-email', '#s01-sent'], { autoAlpha: 0, duration: 0.45, ease: 'power2.in' }, S.duration - 0.5);
+          window.__timelines['s01'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

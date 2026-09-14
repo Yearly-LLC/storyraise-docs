@@ -22,7 +22,7 @@ Each connected system shows:
 ## Keeping data current
 
 - **Sync now.** Trigger an immediate refresh — useful right before a mailing or a board report. Re-syncing updates existing records rather than duplicating them (constituents are matched by email).
-- **Auto-sync.** Turn this on under the connection's **⋯ More** menu and set the **Frequency** to **Daily** or **Weekly** — Storyraise refreshes the connection on that schedule on its own.
+- **Auto-sync.** Turn this on under the connection's **⋯ More** menu and set the **Frequency** to **Daily** or **Weekly** — Storyraise refreshes the connection on that schedule on its own, bringing in new and updated constituents and then refreshing your collections. For Raiser's Edge NXT and Slate, run **Sync now** once first, so Storyraise knows which list or column mapping to use.
 - **Refresh a collection.** If you've synced extra data into collections, refresh each one from the same menu. See [Syncing data to collections](syncing-data-to-collections.md).
 
 ## Updating credentials

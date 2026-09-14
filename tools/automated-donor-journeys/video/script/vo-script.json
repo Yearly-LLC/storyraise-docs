@@ -1,0 +1,69 @@
+{
+  "_about": "Narration for the donor journeys walkthrough (personalized report + CRM sync + an email platform's automations). `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. `respell` maps a caption word to how the voice should say it (TTS text only). Vendor-neutral: no email platform or CRM is named in narration. Labels match the product UI; lookup-at-open behavior matches the published reader (published-reports report.js fetch_constituent ~3694-3821). American English, no em dashes.",
+  "_status": "APPROVED 2026-09-14: Vince delegated the wording calls and OK'd ElevenLabs spend. s04's 'new donors become constituents on their own' is true for every CRM since report-builder PR #104 shipped the same day.",
+  "respell": {},
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Cold open",
+      "minDuration": 8,
+      "text": "[[cue:gift]]A first-time donor gives on a Tuesday. [[cue:wait]]Two weeks later, [[cue:welcome]]a welcome arrives with a report made just for them. [[cue:nobody]]And nobody on your team had to press send."
+    },
+    {
+      "id": "s02",
+      "title": "Three pieces",
+      "minDuration": 9,
+      "text": "[[cue:pieces]]It takes three things you may already have: [[cue:crm]]your CRM, [[cue:report]]a personalized Storyraise report, [[cue:email]]and an email platform with automations or journeys."
+    },
+    {
+      "id": "s03",
+      "title": "Build the report once",
+      "minDuration": 10,
+      "text": "[[cue:tags]]Start with one report. Merge tags, like a first name, [[cue:fill]]fill in differently for every donor who opens it. [[cue:publish]]You publish it once."
+    },
+    {
+      "id": "s04",
+      "title": "Keep your donors in sync",
+      "minDuration": 13,
+      "text": "[[cue:connect]]Next, connect your CRM in the Connections tab, [[cue:auto]]and turn on Auto-sync. [[cue:new]]New donors in your CRM become Storyraise constituents on their own, [[cue:hands]]with no uploads and no one opening the dashboard."
+    },
+    {
+      "id": "s05",
+      "title": "One link for everyone",
+      "minDuration": 12,
+      "text": "[[cue:link]]Now choose Send in an email on your report. [[cue:tag]]Paste your email platform's merge tag for the donor's email address, [[cue:copy]]and copy the link. [[cue:same]]Every email carries that one link, [[cue:each]]and each donor's copy fills in with their own address."
+    },
+    {
+      "id": "s06",
+      "title": "Build the journey",
+      "minDuration": 13,
+      "text": "[[cue:journey]]In your email platform, build the journey the way you already do. [[cue:trigger]]A first gift starts it, [[cue:wait]]it waits two weeks, [[cue:send]]then it sends a welcome email with a button that uses your link. [[cue:yours]]Your platform decides who gets it, and when."
+    },
+    {
+      "id": "s07",
+      "title": "The moment they click",
+      "minDuration": 12,
+      "text": "[[cue:click]]When a donor clicks, [[cue:lookup]]Storyraise looks them up right then, [[cue:greet]]and the report greets them by name. [[cue:after]]That includes donors who joined long after you published, so there's nothing to republish.",
+      "_cut": "2026-09-14: moved to the page's setup steps, since promo copy leads with value and caveats live on the page. Removed sentence: [[cue:ready]]Their record just needs to sync before they click, and a daily sync is well ahead of a two-week wait."
+    },
+    {
+      "id": "s08",
+      "title": "See who read it",
+      "minDuration": 9,
+      "text": "[[cue:named]]And because every link is personal, Analytics shows you who read their welcome, by name, [[cue:followup]]so you know who to thank next."
+    },
+    {
+      "id": "s09",
+      "title": "More journeys",
+      "minDuration": 9,
+      "text": "[[cue:more]]The same setup works for other moments, too: [[cue:p1]]a giving anniversary, [[cue:p2]]a year-end impact report, [[cue:p3]]or a check-in with a donor you haven't heard from."
+    },
+    {
+      "id": "s10",
+      "title": "Set it up",
+      "minDuration": 6,
+      "text": "[[cue:cta]]The step-by-step setup is right here on this page.",
+      "_cut": "2026-09-14: the page's merge tag table was taken off the page (Vince), so the line no longer promises it. Previous text: The step-by-step setup, with merge tag examples for popular email platforms, is right here on this page."
+    }
+  ]
+}
