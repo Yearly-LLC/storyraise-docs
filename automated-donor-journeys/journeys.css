@@ -164,6 +164,93 @@
 .sra-table tr:last-child td { border-bottom: 0; }
 .sra-table-note { margin-top: 14px; font-size: 0.84rem; line-height: 1.7; color: var(--text-secondary); max-width: 820px; }
 
+/* ── Merge tag tool ── */
+.sra-tags {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.sra-tags-controls {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 14px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.sra-field { display: grid; gap: 6px; min-width: 0; }
+.sra-field-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+.sra-field input {
+  width: 100%;
+  box-sizing: border-box;
+  font: 400 0.92rem/1.4 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  border: 1.5px solid var(--border-card);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.sra-field input:focus { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.sra-tags-status {
+  margin: 0;
+  padding: 9px 20px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+.sra-tags-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 480px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.sra-tag-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.sra-tag-row:last-child { border-bottom: 0; }
+.sra-tag-main { min-width: 0; }
+.sra-tag-name { display: block; font-size: 0.92rem; font-weight: 600; color: var(--text); }
+.sra-tag-cat { display: block; font-size: 0.74rem; color: var(--text-soft); }
+.sra .sra-tag-code { justify-self: end; }
+.sra-tag-link { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; min-width: 0; }
+.sra .sra-tag-link code { flex: 1; min-width: 0; display: block; overflow-x: auto; padding: 7px 10px; }
+.sra-tag-note { grid-column: 1 / -1; margin: 0; font-size: 0.78rem; line-height: 1.55; color: var(--text-secondary); }
+.sra-copy {
+  font: 600 0.78rem/1 'Poppins', sans-serif;
+  color: var(--accent-text);
+  background: transparent;
+  border: 1.5px solid var(--border-card);
+  border-radius: 8px;
+  padding: 8px 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.sra-copy:hover { border-color: var(--accent-text); }
+.sra-copy[data-copied="true"] { color: #2f9e6e; border-color: #2f9e6e; }
+.sra-tags-empty { padding: 18px 20px; font-size: 0.86rem; color: var(--text-secondary); }
+.sra-tags-hint { margin: 0; font-size: 0.8rem; line-height: 1.6; color: var(--text-secondary); }
+.sra-tags-custom {
+  display: grid;
+  gap: 10px;
+  padding: 14px 20px 18px;
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent-text) 4%, var(--bg-card));
+}
+
 /* ── Analytics band ── */
 .sra-band {
   background:
@@ -188,6 +275,9 @@
 /* ── Small screens ── */
 @media (max-width: 760px) {
   .sra .cards { grid-template-columns: 1fr; }
+  .sra-tags-controls { grid-template-columns: 1fr; }
+  .sra-tag-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .sra .sra-tag-code { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
   .sra-notes { grid-template-columns: 1fr; }
   .sra-band { padding: 28px 22px; }
   .sra-hero-actions { display: none; }

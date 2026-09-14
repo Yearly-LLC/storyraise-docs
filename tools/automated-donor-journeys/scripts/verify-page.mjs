@@ -47,7 +47,7 @@ function watch(page, label) {
     if (paragraphs !== SCENES) problems.push(`expected ${SCENES} transcript paragraphs, got ${paragraphs}`);
 
     const statuses = await page.evaluate(async () => {
-        const files = ['media/automated-donor-journeys-tour-poster.jpg', 'media/automated-donor-journeys-tour.en.vtt', 'media/chapters.en.vtt', 'media/og-automated-donor-journeys.png', 'journeys.css?v=1', 'journeys.js?v=1'];
+        const files = ['media/automated-donor-journeys-tour-poster.jpg', 'media/automated-donor-journeys-tour.en.vtt', 'media/chapters.en.vtt', 'media/og-automated-donor-journeys.png', 'journeys.css?v=2', 'journeys.js?v=2'];
         const out = {};
         for (const f of files) out[f] = (await fetch(f)).status;
         out.range = (await fetch('media/automated-donor-journeys-tour.mp4', { headers: { Range: 'bytes=0-1023' } })).status;
@@ -57,6 +57,42 @@ function watch(page, label) {
         if (f === 'range') { if (s !== 206) problems.push(`MP4 byte range answered ${s}, not 206`); }
         else if (s !== 200) problems.push(`${f} answered ${s}`);
     });
+
+    // Merge tag tool: paste a link that is already personalized and has other parameters and
+    // a section anchor, then check a platform's link, search, the empty state, and a custom tag.
+    const tool = await page.evaluate(() => {
+        const set = (id, value) => { const el = document.getElementById(id); el.value = value; el.dispatchEvent(new Event('input', { bubbles: true })); };
+        const rows = Array.from(document.querySelectorAll('#tags-list .sra-tag-row'));
+        const first = rows[0];
+        const name = first.querySelector('.sra-tag-name').textContent;
+        set('tags-link', 'harbor-lights.yearly.report/welcome?for=maria%40harborlights.example&utm_source=email#section-2');
+        set('tags-search', name.toLowerCase());
+        const visible = rows.filter((r) => !r.hidden);
+        const result = {
+            total: rows.length,
+            name,
+            tag: first.getAttribute('data-tag'),
+            link: first.querySelector('.sra-tag-link code').textContent,
+            button: first.querySelector('.sra-copy').textContent,
+            visible: visible.length,
+            allMatch: visible.every((r) => r.getAttribute('data-search').includes(name.toLowerCase())),
+        };
+        set('tags-custom', '{{ custom.email }}');
+        result.custom = document.querySelector('#tags-custom-link code').textContent;
+        set('tags-search', 'zzzz no such platform');
+        result.empty = !document.querySelector('#tags-list .sra-tags-empty').hidden;
+        set('tags-search', '');
+        set('tags-link', '');
+        set('tags-custom', '');
+        return result;
+    });
+    const expected = (tag) => `https://harbor-lights.yearly.report/welcome?utm_source=email&for=${tag}#section-2`;
+    if (tool.link !== expected(tool.tag)) problems.push(`merge tag link for ${tool.name} was ${tool.link}`);
+    if (tool.button !== 'Copy link') problems.push(`copy button read "${tool.button}" with a link pasted`);
+    if (tool.custom !== expected('{{ custom.email }}')) problems.push(`custom merge tag link was ${tool.custom}`);
+    if (!tool.visible || !tool.allMatch) problems.push('platform search did not filter to matching rows');
+    if (!tool.empty) problems.push('a search with no matches did not show the empty message');
+    console.log(`merge tags: ${tool.total} platforms; ${tool.name} -> ${tool.link}`);
 
     await page.screenshot({ path: path.join(OUT, 'desktop-light.png'), fullPage: true });
 

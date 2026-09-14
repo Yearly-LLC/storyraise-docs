@@ -60,7 +60,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=44e25550" />
-  <link rel="stylesheet" href="journeys.css?v=1" />
+  <link rel="stylesheet" href="journeys.css?v=2" />
   <script>
     // Apply the theme before first paint: stored choice, else system setting.
     (function () {
@@ -196,28 +196,277 @@
       </div>
     </section>
 
-    <!-- MERGE TAGS: taken off the page 2026-09-14 (Vince). Kept commented out so it can be
-         restored; remove the comment markers around the section to bring it back.
-    <section class="section" aria-labelledby="tags-title">
+    <!-- MERGE TAGS: the list comes from tools/automated-donor-journeys/data/merge-tags.json -->
+    <section class="section" id="merge-tags" aria-labelledby="tags-title">
       <div class="section-header">
         <h2 class="section-title" id="tags-title">Merge tags for popular email platforms</h2>
-        <div class="section-sub">The merge tag goes where the donor's email address belongs. Your platform swaps in each recipient's address when it sends.</div>
+        <div class="section-sub">Paste your report's link, find your email platform, and copy a link that fills in each donor's email address when your platform sends.</div>
       </div>
-      <div class="sra-table-wrap">
-        <table class="sra-table">
-          <thead><tr><th scope="col">Email platform</th><th scope="col">Email address merge tag</th></tr></thead>
-          <tbody>
-            <tr><td>Mailchimp</td><td><code>*|EMAIL|*</code> (also built into Send in an email)</td></tr>
-            <tr><td>ActiveCampaign</td><td><code>%EMAIL%</code></td></tr>
-            <tr><td>HubSpot</td><td><code>{{ contact.email }}</code></td></tr>
-            <tr><td>Klaviyo</td><td><code>{{ email }}</code></td></tr>
-            <tr><td>Salesforce Marketing Cloud</td><td><code>%%emailaddr%%</code></td></tr>
-          </tbody>
-        </table>
+      <div class="sra-tags">
+        <div class="sra-tags-controls">
+          <label class="sra-field">
+            <span class="sra-field-label">Your Storyraise report link</span>
+            <input type="url" id="tags-link" placeholder="https://your-organization.yearly.report/your-report" autocomplete="off" spellcheck="false" />
+          </label>
+          <label class="sra-field">
+            <span class="sra-field-label">Find your email platform</span>
+            <input type="search" id="tags-search" placeholder="Search platforms" autocomplete="off" />
+          </label>
+        </div>
+        <p class="sra-tags-status" id="tags-status" aria-live="polite"></p>
+        <ul class="sra-tags-list" id="tags-list" aria-label="Email platforms and their merge tags">
+<!-- AUTO:MERGETAGS -->
+          <li class="sra-tag-row" data-tag="%%Email%%" data-search="acoustic campaign marketing automation %%email%% silverpop ibm watson campaign automation">
+            <div class="sra-tag-main"><span class="sra-tag-name">Acoustic Campaign</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">%%Email%%</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">The name between the %% signs must match your database's email field.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{ Email }}" data-search="action network nonprofit crm and fundraising {{ email }}">
+            <div class="sra-tag-main"><span class="sra-tag-name">Action Network</span><span class="sra-tag-cat">Nonprofit CRM and fundraising</span></div>
+            <code class="sra-tag-code">{{ Email }}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Insert Email from the clips menu to confirm the exact spelling.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="%EMAIL%" data-search="activecampaign marketing automation %email%">
+            <div class="sra-tag-main"><span class="sra-tag-name">ActiveCampaign</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">%EMAIL%</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+          </li>
+          <li class="sra-tag-row" data-tag="{{lead.Email Address}}" data-search="adobe marketo engage marketing automation {{lead.email address}} marketo">
+            <div class="sra-tag-main"><span class="sra-tag-name">Adobe Marketo Engage</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{{lead.Email Address}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">The tag includes a space. Copy it exactly.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{ subscriber.email }}" data-search="aweber email marketing {{ subscriber.email }}">
+            <div class="sra-tag-main"><span class="sra-tag-name">AWeber</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">{{ subscriber.email }}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">AWeber doesn't track clicks on links that contain personalization.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{email}}" data-search="beehiiv email marketing {{email}}">
+            <div class="sra-tag-main"><span class="sra-tag-name">beehiiv</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">{{email}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Case-sensitive.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{SubscriberEmail}}" data-search="bonterra everyaction nonprofit crm and fundraising {{subscriberemail}} everyaction ngp van targeted email">
+            <div class="sra-tag-main"><span class="sra-tag-name">Bonterra EveryAction</span><span class="sra-tag-cat">Nonprofit CRM and fundraising</span></div>
+            <code class="sra-tag-code">{{SubscriberEmail}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">For Targeted Email. Bonterra advises against putting email addresses in links, so check with your admin first.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{${email_address}}}" data-search="braze marketing automation {{${email_address}}}">
+            <div class="sra-tag-main"><span class="sra-tag-name">Braze</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{{${email_address}}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+          </li>
+          <li class="sra-tag-row" data-tag="{{ contact.EMAIL }}" data-search="brevo email marketing {{ contact.email }} sendinblue">
+            <div class="sra-tag-main"><span class="sra-tag-name">Brevo</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">{{ contact.EMAIL }}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">EMAIL must match the attribute name on your Contact attributes page.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="[email]" data-search="campaign monitor email marketing [email]">
+            <div class="sra-tag-main"><span class="sra-tag-name">Campaign Monitor</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">[email]</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+          </li>
+          <li class="sra-tag-row" data-tag="{contact.email_primary.email}" data-search="civicrm nonprofit crm and fundraising {contact.email_primary.email} civimail">
+            <div class="sra-tag-main"><span class="sra-tag-name">CiviCRM</span><span class="sra-tag-cat">Nonprofit CRM and fundraising</span></div>
+            <code class="sra-tag-code">{contact.email_primary.email}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Older versions use {contact.email}.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="[[emailAddress]]" data-search="constant contact email marketing [[emailaddress]]">
+            <div class="sra-tag-main"><span class="sra-tag-name">Constant Contact</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">[[emailAddress]]</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Dynamic links don't fill in on previews or test sends. Send a copy of the email to yourself to check.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{$emailAddress}" data-search="constant contact lead gen &amp; crm marketing automation {$emailaddress} sharpspring">
+            <div class="sra-tag-main"><span class="sra-tag-name">Constant Contact Lead Gen &amp; CRM</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{$emailAddress}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Formerly SharpSpring.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{customer.email}}" data-search="customer.io marketing automation {{customer.email}} customer io">
+            <div class="sra-tag-main"><span class="sra-tag-name">Customer.io</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{{customer.email}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Case-sensitive.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{ subscriber.email }}" data-search="drip marketing automation {{ subscriber.email }}">
+            <div class="sra-tag-main"><span class="sra-tag-name">Drip</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{{ subscriber.email }}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Use subscriber.email. In Drip, {{ email }} refers to the email itself, not the recipient.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="[% member:email default=&quot;&quot; %]" data-search="emma email marketing [% member:email default=&quot;&quot; %] marigold emma myemma">
+            <div class="sra-tag-main"><span class="sra-tag-name">Emma</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">[% member:email default=&quot;&quot; %]</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Emma's docs don't show this tag inside a link, so send yourself a real test first.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{ subscriber.email }}" data-search="flodesk email marketing {{ subscriber.email }}">
+            <div class="sra-tag-main"><span class="sra-tag-name">Flodesk</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">{{ subscriber.email }}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+          </li>
+          <li class="sra-tag-row" data-tag="{{CONTACT `subscriber_email`}}" data-search="getresponse email marketing {{contact `subscriber_email`}}">
+            <div class="sra-tag-main"><span class="sra-tag-name">GetResponse</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">{{CONTACT `subscriber_email`}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">This is GetResponse's form for links. The backticks are part of the tag.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{contact.email}}" data-search="hubspot marketing automation {{contact.email}}">
+            <div class="sra-tag-main"><span class="sra-tag-name">HubSpot</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{{contact.email}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">In marketing emails, add the link with Personalize in the button or link URL field. Leave no spaces inside the braces.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{email}}" data-search="iterable marketing automation {{email}}">
+            <div class="sra-tag-main"><span class="sra-tag-name">Iterable</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{{email}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Case-sensitive.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="~Contact.Email~" data-search="keap marketing automation ~contact.email~ infusionsoft thryv">
+            <div class="sra-tag-main"><span class="sra-tag-name">Keap</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">~Contact.Email~</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+          </li>
+          <li class="sra-tag-row" data-tag="{{ subscriber.email_address | url_encode }}" data-search="kit email marketing {{ subscriber.email_address | url_encode }} convertkit">
+            <div class="sra-tag-main"><span class="sra-tag-name">Kit</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">{{ subscriber.email_address | url_encode }}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Kit recommends the url_encode filter for tags inside links.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{ email }}" data-search="klaviyo marketing automation {{ email }}">
+            <div class="sra-tag-main"><span class="sra-tag-name">Klaviyo</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{{ email }}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Case-sensitive.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="[[email]]" data-search="little green light nonprofit crm and fundraising [[email]] lgl">
+            <div class="sra-tag-main"><span class="sra-tag-name">Little Green Light</span><span class="sra-tag-cat">Nonprofit CRM and fundraising</span></div>
+            <code class="sra-tag-code">[[email]]</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Paste the link into the HTML source or the link builder, so the brackets aren't converted.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="*|EMAIL|*" data-search="mailchimp email marketing *|email|* intuit">
+            <div class="sra-tag-main"><span class="sra-tag-name">Mailchimp</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">*|EMAIL|*</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Case-sensitive. Storyraise's Send in an email builds this link for you.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="*|EMAIL|*" data-search="mailchimp transactional email marketing *|email|* mandrill">
+            <div class="sra-tag-main"><span class="sra-tag-name">Mailchimp Transactional</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">*|EMAIL|*</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Works when your merge language is set to Mailchimp.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{$email}" data-search="mailerlite email marketing {$email}">
+            <div class="sra-tag-main"><span class="sra-tag-name">MailerLite</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">{$email}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Case-sensitive. MailerLite's docs don't show this tag inside a link, so send yourself a real test first.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{{Recipient.Email}}}" data-search="marketing cloud account engagement marketing automation {{{recipient.email}}} pardot salesforce">
+            <div class="sra-tag-main"><span class="sra-tag-name">Marketing Cloud Account Engagement</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">{{{Recipient.Email}}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">For accounts on Handlebars merge language. Insert the recipient's email from the merge field picker to confirm the exact tag.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="#recipient:email#" data-search="moosend email marketing #recipient:email#">
+            <div class="sra-tag-main"><span class="sra-tag-name">Moosend</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">#recipient:email#</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Moosend's docs don't show this tag inside a link, so send yourself a real test first.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{ recipient.email }}" data-search="nationbuilder nonprofit crm and fundraising {{ recipient.email }}">
+            <div class="sra-tag-main"><span class="sra-tag-name">NationBuilder</span><span class="sra-tag-cat">Nonprofit CRM and fundraising</span></div>
+            <code class="sra-tag-code">{{ recipient.email }}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+          </li>
+          <li class="sra-tag-row" data-tag="[[contact.email]]" data-search="omnisend email marketing [[contact.email]]">
+            <div class="sra-tag-main"><span class="sra-tag-name">Omnisend</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">[[contact.email]]</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+          </li>
+          <li class="sra-tag-row" data-tag="[Email]" data-search="ontraport marketing automation [email]">
+            <div class="sra-tag-main"><span class="sra-tag-name">Ontraport</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">[Email]</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Case-sensitive. Pick Email from the merge field dropdown to confirm the exact tag.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="%%emailaddr%%" data-search="salesforce marketing cloud engagement marketing automation %%emailaddr%% salesforce marketing cloud exacttarget email studio journey builder">
+            <div class="sra-tag-main"><span class="sra-tag-name">Salesforce Marketing Cloud Engagement</span><span class="sra-tag-cat">Marketing automation</span></div>
+            <code class="sra-tag-code">%%emailaddr%%</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Salesforce advises against putting email addresses in links, so check with your Marketing Cloud admin first.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{{email}}" data-search="twilio sendgrid email marketing {{email}} sendgrid marketing campaigns">
+            <div class="sra-tag-main"><span class="sra-tag-name">Twilio SendGrid</span><span class="sra-tag-cat">Email marketing</span></div>
+            <code class="sra-tag-code">{{email}}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">For Marketing Campaigns. Type the tag straight into the link's URL field.</p>
+          </li>
+          <li class="sra-tag-row" data-tag="{Contact_Email}" data-search="wildapricot nonprofit crm and fundraising {contact_email} wild apricot">
+            <div class="sra-tag-main"><span class="sra-tag-name">WildApricot</span><span class="sra-tag-cat">Nonprofit CRM and fundraising</span></div>
+            <code class="sra-tag-code">{Contact_Email}</code>
+            <button type="button" class="sra-copy">Copy tag</button>
+            <div class="sra-tag-link" hidden><code></code></div>
+            <p class="sra-tag-note">Case-sensitive. WildApricot's docs don't show macros inside links, so send yourself a real test first.</p>
+          </li>
+      <!-- /AUTO:MERGETAGS -->
+        </ul>
+        <div class="sra-tags-custom">
+          <label class="sra-field">
+            <span class="sra-field-label">Don't see your platform? Paste its email merge tag</span>
+            <input type="text" id="tags-custom" placeholder="For example, {{contact.email}}" autocomplete="off" spellcheck="false" />
+          </label>
+          <p class="sra-tags-hint">Sending from your CRM's own email tool, such as Bloomerang, Raiser's Edge NXT, Neon CRM, Virtuous, or Givebutter? Insert the email address field from its merge field menu, then paste exactly what it adds.</p>
+          <div class="sra-tag-link" id="tags-custom-link" hidden><code></code><button type="button" class="sra-copy">Copy link</button></div>
+        </div>
       </div>
-      <p class="sra-table-note">Using another platform? Look for its merge tag, personalization tag, or personalization string for a contact's email address, and copy it exactly as the platform documents it. A mistyped tag looks fine but won't personalize, so send yourself a test first.</p>
+      <p class="sra-table-note">Each tag comes from that platform's own documentation, checked September 2026. Copy a tag exactly as shown, since a mistyped tag looks fine but won't personalize, and send yourself a test before a big send. In Storyraise, Send in an email builds the same link for you.</p>
     </section>
-    END MERGE TAGS -->
 
 
     <!-- JOURNEY IDEAS -->
@@ -283,6 +532,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="journeys.js?v=1" defer></script>
+  <script src="journeys.js?v=2" defer></script>
 </body>
 </html>

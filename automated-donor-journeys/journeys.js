@@ -1,7 +1,136 @@
 /*
  * Automated donor journeys page: video chapter chips, read from the chapters track so
- * the chips and the video can't disagree. Same behavior as the Storyraise Analytics page.
+ * the chips and the video can't disagree (same behavior as the Storyraise Analytics page),
+ * and the merge tag tool further down.
  */
+
+/*
+ * Merge tag tool: paste a report link, find an email platform, copy a link carrying that
+ * platform's email merge tag. Mirrors the link rules in the product (public/js/sr-links.js):
+ * the tag goes in ?for= before any #, and it is never encoded, because an encoded tag is
+ * one the email platform won't recognize and fill in.
+ */
+(function mergeTags() {
+    'use strict';
+
+    var list = document.getElementById('tags-list');
+    if (!list) return;
+    var linkInput = document.getElementById('tags-link');
+    var search = document.getElementById('tags-search');
+    var status = document.getElementById('tags-status');
+    var custom = document.getElementById('tags-custom');
+    var customLink = document.getElementById('tags-custom-link');
+    var rows = Array.prototype.slice.call(list.querySelectorAll('.sra-tag-row'));
+
+    var empty = document.createElement('li');
+    empty.className = 'sra-tags-empty';
+    empty.hidden = true;
+    empty.textContent = "No platforms match. Paste your platform's merge tag in the box below.";
+    list.appendChild(empty);
+
+    function parseLink(value) {
+        var input = String(value || '').trim();
+        if (!input) return {};
+        if (!/^[a-z][a-z0-9+.-]*:\/\//i.test(input)) input = 'https://' + input;
+        var url;
+        try { url = new URL(input); } catch (e) { return { error: "That doesn't look like a link yet." }; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return { error: "Paste your report's web link." };
+        return { url: input };
+    }
+
+    // A link someone already personalized keeps its other parameters but loses its ?for=.
+    function withFor(link, tag) {
+        var hashAt = link.indexOf('#');
+        var base = hashAt === -1 ? link : link.slice(0, hashAt);
+        var fragment = hashAt === -1 ? '' : link.slice(hashAt);
+        var queryAt = base.indexOf('?');
+        var path = queryAt === -1 ? base : base.slice(0, queryAt);
+        var params = (queryAt === -1 ? '' : base.slice(queryAt + 1)).split('&').filter(function (p) {
+            return p && !/^for(=|$)/i.test(p);
+        });
+        params.push('for=' + tag);
+        return path + '?' + params.join('&') + fragment;
+    }
+
+    function copy(button, text) {
+        var label = button.getAttribute('data-label') || button.textContent;
+        button.setAttribute('data-label', label);
+        function done() {
+            button.textContent = 'Copied';
+            button.setAttribute('data-copied', 'true');
+            setTimeout(function () {
+                button.textContent = button.getAttribute('data-label');
+                button.removeAttribute('data-copied');
+            }, 1600);
+        }
+        function fallback() {
+            var area = document.createElement('textarea');
+            area.value = text;
+            area.setAttribute('readonly', '');
+            area.style.position = 'fixed';
+            area.style.opacity = '0';
+            document.body.appendChild(area);
+            area.select();
+            try { if (document.execCommand('copy')) done(); } catch (e) {}
+            document.body.removeChild(area);
+        }
+        if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
+        else fallback();
+    }
+
+    function setLabel(button, label) {
+        button.setAttribute('data-label', label);
+        if (!button.hasAttribute('data-copied')) button.textContent = label;
+    }
+
+    function render() {
+        var parsed = parseLink(linkInput.value);
+        var term = search.value.trim().toLowerCase();
+        var shown = 0;
+        rows.forEach(function (row) {
+            var match = !term || row.getAttribute('data-search').indexOf(term) !== -1;
+            row.hidden = !match;
+            if (match) shown++;
+            var box = row.querySelector('.sra-tag-link');
+            var button = row.querySelector('.sra-copy');
+            if (parsed.url) {
+                box.querySelector('code').textContent = withFor(parsed.url, row.getAttribute('data-tag'));
+                box.hidden = false;
+                setLabel(button, 'Copy link');
+            } else {
+                box.hidden = true;
+                setLabel(button, 'Copy tag');
+            }
+        });
+        empty.hidden = shown !== 0;
+
+        var tag = custom.value.trim();
+        if (tag && parsed.url) {
+            customLink.querySelector('code').textContent = withFor(parsed.url, tag);
+            customLink.hidden = false;
+        } else {
+            customLink.hidden = true;
+        }
+
+        var count = 'Showing ' + shown + ' of ' + rows.length + ' platforms.';
+        status.textContent = parsed.error
+            ? parsed.error + ' ' + count
+            : (parsed.url ? count + ' Each link below is ready to paste into your email.' : count + ' Paste your report link above to get complete links.');
+    }
+
+    list.addEventListener('click', function (event) {
+        var button = event.target.closest('.sra-copy');
+        if (!button) return;
+        var row = button.closest('.sra-tag-row');
+        var box = row.querySelector('.sra-tag-link');
+        copy(button, box.hidden ? row.getAttribute('data-tag') : box.querySelector('code').textContent);
+    });
+    customLink.querySelector('.sra-copy').addEventListener('click', function (event) {
+        copy(event.currentTarget, customLink.querySelector('code').textContent);
+    });
+    [linkInput, search, custom].forEach(function (el) { el.addEventListener('input', render); });
+    render();
+})();
 (function () {
     'use strict';
 
