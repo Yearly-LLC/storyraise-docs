@@ -10,6 +10,8 @@ last_reviewed: 2026-06-12
 
 To enable email sending from Storyraise, we'll walk through a quick 4-step process with you.
 
+> **Setting up a subdomain for a portal instead?** Hosting a Storyraise portal at your own web address uses different records. See [Setting up a custom subdomain for your portal](custom-portal-subdomain.md).
+
 ## 1. Choose a subdomain
 
 First, decide on a subdomain to use for sending emails.

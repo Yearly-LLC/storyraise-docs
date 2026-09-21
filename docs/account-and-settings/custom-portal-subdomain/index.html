@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data governance and CRM flags — Storyraise</title>
-  <meta name="description" content="Your CRM carries flags that exist to stop things happening — anonymous, do not contact, do not solicit, deceased, opted out. This page is about what happens…" />
-  <link rel="canonical" href="https://docs.storyraise.com/docs/crm-and-data/data-governance/" />
+  <title>Setting up a custom subdomain for your portal — Storyraise</title>
+  <meta name="description" content="Host your Storyraise portal at your own web address, such as portal.yourdomain.org, with a few DNS records your IT team adds once." />
+  <link rel="canonical" href="https://docs.storyraise.com/docs/account-and-settings/custom-portal-subdomain/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#16131c" media="(prefers-color-scheme: dark)" />
@@ -13,9 +13,9 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Storyraise Knowledge Base" />
-  <meta property="og:title" content="Data governance and CRM flags — Storyraise" />
-  <meta property="og:description" content="Your CRM carries flags that exist to stop things happening — anonymous, do not contact, do not solicit, deceased, opted out. This page is about what happens…" />
-  <meta property="og:url" content="https://docs.storyraise.com/docs/crm-and-data/data-governance/" />
+  <meta property="og:title" content="Setting up a custom subdomain for your portal — Storyraise" />
+  <meta property="og:description" content="Host your Storyraise portal at your own web address, such as portal.yourdomain.org, with a few DNS records your IT team adds once." />
+  <meta property="og:url" content="https://docs.storyraise.com/docs/account-and-settings/custom-portal-subdomain/" />
   <meta property="og:image" content="https://docs.storyraise.com/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -23,17 +23,17 @@
   <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Data governance and CRM flags — Storyraise" />
-  <meta name="twitter:description" content="Your CRM carries flags that exist to stop things happening — anonymous, do not contact, do not solicit, deceased, opted out. This page is about what happens…" />
+  <meta name="twitter:title" content="Setting up a custom subdomain for your portal — Storyraise" />
+  <meta name="twitter:description" content="Host your Storyraise portal at your own web address, such as portal.yourdomain.org, with a few DNS records your IT team adds once." />
   <meta name="twitter:image" content="https://docs.storyraise.com/assets/og-card.png" />
 
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Data governance and CRM flags — Storyraise",
-  "description": "Your CRM carries flags that exist to stop things happening — anonymous, do not contact, do not solicit, deceased, opted out. This page is about what happens…",
-  "url": "https://docs.storyraise.com/docs/crm-and-data/data-governance/",
+  "headline": "Setting up a custom subdomain for your portal — Storyraise",
+  "description": "Host your Storyraise portal at your own web address, such as portal.yourdomain.org, with a few DNS records your IT team adds once.",
+  "url": "https://docs.storyraise.com/docs/account-and-settings/custom-portal-subdomain/",
   "inLanguage": "en-US",
   "isPartOf": {
     "@id": "https://docs.storyraise.com/#site"
@@ -209,7 +209,7 @@
       <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
     </ul>
   </details>
-  <details class="sidenav-group" open>
+  <details class="sidenav-group">
     <summary>Donor Data &amp; CRM</summary>
     <ul>
       <li><a href="/docs/crm-and-data/">Overview</a></li>
@@ -217,7 +217,7 @@
       <li><a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a></li>
       <li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a></li>
       <li><a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a></li>
-      <li><a href="/docs/crm-and-data/data-governance/" class="active" aria-current="page">Data governance and CRM flags</a></li>
+      <li><a href="/docs/crm-and-data/data-governance/">Data governance and CRM flags</a></li>
       <li><a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a></li>
       <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a></li>
       <li><a href="/docs/crm-and-data/connections-overview/">The Connections tab</a></li>
@@ -240,7 +240,7 @@
       <li><a href="/docs/crm-and-data/integrations/mailchimp/">Mailchimp</a></li>
     </ul>
   </details>
-  <details class="sidenav-group">
+  <details class="sidenav-group" open>
     <summary>Account &amp; Settings</summary>
     <ul>
       <li><a href="/docs/account-and-settings/">Overview</a></li>
@@ -253,7 +253,7 @@
       <li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
       <li><a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a></li>
       <li><a href="/docs/account-and-settings/email-compliance/">Email compliance and deliverability</a></li>
-      <li><a href="/docs/account-and-settings/custom-portal-subdomain/">Setting up a custom subdomain for your portal</a></li>
+      <li><a href="/docs/account-and-settings/custom-portal-subdomain/" class="active" aria-current="page">Setting up a custom subdomain for your portal</a></li>
     </ul>
   </details>
   <details class="sidenav-group">
@@ -282,71 +282,86 @@
       <div class="breadcrumb">
         <a href="/">Knowledge Base</a>
     <span>›</span>
-    <a href="/docs/crm-and-data/">Donor Data &amp; CRM</a>
+    <a href="/docs/account-and-settings/">Account &amp; Settings</a>
     <span>›</span>
-    Data governance and CRM flags
+    Setting up a custom subdomain for your portal
       </div>
 
       <!-- CONTENT -->
       <div class="content">
-        <h1>Data governance and CRM flags</h1>
-<p class="lead">Your CRM carries flags that exist to stop things happening — anonymous, do not contact, do not solicit, deceased, opted out. This page is about what happens to them when constituent data reaches Storyraise, and what you have to handle yourself.</p>
-<div class="tip"><p><strong>The short version:</strong> treat every flag as something Storyraise does not act on for you. Storyraise imports the fields you map and does not interpret them as suppression rules. If a constituent must not be contacted or must not be named, that has to be enforced by what you sync and who you send to.</p></div>
-<h2>The flags that matter</h2>
+        <h1>Setting up a custom subdomain for your portal</h1>
+<p class="lead">Host your Storyraise portal at your own web address, such as portal.yourdomain.org, with a few DNS records your IT team adds once.</p>
+<p>A custom subdomain puts your organization&#39;s name in the address bar, so donors land on a site they recognize and trust. We handle the hosting side, and your IT team adds the DNS records we send. Most setups finish within a few hours, and your current portal address keeps working the whole time.</p>
+<div class="tip"><p><strong>Setting up email sending instead?</strong> That uses a different subdomain and a different set of records. See <a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a>.</p></div>
+<h2>Before you start</h2>
+<p>You&#39;ll need:</p>
+<ul>
+<li><strong>Someone who can edit DNS for your domain.</strong> Usually your IT team, or whoever manages your account with your domain provider (GoDaddy, Cloudflare, Network Solutions, and so on).</li>
+<li><strong>The subdomain you want to use.</strong> See step 1.</li>
+</ul>
+<h2>1. Choose a subdomain</h2>
+<p>Pick a subdomain that isn&#39;t in use today. The portal takes over the whole hostname, so anything served there now will stop being reachable.</p>
+<p>Common examples:</p>
+<ul>
+<li><code>portal.yourdomain.org</code></li>
+<li><code>donors.yourdomain.org</code></li>
+<li><code>giving.yourdomain.org</code></li>
+</ul>
+<div class="tip"><p><strong>Tip:</strong> Use a subdomain rather than your main domain (<code>yourdomain.org</code>) or <code>www</code>. Your main website stays exactly where it is.</p></div>
+<h2>2. We&#39;ll send you the DNS records</h2>
+<p>Send us the subdomain you chose. We register it in our system, which generates the records for your domain, and we send them to you. Expect two:</p>
 <table>
 <thead>
 <tr>
-<th>Flag</th>
-<th>What it must prevent</th>
-<th>Where it can go wrong in a report</th>
+<th>Type</th>
+<th>Host</th>
+<th>What it does</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Anonymous</strong></td>
-<td>The donor&#39;s name appearing publicly</td>
-<td>An anonymous donor printed in a <a href="/docs/building-reports/donor-lists/">donor list or honor roll</a></td>
+<td>TXT</td>
+<td>Your subdomain</td>
+<td>Confirms your organization owns the domain</td>
 </tr>
 <tr>
-<td><strong>Do Not Contact / Do Not Solicit</strong></td>
-<td>Outreach reaching them at all</td>
-<td>Their inclusion in an <a href="/docs/distribution-and-engagement/email-distribution/">email</a> or <a href="/docs/distribution-and-engagement/sms-distribution/">SMS</a> recipient list</td>
-</tr>
-<tr>
-<td><strong>Do Not Email</strong></td>
-<td>Email specifically</td>
-<td>Same, for the email channel</td>
-</tr>
-<tr>
-<td><strong>Deceased</strong></td>
-<td>A report addressed to them reaching a household</td>
-<td>A personalized greeting arriving at a bereaved address</td>
-</tr>
-<tr>
-<td><strong>Opted out / unsubscribed</strong></td>
-<td>Further mailings</td>
-<td>Re-adding them by importing a fresh list</td>
+<td>A</td>
+<td>Your subdomain</td>
+<td>Points the subdomain at our system</td>
 </tr>
 </tbody></table>
-<h2>Practical handling</h2>
-<p>Until flag handling is documented as a product behaviour, the reliable pattern is to <strong>filter at the source</strong>:</p>
+<p>The values are unique to your setup. Wait for ours rather than copying values from another article or another customer.</p>
+<h2>3. Add the records</h2>
+<p>In your domain provider:</p>
 <ol>
-<li><strong>Sync a filtered list, not your whole database.</strong> Several integrations sync from a saved list or query — build that list in your CRM with the exclusions already applied, so flagged records never arrive in Storyraise. This is far safer than importing everything and remembering to exclude later.</li>
-<li><strong>Bring the flag across as a field</strong> where you can, so anyone building a report can see it on the constituent record.</li>
-<li><strong>Re-check before every send.</strong> A list synced in March reflects March&#39;s flags. Re-sync before a send, or re-export from your CRM.</li>
-<li><strong>Check donor lists by hand.</strong> A donor list is typed or pasted into a report and is not governed by anything your CRM knows. Someone has to check it against the anonymous flag every time.</li>
-<li><strong>Keep a suppression check in your launch process</strong> rather than relying on any single person&#39;s memory.</li>
+<li><strong>Clear the hostname first.</strong> Delete any existing A, AAAA, or CNAME records on the subdomain. A leftover record sends some visitors to the old destination and blocks the security certificate.</li>
+<li><strong>Add the records exactly as we sent them.</strong> Some providers want the full hostname (<code>portal.yourdomain.org</code>) in the Host field. Others add your domain automatically and want only the first part (<code>portal</code>). If you&#39;re not sure, check how your existing records are entered.</li>
+<li><strong>Turn off proxying for the subdomain.</strong> If you use Cloudflare, set the record to <strong>DNS only</strong> (gray cloud). Other CDNs and web application firewalls need the same exception. Our system has to reach the subdomain directly to issue and renew its certificate.</li>
+<li><strong>Check your CAA records.</strong> CAA records limit which certificate authorities can issue certificates for your domain. If your domain has them, add entries allowing <code>letsencrypt.org</code> and <code>pki.goog</code>. If it has none, skip this step.</li>
 </ol>
-<h2>Deletion at the source</h2>
-<p>If someone is deleted or suppressed in your CRM, confirm what happens to their Storyraise record before you rely on it. Currently the only documented deletion path is at the connection level — disconnecting an integration can permanently delete the collections it synced and any constituents it was the only source for. See <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</p>
-<h2>Sync only what you need</h2>
-<p>The strongest governance control available to you is the mapping step. Fields you don&#39;t sync can&#39;t be exposed, can&#39;t appear in a merge tag, and can&#39;t be seen by a colleague with View access — <a href="/docs/getting-started/user-roles-and-permissions/">access is per area, not per field</a>.</p>
-<p>Before connecting, agree with whoever owns your data which fields have a reason to be in a reporting tool. Capacity ratings, solicitor notes, and giving history often don&#39;t.</p>
+<div class="tip"><p><strong>Good to know:</strong> Leave these records in place for as long as you use the subdomain. Our system checks them every time it renews the certificate, so removing them takes the portal offline.</p></div>
+<h2>4. Verification and certificate</h2>
+<p>Once the records are added, let us know. Our system confirms them and then issues an SSL certificate for your subdomain automatically, so the portal loads securely over <code>https://</code>. There&#39;s no certificate for you to buy, install, or renew.</p>
+<p>DNS changes usually take effect within a few hours. Allow up to 24 hours before troubleshooting.</p>
+<h2>5. Go live</h2>
+<p>When the certificate is active, we switch your portal to the new address. Sign-in emails, invitations, and shared links all start using your subdomain.</p>
+<p>Your original portal address keeps working, so links you&#39;ve already sent don&#39;t break.</p>
+<h2>If people sign in with your organization&#39;s accounts</h2>
+<p>If donors or staff sign in to the portal through your organization&#39;s identity provider (for example Auth0, Okta, or Microsoft Entra ID), that provider has to recognize the new address before sign-in works there.</p>
+<p>We&#39;ll send two URLs for whoever manages your identity provider to add to the same application, alongside the entries already there:</p>
+<ul>
+<li>A <strong>callback URL</strong>, where people return after signing in</li>
+<li>A <strong>logout URL</strong>, where people land after signing out</li>
+</ul>
+<p>Add them before we switch the portal over, so sign-in works the moment the new address goes live.</p>
+<h2>Troubleshooting</h2>
+<p><strong>The subdomain shows the old site, or nothing at all.</strong> DNS changes can take a few hours to reach everyone. If it&#39;s been more than 24 hours, check that no old A, AAAA, or CNAME record is left on the subdomain.</p>
+<p><strong>The browser shows a certificate warning or says the site isn&#39;t secure.</strong> The certificate is usually still being issued. If the warning lasts past 24 hours, check proxying (step 3.3) and CAA records (step 3.4). Those two cause nearly every certificate failure.</p>
+<p><strong>Sign-in works at the old address but fails at the new one.</strong> Your identity provider is missing the new callback URL. See <strong>If people sign in with your organization&#39;s accounts</strong> above.</p>
 <h2>Related</h2>
 <ul>
-<li><a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a> — what a connection does</li>
-<li><a href="/docs/crm-and-data/mapping-fields/">Mapping fields</a> — choosing what comes across</li>
-<li><a href="/docs/resources/security-and-data/">Security and data governance</a> — the wider data picture</li>
-<li><a href="/docs/crm-and-data/managing-connections/">Managing connections</a> — disconnecting and deleting</li>
+<li><a href="/docs/account-and-settings/email-subdomain-setup/">Setting up your email sending subdomain</a></li>
+<li><a href="/docs/account-and-settings/single-sign-on/">Single sign-on (SSO)</a></li>
+<li><a href="/docs/resources/network-requirements/">Network requirements and troubleshooting</a></li>
 </ul>
 
 
