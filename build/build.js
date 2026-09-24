@@ -211,7 +211,7 @@ const SECTIONS = [
     order: [
       'setting-up-your-account', 'organization-settings', 'managing-your-team',
       'single-sign-on', 'profile-and-security', 'managing-your-subscription', 'email-subdomain-setup',
-      'custom-sending-domain', 'email-compliance',
+      'custom-sending-domain', 'email-compliance', 'custom-portal-subdomain',
     ],
   },
   {
