@@ -60,7 +60,14 @@
 
     // ---- The follow-up dialog ----
     function openDialog(name) {
-        var html = template('template[data-dialog="' + name + '"]');
+        /*
+            The dialog is written for the group it was opened from: title, count, group
+            chip, money and the draft sentence all change. Templates are keyed
+            "<tile>|<name>" for that reason. The bare key is the fallback so an older
+            build, captured from one group only, still opens something.
+        */
+        var html = template('template[data-dialog="' + state.tile + '|' + name + '"]');
+        if (html == null) html = template('template[data-dialog="' + name + '"]');
         if (html == null) return;
         closeDialog(true);
         focusBeforeDialog = doc.activeElement;
@@ -120,6 +127,7 @@
         }
         var backdrop = ev.target.closest('[data-dialog-backdrop]');
         if (backdrop && ev.target === backdrop) { closeDialog(); return; }
+        if (ev.target.closest('[data-dialog-close]')) { ev.preventDefault(); closeDialog(); return; }
         var route = ev.target.closest('[data-sr-route]');
         if (route) { ev.preventDefault(); setRoute(route.getAttribute('data-sr-route')); return; }
         var openDlg = ev.target.closest('[data-open-dialog]');

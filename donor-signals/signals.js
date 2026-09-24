@@ -123,7 +123,7 @@
         queue.forEach(function (fn) { fn(); });
     }
 
-    fetch('annotations.json').then(function (r) { return r.json(); }).then(function (data) {
+    fetch('annotations.json?v=2').then(function (r) { return r.json(); }).then(function (data) {
         stops = data.stops;
         flushReady();
     });
@@ -140,6 +140,22 @@
             reposition();
         });
         win.document.addEventListener('keydown', onKey);
+        /*
+            The page scrolls inside the iframe, and every marker, the spotlight and the
+            popover are positioned from getBoundingClientRect, which moves with it. Without
+            this they only followed a state change, so scrolling slid the page out from
+            under them. Capture, because scroll does not bubble: this catches the document
+            and any inner scroller. One reposition per frame at most.
+        */
+        var pending = false;
+        win.addEventListener('scroll', function () {
+            if (pending) return;
+            pending = true;
+            (win.requestAnimationFrame || window.requestAnimationFrame)(function () {
+                pending = false;
+                reposition();
+            });
+        }, true);
         layout();
         flushReady();
     }
@@ -184,6 +200,8 @@
 
     function placeSpotlight(rect) {
         if (!rect) { spotlight.hidden = true; return; }
+        // Scrolled out of the frame: hide it rather than pin it to an edge.
+        if (rect.top > viewport.clientHeight - 8 || rect.top + rect.height < 8) { spotlight.hidden = true; return; }
         var pad = 6;
         spotlight.hidden = false;
         spotlight.style.width = (rect.width + pad * 2) + 'px';
@@ -265,10 +283,20 @@
                 button.hidden = true;
                 return;
             }
-            button.hidden = false;
             var point = markerPoint(stops[i], rect);
             var x = Math.max(6, Math.min(vw - 34, point.x));
             var y = Math.max(6, Math.min(vh - 34, point.y));
+            /*
+                Clamping keeps a marker on screen, which is right for a few pixels and
+                wrong for a hundred: once its anchor has scrolled well past the edge the
+                marker sits over unrelated content and appears to label it. Hide it
+                instead when the clamp has had to move it more than its own width.
+            */
+            if (Math.abs(x - point.x) > 28 || Math.abs(y - point.y) > 28) {
+                button.hidden = true;
+                return;
+            }
+            button.hidden = false;
             button.style.transform = 'translate(' + x + 'px,' + y + 'px)';
             button.classList.toggle('is-current', current !== -1 && stops[current].id === button.getAttribute('data-stop') && !popover.hidden);
         });

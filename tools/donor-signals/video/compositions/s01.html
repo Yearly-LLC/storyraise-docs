@@ -9,7 +9,13 @@
           position: absolute; left: 0; width: 1920px; text-align: center;
           font: 400 78px/1.2 "PPFragment TextRegular", serif; color: #ffffff;
           opacity: 0; visibility: hidden;
+          /* Even the two lines rather than leaving one word stranded on the second. */
+          text-wrap: balance; max-width: 1400px; margin: 0 auto; right: 0;
         }
+        /*
+            Both lines are a single line now, so they share a top and the cross-fade
+            between them does not move.
+        */
         #s01-l1 { top: 400px; }
         #s01-l2 { top: 400px; }
         .faces { position: absolute; left: 50%; top: 620px; transform: translateX(-50%); display: flex; gap: 26px; }
@@ -36,7 +42,13 @@
       </style>
 
       <div id="root" data-composition-id="s01" data-width="1920" data-height="1080">
-        <div class="line" id="s01-l1">Some of your donors need to hear from you this week.</div>
+        <!--
+            The card sets up what the voice argues, it does not repeat it. The voice
+            opens "Your donor database knows who gave. It cannot tell you who is about
+            to stop", so the card shows the file, then the question, while the dots fill
+            in and two of them light.
+        -->
+        <div class="line" id="s01-l1">Every name in your database.</div>
         <div class="line" id="s01-l2">Which ones?</div>
         <div class="faces" id="s01-faces">
           <i class="face"></i><i class="face"></i><i class="face lit"></i><i class="face"></i>
@@ -45,7 +57,7 @@
         <div class="brand" id="s01-brand">
           <img class="brand-logo" id="s01-logo" src="assets/logo-icon.svg" alt="" />
           <p class="sr-display brand-title" id="s01-title">Donor <span class="sr-accent">Signals</span></p>
-          <p class="brand-sub" id="s01-sub">Everyone you have, scored every day.</p>
+          <p class="brand-sub" id="s01-sub">Scored overnight, every day.</p>
           <div class="brand-pills" id="s01-pills">
             <span class="sr-pill">Who needs you</span>
             <span class="sr-pill">Why now</span>

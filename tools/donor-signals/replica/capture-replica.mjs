@@ -122,24 +122,40 @@ for (const tile of TILES) {
     await page.locator('section[data-signals] .sig-block').first().screenshot({ path: path.join(SHOTS, `tile-${tile}.png`) });
 }
 
-// ---- The follow-up dialog, one shot per route ----
-await setState('new_gifts', 'feed');
+/*
+    The follow-up dialog, one shot per route FOR EVERY GROUP. The dialog is written
+    for the group you opened it from: its title, its count, its group chip, its money
+    and its draft sentence all change. Capturing it once from New gifts left the demo
+    showing "17 donors / New gifts / $4,050 received" whatever you had selected, which
+    broke the moment the tour calls the point of the page.
+*/
 const dialogs = {};
-for (const [kind, source] of [['report', 'ai'], ['report', 'template'], ['report', 'existing'], ['video', null]]) {
-    await page.evaluate(async ({ kind, source }) => {
-        const vm = document.querySelector('#dashboard').__vue__;
-        vm.signals.followup.open = false;
-        vm.open_signal_followup(kind, vm.today_candidates, vm.today_group_name);
-        if (source) vm.signals.followup.source = source;
-        await vm.$nextTick();
-    }, { kind, source });
-    await page.waitForTimeout(500);
-    const name = source ? `${kind}-${source}` : kind;
-    dialogs[name] = await page.evaluate(() => {
-        const el = document.querySelector('.sig-modal-backdrop');
-        return el ? el.outerHTML : null;
-    });
-    await page.locator('.sig-modal').screenshot({ path: path.join(SHOTS, `dialog-${name}.png`) });
+for (const tile of TILES) {
+    await setState(tile, 'feed');
+    for (const [kind, source] of [['report', 'ai'], ['report', 'template'], ['report', 'existing'], ['video', null]]) {
+        await page.evaluate(async ({ kind, source }) => {
+            const vm = document.querySelector('#dashboard').__vue__;
+            vm.signals.followup.open = false;
+            vm.open_signal_followup(kind, vm.today_candidates, vm.today_group_name);
+            if (source) vm.signals.followup.source = source;
+            await vm.$nextTick();
+        }, { kind, source });
+        await page.waitForTimeout(500);
+        const name = source ? `${kind}-${source}` : kind;
+        dialogs[`${tile}|${name}`] = await page.evaluate(() => {
+            const el = document.querySelector('.sig-modal-backdrop');
+            return el ? el.outerHTML : null;
+        });
+        if (tile === 'new_gifts') {
+            await page.locator('.sig-modal').screenshot({ path: path.join(SHOTS, `dialog-${name}.png`) });
+        }
+        await page.evaluate(async () => {
+            const vm = document.querySelector('#dashboard').__vue__;
+            vm.signals.followup.open = false;
+            await vm.$nextTick();
+        });
+        await page.waitForTimeout(150);
+    }
 }
 await page.evaluate(async () => {
     const vm = document.querySelector('#dashboard').__vue__;

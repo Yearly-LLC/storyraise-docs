@@ -43,7 +43,7 @@ for (const href of hrefs) {
 }
 
 // 3. House style on our prose
-const BRITISH = /\b(organisation|organise|colour|behaviour|analyse|centre|favourite|personalised|recognised|programme|licence|catalogue|travelling|cancelled)s?\b/i;
+const BRITISH = /\b(organisation|organise|colour|behaviour|analyse|centre|favourite|personalised|recognised|programme|licence|catalogue|travelling|cancelled|fortnight|whilst|amongst|towards|maths|cheque)s?\b/i;
 const prose = [];
 for (const stop of annotations.stops) {
     for (const field of ['title', 'tells', 'why', 'next']) prose.push([`annotations ${stop.id}.${field}`, stop[field]]);

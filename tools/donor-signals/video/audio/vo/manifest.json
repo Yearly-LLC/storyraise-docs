@@ -1,28 +1,28 @@
 {
   "s01": {
-    "base": "s01.2d8aaaf1b4",
-    "mp3": "s01.2d8aaaf1b4.mp3",
-    "alignment": "s01.2d8aaaf1b4.alignment.json"
+    "base": "s01.a71a890f19",
+    "mp3": "s01.a71a890f19.mp3",
+    "alignment": "s01.a71a890f19.alignment.json"
   },
   "s02": {
-    "base": "s02.2fca547503",
-    "mp3": "s02.2fca547503.mp3",
-    "alignment": "s02.2fca547503.alignment.json"
+    "base": "s02.eb214ba87a",
+    "mp3": "s02.eb214ba87a.mp3",
+    "alignment": "s02.eb214ba87a.alignment.json"
   },
   "s03": {
-    "base": "s03.c97db1499d",
-    "mp3": "s03.c97db1499d.mp3",
-    "alignment": "s03.c97db1499d.alignment.json"
+    "base": "s03.bdd6d5f759",
+    "mp3": "s03.bdd6d5f759.mp3",
+    "alignment": "s03.bdd6d5f759.alignment.json"
   },
   "s04": {
-    "base": "s04.1969aef14f",
-    "mp3": "s04.1969aef14f.mp3",
-    "alignment": "s04.1969aef14f.alignment.json"
+    "base": "s04.b45dcf1e41",
+    "mp3": "s04.b45dcf1e41.mp3",
+    "alignment": "s04.b45dcf1e41.alignment.json"
   },
   "s05": {
-    "base": "s05.27bb8d856e",
-    "mp3": "s05.27bb8d856e.mp3",
-    "alignment": "s05.27bb8d856e.alignment.json"
+    "base": "s05.5a5b5382cb",
+    "mp3": "s05.5a5b5382cb.mp3",
+    "alignment": "s05.5a5b5382cb.alignment.json"
   },
   "s06": {
     "base": "s06.e26b7f3d43",
@@ -30,23 +30,23 @@
     "alignment": "s06.e26b7f3d43.alignment.json"
   },
   "s07": {
-    "base": "s07.ed1ef2d772",
-    "mp3": "s07.ed1ef2d772.mp3",
-    "alignment": "s07.ed1ef2d772.alignment.json"
+    "base": "s07.f0c1507b6d",
+    "mp3": "s07.f0c1507b6d.mp3",
+    "alignment": "s07.f0c1507b6d.alignment.json"
   },
   "s08": {
-    "base": "s08.1867b4fe2f",
-    "mp3": "s08.1867b4fe2f.mp3",
-    "alignment": "s08.1867b4fe2f.alignment.json"
+    "base": "s08.43ac08abbf",
+    "mp3": "s08.43ac08abbf.mp3",
+    "alignment": "s08.43ac08abbf.alignment.json"
   },
   "s09": {
-    "base": "s09.0476cc07c7",
-    "mp3": "s09.0476cc07c7.mp3",
-    "alignment": "s09.0476cc07c7.alignment.json"
+    "base": "s09.d0c08a8316",
+    "mp3": "s09.d0c08a8316.mp3",
+    "alignment": "s09.d0c08a8316.alignment.json"
   },
   "s10": {
-    "base": "s10.d5c4f1ffdc",
-    "mp3": "s10.d5c4f1ffdc.mp3",
-    "alignment": "s10.d5c4f1ffdc.alignment.json"
+    "base": "s10.9f4ab562c0",
+    "mp3": "s10.9f4ab562c0.mp3",
+    "alignment": "s10.9f4ab562c0.alignment.json"
   }
 }

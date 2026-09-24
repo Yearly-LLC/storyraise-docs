@@ -38,7 +38,14 @@ fs.mkdirSync(path.join(DEMO, 'img'), { recursive: true });
 const allHtml = [capture.dashboardHtml, ...Object.values(capture.states), ...Object.values(capture.dialogs).filter(Boolean)].join('');
 const coverUrls = new Set([
     ...capture.covers,
-    ...[...allHtml.matchAll(/https:\/\/firebasestorage\.googleapis\.com\/[^"'\s>]+/g)].map((m) => m[0].replace(/&amp;/g, '&')),
+    /*
+        Covers arrive two ways: `src="https://..."` on an <img>, and
+        `background-image: url(&quot;https://...&quot;)` in an inline style. Stopping
+        only at a quote or a space swallowed the `&quot;)` that closes the second form,
+        so those URLs were keyed with junk on the end, never matched, and shipped live.
+    */
+    ...[...allHtml.matchAll(/https:\/\/firebasestorage\.googleapis\.com\/[^"'\s>)]+/g)]
+        .map((m) => m[0].replace(/&quot;$/, '').replace(/&amp;/g, '&')),
 ]);
 const coverMap = {};
 for (const url of coverUrls) {
@@ -104,6 +111,10 @@ const transformed = await page.evaluate(() => {
         scope.querySelectorAll('.sig-feed-row .btn, .sig-td-action button, .sig-cols button, .sig-wide, [data-signals] input[type=search]')
             .forEach((el) => el.setAttribute('data-inert', ''));
         scope.querySelectorAll('.sig-clear').forEach((a) => { a.setAttribute('data-inert', ''); a.removeAttribute('href'); });
+        scope.querySelectorAll('input[type="search"], input[type="text"], .sig-search input').forEach((i) => {
+            i.setAttribute('readonly', '');
+            i.setAttribute('data-inert', '');
+        });
     });
 
     // Dialog routes switch inside the dialog; the primary button is inert.
@@ -120,7 +131,11 @@ const transformed = await page.evaluate(() => {
             b.setAttribute('data-sr-route', src);
         });
         t.content.querySelectorAll('.sig-modal-actions .btn, .sig-modal button').forEach((b) => {
-            if (!b.hasAttribute('data-sr-route')) b.setAttribute('data-inert', '');
+            if (b.hasAttribute('data-sr-route')) return;
+            // Cancel is the first thing anyone reaches for, so it closes rather than
+            // shrugging. The button that would create something stays inert.
+            if (/^\s*cancel\s*$/i.test(b.textContent || '')) b.setAttribute('data-dialog-close', '');
+            else b.setAttribute('data-inert', '');
         });
         const back = t.content.querySelector('.sig-modal-backdrop');
         if (back) back.setAttribute('data-dialog-backdrop', '');

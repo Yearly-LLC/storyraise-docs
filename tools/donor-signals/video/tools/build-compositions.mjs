@@ -88,7 +88,6 @@ const VH = WIN.height - WIN.bar;
 const PAGE_W = targets.width;
 const A = targets.states.new_gifts;
 const R = targets.states.at_risk;
-const T = targets.states.at_risk_table;
 const D = targets.dialog;
 const BASE = VW / PAGE_W;
 
@@ -122,10 +121,9 @@ const shots = [
     { t: cue('s04', 'sorted') - 0.3, to: frame(R.firstRow, { fill: 0.78, max: 2.2, pad: 14 }) },
     { t: cue('s05', 'reason') - 0.3, to: frame(R.firstRow, { fill: 0.72, max: 2.4, pad: 10 }) },
     { t: cue('s05', 'moat') - 0.3, to: frame(R.list, { fill: 0.92, max: 1.5, anchorY: 0.4 }) },
-    { t: cue('s06', 'views') - 0.3, to: frame(R.bar, { fill: 0.8, max: 2.2, pad: 12 }) },
-    { t: cue('s06', 'table') - 0.3, to: frame(union(T.bar, T.list), { fill: 0.9, max: 1.5, anchorY: 0.4 }) },
     { t: cue('s07', 'actions') - 0.35, to: frame(A.actions, { fill: 0.94, max: 1.7 }) },
     { t: cue('s07', 'cards') - 0.3, to: frame(A.actionLead, { fill: 0.86, max: 2.0, pad: 10 }) },
+    { t: cue('s07', 'report') - 0.3, to: frame(A.actionOther, { fill: 0.86, max: 2.0, pad: 10 }) },
     { t: cue('s09', 'health') - 0.35, to: frame(A.health, { fill: 0.95, max: 1.4 }) },
     { t: cue('s09', 'bands') - 0.3, to: frame(A.healthBands, { fill: 0.92, max: 1.8 }) },
 ].map((s) => ({ ...s, t: round(s.t, 3), dur: 1 }));
@@ -138,8 +136,7 @@ for (let i = 0; i < shots.length - 1; i++) {
 // Which page state is on screen when. Cross-faded, never swapped.
 const states = [
     { id: 'ui-state-new_gifts', on: hosts.ui.start - 0.2, off: cue('s04', 'atrisk') - 0.45 },
-    { id: 'ui-state-at_risk', on: cue('s04', 'atrisk') - 0.5, off: cue('s06', 'table') - 0.45 },
-    { id: 'ui-state-at_risk_table', on: cue('s06', 'table') - 0.5, off: cue('s07', 'actions') - 0.45 },
+    { id: 'ui-state-at_risk', on: cue('s04', 'atrisk') - 0.5, off: cue('s07', 'actions') - 0.45 },
     { id: 'ui-state-new_gifts-2', on: cue('s07', 'actions') - 0.5, off: hosts.ui.end },
 ].map((s) => ({ ...s, on: round(Math.max(hosts.ui.start - 0.2, s.on), 3), off: round(s.off, 3) }));
 
@@ -148,37 +145,56 @@ const dialog = { on: round(cue('s08', 'dialog') - 0.25, 3), off: round(end('s08'
 
 const RING_PAD = 8;
 const ring = (id, rect, on, off) => ({ id, on: round(on, 3), off: round(off, 3), rect: { x: rect.x - RING_PAD, y: rect.y - RING_PAD, w: rect.w + RING_PAD * 2, h: rect.h + RING_PAD * 2 } });
+/*
+    One ring per claim. The first cut ran the ring for under a third of the product
+    footage, with gaps of ten to twenty-four seconds over the strongest lines, so the
+    viewer was being told where to look and not shown. Every sentence that names
+    something on the page now points at it.
+*/
 const rings = [
+    ring('ring-retention', A.stripRetention, cue('s02', 'retention'), cue('s02', 'fytd') - 0.1),
     ring('ring-fytd', A.stripFytd, cue('s02', 'fytd'), cue('s02', 'firstyear') - 0.1),
+    ring('ring-firstyear', A.stripFirstYear, cue('s02', 'firstyear'), cue('s03', 'tiles') - 0.3),
     ring('ring-money', A.tileMoney, cue('s03', 'money'), cue('s04', 'atrisk') - 0.4),
     ring('ring-atrisk-tile', R.tileAtRisk, cue('s04', 'atrisk'), cue('s04', 'cadence') - 0.15),
-    ring('ring-first-row', R.firstRow, cue('s04', 'sorted'), cue('s05', 'reads') - 0.1),
-    ring('ring-actions', A.actionLead, cue('s07', 'cards'), end('s07') - 0.2),
+    ring('ring-first-row', R.firstRow, cue('s04', 'sorted'), cue('s05', 'reason') - 0.1),
+    // The why-now sentence, then the line under it: what they gave and whether they read you.
+    ring('ring-why', R.firstRowWhy, cue('s05', 'reason'), cue('s05', 'reads') - 0.1),
+    ring('ring-reads', R.firstRowSub, cue('s05', 'reads'), cue('s05', 'moat') - 0.15),
+    ring('ring-actions', A.actionLead, cue('s07', 'cards'), cue('s07', 'report') - 0.15),
+    // Follows the narration onto the second card, so the dialog that opens next matches.
+    ring('ring-report', A.actionOther, cue('s07', 'report'), end('s07') - 0.15),
+    ring('ring-bands', A.healthBands, cue('s09', 'bands'), end('s09') - 0.4),
 ];
 
-// Short on-screen names, in the product's own words.
+/*
+    A label earns its place by saying something the frame does not. Half of the first
+    cut's labels repeated a heading that was legible in the same frame ("Fiscal year to
+    date" under FISCAL YEAR TO DATE), which reads as a rendering fault rather than a
+    caption. These ask the question the number answers instead.
+*/
 const labelCues = [
-    ['Donor retention', cue('s02', 'retention')],
-    ['Fiscal year to date', cue('s02', 'fytd')],
-    ['First-year donors kept', cue('s02', 'firstyear')],
+    ['Did last year\u2019s donors come back?', cue('s02', 'retention')],
+    ['Ahead or behind?', cue('s02', 'fytd')],
+    ['Did the new ones stay?', cue('s02', 'firstyear')],
     ['Six groups', cue('s03', 'tiles')],
     ['What is at stake', cue('s03', 'money')],
-    ['At risk', cue('s04', 'atrisk')],
+    ['The group to open first', cue('s04', 'atrisk')],
     ['Measured against their own rhythm', cue('s04', 'cadence')],
     ['Why this person, now', cue('s05', 'row')],
     ['They stopped giving. They still read you.', cue('s05', 'moat')],
-    ['Overview or Table', cue('s06', 'views')],
-    ['Make something for them', cue('s07', 'actions')],
+    ['Two things, already written', cue('s07', 'actions')],
     ['Three ways to make it', cue('s08', 'routes')],
-    ['Giving health', cue('s09', 'health')],
-    ['Retention by gift size', cue('s09', 'bands')],
+    ['The monthly view', cue('s09', 'health')],
+    ['Where the money stays', cue('s09', 'bands')],
 ];
-const labels = labelCues.map(([text, on], i) => ({
-    id: `label-${i}`,
-    text,
-    on: round(on, 3),
-    off: round(i < labelCues.length - 1 ? labelCues[i + 1][1] - 0.05 : end('s09') - 0.3, 3),
-}));
+// A label retires with its beat. Left to run until the next cue they averaged nine
+// seconds and outlived their sentence by several, so they read as stuck.
+const LABEL_MAX = 4.5;
+const labels = labelCues.map(([text, on], i) => {
+    const next = i < labelCues.length - 1 ? labelCues[i + 1][1] - 0.05 : end('s09') - 0.3;
+    return { id: `label-${i}`, text, on: round(on, 3), off: round(Math.min(next, on + LABEL_MAX), 3) };
+});
 
 const ui = {
     start: hosts.ui.start,
@@ -234,10 +250,9 @@ const built = await page.evaluate(({ wantStates, wantDialog }) => {
     wantStates: [
         ['ui-state-new_gifts', 'new_gifts|feed'],
         ['ui-state-at_risk', 'at_risk|feed'],
-        ['ui-state-at_risk_table', 'at_risk|table'],
         ['ui-state-new_gifts-2', 'new_gifts|feed'],
     ],
-    wantDialog: 'report-ai',
+    wantDialog: 'new_gifts|report-ai',
 });
 await browser.close();
 

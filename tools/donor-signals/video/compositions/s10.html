@@ -5,7 +5,8 @@
     <template id="s10-template">
       <style>
         #root { position: absolute; inset: 0; overflow: hidden; }
-        .wrap { position: absolute; left: 0; top: 370px; width: 1920px; text-align: center; opacity: 0; visibility: hidden; }
+        .outro-logo { display: block; width: 96px; height: 96px; margin: 0 auto 28px; }
+        .wrap { position: absolute; left: 0; top: 330px; width: 1920px; text-align: center; opacity: 0; visibility: hidden; }
         .wrap img { height: 64px; }
         .wrap h2 { margin: 34px 0 0; font: 400 76px/1.15 "PPFragment TextRegular", serif; color: #ffffff; }
         .wrap p { margin: 24px 0 0; font: 500 32px/1.5 "Poppins", sans-serif; color: rgba(255,255,255,0.68); }
@@ -17,7 +18,11 @@
 
       <div id="root" data-composition-id="s10" data-width="1920" data-height="1080">
         <div class="wrap" id="s10-wrap">
-          <img src="assets/logo-wordmark-dark.svg" alt="" />
+          <!--
+              The icon, not the wordmark: logo-wordmark-dark.svg lays out wider than the
+              stage and its left edge was being cut flat at x=0. Same trap the title card hit.
+          -->
+          <img class="outro-logo" src="assets/logo-icon.svg" alt="" />
           <h2>See what your own week looks like</h2>
           <p>The demo below is the real page, with sample data.</p>
           <span class="pill">Try it on this page</span>

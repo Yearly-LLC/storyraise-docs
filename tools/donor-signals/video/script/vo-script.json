@@ -1,66 +1,67 @@
 {
-  "_about": "Narration for the Storyraise Donor Signals walkthrough. `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. `respell` maps a caption word to how the voice should say it (applied to the TTS text only). Every figure is read from fixtures/donor-signals.json, the frozen wrenfield-demo payload. Labels match the product UI. American English, no em dashes.",
+  "_about": "Narration for the Storyraise Donor Signals walkthrough. `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. `respell` maps a caption word to how the voice should say it (applied to the TTS text only). This is an overview, not a reading of the screen: the page's own sentences stay on the page. Labels match the product UI. American English, no em dashes.",
   "respell": {},
   "scenes": [
     {
       "id": "s01",
       "title": "Cold open",
       "minDuration": 8,
-      "text": "You know some of your donors need to hear from you this week. [[cue:question]]The hard part is knowing which ones. [[cue:brand]]Donor Signals scores everyone you have, every day."
+      "text": "Your donor database knows who gave. [[cue:question]]It cannot tell you who is about to stop. [[cue:brand]]Donor Signals scores every donor you have, overnight, and tells you who to call first."
     },
     {
       "id": "s02",
       "title": "How the year is going",
       "minDuration": 13,
-      "text": "[[cue:strip]]It opens with three numbers. [[cue:retention]]How many of last year's donors came back. [[cue:fytd]]What you have raised this year, with the donor count beside it, so a good year on a shrinking list says so. [[cue:firstyear]]And how many first-time donors gave again."
+      "text": "[[cue:strip]]It starts where your board starts. [[cue:retention]]Did last year's donors come back, [[cue:fytd]]is the money ahead or behind, [[cue:firstyear]]and did the new ones stay. Each one carries what it should be measured against, so you can tell a good year from a lucky one."
     },
     {
       "id": "s03",
       "title": "Six groups",
       "minDuration": 13,
-      "text": "[[cue:tiles]]Then six groups. Every donor sits in one. [[cue:money]]And under every count is what is at stake, so seventeen new gifts worth four thousand dollars does not look the same as seventy-one donors slipping away with seventy-one thousand behind them."
+      "text": "[[cue:tiles]]Under that, your whole file sorted by what each donor needs next. [[cue:money]]With the money at stake on every group, so you can see where an hour of your week is worth the most."
     },
     {
       "id": "s04",
       "title": "At risk, their own rhythm",
       "minDuration": 14,
-      "text": "[[cue:atrisk]]At risk is the one most tools get wrong. [[cue:cadence]]Storyraise measures each donor against their own rhythm. A monthly donor who has missed three gifts is late. An annual donor who gave in November is not. [[cue:sorted]]And the list leads with the money."
+      "text": "[[cue:atrisk]]At risk is where most tools get it wrong. [[cue:cadence]]They pick a number of days and call everyone past it lapsed. Storyraise measures each donor against their own rhythm. A monthly donor who has missed three gifts is late. An annual donor who gave in November is not. [[cue:sorted]]And the list leads with the most at stake."
     },
     {
       "id": "s05",
       "title": "Why now",
       "minDuration": 14,
-      "text": "[[cue:row]]Every row says why this person, now. [[cue:reason]]No gift in four months, and they usually give every two. [[cue:reads]]Then what you already know: what they have given, and whether they read what you send. [[cue:moat]]Thirty-four of these seventy-one stopped giving and still open your reports."
+      "text": "[[cue:row]]Every donor comes with the reason they are in front of you, [[cue:reason]]in a sentence, not a score you have to decode. [[cue:reads]]And because Storyraise publishes your reports, it knows something your database does not: [[cue:moat]]who is still reading you after they stopped giving. Those are the ones you can win back."
     },
     {
       "id": "s06",
       "title": "Read it or compare it",
       "minDuration": 8,
-      "text": "[[cue:views]]Overview reads as a list of people. [[cue:table]]Table puts the same donors in a grid you can sort. Whichever you use is remembered."
+      "text": "[[cue:views]]Overview reads as a list of people. [[cue:table]]Table puts the same donors in a grid you can sort. Whichever you use is remembered.",
+      "enabled": false
     },
     {
       "id": "s07",
       "title": "Make something",
       "minDuration": 13,
-      "text": "[[cue:actions]]Then the part that is the point. [[cue:cards]]Two things you can make for the group in front of you, written for that group. Record one thank-you for everyone who just gave, or put together a report showing what the money is doing."
+      "text": "[[cue:actions]]Then the part that makes this worth your morning. [[cue:cards]]Every group comes with two things you can make for it, already written for that moment. Record one video for everyone who just gave, [[cue:report]]or build a report that shows them what their money did."
     },
     {
       "id": "s08",
       "title": "Three routes",
       "minDuration": 13,
-      "text": "[[cue:dialog]]Open one and you pick how to make it. [[cue:routes]]A draft written for this group, a template, or a report you have already published. [[cue:carry]]Storyraise saves the group as a list and opens Send, and each donor gets their own personalized link."
+      "text": "[[cue:dialog]]Open one and half the work is done. [[cue:routes]]Start from a draft written for this group, a template, or a report you have already published. [[cue:carry]]The group comes with you, and each donor gets a page with their own name on it."
     },
     {
       "id": "s09",
       "title": "Giving health",
       "minDuration": 12,
-      "text": "[[cue:health]]Further down, the year in full. [[cue:bands]]Retention by gift size is the table that changes plans. Donors under a hundred dollars come back a third of the time. Donors over a thousand come back nearly nine times in ten."
+      "text": "[[cue:health]]And once a month, the longer view. [[cue:bands]]Retention by gift size is the one that changes plans. Your smallest donors come back about a third of the time. Donors giving in the thousands come back nearly nine times in ten. That is where next year's plan comes from."
     },
     {
       "id": "s10",
       "title": "Explore",
       "minDuration": 7,
-      "text": "[[cue:cta]]The demo below is the real page with sample data. Click through the groups and see what your own week would look like."
+      "text": "[[cue:cta]]All of this comes out of the donor data you already have. Give it one morning, and find out who has been waiting to hear from you."
     }
   ]
 }
