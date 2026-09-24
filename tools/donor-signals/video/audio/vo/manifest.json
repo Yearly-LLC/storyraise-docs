@@ -1,8 +1,8 @@
 {
   "s01": {
-    "base": "s01.a71a890f19",
-    "mp3": "s01.a71a890f19.mp3",
-    "alignment": "s01.a71a890f19.alignment.json"
+    "base": "s01.e561a50cbf",
+    "mp3": "s01.e561a50cbf.mp3",
+    "alignment": "s01.e561a50cbf.alignment.json"
   },
   "s02": {
     "base": "s02.eb214ba87a",
@@ -30,9 +30,9 @@
     "alignment": "s06.e26b7f3d43.alignment.json"
   },
   "s07": {
-    "base": "s07.f0c1507b6d",
-    "mp3": "s07.f0c1507b6d.mp3",
-    "alignment": "s07.f0c1507b6d.alignment.json"
+    "base": "s07.d56febe1a7",
+    "mp3": "s07.d56febe1a7.mp3",
+    "alignment": "s07.d56febe1a7.alignment.json"
   },
   "s08": {
     "base": "s08.43ac08abbf",

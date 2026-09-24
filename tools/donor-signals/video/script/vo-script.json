@@ -6,7 +6,7 @@
       "id": "s01",
       "title": "Cold open",
       "minDuration": 8,
-      "text": "Your donor database knows who gave. [[cue:question]]It cannot tell you who is about to stop. [[cue:brand]]Donor Signals scores every donor you have, overnight, and tells you who to call first."
+      "text": "Your donor database knows who gave. [[cue:question]]It cannot tell you who is about to stop. [[cue:brand]]Donor Signals scores every donor you have, overnight. It tells you who to call first."
     },
     {
       "id": "s02",
@@ -43,7 +43,7 @@
       "id": "s07",
       "title": "Make something",
       "minDuration": 13,
-      "text": "[[cue:actions]]Then the part that makes this worth your morning. [[cue:cards]]Every group comes with two things you can make for it, already written for that moment. Record one video for everyone who just gave, [[cue:report]]or build a report that shows them what their money did."
+      "text": "[[cue:actions]]Then the part that makes this worth your morning. [[cue:cards]]Every group comes with two things you can make for them, already written for that moment. Record one video for everyone who just gave, [[cue:report]]or build a report that shows them what their money did."
     },
     {
       "id": "s08",

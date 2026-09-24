@@ -22,7 +22,13 @@
     var f = s.fade || 0.4;
     tl.set('#' + s.id, { opacity: 0 }, 0);
     tl.to('#' + s.id, { opacity: 1, duration: f, ease: 'power1.inOut' }, L(s.on));
-    tl.to('#' + s.id, { opacity: 0, duration: f, ease: 'power1.inOut' }, Math.max(L(s.on) + f + 0.1, L(s.off)));
+    if (s.hiddenAt != null) {
+      // Fully covered by the layer above, so drop it in one frame. Fading it out here
+      // instead would uncover the stage mid-transition and flash.
+      tl.set('#' + s.id, { opacity: 0 }, L(s.hiddenAt));
+    } else {
+      tl.to('#' + s.id, { opacity: 0, duration: f, ease: 'power1.inOut' }, Math.max(L(s.on) + f + 0.1, L(s.off)));
+    }
   });
 
   // Camera: shots are pre-computed transforms of the 1200px page.
@@ -41,6 +47,92 @@
   P.labels.forEach(function (l) {
     tl.fromTo('#' + l.id, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power3.out' }, L(l.on));
     tl.to('#' + l.id, { autoAlpha: 0, y: -10, duration: 0.25, ease: 'power1.in' }, Math.max(L(l.on) + 0.45, L(l.off) - 0.25));
+  });
+
+  /*
+    Counting numbers and filling bars.
+
+    Every tween is driven from the timeline, never from a timer, so seeking to any
+    frame recomputes the right value and the render stays deterministic. The final text
+    is read out of the DOM first and put back verbatim at the end, so whatever the
+    product rendered is what the viewer is left looking at.
+  */
+  function parseNumber(text) {
+    var m = String(text).match(/^(\D*?)([\d,]+(?:\.\d+)?)(\D*)$/);
+    if (!m) return null;
+    var digits = m[2];
+    return {
+      prefix: m[1],
+      suffix: m[3],
+      value: parseFloat(digits.replace(/,/g, '')),
+      decimals: (digits.split('.')[1] || '').length,
+      grouped: digits.indexOf(',') !== -1,
+    };
+  }
+
+  function render(n, v) {
+    var body = v.toFixed(n.decimals);
+    if (n.grouped) {
+      var parts = body.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      body = parts.join('.');
+    }
+    return n.prefix + body + n.suffix;
+  }
+
+  function countText(node, at, dur) {
+    var n = parseNumber(node.textContent.trim());
+    if (!n || !isFinite(n.value)) return;
+    var final = node.textContent;
+    var box = { v: 0 };
+    /*
+      Hold the node at zero from the first frame until its moment. Without this the
+      number reads its final value until the tween starts and then snaps back to zero
+      to count, which is worse than not animating it at all.
+    */
+    if (at > 0) {
+      tl.fromTo(box, { v: 0 }, {
+        v: 0,
+        duration: at,
+        ease: 'none',
+        onUpdate: function () { node.textContent = render(n, 0); },
+      }, 0);
+    }
+    tl.to(box, {
+      v: n.value,
+      duration: dur,
+      ease: 'power2.out',
+      onUpdate: function () { node.textContent = render(n, box.v); },
+      onComplete: function () { node.textContent = final; },
+      onReverseComplete: function () { node.textContent = render(n, 0); },
+    }, at);
+  }
+
+  (P.counts || []).forEach(function (c) {
+    var scope = document.getElementById(c.scope);
+    if (!scope) return;
+    Array.prototype.forEach.call(scope.querySelectorAll(c.sel), function (el, i) {
+      var at = L(c.at) + i * (c.stagger || 0);
+      if (!c.bars) { countText(el, at, c.dur); return; }
+      /*
+        A band cell is `<i class="sig-band-bar"><b style="width:NN%"></b></i>34.5%`.
+        The bar grows from nothing and the rate beside it counts with it, so the two
+        finish together.
+      */
+      var bar = el.querySelector('.sig-band-bar b');
+      if (bar) {
+        var width = bar.style.width;
+        tl.fromTo(bar, { width: '0%' }, { width: width, duration: c.dur, ease: 'power2.out' }, at);
+      }
+      Array.prototype.forEach.call(el.childNodes, function (node) {
+        if (node.nodeType === 3 && parseNumber(node.textContent.trim())) {
+          var holder = document.createElement('span');
+          holder.textContent = node.textContent;
+          node.parentNode.replaceChild(holder, node);
+          countText(holder, at, c.dur);
+        }
+      });
+    });
   });
 
   // The follow-up dialog rises over the window, above the camera so it stays sharp.

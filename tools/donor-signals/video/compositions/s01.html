@@ -18,12 +18,18 @@
         */
         #s01-l1 { top: 400px; }
         #s01-l2 { top: 400px; }
-        .faces { position: absolute; left: 50%; top: 620px; transform: translateX(-50%); display: flex; gap: 26px; }
+        /*
+            The dots are the donor file: one per donor, filling in as the voice says the
+            database knows who gave. Two rows read as a list of people; a single row of
+            eight read as nothing in particular. They all start the same colour, because
+            the point of the line over them is that you cannot tell them apart. Three
+            light up only after "Which ones?" has been asked, as the answer arriving.
+        */
+        .faces { position: absolute; left: 50%; top: 596px; transform: translateX(-50%); display: grid; grid-template-columns: repeat(9, 1fr); gap: 18px; }
         .face {
-          width: 84px; height: 84px; border-radius: 50%; opacity: 0;
+          width: 58px; height: 58px; border-radius: 50%; opacity: 0;
           background: #2f4256; box-shadow: inset 0 0 0 2px rgba(255,255,255,0.1);
         }
-        .face.lit { background: #286ea6; }
         /*
             The title lockup follows the one the Analytics tour established: the square
             mark centred over the title, an accent on the second word, and three pills
@@ -51,8 +57,24 @@
         <div class="line" id="s01-l1">Every name in your database.</div>
         <div class="line" id="s01-l2">Which ones?</div>
         <div class="faces" id="s01-faces">
-          <i class="face"></i><i class="face"></i><i class="face lit"></i><i class="face"></i>
-          <i class="face"></i><i class="face lit"></i><i class="face"></i><i class="face"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face lit"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face lit"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face"></i>
+          <i class="face lit"></i>
+          <i class="face"></i>
+          <i class="face"></i>
         </div>
         <div class="brand" id="s01-brand">
           <img class="brand-logo" id="s01-logo" src="assets/logo-icon.svg" alt="" />
@@ -79,10 +101,20 @@
           tl.to('#s01-l1', { autoAlpha: 0, y: -22, duration: 0.4, ease: 'power2.in' }, L(S.cues.question) - 0.15);
           tl.fromTo('#s01-l2', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, L(S.cues.question) + 0.1);
 
-          // The faces settle one by one; two of them light up, which is the whole idea.
+          // The file fills in, one donor at a time, while the voice says the database
+          // knows who gave. Then three of them light: the answer to "Which ones?".
           gsap.utils.toArray('#s01-faces .face').forEach(function (el, i) {
-            tl.fromTo(el, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, 0.5 + i * 0.07);
+            tl.fromTo(el, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.28, ease: 'power2.out' }, 0.45 + i * 0.055);
           });
+          gsap.utils.toArray('#s01-faces .face.lit').forEach(function (el, i) {
+            tl.to(el, {
+              backgroundColor: '#3b98e5',
+              boxShadow: '0 0 0 3px rgba(59,152,229,0.35), 0 0 26px rgba(59,152,229,0.55)',
+              duration: 0.45,
+              ease: 'power2.out',
+            }, L(S.cues.question) + 0.85 + i * 0.16);
+          });
+          tl.fromTo('#s01-faces', { y: 10 }, { y: 0, duration: 3.2, ease: 'sine.out' }, 0.45);
           tl.to('#s01-faces', { autoAlpha: 0, duration: 0.35, ease: 'power2.in' }, L(S.cues.brand) - 0.25);
           tl.to('#s01-l2', { autoAlpha: 0, y: -22, duration: 0.35, ease: 'power2.in' }, L(S.cues.brand) - 0.25);
 

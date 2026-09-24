@@ -22,10 +22,10 @@
               The icon, not the wordmark: logo-wordmark-dark.svg lays out wider than the
               stage and its left edge was being cut flat at x=0. Same trap the title card hit.
           -->
-          <img class="outro-logo" src="assets/logo-icon.svg" alt="" />
-          <h2>See what your own week looks like</h2>
-          <p>The demo below is the real page, with sample data.</p>
-          <span class="pill">Try it on this page</span>
+          <img class="outro-logo" id="s10-logo" src="assets/logo-icon.svg" alt="" />
+          <h2 id="s10-head">See what your own week looks like</h2>
+          <p id="s10-sub">The demo below is the real page, with sample data.</p>
+          <span class="pill" id="s10-pill">Try it on this page</span>
         </div>
       </div>
 
@@ -35,7 +35,15 @@
           var T = window.SR_TIMELINE;
           var start = T.hosts.s10.start;
           var tl = gsap.timeline({ paused: true });
-          tl.fromTo('#s10-wrap', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.15);
+          // The card assembles rather than arriving whole: mark, line, line, then the
+          // thing to click, which is the last to land so the eye finishes on it.
+          tl.set('#s10-wrap', { autoAlpha: 1 }, 0);
+          tl.fromTo('#s10-logo', { opacity: 0, scale: 0.6, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: 'back.out(1.7)' }, 0.15);
+          tl.fromTo('#s10-head', { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out' }, 0.4);
+          tl.fromTo('#s10-sub', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: 'power3.out' }, 0.62);
+          tl.fromTo('#s10-pill', { opacity: 0, y: 16, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'back.out(1.8)' }, 0.86);
+          // A slow settle upward under the whole card, so the last seconds are not frozen.
+          tl.fromTo('#s10-wrap', { y: 14 }, { y: 0, duration: Math.max(2, T.hosts.s10.duration - 1.6), ease: 'sine.out' }, 0.15);
           tl.to('#s10-wrap', { autoAlpha: 0, duration: 0.5, ease: 'power2.in' }, T.hosts.s10.duration - 0.6);
           window.__timelines['s10'] = tl;
         })();

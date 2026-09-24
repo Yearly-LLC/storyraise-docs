@@ -159,6 +159,16 @@ const states = [
     { id: 'ui-state-new_gifts-2', on: cue('s07', 'actions') - 0.5, off: hosts.ui.end },
 ].map((s) => ({ ...s, on: round(Math.max(hosts.ui.start - 0.2, s.on), 3), off: round(s.off, 3) }));
 if (settled > cue('s03', 'money') - 0.3) throw new Error('the group cycle runs past the money beat; shorten CYCLE_STEP');
+/*
+    Layers are stacked in this order, so each one covers the one before it. Telling a
+    layer when it is fully covered lets it be switched off outright instead of fading,
+    which is what removes the flash: two layers both part way through an opacity fade
+    let the stage show between them, and the picture dips dark for a few frames.
+*/
+states.forEach((s, i) => {
+    const next = states[i + 1];
+    if (next && next.on <= s.off + 0.001) s.hiddenAt = round(next.on + (next.fade || 0.4), 3);
+});
 
 // The dialog rides above the page, on its own layer, and does not move with the camera.
 const dialog = { on: round(cue('s08', 'dialog') - 0.25, 3), off: round(end('s08') - 0.15, 3) };
@@ -217,10 +227,34 @@ const labels = labelCues.map(([text, on], i) => {
     return { id: `label-${i}`, text, on: round(on, 3), off: round(Math.min(next, on + LABEL_MAX), 3) };
 });
 
+/*
+    Numbers that count up, and bars that fill, as the camera arrives on them. The page
+    is a still capture, so without this the only thing moving in ninety seconds is the
+    camera. Each entry names a scope (one stacked state layer, so the numbers run on the
+    copy that is actually on screen) and the moment to run.
+*/
+const counts = [
+    /*
+        Everything above the fold spins up once, as the page arrives. Counting the tiles
+        later would mean holding them at zero for the twelve seconds they are already on
+        screen, which is worse than leaving them still.
+    */
+    { scope: 'ui-state-new_gifts', sel: '.sig-strip-num', at: hosts.ui.start + 0.45, dur: 1.1, stagger: 0.12 },
+    { scope: 'ui-state-new_gifts', sel: '.sig-kpi-num', at: hosts.ui.start + 0.7, dur: 0.95, stagger: 0.06 },
+    { scope: 'ui-state-new_gifts', sel: '.sig-kpi-money', at: hosts.ui.start + 0.95, dur: 0.95, stagger: 0.06 },
+    // Retention by gift size: the bars grow out of nothing and the rates run with them.
+    /*
+        Keyed to the card arriving, not to the line about it. Held to the later cue the
+        bars sat empty and every rate read 0.0% for the seconds the table was already
+        on screen.
+    */
+    { scope: 'ui-state-new_gifts-2', sel: '.sig-band-ret', at: cue('s09', 'health') + 0.15, dur: 0.9, stagger: 0.1, bars: true },
+].map((c) => ({ ...c, at: round(c.at, 3) }));
+
 const ui = {
     start: hosts.ui.start,
     duration: hosts.ui.duration,
-    shots, rings, labels, states, dialog,
+    shots, rings, labels, states, dialog, counts,
 };
 
 fs.writeFileSync(path.join(ASSETS, 'timeline.js'),
