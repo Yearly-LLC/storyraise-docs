@@ -141,15 +141,13 @@
   tl.to('#ui-dialog', { autoAlpha: 0, scale: 0.98, duration: 0.35, ease: 'power2.in' }, L(P.dialog.off));
 
   /*
-    The route the dialog is showing. Same trick as the group row: the layer coming in
-    fades up over the one before it, which stays put until it is covered, so nothing
-    shows through between them.
+    The three routes, lit one at a time as the narration names them. The ring is a
+    child of its own button, so it moves with the modal and needs no measuring.
   */
-  (P.dialogRoutes || []).forEach(function (r, i) {
-    var next = (P.dialogRoutes || [])[i + 1];
+  (P.dialogRoutes || []).forEach(function (r) {
     tl.set('#' + r.id, { opacity: 0 }, 0);
-    tl.to('#' + r.id, { opacity: 1, duration: 0.28, ease: 'power1.inOut' }, L(r.on));
-    if (next) tl.set('#' + r.id, { opacity: 0 }, L(next.on) + 0.28);
+    tl.to('#' + r.id, { opacity: 1, duration: 0.25, ease: 'power2.out' }, L(r.on));
+    tl.to('#' + r.id, { opacity: 0, duration: 0.25, ease: 'power2.in' }, L(r.off) - 0.1);
   });
 
   window.__timelines['ui'] = tl;

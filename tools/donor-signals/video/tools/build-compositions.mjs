@@ -173,11 +173,12 @@ states.forEach((s, i) => {
 
 // The dialog rides above the page, on its own layer, and does not move with the camera.
 const dialog = { on: round(cue('s08', 'dialog') - 0.25, 3), off: round(end('s08') - 0.15, 3) };
+// Each route lights as the narration names it, and goes out as the next one lights.
 const dialogRoutes = [
-    { id: 'ui-dialog-ai', on: dialog.on },
-    { id: 'ui-dialog-template', on: round(cue('s08', 'route2'), 3) },
-    { id: 'ui-dialog-existing', on: round(cue('s08', 'route3'), 3) },
-];
+    { id: 'ui-route-ai', on: round(cue('s08', 'routes'), 3) },
+    { id: 'ui-route-template', on: round(cue('s08', 'route2'), 3) },
+    { id: 'ui-route-existing', on: round(cue('s08', 'route3'), 3) },
+].map((r, i, all) => ({ ...r, off: round(i < all.length - 1 ? all[i + 1].on : cue('s08', 'carry'), 3) }));
 
 const RING_PAD = 8;
 const ring = (id, rect, on, off) => ({ id, on: round(on, 3), off: round(off, 3), rect: { x: rect.x - RING_PAD, y: rect.y - RING_PAD, w: rect.w + RING_PAD * 2, h: rect.h + RING_PAD * 2 } });
@@ -286,7 +287,7 @@ const templatesHtml = demoHtml.slice(endAt, demoHtml.indexOf('<div id="replica-t
 const browser = await chromium.launch();
 const page = await browser.newPage();
 await page.setContent(`<!doctype html><html><body>${demoHtml.slice(startAt, endAt)}${templatesHtml}</body></html>`);
-const built = await page.evaluate(({ wantStates, wantDialogs }) => {
+const built = await page.evaluate(({ wantStates, wantDialog }) => {
     const root = document.querySelector('#dashboard');
     const fail = (m) => { throw new Error(m); };
     const tpl = (sel) => document.querySelector(sel) || fail(`template ${sel}`);
@@ -312,9 +313,21 @@ const built = await page.evaluate(({ wantStates, wantDialogs }) => {
         wrap.appendChild(clone);
         out[id] = wrap.outerHTML;
     }
-    const dialogs = {};
-    for (const [id, key] of wantDialogs) dialogs[id] = tpl(`template[data-dialog="${key}"]`).innerHTML;
-    return { states: out, dialogs };
+    /*
+        One dialog, with a ring dropped inside each route button. Swapping the whole
+        modal three times read as three different dialogs; the narration is naming three
+        choices inside one. The ring is a child of the button, so it needs no measuring
+        and cannot drift from what it points at.
+    */
+    const holder = document.createElement('div');
+    holder.innerHTML = tpl(`template[data-dialog="${wantDialog}"]`).innerHTML;
+    holder.querySelectorAll('[data-sr-route]').forEach((b) => {
+        const ring = document.createElement('i');
+        ring.className = 'ui-route-ring';
+        ring.id = `ui-route-${b.getAttribute('data-sr-route')}`;
+        b.appendChild(ring);
+    });
+    return { states: out, dialog: holder.innerHTML };
 }, {
     wantStates: [
         ['ui-state-new_gifts', 'new_gifts|feed'],
@@ -324,16 +337,7 @@ const built = await page.evaluate(({ wantStates, wantDialogs }) => {
         ['ui-state-at_risk', 'at_risk|feed'],
         ['ui-state-new_gifts-2', 'new_gifts|feed'],
     ],
-    /*
-        One layer per route. The narration names a draft, a template and a published
-        report in turn, and the dialog answers each time, using the real captured state
-        rather than a ring drawn over a still.
-    */
-    wantDialogs: [
-        ['ui-dialog-ai', 'new_gifts|report-ai'],
-        ['ui-dialog-template', 'new_gifts|report-template'],
-        ['ui-dialog-existing', 'new_gifts|report-existing'],
-    ],
+    wantDialog: 'new_gifts|report-ai',
 });
 await browser.close();
 
@@ -344,7 +348,7 @@ await browser.close();
 */
 const reAsset = (html) => html.replace(/(<img[^>]+src=")img\//g, '$1assets/img/');
 built.states = Object.fromEntries(Object.entries(built.states).map(([k, v]) => [k, reAsset(v)]));
-Object.keys(built.dialogs).forEach((k) => { built.dialogs[k] = reAsset(built.dialogs[k]); });
+built.dialog = reAsset(built.dialog);
 
 const ringHtml = rings.map((r) => `<div class="ui-ring" id="${r.id}" style="left:${r.rect.x}px;top:${r.rect.y}px;width:${r.rect.w}px;height:${r.rect.h}px"></div>`).join('\n          ');
 const labelHtml = labels.map((l) => `<div class="ui-label" id="${l.id}">${l.text.replace(/&/g, '&amp;')}</div>`).join('\n        ');
@@ -405,8 +409,12 @@ const uiHtml = `<!doctype html>
             wrapper is laid out flat so it adds nothing of its own.
         */
         #ui-dialog .ui-scope, #ui-dialog .ui-scope > [data-signals] { display: contents; }
-        /* The route layers sit on top of each other; only opacity moves between them. */
-        .ui-dialog-layer { position: absolute; inset: 0; opacity: 0; }
+        /* The ring sits inside its route button, so it tracks the button exactly. */
+        #ui-dialog [data-sr-route] { position: relative; }
+        .ui-route-ring {
+          position: absolute; inset: -5px; border: 3px solid #c79bf2; border-radius: 16px;
+          box-shadow: 0 0 22px rgba(199, 155, 242, 0.45); opacity: 0; pointer-events: none;
+        }
         #ui-dialog #dashboard [data-signals] .sig-modal-backdrop { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(8,12,16,0.72); }
         #ui-dialog #dashboard [data-signals] .sig-modal { transform: scale(1.35); transform-origin: center; }
       </style>
@@ -424,8 +432,7 @@ const uiHtml = `<!doctype html>
             </div>
           </div>
         </div>
-        <div id="ui-dialog">${Object.entries(built.dialogs).map(([id, html]) =>
-            `<div class="ui-dialog-layer" id="${id}"><div class="ui-scope" id="dashboard"><div data-signals>${html}</div></div></div>`).join('')}</div>
+        <div id="ui-dialog"><div class="ui-scope" id="dashboard"><div data-signals>${built.dialog}</div></div></div>
         ${labelHtml}
       </div>
 
