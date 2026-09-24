@@ -822,7 +822,7 @@ function buildSearchPage() {
 // /docs/building-reports/creating-visualizations/ moved to .../creating-infographics/
 // when Visualizations were renamed. Both old URLs survive as hand-written redirect
 // stubs so existing links, bookmarks and search results keep working.
-// storyraise-analytics/index.html and automated-donor-journeys/index.html are hand-written
+// storyraise-analytics/, automated-donor-journeys/ and donor-signals/ hold hand-written
 // landing pages (video and page sources in tools/<slug>). Listing them here gets their
 // /docs/ links checked; they sit outside docs/, so the orphan check never sees them.
 const HAND_MAINTAINED = new Set([
@@ -830,6 +830,7 @@ const HAND_MAINTAINED = new Set([
   'docs/building-reports/creating-visualizations/index.html',
   'storyraise-analytics/index.html',
   'automated-donor-journeys/index.html',
+  'donor-signals/index.html',
 ]);
 
 const problems = [];
