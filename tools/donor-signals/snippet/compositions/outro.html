@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="out-template">
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; }
+        .outro-logo { display: block; width: 96px; height: 96px; margin: 0 auto 28px; }
+        .wrap { position: absolute; left: 0; top: 330px; width: 1920px; text-align: center; opacity: 0; visibility: hidden; }
+        .wrap img { height: 64px; }
+        .wrap h2 { margin: 34px 0 0; font: 400 76px/1.15 "PPFragment TextRegular", serif; color: #ffffff; }
+        .wrap p { margin: 24px 0 0; font: 500 32px/1.5 "Poppins", sans-serif; color: rgba(255,255,255,0.68); }
+        .pill {
+          display: inline-block; margin-top: 42px; padding: 20px 40px; border-radius: 999px;
+          background: #286ea6; color: #ffffff; font: 600 30px/1 "Poppins", sans-serif;
+        }
+      </style>
+
+      <div id="outro-root" data-composition-id="outro" data-width="1920" data-height="1080">
+        <div class="wrap" id="out-wrap">
+          <!--
+              The icon, not the wordmark: logo-wordmark-dark.svg lays out wider than the
+              stage and its left edge was being cut flat at x=0. Same trap the title card hit.
+          -->
+          <img class="outro-logo" id="out-logo" src="assets/logo-icon.svg" alt="" />
+          <h2 id="out-head">See what your own week looks like</h2>
+          <p id="out-sub">The demo below is the real page, with sample data.</p>
+          <span class="pill" id="out-pill">Try it on this page</span>
+        </div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var T = window.SR_SETUP;
+          var start = T.outro.start;
+          var tl = gsap.timeline({ paused: true });
+          // The card assembles rather than arriving whole: mark, line, line, then the
+          // thing to click, which is the last to land so the eye finishes on it.
+          tl.set('#out-wrap', { autoAlpha: 1 }, 0);
+          tl.fromTo('#out-logo', { opacity: 0, scale: 0.6, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: 'back.out(1.7)' }, 0.15);
+          tl.fromTo('#out-head', { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out' }, 0.4);
+          tl.fromTo('#out-sub', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: 'power3.out' }, 0.62);
+          tl.fromTo('#out-pill', { opacity: 0, y: 16, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'back.out(1.8)' }, 0.86);
+          // A slow settle upward under the whole card, so the last seconds are not frozen.
+          tl.fromTo('#out-wrap', { y: 14 }, { y: 0, duration: Math.max(2, T.outro.duration - 1.6), ease: 'sine.out' }, 0.15);
+          tl.to('#out-wrap', { autoAlpha: 0, duration: 0.5, ease: 'power2.in' }, T.outro.duration - 0.6);
+          window.__timelines['outro'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

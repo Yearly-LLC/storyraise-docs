@@ -59,9 +59,9 @@
     },
     {
       "id": "s10",
-      "title": "Explore",
-      "minDuration": 7,
-      "text": "[[cue:cta]]All of this comes out of the donor data you already have. Give it one morning, and find out who has been waiting to hear from you."
+      "title": "Getting started, and explore",
+      "minDuration": 14,
+      "text": "[[cue:data]]All of this comes out of the donor data you already have. [[cue:steps]]Connect the CRM you already use, [[cue:step2]]sync your donors and their giving, [[cue:step3]]and your first scores are there the moment you open it. [[cue:cta]]Give it one morning, and find out who has been waiting to hear from you."
     }
   ]
 }

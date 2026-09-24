@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="open-template">
+      <style>
+        #open-root { position: absolute; inset: 0; overflow: hidden; }
+        .open-line {
+          position: absolute; left: 0; right: 0; top: 440px; max-width: 1400px; margin: 0 auto;
+          text-align: center; text-wrap: balance;
+          font: 400 74px/1.2 "PPFragment TextRegular", serif; color: #f4f0fa;
+          opacity: 0; visibility: hidden;
+        }
+      </style>
+      <div id="open-root" data-composition-id="open" data-width="1920" data-height="1080">
+        <p class="open-line" id="open-line">All of this comes out of the donor data you already have.</p>
+      </div>
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var T = window.SR_SETUP;
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo('#open-line', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.2);
+          tl.to('#open-line', { autoAlpha: 0, y: -18, duration: 0.4, ease: 'power2.in' }, T.open.duration - 0.5);
+          window.__timelines['open'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

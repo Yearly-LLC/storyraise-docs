@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- The CTA cut on its own: the shipped closing lines with the setup steps between them.
+     Built to be reviewed before deciding whether it belongs in the tour. -->
+<html lang="en" class="dashboard" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <title>Donor Signals CTA snippet</title>
+  <link rel="stylesheet" href="assets/stage.css" />
+  <script src="assets/gsap.min.js"></script>
+  <script src="assets/timeline.js"></script>
+</head>
+<body>
+<div id="root-stage" data-composition-id="root" data-width="1920" data-height="1080" data-start="0" data-duration="13.684">
+  <div id="stage-bg" class="clip stage-bg" data-start="0" data-duration="13.684" data-track-index="0"></div>
+  <div id="open" data-composition-id="open" data-composition-src="compositions/open.html" data-start="0.0" data-duration="3.264" data-track-index="1" data-width="1920" data-height="1080"></div>
+  <div id="setup" data-composition-id="setup" data-composition-src="compositions/setup.html" data-start="3.164" data-duration="6.39" data-track-index="2" data-width="1920" data-height="1080"></div>
+  <div id="outro" data-composition-id="outro" data-composition-src="compositions/outro.html" data-start="9.304" data-duration="4.38" data-track-index="3" data-width="1920" data-height="1080"></div>
+  <hf-audio-group id="voiceover" data-label="Voiceover" data-volume="1" data-fx-chain="{&quot;version&quot;: 1, &quot;nodes&quot;: [{&quot;type&quot;: &quot;highpass&quot;, &quot;id&quot;: &quot;v1&quot;, &quot;label&quot;: &quot;Remove Rumble&quot;, &quot;params&quot;: {&quot;frequency&quot;: 90, &quot;q&quot;: 0.707, &quot;poles&quot;: &quot;2&quot;}}, {&quot;type&quot;: &quot;peaking&quot;, &quot;id&quot;: &quot;v2&quot;, &quot;label&quot;: &quot;Reduce Mud&quot;, &quot;params&quot;: {&quot;frequency&quot;: 250, &quot;gain&quot;: -3, &quot;q&quot;: 1.2}}, {&quot;type&quot;: &quot;gate&quot;, &quot;id&quot;: &quot;v3&quot;, &quot;label&quot;: &quot;Close the Pauses&quot;, &quot;enabled&quot;: false, &quot;params&quot;: {&quot;threshold&quot;: -38, &quot;range&quot;: -18, &quot;ratio&quot;: 10, &quot;attack&quot;: 1, &quot;release&quot;: 150, &quot;knee&quot;: 2.83}}, {&quot;type&quot;: &quot;compressor&quot;, &quot;id&quot;: &quot;v4&quot;, &quot;label&quot;: &quot;Even Out Loudness&quot;, &quot;params&quot;: {&quot;threshold&quot;: -28, &quot;ratio&quot;: 2, &quot;attack&quot;: 15, &quot;release&quot;: 200, &quot;knee&quot;: 2.83, &quot;makeup&quot;: 0, &quot;mix&quot;: 1}}, {&quot;type&quot;: &quot;peaking&quot;, &quot;id&quot;: &quot;v5&quot;, &quot;label&quot;: &quot;Add Clarity&quot;, &quot;params&quot;: {&quot;frequency&quot;: 3000, &quot;gain&quot;: 3.5, &quot;q&quot;: 1}}, {&quot;type&quot;: &quot;highshelf&quot;, &quot;id&quot;: &quot;v7&quot;, &quot;label&quot;: &quot;Open the Top&quot;, &quot;params&quot;: {&quot;frequency&quot;: 7500, &quot;gain&quot;: 2.5, &quot;q&quot;: 0.707}}, {&quot;type&quot;: &quot;limiter&quot;, &quot;id&quot;: &quot;v6&quot;, &quot;label&quot;: &quot;Peak Ceiling&quot;, &quot;params&quot;: {&quot;limit&quot;: -1, &quot;attack&quot;: 5, &quot;release&quot;: 50, &quot;level_out&quot;: 0}}]}"></hf-audio-group>
+  <audio id="vo-line1" src="audio/line1.mp3" data-start="0.35" data-duration="2.664" data-track-index="20" data-audio-group="voiceover" data-volume="1"></audio>
+  <audio id="vo-middle" src="audio/middle.trim.mp3" data-start="3.514" data-duration="5.74" data-track-index="20" data-audio-group="voiceover" data-volume="1"></audio>
+  <audio id="vo-line3" src="audio/line3.mp3" data-start="9.754" data-duration="3.03" data-track-index="20" data-audio-group="voiceover" data-volume="1"></audio>
+  <audio id="music-bed" src="audio/music.mp3" data-start="0" data-duration="13.684" data-track-index="21" data-audio-group="music" data-volume="1" data-fx-chain="{&quot;version&quot;: 1, &quot;nodes&quot;: [{&quot;type&quot;: &quot;peaking&quot;, &quot;id&quot;: &quot;n2&quot;, &quot;label&quot;: &quot;Voice room (weight)&quot;, &quot;params&quot;: {&quot;frequency&quot;: 300, &quot;gain&quot;: -2, &quot;q&quot;: 1}}, {&quot;type&quot;: &quot;peaking&quot;, &quot;id&quot;: &quot;n3&quot;, &quot;label&quot;: &quot;Voice room (body)&quot;, &quot;params&quot;: {&quot;frequency&quot;: 1500, &quot;gain&quot;: -4, &quot;q&quot;: 1.2}}, {&quot;type&quot;: &quot;peaking&quot;, &quot;id&quot;: &quot;n4&quot;, &quot;label&quot;: &quot;Voice room (presence)&quot;, &quot;params&quot;: {&quot;frequency&quot;: 3000, &quot;gain&quot;: -3, &quot;q&quot;: 1.2}}, {&quot;type&quot;: &quot;gain&quot;, &quot;id&quot;: &quot;n1&quot;, &quot;label&quot;: &quot;Bed level&quot;, &quot;params&quot;: {&quot;gain&quot;: -27.9}}]}" data-automation="{&quot;version&quot;: 1, &quot;lanes&quot;: [{&quot;target&quot;: &quot;volume&quot;, &quot;points&quot;: [{&quot;t&quot;: 0, &quot;v&quot;: 0}, {&quot;t&quot;: 1.2, &quot;v&quot;: 1}, {&quot;t&quot;: 13.32, &quot;v&quot;: 1}, {&quot;t&quot;: 15.47, &quot;v&quot;: 0}]}]}"></audio>
+  <script>
+    window.__timelines["root"] = gsap.timeline({ paused: true });
+  </script>
+</div>
+</body>
+</html>

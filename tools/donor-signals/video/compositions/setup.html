@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="setup-template">
+      <style>
+        #setup-root { position: absolute; inset: 0; overflow: hidden; }
+        .kicker {
+          position: absolute; left: 0; right: 0; top: 108px; text-align: center;
+          font: 600 26px/1 "Poppins", sans-serif; letter-spacing: 0.16em;
+          text-transform: uppercase; color: #c79bf2; opacity: 0; visibility: hidden;
+        }
+        /* The logo ring and the mark it feeds, lifted from the explainer's connections scene. */
+        /* Full stage, so a logo's position is just its stage coordinate. */
+        .ring { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+        .logo {
+          position: absolute; width: 96px; height: 96px; margin: -48px 0 0 -48px;
+          border-radius: 22px; background: #1c1825; border: 1.5px solid rgba(255,255,255,0.10);
+          display: flex; align-items: center; justify-content: center; opacity: 0;
+          box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+        }
+        .logo img { max-width: 60px; max-height: 40px; }
+        .hub {
+          position: absolute; left: 50%; top: 490px; width: 132px; height: 132px;
+          margin: -66px 0 0 -66px; opacity: 0;
+        }
+        .hub img { width: 132px; height: 132px; }
+        #wires { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+        #wires path { fill: none; stroke: rgba(199,155,242,0.45); stroke-width: 2.5; }
+        .steps { position: absolute; left: 0; right: 0; top: 724px; text-align: center; }
+        .step {
+          display: inline-block; vertical-align: top; width: 430px; margin: 0 14px; opacity: 0;
+        }
+        .step-n {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 46px; height: 46px; border-radius: 50%; margin-bottom: 16px;
+          background: rgba(199,155,242,0.16); border: 1.5px solid rgba(199,155,242,0.5);
+          font: 600 24px/1 "Poppins", sans-serif; color: #e1c2ff;
+        }
+        .step-t { font: 500 30px/1.35 "Poppins", sans-serif; color: #f4f0fa; margin: 0; }
+      </style>
+
+      <div id="setup-root" data-composition-id="setup" data-width="1920" data-height="1080">
+        <p class="kicker" id="setup-kicker">Getting started</p>
+        <svg id="wires" viewBox="0 0 1920 1080"><g id="wire-g"></g></svg>
+        <div class="ring" id="setup-ring"></div>
+        <div class="hub" id="setup-hub"><img src="assets/logo-icon.svg" alt="" /></div>
+        <div class="steps" id="setup-steps"></div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var T = window.SR_SETUP;
+          var start = T.setup.start;
+          var L = function (t) { return Math.max(0, t - start); };
+          var tl = gsap.timeline({ paused: true });
+
+          // Logos on an arc around the mark, so the eye reads them as feeding into it.
+          var ring = document.getElementById('setup-ring');
+          var wires = document.getElementById('wire-g');
+          var N = T.logos.length;
+          // A wide, shallow arc: nine tiles at 96px need about 640px of half-width
+          // before they touch at the ends, where an ellipse bunches them together.
+          var cx = 960, cy = 490, rx = 640, ry = 215;
+          T.logos.forEach(function (src, i) {
+            var a = Math.PI + (i + 0.5) * (Math.PI / N); // a half circle above the mark
+            var x = cx + Math.cos(a) * rx;
+            var y = cy + Math.sin(a) * ry;
+            var el = document.createElement('div');
+            el.className = 'logo';
+            el.id = 'logo-' + i;
+            el.style.left = x + 'px';
+            el.style.top = y + 'px';
+            el.innerHTML = '<img src="' + src + '" alt="" />';
+            ring.appendChild(el);
+            var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            p.setAttribute('d', 'M' + x + ' ' + y + ' Q' + ((x + cx) / 2) + ' ' + ((y + cy) / 2 - 30) + ' ' + cx + ' ' + cy);
+            p.id = 'wire-' + i;
+            wires.appendChild(p);
+          });
+
+          var stepsEl = document.getElementById('setup-steps');
+          T.steps.forEach(function (text, i) {
+            var el = document.createElement('div');
+            el.className = 'step';
+            el.id = 'step-' + i;
+            el.innerHTML = '<span class="step-n">' + (i + 1) + '</span><p class="step-t">' + text + '</p>';
+            stepsEl.appendChild(el);
+          });
+
+          tl.fromTo('#setup-kicker', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
+          tl.fromTo('#setup-hub', { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(1.7)' }, 0.35);
+          T.logos.forEach(function (_, i) {
+            tl.fromTo('#logo-' + i, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.8)' }, 0.6 + i * 0.07);
+            var path = document.getElementById('wire-' + i);
+            var len = path.getTotalLength();
+            gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
+            tl.to(path, { strokeDashoffset: 0, duration: 0.5, ease: 'power2.inOut' }, 0.75 + i * 0.07);
+          });
+          T.steps.forEach(function (_, i) {
+            tl.fromTo('#step-' + i, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, L(T.setup.stepAt[i]));
+          });
+          tl.to('#setup-root', { autoAlpha: 0, duration: 0.45, ease: 'power2.in' }, T.setup.duration - 0.5);
+
+          window.__timelines['setup'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
