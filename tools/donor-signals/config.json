@@ -1,0 +1,23 @@
+{
+  "builder": {
+    "path": "/Applications/MAMP/htdocs/yearly-v3/builder",
+    "sha": "ad39ddb8df7fc471d6f2c77aeb947663fa6a894d"
+  },
+  "source": {
+    "org_slug": "wrenfield-demo",
+    "route": "signals",
+    "signals_endpoint": "https://us-central1-yearly-bv3.cloudfunctions.net/get_donor_signals"
+  },
+  "identity": {
+    "org_name": "Wrenfield Community Food Bank",
+    "org_slug": "wrenfield-demo",
+    "link_host": "wrenfield.example"
+  },
+  "rename": [],
+  "capture": {
+    "timezone": "America/New_York",
+    "locale": "en-US",
+    "viewport": { "width": 1500, "height": 1400 },
+    "port": 5050
+  }
+}

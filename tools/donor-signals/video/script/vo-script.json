@@ -1,0 +1,80 @@
+{
+  "_about": "Narration for the Storyraise Analytics walkthrough. `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. `respell` maps a caption word to how the voice should say it (applied to the TTS text only). Labels match the product UI; star rules match the server (functions/index.js ~11819). American English, no em dashes.",
+  "respell": {},
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Cold open",
+      "minDuration": 8,
+      "text": "You sent your impact report. [[cue:question]]Did it land? [[cue:brand]]Storyraise Analytics shows you who read it, what held their attention, and who might be ready to hear from you."
+    },
+    {
+      "id": "s02",
+      "title": "What's new",
+      "enabled": false,
+      "_disabled": "Cut 2026-09-10 (Vince): the 'your totals look lower' message reads as a negative in a promotional video. Set enabled to true to restore; its narration take is still cached.",
+      "minDuration": 12,
+      "text": "[[cue:rebuilt]]Analytics has been rebuilt. [[cue:reloads]]Page reloads no longer inflate your numbers, [[cue:team]]and your own team's visits are left out automatically. [[cue:lower]]So if your totals look a little lower than before, that isn't a drop. It's accuracy."
+    },
+    {
+      "id": "s03",
+      "title": "Where to find it",
+      "minDuration": 9,
+      "text": "[[cue:home]]Your Home tab shows what's being read across all of your reports. [[cue:open]]Open any report's Analytics for the full picture, in two views: [[cue:numbers]]The Numbers, and [[cue:story]]The Story."
+    },
+    {
+      "id": "s04",
+      "title": "The top row",
+      "minDuration": 16,
+      "text": "Up top, [[cue:opened]]Constituents Opened counts the people on your list who opened their personalized link, and [[cue:returns]]Constituent Returns shows how many came back. [[cue:views]]Views counts every visit, repeats included. [[cue:time]]And Average Time Spent is the average reader's total time, across all of their visits."
+    },
+    {
+      "id": "s05",
+      "title": "Highlights and the map",
+      "minDuration": 9,
+      "text": "[[cue:chips]]Highlights do the first read for you, like when readers peak. [[cue:map]]And the map shows roughly where your audience is reading from."
+    },
+    {
+      "id": "s06",
+      "title": "Most Engaged Constituents",
+      "minDuration": 22,
+      "text": "[[cue:list]]With personalized links, you see names. Most Engaged Constituents ranks your standouts with an Engagement Score. [[cue:star1]]One star means they read longer than the typical constituent on this report. [[cue:star2]]Two stars, they also got through at least half of it. [[cue:star3]]Three stars, they took action too, by clicking a link or coming back. [[cue:badges]]And badges flag key actions, like a donation click, even when the stars don't."
+    },
+    {
+      "id": "s07",
+      "title": "Where The Clicks Go",
+      "minDuration": 11,
+      "text": "[[cue:donut]]Where The Clicks Go groups every link click by what readers wanted, from donating to opening a document. [[cue:attention]]Reading shows attention. [[cue:intent]]Clicking shows intent."
+    },
+    {
+      "id": "s08",
+      "title": "How They Read",
+      "minDuration": 14,
+      "text": "[[cue:sections]]How They Read shows how far people get. [[cue:retention]]Section Retention traces their path from section to section, [[cue:endcap]]and the red edge marks where visits ended. [[cue:drop]]A big drop after your opening tells you exactly what to tighten."
+    },
+    {
+      "id": "s09",
+      "title": "When They Visit",
+      "minDuration": 10,
+      "text": "[[cue:heatmap]]Top Visit Times shows the days and times of day people actually read, [[cue:trend]]so your next send can land when your readers show up."
+    },
+    {
+      "id": "s10",
+      "title": "The Story",
+      "minDuration": 9,
+      "text": "[[cue:storytab]]Short on time? The Story sums it all up in plain English, [[cue:followup]]with people worth a follow-up and ideas for next time, [[cue:download]]ready to download and share."
+    },
+    {
+      "id": "s11",
+      "title": "Personalized links",
+      "minDuration": 8,
+      "text": "[[cue:anon]]Remember: anonymous links tell you how your report performed. [[cue:personal]]Personalized links tell you who to call on Monday."
+    },
+    {
+      "id": "s12",
+      "title": "Explore the demo",
+      "minDuration": 6,
+      "text": "[[cue:cta]]See every part of it for yourself in the interactive demo, right here on this page."
+    }
+  ]
+}

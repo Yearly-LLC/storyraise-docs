@@ -1,0 +1,15 @@
+{
+  "source": "wrenfield-demo/signals",
+  "raw_sha256": "37d217321750d0d477b572c8fb8a6de20706b3260e03aecb1771b2c2fdffc27f",
+  "raw_mtime": "2026-09-24T05:52:41.854Z",
+  "computed_at": "2026-09-24T04:13:40.988Z",
+  "donors_scored": 360,
+  "segments": {
+    "at_risk": 71,
+    "engaged": 29,
+    "stable": 199,
+    "upgrade": 22,
+    "warming": 39
+  },
+  "emails_scrubbed": 398
+}

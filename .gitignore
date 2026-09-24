@@ -23,3 +23,25 @@ tools/automated-donor-journeys/video/snapshots/
 tools/automated-donor-journeys/video/audio/.cache/
 # Copies of the captured product screens (3x PNGs, rebuilt by build-compositions.mjs).
 tools/automated-donor-journeys/video/assets/img/
+
+# Homepage explainer video tooling (tools/storyraise-explainer), same rules. No page:
+# finished media lands in out/ for Vince to place on the homepage himself.
+tools/storyraise-explainer/.cache/
+tools/storyraise-explainer/.bin
+tools/storyraise-explainer/node_modules
+tools/storyraise-explainer/out/
+tools/storyraise-explainer/video/renders/
+tools/storyraise-explainer/video/snapshots/
+tools/storyraise-explainer/video/audio/.cache/
+tools/storyraise-explainer/video/assets/img/
+
+# Donor Signals demo tooling (tools/donor-signals), same rules as the others.
+# node_modules and .bin are symlinks into tools/storyraise-analytics; .cache and
+# the renders live on the external drive.
+tools/donor-signals/.cache
+tools/donor-signals/.bin
+tools/donor-signals/node_modules
+tools/donor-signals/video/renders
+tools/donor-signals/video/snapshots
+tools/donor-signals/video/audio/.cache/
+tools/donor-signals/video/assets/img/

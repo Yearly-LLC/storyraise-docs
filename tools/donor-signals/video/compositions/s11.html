@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s11-template">
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; }
+        .cols { position: absolute; left: 150px; top: 230px; width: 1620px; height: 620px; display: flex; gap: 40px; }
+        .col { flex: 1; height: 620px; padding: 54px 56px; box-sizing: border-box; }
+        .big { font-size: 78px; line-height: 1.06; margin: 18px 0 40px; }
+        .chart { display: flex; align-items: flex-end; gap: 22px; height: 220px; }
+        .chart i { display: block; width: 66px; border-radius: 12px 12px 4px 4px; background: linear-gradient(#7fc55f, #2c7f8a); transform-origin: 50% 100%; }
+        .person { display: flex; align-items: center; gap: 24px; background: rgba(255, 255, 255, 0.04); border: 1.5px solid rgba(255, 255, 255, 0.1); border-radius: 22px; padding: 26px 30px; }
+        .avatar { width: 84px; height: 84px; border-radius: 50%; background: #c79bf2; display: flex; align-items: center; justify-content: center; font: 600 30px/1 "Poppins", sans-serif; color: #1b1d21; flex-shrink: 0; }
+        .person-name { font: 600 36px/1.1 "Poppins", sans-serif; color: #ffffff; margin: 0 0 10px; }
+        .person .sr-stars { font-size: 34px; }
+        .person .sr-badge { margin-left: 14px; font-size: 21px; vertical-align: 6px; }
+        .monday { display: inline-flex; align-items: center; gap: 14px; margin-top: 30px; font: 500 30px/1 "Poppins", sans-serif; color: #ffe38f; }
+        .monday svg { width: 38px; height: 38px; fill: currentColor; }
+      </style>
+
+      <div id="root" data-composition-id="s11" data-width="1920" data-height="1080">
+        <div class="cols">
+          <div class="col sr-card" id="s11-anon">
+            <p class="sr-kicker">Anonymous links</p>
+            <p class="sr-display big">How your report <span class="sr-accent">performed</span></p>
+            <div class="chart" id="s11-chart"><i style="height:38%"></i><i style="height:62%"></i><i style="height:50%"></i><i style="height:84%"></i><i style="height:70%"></i><i style="height:100%"></i></div>
+          </div>
+          <div class="col sr-card" id="s11-personal">
+            <p class="sr-kicker">Personalized links</p>
+            <p class="sr-display big">Who to <span class="sr-pink">call on Monday</span></p>
+            <div class="person" id="s11-person">
+              <div class="avatar">SB</div>
+              <div>
+                <p class="person-name">Saoirse Brennan</p>
+                <span class="sr-stars"><span class="on">★★★</span></span>
+                <span class="sr-badge"><svg viewBox="0 -960 960 960"><path d="M640-440 474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L640-440Zm0-112 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-60 72-60-72q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Z"/></svg>Clicked Donation CTA</span>
+              </div>
+            </div>
+            <div class="monday" id="s11-monday">
+              <svg viewBox="0 -960 960 960"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12Z"/></svg>
+              A timely, personal follow-up
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var S = window.SR_TIMELINE.scenes.s11;
+          var cue = function (name) { return S.cues[name] - S.start; };
+          var tl = gsap.timeline({ paused: true });
+
+          var anon = cue('anon');
+          tl.fromTo('#s11-anon', { autoAlpha: 0, y: 60 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, Math.max(0.05, anon - 0.2));
+          tl.fromTo('#s11-chart i', { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: 'power2.out', stagger: 0.08 }, anon + 0.4);
+
+          var personal = cue('personal');
+          tl.fromTo('#s11-personal', { autoAlpha: 0, y: 60 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, personal - 0.2);
+          tl.fromTo('#s11-person', { autoAlpha: 0, x: 40 }, { autoAlpha: 1, x: 0, duration: 0.55, ease: 'power3.out' }, personal + 0.5);
+          tl.fromTo('#s11-monday', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, personal + 1.1);
+
+          tl.to('.cols', { autoAlpha: 0, scale: 0.97, duration: 0.45, ease: 'power2.in' }, S.duration - 0.5);
+          window.__timelines['s11'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
