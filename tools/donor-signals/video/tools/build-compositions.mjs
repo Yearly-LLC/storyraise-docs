@@ -133,12 +133,32 @@ for (let i = 0; i < shots.length - 1; i++) {
     shots[i].dur = round(Math.min(1, gap - 0.05), 3);
 }
 
-// Which page state is on screen when. Cross-faded, never swapped.
+/*
+    Which page state is on screen when. Cross-faded, never swapped.
+
+    On the line about the file being sorted by what each donor needs next, the page
+    flicks along the group row, one tile at a time, and settles on At risk, which is
+    where the next minute goes. These are the real captured states, so the headline,
+    the list and the action cards change with the tile, the way they do in the product.
+*/
+const CYCLE_STEP = 0.55;
+/*
+    Near enough to a cut. Each state carries its own headline and list, so a dissolve
+    long enough to see is a dissolve long enough to read two headlines stacked on top
+    of each other. Clicking a tile in the product swaps the card outright, so a snap is
+    also the honest gesture.
+*/
+const CYCLE_FADE = 0.09;
+const cycleAt = (i) => cue('s03', 'tiles') + 0.15 + i * CYCLE_STEP;
+const cycle = ['upgrade', 'warming', 'engaged'];
+const settled = cycleAt(cycle.length);
 const states = [
-    { id: 'ui-state-new_gifts', on: hosts.ui.start - 0.2, off: cue('s04', 'atrisk') - 0.45 },
-    { id: 'ui-state-at_risk', on: cue('s04', 'atrisk') - 0.5, off: cue('s07', 'actions') - 0.45 },
+    { id: 'ui-state-new_gifts', on: hosts.ui.start - 0.2, off: cycleAt(0) },
+    ...cycle.map((key, i) => ({ id: `ui-state-${key}`, on: cycleAt(i), off: cycleAt(i + 1), fade: CYCLE_FADE })),
+    { id: 'ui-state-at_risk', on: settled, off: cue('s07', 'actions') - 0.45, fade: CYCLE_FADE },
     { id: 'ui-state-new_gifts-2', on: cue('s07', 'actions') - 0.5, off: hosts.ui.end },
 ].map((s) => ({ ...s, on: round(Math.max(hosts.ui.start - 0.2, s.on), 3), off: round(s.off, 3) }));
+if (settled > cue('s03', 'money') - 0.3) throw new Error('the group cycle runs past the money beat; shorten CYCLE_STEP');
 
 // The dialog rides above the page, on its own layer, and does not move with the camera.
 const dialog = { on: round(cue('s08', 'dialog') - 0.25, 3), off: round(end('s08') - 0.15, 3) };
@@ -156,7 +176,8 @@ const rings = [
     ring('ring-fytd', A.stripFytd, cue('s02', 'fytd'), cue('s02', 'firstyear') - 0.1),
     ring('ring-firstyear', A.stripFirstYear, cue('s02', 'firstyear'), cue('s03', 'tiles') - 0.3),
     ring('ring-money', A.tileMoney, cue('s03', 'money'), cue('s04', 'atrisk') - 0.4),
-    ring('ring-atrisk-tile', R.tileAtRisk, cue('s04', 'atrisk'), cue('s04', 'cadence') - 0.15),
+    ring('ring-atrisk-tile', R.tileAtRisk, settled + CYCLE_FADE, cue('s03', 'money') - 0.3),
+    ring('ring-atrisk-tile-2', R.tileAtRisk, cue('s04', 'atrisk'), cue('s04', 'cadence') - 0.15),
     ring('ring-first-row', R.firstRow, cue('s04', 'sorted'), cue('s05', 'reason') - 0.1),
     // The why-now sentence, then the line under it: what they gave and whether they read you.
     ring('ring-why', R.firstRowWhy, cue('s05', 'reason'), cue('s05', 'reads') - 0.1),
@@ -249,6 +270,9 @@ const built = await page.evaluate(({ wantStates, wantDialog }) => {
 }, {
     wantStates: [
         ['ui-state-new_gifts', 'new_gifts|feed'],
+        ['ui-state-upgrade', 'upgrade|feed'],
+        ['ui-state-warming', 'warming|feed'],
+        ['ui-state-engaged', 'engaged|feed'],
         ['ui-state-at_risk', 'at_risk|feed'],
         ['ui-state-new_gifts-2', 'new_gifts|feed'],
     ],

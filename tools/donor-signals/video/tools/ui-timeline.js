@@ -17,9 +17,12 @@
     at t=0 and every state would be visible in the first frame.
   */
   P.states.forEach(function (s) {
+    // `fade` lets the group cycle flick past in a fifth of a second while the ordinary
+    // state changes keep their slower cross-dissolve.
+    var f = s.fade || 0.4;
     tl.set('#' + s.id, { opacity: 0 }, 0);
-    tl.to('#' + s.id, { opacity: 1, duration: 0.4, ease: 'power1.inOut' }, L(s.on));
-    tl.to('#' + s.id, { opacity: 0, duration: 0.4, ease: 'power1.inOut' }, Math.max(L(s.on) + 0.5, L(s.off)));
+    tl.to('#' + s.id, { opacity: 1, duration: f, ease: 'power1.inOut' }, L(s.on));
+    tl.to('#' + s.id, { opacity: 0, duration: f, ease: 'power1.inOut' }, Math.max(L(s.on) + f + 0.1, L(s.off)));
   });
 
   // Camera: shots are pre-computed transforms of the 1200px page.
