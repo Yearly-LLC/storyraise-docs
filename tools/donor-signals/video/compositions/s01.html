@@ -5,69 +5,51 @@
     <template id="s01-template">
       <style>
         #root { position: absolute; inset: 0; overflow: hidden; }
-        .report {
-          position: absolute;
-          left: 760px;
-          top: 230px;
-          width: 400px;
-          height: 540px;
-          border-radius: 26px;
-          background: #ffffff;
-          overflow: hidden;
-          box-shadow: 0 40px 100px rgba(0, 0, 0, 0.55);
+        .line {
+          position: absolute; left: 0; width: 1920px; text-align: center;
+          font: 400 78px/1.2 "PPFragment TextRegular", serif; color: #ffffff;
+          opacity: 0; visibility: hidden;
         }
-        .report-cover {
-          height: 290px;
-          background:
-            radial-gradient(260px 200px at 80% 20%, rgba(255, 255, 255, 0.28), transparent 70%),
-            linear-gradient(140deg, #2c7f8a 0%, #803bb1 55%, #ed355e 100%);
+        #s01-l1 { top: 400px; }
+        #s01-l2 { top: 400px; }
+        .faces { position: absolute; left: 50%; top: 620px; transform: translateX(-50%); display: flex; gap: 26px; }
+        .face {
+          width: 84px; height: 84px; border-radius: 50%; opacity: 0;
+          background: #2f4256; box-shadow: inset 0 0 0 2px rgba(255,255,255,0.1);
         }
-        .report-body { padding: 26px 30px; }
-        .report-kicker { font: 600 15px/1 "Poppins", sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: #803bb1; margin: 0; }
-        .report-title { font: 400 42px/1.1 "PPFragment TextRegular", serif; color: #1b1d21; margin: 12px 0 0; }
-        .report-org { font: 500 17px/1.3 "Poppins", sans-serif; color: #6b7280; margin: 10px 0 0; }
-        .report-line { height: 10px; border-radius: 5px; background: #ebe7f1; margin-top: 16px; }
-        .report-line.short { width: 62%; }
-
-        .dot { position: absolute; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: #48596b; }
-
-        .question {
-          position: absolute;
-          left: 0;
-          top: 440px;
-          width: 1920px;
-          text-align: center;
-          font-size: 150px;
-          line-height: 1.1;
+        .face.lit { background: #286ea6; }
+        /*
+            The title lockup follows the one the Analytics tour established: the square
+            mark centred over the title, an accent on the second word, and three pills
+            naming what the product answers. The wordmark SVG was used here first and
+            laid out wider than the stage, which pushed it off the left edge.
+        */
+        .brand {
+          position: absolute; left: 0; top: 300px; width: 1920px; text-align: center;
+          opacity: 0; visibility: hidden;
         }
-
-        .lockup { position: absolute; left: 0; top: 300px; width: 1920px; text-align: center; }
-        .lockup-logo { display: block; width: 128px; height: 128px; margin: 0 auto; }
-        .lockup-title { font-size: 132px; line-height: 1.05; margin-top: 30px; }
-        .lockup-pills { margin-top: 44px; }
-        .lockup-pills .sr-pill { margin: 0 9px; }
+        .brand-logo { display: block; width: 128px; height: 128px; margin: 0 auto; }
+        .brand-title { font-size: 132px; line-height: 1.05; margin-top: 30px; }
+        .brand-sub { margin-top: 26px; font: 500 34px/1.4 "Poppins", sans-serif; color: #cfc7dc; }
+        .brand-pills { margin-top: 40px; }
+        .brand-pills .sr-pill { margin: 0 9px; }
       </style>
 
       <div id="root" data-composition-id="s01" data-width="1920" data-height="1080">
-        <div class="report" id="s01-report">
-          <div class="report-cover"></div>
-          <div class="report-body">
-            <p class="report-kicker">Impact report</p>
-            <p class="report-title">2026 Impact Report</p>
-            <p class="report-org">Harbor Lights Community Foundation</p>
-            <div class="report-line"></div>
-            <div class="report-line short"></div>
-          </div>
+        <div class="line" id="s01-l1">Some of your donors need to hear from you this week.</div>
+        <div class="line" id="s01-l2">Which ones?</div>
+        <div class="faces" id="s01-faces">
+          <i class="face"></i><i class="face"></i><i class="face lit"></i><i class="face"></i>
+          <i class="face"></i><i class="face lit"></i><i class="face"></i><i class="face"></i>
         </div>
-        <div id="s01-dots"></div>
-        <p class="sr-display question" id="s01-question">Did it land?</p>
-        <div class="lockup" id="s01-lockup">
-          <img class="lockup-logo" id="s01-logo" src="assets/logo-icon.svg" alt="" />
-          <p class="sr-display lockup-title" id="s01-title">Storyraise <span class="sr-accent">Analytics</span></p>
-          <div class="lockup-pills">
-            <span class="sr-pill" id="s01-p1">Who read it</span>
-            <span class="sr-pill" id="s01-p2">What held their attention</span>
-            <span class="sr-pill" id="s01-p3">Who to follow up with</span>
+        <div class="brand" id="s01-brand">
+          <img class="brand-logo" id="s01-logo" src="assets/logo-icon.svg" alt="" />
+          <p class="sr-display brand-title" id="s01-title">Donor <span class="sr-accent">Signals</span></p>
+          <p class="brand-sub" id="s01-sub">Everyone you have, scored every day.</p>
+          <div class="brand-pills" id="s01-pills">
+            <span class="sr-pill">Who needs you</span>
+            <span class="sr-pill">Why now</span>
+            <span class="sr-pill">What to make</span>
           </div>
         </div>
       </div>
@@ -75,73 +57,29 @@
       <script src="assets/gsap.min.js"></script>
       <script>
         (function () {
-          var S = window.SR_TIMELINE.scenes.s01;
-          var local = function (t) { return t - S.start; };
-          var cue = function (name) { return local(S.cues[name]); };
-          var word = function (pattern, after) {
-            var i = S.words.findIndex(function (w, index) { return index >= (after || 0) && pattern.test(w.text); });
-            return i;
-          };
-          var at = function (i, edge) { return local(S.words[i][edge || 'start']); };
-
-          // Reader dots on a loose ring, placed with a seeded generator (renders identically every time).
-          var seed = 20260910;
-          var rand = function () {
-            seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
-            var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-          };
-          var dotsBox = document.getElementById('s01-dots');
-          var COLORS = ['#2c7f8a', '#45b27b', '#7fc55f', '#f5e04e'];
-          var dots = [];
-          for (var i = 0; i < 30; i++) {
-            var angle = (i / 30) * Math.PI * 2 + rand() * 0.18;
-            var radiusX = 700 + rand() * 120;
-            var radiusY = 330 + rand() * 70;
-            var dot = document.createElement('div');
-            dot.className = 'dot';
-            dot.style.left = Math.round(960 + Math.cos(angle) * radiusX) + 'px';
-            dot.style.top = Math.round(540 + Math.sin(angle) * radiusY) + 'px';
-            dot.setAttribute('data-lit', COLORS[Math.floor(rand() * COLORS.length)]);
-            dot.setAttribute('data-size', String(0.6 + rand() * 0.9));
-            dotsBox.appendChild(dot);
-            dots.push(dot);
-          }
-
+          var T = window.SR_TIMELINE;
+          var S = T.scenes.s01;
+          var start = T.hosts.s01.start;
+          var L = function (t) { return Math.max(0, t - start); };
           var tl = gsap.timeline({ paused: true });
 
-          // "You sent your impact report."
-          tl.fromTo('#s01-report', { autoAlpha: 0, y: 70, scale: 0.9 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out' }, 0.1);
-          var reportEnd = at(word(/^report/), 'end');
-          tl.to('#s01-report', { x: 760, y: -380, scale: 0.28, rotation: 10, autoAlpha: 0, duration: 0.85, ease: 'power2.in' }, reportEnd - 0.05);
+          tl.fromTo('#s01-l1', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.25);
+          tl.to('#s01-l1', { autoAlpha: 0, y: -22, duration: 0.4, ease: 'power2.in' }, L(S.cues.question) - 0.15);
+          tl.fromTo('#s01-l2', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, L(S.cues.question) + 0.1);
 
-          // "Did it land?" Readers light up around the question.
-          var q = cue('question');
-          tl.fromTo('#s01-question', { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' }, q);
-          dots.forEach(function (dot, index) {
-            var size = Number(dot.getAttribute('data-size'));
-            tl.fromTo(dot, { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: size, duration: 0.45, ease: 'back.out(2)' }, q - 0.1 + index * 0.03);
-            if (index % 3 !== 1) {
-              tl.to(dot, { backgroundColor: dot.getAttribute('data-lit'), scale: size * 1.25, duration: 0.35, ease: 'power2.out' }, q + 0.55 + (index % 10) * 0.07);
-            }
+          // The faces settle one by one; two of them light up, which is the whole idea.
+          gsap.utils.toArray('#s01-faces .face').forEach(function (el, i) {
+            tl.fromTo(el, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, 0.5 + i * 0.07);
           });
+          tl.to('#s01-faces', { autoAlpha: 0, duration: 0.35, ease: 'power2.in' }, L(S.cues.brand) - 0.25);
+          tl.to('#s01-l2', { autoAlpha: 0, y: -22, duration: 0.35, ease: 'power2.in' }, L(S.cues.brand) - 0.25);
 
-          // "Storyraise Analytics shows you who read it, what held their attention, and who might be ready..."
-          var b = cue('brand');
-          tl.to('#s01-question', { autoAlpha: 0, y: -30, duration: 0.4, ease: 'power2.in' }, b - 0.15);
-          tl.to(dots, { autoAlpha: 0, scale: 0, duration: 0.4, ease: 'power2.in', stagger: 0.008 }, b - 0.1);
-          tl.fromTo('#s01-logo', { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.7, ease: 'back.out(1.6)' }, b + 0.05);
-          tl.fromTo('#s01-title', { autoAlpha: 0, y: 36 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, b + 0.2);
-          var who = word(/^who$/i);
-          var what = word(/^what$/i, who);
-          var who2 = word(/^who$/i, what);
-          [['#s01-p1', who], ['#s01-p2', what], ['#s01-p3', who2]].forEach(function (pair) {
-            tl.fromTo(pair[0], { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, at(pair[1]) - 0.05);
+          tl.fromTo('#s01-brand', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' }, L(S.cues.brand));
+          tl.fromTo('#s01-logo', { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.6)' }, L(S.cues.brand) + 0.05);
+          gsap.utils.toArray('#s01-pills .sr-pill').forEach(function (el, i) {
+            tl.fromTo(el, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, L(S.cues.brand) + 0.5 + i * 0.12);
           });
-
-          // Hand off to the next scene.
-          tl.to('#s01-lockup', { autoAlpha: 0, scale: 0.97, duration: 0.45, ease: 'power2.in' }, S.duration - 0.5);
+          tl.to('#s01-brand', { autoAlpha: 0, duration: 0.4, ease: 'power2.in' }, T.hosts.s01.duration - 0.45);
 
           window.__timelines['s01'] = tl;
         })();

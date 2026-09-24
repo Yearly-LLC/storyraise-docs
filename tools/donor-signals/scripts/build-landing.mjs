@@ -1,4 +1,4 @@
-// Fill the generated regions of storyraise-analytics/index.html.
+// Fill the generated regions of donor-signals/index.html.
 //
 //   node scripts/build-landing.mjs
 //
@@ -20,11 +20,10 @@ const timeline = fs.existsSync(timelineFile) ? JSON.parse(fs.readFileSync(timeli
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 const GROUPS = [
-    { title: "Who's reading", ids: ['constituents', 'views', 'avg-time', 'map'] },
-    { title: 'Who to follow up with', ids: ['engaged', 'badges', 'clicks'] },
-    { title: 'How they read', ids: ['how-they-read', 'retention'] },
-    { title: 'When they visit', ids: ['heatmap', 'trend'] },
-    { title: 'The big picture', ids: ['highlights', 'story'] },
+    { title: 'The week in one screen', ids: ['health', 'headline', 'tiles'] },
+    { title: 'Who needs you, and why now', ids: ['at-risk-tile', 'row', 'views'] },
+    { title: 'What you do about it', ids: ['actions'] },
+    { title: 'The month, not the week', ids: ['giving-health'] },
 ];
 
 function metricCard(stop) {
@@ -43,14 +42,14 @@ function metricCard(stop) {
           </details>
           <div class="sra-metric-actions">
             <button type="button" class="sra-link-btn" data-demo-step="${stop.id}">See it in the demo</button>
-            <a href="${esc(stop.kb.href)}">${esc(stop.kb.label)}</a>
+${stop.kb ? `\n            <a href="${esc(stop.kb.href)}">${esc(stop.kb.label)}</a>` : ''}
           </div>
         </article>`;
 }
 
 const byId = Object.fromEntries(annotations.stops.map((s) => [s.id, s]));
 const covered = new Set(GROUPS.flatMap((g) => g.ids));
-const missing = annotations.stops.filter((s) => s.id !== 'tabs' && !covered.has(s.id)).map((s) => s.id);
+const missing = annotations.stops.filter((s) => !covered.has(s.id)).map((s) => s.id);
 if (missing.length) throw new Error(`annotation stops not placed in a group: ${missing.join(', ')}`);
 
 const metrics = GROUPS.map((group) => `      <div class="sra-metric-group">
@@ -72,19 +71,19 @@ const videoLd = {
     '@graph': [
         {
             '@type': 'WebPage',
-            '@id': 'https://docs.storyraise.com/storyraise-analytics/#page',
-            url: 'https://docs.storyraise.com/storyraise-analytics/',
-            name: 'Storyraise Analytics',
+            '@id': 'https://docs.storyraise.com/donor-signals/#page',
+            url: 'https://docs.storyraise.com/donor-signals/',
+            name: 'Donor Signals',
             isPartOf: { '@id': 'https://docs.storyraise.com/#site' },
             inLanguage: 'en-US',
         },
         {
             '@type': 'VideoObject',
-            name: 'Storyraise Analytics: a guided tour',
-            description: 'A short tour of Storyraise Analytics: who read your report, what held their attention, and who to follow up with.',
-            thumbnailUrl: 'https://docs.storyraise.com/storyraise-analytics/media/storyraise-analytics-tour-poster.jpg',
-            contentUrl: 'https://docs.storyraise.com/storyraise-analytics/media/storyraise-analytics-tour.mp4',
-            uploadDate: (timeline && timeline.renderedAt) || '2026-09-10',
+            name: 'Donor Signals: a guided tour',
+            description: 'A short tour of Donor Signals: how Storyraise scores every donor you have, groups them by what they need next, and gives you something to make for each group.',
+            thumbnailUrl: 'https://docs.storyraise.com/donor-signals/media/donor-signals-tour-poster.jpg',
+            contentUrl: 'https://docs.storyraise.com/donor-signals/media/donor-signals-tour.mp4',
+            uploadDate: (timeline && timeline.renderedAt) || '2026-09-24',
             ...(iso ? { duration: iso } : {}),
             publisher: { '@id': 'https://storyraise.com/#org' },
         },
@@ -101,7 +100,7 @@ function fill(html, name, body, { optional = false } = {}) {
 }
 
 let html = fs.readFileSync(PAGE, 'utf8');
-// The metric cards section was taken off the page (Vince, 2026-09-10); the tour still
+// The metric cards section is off this page too (matching Analytics, Vince 2026-09-10); the tour still
 // carries that copy. Restoring the section's AUTO:METRICS markers brings the cards back.
 const hasMetrics = html.includes('<!-- AUTO:METRICS -->');
 html = fill(html, 'METRICS', metrics, { optional: true });

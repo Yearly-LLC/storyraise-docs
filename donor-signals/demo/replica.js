@@ -67,7 +67,13 @@
         var host = doc.createElement('div');
         host.id = 'replica-dialog';
         host.innerHTML = html;
-        doc.body.appendChild(host);
+        /*
+            Mount inside the signals section, not on <body>. Every rule the modal
+            needs is scoped `#dashboard [data-signals] ...`, so a host on <body> got
+            none of them and the dialog rendered as a run of unstyled text below the
+            page. The backdrop is position:fixed, so it still covers the viewport.
+        */
+        (doc.querySelector('#dashboard [data-signals]') || doc.body).appendChild(host);
         state.dialog = name;
         var first = host.querySelector('.sig-route, button');
         window.setTimeout(function () { if (first) first.focus(); }, 60);
@@ -114,8 +120,8 @@
         }
         var backdrop = ev.target.closest('[data-dialog-backdrop]');
         if (backdrop && ev.target === backdrop) { closeDialog(); return; }
-        var route = ev.target.closest('[data-route]');
-        if (route) { ev.preventDefault(); setRoute(route.getAttribute('data-route')); return; }
+        var route = ev.target.closest('[data-sr-route]');
+        if (route) { ev.preventDefault(); setRoute(route.getAttribute('data-sr-route')); return; }
         var openDlg = ev.target.closest('[data-open-dialog]');
         if (openDlg) { ev.preventDefault(); openDialog(openDlg.getAttribute('data-open-dialog')); return; }
         var tile = ev.target.closest('[data-tile]');
@@ -129,7 +135,7 @@
     doc.addEventListener('keydown', function (ev) {
         if (ev.key === 'Escape' && state.dialog) { closeDialog(); return; }
         if (ev.key !== 'Enter' && ev.key !== ' ') return;
-        var el = ev.target.closest('[data-tile],[data-view],[data-open-dialog],[data-route]');
+        var el = ev.target.closest('[data-tile],[data-view],[data-open-dialog],[data-sr-route]');
         if (!el) return;
         ev.preventDefault();
         el.click();

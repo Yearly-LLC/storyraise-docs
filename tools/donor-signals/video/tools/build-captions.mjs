@@ -61,7 +61,7 @@ cues.forEach((cue, i) => {
 });
 
 fs.mkdirSync(MEDIA, { recursive: true });
-fs.writeFileSync(path.join(MEDIA, 'storyraise-analytics-tour.en.vtt'),
+fs.writeFileSync(path.join(MEDIA, 'donor-signals-tour.en.vtt'),
     'WEBVTT\n\n' + cues.map((c, i) => `${i + 1}\n${stamp(c.start)} --> ${stamp(c.end)}\n${c.lines.join('\n')}\n`).join('\n'));
 
 const chapters = timeline.scenes.map((s, i) => {

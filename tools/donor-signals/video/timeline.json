@@ -1,0 +1,2000 @@
+{
+  "estimated": false,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "transition": 0.4,
+  "duration": 118.181,
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Cold open",
+      "start": 0,
+      "duration": 9.631,
+      "voStart": 0.35,
+      "voLength": 8.731,
+      "audio": "audio/vo/s01.2d8aaaf1b4.clean.mp3",
+      "cues": {
+        "question": 3.45,
+        "brand": 5.563
+      },
+      "words": [
+        {
+          "text": "You",
+          "start": 0.35,
+          "end": 0.478
+        },
+        {
+          "text": "know",
+          "start": 0.513,
+          "end": 0.629
+        },
+        {
+          "text": "some",
+          "start": 0.675,
+          "end": 0.814
+        },
+        {
+          "text": "of",
+          "start": 0.849,
+          "end": 0.896
+        },
+        {
+          "text": "your",
+          "start": 0.942,
+          "end": 1.047
+        },
+        {
+          "text": "donors",
+          "start": 1.081,
+          "end": 1.372
+        },
+        {
+          "text": "need",
+          "start": 1.407,
+          "end": 1.534
+        },
+        {
+          "text": "to",
+          "start": 1.557,
+          "end": 1.604
+        },
+        {
+          "text": "hear",
+          "start": 1.65,
+          "end": 1.778
+        },
+        {
+          "text": "from",
+          "start": 1.836,
+          "end": 1.952
+        },
+        {
+          "text": "you",
+          "start": 1.999,
+          "end": 2.08
+        },
+        {
+          "text": "this",
+          "start": 2.138,
+          "end": 2.254
+        },
+        {
+          "text": "week.",
+          "start": 2.3,
+          "end": 2.637
+        },
+        {
+          "text": "The",
+          "start": 3.45,
+          "end": 3.566
+        },
+        {
+          "text": "hard",
+          "start": 3.612,
+          "end": 3.787
+        },
+        {
+          "text": "part",
+          "start": 3.821,
+          "end": 4.042
+        },
+        {
+          "text": "is",
+          "start": 4.1,
+          "end": 4.216
+        },
+        {
+          "text": "knowing",
+          "start": 4.274,
+          "end": 4.541
+        },
+        {
+          "text": "which",
+          "start": 4.588,
+          "end": 4.739
+        },
+        {
+          "text": "ones.",
+          "start": 4.82,
+          "end": 5.238
+        },
+        {
+          "text": "Donor",
+          "start": 5.563,
+          "end": 5.83
+        },
+        {
+          "text": "Signals",
+          "start": 5.876,
+          "end": 6.167
+        },
+        {
+          "text": "scores",
+          "start": 6.19,
+          "end": 6.538
+        },
+        {
+          "text": "everyone",
+          "start": 6.654,
+          "end": 7.084
+        },
+        {
+          "text": "you",
+          "start": 7.107,
+          "end": 7.188
+        },
+        {
+          "text": "have,",
+          "start": 7.258,
+          "end": 7.618
+        },
+        {
+          "text": "every",
+          "start": 7.792,
+          "end": 8.047
+        },
+        {
+          "text": "day.",
+          "start": 8.094,
+          "end": 9.081
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "title": "How the year is going",
+      "start": 9.231,
+      "duration": 13,
+      "voStart": 9.581,
+      "voLength": 12.027,
+      "audio": "audio/vo/s02.2fca547503.clean.mp3",
+      "cues": {
+        "strip": 9.581,
+        "retention": 11.125,
+        "fytd": 14.446,
+        "firstyear": 19.345
+      },
+      "words": [
+        {
+          "text": "It",
+          "start": 9.581,
+          "end": 9.767
+        },
+        {
+          "text": "opens",
+          "start": 9.813,
+          "end": 10.057
+        },
+        {
+          "text": "with",
+          "start": 10.092,
+          "end": 10.196
+        },
+        {
+          "text": "three",
+          "start": 10.231,
+          "end": 10.429
+        },
+        {
+          "text": "numbers.",
+          "start": 10.463,
+          "end": 10.974
+        },
+        {
+          "text": "How",
+          "start": 11.125,
+          "end": 11.288
+        },
+        {
+          "text": "many",
+          "start": 11.346,
+          "end": 11.52
+        },
+        {
+          "text": "of",
+          "start": 11.578,
+          "end": 11.636
+        },
+        {
+          "text": "last",
+          "start": 11.717,
+          "end": 11.915
+        },
+        {
+          "text": "year's",
+          "start": 11.949,
+          "end": 12.147
+        },
+        {
+          "text": "donors",
+          "start": 12.182,
+          "end": 12.472
+        },
+        {
+          "text": "came",
+          "start": 12.518,
+          "end": 12.716
+        },
+        {
+          "text": "back.",
+          "start": 12.751,
+          "end": 13.145
+        },
+        {
+          "text": "What",
+          "start": 14.446,
+          "end": 14.62
+        },
+        {
+          "text": "you",
+          "start": 14.666,
+          "end": 14.736
+        },
+        {
+          "text": "have",
+          "start": 14.794,
+          "end": 14.91
+        },
+        {
+          "text": "raised",
+          "start": 14.956,
+          "end": 15.223
+        },
+        {
+          "text": "this",
+          "start": 15.247,
+          "end": 15.386
+        },
+        {
+          "text": "year,",
+          "start": 15.444,
+          "end": 15.769
+        },
+        {
+          "text": "with",
+          "start": 15.85,
+          "end": 16.001
+        },
+        {
+          "text": "the",
+          "start": 16.036,
+          "end": 16.106
+        },
+        {
+          "text": "donor",
+          "start": 16.152,
+          "end": 16.396
+        },
+        {
+          "text": "count",
+          "start": 16.442,
+          "end": 16.651
+        },
+        {
+          "text": "beside",
+          "start": 16.698,
+          "end": 17.046
+        },
+        {
+          "text": "it,",
+          "start": 17.069,
+          "end": 17.151
+        },
+        {
+          "text": "so",
+          "start": 17.174,
+          "end": 17.278
+        },
+        {
+          "text": "a",
+          "start": 17.336,
+          "end": 17.36
+        },
+        {
+          "text": "good",
+          "start": 17.418,
+          "end": 17.569
+        },
+        {
+          "text": "year",
+          "start": 17.615,
+          "end": 17.778
+        },
+        {
+          "text": "on",
+          "start": 17.836,
+          "end": 17.917
+        },
+        {
+          "text": "a",
+          "start": 17.952,
+          "end": 17.975
+        },
+        {
+          "text": "shrinking",
+          "start": 18.01,
+          "end": 18.312
+        },
+        {
+          "text": "list",
+          "start": 18.37,
+          "end": 18.521
+        },
+        {
+          "text": "says",
+          "start": 18.544,
+          "end": 18.706
+        },
+        {
+          "text": "so.",
+          "start": 18.741,
+          "end": 19.066
+        },
+        {
+          "text": "And",
+          "start": 19.345,
+          "end": 19.484
+        },
+        {
+          "text": "how",
+          "start": 19.553,
+          "end": 19.67
+        },
+        {
+          "text": "many",
+          "start": 19.716,
+          "end": 19.879
+        },
+        {
+          "text": "first-time",
+          "start": 19.948,
+          "end": 20.366
+        },
+        {
+          "text": "donors",
+          "start": 20.413,
+          "end": 20.773
+        },
+        {
+          "text": "gave",
+          "start": 20.842,
+          "end": 21.098
+        },
+        {
+          "text": "again.",
+          "start": 21.132,
+          "end": 21.608
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "title": "Six groups",
+      "start": 21.831,
+      "duration": 14.135,
+      "voStart": 22.181,
+      "voLength": 13.235,
+      "audio": "audio/vo/s03.c97db1499d.clean.mp3",
+      "cues": {
+        "tiles": 22.181,
+        "money": 26.047
+      },
+      "words": [
+        {
+          "text": "Then",
+          "start": 22.181,
+          "end": 22.367
+        },
+        {
+          "text": "six",
+          "start": 22.436,
+          "end": 22.634
+        },
+        {
+          "text": "groups.",
+          "start": 22.692,
+          "end": 23.179
+        },
+        {
+          "text": "Every",
+          "start": 23.876,
+          "end": 24.12
+        },
+        {
+          "text": "donor",
+          "start": 24.155,
+          "end": 24.387
+        },
+        {
+          "text": "sits",
+          "start": 24.445,
+          "end": 24.631
+        },
+        {
+          "text": "in",
+          "start": 24.666,
+          "end": 24.735
+        },
+        {
+          "text": "one.",
+          "start": 24.805,
+          "end": 25.095
+        },
+        {
+          "text": "And",
+          "start": 26.047,
+          "end": 26.198
+        },
+        {
+          "text": "under",
+          "start": 26.244,
+          "end": 26.419
+        },
+        {
+          "text": "every",
+          "start": 26.5,
+          "end": 26.767
+        },
+        {
+          "text": "count",
+          "start": 26.825,
+          "end": 27.057
+        },
+        {
+          "text": "is",
+          "start": 27.115,
+          "end": 27.197
+        },
+        {
+          "text": "what",
+          "start": 27.231,
+          "end": 27.336
+        },
+        {
+          "text": "is",
+          "start": 27.382,
+          "end": 27.464
+        },
+        {
+          "text": "at",
+          "start": 27.522,
+          "end": 27.626
+        },
+        {
+          "text": "stake,",
+          "start": 27.684,
+          "end": 27.998
+        },
+        {
+          "text": "so",
+          "start": 28.021,
+          "end": 28.125
+        },
+        {
+          "text": "seventeen",
+          "start": 28.207,
+          "end": 28.648
+        },
+        {
+          "text": "new",
+          "start": 28.706,
+          "end": 28.81
+        },
+        {
+          "text": "gifts",
+          "start": 28.868,
+          "end": 29.089
+        },
+        {
+          "text": "worth",
+          "start": 29.112,
+          "end": 29.286
+        },
+        {
+          "text": "four",
+          "start": 29.344,
+          "end": 29.519
+        },
+        {
+          "text": "thousand",
+          "start": 29.577,
+          "end": 29.902
+        },
+        {
+          "text": "dollars",
+          "start": 29.948,
+          "end": 30.25
+        },
+        {
+          "text": "does",
+          "start": 30.296,
+          "end": 30.447
+        },
+        {
+          "text": "not",
+          "start": 30.494,
+          "end": 30.656
+        },
+        {
+          "text": "look",
+          "start": 30.703,
+          "end": 30.865
+        },
+        {
+          "text": "the",
+          "start": 30.912,
+          "end": 30.981
+        },
+        {
+          "text": "same",
+          "start": 31.028,
+          "end": 31.272
+        },
+        {
+          "text": "as",
+          "start": 31.306,
+          "end": 31.376
+        },
+        {
+          "text": "seventy-one",
+          "start": 31.411,
+          "end": 31.922
+        },
+        {
+          "text": "donors",
+          "start": 31.945,
+          "end": 32.351
+        },
+        {
+          "text": "slipping",
+          "start": 32.676,
+          "end": 33.036
+        },
+        {
+          "text": "away",
+          "start": 33.094,
+          "end": 33.338
+        },
+        {
+          "text": "with",
+          "start": 33.396,
+          "end": 33.535
+        },
+        {
+          "text": "seventy-one",
+          "start": 33.57,
+          "end": 34.069
+        },
+        {
+          "text": "thousand",
+          "start": 34.104,
+          "end": 34.406
+        },
+        {
+          "text": "behind",
+          "start": 34.452,
+          "end": 34.719
+        },
+        {
+          "text": "them.",
+          "start": 34.766,
+          "end": 35.416
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "title": "At risk, their own rhythm",
+      "start": 35.566,
+      "duration": 14,
+      "voStart": 35.916,
+      "voLength": 12.957,
+      "audio": "audio/vo/s04.1969aef14f.clean.mp3",
+      "cues": {
+        "atrisk": 35.916,
+        "cadence": 38.726,
+        "sorted": 47.119
+      },
+      "words": [
+        {
+          "text": "At",
+          "start": 35.916,
+          "end": 36.125
+        },
+        {
+          "text": "risk",
+          "start": 36.206,
+          "end": 36.485
+        },
+        {
+          "text": "is",
+          "start": 36.555,
+          "end": 36.647
+        },
+        {
+          "text": "the",
+          "start": 36.682,
+          "end": 36.752
+        },
+        {
+          "text": "one",
+          "start": 36.822,
+          "end": 36.996
+        },
+        {
+          "text": "most",
+          "start": 37.042,
+          "end": 37.24
+        },
+        {
+          "text": "tools",
+          "start": 37.263,
+          "end": 37.541
+        },
+        {
+          "text": "get",
+          "start": 37.576,
+          "end": 37.704
+        },
+        {
+          "text": "wrong.",
+          "start": 37.739,
+          "end": 38.122
+        },
+        {
+          "text": "Storyraise",
+          "start": 38.726,
+          "end": 39.26
+        },
+        {
+          "text": "measures",
+          "start": 39.306,
+          "end": 39.585
+        },
+        {
+          "text": "each",
+          "start": 39.643,
+          "end": 39.805
+        },
+        {
+          "text": "donor",
+          "start": 39.852,
+          "end": 40.107
+        },
+        {
+          "text": "against",
+          "start": 40.177,
+          "end": 40.456
+        },
+        {
+          "text": "their",
+          "start": 40.479,
+          "end": 40.618
+        },
+        {
+          "text": "own",
+          "start": 40.653,
+          "end": 40.769
+        },
+        {
+          "text": "rhythm.",
+          "start": 40.804,
+          "end": 41.268
+        },
+        {
+          "text": "A",
+          "start": 41.593,
+          "end": 41.663
+        },
+        {
+          "text": "monthly",
+          "start": 41.744,
+          "end": 42.011
+        },
+        {
+          "text": "donor",
+          "start": 42.058,
+          "end": 42.313
+        },
+        {
+          "text": "who",
+          "start": 42.36,
+          "end": 42.452
+        },
+        {
+          "text": "has",
+          "start": 42.499,
+          "end": 42.592
+        },
+        {
+          "text": "missed",
+          "start": 42.65,
+          "end": 42.847
+        },
+        {
+          "text": "three",
+          "start": 42.87,
+          "end": 43.079
+        },
+        {
+          "text": "gifts",
+          "start": 43.126,
+          "end": 43.381
+        },
+        {
+          "text": "is",
+          "start": 43.428,
+          "end": 43.521
+        },
+        {
+          "text": "late.",
+          "start": 43.602,
+          "end": 43.962
+        },
+        {
+          "text": "An",
+          "start": 44.136,
+          "end": 44.275
+        },
+        {
+          "text": "annual",
+          "start": 44.345,
+          "end": 44.623
+        },
+        {
+          "text": "donor",
+          "start": 44.658,
+          "end": 44.96
+        },
+        {
+          "text": "who",
+          "start": 45.03,
+          "end": 45.146
+        },
+        {
+          "text": "gave",
+          "start": 45.192,
+          "end": 45.343
+        },
+        {
+          "text": "in",
+          "start": 45.378,
+          "end": 45.424
+        },
+        {
+          "text": "November",
+          "start": 45.471,
+          "end": 45.854
+        },
+        {
+          "text": "is",
+          "start": 45.947,
+          "end": 46.063
+        },
+        {
+          "text": "not.",
+          "start": 46.133,
+          "end": 46.516
+        },
+        {
+          "text": "And",
+          "start": 47.119,
+          "end": 47.259
+        },
+        {
+          "text": "the",
+          "start": 47.294,
+          "end": 47.363
+        },
+        {
+          "text": "list",
+          "start": 47.421,
+          "end": 47.63
+        },
+        {
+          "text": "leads",
+          "start": 47.7,
+          "end": 47.932
+        },
+        {
+          "text": "with",
+          "start": 47.955,
+          "end": 48.072
+        },
+        {
+          "text": "the",
+          "start": 48.095,
+          "end": 48.164
+        },
+        {
+          "text": "money.",
+          "start": 48.199,
+          "end": 48.873
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "title": "Why now",
+      "start": 49.166,
+      "duration": 16.086,
+      "voStart": 49.516,
+      "voLength": 15.186,
+      "audio": "audio/vo/s05.27bb8d856e.clean.mp3",
+      "cues": {
+        "row": 49.516,
+        "reason": 52.337,
+        "reads": 55.333,
+        "moat": 60.453
+      },
+      "words": [
+        {
+          "text": "Every",
+          "start": 49.516,
+          "end": 49.818
+        },
+        {
+          "text": "row",
+          "start": 49.876,
+          "end": 50.062
+        },
+        {
+          "text": "says",
+          "start": 50.12,
+          "end": 50.294
+        },
+        {
+          "text": "why",
+          "start": 50.364,
+          "end": 50.584
+        },
+        {
+          "text": "this",
+          "start": 50.654,
+          "end": 50.781
+        },
+        {
+          "text": "person,",
+          "start": 50.84,
+          "end": 51.257
+        },
+        {
+          "text": "now.",
+          "start": 51.432,
+          "end": 51.826
+        },
+        {
+          "text": "No",
+          "start": 52.337,
+          "end": 52.488
+        },
+        {
+          "text": "gift",
+          "start": 52.558,
+          "end": 52.755
+        },
+        {
+          "text": "in",
+          "start": 52.802,
+          "end": 52.86
+        },
+        {
+          "text": "four",
+          "start": 52.918,
+          "end": 53.08
+        },
+        {
+          "text": "months,",
+          "start": 53.138,
+          "end": 53.382
+        },
+        {
+          "text": "and",
+          "start": 53.405,
+          "end": 53.487
+        },
+        {
+          "text": "they",
+          "start": 53.521,
+          "end": 53.614
+        },
+        {
+          "text": "usually",
+          "start": 53.672,
+          "end": 53.951
+        },
+        {
+          "text": "give",
+          "start": 53.997,
+          "end": 54.148
+        },
+        {
+          "text": "every",
+          "start": 54.183,
+          "end": 54.369
+        },
+        {
+          "text": "two.",
+          "start": 54.415,
+          "end": 54.822
+        },
+        {
+          "text": "Then",
+          "start": 55.333,
+          "end": 55.495
+        },
+        {
+          "text": "what",
+          "start": 55.53,
+          "end": 55.634
+        },
+        {
+          "text": "you",
+          "start": 55.669,
+          "end": 55.739
+        },
+        {
+          "text": "already",
+          "start": 55.785,
+          "end": 56.006
+        },
+        {
+          "text": "know:",
+          "start": 56.041,
+          "end": 56.505
+        },
+        {
+          "text": "what",
+          "start": 57.109,
+          "end": 57.271
+        },
+        {
+          "text": "they",
+          "start": 57.306,
+          "end": 57.411
+        },
+        {
+          "text": "have",
+          "start": 57.457,
+          "end": 57.573
+        },
+        {
+          "text": "given,",
+          "start": 57.608,
+          "end": 58.084
+        },
+        {
+          "text": "and",
+          "start": 58.688,
+          "end": 58.827
+        },
+        {
+          "text": "whether",
+          "start": 58.862,
+          "end": 59.071
+        },
+        {
+          "text": "they",
+          "start": 59.117,
+          "end": 59.222
+        },
+        {
+          "text": "read",
+          "start": 59.28,
+          "end": 59.443
+        },
+        {
+          "text": "what",
+          "start": 59.477,
+          "end": 59.582
+        },
+        {
+          "text": "you",
+          "start": 59.617,
+          "end": 59.686
+        },
+        {
+          "text": "send.",
+          "start": 59.744,
+          "end": 60.128
+        },
+        {
+          "text": "Thirty-four",
+          "start": 60.453,
+          "end": 61.033
+        },
+        {
+          "text": "of",
+          "start": 61.08,
+          "end": 61.126
+        },
+        {
+          "text": "these",
+          "start": 61.173,
+          "end": 61.324
+        },
+        {
+          "text": "seventy-one",
+          "start": 61.359,
+          "end": 62.09
+        },
+        {
+          "text": "stopped",
+          "start": 62.264,
+          "end": 62.566
+        },
+        {
+          "text": "giving",
+          "start": 62.589,
+          "end": 62.81
+        },
+        {
+          "text": "and",
+          "start": 62.845,
+          "end": 62.914
+        },
+        {
+          "text": "still",
+          "start": 62.949,
+          "end": 63.112
+        },
+        {
+          "text": "open",
+          "start": 63.17,
+          "end": 63.332
+        },
+        {
+          "text": "your",
+          "start": 63.367,
+          "end": 63.46
+        },
+        {
+          "text": "reports.",
+          "start": 63.495,
+          "end": 64.702
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "title": "Read it or compare it",
+      "start": 64.852,
+      "duration": 8,
+      "voStart": 65.202,
+      "voLength": 6.966,
+      "audio": "audio/vo/s06.e26b7f3d43.clean.mp3",
+      "cues": {
+        "views": 65.202,
+        "table": 67.361
+      },
+      "words": [
+        {
+          "text": "Overview",
+          "start": 65.202,
+          "end": 65.701
+        },
+        {
+          "text": "reads",
+          "start": 65.771,
+          "end": 65.991
+        },
+        {
+          "text": "as",
+          "start": 66.026,
+          "end": 66.108
+        },
+        {
+          "text": "a",
+          "start": 66.154,
+          "end": 66.189
+        },
+        {
+          "text": "list",
+          "start": 66.247,
+          "end": 66.409
+        },
+        {
+          "text": "of",
+          "start": 66.444,
+          "end": 66.502
+        },
+        {
+          "text": "people.",
+          "start": 66.549,
+          "end": 66.978
+        },
+        {
+          "text": "Table",
+          "start": 67.361,
+          "end": 67.675
+        },
+        {
+          "text": "puts",
+          "start": 67.71,
+          "end": 67.896
+        },
+        {
+          "text": "the",
+          "start": 67.93,
+          "end": 68
+        },
+        {
+          "text": "same",
+          "start": 68.046,
+          "end": 68.267
+        },
+        {
+          "text": "donors",
+          "start": 68.313,
+          "end": 68.615
+        },
+        {
+          "text": "in",
+          "start": 68.662,
+          "end": 68.72
+        },
+        {
+          "text": "a",
+          "start": 68.755,
+          "end": 68.778
+        },
+        {
+          "text": "grid",
+          "start": 68.824,
+          "end": 69.022
+        },
+        {
+          "text": "you",
+          "start": 69.057,
+          "end": 69.126
+        },
+        {
+          "text": "can",
+          "start": 69.173,
+          "end": 69.277
+        },
+        {
+          "text": "sort.",
+          "start": 69.335,
+          "end": 69.614
+        },
+        {
+          "text": "Whichever",
+          "start": 69.637,
+          "end": 70.009
+        },
+        {
+          "text": "you",
+          "start": 70.09,
+          "end": 70.171
+        },
+        {
+          "text": "use",
+          "start": 70.287,
+          "end": 70.554
+        },
+        {
+          "text": "is",
+          "start": 70.601,
+          "end": 70.67
+        },
+        {
+          "text": "remembered.",
+          "start": 70.728,
+          "end": 72.168
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "title": "Make something",
+      "start": 72.452,
+      "duration": 13.532,
+      "voStart": 72.802,
+      "voLength": 12.632,
+      "audio": "audio/vo/s07.ed1ef2d772.clean.mp3",
+      "cues": {
+        "actions": 72.802,
+        "cards": 75.008
+      },
+      "words": [
+        {
+          "text": "Then",
+          "start": 72.802,
+          "end": 72.988
+        },
+        {
+          "text": "the",
+          "start": 73.023,
+          "end": 73.092
+        },
+        {
+          "text": "part",
+          "start": 73.127,
+          "end": 73.29
+        },
+        {
+          "text": "that",
+          "start": 73.324,
+          "end": 73.429
+        },
+        {
+          "text": "is",
+          "start": 73.475,
+          "end": 73.545
+        },
+        {
+          "text": "the",
+          "start": 73.58,
+          "end": 73.65
+        },
+        {
+          "text": "point.",
+          "start": 73.684,
+          "end": 74.056
+        },
+        {
+          "text": "Two",
+          "start": 75.008,
+          "end": 75.194
+        },
+        {
+          "text": "things",
+          "start": 75.252,
+          "end": 75.484
+        },
+        {
+          "text": "you",
+          "start": 75.519,
+          "end": 75.588
+        },
+        {
+          "text": "can",
+          "start": 75.635,
+          "end": 75.751
+        },
+        {
+          "text": "make",
+          "start": 75.821,
+          "end": 76.03
+        },
+        {
+          "text": "for",
+          "start": 76.088,
+          "end": 76.204
+        },
+        {
+          "text": "the",
+          "start": 76.25,
+          "end": 76.32
+        },
+        {
+          "text": "group",
+          "start": 76.355,
+          "end": 76.529
+        },
+        {
+          "text": "in",
+          "start": 76.575,
+          "end": 76.633
+        },
+        {
+          "text": "front",
+          "start": 76.68,
+          "end": 76.854
+        },
+        {
+          "text": "of",
+          "start": 76.889,
+          "end": 76.947
+        },
+        {
+          "text": "you,",
+          "start": 76.993,
+          "end": 77.191
+        },
+        {
+          "text": "written",
+          "start": 77.307,
+          "end": 77.574
+        },
+        {
+          "text": "for",
+          "start": 77.632,
+          "end": 77.736
+        },
+        {
+          "text": "that",
+          "start": 77.783,
+          "end": 77.91
+        },
+        {
+          "text": "group.",
+          "start": 77.957,
+          "end": 78.294
+        },
+        {
+          "text": "Record",
+          "start": 78.897,
+          "end": 79.257
+        },
+        {
+          "text": "one",
+          "start": 79.327,
+          "end": 79.489
+        },
+        {
+          "text": "thank-you",
+          "start": 79.536,
+          "end": 79.907
+        },
+        {
+          "text": "for",
+          "start": 79.989,
+          "end": 80.105
+        },
+        {
+          "text": "everyone",
+          "start": 80.174,
+          "end": 80.569
+        },
+        {
+          "text": "who",
+          "start": 80.592,
+          "end": 80.708
+        },
+        {
+          "text": "just",
+          "start": 80.778,
+          "end": 80.941
+        },
+        {
+          "text": "gave,",
+          "start": 80.975,
+          "end": 81.428
+        },
+        {
+          "text": "or",
+          "start": 81.637,
+          "end": 81.765
+        },
+        {
+          "text": "put",
+          "start": 81.823,
+          "end": 81.974
+        },
+        {
+          "text": "together",
+          "start": 82.009,
+          "end": 82.311
+        },
+        {
+          "text": "a",
+          "start": 82.357,
+          "end": 82.38
+        },
+        {
+          "text": "report",
+          "start": 82.461,
+          "end": 82.787
+        },
+        {
+          "text": "showing",
+          "start": 82.845,
+          "end": 83.147
+        },
+        {
+          "text": "what",
+          "start": 83.205,
+          "end": 83.344
+        },
+        {
+          "text": "the",
+          "start": 83.379,
+          "end": 83.449
+        },
+        {
+          "text": "money",
+          "start": 83.484,
+          "end": 83.681
+        },
+        {
+          "text": "is",
+          "start": 83.727,
+          "end": 83.809
+        },
+        {
+          "text": "doing.",
+          "start": 83.867,
+          "end": 85.434
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "title": "Three routes",
+      "start": 85.584,
+      "duration": 13.114,
+      "voStart": 85.934,
+      "voLength": 12.214,
+      "audio": "audio/vo/s08.1867b4fe2f.clean.mp3",
+      "cues": {
+        "dialog": 85.934,
+        "routes": 88.314,
+        "carry": 93.144
+      },
+      "words": [
+        {
+          "text": "Open",
+          "start": 85.934,
+          "end": 86.247
+        },
+        {
+          "text": "one",
+          "start": 86.329,
+          "end": 86.631
+        },
+        {
+          "text": "and",
+          "start": 86.874,
+          "end": 87.037
+        },
+        {
+          "text": "you",
+          "start": 87.072,
+          "end": 87.141
+        },
+        {
+          "text": "pick",
+          "start": 87.188,
+          "end": 87.339
+        },
+        {
+          "text": "how",
+          "start": 87.385,
+          "end": 87.467
+        },
+        {
+          "text": "to",
+          "start": 87.501,
+          "end": 87.548
+        },
+        {
+          "text": "make",
+          "start": 87.594,
+          "end": 87.768
+        },
+        {
+          "text": "it.",
+          "start": 87.803,
+          "end": 87.989
+        },
+        {
+          "text": "A",
+          "start": 88.314,
+          "end": 88.395
+        },
+        {
+          "text": "draft",
+          "start": 88.453,
+          "end": 88.72
+        },
+        {
+          "text": "written",
+          "start": 88.744,
+          "end": 88.953
+        },
+        {
+          "text": "for",
+          "start": 88.999,
+          "end": 89.092
+        },
+        {
+          "text": "this",
+          "start": 89.138,
+          "end": 89.254
+        },
+        {
+          "text": "group,",
+          "start": 89.313,
+          "end": 89.603
+        },
+        {
+          "text": "a",
+          "start": 89.626,
+          "end": 89.672
+        },
+        {
+          "text": "template,",
+          "start": 89.73,
+          "end": 90.218
+        },
+        {
+          "text": "or",
+          "start": 90.253,
+          "end": 90.404
+        },
+        {
+          "text": "a",
+          "start": 90.439,
+          "end": 90.462
+        },
+        {
+          "text": "report",
+          "start": 90.508,
+          "end": 90.822
+        },
+        {
+          "text": "you",
+          "start": 90.868,
+          "end": 90.95
+        },
+        {
+          "text": "have",
+          "start": 90.996,
+          "end": 91.124
+        },
+        {
+          "text": "already",
+          "start": 91.17,
+          "end": 91.46
+        },
+        {
+          "text": "published.",
+          "start": 91.507,
+          "end": 92.029
+        },
+        {
+          "text": "Storyraise",
+          "start": 93.144,
+          "end": 93.713
+        },
+        {
+          "text": "saves",
+          "start": 93.759,
+          "end": 94.049
+        },
+        {
+          "text": "the",
+          "start": 94.073,
+          "end": 94.142
+        },
+        {
+          "text": "group",
+          "start": 94.177,
+          "end": 94.363
+        },
+        {
+          "text": "as",
+          "start": 94.409,
+          "end": 94.479
+        },
+        {
+          "text": "a",
+          "start": 94.514,
+          "end": 94.549
+        },
+        {
+          "text": "list",
+          "start": 94.618,
+          "end": 94.85
+        },
+        {
+          "text": "and",
+          "start": 94.897,
+          "end": 94.967
+        },
+        {
+          "text": "opens",
+          "start": 95.025,
+          "end": 95.303
+        },
+        {
+          "text": "Send,",
+          "start": 95.338,
+          "end": 95.698
+        },
+        {
+          "text": "and",
+          "start": 95.721,
+          "end": 95.861
+        },
+        {
+          "text": "each",
+          "start": 95.907,
+          "end": 96.07
+        },
+        {
+          "text": "donor",
+          "start": 96.116,
+          "end": 96.418
+        },
+        {
+          "text": "gets",
+          "start": 96.488,
+          "end": 96.65
+        },
+        {
+          "text": "their",
+          "start": 96.685,
+          "end": 96.836
+        },
+        {
+          "text": "own",
+          "start": 96.894,
+          "end": 97.115
+        },
+        {
+          "text": "personalized",
+          "start": 97.196,
+          "end": 97.823
+        },
+        {
+          "text": "link.",
+          "start": 97.858,
+          "end": 98.148
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "title": "Giving health",
+      "start": 98.298,
+      "duration": 13.16,
+      "voStart": 98.648,
+      "voLength": 12.26,
+      "audio": "audio/vo/s09.0476cc07c7.clean.mp3",
+      "cues": {
+        "health": 98.648,
+        "bands": 101.539
+      },
+      "words": [
+        {
+          "text": "Further",
+          "start": 98.648,
+          "end": 98.996
+        },
+        {
+          "text": "down,",
+          "start": 99.043,
+          "end": 99.414
+        },
+        {
+          "text": "the",
+          "start": 99.623,
+          "end": 99.728
+        },
+        {
+          "text": "year",
+          "start": 99.786,
+          "end": 99.972
+        },
+        {
+          "text": "in",
+          "start": 100.018,
+          "end": 100.076
+        },
+        {
+          "text": "full.",
+          "start": 100.146,
+          "end": 100.587
+        },
+        {
+          "text": "Retention",
+          "start": 101.539,
+          "end": 101.91
+        },
+        {
+          "text": "by",
+          "start": 101.957,
+          "end": 102.027
+        },
+        {
+          "text": "gift",
+          "start": 102.085,
+          "end": 102.259
+        },
+        {
+          "text": "size",
+          "start": 102.294,
+          "end": 102.619
+        },
+        {
+          "text": "is",
+          "start": 102.665,
+          "end": 102.746
+        },
+        {
+          "text": "the",
+          "start": 102.793,
+          "end": 102.862
+        },
+        {
+          "text": "table",
+          "start": 102.909,
+          "end": 103.176
+        },
+        {
+          "text": "that",
+          "start": 103.211,
+          "end": 103.315
+        },
+        {
+          "text": "changes",
+          "start": 103.35,
+          "end": 103.675
+        },
+        {
+          "text": "plans.",
+          "start": 103.722,
+          "end": 104.256
+        },
+        {
+          "text": "Donors",
+          "start": 104.581,
+          "end": 104.894
+        },
+        {
+          "text": "under",
+          "start": 104.941,
+          "end": 105.115
+        },
+        {
+          "text": "a",
+          "start": 105.173,
+          "end": 105.196
+        },
+        {
+          "text": "hundred",
+          "start": 105.254,
+          "end": 105.463
+        },
+        {
+          "text": "dollars",
+          "start": 105.486,
+          "end": 105.8
+        },
+        {
+          "text": "come",
+          "start": 105.858,
+          "end": 106.009
+        },
+        {
+          "text": "back",
+          "start": 106.032,
+          "end": 106.194
+        },
+        {
+          "text": "a",
+          "start": 106.241,
+          "end": 106.276
+        },
+        {
+          "text": "third",
+          "start": 106.311,
+          "end": 106.485
+        },
+        {
+          "text": "of",
+          "start": 106.52,
+          "end": 106.566
+        },
+        {
+          "text": "the",
+          "start": 106.601,
+          "end": 106.67
+        },
+        {
+          "text": "time.",
+          "start": 106.705,
+          "end": 107.065
+        },
+        {
+          "text": "Donors",
+          "start": 107.506,
+          "end": 107.82
+        },
+        {
+          "text": "over",
+          "start": 107.855,
+          "end": 108.006
+        },
+        {
+          "text": "a",
+          "start": 108.052,
+          "end": 108.075
+        },
+        {
+          "text": "thousand",
+          "start": 108.133,
+          "end": 108.458
+        },
+        {
+          "text": "come",
+          "start": 108.505,
+          "end": 108.644
+        },
+        {
+          "text": "back",
+          "start": 108.667,
+          "end": 108.795
+        },
+        {
+          "text": "nearly",
+          "start": 108.853,
+          "end": 109.097
+        },
+        {
+          "text": "nine",
+          "start": 109.155,
+          "end": 109.352
+        },
+        {
+          "text": "times",
+          "start": 109.387,
+          "end": 109.619
+        },
+        {
+          "text": "in",
+          "start": 109.666,
+          "end": 109.736
+        },
+        {
+          "text": "ten.",
+          "start": 109.782,
+          "end": 110.908
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "Explore",
+      "start": 111.058,
+      "duration": 7.123,
+      "voStart": 111.408,
+      "voLength": 6.223,
+      "audio": "audio/vo/s10.d5c4f1ffdc.clean.mp3",
+      "cues": {
+        "cta": 111.408
+      },
+      "words": [
+        {
+          "text": "The",
+          "start": 111.408,
+          "end": 111.571
+        },
+        {
+          "text": "demo",
+          "start": 111.617,
+          "end": 111.838
+        },
+        {
+          "text": "below",
+          "start": 111.896,
+          "end": 112.139
+        },
+        {
+          "text": "is",
+          "start": 112.209,
+          "end": 112.29
+        },
+        {
+          "text": "the",
+          "start": 112.337,
+          "end": 112.406
+        },
+        {
+          "text": "real",
+          "start": 112.488,
+          "end": 112.673
+        },
+        {
+          "text": "page",
+          "start": 112.732,
+          "end": 112.999
+        },
+        {
+          "text": "with",
+          "start": 113.022,
+          "end": 113.126
+        },
+        {
+          "text": "sample",
+          "start": 113.149,
+          "end": 113.451
+        },
+        {
+          "text": "data.",
+          "start": 113.475,
+          "end": 113.846
+        },
+        {
+          "text": "Click",
+          "start": 114.45,
+          "end": 114.67
+        },
+        {
+          "text": "through",
+          "start": 114.705,
+          "end": 114.903
+        },
+        {
+          "text": "the",
+          "start": 114.926,
+          "end": 114.995
+        },
+        {
+          "text": "groups",
+          "start": 115.03,
+          "end": 115.413
+        },
+        {
+          "text": "and",
+          "start": 115.692,
+          "end": 115.878
+        },
+        {
+          "text": "see",
+          "start": 115.924,
+          "end": 116.052
+        },
+        {
+          "text": "what",
+          "start": 116.075,
+          "end": 116.18
+        },
+        {
+          "text": "your",
+          "start": 116.215,
+          "end": 116.331
+        },
+        {
+          "text": "own",
+          "start": 116.377,
+          "end": 116.528
+        },
+        {
+          "text": "week",
+          "start": 116.574,
+          "end": 116.725
+        },
+        {
+          "text": "would",
+          "start": 116.76,
+          "end": 116.876
+        },
+        {
+          "text": "look",
+          "start": 116.911,
+          "end": 117.05
+        },
+        {
+          "text": "like.",
+          "start": 117.108,
+          "end": 117.631
+        }
+      ]
+    }
+  ]
+}

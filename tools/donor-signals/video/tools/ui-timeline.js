@@ -10,6 +10,18 @@
   tl.fromTo('#ui-window', { autoAlpha: 0, scale: 0.9, y: 60 }, { autoAlpha: 1, scale: 1, y: 0, duration: 0.8, ease: 'power3.out' }, 0);
   tl.to('#ui-window', { autoAlpha: 0, scale: 0.96, duration: 0.45, ease: 'power2.in' }, P.duration - 0.5);
 
+  /*
+    Which group is on screen. Each state is a whole page, stacked in the same place,
+    and only its opacity moves: swapping markup mid-render would not survive a seek.
+    `set` before `to` rather than `fromTo`, because a fromTo paints its start state
+    at t=0 and every state would be visible in the first frame.
+  */
+  P.states.forEach(function (s) {
+    tl.set('#' + s.id, { opacity: 0 }, 0);
+    tl.to('#' + s.id, { opacity: 1, duration: 0.4, ease: 'power1.inOut' }, L(s.on));
+    tl.to('#' + s.id, { opacity: 0, duration: 0.4, ease: 'power1.inOut' }, Math.max(L(s.on) + 0.5, L(s.off)));
+  });
+
   // Camera: shots are pre-computed transforms of the 1200px page.
   var first = P.shots[0].to;
   P.shots.slice(1).forEach(function (shot, i) {
@@ -28,47 +40,10 @@
     tl.to('#' + l.id, { autoAlpha: 0, y: -10, duration: 0.25, ease: 'power1.in' }, Math.max(L(l.on) + 0.45, L(l.off) - 0.25));
   });
 
-  // Numbers count up as they are named.
-  P.counters.forEach(function (c) {
-    var el = document.querySelector(c.selector);
-    var state = { value: 0 };
-    tl.fromTo(state, { value: 0 }, {
-      value: c.to,
-      duration: 1.1,
-      ease: 'power2.out',
-      onUpdate: function () { el.textContent = Math.round(state.value).toLocaleString('en-US'); }
-    }, L(c.t));
-  });
-  tl.fromTo('#ui-time', { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'back.out(2)' }, L(P.time));
-
-  // Where The Clicks Go: the donut sweeps in.
-  tl.fromTo('#ui-donut', { '--sweep': 0 }, { '--sweep': 1, duration: 1.3, ease: 'power2.inOut' }, L(P.donut));
-
-  // Top Visit Times fills in column by column; Visits Over Time draws left to right.
-  var columns = document.querySelectorAll('#ui-page .heatmap__row:first-child .heatmap__cell').length;
-  for (var c = 0; c < columns; c++) {
-    tl.fromTo('#ui-page .heatmap__cell[data-col="' + c + '"]', { opacity: 0.08 }, { opacity: 1, duration: 0.35, ease: 'power1.out' }, L(P.heatmap) + c * 0.035);
-  }
-  tl.fromTo('#ui-trend-svg', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1.5, ease: 'power1.inOut' }, L(P.trend));
-
-  // The Story: the cursor clicks the tab, the underline slides, and the panes cross-fade.
-  var click = L(P.storyClick);
-  tl.fromTo('#ui-cursor', { autoAlpha: 0, x: P.cursor.x + 260, y: P.cursor.y + 240 },
-    { autoAlpha: 1, x: P.cursor.x + 130, y: P.cursor.y + 120, duration: 0.35, ease: 'power1.out' }, click - 1.25);
-  tl.to('#ui-cursor', { x: P.cursor.x - 8, y: P.cursor.y - 5, duration: 0.8, ease: 'power2.inOut' }, click - 0.9);
-  // A set at the click, not a fromTo: a fromTo renders its start state immediately,
-  // which left a stray ring on screen for the whole scene.
-  tl.set('#ui-click', { autoAlpha: 0.9, scale: 0.3 }, click);
-  tl.to('#ui-click', { autoAlpha: 0, scale: 1.4, duration: 0.5, ease: 'power2.out' }, click);
-  tl.fromTo('#ui-tab-underline', { x: 0, scaleX: 1 }, {
-    x: P.underline.to.x - P.underline.from.x,
-    scaleX: P.underline.to.w / P.underline.from.w,
-    duration: 0.35,
-    ease: 'power2.inOut'
-  }, click + 0.05);
-  tl.to('#ui-pane', { autoAlpha: 0, duration: 0.35, ease: 'power1.in' }, click + 0.1);
-  tl.fromTo('#ui-story', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, click + 0.3);
-  tl.to('#ui-cursor', { autoAlpha: 0, duration: 0.3 }, click + 0.9);
+  // The follow-up dialog rises over the window, above the camera so it stays sharp.
+  tl.set('#ui-dialog', { autoAlpha: 0 }, 0);
+  tl.fromTo('#ui-dialog', { autoAlpha: 0, scale: 0.96 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'power3.out' }, L(P.dialog.on));
+  tl.to('#ui-dialog', { autoAlpha: 0, scale: 0.98, duration: 0.35, ease: 'power2.in' }, L(P.dialog.off));
 
   window.__timelines['ui'] = tl;
 })();

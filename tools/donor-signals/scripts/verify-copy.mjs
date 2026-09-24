@@ -51,7 +51,7 @@ for (const stop of annotations.stops) {
 }
 prose.push(['landing page', text(landingHtml)]);
 enabledScenes().forEach((s) => prose.push([`narration ${s.id}`, parseScene(s.text).captionText]));
-const vtt = path.join(SITE_DIR, 'media', 'storyraise-analytics-tour.en.vtt');
+const vtt = path.join(SITE_DIR, 'media', 'donor-signals-tour.en.vtt');
 if (fs.existsSync(vtt)) prose.push(['captions', fs.readFileSync(vtt, 'utf8')]);
 
 for (const [where, value] of prose) {

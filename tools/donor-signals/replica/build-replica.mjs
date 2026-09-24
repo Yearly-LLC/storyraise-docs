@@ -111,10 +111,16 @@ const transformed = await page.evaluate(() => {
         t.content.querySelectorAll('.sig-route').forEach((b) => {
             const label = b.querySelector('b')?.textContent || '';
             const src = /draft/i.test(label) ? 'ai' : /template/i.test(label) ? 'template' : 'existing';
-            b.setAttribute('data-route', src);
+            /*
+                Namespaced on purpose. The product ships an unscoped
+                `[data-route] .material-symbols-outlined { display: none !important }`
+                for another screen, so a bare `data-route` hook here silently hid the
+                dialog's route icons and restyled its buttons.
+            */
+            b.setAttribute('data-sr-route', src);
         });
         t.content.querySelectorAll('.sig-modal-actions .btn, .sig-modal button').forEach((b) => {
-            if (!b.hasAttribute('data-route')) b.setAttribute('data-inert', '');
+            if (!b.hasAttribute('data-sr-route')) b.setAttribute('data-inert', '');
         });
         const back = t.content.querySelector('.sig-modal-backdrop');
         if (back) back.setAttribute('data-dialog-backdrop', '');
@@ -209,7 +215,7 @@ const REPLICA_ADDITIONS = `
 /* ---- Replica additions (not product CSS) ---- */
 #dashboard [data-dashboard-main]{left:0!important;width:100%!important}
 [data-inert]{cursor:not-allowed}
-[data-tile],[data-view],[data-open-dialog],[data-route]{cursor:pointer}
+[data-tile],[data-view],[data-open-dialog],[data-sr-route]{cursor:pointer}
 #replica-toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,1rem);opacity:0;pointer-events:none;z-index:1000;
   background:#1b2734;color:#fff;border:1px solid #395061;border-radius:.6rem;padding:.6rem 1rem;font:500 .85rem/1.3 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   box-shadow:0 10px 30px rgba(0,0,0,.35);transition:opacity .2s,transform .2s}

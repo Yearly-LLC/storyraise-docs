@@ -1,0 +1,232 @@
+{
+  "about": "Tour stops for the interactive Storyraise Donor Signals demo. Copy uses the product's own labels; every claim is checked against the code cited in `source` (builder repo). American English, no em dashes.",
+  "builderSha": "ad39ddb8df7fc471d6f2c77aeb947663fa6a894d",
+  "stops": [
+    {
+      "id": "health",
+      "uiLabel": [
+        "Donor retention",
+        "Fiscal year to date",
+        "First-year donors kept"
+      ],
+      "prepare": {
+        "tile": "new_gifts",
+        "view": "feed"
+      },
+      "title": "How the year is actually going",
+      "tells": "Three numbers, each with something to compare against: how many of last year's donors came back, what you have raised so far this fiscal year, and how many of last year's first-time donors gave again.",
+      "why": "A rate on its own does not tell you whether things are improving. The fiscal year to date figure carries the donor count beside it, so a year where revenue rises on a shrinking base says so.",
+      "next": "Read this first, then use the groups below to decide where the week goes.",
+      "keepInMind": [
+        "A rate worked out from fewer than ten donors is withheld rather than shown, because one person would move it too far."
+      ],
+      "source": [
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "4229-4290",
+          "note": "signals_health_strip"
+        },
+        {
+          "file": "functions/donor_signals.js",
+          "lines": "502-620",
+          "note": "org_metrics, minimum base"
+        }
+      ]
+    },
+    {
+      "id": "headline",
+      "uiLabel": [
+        "donors gave",
+        "in the last two weeks"
+      ],
+      "prepare": {
+        "tile": "new_gifts",
+        "view": "feed"
+      },
+      "title": "The situation, in a sentence",
+      "tells": "Each group gets its own sentence: what is true of these donors, why it matters now, and whether anyone on your team has worked them yet.",
+      "why": "The counts are the same ones on the tiles, said as something you can act on rather than a number you have to interpret.",
+      "next": "Pick a different group below and this sentence changes with it.",
+      "keepInMind": [
+        "The count is the number of donors the action will reach, which past two thousand donors is not the same as the number in the group."
+      ],
+      "source": [
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "4077-4200",
+          "note": "signal_group_actions"
+        }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "tiles",
+      "uiLabel": [
+        "New gifts",
+        "Upgrade candidates",
+        "Warming up",
+        "Highly engaged",
+        "At risk",
+        "Stable"
+      ],
+      "prepare": {
+        "tile": "new_gifts",
+        "view": "feed"
+      },
+      "title": "Six groups, and what each is worth",
+      "tells": "Every scored donor sits in one of five groups. New gifts overlaps them: someone who gave this fortnight is also somewhere else.",
+      "why": "The money under each count is what is at stake there, so you can see that a group of seventy is worth more of your week than a group of seventeen.",
+      "next": "Click a tile to change the page. Everything above and below it follows.",
+      "keepInMind": [
+        "New gifts counts the last fourteen days. The other five show lifetime giving, which is every gift the sync has, not this year's."
+      ],
+      "source": [
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "4335-4370",
+          "note": "signal_segment_money and signal_filter_tiles"
+        },
+        {
+          "file": "functions/donor_signals.js",
+          "lines": "289-296",
+          "note": "classify_segment"
+        }
+      ]
+    },
+    {
+      "id": "at-risk-tile",
+      "uiLabel": [
+        "At risk",
+        "slipping away"
+      ],
+      "prepare": {
+        "tile": "at_risk",
+        "view": "feed"
+      },
+      "title": "At risk means late for them, not late on a calendar",
+      "tells": "A donor is only flagged when they are past their own rhythm. Storyraise takes the median gap between their gifts and measures against that.",
+      "why": "A flat rule calls a monthly donor who has missed three gifts and an annual donor a third of the way through their year the same thing. One of those is fine.",
+      "next": "The list is ordered by what is at stake, so the donor you would least like to lose is first.",
+      "keepInMind": [
+        "A donor with only one gift on file has no rhythm to measure, so the calendar still applies to them."
+      ],
+      "source": [
+        {
+          "file": "functions/donor_signals.js",
+          "lines": "268-288",
+          "note": "gift_cadence, median gap"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "15406-15424",
+          "note": "per-group default sort"
+        }
+      ]
+    },
+    {
+      "id": "row",
+      "uiLabel": [
+        "Summary"
+      ],
+      "prepare": {
+        "tile": "at_risk",
+        "view": "feed"
+      },
+      "title": "Every row says why now",
+      "tells": "The first line is the reason this person is in front of you. The second is what you already know about them: what they have given, and whether they read what you send.",
+      "why": "Reading is the part no other system has. Storyraise publishes the reports, so it knows who opened one and how often.",
+      "next": "In At risk, look for the donors who stopped giving and still read you. They are the winnable ones.",
+      "keepInMind": [
+        "Where a donor has only two gifts, the page says their one gap rather than claiming a habit."
+      ],
+      "source": [
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "15430-15470",
+          "note": "signal_lapse_reason and signal_summary_context"
+        }
+      ]
+    },
+    {
+      "id": "views",
+      "uiLabel": [
+        "Overview",
+        "Table"
+      ],
+      "prepare": {
+        "tile": "at_risk",
+        "view": "feed"
+      },
+      "title": "Read it, or compare it",
+      "tells": "Overview reads as a list of people. Table puts the same donors in a grid with sortable headers and a column picker.",
+      "why": "Skimming who needs attention and comparing donors against each other are different jobs.",
+      "next": "Try Table, then come back. Whichever you pick is remembered.",
+      "keepInMind": [
+        "The column picker only appears in Table, because there is nothing for it to pick in Overview."
+      ],
+      "source": [
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "15524-15540",
+          "note": "signal_set_view"
+        }
+      ]
+    },
+    {
+      "id": "actions",
+      "uiLabel": [
+        "Make something for them",
+        "Record one thank-you",
+        "Put together a thank-you report"
+      ],
+      "prepare": {
+        "tile": "new_gifts",
+        "view": "feed"
+      },
+      "title": "The part that is actually the point",
+      "tells": "Two things you can make for the group in front of you, written for that group. One leads, the other is there if it suits you better.",
+      "why": "A list of donors is only worth having if something comes out of it. These carry the group with them, so you are not rebuilding the list somewhere else.",
+      "next": "Open one. The report route can start from a draft written for this group, from a template, or from a report you have already published.",
+      "keepInMind": [
+        "Both routes open the builder. Nothing is sent from this page."
+      ],
+      "source": [
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "4077-4200",
+          "note": "signal_group_actions, per-group copy"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "3981-4030",
+          "note": "signal_group_brief, the template shelf per group"
+        }
+      ]
+    },
+    {
+      "id": "giving-health",
+      "uiLabel": [
+        "Giving health",
+        "Gift range (12 months)"
+      ],
+      "prepare": {
+        "tile": "new_gifts",
+        "view": "feed"
+      },
+      "title": "The year in full",
+      "tells": "Retention with its denominator spelled out, the fiscal year against the same point last year, how much of your giving comes from your largest donors, and retention broken out by gift size.",
+      "why": "The gift range table is the one that changes plans: it shows which band of donors is worth keeping and which is leaking.",
+      "next": "Use this monthly. The groups above are for the week.",
+      "keepInMind": [
+        "A band worked out from a handful of donors shows its base beside the rate, because one gift would move it a long way."
+      ],
+      "source": [
+        {
+          "file": "functions/donor_signals.js",
+          "lines": "502-620",
+          "note": "org_metrics, bands and minimum base"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 // Check a finished render and publish it to the landing page's media folder.
 //
-//   node video/tools/post-render.mjs [renders/storyraise-analytics-tour.mp4] [--poster-at 36]
+//   node video/tools/post-render.mjs [renders/donor-signals-tour.mp4] [--poster-at 36]
 //
 // 1. Probes the file (ffprobe): H.264 + yuv420p video, AAC audio, 1920x1080, and a
 //    duration within 0.15s of the timeline.
@@ -18,7 +18,7 @@ const VIDEO = path.join(TOOLS_DIR, 'video');
 const BIN = path.join(TOOLS_DIR, '.bin');
 const MEDIA = path.join(SITE_DIR, 'media');
 const args = process.argv.slice(2);
-const input = path.resolve(VIDEO, args.find((a) => !a.startsWith('--') && !/^\d/.test(a)) || 'renders/storyraise-analytics-tour.mp4');
+const input = path.resolve(VIDEO, args.find((a) => !a.startsWith('--') && !/^\d/.test(a)) || 'renders/donor-signals-tour.mp4');
 const timeline = JSON.parse(fs.readFileSync(path.join(VIDEO, 'timeline.json'), 'utf8'));
 // Default poster: the frame at 7 seconds, the "Storyraise Analytics" title card (Vince's pick).
 const posterFlag = args.indexOf('--poster-at');
@@ -46,13 +46,19 @@ console.log(`streams: ${video && video.codec_name} ${video && video.pix_fmt} ${v
 // published file is normalized with a two-pass loudnorm. The picture is copied, not
 // re-encoded; the relationship between voice and music is untouched.
 const TARGET = { I: -16, TP: -1.5, LRA: 11 };
+// loudnorm's linear mode applies one fixed gain, which is what keeps the voice and the
+// music in the relationship the mix set. It does not limit, so when the material needs
+// more gain than its peak headroom allows (this mix sits about 17 dB peak-to-loudness,
+// and -16 LUFS at -1.5 dBTP allows 14.5) the result clips. A limiter after the gain
+// catches those transients: it touches the peaks only, never the balance.
+const LIMIT = Math.pow(10, TARGET.TP / 20).toFixed(4);
 const measureArgs = ['-hide_banner', '-nostats', '-i', input, '-vn', '-af', `loudnorm=I=${TARGET.I}:TP=${TARGET.TP}:LRA=${TARGET.LRA}:print_format=json`, '-f', 'null', '-'];
 const measureLog = execFileSync('/bin/sh', ['-c', `"${path.join(BIN, 'ffmpeg')}" ${measureArgs.map((a) => `'${a}'`).join(' ')} 2>&1`]).toString();
 const measured = JSON.parse(measureLog.slice(measureLog.lastIndexOf('{'), measureLog.lastIndexOf('}') + 1));
 const normalized = input.replace(/\.mp4$/, '.normalized.mp4');
 execFileSync(path.join(BIN, 'ffmpeg'), [
     '-y', '-v', 'error', '-i', input, '-c:v', 'copy',
-    '-af', `loudnorm=I=${TARGET.I}:TP=${TARGET.TP}:LRA=${TARGET.LRA}:measured_I=${measured.input_i}:measured_TP=${measured.input_tp}:measured_LRA=${measured.input_lra}:measured_thresh=${measured.input_thresh}:offset=${measured.target_offset}:linear=true`,
+    '-af', `loudnorm=I=${TARGET.I}:TP=${TARGET.TP}:LRA=${TARGET.LRA}:measured_I=${measured.input_i}:measured_TP=${measured.input_tp}:measured_LRA=${measured.input_lra}:measured_thresh=${measured.input_thresh}:offset=${measured.target_offset}:linear=true,alimiter=limit=${LIMIT}:attack=5:release=50:level=disabled`,
     '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', normalized,
 ]);
 console.log(`loudness: ${measured.input_i} LUFS -> ${TARGET.I} LUFS (true peak ${measured.input_tp} -> <= ${TARGET.TP} dBTP)`);
@@ -92,11 +98,11 @@ console.log(`published loudness: ${(finalLog.match(/I:\s*(-?[\d.]+) LUFS/) || []
 fs.mkdirSync(MEDIA, { recursive: true });
 const frame = path.join(TOOLS_DIR, '.cache', 'poster-frame.png');
 execFileSync(path.join(BIN, 'ffmpeg'), ['-y', '-v', 'error', '-ss', String(posterAt), '-i', output, '-frames:v', '1', frame]);
-await sharp(frame).jpeg({ quality: 84, mozjpeg: true }).toFile(path.join(MEDIA, 'storyraise-analytics-tour-poster.jpg'));
-await sharp(frame).resize(1200, 630, { fit: 'cover', position: 'centre' }).png({ compressionLevel: 9 }).toFile(path.join(MEDIA, 'og-analytics.png'));
-fs.copyFileSync(output, path.join(MEDIA, 'storyraise-analytics-tour.mp4'));
+await sharp(frame).jpeg({ quality: 84, mozjpeg: true }).toFile(path.join(MEDIA, 'donor-signals-tour-poster.jpg'));
+await sharp(frame).resize(1200, 630, { fit: 'cover', position: 'centre' }).png({ compressionLevel: 9 }).toFile(path.join(MEDIA, 'og-donor-signals.png'));
+fs.copyFileSync(output, path.join(MEDIA, 'donor-signals-tour.mp4'));
 
-for (const f of ['storyraise-analytics-tour.mp4', 'storyraise-analytics-tour-poster.jpg', 'og-analytics.png', 'storyraise-analytics-tour.en.vtt', 'chapters.en.vtt']) {
+for (const f of ['donor-signals-tour.mp4', 'donor-signals-tour-poster.jpg', 'og-donor-signals.png', 'donor-signals-tour.en.vtt', 'chapters.en.vtt']) {
     const file = path.join(MEDIA, f);
     console.log(`  media/${f}: ${fs.existsSync(file) ? `${(fs.statSync(file).size / 1024).toFixed(0)} KB` : 'MISSING'}`);
 }

@@ -28,7 +28,7 @@ const failures = [];
 const note = (where, message) => failures.push(`${where}: ${message}`);
 
 async function openDemo(page) {
-    await page.goto(`${server.url}/storyraise-analytics/`, { waitUntil: 'load' });
+    await page.goto(`${server.url}/donor-signals/`, { waitUntil: 'load' });
     await page.evaluate(() => document.getElementById('demo').scrollIntoView({ block: 'start' }));
     await page.waitForFunction(() => {
         const f = document.querySelector('#demo-frame iframe');
@@ -94,10 +94,12 @@ for (const vp of VIEWPORTS) {
 // Deep link.
 {
     const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-    await page.goto(`${server.url}/storyraise-analytics/?step=views`, { waitUntil: 'load' });
+    // The stop that is not first, so a deep link that did nothing would show.
+    const deep = stops[Math.min(5, stops.length - 1)];
+    await page.goto(`${server.url}/donor-signals/?step=${deep.id}`, { waitUntil: 'load' });
     await page.waitForTimeout(2500);
     const title = await page.evaluate(() => (document.querySelector('#sra-pop-title') || {}).textContent);
-    if (title !== 'Views') note('deep link', `?step=views opened "${title}"`);
+    if (title !== deep.title) note('deep link', `?step=${deep.id} opened "${title}", expected "${deep.title}"`);
     await page.close();
 }
 
@@ -105,8 +107,8 @@ for (const vp of VIEWPORTS) {
 {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
     const demoRequests = [];
-    page.on('request', (r) => { if (r.url().includes('/storyraise-analytics/demo/')) demoRequests.push(r.url()); });
-    await page.goto(`${server.url}/storyraise-analytics/`, { waitUntil: 'load' });
+    page.on('request', (r) => { if (r.url().includes('/donor-signals/demo/')) demoRequests.push(r.url()); });
+    await page.goto(`${server.url}/donor-signals/`, { waitUntil: 'load' });
     for (let y = 0; y < 12000; y += 700) { await page.evaluate((top) => window.scrollTo(0, top), y); await page.waitForTimeout(120); }
     await page.waitForTimeout(1000);
     const shown = await page.evaluate(() => ['.sra-hero-actions', '#demo'].filter((s) => getComputedStyle(document.querySelector(s)).display !== 'none'));
@@ -120,7 +122,7 @@ await browser.close();
 {
     const chrome = await chromium.launch({ channel: 'chrome', args: ['--autoplay-policy=no-user-gesture-required'] });
     const page = await chrome.newPage({ viewport: { width: 1440, height: 900 } });
-    await page.goto(`${server.url}/storyraise-analytics/`, { waitUntil: 'load' });
+    await page.goto(`${server.url}/donor-signals/`, { waitUntil: 'load' });
     await page.waitForSelector('#tour-chapters button', { timeout: 10000 });
     const chips = await page.$$eval('#tour-chapters button .sra-chapter-time', (els) => els.map((el) => el.textContent));
     const toSeconds = (label) => label.split(':').reduce((total, part) => total * 60 + Number(part), 0);

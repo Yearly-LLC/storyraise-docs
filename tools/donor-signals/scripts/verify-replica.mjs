@@ -1,78 +1,160 @@
-// Parity check: does the demo show what the live Analytics page showed?
+// Parity check: does the demo show what the live Donor Signals page showed?
 //
-//   node scripts/verify-replica.mjs [path/to/live-snapshot.yml]
+//   node scripts/verify-replica.mjs
 //
-// Reads the accessibility snapshot captured from the production page
-// (#/ramsey/insights/engagement-demo), keeps the analytics content (between the
-// page title and the contact card), applies the demo's identity rename, and checks
-// that every label, value, name, tooltip, and chart title appears in the demo page's
-// text or accessible attributes.
+// The Analytics demo compared against a separate accessibility snapshot of the
+// production page. Donor Signals has no single page to snapshot: what is on the
+// screen changes with the group and the view, so the capture itself holds the
+// twelve tile/view fragments and the four dialogs straight off the live app.
+// This walks the built demo through all sixteen of those states through
+// window.SRReplica and checks that every piece of text the live app rendered is
+// still rendered here. It also asserts the demo reaches nothing off the page.
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
-import { DOCS_ROOT, config, renameString } from './lib/identity.mjs';
+import { DOCS_ROOT, TOOLS_DIR, config } from './lib/identity.mjs';
 import { serveStatic } from './lib/static-server.mjs';
 
-const SNAPSHOT = process.argv[2] || path.join(config.builder.path, '.playwright-mcp', 'page-2026-09-10T17-12-09-787Z.yml');
-const lines = fs.readFileSync(SNAPSHOT, 'utf8').split('\n');
+const capture = JSON.parse(fs.readFileSync(path.join(TOOLS_DIR, '.cache', 'replica', 'capture.json'), 'utf8'));
 
-const start = lines.findIndex((l) => /heading "Analytics:/.test(l));
-const stop = lines.findIndex((l, i) => i > start && /always improving Insights/.test(l));
-const region = lines.slice(start, stop === -1 ? lines.length : stop);
-
-// Pull quoted accessible names and trailing text values out of the YAML lines.
-// Lines look like `- generic "Accessible name" [ref=f8e1]: trailing text`. A quoted
-// name can itself contain ": " (e.g. ribbon titles), so take the name from the quotes
-// and the trailing text only from after the closing `]:`.
-const expected = new Set();
-for (const line of region) {
-    const quoted = line.match(/^\s*-?\s*'?[a-z]+ "(.+)"(?: \[[^\]]*\])*'?:?\s*(.*)$/i);
-    if (quoted) {
-        expected.add(quoted[1]);
-        const trailing = quoted[2].replace(/^['"]|['"]$/g, '').trim();
-        if (trailing) expected.add(trailing);
-        continue;
-    }
-    const text = line.match(/^\s*-\s*(?:text|paragraph|generic|strong|heading)(?: \[[^\]]*\])*:\s*(.+)$/);
-    if (text) expected.add(text[1].replace(/^['"]|['"]$/g, '').trim());
-}
-
-const IGNORE = [
-    /^\/url/,                                   // link targets
-    /^(arrow_back|Back)$/,                      // removed Back button
-    /^Analytics: Engagement Demo$/,             // renamed title, checked separately below
-    /^[a-z_]+$/,                                // bare icon ligature names
-    /account page|excluding collaborators|See how your published reports|edit setting in the/i, // removed intro paragraph
-    /^Zoom (in|out)$/,                          // map controls: aria-labels checked via attributes
-];
-const checks = [...expected]
-    .map((s) => renameString(s.replace(/\s+/g, ' ').trim()))
-    .filter((s) => s.length > 1 && !IGNORE.some((re) => re.test(s)));
-checks.push(`Analytics: ${config.identity.report_title}`);
+// The captured fragment is compared as it RENDERS, not as it reads in the source.
+// Plenty of the markup never reaches the screen (the group tiles carry a sub-label
+// that `.sig-kpis-filter .sig-kpi-sub` hides), so a source comparison would flag
+// text the live app does not show either. Rendering both sides under the same
+// stylesheet is also the check that matters: it is what catches the build, whose
+// job is to localize the cover images and trim the CSS, changing what is visible.
+// The probe's <img> sources are stripped so the check itself stays offline.
+const offline = (html) => html
+    .replace(/\ssrc="[^"]*"/g, ' src=""')
+    .replace(/url\((?:&quot;|["'])?https?:\/\/[^)]*\)/g, 'none');
+const norm = (s) => s.replace(/\s+/g, ' ').trim();
 
 const server = await serveStatic(DOCS_ROOT, 5072); // 5070 is left free for a local preview server
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1200, height: 900 }, timezoneId: config.capture.timezone });
-await page.goto(`${server.url}/storyraise-analytics/demo/`, { waitUntil: 'load' });
-const haystack = await page.evaluate(() => {
-    const parts = [document.body.innerText];
-    document.querySelectorAll('[title], [aria-label], [data-tip], [data-tooltip]').forEach((el) => {
-        ['title', 'aria-label', 'data-tip', 'data-tooltip'].forEach((a) => el.hasAttribute(a) && parts.push(el.getAttribute(a)));
-    });
-    document.querySelectorAll('svg title, svg text').forEach((el) => parts.push(el.textContent));
-    return parts.join('\n').replace(/\s+/g, ' ');
-});
+// Same viewport the capture used, or every responsive rule lands somewhere else
+// and the geometry comparison below is meaningless.
+const page = await browser.newPage({ viewport: config.capture.viewport, deviceScaleFactor: 1, timezoneId: config.capture.timezone });
+
+const external = [];
+const consoleErrors = [];
+page.on('request', (r) => { if (!r.url().startsWith(server.url) && !r.url().startsWith('data:') && !r.url().startsWith('blob:')) external.push(r.url()); });
+page.on('console', (m) => { if (m.type() === 'error') consoleErrors.push(m.text()); });
+page.on('pageerror', (e) => consoleErrors.push(String(e)));
+
+await page.goto(`${server.url}/donor-signals/demo/`, { waitUntil: 'networkidle' });
+
+const problems = [];
+let checked = 0;
+
+/*
+    The live app's own screenshots of the card and each dialog are in the capture.
+    Their pixel size is the shape the product rendered, so comparing the demo's box
+    against them catches what a text comparison cannot: a dialog that lost its modal
+    styling and reflowed into the page, a card that collapsed, a rule PurgeCSS cut.
+*/
+const shotsDir = path.join(TOOLS_DIR, '.cache', 'replica', 'app-shots');
+function shotSize(name) {
+    const file = path.join(shotsDir, `${name}.png`);
+    if (!fs.existsSync(file)) return null;
+    const head = Buffer.alloc(24);
+    const fd = fs.openSync(file, 'r');
+    fs.readSync(fd, head, 0, 24, 0);
+    fs.closeSync(fd);
+    return { width: head.readUInt32BE(16), height: head.readUInt32BE(20) };
+}
+async function boxOf(selector) {
+    return page.evaluate((sel) => {
+        const el = document.querySelector(sel);
+        if (!el) return null;
+        const r = el.getBoundingClientRect();
+        return { width: Math.round(r.width), height: Math.round(r.height), position: getComputedStyle(el).position };
+    }, selector);
+}
+function compareBox(label, box, shot, tolerance = 2) {
+    if (!shot) return;
+    if (!box) { problems.push(`[shape] ${label}: nothing matched on the page`); return; }
+    if (Math.abs(box.width - shot.width) > tolerance || Math.abs(box.height - shot.height) > tolerance) {
+        problems.push(`[shape] ${label}: the demo renders ${box.width}x${box.height}, the live app rendered ${shot.width}x${shot.height}`);
+    }
+}
+
+async function read(selector) {
+    return page.evaluate((sel) => {
+        const el = document.querySelector(sel);
+        return el ? el.innerText : null;
+    }, selector);
+}
+
+/*
+    Render a captured fragment off to the side of the real card, inside the same
+    [data-signals] ancestor and at the same width, so every scoped and responsive
+    rule applies exactly as it does to the live one.
+*/
+async function renderCaptured(html, hostSelector) {
+    return page.evaluate(([markup, sel]) => {
+        const ref = document.querySelector(sel);
+        if (!ref) return null;
+        const probe = document.createElement('div');
+        probe.id = 'parity-probe';
+        probe.style.cssText = `position:absolute;left:-99999px;top:0;width:${ref.offsetWidth}px;`;
+        probe.innerHTML = markup;
+        (ref.parentElement || document.body).appendChild(probe);
+        const text = probe.innerText;
+        probe.remove();
+        return text;
+    }, [html, hostSelector]);
+}
+
+// ---- The twelve group/view states ----
+for (const key of Object.keys(capture.states)) {
+    const [tile, view] = key.split('|');
+    await page.evaluate(([t, v]) => { window.SRReplica.setTile(t); window.SRReplica.setView(v); }, [tile, view]);
+    await page.waitForTimeout(80);
+    const live = await read('[data-signals] .sig-block');
+    if (live == null) { problems.push(`[state] ${key}: no .sig-block on the page`); continue; }
+    if (view === 'feed') compareBox(`tile-${tile}`, await boxOf('[data-signals] .sig-block'), shotSize(`tile-${tile}`));
+    const want = await renderCaptured(offline(capture.states[key]), '[data-signals] .sig-block');
+    checked += 1;
+    if (norm(live) !== norm(want)) {
+        const a = norm(want).split(' ');
+        const b = norm(live).split(' ');
+        const at = a.findIndex((w, i) => b[i] !== w);
+        problems.push(`[state] ${key}: renders differently from the capture, from word ${at}: captured "${a.slice(at, at + 12).join(' ')}" / demo "${b.slice(at, at + 12).join(' ')}"`);
+    }
+}
+
+// ---- The four follow-up dialogs ----
+await page.evaluate(() => { window.SRReplica.setTile('new_gifts'); window.SRReplica.setView('feed'); });
+for (const key of Object.keys(capture.dialogs)) {
+    if (!capture.dialogs[key]) continue;
+    await page.evaluate((k) => window.SRReplica.openDialog(k), key);
+    await page.waitForTimeout(80);
+    const live = await read('#replica-dialog');
+    if (live == null) { problems.push(`[dialog] ${key}: did not open`); continue; }
+    compareBox(`dialog-${key}`, await boxOf('#replica-dialog .sig-modal'), shotSize(`dialog-${key}`));
+    const backdrop = await boxOf('#replica-dialog .sig-modal-backdrop');
+    if (!backdrop || backdrop.position !== 'fixed') problems.push(`[shape] dialog-${key}: the backdrop is ${backdrop ? backdrop.position : 'missing'}, not fixed`);
+    const want = await renderCaptured(offline(capture.dialogs[key]), '#replica-dialog');
+    checked += 1;
+    if (norm(live) !== norm(want)) {
+        const a = norm(want).split(' ');
+        const b = norm(live).split(' ');
+        const at = a.findIndex((w, i) => b[i] !== w);
+        problems.push(`[dialog] ${key}: renders differently from the capture, from word ${at}: captured "${a.slice(at, at + 12).join(' ')}" / demo "${b.slice(at, at + 12).join(' ')}"`);
+    }
+    await page.evaluate(() => window.SRReplica.closeDialog());
+}
+
 await browser.close();
 await server.close();
 
-// innerText applies CSS text-transform (the donut's "clicked a link" renders uppercase),
-// so compare without case or whitespace as the fallback.
-const compact = (s) => s.replace(/\s+/g, '').toLowerCase();
-const flat = compact(haystack);
-const missing = checks.filter((s) => !haystack.includes(s) && !flat.includes(compact(s)));
-console.log(`checked ${checks.length} strings from the live page`);
-if (missing.length) {
-    console.log(`${missing.length} missing from the demo:\n  ${missing.slice(0, 60).join('\n  ')}`);
+// ---- The demo is a closed box ----
+for (const url of [...new Set(external)]) problems.push(`[network] the demo requested ${url}`);
+for (const err of consoleErrors) problems.push(`[console] ${err}`);
+
+console.log(`compared ${checked} rendered states across ${Object.keys(capture.states).length} states and ${Object.keys(capture.dialogs).length} dialogs`);
+if (problems.length) {
+    console.log(`${problems.length} problem(s):\n  ${problems.slice(0, 60).join('\n  ')}`);
     process.exit(1);
 }
-console.log('parity OK: every label, value, and name from the live page is in the demo');
+console.log('parity OK: every state renders exactly as the live app rendered it, and the demo asks the network for nothing');

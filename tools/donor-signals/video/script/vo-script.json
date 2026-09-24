@@ -1,80 +1,66 @@
 {
-  "_about": "Narration for the Storyraise Analytics walkthrough. `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. `respell` maps a caption word to how the voice should say it (applied to the TTS text only). Labels match the product UI; star rules match the server (functions/index.js ~11819). American English, no em dashes.",
+  "_about": "Narration for the Storyraise Donor Signals walkthrough. `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. `respell` maps a caption word to how the voice should say it (applied to the TTS text only). Every figure is read from fixtures/donor-signals.json, the frozen wrenfield-demo payload. Labels match the product UI. American English, no em dashes.",
   "respell": {},
   "scenes": [
     {
       "id": "s01",
       "title": "Cold open",
       "minDuration": 8,
-      "text": "You sent your impact report. [[cue:question]]Did it land? [[cue:brand]]Storyraise Analytics shows you who read it, what held their attention, and who might be ready to hear from you."
+      "text": "You know some of your donors need to hear from you this week. [[cue:question]]The hard part is knowing which ones. [[cue:brand]]Donor Signals scores everyone you have, every day."
     },
     {
       "id": "s02",
-      "title": "What's new",
-      "enabled": false,
-      "_disabled": "Cut 2026-09-10 (Vince): the 'your totals look lower' message reads as a negative in a promotional video. Set enabled to true to restore; its narration take is still cached.",
-      "minDuration": 12,
-      "text": "[[cue:rebuilt]]Analytics has been rebuilt. [[cue:reloads]]Page reloads no longer inflate your numbers, [[cue:team]]and your own team's visits are left out automatically. [[cue:lower]]So if your totals look a little lower than before, that isn't a drop. It's accuracy."
+      "title": "How the year is going",
+      "minDuration": 13,
+      "text": "[[cue:strip]]It opens with three numbers. [[cue:retention]]How many of last year's donors came back. [[cue:fytd]]What you have raised this year, with the donor count beside it, so a good year on a shrinking list says so. [[cue:firstyear]]And how many first-time donors gave again."
     },
     {
       "id": "s03",
-      "title": "Where to find it",
-      "minDuration": 9,
-      "text": "[[cue:home]]Your Home tab shows what's being read across all of your reports. [[cue:open]]Open any report's Analytics for the full picture, in two views: [[cue:numbers]]The Numbers, and [[cue:story]]The Story."
+      "title": "Six groups",
+      "minDuration": 13,
+      "text": "[[cue:tiles]]Then six groups. Every donor sits in one. [[cue:money]]And under every count is what is at stake, so seventeen new gifts worth four thousand dollars does not look the same as seventy-one donors slipping away with seventy-one thousand behind them."
     },
     {
       "id": "s04",
-      "title": "The top row",
-      "minDuration": 16,
-      "text": "Up top, [[cue:opened]]Constituents Opened counts the people on your list who opened their personalized link, and [[cue:returns]]Constituent Returns shows how many came back. [[cue:views]]Views counts every visit, repeats included. [[cue:time]]And Average Time Spent is the average reader's total time, across all of their visits."
+      "title": "At risk, their own rhythm",
+      "minDuration": 14,
+      "text": "[[cue:atrisk]]At risk is the one most tools get wrong. [[cue:cadence]]Storyraise measures each donor against their own rhythm. A monthly donor who has missed three gifts is late. An annual donor who gave in November is not. [[cue:sorted]]And the list leads with the money."
     },
     {
       "id": "s05",
-      "title": "Highlights and the map",
-      "minDuration": 9,
-      "text": "[[cue:chips]]Highlights do the first read for you, like when readers peak. [[cue:map]]And the map shows roughly where your audience is reading from."
+      "title": "Why now",
+      "minDuration": 14,
+      "text": "[[cue:row]]Every row says why this person, now. [[cue:reason]]No gift in four months, and they usually give every two. [[cue:reads]]Then what you already know: what they have given, and whether they read what you send. [[cue:moat]]Thirty-four of these seventy-one stopped giving and still open your reports."
     },
     {
       "id": "s06",
-      "title": "Most Engaged Constituents",
-      "minDuration": 22,
-      "text": "[[cue:list]]With personalized links, you see names. Most Engaged Constituents ranks your standouts with an Engagement Score. [[cue:star1]]One star means they read longer than the typical constituent on this report. [[cue:star2]]Two stars, they also got through at least half of it. [[cue:star3]]Three stars, they took action too, by clicking a link or coming back. [[cue:badges]]And badges flag key actions, like a donation click, even when the stars don't."
+      "title": "Read it or compare it",
+      "minDuration": 8,
+      "text": "[[cue:views]]Overview reads as a list of people. [[cue:table]]Table puts the same donors in a grid you can sort. Whichever you use is remembered."
     },
     {
       "id": "s07",
-      "title": "Where The Clicks Go",
-      "minDuration": 11,
-      "text": "[[cue:donut]]Where The Clicks Go groups every link click by what readers wanted, from donating to opening a document. [[cue:attention]]Reading shows attention. [[cue:intent]]Clicking shows intent."
+      "title": "Make something",
+      "minDuration": 13,
+      "text": "[[cue:actions]]Then the part that is the point. [[cue:cards]]Two things you can make for the group in front of you, written for that group. Record one thank-you for everyone who just gave, or put together a report showing what the money is doing."
     },
     {
       "id": "s08",
-      "title": "How They Read",
-      "minDuration": 14,
-      "text": "[[cue:sections]]How They Read shows how far people get. [[cue:retention]]Section Retention traces their path from section to section, [[cue:endcap]]and the red edge marks where visits ended. [[cue:drop]]A big drop after your opening tells you exactly what to tighten."
+      "title": "Three routes",
+      "minDuration": 13,
+      "text": "[[cue:dialog]]Open one and you pick how to make it. [[cue:routes]]A draft written for this group, a template, or a report you have already published. [[cue:carry]]Storyraise saves the group as a list and opens Send, and each donor gets their own personalized link."
     },
     {
       "id": "s09",
-      "title": "When They Visit",
-      "minDuration": 10,
-      "text": "[[cue:heatmap]]Top Visit Times shows the days and times of day people actually read, [[cue:trend]]so your next send can land when your readers show up."
+      "title": "Giving health",
+      "minDuration": 12,
+      "text": "[[cue:health]]Further down, the year in full. [[cue:bands]]Retention by gift size is the table that changes plans. Donors under a hundred dollars come back a third of the time. Donors over a thousand come back nearly nine times in ten."
     },
     {
       "id": "s10",
-      "title": "The Story",
-      "minDuration": 9,
-      "text": "[[cue:storytab]]Short on time? The Story sums it all up in plain English, [[cue:followup]]with people worth a follow-up and ideas for next time, [[cue:download]]ready to download and share."
-    },
-    {
-      "id": "s11",
-      "title": "Personalized links",
-      "minDuration": 8,
-      "text": "[[cue:anon]]Remember: anonymous links tell you how your report performed. [[cue:personal]]Personalized links tell you who to call on Monday."
-    },
-    {
-      "id": "s12",
-      "title": "Explore the demo",
-      "minDuration": 6,
-      "text": "[[cue:cta]]See every part of it for yourself in the interactive demo, right here on this page."
+      "title": "Explore",
+      "minDuration": 7,
+      "text": "[[cue:cta]]The demo below is the real page with sample data. Click through the groups and see what your own week would look like."
     }
   ]
 }
