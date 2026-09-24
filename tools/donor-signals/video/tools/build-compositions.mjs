@@ -114,6 +114,7 @@ const shots = [
     { t: cue('s02', 'retention') - 0.35, to: frame(A.strip, { fill: 0.94, max: 2.1 }) },
     { t: cue('s02', 'fytd') - 0.3, to: frame(A.stripFytd, { fill: 0.72, max: 2.3, pad: 10 }) },
     { t: cue('s02', 'firstyear') - 0.3, to: frame(A.stripFirstYear, { fill: 0.72, max: 2.3, pad: 10 }) },
+    { t: cue('s02', 'compare') - 0.3, to: frame(A.strip, { fill: 0.97, max: 1.6 }) },
     { t: cue('s03', 'tiles') - 0.35, to: frame(A.tiles, { fill: 0.96, max: 1.9 }) },
     { t: cue('s03', 'money') - 0.3, to: frame(union(A.tileNew, A.tileAtRisk), { fill: 0.94, max: 1.9 }) },
     { t: cue('s04', 'atrisk') - 0.35, to: frame(R.tiles, { fill: 0.96, max: 1.9 }) },
@@ -172,6 +173,11 @@ states.forEach((s, i) => {
 
 // The dialog rides above the page, on its own layer, and does not move with the camera.
 const dialog = { on: round(cue('s08', 'dialog') - 0.25, 3), off: round(end('s08') - 0.15, 3) };
+const dialogRoutes = [
+    { id: 'ui-dialog-ai', on: dialog.on },
+    { id: 'ui-dialog-template', on: round(cue('s08', 'route2'), 3) },
+    { id: 'ui-dialog-existing', on: round(cue('s08', 'route3'), 3) },
+];
 
 const RING_PAD = 8;
 const ring = (id, rect, on, off) => ({ id, on: round(on, 3), off: round(off, 3), rect: { x: rect.x - RING_PAD, y: rect.y - RING_PAD, w: rect.w + RING_PAD * 2, h: rect.h + RING_PAD * 2 } });
@@ -188,10 +194,14 @@ const rings = [
     ring('ring-money', A.tileMoney, cue('s03', 'money'), cue('s04', 'atrisk') - 0.4),
     ring('ring-atrisk-tile', R.tileAtRisk, settled + CYCLE_FADE, cue('s03', 'money') - 0.3),
     ring('ring-atrisk-tile-2', R.tileAtRisk, cue('s04', 'atrisk'), cue('s04', 'cadence') - 0.15),
+    // The rhythm claim: the proof is the why-now line on the first row.
+    ring('ring-cadence', R.firstRowWhy, cue('s04', 'cadence') + 1.4, cue('s04', 'sorted') - 0.25),
     ring('ring-first-row', R.firstRow, cue('s04', 'sorted'), cue('s05', 'reason') - 0.1),
     // The why-now sentence, then the line under it: what they gave and whether they read you.
     ring('ring-why', R.firstRowWhy, cue('s05', 'reason'), cue('s05', 'reads') - 0.1),
     ring('ring-reads', R.firstRowSub, cue('s05', 'reads'), cue('s05', 'moat') - 0.15),
+    // The moat claim is about the whole list, so the whole list is what it points at.
+    ring('ring-moat', R.list, cue('s05', 'moat') + 0.3, end('s05') - 0.3),
     ring('ring-actions', A.actionLead, cue('s07', 'cards'), cue('s07', 'report') - 0.15),
     // Follows the narration onto the second card, so the dialog that opens next matches.
     ring('ring-report', A.actionOther, cue('s07', 'report'), end('s07') - 0.15),
@@ -218,6 +228,8 @@ const labelCues = [
     ['Three ways to make it', cue('s08', 'routes')],
     ['The monthly view', cue('s09', 'health')],
     ['Where the money stays', cue('s09', 'bands')],
+    ['About a third come back', cue('s09', 'small')],
+    ['Nearly nine in ten', cue('s09', 'large')],
 ];
 // A label retires with its beat. Left to run until the next cue they averaged nine
 // seconds and outlived their sentence by several, so they read as stuck.
@@ -254,7 +266,7 @@ const counts = [
 const ui = {
     start: hosts.ui.start,
     duration: hosts.ui.duration,
-    shots, rings, labels, states, dialog, counts,
+    shots, rings, labels, states, dialog, dialogRoutes, counts,
 };
 
 fs.writeFileSync(path.join(ASSETS, 'timeline.js'),
@@ -274,7 +286,7 @@ const templatesHtml = demoHtml.slice(endAt, demoHtml.indexOf('<div id="replica-t
 const browser = await chromium.launch();
 const page = await browser.newPage();
 await page.setContent(`<!doctype html><html><body>${demoHtml.slice(startAt, endAt)}${templatesHtml}</body></html>`);
-const built = await page.evaluate(({ wantStates, wantDialog }) => {
+const built = await page.evaluate(({ wantStates, wantDialogs }) => {
     const root = document.querySelector('#dashboard');
     const fail = (m) => { throw new Error(m); };
     const tpl = (sel) => document.querySelector(sel) || fail(`template ${sel}`);
@@ -300,7 +312,9 @@ const built = await page.evaluate(({ wantStates, wantDialog }) => {
         wrap.appendChild(clone);
         out[id] = wrap.outerHTML;
     }
-    return { states: out, dialog: tpl(`template[data-dialog="${wantDialog}"]`).innerHTML };
+    const dialogs = {};
+    for (const [id, key] of wantDialogs) dialogs[id] = tpl(`template[data-dialog="${key}"]`).innerHTML;
+    return { states: out, dialogs };
 }, {
     wantStates: [
         ['ui-state-new_gifts', 'new_gifts|feed'],
@@ -310,7 +324,16 @@ const built = await page.evaluate(({ wantStates, wantDialog }) => {
         ['ui-state-at_risk', 'at_risk|feed'],
         ['ui-state-new_gifts-2', 'new_gifts|feed'],
     ],
-    wantDialog: 'new_gifts|report-ai',
+    /*
+        One layer per route. The narration names a draft, a template and a published
+        report in turn, and the dialog answers each time, using the real captured state
+        rather than a ring drawn over a still.
+    */
+    wantDialogs: [
+        ['ui-dialog-ai', 'new_gifts|report-ai'],
+        ['ui-dialog-template', 'new_gifts|report-template'],
+        ['ui-dialog-existing', 'new_gifts|report-existing'],
+    ],
 });
 await browser.close();
 
@@ -321,7 +344,7 @@ await browser.close();
 */
 const reAsset = (html) => html.replace(/(<img[^>]+src=")img\//g, '$1assets/img/');
 built.states = Object.fromEntries(Object.entries(built.states).map(([k, v]) => [k, reAsset(v)]));
-built.dialog = reAsset(built.dialog);
+Object.keys(built.dialogs).forEach((k) => { built.dialogs[k] = reAsset(built.dialogs[k]); });
 
 const ringHtml = rings.map((r) => `<div class="ui-ring" id="${r.id}" style="left:${r.rect.x}px;top:${r.rect.y}px;width:${r.rect.w}px;height:${r.rect.h}px"></div>`).join('\n          ');
 const labelHtml = labels.map((l) => `<div class="ui-label" id="${l.id}">${l.text.replace(/&/g, '&amp;')}</div>`).join('\n        ');
@@ -382,6 +405,8 @@ const uiHtml = `<!doctype html>
             wrapper is laid out flat so it adds nothing of its own.
         */
         #ui-dialog .ui-scope, #ui-dialog .ui-scope > [data-signals] { display: contents; }
+        /* The route layers sit on top of each other; only opacity moves between them. */
+        .ui-dialog-layer { position: absolute; inset: 0; opacity: 0; }
         #ui-dialog #dashboard [data-signals] .sig-modal-backdrop { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(8,12,16,0.72); }
         #ui-dialog #dashboard [data-signals] .sig-modal { transform: scale(1.35); transform-origin: center; }
       </style>
@@ -399,7 +424,8 @@ const uiHtml = `<!doctype html>
             </div>
           </div>
         </div>
-        <div id="ui-dialog"><div class="ui-scope" id="dashboard"><div data-signals>${built.dialog}</div></div></div>
+        <div id="ui-dialog">${Object.entries(built.dialogs).map(([id, html]) =>
+            `<div class="ui-dialog-layer" id="${id}"><div class="ui-scope" id="dashboard"><div data-signals>${html}</div></div></div>`).join('')}</div>
         ${labelHtml}
       </div>
 

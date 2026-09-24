@@ -6,13 +6,13 @@
       "id": "s01",
       "title": "Cold open",
       "minDuration": 8,
-      "text": "Your donor database knows who gave. [[cue:question]]It cannot tell you who is about to stop. [[cue:brand]]Donor Signals scores every donor you have, overnight. It tells you who to call first."
+      "text": "Your donor database knows who gave. [[cue:question]]It cannot tell you who is about to stop. [[cue:brand]]Donor Signals scores every donor you have, overnight, and tells you who to call first."
     },
     {
       "id": "s02",
       "title": "How the year is going",
       "minDuration": 13,
-      "text": "[[cue:strip]]It starts where your board starts. [[cue:retention]]Did last year's donors come back, [[cue:fytd]]is the money ahead or behind, [[cue:firstyear]]and did the new ones stay. Each one carries what it should be measured against, so you can tell a good year from a lucky one."
+      "text": "[[cue:strip]]It starts where your board starts. [[cue:retention]]Did last year's donors come back, [[cue:fytd]]is the money ahead or behind, [[cue:firstyear]]and did the new ones stay. [[cue:compare]]Each one carries what it should be measured against, so you can tell a good year from a lucky one."
     },
     {
       "id": "s03",
@@ -49,13 +49,13 @@
       "id": "s08",
       "title": "Three routes",
       "minDuration": 11,
-      "text": "[[cue:dialog]]Open one and half the work is done. [[cue:routes]]Start from a draft written for this group, a template, or a report you have already published. [[cue:carry]]The group comes with you, and each donor gets a page with their own name on it."
+      "text": "[[cue:dialog]]Open one and half the work is done. [[cue:routes]]Start from a draft written for this group, [[cue:route2]]a template, [[cue:route3]]or a report you have already published. [[cue:carry]]The group comes with you, and each donor gets a page with their own name on it."
     },
     {
       "id": "s09",
       "title": "Giving health",
       "minDuration": 12,
-      "text": "[[cue:health]]And once a month, the longer view. [[cue:bands]]Retention by gift size is the one that changes plans. Your smallest donors come back about a third of the time. Donors giving in the thousands come back nearly nine times in ten. That is where next year's plan comes from."
+      "text": "[[cue:health]]And once a month, the longer view. [[cue:bands]]Retention by gift size is the one that changes plans. [[cue:small]]Your smallest donors come back about a third of the time. [[cue:large]]Donors giving in the thousands come back nearly nine times in ten. That is where next year's plan comes from."
     },
     {
       "id": "s10",

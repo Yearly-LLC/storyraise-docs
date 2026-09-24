@@ -107,9 +107,10 @@
             tl.fromTo(el, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.28, ease: 'power2.out' }, 0.45 + i * 0.055);
           });
           gsap.utils.toArray('#s01-faces .face.lit').forEach(function (el, i) {
+            // #ed355e is the logo's own red, straight out of assets/logo-icon.svg.
             tl.to(el, {
-              backgroundColor: '#3b98e5',
-              boxShadow: '0 0 0 3px rgba(59,152,229,0.35), 0 0 26px rgba(59,152,229,0.55)',
+              backgroundColor: '#ed355e',
+              boxShadow: '0 0 0 3px rgba(237,53,94,0.35), 0 0 26px rgba(237,53,94,0.55)',
               duration: 0.45,
               ease: 'power2.out',
             }, L(S.cues.question) + 0.85 + i * 0.16);

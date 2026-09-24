@@ -123,7 +123,7 @@
         queue.forEach(function (fn) { fn(); });
     }
 
-    fetch('annotations.json?v=2').then(function (r) { return r.json(); }).then(function (data) {
+    fetch('annotations.json?v=3').then(function (r) { return r.json(); }).then(function (data) {
         stops = data.stops;
         flushReady();
     });

@@ -1,4 +1,4 @@
 {
-  "filter": "afftdn=nr=10:nf=-44:tn=1",
+  "filter": "adeclick,afftdn=nr=24:nf=-47:tn=1,compand=attacks=0.003:decays=0.25:points=-90/-104|-47/-61|-36/-36|0/0:soft-knee=8 | tail cut to 0.12s past the last window above -45 dB",
   "note": "Noise reduction applied to each take before the voice chain; chosen by Vince in an A/B listen, 2026-09-10."
 }

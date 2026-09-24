@@ -22,7 +22,10 @@ export const VOICE_CHAIN = {
         // tone alone, narrowing the gap between them by 4-6 dB. 2:1 at -28 evens the loud
         // syllables without that. (The takes are noise-reduced first by clean-voice.mjs.)
         { type: 'compressor', id: 'v4', label: 'Even Out Loudness', params: { threshold: -28, ratio: 2, attack: 15, release: 200, knee: 2.83, makeup: 0, mix: 1 } },
-        { type: 'peaking', id: 'v5', label: 'Add Clarity', params: { frequency: 3000, gain: 2.5, q: 1 } },
+        { type: 'peaking', id: 'v5', label: 'Add Clarity', params: { frequency: 3000, gain: 3.5, q: 1 } },
+        // Crispness is consonants, which live above the presence band. A shelf rather
+        // than a bell so it opens the top rather than picking out a sibilant frequency.
+        { type: 'highshelf', id: 'v7', label: 'Open the Top', params: { frequency: 7500, gain: 2.5, q: 0.707 } },
         { type: 'limiter', id: 'v6', label: 'Peak Ceiling', params: { limit: -1, attack: 5, release: 50, level_out: 0 } },
     ],
 };
@@ -35,6 +38,7 @@ export function voiceChainFfmpeg(chain = VOICE_CHAIN) {
         const p = node.params;
         switch (node.type) {
             case 'highpass': return `highpass=f=${p.frequency}:poles=${p.poles || 2}`;
+            case 'highshelf': return `highshelf=f=${p.frequency}:g=${p.gain}`;
             case 'peaking': return `equalizer=f=${p.frequency}:t=q:w=${p.q}:g=${p.gain}`;
             case 'gate': return `agate=threshold=${dbToLinear(p.threshold)}:range=${dbToLinear(p.range)}:ratio=${p.ratio}:attack=${p.attack}:release=${p.release}`;
             case 'compressor': return `acompressor=threshold=${dbToLinear(p.threshold)}:ratio=${p.ratio}:attack=${p.attack}:release=${p.release}:makeup=${dbToLinear(p.makeup || 0)}`;

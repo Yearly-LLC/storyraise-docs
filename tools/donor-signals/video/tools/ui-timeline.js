@@ -140,5 +140,17 @@
   tl.fromTo('#ui-dialog', { autoAlpha: 0, scale: 0.96 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'power3.out' }, L(P.dialog.on));
   tl.to('#ui-dialog', { autoAlpha: 0, scale: 0.98, duration: 0.35, ease: 'power2.in' }, L(P.dialog.off));
 
+  /*
+    The route the dialog is showing. Same trick as the group row: the layer coming in
+    fades up over the one before it, which stays put until it is covered, so nothing
+    shows through between them.
+  */
+  (P.dialogRoutes || []).forEach(function (r, i) {
+    var next = (P.dialogRoutes || [])[i + 1];
+    tl.set('#' + r.id, { opacity: 0 }, 0);
+    tl.to('#' + r.id, { opacity: 1, duration: 0.28, ease: 'power1.inOut' }, L(r.on));
+    if (next) tl.set('#' + r.id, { opacity: 0 }, L(next.on) + 0.28);
+  });
+
   window.__timelines['ui'] = tl;
 })();
