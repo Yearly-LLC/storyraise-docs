@@ -45,7 +45,7 @@ Add merge tags like `@@first_name@@` to your report, then share each constituent
 That constituent is missing the field. Check their record in your Constituents list and fill the gap in your CRM or CSV, then re-sync. See [Troubleshooting sync issues](../crm-and-data/troubleshooting-sync-issues.md).
 
 **Does Storyraise change data in my CRM?**
-Not unless you ask it to. Every integration is read-only by default — Storyraise pulls constituent records in and doesn't write back. The one exception is [Salesforce](../crm-and-data/integrations/salesforce.md), which offers optional engagement write-back: when you enable it, Storyraise can log a completed Activity (Task) on a Contact or update custom fields you map. It stays off until you configure it.
+Not unless you ask it to. Importing is read-only — Storyraise pulls constituent records in and doesn't change them. Two integrations offer optional engagement write-back: [Salesforce](../crm-and-data/integrations/salesforce.md) can log a completed Task on a Contact or update Contact fields you map, and [Raiser's Edge NXT](../crm-and-data/integrations/blackbaud-raisers-edge-nxt.md) can log a completed action on the constituent timeline or write custom fields. Each donor gets one Task or action, kept up to date as their engagement changes. Write-back stays off until you configure it.
 
 ## Analytics
 

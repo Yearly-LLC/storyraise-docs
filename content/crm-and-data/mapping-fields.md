@@ -2,7 +2,7 @@
 title: Mapping fields
 section: Donor Data & CRM
 status: stub
-last_reviewed: 2026-06-12
+last_reviewed: 2026-10-13
 ---
 
 # Mapping fields
@@ -14,7 +14,7 @@ last_reviewed: 2026-06-12
 You don't need to map anything manually:
 
 - **CSV imports** use your column headers as field names. **First Name**, **Last Name**, and **Email** are recognized as the core identity fields; every other column becomes a custom field with the column header as its name.
-- **CRM syncs** bring over the fields your CRM provides — including custom fields — using the CRM's own field names. Nested CRM fields (like address parts) are flattened into individual fields.
+- **CRM syncs** bring over the fields that connection provides, using the CRM's own field names. What that includes varies by CRM — Raiser's Edge NXT brings name and email only (no custom fields), while Salesforce brings name and email plus any extra fields you pick at connect time. Nested CRM fields (like address parts) are flattened into individual fields.
 
 Every imported field is available as a merge tag for personalization. Open any constituent from your constituent list to see exactly which fields they have and what each is called.
 

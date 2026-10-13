@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s01-template">
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; }
+        .line {
+          position: absolute; left: 0; right: 0; top: 250px; margin: 0 auto; width: 1920px; text-align: center;
+          font: 400 72px/1.2 "PPFragment TextRegular", serif; color: #ffffff;
+          opacity: 0; visibility: hidden;
+        }
+        /*
+            The picture is the sentence: two CRMs on the left, Storyraise on the right,
+            and the line between them. It starts broken (out of step), then carries
+            data both ways as the voice says "in both directions".
+        */
+        .tile {
+          position: absolute; width: 136px; height: 136px; margin: -68px 0 0 -68px; border-radius: 30px;
+          background: #1c1825; border: 1.5px solid rgba(255,255,255,0.12); box-shadow: 0 18px 44px rgba(0,0,0,0.5);
+          display: flex; align-items: center; justify-content: center; opacity: 0; overflow: hidden;
+        }
+        .tile img { width: 100%; height: 100%; object-fit: contain; }
+        .tile.sr { background: #1c1825; }
+        .tile.sr img { width: 96px; height: 96px; }
+        .tile-cap {
+          position: absolute; width: 360px; margin-left: -180px; text-align: center; opacity: 0;
+          font: 500 26px/1.2 "Poppins", sans-serif; color: rgba(244,240,250,0.78);
+        }
+        #s01-wires { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+        #s01-wires line { stroke-width: 4; stroke-linecap: round; }
+        .wire-broken { stroke: rgba(237,53,94,0.55); stroke-dasharray: 14 18; }
+        .wire-live { stroke: rgba(199,155,242,0.7); }
+        .dot { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; opacity: 0; }
+        .dot.in { background: #c79bf2; box-shadow: 0 0 16px rgba(199,155,242,0.8); }
+        .dot.out { background: #ed355e; box-shadow: 0 0 16px rgba(237,53,94,0.8); }
+        /* The title lockup is the house style the Analytics tour set. */
+        .brand { position: absolute; left: 0; top: 290px; width: 1920px; text-align: center; opacity: 0; visibility: hidden; }
+        .brand-logo { display: block; width: 128px; height: 128px; margin: 0 auto; }
+        .brand-title { font-size: 132px; line-height: 1.05; margin-top: 30px; }
+        .brand-sub { margin-top: 26px; font: 500 34px/1.4 "Poppins", sans-serif; color: #cfc7dc; }
+        .brand-pills { margin-top: 40px; }
+        .brand-pills .sr-pill { margin: 0 9px; }
+      </style>
+      <div id="root" data-composition-id="s01" data-width="1920" data-height="1080">
+        <div class="line" id="s01-l1">Your donor data lives in your CRM.</div>
+        <div class="line" id="s01-l2">Your reports should keep up with it.</div>
+
+        <div id="s01-scene">
+          <svg id="s01-wires" viewBox="0 0 1920 1080">
+            <line class="wire-broken" id="s01-w1b" x1="708" y1="520" x2="1212" y2="600" />
+            <line class="wire-broken" id="s01-w2b" x1="708" y1="680" x2="1212" y2="600" />
+            <line class="wire-live" id="s01-w1" x1="708" y1="520" x2="1212" y2="600" />
+            <line class="wire-live" id="s01-w2" x1="708" y1="680" x2="1212" y2="600" />
+          </svg>
+          <div class="tile" id="s01-re" style="left:640px;top:520px"><img src="assets/logo-renxt.png" alt="" /></div>
+          <div class="tile" id="s01-sf" style="left:640px;top:680px"><img src="assets/logo-salesforce.png" alt="" /></div>
+          <div class="tile sr" id="s01-sr" style="left:1280px;top:600px"><img src="assets/logo-icon.svg" alt="" /></div>
+          <div class="tile-cap" id="s01-cap-crm" style="left:640px;top:780px">Your CRM</div>
+          <div class="tile-cap" id="s01-cap-sr" style="left:1280px;top:700px">Your reports</div>
+          <div id="s01-dots"></div>
+        </div>
+
+        <div class="brand" id="s01-brand">
+          <img class="brand-logo" id="s01-logo" src="assets/logo-icon.svg" alt="" />
+          <p class="sr-display brand-title" id="s01-title">CRM <span class="sr-accent">Connections</span></p>
+          <p class="brand-sub" id="s01-sub">Raiser's Edge NXT and Salesforce, in sync both ways.</p>
+          <div class="brand-pills" id="s01-pills">
+            <span class="sr-pill">Connect in minutes</span>
+            <span class="sr-pill">Daily or weekly sync</span>
+            <span class="sr-pill">Engagement sent back</span>
+          </div>
+        </div>
+      </div>
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var T = window.SR_TIMELINE;
+          var S = T.scenes.s01;
+          var start = T.hosts.s01.start;
+          var L = function (t) { return Math.max(0, t - start); };
+          var tl = gsap.timeline({ paused: true });
+          var Q = L(S.cues.question);
+          var B = L(S.cues.brand);
+          // The lockup takes the frame once "in both directions" has been shown.
+          var LOCK = B + 2.7;
+
+          tl.fromTo('#s01-l1', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.2);
+          tl.to('#s01-l1', { autoAlpha: 0, y: -22, duration: 0.35, ease: 'power2.in' }, Q - 0.15);
+          tl.fromTo('#s01-l2', { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, Q + 0.1);
+          tl.to('#s01-l2', { autoAlpha: 0, y: -22, duration: 0.35, ease: 'power2.in' }, LOCK - 0.4);
+
+          // The CRMs, then Storyraise, then the line between them: broken.
+          tl.fromTo('#s01-re', { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }, 0.5);
+          tl.fromTo('#s01-sf', { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }, 0.65);
+          tl.fromTo('#s01-cap-crm', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.9);
+          tl.fromTo('#s01-sr', { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' }, Q + 0.2);
+          tl.fromTo('#s01-cap-sr', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, Q + 0.45);
+          tl.set('#s01-w1b, #s01-w2b', { opacity: 0 }, 0);
+          tl.to('#s01-w1b, #s01-w2b', { opacity: 1, duration: 0.5, ease: 'power1.out' }, Q + 0.6);
+
+          // "Keeps the two in sync": the line goes solid and draws through.
+          ['#s01-w1', '#s01-w2'].forEach(function (sel, i) {
+            var el = document.querySelector(sel);
+            var len = Math.hypot(el.x2.baseVal.value - el.x1.baseVal.value, el.y2.baseVal.value - el.y1.baseVal.value);
+            tl.set(el, { strokeDasharray: len, strokeDashoffset: len }, 0);
+            tl.to(el, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut' }, B + 0.1 + i * 0.1);
+          });
+          tl.to('#s01-w1b, #s01-w2b', { opacity: 0, duration: 0.4 }, B + 0.3);
+
+          // "In both directions": records travel in (purple), engagement travels back (red).
+          var dots = document.getElementById('s01-dots');
+          var lanes = [[708, 520], [708, 680]];
+          var hub = [1212, 600];
+          var n = 0;
+          for (var k = 0; k < 6; k++) {
+            lanes.forEach(function (lane, li) {
+              var inbound = (k + li) % 2 === 0;
+              var d = document.createElement('i');
+              d.className = 'dot ' + (inbound ? 'in' : 'out');
+              d.id = 's01-dot-' + (n++);
+              dots.appendChild(d);
+              var from = inbound ? lane : hub;
+              var to = inbound ? hub : lane;
+              var at = B + 0.7 + k * 0.32 + li * 0.13;
+              // Placed at the start point; the trip is a transform so it moves sub-pixel.
+              d.style.left = from[0] + 'px';
+              d.style.top = from[1] + 'px';
+              tl.set(d, { x: 0, y: 0, opacity: 0 }, 0);
+              tl.to(d, { opacity: 1, duration: 0.12 }, at);
+              tl.to(d, { x: to[0] - from[0], y: to[1] - from[1], duration: 0.85, ease: 'none' }, at);
+              tl.to(d, { opacity: 0, duration: 0.12 }, at + 0.75);
+            });
+          }
+
+          tl.to('#s01-scene', { autoAlpha: 0, duration: 0.4, ease: 'power2.in' }, LOCK - 0.35);
+          tl.fromTo('#s01-brand', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out', immediateRender: false }, LOCK);
+          tl.fromTo('#s01-logo', { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.6)', immediateRender: false }, LOCK + 0.05);
+          gsap.utils.toArray('#s01-pills .sr-pill').forEach(function (el, i) {
+            tl.fromTo(el, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out', immediateRender: false }, LOCK + 0.5 + i * 0.12);
+          });
+          tl.to('#s01-brand', { autoAlpha: 0, duration: 0.4, ease: 'power2.in' }, T.hosts.s01.duration - 0.45);
+          window.__timelines['s01'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

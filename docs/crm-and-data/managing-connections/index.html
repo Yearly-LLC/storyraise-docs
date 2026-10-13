@@ -297,18 +297,24 @@
 <li>A status indicator — <strong>Live</strong> when everything&#39;s working, or <strong>Error</strong> if the last sync failed (with a short message about what went wrong).</li>
 <li>The data it&#39;s syncing — <strong>Constituents</strong>, plus any collections you&#39;ve added, with row counts (for example, <em>Recent gifts: 43</em>).</li>
 <li>When it last synced — <em>synced 2 hours ago</em>.</li>
-<li>A badge when auto-sync is on, and (for Salesforce write-back) a note of how many records were last <strong>sent</strong> back to your CRM.</li>
+<li>A badge when auto-sync is on, and (for Salesforce and Raiser&#39;s Edge NXT write-back) a note of how many records were last <strong>sent</strong> back to your CRM.</li>
 </ul>
 <h2>Keeping data current</h2>
 <ul>
-<li><strong>Sync now.</strong> Trigger an immediate refresh — useful right before a mailing or a board report. Re-syncing updates existing records rather than duplicating them (constituents are matched by email).</li>
-<li><strong>Auto-sync.</strong> Turn this on under the connection&#39;s <strong>⋯ More</strong> menu and set the <strong>Frequency</strong> to <strong>Daily</strong> or <strong>Weekly</strong> — Storyraise refreshes the connection on that schedule on its own, bringing in new and updated constituents and then refreshing your collections. For Raiser&#39;s Edge NXT and Slate, run <strong>Sync now</strong> once first, so Storyraise knows which list or column mapping to use.</li>
+<li><strong>Sync now.</strong> Click the sync icon on the connection row to trigger an immediate refresh — useful right before a mailing or a board report. For Raiser&#39;s Edge NXT and Salesforce, the list or scope picker reopens so you can confirm who to pull. Re-syncing updates existing records rather than duplicating them (constituents are matched by email).</li>
+<li><strong>Auto-sync.</strong> Off by default. Turn it on under the connection&#39;s <strong>⋯ More</strong> menu and set the <strong>Frequency</strong> to <strong>Daily</strong> or <strong>Weekly</strong> (weekly runs on Mondays) — Storyraise refreshes the connection on that schedule on its own, bringing in new and updated constituents and then refreshing your collections. For Raiser&#39;s Edge NXT and Slate, run <strong>Sync now</strong> once first, so Storyraise knows which list or column mapping to use.</li>
+<li><strong>Deleted records stay.</strong> Each sync re-pulls the whole chosen list or scope and updates records in place, but someone deleted in your CRM is <strong>not</strong> removed from Storyraise. Remove them in Storyraise yourself if they shouldn&#39;t stay.</li>
 <li><strong>Refresh a collection.</strong> If you&#39;ve synced extra data into collections, refresh each one from the same menu. See <a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a>.</li>
 </ul>
 <h2>Updating credentials</h2>
 <p>If an API key is rotated or a connection falls into an <strong>Error</strong> state, choose <strong>Edit credentials</strong> (for API-key connections) and paste the new key. For sign-in (OAuth) systems like Raiser&#39;s Edge NXT and Salesforce, reconnect by authorizing again.</p>
-<h2>Sending engagement back (Salesforce)</h2>
-<p>Connections import data <em>into</em> Storyraise — they don&#39;t change your source system. The one exception you can opt into is <strong>Salesforce write-back</strong>: from a connected Salesforce, choose <strong>Send to Salesforce</strong> to log report engagement (opens, time spent, link clicks) on each donor&#39;s Contact. See <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a> for the full setup.</p>
+<h2>Sending engagement back (Salesforce and Raiser&#39;s Edge NXT)</h2>
+<p>Importing never changes your constituent records. Two connections can also send report engagement — opens, reports viewed, minutes engaged, link clicks, and returning visits — back to your CRM, once you opt in:</p>
+<ul>
+<li><strong>Salesforce</strong> — choose <strong>Send to Salesforce</strong> on the connection row to log a completed Task on each donor&#39;s Contact, or update Contact fields.</li>
+<li><strong>Raiser&#39;s Edge NXT</strong> — choose <strong>Send to Raiser&#39;s Edge</strong> to log a completed action on each constituent&#39;s timeline, or write constituent custom fields.</li>
+</ul>
+<p>Each donor gets <strong>one</strong> Storyraise Task or action, updated in place as their engagement changes — no duplicates. Only constituents who came from that CRM and have recorded engagement are sent. Use <strong>Save &amp; send now</strong> to send right away; once saved, engagement is also sent on every scheduled sync while Auto-sync is on. Full setup: <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a> and <a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Raiser&#39;s Edge NXT</a>.</p>
 <h2>Disconnecting</h2>
 <p>Open the connection&#39;s menu in the <strong>Connections</strong> tab and choose <strong>Disconnect</strong>.</p>
 <p>Storyraise deletes the credentials it stored, stops syncing, and asks the other system to revoke our access. You can reconnect later.</p>
@@ -347,6 +353,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="fc85553c" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="72f32496" data-engine-v="676be165" defer></script>
 </body>
 </html>

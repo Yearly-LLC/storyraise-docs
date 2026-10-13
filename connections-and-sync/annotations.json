@@ -1,0 +1,159 @@
+{
+  "about": "Tour stops for the interactive Storyraise Connections demo. Copy uses the product's own labels; every claim is checked against the code cited in `source` (builder repo). American English, no em dashes.",
+  "builderSha": "7b326a64c95bdfa80abf84a34daceadee64e093b",
+  "stops": [
+    {
+      "id": "rows",
+      "uiLabel": ["Raiser's Edge NXT", "Salesforce / Nonprofit Cloud", "Live"],
+      "prepare": {},
+      "title": "Every connected system, one row each",
+      "tells": "Each CRM you connect gets a row: its status, who it brings across, what else it syncs, when it last ran, and what it has sent back.",
+      "why": "You can see in one glance that your data is current, without opening the CRM or asking whoever runs it.",
+      "next": "The rest of this tour walks the Raiser's Edge NXT row from left to right, then shows the same thing for Salesforce.",
+      "keepInMind": [],
+      "source": [
+        { "file": "public/index.html", "lines": "4893-4945", "note": "connected rows" },
+        { "file": "public/js/app-dashboard.js", "lines": "1640-1675", "note": "connection_catalog names" }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "scope",
+      "uiLabel": ["Constituents", "Annual Fund Donors"],
+      "prepare": {},
+      "title": "You choose who comes across",
+      "tells": "This chip shows the audience the connection syncs: a Raiser's Edge NXT list, or one or more Salesforce Contact List Views.",
+      "why": "You sync the donors you report to, not the whole database. You already maintain these lists in your CRM, so nothing new needs setting up.",
+      "next": "Choose Sync now to see the list picker.",
+      "keepInMind": ["Contacts without an email address are skipped, because email is how each donor receives their report."],
+      "source": [
+        { "file": "public/js/app-dashboard.js", "lines": "14478-14481", "note": "connection_scope_label" },
+        { "file": "public/js/app-dashboard.js", "lines": "11990-12048", "note": "RE import mapping and default_list_label" }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "dialog",
+      "uiLabel": ["Select a list to import", "Sync Constituents"],
+      "prepare": { "dialog": "bb-list" },
+      "title": "Pick a list, then sync",
+      "tells": "Connecting Raiser's Edge NXT is a Blackbaud sign-in, then this picker: choose a list and Storyraise imports its constituents. Salesforce works the same way with its own List Views.",
+      "why": "Setup takes minutes and needs no export or spreadsheet. Storyraise remembers the list, so every later sync uses it.",
+      "next": "Close this and look at how often it syncs.",
+      "keepInMind": [],
+      "source": [
+        { "file": "public/index.html", "lines": "6025-6051", "note": "bb-list-modal" },
+        { "file": "public/index.html", "lines": "6058-6120", "note": "sf-listview-modal" },
+        { "file": "functions/index.js", "lines": "1920-1953", "note": "begin_integration_connect (OAuth)" }
+      ],
+      "marker": "inside"
+    },
+    {
+      "id": "cadence",
+      "uiLabel": ["synced", "daily", "weekly"],
+      "prepare": {},
+      "title": "Synced daily or weekly, on its own",
+      "tells": "With Auto-sync on, Storyraise pulls the list again every day, or every Monday if you choose weekly. The row shows when it last ran.",
+      "why": "New gifts, new donors, and corrected addresses in your CRM reach your reports without anyone remembering to refresh them.",
+      "next": "Open the menu to see where Auto-sync is turned on.",
+      "keepInMind": ["Sync now runs it straight away whenever you want fresh data before a send."],
+      "source": [
+        { "file": "public/index.html", "lines": "4911-4912", "note": "synced / schedule labels" },
+        { "file": "functions/index.js", "lines": "5680-5760", "note": "daily_sync, weekly on Monday" },
+        { "file": "functions/index.js", "lines": "5560-5678", "note": "sync_one_connection" }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "menu",
+      "uiLabel": ["Auto-sync", "Frequency", "Daily", "Weekly", "Refresh Gifts"],
+      "prepare": { "menu": "blackbaud" },
+      "title": "Auto-sync is one switch",
+      "tells": "Turn on Auto-sync and choose a frequency for each connection. Any extra data you sync, such as gifts, refreshes on the same schedule, or on demand from here.",
+      "why": "Each system can run on the schedule that suits it: daily for your main CRM, weekly for one that changes less often.",
+      "next": "Next, what Storyraise sends back.",
+      "keepInMind": [],
+      "source": [
+        { "file": "public/index.html", "lines": "4924-4937", "note": "Auto-sync toggle and Frequency" },
+        { "file": "public/js/app-dashboard.js", "lines": "17527-17536, 17638-17650", "note": "toggle_auto_sync, set_sync_cadence" }
+      ],
+      "marker": "inside"
+    },
+    {
+      "id": "sent",
+      "uiLabel": ["sent"],
+      "prepare": {},
+      "title": "Engagement goes back to your CRM",
+      "tells": "This counts the donors whose report engagement was last written back to Raiser's Edge NXT: who opened their report, how long they read, and what they clicked.",
+      "why": "Gift officers see engagement where they already work, on the donor's record, without logging in to Storyraise.",
+      "next": "Choose Send to Raiser's Edge to see what gets written.",
+      "keepInMind": [],
+      "source": [
+        { "file": "public/index.html", "lines": "4913", "note": "last_writeback_count" },
+        { "file": "functions/index.js", "lines": "2512-2570", "note": "engagement from report pageviews" }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "send-re",
+      "uiLabel": ["Send to Raiser's Edge", "Action", "Assign the action to each donor's fundraiser", "Minimum engagement to send", "Save & send now"],
+      "prepare": { "dialog": "wb-blackbaud-sent" },
+      "title": "One action per donor, kept up to date",
+      "tells": "Each donor gets one completed Storyraise action on their constituent record, with their opens, minutes read, and link clicks. You can assign it to the donor's fundraiser and send only donors above an engagement level you choose.",
+      "why": "The record stays tidy. When a donor reads more, their action is updated rather than another one added, so the timeline never fills with duplicates.",
+      "next": "Salesforce gets the same, as a Task.",
+      "keepInMind": ["Once saved, engagement is also sent on every scheduled sync while Auto-sync is on."],
+      "source": [
+        { "file": "public/js/app-dashboard.js", "lines": "16065-16098", "note": "wb_spec (Raiser's Edge)" },
+        { "file": "public/index.html", "lines": "6429-6489", "note": "writeback-modal" },
+        { "file": "functions/index.js", "lines": "3103-3118, 3296-3415", "note": "action payload, one per donor" }
+      ],
+      "marker": "inside"
+    },
+    {
+      "id": "send-sf",
+      "uiLabel": ["Send to Salesforce", "Activity", "Assign the task to each donor's gift officer (Account Owner)"],
+      "prepare": { "dialog": "wb-salesforce" },
+      "title": "One Task per Contact in Salesforce",
+      "tells": "In Salesforce, each Contact gets one completed Storyraise Task with the same engagement summary, assigned to their gift officer if you choose.",
+      "why": "Engagement shows up in the activity timeline and in any report or list view your team already builds on Tasks.",
+      "next": "Last, bringing in more than constituents.",
+      "keepInMind": ["Prefer fields to activities? Choose Contact fields under Where to write it and map each metric to a custom field."],
+      "source": [
+        { "file": "public/js/app-dashboard.js", "lines": "16084-16097", "note": "wb_spec (Salesforce)" },
+        { "file": "functions/index.js", "lines": "2583-2606, 2747-2890", "note": "Task payload and dedupe" }
+      ],
+      "marker": "inside"
+    },
+    {
+      "id": "add-data",
+      "uiLabel": ["Add data"],
+      "prepare": {},
+      "title": "Gifts and more, as merge tags",
+      "tells": "Add data brings other records across, such as Raiser's Edge gifts or Salesforce Opportunities, and keeps them in a data set you can use in reports.",
+      "why": "A report can thank each donor for their own gifts by amount, fund, or campaign, straight from your CRM.",
+      "next": "Not on Raiser's Edge or Salesforce? Every other system connects the same way.",
+      "keepInMind": [],
+      "source": [
+        { "file": "public/index.html", "lines": "4920, 6186+", "note": "Add data wizard" },
+        { "file": "functions/index.js", "lines": "4512-4526", "note": "RE Gifts fields" }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "catalog",
+      "uiLabel": ["Add a connection", "Connect", "Learn more"],
+      "prepare": {},
+      "title": "Your other systems connect the same way",
+      "tells": "Bloomerang, Virtuous, DonorPerfect, Neon, Givebutter, Mailchimp, and more each connect from here, with the same row, Auto-sync, and Sync now.",
+      "why": "However your data is spread across systems, it ends up in one place your reports can use.",
+      "next": "",
+      "keepInMind": [],
+      "source": [
+        { "file": "public/index.html", "lines": "4948-4980", "note": "Add a connection grid" },
+        { "file": "public/js/app-dashboard.js", "lines": "1640+", "note": "connection_catalog" }
+      ],
+      "marker": "before"
+    }
+  ]
+}

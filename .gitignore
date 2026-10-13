@@ -45,3 +45,12 @@ tools/donor-signals/video/renders
 tools/donor-signals/video/snapshots
 tools/donor-signals/video/audio/.cache/
 tools/donor-signals/video/assets/img/
+
+# Connections and sync page tooling (tools/connections-and-sync), same rules.
+tools/connections-and-sync/.cache
+tools/connections-and-sync/.bin
+tools/connections-and-sync/node_modules
+tools/connections-and-sync/video/renders/
+tools/connections-and-sync/video/snapshots/
+tools/connections-and-sync/video/audio/.cache/
+tools/connections-and-sync/video/assets/img/

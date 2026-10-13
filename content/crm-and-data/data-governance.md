@@ -3,7 +3,7 @@ title: Data governance and CRM flags
 section: Donor Data & CRM
 keywords: anonymous, do not contact, do not solicit, do not email, deceased, opted out, flags, governance, suppression, exclusions, data hygiene
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-13
 ---
 
 # Data governance and CRM flags
@@ -51,7 +51,7 @@ Until flag handling is documented as a product behaviour, the reliable pattern i
 
 ## Deletion at the source
 
-If someone is deleted or suppressed in your CRM, confirm what happens to their Storyraise record before you rely on it. Currently the only documented deletion path is at the connection level — disconnecting an integration can permanently delete the collections it synced and any constituents it was the only source for. See [Managing connections](managing-connections.md).
+Deleting someone in your CRM does **not** remove them from Storyraise. Each sync re-pulls your chosen list or scope and updates records in place, but it never deletes a constituent who has disappeared from the source — remove them in Storyraise yourself. If someone is suppressed in your CRM, confirm what happens to their Storyraise record before you rely on it. The only bulk deletion path is at the connection level — disconnecting an integration can permanently delete the collections it synced and any constituents it was the only source for. See [Managing connections](managing-connections.md).
 
 ## Sync only what you need
 

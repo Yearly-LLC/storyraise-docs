@@ -1,0 +1,112 @@
+/* Shared look for the walkthrough video's motion-graphic scenes.
+   Linked from index.html (links are hoisted, not scoped), so every scene can use
+   these fonts, tokens, and utility classes. Sizes are in px on a 1920x1080 stage. */
+
+@font-face { font-family: "Poppins"; font-weight: 400; src: url("fonts/Poppins-400.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 500; src: url("fonts/Poppins-500.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 600; src: url("fonts/Poppins-600.woff2") format("woff2"); }
+@font-face { font-family: "PPFragment TextRegular"; src: url("fonts/PPFragment-TextRegular.woff2") format("woff2"); }
+@font-face { font-family: "PPFragment GlareExtraBold"; src: url("fonts/PPFragment-GlareExtraBold.woff2") format("woff2"); }
+
+/* Fallback names from the product's CSS font stacks (monospace, emoji, playful
+   display). Nothing in the video renders in them; declaring them as local fonts
+   tells HyperFrames they are intentional rather than missing downloads. */
+@font-face { font-family: "SFMono-Regular"; src: local("SFMono-Regular"); }
+@font-face { font-family: "Chalkboard"; src: local("Chalkboard"); }
+@font-face { font-family: "Comic Sans MS"; src: local("Comic Sans MS"); }
+@font-face { font-family: "Apple Color Emoji"; src: local("Apple Color Emoji"); }
+@font-face { font-family: "Segoe UI Emoji"; src: local("Segoe UI Emoji"); }
+@font-face { font-family: "Segoe UI Symbol"; src: local("Segoe UI Symbol"); }
+@font-face { font-family: "Noto Color Emoji"; src: local("Noto Color Emoji"); }
+/* daisyUI 2's unused "comic" theme ships this misspelled family name. */
+@font-face { font-family: "sanssecondaryerif"; src: local("sanssecondaryerif"); }
+
+html, body {
+  margin: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: #110e17;
+}
+
+#root-stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: #110e17;
+  font-family: "Poppins", sans-serif;
+  color: #f4f0fa;
+}
+
+/* Full-frame layers and scenes. */
+.clip,
+.stage-layer {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+}
+
+/* The brand backdrop: deep plum with soft purple and pink light. */
+.stage-bg {
+  background:
+    radial-gradient(900px 700px at 12% 8%, rgba(128, 59, 177, 0.38), transparent 70%),
+    radial-gradient(800px 640px at 92% 96%, rgba(237, 53, 94, 0.2), transparent 70%),
+    radial-gradient(rgba(255, 255, 255, 0.045) 1.5px, transparent 1.6px) 0 0 / 36px 36px,
+    #110e17;
+}
+
+.sr-display {
+  font-family: "PPFragment TextRegular", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #f4f0fa;
+  margin: 0;
+}
+.sr-kicker {
+  font: 600 24px/1.2 "Poppins", sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c79bf2;
+  margin: 0;
+}
+.sr-body {
+  font: 400 36px/1.45 "Poppins", sans-serif;
+  color: #cfc7dc;
+  margin: 0;
+}
+.sr-accent { color: #e1c2ff; }
+.sr-pink { color: #ff7a99; }
+
+.sr-card {
+  background: #1c1825;
+  border: 1.5px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.sr-pill {
+  display: inline-block;
+  font: 500 32px/1 "Poppins", sans-serif;
+  color: #ece6f6;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 100px;
+  padding: 16px 30px;
+}
+
+.sr-stars { display: inline-block; font-size: 40px; letter-spacing: 4px; color: #3b4452; }
+.sr-stars .on { color: #f5d63d; }
+
+.sr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 500 24px/1 "Poppins", sans-serif;
+  color: #e9eef5;
+  background: rgba(57, 80, 97, 0.9);
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+.sr-badge svg { width: 26px; height: 26px; fill: currentColor; }

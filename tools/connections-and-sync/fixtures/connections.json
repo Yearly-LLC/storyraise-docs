@@ -1,0 +1,66 @@
+{
+  "_note": "Fabricated for the public demo. Timestamps are hours before capture time; capture-replica.mjs turns them into ISO strings.",
+  "connections": {
+    "blackbaud": {
+      "status": "connected",
+      "default_list_id": "re-annual-fund",
+      "default_list_label": "Annual Fund Donors",
+      "synced_collections": { "gifts": { "name": "Gifts", "count": 4812 } },
+      "auto_sync": true,
+      "cadence": "daily",
+      "last_auto_sync_hours_ago": 3,
+      "last_writeback_hours_ago": 3,
+      "last_writeback_count": 214,
+      "writeback": {
+        "enabled": true,
+        "target": "action",
+        "min_stars": 1,
+        "action_summary": "Storyraise report engagement",
+        "action_category": "Email",
+        "assign_to_fundraiser": true
+      }
+    },
+    "salesforce": {
+      "status": "connected",
+      "default_list_ids": ["lv-major", "lv-board"],
+      "default_list_label": "Major Donors, Board & Advisors",
+      "synced_collections": { "opportunities": { "name": "Opportunities", "count": 2390 } },
+      "auto_sync": true,
+      "cadence": "weekly",
+      "last_auto_sync_hours_ago": 26,
+      "last_writeback_hours_ago": 26,
+      "last_writeback_count": 87,
+      "writeback": {
+        "enabled": true,
+        "target": "activity",
+        "min_stars": 2,
+        "activity_subject": "Storyraise report engagement",
+        "assign_to_account_owner": true
+      }
+    }
+  },
+  "blackbaud_lists": [
+    { "id": "re-annual-fund", "name": "Annual Fund Donors", "record_count": 3418 },
+    { "id": "re-major-prospects", "name": "Major Gift Prospects", "record_count": 412 },
+    { "id": "re-sustainers", "name": "Monthly Sustainers", "record_count": 1206 },
+    { "id": "re-gala-2025", "name": "Harbor Lights Gala 2025 Attendees", "record_count": 879 }
+  ],
+  "salesforce_listviews": [
+    { "id": "lv-major", "label": "Major Donors" },
+    { "id": "lv-board", "label": "Board & Advisors" },
+    { "id": "lv-recent", "label": "Gave in the Last 12 Months" },
+    { "id": "lv-lapsed", "label": "Lapsed Donors" },
+    { "id": "lv-volunteers", "label": "Volunteers" }
+  ],
+  "salesforce_selected_listviews": ["lv-major", "lv-board"],
+  "salesforce_fields": [
+    { "name": "npo02__TotalOppAmount__c", "label": "Total Gifts", "type": "currency" },
+    { "name": "npo02__LastCloseDate__c", "label": "Last Gift Date", "type": "date" },
+    { "name": "npo02__LastOppAmount__c", "label": "Last Gift Amount", "type": "currency" },
+    { "name": "npo02__NumberOfClosedOpps__c", "label": "Total Number of Gifts", "type": "double" },
+    { "name": "Preferred_Name__c", "label": "Preferred Name", "type": "string" },
+    { "name": "MailingCity", "label": "Mailing City", "type": "string" },
+    { "name": "Title", "label": "Title", "type": "string" }
+  ],
+  "salesforce_selected_fields": ["npo02__TotalOppAmount__c", "npo02__LastCloseDate__c", "Preferred_Name__c"]
+}
