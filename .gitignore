@@ -54,3 +54,8 @@ tools/connections-and-sync/video/renders/
 tools/connections-and-sync/video/snapshots/
 tools/connections-and-sync/video/audio/.cache/
 tools/connections-and-sync/video/assets/img/
+
+# Element bar tooling (tools/element-bar), same rules.
+tools/element-bar/.cache
+tools/element-bar/.bin
+tools/element-bar/node_modules
