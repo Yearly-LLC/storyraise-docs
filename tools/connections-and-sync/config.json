@@ -1,0 +1,23 @@
+{
+  "builder": {
+    "path": "/Applications/MAMP/htdocs/yearly-v3/builder",
+    "sha": "7b326a64c95bdfa80abf84a34daceadee64e093b"
+  },
+  "source": {
+    "org_slug": "harbor-lights",
+    "route": "connections",
+    "note": "No live tenant is read. fixtures/connections.json is fabricated; the screen's Firestore reads are stubbed."
+  },
+  "identity": {
+    "org_name": "Harbor Lights Community Foundation",
+    "org_slug": "harbor-lights",
+    "link_host": "harborlights.example"
+  },
+  "rename": [],
+  "capture": {
+    "timezone": "America/New_York",
+    "locale": "en-US",
+    "viewport": { "width": 1440, "height": 1100 },
+    "port": 5050
+  }
+}

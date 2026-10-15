@@ -298,7 +298,7 @@
 <p>You don&#39;t need to map anything manually:</p>
 <ul>
 <li><strong>CSV imports</strong> use your column headers as field names. <strong>First Name</strong>, <strong>Last Name</strong>, and <strong>Email</strong> are recognized as the core identity fields; every other column becomes a custom field with the column header as its name.</li>
-<li><strong>CRM syncs</strong> bring over the fields your CRM provides — including custom fields — using the CRM&#39;s own field names. Nested CRM fields (like address parts) are flattened into individual fields.</li>
+<li><strong>CRM syncs</strong> bring over the fields that connection provides, using the CRM&#39;s own field names. What that includes varies by CRM — Raiser&#39;s Edge NXT brings name and email only (no custom fields), while Salesforce brings name and email plus any extra fields you pick at connect time. Nested CRM fields (like address parts) are flattened into individual fields.</li>
 </ul>
 <p>Every imported field is available as a merge tag for personalization. Open any constituent from your constituent list to see exactly which fields they have and what each is called.</p>
 <h3>Tips for clean fields</h3>
@@ -331,6 +331,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="c1ea7ebf" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
 </body>
 </html>

@@ -294,7 +294,7 @@
       <div class="content">
         <h1>The Connections tab</h1>
 <p class="lead"><strong>Connections</strong> is your hub for bringing donor data into Storyraise. Connect a system once and Storyraise imports your constituents — then you can sync additional data (like giving history or email engagement) into collections for use in your reports.</p>
-<div class="tip"><p><em>Bring your donor data into Storyraise. Connect a system to import constituents, then sync the rest into collections.</em></p></div>
+<div class="tip"><p><em>Connect your CRM and fundraising tools so your donor data flows into Storyraise automatically.</em></p></div>
 <h2>The home for every integration</h2>
 <p>Connections is the unified home for your integrations — connect a CRM, giving platform, or email tool, all in one place. (Prefer to upload a file? CSV import lives in the <strong>Constituents</strong> area — see <a href="/docs/crm-and-data/importing-constituent-data/">Importing constituent data</a>.)</p>
 <h2>What you can connect</h2>
@@ -308,11 +308,11 @@
 <ol>
 <li>Open the <strong>Connections</strong> tab and find the system you want under <strong>Add a connection</strong> (search by name).</li>
 <li>Click <strong>Connect</strong>. What happens next depends on the system:<ul>
-<li><strong>Sign-in (OAuth)</strong> — for Raiser&#39;s Edge NXT and Salesforce, you&#39;re sent to the provider to sign in and authorize Storyraise, then returned automatically.</li>
-<li><strong>API key / credentials</strong> — for everything else, a <strong>Connect {system}</strong> dialog asks for an API key (and sometimes a URL or account email). Each dialog includes a hint on exactly where to find your key in that provider, plus a link to their documentation.</li>
+<li><strong>Sign-in (OAuth)</strong> — for Raiser&#39;s Edge NXT and Salesforce, you&#39;re sent to the provider to sign in and authorize Storyraise, then returned automatically. Next you choose who to sync — a constituent list for Raiser&#39;s Edge NXT, or everyone or one or more Contact List Views for Salesforce — and click <strong>Sync Constituents</strong> (Raiser&#39;s Edge NXT) or <strong>Sync constituents</strong> (Salesforce).</li>
+<li><strong>API key / credentials</strong> — for everything else, a <strong>Connect {system}</strong> dialog asks for an API key (and sometimes a URL or account email). Each dialog includes a hint on exactly where to find your key in that provider, plus a link to their documentation. Click <strong>Connect &amp; sync</strong>.</li>
 </ul>
 </li>
-<li>Click <strong>Connect &amp; sync</strong>. Storyraise imports your constituents and the connection appears under your connected systems, marked <strong>Live</strong>.</li>
+<li>Storyraise imports your constituents and the connection appears under your connected systems, marked <strong>Live</strong> (or <strong>Error</strong> if something went wrong).</li>
 </ol>
 <p>Each integration&#39;s page (linked above) lists exactly what it needs and where to find it.</p>
 <h2>What a connection does</h2>
@@ -320,7 +320,7 @@
 <li><strong>Imports constituents.</strong> Records flow into your shared <a href="/docs/crm-and-data/importing-constituent-data/">constituent list</a>, matched by email — the foundation for personalization and insights.</li>
 <li><strong>Syncs extra data into collections (optional).</strong> Beyond names and emails, you can pull any data a connection exposes — giving history, email engagement, and more — into a collection. See <a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a>.</li>
 <li><strong>Keeps itself current (optional).</strong> Turn on auto-sync (daily or weekly), or sync on demand. See <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</li>
-<li><strong>Sends engagement back (Salesforce).</strong> Salesforce connections can also push report engagement back to your CRM, so activity shows up on each donor&#39;s record. See <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a>.</li>
+<li><strong>Sends engagement back (Salesforce and Raiser&#39;s Edge NXT).</strong> These two connections can also push report engagement back to your CRM — one Task or action per donor, kept up to date — so activity shows up on each donor&#39;s record. See <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a> and <a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Raiser&#39;s Edge NXT</a>.</li>
 </ul>
 <h2>Related</h2>
 <ul>
@@ -353,6 +353,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="c1ea7ebf" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
 </body>
 </html>

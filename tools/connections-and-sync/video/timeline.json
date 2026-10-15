@@ -1,0 +1,1656 @@
+{
+  "estimated": false,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "transition": 0.4,
+  "duration": 107.013,
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Cold open",
+      "start": 0,
+      "duration": 10.977,
+      "voStart": 0.35,
+      "voLength": 10.077,
+      "audio": "audio/vo/s01.d7949f3acb.clean.mp3",
+      "cues": {
+        "question": 2.022,
+        "brand": 4.553
+      },
+      "words": [
+        {
+          "text": "Your",
+          "start": 0.35,
+          "end": 0.536
+        },
+        {
+          "text": "donor",
+          "start": 0.594,
+          "end": 0.814
+        },
+        {
+          "text": "data",
+          "start": 0.872,
+          "end": 1.07
+        },
+        {
+          "text": "lives",
+          "start": 1.116,
+          "end": 1.279
+        },
+        {
+          "text": "in",
+          "start": 1.314,
+          "end": 1.36
+        },
+        {
+          "text": "your",
+          "start": 1.395,
+          "end": 1.499
+        },
+        {
+          "text": "CRM.",
+          "start": 1.534,
+          "end": 1.999
+        },
+        {
+          "text": "Your",
+          "start": 2.022,
+          "end": 2.126
+        },
+        {
+          "text": "reports",
+          "start": 2.173,
+          "end": 2.475
+        },
+        {
+          "text": "should",
+          "start": 2.498,
+          "end": 2.649
+        },
+        {
+          "text": "never",
+          "start": 2.672,
+          "end": 2.835
+        },
+        {
+          "text": "fall",
+          "start": 2.893,
+          "end": 3.067
+        },
+        {
+          "text": "out",
+          "start": 3.113,
+          "end": 3.194
+        },
+        {
+          "text": "of",
+          "start": 3.229,
+          "end": 3.276
+        },
+        {
+          "text": "step",
+          "start": 3.311,
+          "end": 3.485
+        },
+        {
+          "text": "with",
+          "start": 3.531,
+          "end": 3.659
+        },
+        {
+          "text": "it.",
+          "start": 3.705,
+          "end": 3.949
+        },
+        {
+          "text": "Storyraise",
+          "start": 4.553,
+          "end": 5.052
+        },
+        {
+          "text": "Connections",
+          "start": 5.075,
+          "end": 5.458
+        },
+        {
+          "text": "keeps",
+          "start": 5.505,
+          "end": 5.691
+        },
+        {
+          "text": "the",
+          "start": 5.725,
+          "end": 5.795
+        },
+        {
+          "text": "two",
+          "start": 5.83,
+          "end": 5.992
+        },
+        {
+          "text": "in",
+          "start": 6.039,
+          "end": 6.097
+        },
+        {
+          "text": "sync,",
+          "start": 6.155,
+          "end": 6.434
+        },
+        {
+          "text": "in",
+          "start": 6.457,
+          "end": 6.515
+        },
+        {
+          "text": "both",
+          "start": 6.585,
+          "end": 6.77
+        },
+        {
+          "text": "directions,",
+          "start": 6.817,
+          "end": 7.293
+        },
+        {
+          "text": "with",
+          "start": 7.316,
+          "end": 7.455
+        },
+        {
+          "text": "Raiser's",
+          "start": 7.513,
+          "end": 7.85
+        },
+        {
+          "text": "Edge",
+          "start": 7.931,
+          "end": 8.187
+        },
+        {
+          "text": "NXT",
+          "start": 8.245,
+          "end": 8.605
+        },
+        {
+          "text": "and",
+          "start": 8.756,
+          "end": 8.837
+        },
+        {
+          "text": "Salesforce.",
+          "start": 8.895,
+          "end": 10.427
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "title": "One row per system",
+      "start": 10.577,
+      "duration": 9,
+      "voStart": 10.927,
+      "voLength": 7.43,
+      "audio": "audio/vo/s02.c48976e20d.clean.mp3",
+      "cues": {
+        "rows": 10.927,
+        "live": 13.725,
+        "scope": 14.503,
+        "synced": 15.432,
+        "sent": 16.395
+      },
+      "words": [
+        {
+          "text": "Every",
+          "start": 10.927,
+          "end": 11.24
+        },
+        {
+          "text": "system",
+          "start": 11.287,
+          "end": 11.589
+        },
+        {
+          "text": "you",
+          "start": 11.635,
+          "end": 11.705
+        },
+        {
+          "text": "connect",
+          "start": 11.751,
+          "end": 12.111
+        },
+        {
+          "text": "gets",
+          "start": 12.204,
+          "end": 12.39
+        },
+        {
+          "text": "one",
+          "start": 12.448,
+          "end": 12.61
+        },
+        {
+          "text": "row.",
+          "start": 12.657,
+          "end": 13.028
+        },
+        {
+          "text": "Its",
+          "start": 13.725,
+          "end": 13.888
+        },
+        {
+          "text": "status,",
+          "start": 13.911,
+          "end": 14.445
+        },
+        {
+          "text": "who",
+          "start": 14.503,
+          "end": 14.677
+        },
+        {
+          "text": "it",
+          "start": 14.723,
+          "end": 14.782
+        },
+        {
+          "text": "brings",
+          "start": 14.816,
+          "end": 15.014
+        },
+        {
+          "text": "across,",
+          "start": 15.049,
+          "end": 15.408
+        },
+        {
+          "text": "when",
+          "start": 15.432,
+          "end": 15.559
+        },
+        {
+          "text": "it",
+          "start": 15.594,
+          "end": 15.664
+        },
+        {
+          "text": "last",
+          "start": 15.722,
+          "end": 15.966
+        },
+        {
+          "text": "ran,",
+          "start": 16.035,
+          "end": 16.372
+        },
+        {
+          "text": "and",
+          "start": 16.395,
+          "end": 16.523
+        },
+        {
+          "text": "what",
+          "start": 16.558,
+          "end": 16.686
+        },
+        {
+          "text": "it",
+          "start": 16.732,
+          "end": 16.79
+        },
+        {
+          "text": "has",
+          "start": 16.825,
+          "end": 16.918
+        },
+        {
+          "text": "sent",
+          "start": 16.953,
+          "end": 17.127
+        },
+        {
+          "text": "back.",
+          "start": 17.173,
+          "end": 18.357
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "title": "Connecting",
+      "start": 19.177,
+      "duration": 17.571,
+      "voStart": 19.527,
+      "voLength": 16.671,
+      "audio": "audio/vo/s03.9c887dc5b1.clean.mp3",
+      "cues": {
+        "connect": 19.527,
+        "signin": 21.222,
+        "picker": 24.601,
+        "sfpicker": 28.037,
+        "fields": 30.649
+      },
+      "words": [
+        {
+          "text": "Connecting",
+          "start": 19.527,
+          "end": 19.957
+        },
+        {
+          "text": "takes",
+          "start": 19.991,
+          "end": 20.166
+        },
+        {
+          "text": "a",
+          "start": 20.2,
+          "end": 20.224
+        },
+        {
+          "text": "few",
+          "start": 20.27,
+          "end": 20.386
+        },
+        {
+          "text": "minutes.",
+          "start": 20.421,
+          "end": 20.897
+        },
+        {
+          "text": "You",
+          "start": 21.222,
+          "end": 21.338
+        },
+        {
+          "text": "sign",
+          "start": 21.396,
+          "end": 21.617
+        },
+        {
+          "text": "in",
+          "start": 21.663,
+          "end": 21.721
+        },
+        {
+          "text": "with",
+          "start": 21.756,
+          "end": 21.884
+        },
+        {
+          "text": "Blackbaud",
+          "start": 21.919,
+          "end": 22.348
+        },
+        {
+          "text": "or",
+          "start": 22.395,
+          "end": 22.453
+        },
+        {
+          "text": "Salesforce",
+          "start": 22.511,
+          "end": 23.022
+        },
+        {
+          "text": "and",
+          "start": 23.068,
+          "end": 23.231
+        },
+        {
+          "text": "approve",
+          "start": 23.277,
+          "end": 23.602
+        },
+        {
+          "text": "access.",
+          "start": 23.637,
+          "end": 24.217
+        },
+        {
+          "text": "Then",
+          "start": 24.601,
+          "end": 24.751
+        },
+        {
+          "text": "you",
+          "start": 24.786,
+          "end": 24.856
+        },
+        {
+          "text": "choose",
+          "start": 24.891,
+          "end": 25.088
+        },
+        {
+          "text": "who",
+          "start": 25.111,
+          "end": 25.216
+        },
+        {
+          "text": "comes",
+          "start": 25.262,
+          "end": 25.425
+        },
+        {
+          "text": "across:",
+          "start": 25.471,
+          "end": 26.098
+        },
+        {
+          "text": "a",
+          "start": 26.702,
+          "end": 26.748
+        },
+        {
+          "text": "Raiser's",
+          "start": 26.83,
+          "end": 27.132
+        },
+        {
+          "text": "Edge",
+          "start": 27.178,
+          "end": 27.352
+        },
+        {
+          "text": "list,",
+          "start": 27.399,
+          "end": 27.863
+        },
+        {
+          "text": "or",
+          "start": 28.037,
+          "end": 28.211
+        },
+        {
+          "text": "one",
+          "start": 28.304,
+          "end": 28.443
+        },
+        {
+          "text": "or",
+          "start": 28.467,
+          "end": 28.525
+        },
+        {
+          "text": "more",
+          "start": 28.56,
+          "end": 28.769
+        },
+        {
+          "text": "Salesforce",
+          "start": 28.827,
+          "end": 29.268
+        },
+        {
+          "text": "List",
+          "start": 29.303,
+          "end": 29.453
+        },
+        {
+          "text": "Views.",
+          "start": 29.499,
+          "end": 30.045
+        },
+        {
+          "text": "From",
+          "start": 30.649,
+          "end": 30.811
+        },
+        {
+          "text": "Salesforce",
+          "start": 30.869,
+          "end": 31.566
+        },
+        {
+          "text": "you",
+          "start": 31.891,
+          "end": 32.007
+        },
+        {
+          "text": "can",
+          "start": 32.054,
+          "end": 32.17
+        },
+        {
+          "text": "bring",
+          "start": 32.228,
+          "end": 32.448
+        },
+        {
+          "text": "extra",
+          "start": 32.53,
+          "end": 32.774
+        },
+        {
+          "text": "fields",
+          "start": 32.82,
+          "end": 33.087
+        },
+        {
+          "text": "too,",
+          "start": 33.133,
+          "end": 33.354
+        },
+        {
+          "text": "and",
+          "start": 33.377,
+          "end": 33.482
+        },
+        {
+          "text": "each",
+          "start": 33.54,
+          "end": 33.714
+        },
+        {
+          "text": "one",
+          "start": 33.784,
+          "end": 33.911
+        },
+        {
+          "text": "becomes",
+          "start": 33.946,
+          "end": 34.225
+        },
+        {
+          "text": "a",
+          "start": 34.26,
+          "end": 34.283
+        },
+        {
+          "text": "merge",
+          "start": 34.341,
+          "end": 34.561
+        },
+        {
+          "text": "tag",
+          "start": 34.596,
+          "end": 34.828
+        },
+        {
+          "text": "for",
+          "start": 34.887,
+          "end": 34.979
+        },
+        {
+          "text": "your",
+          "start": 35.026,
+          "end": 35.142
+        },
+        {
+          "text": "reports.",
+          "start": 35.188,
+          "end": 36.198
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "title": "Sync frequency",
+      "start": 36.348,
+      "duration": 17.386,
+      "voStart": 36.698,
+      "voLength": 16.486,
+      "audio": "audio/vo/s04.8f21d27d1b.clean.mp3",
+      "cues": {
+        "menu": 36.698,
+        "frequency": 38.277,
+        "changes": 42.828,
+        "syncnow": 49.249
+      },
+      "words": [
+        {
+          "text": "Then",
+          "start": 36.698,
+          "end": 36.907
+        },
+        {
+          "text": "turn",
+          "start": 36.953,
+          "end": 37.139
+        },
+        {
+          "text": "on",
+          "start": 37.186,
+          "end": 37.244
+        },
+        {
+          "text": "Auto-sync.",
+          "start": 37.302,
+          "end": 37.952
+        },
+        {
+          "text": "Storyraise",
+          "start": 38.277,
+          "end": 38.857
+        },
+        {
+          "text": "pulls",
+          "start": 38.892,
+          "end": 39.09
+        },
+        {
+          "text": "your",
+          "start": 39.124,
+          "end": 39.217
+        },
+        {
+          "text": "list",
+          "start": 39.264,
+          "end": 39.426
+        },
+        {
+          "text": "again",
+          "start": 39.473,
+          "end": 39.751
+        },
+        {
+          "text": "every",
+          "start": 39.821,
+          "end": 40.018
+        },
+        {
+          "text": "day,",
+          "start": 40.065,
+          "end": 40.413
+        },
+        {
+          "text": "or",
+          "start": 40.483,
+          "end": 40.599
+        },
+        {
+          "text": "every",
+          "start": 40.657,
+          "end": 40.831
+        },
+        {
+          "text": "Monday",
+          "start": 40.901,
+          "end": 41.203
+        },
+        {
+          "text": "if",
+          "start": 41.249,
+          "end": 41.319
+        },
+        {
+          "text": "weekly",
+          "start": 41.377,
+          "end": 41.609
+        },
+        {
+          "text": "suits",
+          "start": 41.655,
+          "end": 41.841
+        },
+        {
+          "text": "you",
+          "start": 41.864,
+          "end": 41.934
+        },
+        {
+          "text": "better.",
+          "start": 41.992,
+          "end": 42.317
+        },
+        {
+          "text": "New",
+          "start": 42.828,
+          "end": 42.991
+        },
+        {
+          "text": "donors,",
+          "start": 43.037,
+          "end": 43.606
+        },
+        {
+          "text": "new",
+          "start": 43.78,
+          "end": 43.943
+        },
+        {
+          "text": "gifts,",
+          "start": 44.001,
+          "end": 44.407
+        },
+        {
+          "text": "and",
+          "start": 44.453,
+          "end": 44.593
+        },
+        {
+          "text": "updated",
+          "start": 44.651,
+          "end": 45.046
+        },
+        {
+          "text": "details",
+          "start": 45.08,
+          "end": 45.58
+        },
+        {
+          "text": "reach",
+          "start": 46.276,
+          "end": 46.462
+        },
+        {
+          "text": "your",
+          "start": 46.497,
+          "end": 46.613
+        },
+        {
+          "text": "reports",
+          "start": 46.659,
+          "end": 46.996
+        },
+        {
+          "text": "without",
+          "start": 47.019,
+          "end": 47.24
+        },
+        {
+          "text": "anyone",
+          "start": 47.275,
+          "end": 47.6
+        },
+        {
+          "text": "exporting",
+          "start": 47.646,
+          "end": 48.064
+        },
+        {
+          "text": "a",
+          "start": 48.111,
+          "end": 48.134
+        },
+        {
+          "text": "thing.",
+          "start": 48.192,
+          "end": 48.552
+        },
+        {
+          "text": "And",
+          "start": 49.249,
+          "end": 49.399
+        },
+        {
+          "text": "Sync",
+          "start": 49.469,
+          "end": 49.678
+        },
+        {
+          "text": "now",
+          "start": 49.736,
+          "end": 49.852
+        },
+        {
+          "text": "runs",
+          "start": 49.899,
+          "end": 50.084
+        },
+        {
+          "text": "it",
+          "start": 50.119,
+          "end": 50.177
+        },
+        {
+          "text": "on",
+          "start": 50.224,
+          "end": 50.293
+        },
+        {
+          "text": "the",
+          "start": 50.328,
+          "end": 50.398
+        },
+        {
+          "text": "spot,",
+          "start": 50.433,
+          "end": 50.851
+        },
+        {
+          "text": "right",
+          "start": 51.06,
+          "end": 51.257
+        },
+        {
+          "text": "before",
+          "start": 51.292,
+          "end": 51.547
+        },
+        {
+          "text": "a",
+          "start": 51.582,
+          "end": 51.605
+        },
+        {
+          "text": "big",
+          "start": 51.652,
+          "end": 51.791
+        },
+        {
+          "text": "send.",
+          "start": 51.849,
+          "end": 53.184
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "title": "Gifts and more",
+      "start": 53.334,
+      "duration": 10.374,
+      "voStart": 53.684,
+      "voLength": 9.474,
+      "audio": "audio/vo/s05.eb6e5058bf.clean.mp3",
+      "cues": {
+        "adddata": 53.684,
+        "gifts": 55.762
+      },
+      "words": [
+        {
+          "text": "It",
+          "start": 53.684,
+          "end": 53.858
+        },
+        {
+          "text": "is",
+          "start": 53.893,
+          "end": 53.951
+        },
+        {
+          "text": "not",
+          "start": 53.997,
+          "end": 54.114
+        },
+        {
+          "text": "only",
+          "start": 54.172,
+          "end": 54.357
+        },
+        {
+          "text": "names",
+          "start": 54.427,
+          "end": 54.706
+        },
+        {
+          "text": "and",
+          "start": 54.741,
+          "end": 54.822
+        },
+        {
+          "text": "emails.",
+          "start": 54.868,
+          "end": 55.437
+        },
+        {
+          "text": "Add",
+          "start": 55.762,
+          "end": 56.018
+        },
+        {
+          "text": "data",
+          "start": 56.076,
+          "end": 56.308
+        },
+        {
+          "text": "brings",
+          "start": 56.354,
+          "end": 56.575
+        },
+        {
+          "text": "across",
+          "start": 56.61,
+          "end": 56.923
+        },
+        {
+          "text": "Raiser's",
+          "start": 57.004,
+          "end": 57.318
+        },
+        {
+          "text": "Edge",
+          "start": 57.376,
+          "end": 57.562
+        },
+        {
+          "text": "gifts",
+          "start": 57.597,
+          "end": 57.91
+        },
+        {
+          "text": "or",
+          "start": 58.293,
+          "end": 58.456
+        },
+        {
+          "text": "Salesforce",
+          "start": 58.525,
+          "end": 59.001
+        },
+        {
+          "text": "Opportunities,",
+          "start": 59.036,
+          "end": 59.895
+        },
+        {
+          "text": "so",
+          "start": 60.406,
+          "end": 60.534
+        },
+        {
+          "text": "each",
+          "start": 60.615,
+          "end": 60.754
+        },
+        {
+          "text": "report",
+          "start": 60.801,
+          "end": 61.114
+        },
+        {
+          "text": "can",
+          "start": 61.161,
+          "end": 61.265
+        },
+        {
+          "text": "thank",
+          "start": 61.3,
+          "end": 61.474
+        },
+        {
+          "text": "a",
+          "start": 61.521,
+          "end": 61.544
+        },
+        {
+          "text": "donor",
+          "start": 61.59,
+          "end": 61.869
+        },
+        {
+          "text": "for",
+          "start": 61.939,
+          "end": 62.043
+        },
+        {
+          "text": "their",
+          "start": 62.078,
+          "end": 62.229
+        },
+        {
+          "text": "own",
+          "start": 62.275,
+          "end": 62.403
+        },
+        {
+          "text": "giving.",
+          "start": 62.45,
+          "end": 63.158
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "title": "Write-back",
+      "start": 63.308,
+      "duration": 12,
+      "voStart": 63.658,
+      "voLength": 10.263,
+      "audio": "audio/vo/s06.80709c29bd.clean.mp3",
+      "cues": {
+        "sendback": 63.658,
+        "engagement": 65.237,
+        "sendre": 69.544
+      },
+      "words": [
+        {
+          "text": "And",
+          "start": 63.658,
+          "end": 63.809
+        },
+        {
+          "text": "the",
+          "start": 63.844,
+          "end": 63.913
+        },
+        {
+          "text": "data",
+          "start": 63.948,
+          "end": 64.146
+        },
+        {
+          "text": "flows",
+          "start": 64.18,
+          "end": 64.401
+        },
+        {
+          "text": "back.",
+          "start": 64.447,
+          "end": 64.854
+        },
+        {
+          "text": "Storyraise",
+          "start": 65.237,
+          "end": 65.725
+        },
+        {
+          "text": "knows",
+          "start": 65.759,
+          "end": 66.003
+        },
+        {
+          "text": "who",
+          "start": 66.038,
+          "end": 66.154
+        },
+        {
+          "text": "opened",
+          "start": 66.224,
+          "end": 66.456
+        },
+        {
+          "text": "their",
+          "start": 66.479,
+          "end": 66.595
+        },
+        {
+          "text": "report,",
+          "start": 66.63,
+          "end": 67.037
+        },
+        {
+          "text": "how",
+          "start": 67.106,
+          "end": 67.234
+        },
+        {
+          "text": "long",
+          "start": 67.28,
+          "end": 67.42
+        },
+        {
+          "text": "they",
+          "start": 67.466,
+          "end": 67.582
+        },
+        {
+          "text": "read,",
+          "start": 67.652,
+          "end": 67.965
+        },
+        {
+          "text": "and",
+          "start": 68.012,
+          "end": 68.139
+        },
+        {
+          "text": "what",
+          "start": 68.186,
+          "end": 68.302
+        },
+        {
+          "text": "they",
+          "start": 68.337,
+          "end": 68.453
+        },
+        {
+          "text": "clicked.",
+          "start": 68.511,
+          "end": 68.941
+        },
+        {
+          "text": "Send",
+          "start": 69.544,
+          "end": 69.718
+        },
+        {
+          "text": "to",
+          "start": 69.742,
+          "end": 69.8
+        },
+        {
+          "text": "Raiser's",
+          "start": 69.858,
+          "end": 70.148
+        },
+        {
+          "text": "Edge",
+          "start": 70.218,
+          "end": 70.45
+        },
+        {
+          "text": "writes",
+          "start": 70.485,
+          "end": 70.705
+        },
+        {
+          "text": "that",
+          "start": 70.74,
+          "end": 70.879
+        },
+        {
+          "text": "onto",
+          "start": 70.937,
+          "end": 71.158
+        },
+        {
+          "text": "each",
+          "start": 71.228,
+          "end": 71.402
+        },
+        {
+          "text": "constituent's",
+          "start": 71.437,
+          "end": 71.959
+        },
+        {
+          "text": "record",
+          "start": 72.006,
+          "end": 72.284
+        },
+        {
+          "text": "as",
+          "start": 72.331,
+          "end": 72.4
+        },
+        {
+          "text": "a",
+          "start": 72.447,
+          "end": 72.482
+        },
+        {
+          "text": "completed",
+          "start": 72.528,
+          "end": 72.911
+        },
+        {
+          "text": "action.",
+          "start": 72.969,
+          "end": 73.921
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "title": "One action per donor",
+      "start": 74.908,
+      "duration": 13.16,
+      "voStart": 75.258,
+      "voLength": 12.26,
+      "audio": "audio/vo/s07.a42529a90b.clean.mp3",
+      "cues": {
+        "one": 75.258,
+        "fundraiser": 81.841,
+        "threshold": 83.664
+      },
+      "words": [
+        {
+          "text": "One",
+          "start": 75.258,
+          "end": 75.513
+        },
+        {
+          "text": "action",
+          "start": 75.548,
+          "end": 75.827
+        },
+        {
+          "text": "per",
+          "start": 75.873,
+          "end": 75.989
+        },
+        {
+          "text": "donor,",
+          "start": 76.047,
+          "end": 76.547
+        },
+        {
+          "text": "updated",
+          "start": 76.721,
+          "end": 77.197
+        },
+        {
+          "text": "as",
+          "start": 77.243,
+          "end": 77.336
+        },
+        {
+          "text": "they",
+          "start": 77.383,
+          "end": 77.499
+        },
+        {
+          "text": "read",
+          "start": 77.568,
+          "end": 77.731
+        },
+        {
+          "text": "more,",
+          "start": 77.789,
+          "end": 78.195
+        },
+        {
+          "text": "so",
+          "start": 79.008,
+          "end": 79.136
+        },
+        {
+          "text": "the",
+          "start": 79.194,
+          "end": 79.263
+        },
+        {
+          "text": "record",
+          "start": 79.333,
+          "end": 79.577
+        },
+        {
+          "text": "never",
+          "start": 79.623,
+          "end": 79.798
+        },
+        {
+          "text": "fills",
+          "start": 79.856,
+          "end": 80.088
+        },
+        {
+          "text": "up",
+          "start": 80.146,
+          "end": 80.274
+        },
+        {
+          "text": "with",
+          "start": 80.39,
+          "end": 80.552
+        },
+        {
+          "text": "duplicates.",
+          "start": 80.587,
+          "end": 81.237
+        },
+        {
+          "text": "Assign",
+          "start": 81.841,
+          "end": 82.212
+        },
+        {
+          "text": "it",
+          "start": 82.247,
+          "end": 82.294
+        },
+        {
+          "text": "to",
+          "start": 82.328,
+          "end": 82.375
+        },
+        {
+          "text": "the",
+          "start": 82.421,
+          "end": 82.491
+        },
+        {
+          "text": "donor's",
+          "start": 82.526,
+          "end": 82.816
+        },
+        {
+          "text": "fundraiser,",
+          "start": 82.863,
+          "end": 83.548
+        },
+        {
+          "text": "and",
+          "start": 83.664,
+          "end": 83.803
+        },
+        {
+          "text": "send",
+          "start": 83.861,
+          "end": 84.047
+        },
+        {
+          "text": "only",
+          "start": 84.128,
+          "end": 84.372
+        },
+        {
+          "text": "the",
+          "start": 84.43,
+          "end": 84.5
+        },
+        {
+          "text": "donors",
+          "start": 84.534,
+          "end": 84.906
+        },
+        {
+          "text": "above",
+          "start": 84.952,
+          "end": 85.185
+        },
+        {
+          "text": "the",
+          "start": 85.208,
+          "end": 85.277
+        },
+        {
+          "text": "level",
+          "start": 85.324,
+          "end": 85.521
+        },
+        {
+          "text": "of",
+          "start": 85.556,
+          "end": 85.614
+        },
+        {
+          "text": "engagement",
+          "start": 85.672,
+          "end": 86.113
+        },
+        {
+          "text": "you",
+          "start": 86.16,
+          "end": 86.241
+        },
+        {
+          "text": "choose.",
+          "start": 86.299,
+          "end": 87.518
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "title": "Salesforce Tasks",
+      "start": 87.668,
+      "duration": 10.745,
+      "voStart": 88.018,
+      "voLength": 9.845,
+      "audio": "audio/vo/s08.3dddb087a9.clean.mp3",
+      "cues": {
+        "sf": 88.018,
+        "owner": 91.153,
+        "schedule": 93.405
+      },
+      "words": [
+        {
+          "text": "In",
+          "start": 88.018,
+          "end": 88.181
+        },
+        {
+          "text": "Salesforce,",
+          "start": 88.227,
+          "end": 88.784
+        },
+        {
+          "text": "it",
+          "start": 88.819,
+          "end": 88.9
+        },
+        {
+          "text": "is",
+          "start": 88.947,
+          "end": 89.016
+        },
+        {
+          "text": "one",
+          "start": 89.098,
+          "end": 89.283
+        },
+        {
+          "text": "completed",
+          "start": 89.33,
+          "end": 89.748
+        },
+        {
+          "text": "Task",
+          "start": 89.783,
+          "end": 90.096
+        },
+        {
+          "text": "on",
+          "start": 90.154,
+          "end": 90.224
+        },
+        {
+          "text": "each",
+          "start": 90.294,
+          "end": 90.456
+        },
+        {
+          "text": "Contact,",
+          "start": 90.503,
+          "end": 91.106
+        },
+        {
+          "text": "assigned",
+          "start": 91.153,
+          "end": 91.524
+        },
+        {
+          "text": "to",
+          "start": 91.547,
+          "end": 91.594
+        },
+        {
+          "text": "their",
+          "start": 91.64,
+          "end": 91.78
+        },
+        {
+          "text": "gift",
+          "start": 91.826,
+          "end": 92.023
+        },
+        {
+          "text": "officer",
+          "start": 92.081,
+          "end": 92.383
+        },
+        {
+          "text": "if",
+          "start": 92.43,
+          "end": 92.499
+        },
+        {
+          "text": "you",
+          "start": 92.534,
+          "end": 92.616
+        },
+        {
+          "text": "like.",
+          "start": 92.674,
+          "end": 93.022
+        },
+        {
+          "text": "Save",
+          "start": 93.405,
+          "end": 93.637
+        },
+        {
+          "text": "it",
+          "start": 93.66,
+          "end": 93.73
+        },
+        {
+          "text": "once,",
+          "start": 93.788,
+          "end": 94.183
+        },
+        {
+          "text": "and",
+          "start": 94.694,
+          "end": 94.833
+        },
+        {
+          "text": "engagement",
+          "start": 94.891,
+          "end": 95.286
+        },
+        {
+          "text": "goes",
+          "start": 95.321,
+          "end": 95.46
+        },
+        {
+          "text": "back",
+          "start": 95.506,
+          "end": 95.669
+        },
+        {
+          "text": "on",
+          "start": 95.727,
+          "end": 95.797
+        },
+        {
+          "text": "every",
+          "start": 95.866,
+          "end": 96.075
+        },
+        {
+          "text": "scheduled",
+          "start": 96.11,
+          "end": 96.482
+        },
+        {
+          "text": "sync.",
+          "start": 96.505,
+          "end": 97.863
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "title": "Close",
+      "start": 98.013,
+      "duration": 9,
+      "voStart": 98.363,
+      "voLength": 7.059,
+      "audio": "audio/vo/s09.f5bdc5d09b.clean.mp3",
+      "cues": {
+        "others": 98.363,
+        "cta": 101.776
+      },
+      "words": [
+        {
+          "text": "Bloomerang,",
+          "start": 98.363,
+          "end": 98.943
+        },
+        {
+          "text": "Virtuous,",
+          "start": 98.978,
+          "end": 99.431
+        },
+        {
+          "text": "DonorPerfect,",
+          "start": 99.454,
+          "end": 100.07
+        },
+        {
+          "text": "and",
+          "start": 100.093,
+          "end": 100.163
+        },
+        {
+          "text": "more",
+          "start": 100.221,
+          "end": 100.441
+        },
+        {
+          "text": "connect",
+          "start": 100.488,
+          "end": 100.778
+        },
+        {
+          "text": "the",
+          "start": 100.813,
+          "end": 100.882
+        },
+        {
+          "text": "same",
+          "start": 100.917,
+          "end": 101.138
+        },
+        {
+          "text": "way.",
+          "start": 101.184,
+          "end": 101.498
+        },
+        {
+          "text": "Connect",
+          "start": 101.776,
+          "end": 102.043
+        },
+        {
+          "text": "your",
+          "start": 102.067,
+          "end": 102.159
+        },
+        {
+          "text": "CRM",
+          "start": 102.194,
+          "end": 102.635
+        },
+        {
+          "text": "once,",
+          "start": 102.752,
+          "end": 103.111
+        },
+        {
+          "text": "and",
+          "start": 103.181,
+          "end": 103.309
+        },
+        {
+          "text": "your",
+          "start": 103.355,
+          "end": 103.46
+        },
+        {
+          "text": "reports",
+          "start": 103.483,
+          "end": 103.843
+        },
+        {
+          "text": "and",
+          "start": 103.866,
+          "end": 103.936
+        },
+        {
+          "text": "your",
+          "start": 103.971,
+          "end": 104.075
+        },
+        {
+          "text": "records",
+          "start": 104.11,
+          "end": 104.435
+        },
+        {
+          "text": "stay",
+          "start": 104.47,
+          "end": 104.679
+        },
+        {
+          "text": "in",
+          "start": 104.737,
+          "end": 104.795
+        },
+        {
+          "text": "step.",
+          "start": 104.853,
+          "end": 105.422
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "_about": "Narration for the Storyraise Connections and sync walkthrough. `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. `respell` maps a caption word to how the voice should say it (applied to the TTS text only). Labels match the product UI. American English, no em dashes. Value first: caveats (Auto-sync off by default, CRM deletions, OAuth scopes) live in the page FAQ and KB, not here.",
+  "respell": {},
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Cold open",
+      "minDuration": 9,
+      "text": "Your donor data lives in your CRM. [[cue:question]]Your reports should never fall out of step with it. [[cue:brand]]Storyraise Connections keeps the two in sync, in both directions, with Raiser's Edge NXT and Salesforce."
+    },
+    {
+      "id": "s02",
+      "title": "One row per system",
+      "minDuration": 9,
+      "text": "[[cue:rows]]Every system you connect gets one row. [[cue:live]]Its status, [[cue:scope]]who it brings across, [[cue:synced]]when it last ran, [[cue:sent]]and what it has sent back."
+    },
+    {
+      "id": "s03",
+      "title": "Connecting",
+      "minDuration": 16,
+      "text": "[[cue:connect]]Connecting takes a few minutes. [[cue:signin]]You sign in with Blackbaud or Salesforce and approve access. [[cue:picker]]Then you choose who comes across: a Raiser's Edge list, [[cue:sfpicker]]or one or more Salesforce List Views. [[cue:fields]]From Salesforce you can bring extra fields too, and each one becomes a merge tag for your reports."
+    },
+    {
+      "id": "s04",
+      "title": "Sync frequency",
+      "minDuration": 16,
+      "text": "[[cue:menu]]Then turn on Auto-sync. [[cue:frequency]]Storyraise pulls your list again every day, or every Monday if weekly suits you better. [[cue:changes]]New donors, new gifts, and updated details reach your reports without anyone exporting a thing. [[cue:syncnow]]And Sync now runs it on the spot, right before a big send."
+    },
+    {
+      "id": "s05",
+      "title": "Gifts and more",
+      "minDuration": 9,
+      "text": "[[cue:adddata]]It is not only names and emails. [[cue:gifts]]Add data brings across Raiser's Edge gifts or Salesforce Opportunities, so each report can thank a donor for their own giving."
+    },
+    {
+      "id": "s06",
+      "title": "Write-back",
+      "minDuration": 12,
+      "text": "[[cue:sendback]]And the data flows back. [[cue:engagement]]Storyraise knows who opened their report, how long they read, and what they clicked. [[cue:sendre]]Send to Raiser's Edge writes that onto each constituent's record as a completed action."
+    },
+    {
+      "id": "s07",
+      "title": "One action per donor",
+      "minDuration": 11,
+      "text": "[[cue:one]]One action per donor, updated as they read more, so the record never fills up with duplicates. [[cue:fundraiser]]Assign it to the donor's fundraiser, [[cue:threshold]]and send only the donors above the level of engagement you choose."
+    },
+    {
+      "id": "s08",
+      "title": "Salesforce Tasks",
+      "minDuration": 10,
+      "text": "[[cue:sf]]In Salesforce, it is one completed Task on each Contact, [[cue:owner]]assigned to their gift officer if you like. [[cue:schedule]]Save it once, and engagement goes back on every scheduled sync."
+    },
+    {
+      "id": "s09",
+      "title": "Close",
+      "minDuration": 9,
+      "text": "[[cue:others]]Bloomerang, Virtuous, DonorPerfect, and more connect the same way. [[cue:cta]]Connect your CRM once, and your reports and your records stay in step."
+    }
+  ]
+}

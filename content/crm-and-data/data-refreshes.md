@@ -2,7 +2,7 @@
 title: Data refreshes
 section: Donor Data & CRM
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-13
 ---
 
 # Data refreshes
@@ -14,11 +14,13 @@ Your CRM data changes constantly — new donors, updated emails, fresh gift reco
 To refresh a connection right now, open the **Connections** tab and click **Sync now** (the sync icon) on its card.
 
 - **Raiser's Edge NXT** asks which constituent list to sync. If your authorization has expired, you may be asked to reconnect first.
-- **Salesforce** asks who should sync: everyone, or one of your Contact List Views.
+- **Salesforce** asks who should sync: everyone, or one or more of your Contact List Views.
 - **Slate** asks you to map your query's columns to first name, last name, and email.
 - **CSV** — export a fresh file from your system and upload it again from the **Constituents** area.
 
 Because constituents are identified by email address, refreshed records **update** existing constituents rather than creating duplicates. New people in the source are added.
+
+**Deleted records aren't removed.** Each sync re-pulls the whole list or scope you chose, but someone deleted in your CRM stays in Storyraise. Remove them in Storyraise yourself if they shouldn't stay.
 
 ## When to refresh
 
@@ -32,12 +34,14 @@ A good rule of thumb: refresh right before you do anything that depends on the d
 
 Storyraise can refresh a connection on a schedule, so you're not relying on someone remembering to press **Sync now**.
 
-Turn it on per connection: in the **Connections** tab, open a connection's menu and switch on **Auto-sync**. Pick **Daily** or **Weekly**, and the card then shows when it last ran.
+Turn it on per connection: in the **Connections** tab, open a connection's menu and switch on **Auto-sync**. Pick **Daily** or **Weekly** (weekly runs on Mondays), and the card then shows when it last ran.
 
 Each scheduled run does two things, in this order:
 
 - **Re-pulls your constituents** from the source system, so a donor added to your CRM last week becomes a constituent without anyone opening the dashboard.
 - **Refreshes your synced collections**, using the constituent list it just updated — so someone added tonight is linked to their rows in the same run rather than waiting for the next one.
+
+For Salesforce and Raiser's Edge NXT, if you've saved write-back settings, each scheduled run also sends report engagement back to your CRM.
 
 A scheduled run brings in the same people as your last **Sync now**: the Salesforce List View, the Raiser's Edge NXT list, or the Slate column mapping you chose. For Raiser's Edge NXT and Slate, run **Sync now** once after turning on Auto-sync, so Storyraise knows which list or mapping to use.
 

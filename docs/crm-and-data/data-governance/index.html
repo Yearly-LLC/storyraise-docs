@@ -340,7 +340,7 @@
 <li><strong>Keep a suppression check in your launch process</strong> rather than relying on any single person&#39;s memory.</li>
 </ol>
 <h2>Deletion at the source</h2>
-<p>If someone is deleted or suppressed in your CRM, confirm what happens to their Storyraise record before you rely on it. Currently the only documented deletion path is at the connection level — disconnecting an integration can permanently delete the collections it synced and any constituents it was the only source for. See <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</p>
+<p>Deleting someone in your CRM does <strong>not</strong> remove them from Storyraise. Each sync re-pulls your chosen list or scope and updates records in place, but it never deletes a constituent who has disappeared from the source — remove them in Storyraise yourself. If someone is suppressed in your CRM, confirm what happens to their Storyraise record before you rely on it. The only bulk deletion path is at the connection level — disconnecting an integration can permanently delete the collections it synced and any constituents it was the only source for. See <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</p>
 <h2>Sync only what you need</h2>
 <p>The strongest governance control available to you is the mapping step. Fields you don&#39;t sync can&#39;t be exposed, can&#39;t appear in a merge tag, and can&#39;t be seen by a colleague with View access — <a href="/docs/getting-started/user-roles-and-permissions/">access is per area, not per field</a>.</p>
 <p>Before connecting, agree with whoever owns your data which fields have a reason to be in a reporting tool. Capacity ratings, solicitor notes, and giving history often don&#39;t.</p>
@@ -376,6 +376,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="c1ea7ebf" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
 </body>
 </html>

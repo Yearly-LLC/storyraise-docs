@@ -2,7 +2,7 @@
 title: Connecting a CRM
 section: Donor Data & CRM
 status: draft
-last_reviewed: 2026-09-04
+last_reviewed: 2026-10-13
 ---
 
 # Connecting a CRM
@@ -15,7 +15,7 @@ Connecting your CRM brings your constituents — donors, members, volunteers —
 
 When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization's constituent list.
 
-Every integration is **read-only by default** — Storyraise reads from your CRM and does not modify your CRM data. The one exception is [Salesforce](integrations/salesforce.md), which can optionally write report engagement back to your Contacts. Write-back is off until you turn it on and choose what it creates; see [Salesforce](integrations/salesforce.md) for exactly what it writes.
+Importing is **read-only** — Storyraise reads from your CRM and doesn't change your constituent records. Two connections can also send report engagement *back*: [Salesforce](integrations/salesforce.md) and [Raiser's Edge NXT](integrations/blackbaud-raisers-edge-nxt.md). Write-back stays off until you set it up with **Send to Salesforce** or **Send to Raiser's Edge**; each donor then gets one Storyraise Task (Salesforce) or action (Raiser's Edge), kept up to date as their engagement changes. See each guide for exactly what it writes.
 
 ## Before you start
 
@@ -26,7 +26,7 @@ Every integration is **read-only by default** — Storyraise reads from your CRM
 
 1. Open the **Connections** tab and find your CRM under **Add a connection**.
 2. Click **Connect** and follow the prompts:
-   - **Raiser's Edge NXT** and **Salesforce** — sign in and approve access. Raiser's Edge NXT then asks which constituent list to sync. Full guides: [Raiser's Edge NXT](integrations/blackbaud-raisers-edge-nxt.md) and [Salesforce](integrations/salesforce.md).
+   - **Raiser's Edge NXT** and **Salesforce** — sign in and approve access, then choose who to sync: Raiser's Edge NXT asks you to **Select a list to import**, and Salesforce asks **Who should sync from Salesforce?** (everyone, or one or more Contact List Views). Click **Sync Constituents** (or **Sync constituents**) to finish. Full guides: [Raiser's Edge NXT](integrations/blackbaud-raisers-edge-nxt.md) and [Salesforce](integrations/salesforce.md).
    - **API-key systems** such as Bloomerang — paste your key and click **Connect & sync**. Full guide: [Bloomerang](integrations/bloomerang.md).
 3. Storyraise imports your constituents. Each record is tagged with its source, so you always know where data came from.
 
@@ -36,7 +36,7 @@ If your CRM isn't supported yet — or you don't use one — you can [import con
 
 ## Keeping data current
 
-Turn on **Auto-sync** for a connection and Storyraise re-pulls your constituents daily or weekly, so new donors in your CRM arrive on their own. You can also click **Sync now** at any time — see [Data refreshes](data-refreshes.md).
+Turn on **Auto-sync** for a connection (it's off by default) and Storyraise re-pulls your constituents daily or weekly, so new donors in your CRM arrive on their own. You can also click **Sync now** at any time. Syncs update existing records in place, but people deleted in your CRM aren't removed from Storyraise — see [Data refreshes](data-refreshes.md).
 
 ## Related
 

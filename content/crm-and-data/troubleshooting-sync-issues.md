@@ -2,7 +2,7 @@
 title: Troubleshooting sync issues
 section: Donor Data & CRM
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-10-13
 ---
 
 # Troubleshooting sync issues
@@ -37,7 +37,7 @@ Storyraise matches records by email address, so duplicates usually mean the same
 
 ## "A constituent's information looks outdated"
 
-Syncs run when you trigger them — they don't update automatically yet. Re-run the sync to pull the latest data; see [Data refreshes](data-refreshes.md).
+Click **Sync now** on the connection to pull the latest data, or turn on **Auto-sync** so it refreshes daily or weekly on its own; see [Data refreshes](data-refreshes.md).
 
 ## "My CSV won't upload"
 

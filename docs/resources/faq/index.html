@@ -317,7 +317,7 @@ Add merge tags like <code>@@first_name@@</code> to your report, then share each 
 <p><strong>Why is a merge tag showing up blank?</strong>
 That constituent is missing the field. Check their record in your Constituents list and fill the gap in your CRM or CSV, then re-sync. See <a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a>.</p>
 <p><strong>Does Storyraise change data in my CRM?</strong>
-Not unless you ask it to. Every integration is read-only by default — Storyraise pulls constituent records in and doesn&#39;t write back. The one exception is <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a>, which offers optional engagement write-back: when you enable it, Storyraise can log a completed Activity (Task) on a Contact or update custom fields you map. It stays off until you configure it.</p>
+Not unless you ask it to. Importing is read-only — Storyraise pulls constituent records in and doesn&#39;t change them. Two integrations offer optional engagement write-back: <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a> can log a completed Task on a Contact or update Contact fields you map, and <a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Raiser&#39;s Edge NXT</a> can log a completed action on the constituent timeline or write custom fields. Each donor gets one Task or action, kept up to date as their engagement changes. Write-back stays off until you configure it.</p>
 <h2>Analytics</h2>
 <p><strong>Why are my numbers lower than last year?</strong>
 They&#39;re more accurate. The old counter included repeat page loads from the same person; the new one counts people. Nothing about your performance changed. See <a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a>.</p>
@@ -365,6 +365,6 @@ Only members of your organization. Publishing exposes the report itself at its p
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="c1ea7ebf" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
 </body>
 </html>

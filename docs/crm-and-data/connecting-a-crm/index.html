@@ -297,7 +297,7 @@
 <div class="tip"><p><strong>Connect from the Connections tab.</strong> The <a href="/docs/crm-and-data/connections-overview/">Connections tab</a> is the unified home for every integration — many more systems than the two examples below. Start there; this page covers the general approach.</p></div>
 <h2>What a connection does</h2>
 <p>When you connect a CRM, Storyraise pulls your constituent records (names, emails, and other fields your CRM provides) into your organization&#39;s constituent list.</p>
-<p>Every integration is <strong>read-only by default</strong> — Storyraise reads from your CRM and does not modify your CRM data. The one exception is <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a>, which can optionally write report engagement back to your Contacts. Write-back is off until you turn it on and choose what it creates; see <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a> for exactly what it writes.</p>
+<p>Importing is <strong>read-only</strong> — Storyraise reads from your CRM and doesn&#39;t change your constituent records. Two connections can also send report engagement <em>back</em>: <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a> and <a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Raiser&#39;s Edge NXT</a>. Write-back stays off until you set it up with <strong>Send to Salesforce</strong> or <strong>Send to Raiser&#39;s Edge</strong>; each donor then gets one Storyraise Task (Salesforce) or action (Raiser&#39;s Edge), kept up to date as their engagement changes. See each guide for exactly what it writes.</p>
 <h2>Before you start</h2>
 <ul>
 <li>You&#39;ll need credentials for your CRM — either admin access to authorize the connection (Blackbaud) or an API key (Bloomerang). The per-CRM guides below cover exactly what to gather.</li>
@@ -307,7 +307,7 @@
 <ol>
 <li>Open the <strong>Connections</strong> tab and find your CRM under <strong>Add a connection</strong>.</li>
 <li>Click <strong>Connect</strong> and follow the prompts:<ul>
-<li><strong>Raiser&#39;s Edge NXT</strong> and <strong>Salesforce</strong> — sign in and approve access. Raiser&#39;s Edge NXT then asks which constituent list to sync. Full guides: <a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Raiser&#39;s Edge NXT</a> and <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a>.</li>
+<li><strong>Raiser&#39;s Edge NXT</strong> and <strong>Salesforce</strong> — sign in and approve access, then choose who to sync: Raiser&#39;s Edge NXT asks you to <strong>Select a list to import</strong>, and Salesforce asks <strong>Who should sync from Salesforce?</strong> (everyone, or one or more Contact List Views). Click <strong>Sync Constituents</strong> (or <strong>Sync constituents</strong>) to finish. Full guides: <a href="/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/">Raiser&#39;s Edge NXT</a> and <a href="/docs/crm-and-data/integrations/salesforce/">Salesforce</a>.</li>
 <li><strong>API-key systems</strong> such as Bloomerang — paste your key and click <strong>Connect &amp; sync</strong>. Full guide: <a href="/docs/crm-and-data/integrations/bloomerang/">Bloomerang</a>.</li>
 </ul>
 </li>
@@ -316,7 +316,7 @@
 <h2>No CRM? No problem</h2>
 <p>If your CRM isn&#39;t supported yet — or you don&#39;t use one — you can <a href="/docs/crm-and-data/importing-constituent-data/">import constituents from a CSV file</a>. It unlocks the same personalization and insights features.</p>
 <h2>Keeping data current</h2>
-<p>Turn on <strong>Auto-sync</strong> for a connection and Storyraise re-pulls your constituents daily or weekly, so new donors in your CRM arrive on their own. You can also click <strong>Sync now</strong> at any time — see <a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a>.</p>
+<p>Turn on <strong>Auto-sync</strong> for a connection (it&#39;s off by default) and Storyraise re-pulls your constituents daily or weekly, so new donors in your CRM arrive on their own. You can also click <strong>Sync now</strong> at any time. Syncs update existing records in place, but people deleted in your CRM aren&#39;t removed from Storyraise — see <a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a>.</p>
 <h2>Related</h2>
 <ul>
 <li><a href="/docs/crm-and-data/supported-integrations/">Supported integrations</a> — what&#39;s available today and what&#39;s coming</li>
@@ -347,6 +347,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="c1ea7ebf" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
 </body>
 </html>

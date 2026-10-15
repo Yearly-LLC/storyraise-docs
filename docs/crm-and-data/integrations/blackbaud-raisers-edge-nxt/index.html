@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blackbaud (Raiser's Edge NXT) — Storyraise</title>
-  <meta name="description" content="Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging." />
+  <meta name="description" content="Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging — and send…" />
   <link rel="canonical" href="https://docs.storyraise.com/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Storyraise Knowledge Base" />
   <meta property="og:title" content="Blackbaud (Raiser's Edge NXT) — Storyraise" />
-  <meta property="og:description" content="Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging." />
+  <meta property="og:description" content="Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging — and send…" />
   <meta property="og:url" content="https://docs.storyraise.com/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/" />
   <meta property="og:image" content="https://docs.storyraise.com/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blackbaud (Raiser's Edge NXT) — Storyraise" />
-  <meta name="twitter:description" content="Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging." />
+  <meta name="twitter:description" content="Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging — and send…" />
   <meta name="twitter:image" content="https://docs.storyraise.com/assets/og-card.png" />
 
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "Blackbaud (Raiser's Edge NXT) — Storyraise",
-  "description": "Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging.",
+  "description": "Connect Storyraise to Blackbaud to sync constituents from Raiser's Edge NXT, so you can personalize reports for your donors and see who's engaging — and send…",
   "url": "https://docs.storyraise.com/docs/crm-and-data/integrations/blackbaud-raisers-edge-nxt/",
   "inLanguage": "en-US",
   "isPartOf": {
@@ -293,38 +293,52 @@
       <!-- CONTENT -->
       <div class="content">
         <h1>Blackbaud (Raiser&#39;s Edge NXT)</h1>
-<p class="lead">Connect Storyraise to Blackbaud to sync constituents from Raiser&#39;s Edge NXT, so you can personalize reports for your donors and see who&#39;s engaging.</p>
-<div class="tip"><p><strong>Two ways to connect.</strong> You can connect Raiser&#39;s Edge NXT from the <strong><a href="/docs/crm-and-data/connections-overview/">Connections</a></strong> tab (recommended — see <a href="#connecting-via-the-connections-tab">Connecting via the Connections tab</a> below) or from the per-system steps in the <strong>Constituents</strong> area. Both reach the same place.</p></div>
+<p class="lead">Connect Storyraise to Blackbaud to sync constituents from Raiser&#39;s Edge NXT, so you can personalize reports for your donors and see who&#39;s engaging — and send report engagement back to Raiser&#39;s Edge so it shows up on each constituent&#39;s record.</p>
 <h2>What you&#39;ll need</h2>
 <ul>
 <li>A Blackbaud account with access to your organization&#39;s Raiser&#39;s Edge NXT environment and the constituent lists you want to sync.</li>
 <li>A <strong>constituent list</strong> in Raiser&#39;s Edge NXT containing the people you want in Storyraise. If you don&#39;t have one yet, create a list in RE NXT first — syncing works list by list, which keeps you in control of exactly who comes over.</li>
 </ul>
 <h2>Connect and sync</h2>
+<p>Raiser&#39;s Edge NXT uses sign-in (OAuth), so there&#39;s no API key to copy:</p>
 <ol>
-<li>From the Storyraise dashboard, open the <strong>Constituents</strong> area and choose to sync constituents.</li>
-<li>Select the <strong>Blackbaud</strong> tab.</li>
+<li>Open the <strong><a href="/docs/crm-and-data/connections-overview/">Connections</a></strong> tab and find <strong>Raiser&#39;s Edge NXT</strong> under <strong>Add a connection</strong>.</li>
 <li>Click <strong>Connect</strong>. You&#39;ll be sent to Blackbaud to sign in and authorize Storyraise.</li>
-<li>Approve the authorization. You&#39;ll return to Storyraise automatically.</li>
+<li>Approve the authorization. You&#39;ll return to Storyraise automatically, and a <strong>Select a list to import</strong> picker opens.</li>
 <li>Choose the <strong>constituent list</strong> you want to sync.</li>
-<li>Start the sync. Storyraise pulls in each constituent&#39;s name and email, along with custom fields from your RE NXT environment.</li>
+<li>Click <strong>Sync Constituents</strong>.</li>
 </ol>
-<p>Synced constituents appear in your constituent list tagged <strong>Blackbaud</strong>.</p>
-<h2>Connecting via the Connections tab</h2>
-<p>If your dashboard has the <strong>Connections</strong> tab, connect there instead:</p>
-<ol>
-<li>Open <strong>Connections</strong> and find <strong>Raiser&#39;s Edge NXT</strong> under <strong>Add a connection</strong>.</li>
-<li>Click <strong>Connect</strong>, sign in to Blackbaud, and authorize Storyraise.</li>
-<li>Storyraise imports your constituents; the connection shows as <strong>Live</strong>, and you can <strong>Sync now</strong> or turn on daily auto-sync. See <a href="/docs/crm-and-data/connections-overview/">The Connections tab</a> and <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</li>
-</ol>
+<p>Synced constituents appear in your constituent list tagged <strong>Blackbaud</strong>, and the connection shows as <strong>Live</strong>.</p>
 <h2>What gets synced</h2>
+<p><strong>Into Storyraise</strong></p>
 <ul>
-<li>First name, last name, and email for each constituent in the selected list</li>
-<li>Custom fields configured in your Raiser&#39;s Edge NXT environment</li>
+<li>First name, last name, and email for each constituent in the selected list, along with their Raiser&#39;s Edge constituent id (so engagement can be sent back to the right record).</li>
 </ul>
-<p>Records are matched by email address — constituents without an email in RE NXT can&#39;t be synced, and re-syncs update existing records rather than duplicating them.</p>
+<p>That&#39;s it — custom fields from your RE NXT environment are <strong>not</strong> imported. Records are matched by email address — constituents without an email in RE NXT are skipped, and re-syncs update existing records rather than duplicating them.</p>
+<p>To bring giving into Storyraise, use <strong>Add data</strong> on the connection row to sync gifts into a collection, with fields for <strong>Amount</strong>, <strong>Date</strong>, <strong>Type</strong>, <strong>Fund</strong>, <strong>Campaign</strong>, and <strong>Appeal</strong>. See <a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a>.</p>
+<p><strong>Back into Raiser&#39;s Edge NXT</strong></p>
+<ul>
+<li><strong>Report engagement</strong> — opens, reports viewed, minutes engaged, link clicks, and whether the donor is a returning visitor — logged on each constituent&#39;s record. See <strong>Send engagement to Raiser&#39;s Edge</strong> below.</li>
+</ul>
 <h2>Keeping it fresh</h2>
-<p>Syncs run when you trigger them. Re-sync before mailings or personalized publishes to pull the latest data — see <a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a>. Storyraise refreshes your Blackbaud authorization automatically; if it ever fully expires, just click <strong>Connect</strong> again.</p>
+<ul>
+<li><strong>Sync now.</strong> Click the sync icon on the connection row to run a sync immediately. The list picker reopens, so you can confirm or change which list to pull.</li>
+<li><strong>Auto-sync.</strong> Open the connection&#39;s <strong>⋯ More</strong> menu and turn on <strong>Auto-sync</strong> (it&#39;s off by default), then set the <strong>Frequency</strong> to <strong>Daily</strong> or <strong>Weekly</strong> (weekly syncs run on Mondays). Scheduled syncs pull the list you chose most recently.</li>
+</ul>
+<p>Each sync re-pulls the whole chosen list and updates existing records in place. <strong>Constituents deleted in Raiser&#39;s Edge NXT are not removed from Storyraise</strong> — remove them in Storyraise yourself if they shouldn&#39;t stay. See <a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a> and <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</p>
+<p>Storyraise refreshes your Blackbaud authorization automatically; if it ever fully expires, just click <strong>Connect</strong> again.</p>
+<h2>Send engagement to Raiser&#39;s Edge</h2>
+<p>On the connected Raiser&#39;s Edge NXT row, choose <strong>Send to Raiser&#39;s Edge</strong> to configure write-back:</p>
+<ul>
+<li><strong>Where to write it</strong> — <strong>Action</strong> logs a completed action on the constituent timeline; <strong>Custom fields</strong> writes engagement into constituent custom fields (you map each RE custom field category to a metric: opens, reports, minutes, link clicks, engagement score, returning visitor, or last open).</li>
+<li><strong>Action summary</strong> — the summary shown on each action. Defaults to <em>Storyraise report engagement</em>.</li>
+<li><strong>Action category</strong> — <strong>Email</strong>, <strong>Mailing</strong>, <strong>Phone Call</strong>, <strong>Meeting</strong>, or <strong>Task/Other</strong>.</li>
+<li><strong>Assign the action to each donor&#39;s fundraiser</strong> — optionally assign each action to the constituent&#39;s fundraiser, so the right person sees it.</li>
+<li><strong>Minimum engagement to send</strong> — <strong>Everyone with any activity</strong>, <strong>Opened a report (1★+)</strong>, <strong>Engaged — read in depth (2★+)</strong>, or <strong>High intent — clicked a link (3★)</strong>.</li>
+</ul>
+<p>Click <strong>Save</strong> to keep the settings, or <strong>Save &amp; send now</strong> to send right away. Once saved, engagement is also sent on every scheduled sync while Auto-sync is on.</p>
+<p>Each donor gets <strong>one</strong> Storyraise action, updated in place as their engagement changes — no duplicates pile up on the timeline. If someone deletes that action in Raiser&#39;s Edge, the next send creates a fresh one. Only constituents who came from Raiser&#39;s Edge NXT and have recorded engagement are sent.</p>
+<p>Sign in with a Blackbaud account that has permission to add actions (or edit custom fields) on constituent records.</p>
 <h2>Embedding Blackbaud donation forms</h2>
 <p>Beyond constituent data, you can embed a Blackbaud donation form inside a report: add the donation form element in the builder and paste your <strong>Donation Form URL</strong> from Blackbaud. Readers can give without leaving your report.</p>
 <h2>Troubleshooting</h2>
@@ -358,6 +372,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="c1ea7ebf" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
 </body>
 </html>
