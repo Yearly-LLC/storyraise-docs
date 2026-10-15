@@ -39,6 +39,6 @@ A word of advice: for impact storytelling, real photos of your real work will al
 
 ## What AI can see
 
-The AI works from what you type in your prompt and the context of your report. Your constituent data is not used to train AI models.
+The AI works from what you type in your prompt and the context of your report. Prompts are processed through OpenAI's API. For questions about how AI providers handle your data, contact privacy@storyraise.com.
 
 <!-- TEAM REVIEW: confirm we can make this privacy claim as written, and adjust to match our actual data policy (text and image generation go to OpenAI via gpt_chat_completion / gpt_image). Entry points verified 2026-10-15: the old "Describe & Draft a New Section" bar is unreachable (env.is_section_builder_visible is never set true, app.js:4014/4921 commented out); the Compose bar ("describe a block" / "Paste your content") and the image "Generate Image" control (builder/index.html ~1702-1750, gpt-image-1-mini) are ungated. -->

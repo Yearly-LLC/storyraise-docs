@@ -61,15 +61,20 @@ Disconnecting an integration optionally deletes the collections it synced, along
        6. Subprocessors. Now linked to storyraise.com/gdpr (published
           2026-10-02). Open question: that list omits Cloudflare and Vercel,
           which serve published reports; confirm before calling it complete.
-       5a. (2026-10-15 audit) Verified standing answers exist for item 5: US-only
-          hosting (us-central1 / US multi-region), TLS 1.2+ in transit, AES-256
-          Google-managed keys at rest. Vince to decide whether to publish them here.
+       5a. (2026-10-15) Hosting region and encryption published in "Hosting and
+          encryption" below. Staff access to customer data is still open.
        7. Whether the activity log referenced in the roles matrix is
           customer-visible, what it records, and its retention.
        8. Limits: constituent caps, CSV size, collection rows, and any sandbox
           or test path before connecting production.
      Until these land, the "contact support" route at the top of this page is the
      honest answer, and this page should say so rather than implying more. -->
+
+## Hosting and encryption
+
+- **Where data lives:** Storyraise runs on Google Cloud in the United States. Customer data, backups, and replicas stay in US locations.
+- **In transit:** all connections use TLS 1.2 or higher.
+- **At rest:** data is encrypted with AES-256 using Google-managed keys.
 
 ## For your IT team
 
