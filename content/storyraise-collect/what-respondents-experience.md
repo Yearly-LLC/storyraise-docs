@@ -24,22 +24,17 @@ A Storyraise form is a web page. Open the link in any browser on any device. The
 
 Longer forms are often split into steps — see [Multi-step forms](multi-step-forms.md).
 
-## Adding a photo or a video
+## Adding a photo, video, or document
 
-Questions that accept a file open your device's normal file picker, so you can choose an existing photo or video — and on most phones, take a new one with the camera. The form itself has no built-in recorder.
+Questions that accept a file open your device's normal file picker, so you can choose an existing photo, video, or document — and on most phones, take a new one with the camera. The form itself has no built-in recorder.
 
-You can upload photos, videos, audio clips, and PDF files, up to 200 MB each. Word, Excel, PowerPoint, and plain-text files won't upload — save them as a PDF first.
+You can upload photos, videos, audio clips, and documents — PDF, Word, Excel, PowerPoint, plain text, CSV, or RTF — up to 200 MB each. Some questions accept only certain kinds of file (only images, for example); the file picker shows just those, and if you choose something else the form tells you what that question accepts.
 
-If an upload fails, the form shows a message that starts *"Error storing file"*. Close the message and reload the page — your other answers are kept as a draft — then try again, or try a smaller file.
+If a file is the wrong type or too large, the form tells you before it uploads anything — choose a different file, or try a smaller one. If an upload fails partway, you'll see a message saying so; close it and try again. Your other answers are kept as a draft.
 
 **If you're on a slow or unreliable connection,** a large video may take a long time or fail partway. If that happens: record a shorter clip, or wait until you have wifi and submit then.
 
-<!-- TEAM REVIEW: verified 2026-10-15 against storage.rules (anonymous uploads: <200 MB, image/video/audio/PDF)
-     and the storyraise-collect branch (upload_media_anonymous: alert "Error storing file: ..." on failure,
-     and the loading overlay is not closed on that path, so the respondent may need to reload the page,
-     which keeps their draft). Still open: the respondent experience after a failed upload should be
-     confirmed on a real phone, and embedding-a-collect-form.md's "record a story" wording should be
-     checked, since the form has no in-browser recorder (file picker only). -->
+<!-- TEAM REVIEW: still open: embedding-a-collect-form.md's "record a story" wording should be checked, since the form has no in-browser recorder (file picker only). -->
 
 ## Finishing later
 

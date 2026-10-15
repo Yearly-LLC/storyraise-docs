@@ -42,7 +42,11 @@ To turn it on, open **Account** → **General** and find **Multi-factor Authenti
 
 Once enrolled, the section shows the last four digits of your number. Use **Update Phone Number** if you switch phones, or **Turn off two-factor** to remove it.
 
-<!-- TEAM REVIEW: possible sign-in lockout. The live sign-in page (auth.storyraise.com, served from the `auth` branch public-auth/index.html) has no second-factor step: login_with_password / login_with_google catch every error and show "Something went wrong" for auth/multi-factor-auth-required (friendly_error has no mapping). The MFA challenge handler only exists in the dashboard (builder public/js/app-dashboard.js:19064-19165), which no longer hosts sign-in (it redirects to auth.storyraise.com, app-dashboard.js:6549). Verify that an SMS-enrolled user can actually sign in before encouraging MFA here. Authenticator-app (TOTP) MFA is not offered in the dashboard (only PhoneMultiFactorGenerator, app-dashboard.js:19136-19330), so that section was removed. -->
+## Signing in with two-step verification
+
+Once you're enrolled, sign in as usual with your password or with Google. Storyraise then shows **Check your phone** and texts a 6-digit code to the number ending in the digits shown. Enter the code and click **Verify** to finish signing in. If the text doesn't arrive, click **Send a new code**.
+
+Two-step verification is set per person: each teammate turns it on for their own account, and admins can't require it for the whole organization. If your organization uses [single sign-on](single-sign-on.md), you sign in through your identity provider, and any second step is handled there.
 
 ## Session timeout
 
@@ -52,7 +56,7 @@ Two minutes before that you get a warning with a countdown, and any activity cle
 
 ## Tips
 
-<!-- TEAM REVIEW: a "Turn on two-step verification" tip was removed here pending the sign-in lockout check above. Restore it once an SMS-enrolled user is confirmed able to sign in at auth.storyraise.com. -->
+- **Turn on two-step verification.** It takes a minute, and it keeps your account — and your donors' data — safe even if your password leaks. Encourage everyone on your team to do the same.
 - **Update your number before you switch phones.** Only one phone can be enrolled. If you lose access to it, contact [our support team](https://storyraise.com/support).
 
 ## Related

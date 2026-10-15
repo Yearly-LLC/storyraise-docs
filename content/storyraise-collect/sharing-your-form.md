@@ -27,7 +27,7 @@ Open your form and you're offered two, for two different jobs.
 - **File uploads** open the device's file picker for photos, videos, or documents.
 - On submit, a confirmation that their response came through.
 
-File uploads accept images, video, audio, and PDF files up to 200 MB each — see [Form field types](form-field-types.md).
+File uploads accept images, video, audio, and documents (PDF, Word, Excel, PowerPoint, plain text, CSV, and RTF) up to 200 MB each, and each question's **Allowed File Types** setting can narrow that — see [Form field types](form-field-types.md).
 
 ## Smart pre-fill for known respondents
 

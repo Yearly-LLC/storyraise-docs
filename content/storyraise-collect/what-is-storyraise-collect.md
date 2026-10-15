@@ -26,7 +26,7 @@ Each starting point pre-builds a sensible form you can customize.
 
 ## Build your form
 
-The form editor gives you a full toolkit of field types: **Short text**, **Long text**, **Email**, **Phone**, **Choose one**, **Choose many**, **Dropdown list**, **Number**, **Date**, and **File upload** (photos, video, audio, or PDFs) — plus **Heading**, **Paragraph**, and **New Section** elements for structure. Every field can have its own label, placeholder, description, and required setting.
+The form editor gives you a full toolkit of field types: **Short text**, **Long text**, **Email**, **Phone**, **Choose one**, **Choose many**, **Dropdown list**, **Number**, **Date**, and **File upload** (photos, video, audio, or documents such as PDF, Word, and Excel files) — plus **Heading**, **Paragraph**, and **New Section** elements for structure. Every field can have its own label, placeholder, description, and required setting.
 
 Longer forms can be split into **steps**: respondents see a progress bar ("Step 1 of 3"), can move back and forth, and can jump between sections. Drafts save automatically as people type, so a closed tab doesn't mean a lost story.
 

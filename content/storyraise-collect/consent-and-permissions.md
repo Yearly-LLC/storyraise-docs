@@ -60,18 +60,16 @@ A powerful story does not require a real name. If someone agrees to share but no
 People change their minds, and they are entitled to. Decide in advance who handles this and how fast.
 
 1. Find the response in your [response table](managing-responses.md), right-click its row, and choose **Delete row**. This takes effect immediately and can't be undone.
-2. If the response included an uploaded photo, video, or document, deleting the row does **not** delete the file. Contact Storyraise support to have the file itself removed.
+2. If the response included an uploaded photo, video, or document, deleting the row removes that file too. Within about an hour the file's link stops working — including anywhere you'd used it, such as in a report. Storyraise keeps the file privately for 30 days in case it was deleted by mistake ([Storyraise support](https://storyraise.com/support) can restore it), then deletes it permanently.
 3. If the story is already live in a published report, edit the report to remove it and republish — a published report stays live until you republish it. See [Publishing and sharing](../getting-started/publishing-and-sharing.md).
 4. Check whether the story was also used anywhere outside Storyraise — a newsletter, social media, a PDF you emailed.
 5. Tell the person when it's done.
 
-<!-- TEAM REVIEW: (1) RESOLVED 2026-10-15: single-response delete exists (right-click a row >
-     Delete row, storyraise-collect branch public/js.js deleteRows, autosaved via the message watcher).
-     (2) Deleting a row does NOT remove files uploaded with it: they live at
-     {org bucket}/srv/anonymous/ in Cloud Storage, which storage.rules makes publicly readable, and
-     nothing deletes them. Confirm that "contact Storyraise support" is the right removal route and
-     that support can find and delete the file. (3) Still open: is there any retention period after
-     which responses are purged? -->
+<!-- TEAM REVIEW: still open: is there any retention period after which responses are purged?
+     (Resolved 2026-10-15: single-response delete exists; uploaded files are removed with the
+     response via collect_queue_upload_cleanup + the hourly collect_upload_cleanup_sweep, which
+     quarantines them to collect-deleted/ for 30 days, restorable by support with
+     scripts/collect-restore-uploads.js.) -->
 
 ## Who can see submissions
 

@@ -11,7 +11,7 @@ Getting started on Storyraise takes a couple of minutes. This guide walks you fr
 
 ## Create your account
 
-Go to the sign-up page and fill in **Create your Storyraise account**:
+Go to the [sign-up page](https://app.storyraise.com/create-org/) and fill in **Create your Storyraise account**:
 
 - **Organization Name** — your nonprofit's name, e.g. *The SR Foundation*.
 - **Storyraise URL** — the web address your published reports will live under. Storyraise suggests one based on your organization name (like `sr.storyraise.com`), and you can edit it. This becomes your reports' home: `https://your-organization.yearly.report`.
@@ -21,6 +21,8 @@ Go to the sign-up page and fill in **Create your Storyraise account**:
 - **Create a Password** — use the show/hide toggle to check it.
 
 Agree to the Terms & Conditions and create your account. Prefer Google? Use **Sign up with Google** to skip the password step.
+
+Starting from Storyraise Collect? Its **Sign Up** link brings you to this same page — there's no separate Collect account.
 
 ## Confirm your URL
 

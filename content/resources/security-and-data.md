@@ -32,7 +32,7 @@ Access is granted **per area, not per field**. Anyone with View access to Consti
 
 Folder restrictions filter what people see in the reports list, but as [Report folders](../getting-started/report-folders.md) states plainly, that is not a security control.
 
-Review [User roles and permissions](../getting-started/user-roles-and-permissions.md) before adding anyone, and note that [single sign-on](../account-and-settings/single-sign-on.md) creates accounts on first login without an invitation — so whoever your identity provider lets through is in.
+Review [User roles and permissions](../getting-started/user-roles-and-permissions.md) before adding anyone, and note that [single sign-on](../account-and-settings/single-sign-on.md) creates accounts on first login without an invitation — so whoever your identity provider lets through is in, unless you've removed them from your team.
 
 ## What your readers can see
 
@@ -43,6 +43,8 @@ Published reports are hidden from search engines by default, but as [Publishing 
 ## Deleting data
 
 Disconnecting an integration optionally deletes the collections it synced, along with any constituents it was the only source for. This can't be undone. See [Managing connections](../crm-and-data/managing-connections.md).
+
+Deleting a Storyraise Collect response also removes any file uploaded with it: within about an hour the file's link stops working, and after a 30-day window in which support can restore it, the file is permanently deleted. See [Managing responses](../storyraise-collect/managing-responses.md).
 
 <!-- TEAM REVIEW: this page is deliberately limited to what the product docs can
      already support. The following are the questions procurement and data
