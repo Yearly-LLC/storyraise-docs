@@ -2,18 +2,20 @@
 title: Creating a collection
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Creating a collection
 
 A **collection** is a form plus everything it gathers. This guide takes you from an empty Collections view to a form ready to share.
 
-<!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Collect should be described as generally available, and the exact dashboard entry point. -->
+<!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Collect should be described as generally available. -->
 
 ## Start a new collection
 
-From the **Collections** view, click **Start new collection** and choose what you want to collect. Each option pre-builds a sensible form you can customize:
+In the dashboard, open **Collections** in the sidebar and click **Add new** (or click **New collection** on Home). Storyraise Collect opens in a new tab with a fresh collection. If you're already in Collect, click **Start new collection**.
+
+Then choose what you want to collect, under **What do you want to collect?** Each option pre-builds a sensible form you can customize:
 
 - **Thank-yous from beneficiaries**
 - **Stories from program leaders**
@@ -30,7 +32,7 @@ For longer or repeating data, you can split a form into steps — see [Multi-ste
 
 ## Add people (optional)
 
-If you're collecting from known constituents, you can add recipients up front by uploading a CSV (using the **Constituents Template** format). When a respondent's email matches a constituent, Storyraise **pre-fills** what it already knows, so people don't retype their own details. You can also skip this and simply share the form link with anyone.
+If you're collecting from people you already know, upload a CSV with an email column into the collection (**Upload a CSV**, or **Import CSV** once it has data). When one of them opens the form through a personalized link (see [Sharing your form](sharing-your-form.md)), Storyraise finds their row by email and **pre-fills** what it already knows, and their submission updates that row instead of adding a new one. You can also skip this and simply share the form link with anyone.
 
 ## Empty until responses arrive
 

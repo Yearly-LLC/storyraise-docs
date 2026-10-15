@@ -3,7 +3,7 @@ title: Personalized links
 section: Sharing & Analytics
 status: draft
 keywords: qr, qr code, merge tags, for parameter, unique url, honor roll, major donor, stewardship, endowment report, gift acknowledgment, salutation, pledge, personalization
-last_reviewed: 2026-09-04
+last_reviewed: 2026-10-15
 ---
 
 # Personalized links
@@ -35,20 +35,27 @@ Any field on your constituent records can be a merge tag. Open a constituent fro
 
 > **A field that's missing on a constituent's record can't be filled in** — check your data for gaps (especially custom fields) before a big personalized mailing. See [Troubleshooting sync issues](../crm-and-data/troubleshooting-sync-issues.md).
 
+## Getting a link for your email platform
+
+If you send through Mailchimp, Constant Contact, Bloomerang, Raiser's Edge NXT, Salesforce, or another email platform, you only need **one** link. In the dashboard, open a published report's menu and choose **Send in an email**, then pick your **Email tool** (or choose **Other** and paste your tool's email merge tag). You can also click **Get personalized link** on the **Your report is live!** page that opens after you publish. Storyraise formats the link with that platform's own email merge field after `?for=`, so the platform fills in each recipient's address when it sends. Leave the merge field exactly as it is.
+
 ## Generating personalized links and QR codes at scale
 
-For a mailing, you don't build links by hand — the **Generate QR codes** tool creates one personalized link and QR code per constituent:
+For a mailing, you don't build links by hand. Two tools under **Tools** in the dashboard do it for every constituent at once:
 
-1. **Upload constituents CSV.** Export a CSV from your **Constituents** tab (or build one with `first_name`, `last_name`, and `email` headers).
-2. **Paste your report link.** The tool appends `?for=email` to it for each constituent.
-3. **Preview and download.** Review the per-constituent URLs, then click **Download ZIP**.
+- **Generate QR codes** — one personalized QR code per constituent.
+- **Generate Report Links** — a CSV of personalized links, for mail merges.
+
+Both work the same way:
+
+1. **Choose your constituents.** Load them **From Storyraise** (optionally narrowed to a saved list), or **Upload CSV** with `first_name`, `last_name`, and `email` headers.
+2. **Choose your report.** Select one of your published reports, or paste a link. The tool appends `?for=email` to it for each constituent.
+3. **Preview and download.** Review the per-constituent URLs, then download.
 
 You get:
 
-- A **ZIP of QR codes** — one folder per constituent, each containing a print-ready SVG QR code that opens their personalized report.
-- A **CSV of links** — your original file plus a `report_url_used` column with each constituent's personalized URL, ready to mail-merge into your email platform.
-
-<!-- TEAM REVIEW: confirm where customers access the QR code generator tool from the dashboard navigation. -->
+- From **Generate QR codes**, a **ZIP of QR codes** (**Download ZIP**) — one folder per constituent, each containing a print-ready SVG QR code that opens their personalized report.
+- From **Generate Report Links**, a **CSV of links** (**Download CSV**) — the columns you choose plus a `report_url_used` column with each constituent's personalized URL, ready to mail-merge into your email platform.
 
 ## Where personalized links shine
 

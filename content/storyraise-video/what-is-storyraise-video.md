@@ -2,20 +2,24 @@
 title: What is Storyraise Video?
 section: Storyraise Video
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # What is Storyraise Video?
 
 Storyraise Video turns one recording into hundreds of personal video messages. Record once, and every constituent receives a version addressed to them — their name on screen, a message in their inbox, and a viewing link that's theirs alone.
 
-<!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Video should be described as generally available, and the exact dashboard entry point. -->
+<!-- TEAM REVIEW: labels on this page are verified against the deployed app (storyraise-video branch, 2026-10-15). Still open: whether Storyraise Video should be described as generally available. -->
+
+To start, open **Videos** in the dashboard sidebar and click **Add new**, or click **New video** on Home. Storyraise Video opens in a new tab. See [Creating a video message](creating-a-video-message.md) for the full walkthrough.
 
 ## How it works
 
 ### 1. Choose your message type
 
-Start by picking what kind of message you're sending: **Thank you!**, **Case for giving**, **Invitation**, **Event recap**, or **Just an update**. Your choice shapes the suggested talking points and scene layouts.
+Start by picking what kind of message you're sending: **Thank You!**, **Case for Giving**, **Make an Appeal**, **Invitation**, **Event Recap**, or **Just an Update**. Your choice shapes the suggested talking points and scene layouts.
+
+Next you add your recipients (see step 4 below) — or click **Skip for now** and add them later.
 
 ### 2. Record your message
 
@@ -29,18 +33,18 @@ After you record, Storyraise automatically:
 
 ### 3. Edit your scenes
 
-Your video is automatically structured into **scenes** — timed text overlays that appear as you speak, with animated headings and styling you can adjust. This is where personalization happens: scene text supports merge tags, so `Hi, @@first_name@@!` greets each recipient by their own name. Refine any scene, add new ones, or click **Remake All Scenes** to start the overlay design fresh.
+Your video is automatically structured into **scenes** — timed text overlays that appear as you speak, with animated headings and styling you can adjust. This is where personalization happens: scene text supports merge tags, so `Hi, @@first_name@@!` greets each recipient by their own name. Refine any scene, add new ones, or choose **Remake all scenes** to start the overlay design fresh.
 
 ### 4. Add recipients
 
-Add your audience two ways:
+Add your audience when you create the video, or later from **Preview & send**, two ways:
 
 - **Select Recipients** — choose from your organization's constituents.
 - **Upload a CSV** — using the standard format (`first_name`, `last_name`, `email`, plus any custom fields you want available as merge tags).
 
 ### 5. Preview and send
 
-Click **Preview & send** to review the exact video each recipient will see — step through recipients or search for a specific person, with every merge tag resolved to their real data. Then send: each constituent receives an email with your video thumbnail, your message, and a button to their personal viewing page.
+Click **Preview & send** to review the exact video each recipient will see — step through recipients or search for a specific person, with every merge tag resolved to their real data. Then click **Send Video Messages**, which opens Storyraise Send with your video loaded: each recipient receives an email with your message, your video thumbnail, and a **Watch Video** button that opens their personal viewing page. See [Sending and recipients](sending-and-recipients.md).
 
 Prefer to send through your own email platform? **Get a link** gives you either a **Standard Link** (the same for everyone) or a **Dynamic Link** with a personalization variable you map to your CRM or email tool's merge field.
 

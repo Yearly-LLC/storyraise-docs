@@ -2,7 +2,7 @@
 title: Scenes and personalization
 section: Storyraise Video
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Scenes and personalization
@@ -15,11 +15,13 @@ When you finish recording, Storyraise automatically structures your video into a
 
 ## Editing a scene
 
-Select a scene from **Select a Scene to Edit** to refine it: change its text, adjust its styling, or restyle the layout. **Insert icon** drops in a visual accent.
+Under **Edit scenes**, your scenes appear as blocks on a timeline under the video. Click a block to select that scene, and drag its left or right edge to change when it starts or ends. With a scene selected you can:
 
-To add one, play the video to the moment you want it and click **Add scene at** — the button carries the current timestamp, so the new scene lands where you're paused rather than at the end. Generating it takes a moment.
+- Change its words under **Edit Text**.
+- Describe a change under **Refine with AI** (for example, "shorter, bolder") and click **Regenerate scene**.
+- Click **Insert icon** to drop in a visual accent, or **Insert variable** to add a merge tag.
 
-Want a fresh start on the overlay design? **Remake all scenes** rebuilds them from your recording.
+The **⋯** menu beside the timeline holds the rest. To add a scene, play the video to the moment you want it, open the menu, and click **Add scene at** — the option carries the current timestamp, so the new scene lands where you're paused rather than at the end. Generating it takes a moment. The same menu has **Duplicate scene**, and **Remake all scenes** when you want a fresh start on the overlay design.
 
 ## Personalizing with merge tags
 
@@ -29,7 +31,7 @@ This is what sets Storyraise Video apart. Scene text supports merge tags in the 
 
 becomes "Hi, Maria!" for Maria and "Hi, James!" for James — automatically, from each recipient's record. Any field on your constituents can be a merge tag: `@@first_name@@`, `@@last_name@@`, or custom fields like giving level or program name.
 
-The same `?for=` personalization that powers [personalized report links](../distribution-and-engagement/personalized-links.md) drives video personalization, so the constituent must exist in your [constituent list](../crm-and-data/importing-constituent-data.md) (matched by email).
+The same `?for=` personalization that powers [personalized report links](../distribution-and-engagement/personalized-links.md) drives video personalization. Merge tags fill in from the video's own **recipients** — the people you added with **Select Recipients** or a CSV (see [Sending and recipients](sending-and-recipients.md)), matched by email. Someone who isn't one of the video's recipients sees the video with the merge tags left blank.
 
 ## Tips
 

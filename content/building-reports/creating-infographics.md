@@ -3,7 +3,7 @@ title: Creating infographics
 section: Building Reports
 status: draft
 keywords: infographic, infographics, visualization, chart, graph, data, antv, pie, donut, bar, column, line, word cloud, timeline, funnel, sequence, progress
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Creating infographics
@@ -44,18 +44,22 @@ When you're happy with the preview, click **Done** to drop it into your report. 
 
 ## Entering your data
 
-Infographics use data you enter by hand, so you're never waiting on a connection or an import. In the **Data** section of the options panel, each row is one data point with a **Label**, a **Value**, and its own **Color**. Use the row controls to shape your data:
+You type an infographic's data in directly, so you're never waiting on a connection. In the **Data** section of the options panel, each row is one data point with a **Label**, a **Value**, and its own **Color**. Use the row controls to shape your data:
 
 - **Add** (**+**) a new row, or **remove** (**×**) one you don't need.
 - **Reorder** rows with the up and down arrows — handy for putting months, quarters, or ranked items in the right order.
 
 Give the whole graphic a heading with the **Title** field.
 
+### Importing data from a CSV
+
+Chart templates (pie, donut, bar, column, and line) can also take their rows from a spreadsheet. Above the data rows, click **Import CSV** and choose a `.csv` file; **See CSV format** shows an example. The importer reads the first two columns, a name and a number, and skips any row missing either. Importing **replaces** the rows already in the chart. On bar and line charts, a header row fills in the X- and Y-axis titles if you haven't set them yourself. List, Sequence, and Word Cloud templates are entered by hand.
+
 ### Personalizing a value
 
-A row's **Label** and **Value** can be bound to a merge tag instead of a fixed number, so the graphic reads differently for each person who opens the report. Type the tag into the field — the field offers the tags available to your report as you type — and the row uses it whenever the report is opened through a [personalized link](../distribution-and-engagement/personalized-links.md).
+On chart templates, each data row also has optional **Label variable** and **Value variable** fields, so the graphic can read differently for each person who opens the report. Type a merge tag into one of them — the field offers the tags available to your report as you type — and the row uses it whenever the report is opened through a [personalized link](../distribution-and-engagement/personalized-links.md).
 
-The static value you typed is what everyone else sees, so fill it in as well and treat the merge tag as the personalized override.
+The static **Label** and **Value** are what everyone else sees, so fill them in as well and treat the variable as the personalized override.
 
 <!-- TEAM REVIEW: needs a screenshot of a Data row with a merge tag in the Value field and the tag list showing. -->
 
@@ -64,21 +68,16 @@ The static value you typed is what everyone else sees, so fill it in as well and
 Infographics pick up your organization's look automatically, and you can fine-tune from there:
 
 - **Font** — choose any font available to your report, including your brand fonts.
-- **Colors** — every color picker shows your **report's palette** first, then **your brand colors**, so charts stay on-palette. Set a per-row color, or turn on **Make chart monotone** to render the whole chart in a single color.
+- **Colors** — every color picker shows **your brand colors** first, then your **report's palette**, so charts stay on-palette. Set a per-row color, or turn on **Make chart monotone** to render the whole chart in a single color.
 - **Chart options** vary by type — for example, pie and donut charts offer **Show labels**, **Hide labels below (%)**, and **Show slice outline**; bar and line charts add **X-axis title**, **Y-axis title**, and value or axis **prefix/suffix** (for a `$` or `k`).
 
 Storyraise also protects readability: if a text color would be invisible against the background, it's automatically nudged to a legible shade. For more on brand styling, see [Brand kit](brand-kit.md) and [Fonts and colors](fonts-and-colors.md).
 
 > **Tip:** Fewer data points read better. A chart with five or six clear categories tells a stronger story than one crammed with twenty.
 
-## Block layouts
+## The Infographics block
 
-The **Infographics** block offers four layouts, chosen from the block's **Layout** setting:
-
-- **Standard** — heading and body text above a single infographic.
-- **Chart Right** — text on the left, infographic on the right.
-- **Two Charts** — heading and body text above two infographics side by side.
-- **Chart Left** — infographic on the left, text on the right.
+The **Infographics** block has a single layout: a heading and body text above an infographic. To show two infographics side by side, add a second **Infographic** element and drop it beside the first.
 
 ## In PDF and on mobile
 

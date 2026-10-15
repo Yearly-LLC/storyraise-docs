@@ -3,7 +3,7 @@ title: Frequently asked questions
 keywords: pdf, print, board, questions, help, troubleshooting
 section: Best Practices & Reference
 status: draft
-last_reviewed: 2026-09-04
+last_reviewed: 2026-10-15
 ---
 
 # Frequently asked questions
@@ -36,7 +36,7 @@ This is almost always a strict firewall or content-inspection proxy — common o
 ## Constituents and personalization
 
 **Which CRMs does Storyraise connect to?**
-A lot of them — through the [Connections tab](../crm-and-data/connections-overview.md): Raiser's Edge NXT, Bloomerang, Salesforce, Virtuous, CiviCRM, Slate, Ellucian, Little Green Light, DonorPerfect, and Neon CRM, plus giving platforms (Givebutter, Donorbox, Fundraise Up) and Mailchimp. Anything else works via CSV export/import. See [Supported integrations](../crm-and-data/supported-integrations.md).
+A lot of them — through the [Connections tab](../crm-and-data/connections-overview.md): Raiser's Edge NXT, Bloomerang, Salesforce, Virtuous, CiviCRM, Slate, Ellucian, Little Green Light, DonorPerfect, Neon CRM, and Funraise, plus giving platforms (Givebutter, Donorbox, Fundraise Up) and Mailchimp. Anything else works via CSV export/import. See [Supported integrations](../crm-and-data/supported-integrations.md).
 
 **How does personalization work?**
 Add merge tags like `@@first_name@@` to your report, then share each constituent's personalized link (their email appended as `?for=`). Their data fills in when they open it. See [Personalized links](../distribution-and-engagement/personalized-links.md).

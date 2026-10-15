@@ -3,7 +3,7 @@ title: User roles and permissions
 section: Getting Started
 status: draft
 keywords: roles, permissions, owner, admin, editor, viewer, custom roles, access, team, invite
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # User roles and permissions
@@ -22,29 +22,31 @@ Every member has one role. In order of access:
 
 | Role | Best for | What they can do |
 |---|---|---|
-| **Owner** | The person who runs the account | Full access to everything, including billing and team management. There's always at least one Owner. |
-| **Admin** | Trusted team leads | Full access to everything and can *view* billing, but can't change the subscription. |
+| **Owner** | The person who runs the account | Full access to everything, including team management. There's always at least one Owner. |
+| **Admin** | Trusted team leads | Full access to everything except the Owner-only Billing level (Admins can *view* billing). |
 | **Editor** | People who build and edit | Create and edit reports, videos, forms, constituents, integrations, analytics, brand kit, and tools. Can *see* the team but not change it. No billing or org settings. |
 | **Viewer** | Reviewers and stakeholders | Read-only access to content — they can look but not change anything, and can't manage the team or settings. |
 
 ## What each role can access
 
-Access to each area is one of four levels: **— (none)**, **View**, **Edit**, or **Manage** (Manage includes creating, editing, and deleting).
+Access to each area is one of four levels: **— (none)**, **View**, **Edit**, or **Manage** (Manage includes creating, editing, and deleting). Area names below match the labels on the **Team** tab in **Account**. **Reports** also covers templates and report folders.
+
+Subscriptions are managed with your Storyraise contact rather than in the dashboard, so the **Billing** area currently just shows your organization's plan.
 
 | Area | Owner | Admin | Editor | Viewer |
 |---|---|---|---|---|
-| Reports & templates | Manage | Manage | Edit | View |
-| Videos | Manage | Manage | Edit | View |
-| Collect forms | Manage | Manage | Edit | View |
-| Constituents (CRM) | Manage | Manage | Edit | View |
-| Connections (integrations) | Manage | Manage | Edit | View |
-| Health & Actions | Manage | Manage | Edit | View |
+| Reports | Manage | Manage | Edit | View |
+| Video | Manage | Manage | Edit | View |
+| Collect | Manage | Manage | Edit | View |
+| Constituents | Manage | Manage | Edit | View |
+| Connections | Manage | Manage | Edit | View |
+| Donor Signals | Manage | Manage | Edit | View |
 | Analytics | Manage | Manage | Edit | View |
 | Brand Kit | Manage | Manage | Edit | View |
 | Tools | Manage | Manage | Edit | View |
-| Team & roles | Manage | Manage | View | — |
+| Team | Manage | Manage | View | — |
 | Billing | Manage | View | — | — |
-| Organization settings | Manage | Manage | — | — |
+| Org Settings | Manage | Manage | — | — |
 | Activity log | Manage | Manage | — | — |
 
 ## Restricting a single folder
@@ -56,7 +58,7 @@ It filters what people see; it isn't a permission boundary. Anyone with a report
 
 ## Custom roles
 
-Beyond the four built-in roles, Owners and Admins can create **custom roles** — pick a name and set the access level for each area individually. Custom roles are useful when someone needs, say, Edit access to Reports and Analytics but only View on Constituents. Assign a custom role to a member exactly like a built-in one.
+Beyond the four built-in roles, anyone with Manage access to Team (Owners and Admins, by default) can create **custom roles** — pick a name and set the access level for each area individually. Custom roles are useful when someone needs, say, Edit access to Reports and Analytics but only View on Constituents. Assign a custom role to a member exactly like a built-in one. You can't grant anyone more access than you have yourself.
 
 ## Fine-tuning one person's access
 
@@ -71,7 +73,6 @@ A few guardrails:
 - There must always be at least one **Owner**.
 - Only an **Owner** can grant or remove the Owner role.
 
-<!-- TEAM REVIEW: role names/levels mirror the shipped RBAC model (Owner/Admin/Editor/Viewer; none/view/edit/manage across the 13 areas). Confirm the customer-facing area labels above match the final dashboard wording before publishing. -->
 
 ## Working together on reports
 

@@ -297,9 +297,9 @@
 <h2>&quot;My Blackbaud connection stopped working&quot;</h2>
 <p>Blackbaud authorizations expire periodically. Storyraise refreshes them automatically behind the scenes, but if a sync fails with an authorization error:</p>
 <ol>
-<li>Open the <strong>Constituents</strong> area and go to the <strong>Blackbaud</strong> tab.</li>
-<li>Click <strong>Connect</strong> to re-authorize with your Blackbaud account.</li>
-<li>Re-select your constituent list and sync again.</li>
+<li>Open the <strong>Connections</strong> tab and find <strong>Raiser&#39;s Edge NXT</strong> among your connected systems.</li>
+<li>Click the sync icon (<strong>Sync now</strong>). If the authorization has expired, you&#39;re sent to Blackbaud to sign in and authorize Storyraise again.</li>
+<li>Re-select your constituent list and click <strong>Sync Constituents</strong>.</li>
 </ol>
 <p>Make sure you authorize with a Blackbaud account that has access to the constituent lists you want to sync.</p>
 <h2>&quot;Bloomerang says my API key is invalid&quot;</h2>
@@ -308,10 +308,10 @@
 <li>API keys belong to a Bloomerang user. If that user was deactivated or their key was regenerated, the old key stops working — create or copy a fresh key in Bloomerang and try again. Bloomerang&#39;s guide: <a href="https://support.bloomerang.co/s/article/13000076351#new">Where can I find my Bloomerang API key?</a></li>
 </ul>
 <h2>&quot;Some constituents didn&#39;t import&quot;</h2>
-<p>The most common cause is a <strong>missing email address</strong>. Storyraise identifies each constituent by email, so records without one are skipped.</p>
+<p>The most common cause is a <strong>missing email address</strong>. Connected CRMs, giving platforms, and email tools (every connection except Slate) skip any record without an email, because Storyraise identifies each constituent by email.</p>
 <ul>
 <li>In your CRM, fill in email addresses where you can, then re-sync.</li>
-<li>For CSV uploads, check that your file has a properly spelled <strong>Email</strong> header and that each row has a value in it.</li>
+<li>CSV uploads and Slate work differently: a row with a name but no email still imports (keyed on the name), and only rows with neither an email nor a name are skipped. If CSV rows are missing, check that you chose the right <strong>Email</strong> column in <strong>Map your columns</strong> and that each row has a name or an email.</li>
 </ul>
 <h2>&quot;I have duplicate constituents&quot;</h2>
 <p>Storyraise matches records by email address, so duplicates usually mean the same person exists under two different emails (in your CRM, or between your CRM and a CSV upload). Consolidate to one email in the source data and re-sync.</p>
@@ -353,6 +353,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="41bbdd88" data-engine-v="676be165" defer></script>
 </body>
 </html>

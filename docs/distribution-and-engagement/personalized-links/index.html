@@ -309,17 +309,24 @@
 <div class="tip"><p>Thank you, @@first_name@@ — supporters like you made this year possible.</p></div>
 <p>Any field on your constituent records can be a merge tag. Open a constituent from your <strong>Constituents</strong> list to see their available fields and exact field names.</p>
 <div class="tip"><p><strong>A field that&#39;s missing on a constituent&#39;s record can&#39;t be filled in</strong> — check your data for gaps (especially custom fields) before a big personalized mailing. See <a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a>.</p></div>
+<h2>Getting a link for your email platform</h2>
+<p>If you send through Mailchimp, Constant Contact, Bloomerang, Raiser&#39;s Edge NXT, Salesforce, or another email platform, you only need <strong>one</strong> link. In the dashboard, open a published report&#39;s menu and choose <strong>Send in an email</strong>, then pick your <strong>Email tool</strong> (or choose <strong>Other</strong> and paste your tool&#39;s email merge tag). You can also click <strong>Get personalized link</strong> on the <strong>Your report is live!</strong> page that opens after you publish. Storyraise formats the link with that platform&#39;s own email merge field after <code>?for=</code>, so the platform fills in each recipient&#39;s address when it sends. Leave the merge field exactly as it is.</p>
 <h2>Generating personalized links and QR codes at scale</h2>
-<p>For a mailing, you don&#39;t build links by hand — the <strong>Generate QR codes</strong> tool creates one personalized link and QR code per constituent:</p>
+<p>For a mailing, you don&#39;t build links by hand. Two tools under <strong>Tools</strong> in the dashboard do it for every constituent at once:</p>
+<ul>
+<li><strong>Generate QR codes</strong> — one personalized QR code per constituent.</li>
+<li><strong>Generate Report Links</strong> — a CSV of personalized links, for mail merges.</li>
+</ul>
+<p>Both work the same way:</p>
 <ol>
-<li><strong>Upload constituents CSV.</strong> Export a CSV from your <strong>Constituents</strong> tab (or build one with <code>first_name</code>, <code>last_name</code>, and <code>email</code> headers).</li>
-<li><strong>Paste your report link.</strong> The tool appends <code>?for=email</code> to it for each constituent.</li>
-<li><strong>Preview and download.</strong> Review the per-constituent URLs, then click <strong>Download ZIP</strong>.</li>
+<li><strong>Choose your constituents.</strong> Load them <strong>From Storyraise</strong> (optionally narrowed to a saved list), or <strong>Upload CSV</strong> with <code>first_name</code>, <code>last_name</code>, and <code>email</code> headers.</li>
+<li><strong>Choose your report.</strong> Select one of your published reports, or paste a link. The tool appends <code>?for=email</code> to it for each constituent.</li>
+<li><strong>Preview and download.</strong> Review the per-constituent URLs, then download.</li>
 </ol>
 <p>You get:</p>
 <ul>
-<li>A <strong>ZIP of QR codes</strong> — one folder per constituent, each containing a print-ready SVG QR code that opens their personalized report.</li>
-<li>A <strong>CSV of links</strong> — your original file plus a <code>report_url_used</code> column with each constituent&#39;s personalized URL, ready to mail-merge into your email platform.</li>
+<li>From <strong>Generate QR codes</strong>, a <strong>ZIP of QR codes</strong> (<strong>Download ZIP</strong>) — one folder per constituent, each containing a print-ready SVG QR code that opens their personalized report.</li>
+<li>From <strong>Generate Report Links</strong>, a <strong>CSV of links</strong> (<strong>Download CSV</strong>) — the columns you choose plus a <code>report_url_used</code> column with each constituent&#39;s personalized URL, ready to mail-merge into your email platform.</li>
 </ul>
 <h2>Where personalized links shine</h2>
 <ul>
@@ -366,6 +373,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="41bbdd88" data-engine-v="676be165" defer></script>
 </body>
 </html>

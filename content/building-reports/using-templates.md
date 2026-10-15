@@ -3,7 +3,7 @@ title: Using templates
 section: Building Reports
 status: draft
 keywords: templates, gallery, shelves, browse templates, preview, brand colors, brand fonts, your templates, carousel
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Using templates
@@ -12,7 +12,7 @@ Templates do the design work so you can focus on the story. This page covers wor
 
 ## Browsing the gallery
 
-Choose **Report from template** and the gallery opens on four entry points — Fundraising, Donor Relations & Stewardship, Communications, and Annual & Impact — over shelves grouped by category. Any templates your team has saved sit first, under **Your templates**.
+On the **Reports** page, click **Add new → From a template**. The gallery opens on **All Templates** plus three entry points — Fundraising, Donor Relations & Stewardship, and Communications — over shelves grouped by category. Any templates your team has saved sit first, under **Your templates**.
 
 Each shelf scrolls sideways. Drag it, or use the arrows at either end.
 
@@ -41,6 +41,6 @@ Sample text shows you the intended length and tone for each spot — a heading m
 
 ## Reusing your own work
 
-Your best template is often last year's report. Duplicate a past report from the dashboard and update it — structure, branding, and recurring sections (letters, donor lists, financials) carry over, and you only rewrite what changed.
+Your best template is often last year's report. Duplicate a past report from the dashboard (open the report's **⋯** menu and choose **Duplicate**) and update it — structure, branding, and recurring sections (letters, donor lists, financials) carry over, and you only rewrite what changed.
 
-<!-- TEAM REVIEW: confirm report duplication exists on the dashboard and its exact menu label. Also confirm whether "Save as Template" (seen in the builder menu) is customer-facing yet — if so, this page should document saving org templates. -->
+To turn a report into a template your whole team can start from, open it in the builder, choose **Save report as template** from the **⋯** menu, and give it a name. It appears in the gallery under **Your templates**.

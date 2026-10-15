@@ -2,7 +2,7 @@
 title: Setting up your account
 section: Account & Settings
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-10-15
 ---
 
 # Setting up your account
@@ -26,7 +26,7 @@ Agree to the Terms & Conditions and create your account. Prefer Google? Use **Si
 
 After the first step, you'll get one last chance to fine-tune your **Storyraise URL** — *Awesome! One last thing.* Choose carefully: this subdomain appears in every report link you share, so pick something short and recognizable (your organization's name or acronym works well).
 
-<!-- TEAM REVIEW: confirm whether the URL/subdomain can be changed after signup, and who to contact if so. -->
+You can't change the URL yourself after signup. If you need to, use **Ask us to change it** under **Your Org Info** — see [Organization settings](organization-settings.md).
 
 ## What happens next
 

@@ -2,64 +2,81 @@
 title: Setting up a custom sending domain
 section: Account & Settings
 status: draft
-keywords: dns, spf, dkim, cname, deliverability, godaddy, cloudflare, from address
-last_reviewed: 2026-06-12
+keywords: dns, spf, dkim, dmarc, cname, deliverability, godaddy, cloudflare, from address, unsubscribe
+last_reviewed: 2026-10-15
 ---
 
 # Setting up a custom sending domain
 
-When you send email through Storyraise, verifying your own sending domain makes your messages come clearly from your organization — and helps them reach the inbox instead of the spam folder. This guide walks through the setup wizard.
+When you send email through Storyraise Send, your messages go out from the email address your organization already uses — for example `giving@yourdomain.org` — so they keep the trust that address has built with inbox providers and donors. Connecting your domain lets inbox providers confirm the messages are genuinely from you. This guide walks through the email setup in Storyraise Send.
 
-<!-- TEAM REVIEW: confirm whether the self-service domain wizard (public/domains/) is enabled for customers, or whether the team still handles domain setup manually. Adjust this page to match the live flow before publishing. -->
+## Where to find it
 
-## Why verify a domain?
+Open **Storyraise Send** ([send.storyraise.com](https://send.storyraise.com/channels/)) and go to **Setup Sending**, then choose the **Email** card. If your organization hasn't set up email yet, sending a report from the builder takes you to this page automatically.
 
-Inbox providers (Gmail, Outlook, and the rest) trust messages more when the sending domain proves the sender is who they claim to be. Verifying your domain:
-
-- Makes emails clearly come **from your organization**, not a generic address.
-- Improves deliverability so updates actually reach donors.
-- Brands the tracking links in your emails with your own domain.
-
-You'll set up DNS records — small, safe entries at your domain host. **This does not affect your website.**
+The setup has three steps: **Your existing address**, **Add DNS records**, and **Verify**.
 
 ## What you'll need
 
-- The domain you'll send from (e.g. `example.org` — you'll send from something like `updates@example.org`).
-- Access to your domain's DNS settings (at GoDaddy, Cloudflare, Squarespace, or wherever your domain is managed). Not technical? You can forward the records to whoever manages your DNS.
+- **An address your organization already sends from**, on your organization's own domain. Ideally one with a history of sending mail. Personal addresses like Gmail or Outlook can't be used.
+- **Access to your domain's DNS settings** (at GoDaddy, Cloudflare, Squarespace, or wherever your domain is managed). Not the person who manages DNS? You can forward the records to whoever does — see step 2.
+- **Your unsubscribe list from your previous email tool**, if you've sent from this address before (Mailchimp, Constant Contact, and so on).
 
-## The four steps
+## 1. Your existing address
 
-### 1. Verify your sending domain
+Enter the address you want your emails to come from. Storyraise shows **Your emails will send from** with the address, and connects that address's domain.
 
-Enter your organization identifier and your **sending domain**. Storyraise prepares the records your domain will need.
+On the same step, **Bring your unsubscribe list with you**: import the unsubscribe export from your previous email tool (upload a CSV or paste addresses), or confirm you have no one to import. Laws like CAN-SPAM, CASL, and GDPR require you to honor opt-outs made before you switched tools. Imported addresses are added as soon as your domain is verified.
 
-### 2. Add DNS records
+Tick the box confirming your organization is responsible for importing past unsubscribes, then click **Continue**.
 
-Storyraise shows a table of DNS records to add — typically CNAME, MX, and TXT entries covering:
+## 2. Add DNS records
 
-- **SPF** — authorizes Storyraise to send on your behalf.
-- **DKIM** — cryptographically signs your mail so it's trusted.
-- **Tracking** — brands the links in your emails with your domain.
+Storyraise shows a table of records to add at your DNS provider, with a **Copy** button for each host and value:
 
-Each row has **Copy host** and **Copy value** buttons. Log in to your domain host and add each record exactly as shown.
+| What it does | Type |
+|---|---|
+| Signs your email (DKIM) — two records | CNAME |
+| Return address (SPF) | CNAME |
+| Inbox policy for your domain (DMARC) | TXT |
 
-> **DNS changes can take a few minutes to a few hours to take effect.** That's normal — you can move on and check back.
+A few things to know:
 
-### 3. Verify setup
+- **Already have a DMARC record?** Keep it and skip ours — a domain with two DMARC records is treated as having none. Storyraise looks for an existing one and marks it **Already set up**.
+- **Using Cloudflare?** Set each record's proxy status to **DNS only**. Proxied records stop verification from ever passing.
+- **TTL:** if your provider asks, leave it at the default.
+- **Not the person who manages DNS?** Click **Copy message** and send it to whoever does. It lists every record and needs no Storyraise access.
 
-Once you've added the records, click **Check verification**. Storyraise looks up your DNS and confirms which records it can see, marking each **Verified** or still **Missing**. If something's missing, double-check that record at your host and check again.
+These records only authorize Storyraise's email provider to send for your domain. They don't affect your website or your existing email.
 
-### 4. You're ready to send
+When you've added them, click **I've added the records**.
 
-When everything verifies, you'll see **You're ready to send** — emails will now come from your domain. From here, set up your **From** address and make sure donor updates include an unsubscribe footer.
+## 3. Verify
+
+Click **Check DNS records**. Storyraise looks up each record and shows whether it's found. If some are still missing, it names the hosts it's waiting on — compare them against what's in your DNS, since a single character off is the usual cause.
+
+> **DNS changes usually show up within 15 minutes, but can take up to 48 hours.** That's normal — you can come back and check again.
+
+The DMARC record isn't required to send, but Gmail and Yahoo may filter bulk mail from domains without one, so add it before large sends.
+
+Once verified, click **Done**. The Email page then shows your verified sending address, the status of each DNS record, and your imported unsubscribes.
+
+## After you're set up
+
+- **Leave the DNS records in place.** If they're removed, your email stops being authenticated and deliverability drops.
+- **Unsubscribes are handled for you.** Every email includes **Unsubscribe** and **Manage preferences** links, and people who unsubscribe aren't emailed again. You can import more past unsubscribes from the Email page at any time.
+- **Changing to a different domain** once you're verified would stop your email until new records are added, so contact [our support team](https://storyraise.com/support) and we'll move you across safely. Changing just the address on the same domain is self-service (**Change address**).
+
+<!-- TEAM REVIEW: until a domain is verified, Send falls back to a shared noreply@message.storyraise.com address (storyraise-mail stepper functions/index.js getOrgSendGridConfig; memory reference_send_email_domains.md). Confirm whether to tell customers that, or whether sending is effectively blocked until setup (builder app.js:2846 routes unconfigured orgs to setup). Also: the dashboard's Donor Signals follow-up still links "Verify your sending domain" to the retired app.storyraise.com/domains/ wizard (builder public/index.html:5510); it should point at send.storyraise.com/channels/. -->
 
 ## Tips
 
 - **Copy, don't retype.** DNS values are long and unforgiving — use the copy buttons.
-- **Hand it to IT if you're unsure.** Forwarding the records page to your web person is a perfectly normal step.
-- **Be patient with verification.** If a record doesn't verify immediately, wait a bit and re-check before assuming it's wrong.
+- **Hand it to IT if you're unsure.** Forwarding the **Copy message** text to your web person is a perfectly normal step.
+- **Be patient with verification.** If a record doesn't verify immediately, wait a bit and check again before assuming it's wrong.
 
 ## Related
 
+- [Email compliance and deliverability](email-compliance.md)
 - [Email distribution](../distribution-and-engagement/email-distribution.md)
 - [Organization settings](organization-settings.md)

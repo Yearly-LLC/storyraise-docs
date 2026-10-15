@@ -3,7 +3,7 @@ title: Consent, releases, and dignity
 section: Storyraise Collect
 keywords: consent, photo release, permission, minors, guardian, anonymous, safeguarding, ethics, withdraw, remove my story, GDPR, privacy
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Consent, releases, and dignity
@@ -59,18 +59,19 @@ A powerful story does not require a real name. If someone agrees to share but no
 
 People change their minds, and they are entitled to. Decide in advance who handles this and how fast.
 
-1. Find the response in your [response table](managing-responses.md) and remove it.
-2. If the story is already live in a published report, edit the report to remove it and republish — a published report stays live until you republish it. See [Publishing and sharing](../getting-started/publishing-and-sharing.md).
-3. Check whether the story was also used anywhere outside Storyraise — a newsletter, social media, a PDF you emailed.
-4. Tell the person when it's done.
+1. Find the response in your [response table](managing-responses.md), right-click its row, and choose **Delete row**. This takes effect immediately and can't be undone.
+2. If the response included an uploaded photo, video, or document, deleting the row does **not** delete the file. Contact Storyraise support to have the file itself removed.
+3. If the story is already live in a published report, edit the report to remove it and republish — a published report stays live until you republish it. See [Publishing and sharing](../getting-started/publishing-and-sharing.md).
+4. Check whether the story was also used anywhere outside Storyraise — a newsletter, social media, a PDF you emailed.
+5. Tell the person when it's done.
 
-<!-- TEAM REVIEW: (1) managing-responses.md documents no delete action — confirm
-     whether deleting a single response is possible in the current UI and add the
-     click path here and there. This page currently promises a capability the
-     product docs don't describe. (2) Confirm whether deleting a response also
-     removes files uploaded with it. (3) Confirm whether there is any retention
-     period after which responses are purged. Until (1) is answered this page
-     should not be linked from the landing page. -->
+<!-- TEAM REVIEW: (1) RESOLVED 2026-10-15: single-response delete exists (right-click a row >
+     Delete row, storyraise-collect branch public/js.js deleteRows, autosaved via the message watcher).
+     (2) Deleting a row does NOT remove files uploaded with it: they live at
+     {org bucket}/srv/anonymous/ in Cloud Storage, which storage.rules makes publicly readable, and
+     nothing deletes them. Confirm that "contact Storyraise support" is the right removal route and
+     that support can find and delete the file. (3) Still open: is there any retention period after
+     which responses are purged? -->
 
 ## Who can see submissions
 

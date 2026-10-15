@@ -3,7 +3,7 @@ title: Analytics overview
 section: Sharing & Analytics
 status: draft
 keywords: analytics, home tab, most read, reader activity, who's been reading, constituents opened, constituent returns, views, data freshness, the story, the numbers, video tour, demo
-last_reviewed: 2026-09-10
+last_reviewed: 2026-10-15
 ---
 
 # Analytics overview
@@ -41,7 +41,9 @@ Treat the Home tab as a *weekly* check-in. It's how you spot a report that's sti
 For the deeper story on a single report, select **Analytics** in the sidebar and choose the report. You'll find two views:
 
 - **The Numbers** — where readers are, when they visit, what they click, how they move through your report, and where they stop. See [Understanding report metrics](understanding-report-metrics.md).
-- **The Story** — everything brought together in a plain-English PDF summary, including key takeaways, people worth contacting, and recommended next steps. It's ready to read aloud in a staff meeting or hand to your board.
+- **The Story** — everything brought together in a plain-English summary you can download as a PDF, including key takeaways, people worth contacting, and recommended next steps. It's ready to read aloud in a staff meeting or hand to your board.
+
+If the report contains a poll or a reader feedback card, you'll also see **Poll Results** and **Reader Feedback** tabs, each with a **Download CSV** button.
 
 ## How fresh the data is
 

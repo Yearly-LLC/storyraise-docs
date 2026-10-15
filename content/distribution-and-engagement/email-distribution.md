@@ -2,62 +2,65 @@
 title: Email distribution
 section: Sharing & Analytics
 status: draft
-keywords: send, campaign, newsletter, blast
-last_reviewed: 2026-09-04
+keywords: send, campaign, newsletter, blast, schedule, storyraise send
+last_reviewed: 2026-10-15
 ---
 
 # Email distribution
 
 **Storyraise Send** lets you deliver your reports and messages to constituents by email, right from Storyraise — personalized for each recipient, with no separate email platform required.
 
-<!-- TEAM REVIEW: Storyraise Send is pre-release (text-message branch, not merged). Confirm availability and entry point before publishing this page, and verify final UI labels against the shipped product. -->
-
 ## What you can send
 
 A Send message is built around your content: write a personal note, include a link to your report, and deliver it to each constituent with their own personalized link. Your organization's logo and branding frame the message, and a clear call-to-action takes recipients straight to your content.
 
+## Where to start
+
+The quickest route is from a published report:
+
+1. Open the report's share options — the **Your report is live!** page that opens after you publish, or the **Share** button in the builder.
+2. Under **Send it with Storyraise Send**, choose **Email** and click **Draft the email**. Send opens in a new tab with a message already drafted around your report: its cover image and a [personalized link](personalized-links.md) for each recipient (the link ends in `?for=@@email@@`, which Send fills in per person).
+
+If your organization hasn't set up a sending address yet, the button reads **Set up your sending address** instead and walks you through that first, then brings you back to your draft.
+
 ## Before you start
 
-Two things to set up in [app.storyraise.com](https://app.storyraise.com) first:
-
-- **Add your constituents.** Your recipients come from your constituent list — import or sync them before you send, since that's also what powers per-recipient personalization. See [Importing constituent data](../crm-and-data/importing-constituent-data.md).
-- **Set up your sending domain.** So email arrives from your own domain rather than a Storyraise address, verify a custom sending domain first. See [Setting up a custom sending domain](../account-and-settings/custom-sending-domain.md).
+- **Add your constituents.** Your recipients come from your constituent list — import or sync them before you send, since that's also what powers per-recipient personalization. Only constituents with an email address can receive an email. See [Importing constituent data](../crm-and-data/importing-constituent-data.md).
+- **Set up your sending domain.** Send delivers from your organization's own verified domain. See [Setting up a custom sending domain](../account-and-settings/custom-sending-domain.md).
+- **Have a mailing address ready.** Every email carries your organization's postal address in its footer (a CAN-SPAM requirement), and Send won't send without one.
 
 ## Composing a message
 
-1. Open the editor view and write your message.
+1. Write or adjust your message in the editor.
 2. **Personalize with merge tags.** Use `@@field_name@@` anywhere in your subject or body — `@@first_name@@`, `@@last_name@@`, or any custom field from your constituent records. Each recipient sees their own values.
-3. **Link to your report.** Paste your report's link into the body of your email — when you send, each recipient gets their own [personalized link](personalized-links.md) to it. (You add the link in the message body; there's no separate "attach a report" step.)
-4. Set your subject line and adjust how your logo appears.
+3. **Link to your report.** When you start from a report, the personalized link is already in the draft. You can also paste a report link into the body yourself.
+4. When the message is ready, click **Review & send**.
 
-## Choosing recipients
+## Review & send: four steps
 
-Add recipients from your constituents in [app.storyraise.com](https://app.storyraise.com) — they're matched to your constituent records, which is what powers per-recipient personalization.
+**Review & send** opens a short flow. It doesn't send anything until the very end.
 
-<!-- TEAM REVIEW: confirm the exact recipient-selection flow in the shipped product (choosing from synced constituents vs. CSV upload) and update this section to match. -->
+1. **Preview** — see the message as each recipient will receive it. Step through recipients or search for a specific person, and switch device sizes. Every merge tag is shown resolved with that recipient's real data — the single best way to catch a missing field before it goes out.
+2. **Recipients** — pick who receives the message from your constituents. Narrow the list by your saved **Lists** or by tag, click a person to add them, and click again to remove them. **Add a recipient** creates a new constituent on the spot (merge tags beyond name and email will be blank for them).
+3. **Schedule** — send everyone **On send**, or create schedule groups with their own date and time and move recipients into them. **Schedule by date tag** spreads a send across a date field on your records, such as a birthday.
+4. **Send info** — confirm the **Subject**, **Display name**, and **Mailing address**. The **From email** is filled in from your verified sending domain.
 
-## Preview before you send
+Click **Send**, review the summary under **Ready to send?**, and click **Send now**. Keep the tab open until the progress bar finishes.
 
-Click **Preview Messages & Send** to see the message exactly as each recipient will receive it:
-
-- Step through recipients one by one, or search for a specific person by name or email.
-- Every merge tag is shown resolved with that recipient's real data — the single best way to catch a missing field before it goes out.
-
-When everything looks right, confirm the send — the button shows exactly how many people you're reaching: **Send Messages to N People**.
+Please send only to constituents who have agreed to hear from you by email.
 
 ## Sending addresses and your domain
 
-By default, messages are delivered from a Storyraise sending address. To send from your own domain (so emails come from `you@email.yourdomain.org`), set up a custom sending subdomain — see [Setting up your email sending subdomain](../account-and-settings/email-subdomain-setup.md).
+Send is designed to deliver from your own domain, so messages arrive from an address your donors recognize and inbox providers can verify. Until your domain is verified, messages fall back to a shared Storyraise address. To connect your domain, see [Setting up a custom sending domain](../account-and-settings/custom-sending-domain.md). If your domain has no DMARC record (or more than one), Send shows a warning on the Send info step — add or fix it before large sends.
 
 ## Good to know
 
-- **Schedule ahead.** You can send right away or schedule a send for later — up to 30+ days in advance.
-- **Delivery status, not opens.** You can see the delivery status of your messages. Email **open and click tracking aren't available** — to measure engagement, link to a report and use its [Analytics](understanding-report-metrics.md), where personalized links attribute each open to its constituent.
-
-<!-- TEAM REVIEW: confirm the exact scheduling cap (stated here as "30+ days") and the delivery-status states surfaced to customers. -->
+- **Schedule ahead.** You can send right away or schedule groups of recipients for any future date and time.
+- **Unsubscribes are handled for you.** Every email includes an unsubscribe link, and people who opt out are suppressed from future sends.
+- **Delivery status, not opens.** Open **Sent campaigns** to see each recipient's status: **Delivered**, **Processing**, **Failed**, or **Unsubscribed**, with a resend option for failures. Email **open and click tracking aren't available** — to measure engagement, link to a report and use its [Analytics](understanding-report-metrics.md), where personalized links attribute each open to its constituent.
 
 ## Tips
 
 - **Subject lines are personal too.** `Your 2026 impact, @@first_name@@` outperforms a generic subject.
-- **Send yourself a test.** Add your own email to the recipient CSV and check the real message in your inbox before the full send.
+- **Send yourself a test.** Use **Add a recipient** to add your own email, send to just yourself, and check the real message in your inbox before the full send.
 - **Mind your data gaps.** A recipient missing the field a merge tag uses gets an awkward blank — preview a handful of recipients with the least-complete records first.

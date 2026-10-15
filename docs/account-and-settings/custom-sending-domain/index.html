@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setting up a custom sending domain — Storyraise</title>
-  <meta name="description" content="When you send email through Storyraise, verifying your own sending domain makes your messages come clearly from your organization — and helps them reach the…" />
+  <meta name="description" content="When you send email through Storyraise Send, your messages go out from the email address your organization already uses — for example giving@yourdomain.org —…" />
   <link rel="canonical" href="https://docs.storyraise.com/docs/account-and-settings/custom-sending-domain/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Storyraise Knowledge Base" />
   <meta property="og:title" content="Setting up a custom sending domain — Storyraise" />
-  <meta property="og:description" content="When you send email through Storyraise, verifying your own sending domain makes your messages come clearly from your organization — and helps them reach the…" />
+  <meta property="og:description" content="When you send email through Storyraise Send, your messages go out from the email address your organization already uses — for example giving@yourdomain.org —…" />
   <meta property="og:url" content="https://docs.storyraise.com/docs/account-and-settings/custom-sending-domain/" />
   <meta property="og:image" content="https://docs.storyraise.com/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Setting up a custom sending domain — Storyraise" />
-  <meta name="twitter:description" content="When you send email through Storyraise, verifying your own sending domain makes your messages come clearly from your organization — and helps them reach the…" />
+  <meta name="twitter:description" content="When you send email through Storyraise Send, your messages go out from the email address your organization already uses — for example giving@yourdomain.org —…" />
   <meta name="twitter:image" content="https://docs.storyraise.com/assets/og-card.png" />
 
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "Setting up a custom sending domain — Storyraise",
-  "description": "When you send email through Storyraise, verifying your own sending domain makes your messages come clearly from your organization — and helps them reach the…",
+  "description": "When you send email through Storyraise Send, your messages go out from the email address your organization already uses — for example giving@yourdomain.org —…",
   "url": "https://docs.storyraise.com/docs/account-and-settings/custom-sending-domain/",
   "inLanguage": "en-US",
   "isPartOf": {
@@ -293,44 +293,71 @@
       <!-- CONTENT -->
       <div class="content">
         <h1>Setting up a custom sending domain</h1>
-<p class="lead">When you send email through Storyraise, verifying your own sending domain makes your messages come clearly from your organization — and helps them reach the inbox instead of the spam folder. This guide walks through the setup wizard.</p>
-<h2>Why verify a domain?</h2>
-<p>Inbox providers (Gmail, Outlook, and the rest) trust messages more when the sending domain proves the sender is who they claim to be. Verifying your domain:</p>
-<ul>
-<li>Makes emails clearly come <strong>from your organization</strong>, not a generic address.</li>
-<li>Improves deliverability so updates actually reach donors.</li>
-<li>Brands the tracking links in your emails with your own domain.</li>
-</ul>
-<p>You&#39;ll set up DNS records — small, safe entries at your domain host. <strong>This does not affect your website.</strong></p>
+<p class="lead">When you send email through Storyraise Send, your messages go out from the email address your organization already uses — for example <code>giving@yourdomain.org</code> — so they keep the trust that address has built with inbox providers and donors. Connecting your domain lets inbox providers confirm the messages are genuinely from you. This guide walks through the email setup in Storyraise Send.</p>
+<h2>Where to find it</h2>
+<p>Open <strong>Storyraise Send</strong> (<a href="https://send.storyraise.com/channels/">send.storyraise.com</a>) and go to <strong>Setup Sending</strong>, then choose the <strong>Email</strong> card. If your organization hasn&#39;t set up email yet, sending a report from the builder takes you to this page automatically.</p>
+<p>The setup has three steps: <strong>Your existing address</strong>, <strong>Add DNS records</strong>, and <strong>Verify</strong>.</p>
 <h2>What you&#39;ll need</h2>
 <ul>
-<li>The domain you&#39;ll send from (e.g. <code>example.org</code> — you&#39;ll send from something like <code>updates@example.org</code>).</li>
-<li>Access to your domain&#39;s DNS settings (at GoDaddy, Cloudflare, Squarespace, or wherever your domain is managed). Not technical? You can forward the records to whoever manages your DNS.</li>
+<li><strong>An address your organization already sends from</strong>, on your organization&#39;s own domain. Ideally one with a history of sending mail. Personal addresses like Gmail or Outlook can&#39;t be used.</li>
+<li><strong>Access to your domain&#39;s DNS settings</strong> (at GoDaddy, Cloudflare, Squarespace, or wherever your domain is managed). Not the person who manages DNS? You can forward the records to whoever does — see step 2.</li>
+<li><strong>Your unsubscribe list from your previous email tool</strong>, if you&#39;ve sent from this address before (Mailchimp, Constant Contact, and so on).</li>
 </ul>
-<h2>The four steps</h2>
-<h3>1. Verify your sending domain</h3>
-<p>Enter your organization identifier and your <strong>sending domain</strong>. Storyraise prepares the records your domain will need.</p>
-<h3>2. Add DNS records</h3>
-<p>Storyraise shows a table of DNS records to add — typically CNAME, MX, and TXT entries covering:</p>
+<h2>1. Your existing address</h2>
+<p>Enter the address you want your emails to come from. Storyraise shows <strong>Your emails will send from</strong> with the address, and connects that address&#39;s domain.</p>
+<p>On the same step, <strong>Bring your unsubscribe list with you</strong>: import the unsubscribe export from your previous email tool (upload a CSV or paste addresses), or confirm you have no one to import. Laws like CAN-SPAM, CASL, and GDPR require you to honor opt-outs made before you switched tools. Imported addresses are added as soon as your domain is verified.</p>
+<p>Tick the box confirming your organization is responsible for importing past unsubscribes, then click <strong>Continue</strong>.</p>
+<h2>2. Add DNS records</h2>
+<p>Storyraise shows a table of records to add at your DNS provider, with a <strong>Copy</strong> button for each host and value:</p>
+<table>
+<thead>
+<tr>
+<th>What it does</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Signs your email (DKIM) — two records</td>
+<td>CNAME</td>
+</tr>
+<tr>
+<td>Return address (SPF)</td>
+<td>CNAME</td>
+</tr>
+<tr>
+<td>Inbox policy for your domain (DMARC)</td>
+<td>TXT</td>
+</tr>
+</tbody></table>
+<p>A few things to know:</p>
 <ul>
-<li><strong>SPF</strong> — authorizes Storyraise to send on your behalf.</li>
-<li><strong>DKIM</strong> — cryptographically signs your mail so it&#39;s trusted.</li>
-<li><strong>Tracking</strong> — brands the links in your emails with your domain.</li>
+<li><strong>Already have a DMARC record?</strong> Keep it and skip ours — a domain with two DMARC records is treated as having none. Storyraise looks for an existing one and marks it <strong>Already set up</strong>.</li>
+<li><strong>Using Cloudflare?</strong> Set each record&#39;s proxy status to <strong>DNS only</strong>. Proxied records stop verification from ever passing.</li>
+<li><strong>TTL:</strong> if your provider asks, leave it at the default.</li>
+<li><strong>Not the person who manages DNS?</strong> Click <strong>Copy message</strong> and send it to whoever does. It lists every record and needs no Storyraise access.</li>
 </ul>
-<p>Each row has <strong>Copy host</strong> and <strong>Copy value</strong> buttons. Log in to your domain host and add each record exactly as shown.</p>
-<div class="tip"><p><strong>DNS changes can take a few minutes to a few hours to take effect.</strong> That&#39;s normal — you can move on and check back.</p></div>
-<h3>3. Verify setup</h3>
-<p>Once you&#39;ve added the records, click <strong>Check verification</strong>. Storyraise looks up your DNS and confirms which records it can see, marking each <strong>Verified</strong> or still <strong>Missing</strong>. If something&#39;s missing, double-check that record at your host and check again.</p>
-<h3>4. You&#39;re ready to send</h3>
-<p>When everything verifies, you&#39;ll see <strong>You&#39;re ready to send</strong> — emails will now come from your domain. From here, set up your <strong>From</strong> address and make sure donor updates include an unsubscribe footer.</p>
+<p>These records only authorize Storyraise&#39;s email provider to send for your domain. They don&#39;t affect your website or your existing email.</p>
+<p>When you&#39;ve added them, click <strong>I&#39;ve added the records</strong>.</p>
+<h2>3. Verify</h2>
+<p>Click <strong>Check DNS records</strong>. Storyraise looks up each record and shows whether it&#39;s found. If some are still missing, it names the hosts it&#39;s waiting on — compare them against what&#39;s in your DNS, since a single character off is the usual cause.</p>
+<div class="tip"><p><strong>DNS changes usually show up within 15 minutes, but can take up to 48 hours.</strong> That&#39;s normal — you can come back and check again.</p></div>
+<p>The DMARC record isn&#39;t required to send, but Gmail and Yahoo may filter bulk mail from domains without one, so add it before large sends.</p>
+<p>Once verified, click <strong>Done</strong>. The Email page then shows your verified sending address, the status of each DNS record, and your imported unsubscribes.</p>
+<h2>After you&#39;re set up</h2>
+<ul>
+<li><strong>Leave the DNS records in place.</strong> If they&#39;re removed, your email stops being authenticated and deliverability drops.</li>
+<li><strong>Unsubscribes are handled for you.</strong> Every email includes <strong>Unsubscribe</strong> and <strong>Manage preferences</strong> links, and people who unsubscribe aren&#39;t emailed again. You can import more past unsubscribes from the Email page at any time.</li>
+<li><strong>Changing to a different domain</strong> once you&#39;re verified would stop your email until new records are added, so contact <a href="https://storyraise.com/support">our support team</a> and we&#39;ll move you across safely. Changing just the address on the same domain is self-service (<strong>Change address</strong>).</li>
+</ul>
 <h2>Tips</h2>
 <ul>
 <li><strong>Copy, don&#39;t retype.</strong> DNS values are long and unforgiving — use the copy buttons.</li>
-<li><strong>Hand it to IT if you&#39;re unsure.</strong> Forwarding the records page to your web person is a perfectly normal step.</li>
-<li><strong>Be patient with verification.</strong> If a record doesn&#39;t verify immediately, wait a bit and re-check before assuming it&#39;s wrong.</li>
+<li><strong>Hand it to IT if you&#39;re unsure.</strong> Forwarding the <strong>Copy message</strong> text to your web person is a perfectly normal step.</li>
+<li><strong>Be patient with verification.</strong> If a record doesn&#39;t verify immediately, wait a bit and check again before assuming it&#39;s wrong.</li>
 </ul>
 <h2>Related</h2>
 <ul>
+<li><a href="/docs/account-and-settings/email-compliance/">Email compliance and deliverability</a></li>
 <li><a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a></li>
 <li><a href="/docs/account-and-settings/organization-settings/">Organization settings</a></li>
 </ul>
@@ -359,6 +386,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="41bbdd88" data-engine-v="676be165" defer></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ title: Donor lists and honor rolls
 section: Building Reports
 keywords: donor list, honor roll, recognition levels, giving levels, donor wall, anonymous donor, listed as, deceased, joint names, acknowledgment, thank you
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Donor lists and honor rolls
@@ -12,17 +12,11 @@ The **Donor List** block acknowledges and celebrates your contributors — see [
 
 ## Getting names in
 
-<!-- TEAM REVIEW: this is the largest documentation gap in Building Reports. The
-     Donor List block is named in four places across the knowledge base and
-     explained in none. To finish this page we need:
-       1. How names are entered — typed one at a time, pasted from a spreadsheet,
-          uploaded as CSV, or pulled from a collection or constituent list?
-       2. Whether recognition/giving levels are a built-in grouping or something
-          the author lays out by hand.
-       3. The row limit, if any, and what a 400-name list does on mobile and in
-          the PDF export.
-     A user with 200+ names from their CRM currently cannot tell whether they are
-     about to type them all by hand. -->
+A **Donor List** block has a heading, a subheading, and a list of names, one per line. Click into the list and type or paste your names — there's no CSV import or automatic sorting, so get the list in order before you paste it. Under the block's settings, **Number of Columns** spreads the names across 1 to 5 columns.
+
+Recognition levels aren't a built-in grouping. Add one Donor List block per level and use each block's heading for the level name (for example, "Gold Donors — up to $20,000").
+
+<!-- TEAM REVIEW: still open — (1) does pasting from Excel/Google Sheets keep one name per line, or does it bring table formatting with it? (2) is there a practical row limit, and how does a 400-name list behave on mobile and in the PDF export? Evidence for the paragraphs above: public/blocks/scenes/donor-list.js (names are a plain <p> with <br> line breaks; data-columns trait 1-5; header h3/h2). -->
 
 ## Getting the names right
 

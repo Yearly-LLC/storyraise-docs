@@ -3,7 +3,7 @@ title: Importing constituent data
 section: Donor Data & CRM
 status: draft
 keywords: csv, upload, donors, import
-last_reviewed: 2026-09-04
+last_reviewed: 2026-10-15
 ---
 
 # Importing constituent data
@@ -14,11 +14,13 @@ You can bring constituents into Storyraise two ways: sync them from a [connected
 
 ### 1. Prepare your file
 
-Your CSV needs headers for **First Name**, **Last Name**, and **Email**. Email is the key field — Storyraise uses it to identify each constituent, so rows without an email address can't be imported.
+Your CSV needs headers for **First Name**, **Last Name**, and **Email**. Email is the key field — Storyraise uses it to identify each constituent. A row with a name but no email address still imports: Storyraise keys that person on their name instead, so they can still get a personalized report (a printed one, for example). Rows with neither an email nor a name are skipped.
+
+<!-- TEAM REVIEW: the "Map your columns" dialog still says "Rows without an email will be skipped" (public/index.html ~6578), but map_import_row (public/js/app-dashboard.js ~12251) gives name-only rows a placeholder address and imports them. The doc follows the code; the dialog copy should be corrected. -->
 
 The easiest path:
 
-1. In the **Constituents** area, open the **CSV File** tab.
+1. In the **Constituents** area, click **Add constituents** and open the **CSV File** tab.
 2. Download the **Constituents Template (CSV)**.
 3. Open it in Excel, Google Sheets, or Numbers, and fill in your constituent data.
 
@@ -26,8 +28,10 @@ You can include additional columns beyond the required three — giving level, c
 
 ### 2. Upload it
 
-1. Back in the **CSV File** tab, click **Upload CSV**.
-2. Select your file. Storyraise imports each row as a constituent.
+1. Back in the **CSV File** tab, click **Upload CSV** and select your file.
+2. In **Map your columns**, choose which column holds **Email** (required), and which hold **First name** and **Last name**. Every other column is imported as a custom field.
+3. Optionally, add the imported constituents to an existing list or a new one.
+4. Click **Import constituents**.
 
 ### 3. Check the results
 
@@ -35,7 +39,7 @@ Your constituent list now shows the imported records, each tagged **CSV** so you
 
 ## Importing from a CRM
 
-If you use Blackbaud or Bloomerang, connect it and sync instead of exporting CSVs by hand — see [Connecting a CRM](connecting-a-crm.md). CRM-synced constituents are tagged with their source and keep the fields your CRM provides.
+If your CRM, giving platform, or email tool is one of the [supported integrations](supported-integrations.md), connect it and sync instead of exporting CSVs by hand — see [Connecting a CRM](connecting-a-crm.md). CRM-synced constituents are tagged with their source and keep the fields your CRM provides.
 
 ## How re-imports work
 

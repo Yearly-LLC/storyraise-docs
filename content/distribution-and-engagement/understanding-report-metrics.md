@@ -3,7 +3,7 @@ title: Understanding report metrics
 section: Sharing & Analytics
 status: draft
 keywords: views, constituents opened, constituent returns, avg. time spent, highlights, how they read, section retention, clicks, engagement score, stars, intent badges, top visit times, visits over time, regions
-last_reviewed: 2026-09-10
+last_reviewed: 2026-10-15
 ---
 
 # Understanding report metrics
@@ -18,6 +18,8 @@ Analytics has two tabs:
 
 - **The Numbers** — every metric, chart, and list, for when you want the detail. That's what the rest of this page covers.
 - **The Story** — a plain-English summary of your report's performance: what stood out, people worth a follow-up, and ideas for next time. Download it as a PDF to read aloud in a staff meeting or share with your board.
+
+Reports with a poll or a reader feedback card also get **Poll Results** and **Reader Feedback** tabs.
 
 ## Highlights
 

@@ -3,7 +3,7 @@ title: Supported integrations
 section: Donor Data & CRM
 status: draft
 keywords: integrations, connections, crm, supported, salesforce, mailchimp, giving
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Supported integrations
@@ -14,7 +14,7 @@ Storyraise connects to your CRM, giving platforms, and email tools through the *
 
 | Integration | What it syncs |
 |---|---|
-| [Raiser's Edge NXT (Blackbaud)](integrations/blackbaud-raisers-edge-nxt.md) | Constituents from your RE NXT lists |
+| [Raiser's Edge NXT (Blackbaud)](integrations/blackbaud-raisers-edge-nxt.md) | Constituents from your RE NXT lists, plus gifts — and can send report engagement *back* to Raiser's Edge |
 | [Bloomerang](integrations/bloomerang.md) | Constituents, plus gifts into Analytics |
 | [Salesforce / Nonprofit Cloud](integrations/salesforce.md) | Contacts and giving — and can send report engagement *back* to Salesforce |
 | [Virtuous](integrations/virtuous.md) | Contacts and giving history |
@@ -49,4 +49,4 @@ Using a system that isn't listed? You can almost always export your records to C
 
 ## What connections can access
 
-Connections **import** your data into Storyraise — your constituents, and any extra data you choose to [sync into collections](syncing-data-to-collections.md). They don't change anything in your source system, with one exception you opt into: **Salesforce** can also **send report engagement back** to your CRM (logged on each donor's record), so your team sees Storyraise activity where they already work. See [Salesforce](integrations/salesforce.md). You can disconnect any connection at any time.
+Connections **import** your data into Storyraise — your constituents, and any extra data you choose to [sync into collections](syncing-data-to-collections.md). They don't change anything in your source system, with two exceptions you opt into: **Salesforce** and **Raiser's Edge NXT** can also **send report engagement back** to your CRM (one Task or action per donor, kept up to date), so your team sees Storyraise activity where they already work. See [Salesforce](integrations/salesforce.md) and [Raiser's Edge NXT](integrations/blackbaud-raisers-edge-nxt.md). Every other connection is read-only. You can disconnect any connection at any time.

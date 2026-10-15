@@ -2,7 +2,7 @@
 title: Managing responses
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Managing responses
@@ -11,31 +11,32 @@ Everything people submit lands in a spreadsheet-style table you can actually wor
 
 ## The response table
 
-Open a collection to see its responses as a table, one row per submission. You can:
-
-- **Search by keyword** to find a specific response.
-- **Show or hide columns** to focus on the fields that matter.
-- **Truncate long text** for a tidier overview, or expand it to read in full.
+Open a collection to see its responses as a spreadsheet-style table, one row per submission. Use **Search by keyword...** above the table to find a specific response.
 
 ## Editing a response
 
-Click a row to open the **Make Edits** editor, where you can:
+Edit responses right in the table — there's no separate editor to open:
 
-- **Edit any field** under **Response Details** — fix a typo, fill a gap, tidy a quote for use.
-- **Assign to…** one or more constituents — connect a submitted story to the donor, volunteer, or beneficiary it came from. Search your constituents and select the right people.
+- **Click any cell to change it** — fix a typo, fill a gap, tidy a quote for use. Press **Enter** or click away to keep the change. Changes save automatically, and **Ctrl+Z** (**Cmd+Z** on a Mac) undoes a cell edit.
+- **Right-click a row** to **Insert row above**, **Insert row below**, **Clear cell**, or **Delete row**. Deleting a row takes effect immediately, with no confirmation, and can't be undone.
+- **Right-click a column header** to rename the column, insert a column beside it, or delete it.
 
-Click **Save and Close** when you're done.
+## Tagging responses to constituents
+
+Click a response's cell in the **Constituents** column to open **Select Constituents to Tag**. Search your constituents, check the right people — the donor, volunteer, or beneficiary the story came from — and click **Save**.
 
 Tagging responses to constituents is what turns a pile of submissions into usable material — you'll know whose story is whose when you pull a testimonial into a report.
 
 ## Importing and exporting
 
-- **Import CSV** to bring existing data into a collection — append new rows, update rows that match, or replace everything.
+- **Import CSV** to bring existing data into a collection — **Append** new rows, **Merge** (match on a field you choose, update those rows, and add the rest), or **Replace** everything.
 - **Export CSV** to download all responses (with their fields as columns) for use elsewhere.
+
+To empty a collection, open the **⋯** menu and choose **Clear all info**. This removes every response and can't be undone.
 
 ## Putting responses to work
 
-Collected stories and quotes are raw material for the rest of Storyraise — drop a beneficiary thank-you into a [report Testimonial section](../building-reports/adding-sections.md), or use submitted details to personalize a [video message](../storyraise-video/scenes-and-personalization.md).
+Collected stories and quotes are raw material for the rest of Storyraise — drop a beneficiary thank-you into a [report Testimonial section](../building-reports/adding-sections.md), or export responses as a CSV and upload them as the recipients of a [video message](../storyraise-video/sending-and-recipients.md), so their details can appear as merge tags.
 
 ## Tips
 

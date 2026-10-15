@@ -3,7 +3,7 @@ title: Adding sections
 keywords: donor list, honor roll, recognition levels, giving levels, donor wall, acknowledgment, block types
 section: Building Reports
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Adding sections
@@ -12,13 +12,11 @@ Reports are built from **blocks** — an intro, a story, a stats spread, a donor
 
 ## Add a block
 
-1. In the builder, click **Add new section**.
-2. Choose a **block type** from the list (each comes with a short description).
-3. The new block is added to your report with placeholder content ready to edit.
+1. To start a new section, click the **+** (**Add new section**) button under the section thumbnails on the left. It creates an empty section called "Untitled" and opens it. To add to the section you're in, skip this step.
+2. Open the **Blocks** tab in the sidebar on the right. Each block type comes with a short description.
+3. Drag a block onto the canvas. It's added with placeholder content ready to edit. A section can hold as many blocks as you like.
 
 You can also let AI draft a block for you — describe what it's about and Storyraise builds an outline. See [AI content generation](ai-content-generation.md).
-
-<!-- TEAM REVIEW: confirm the section/block mechanics in the current UI — does "Add new section" add a single block as its own section (chapter), and can a section hold more than one block? Adjust the wording above once confirmed. -->
 
 ## Block types
 
@@ -54,19 +52,18 @@ You can also let AI draft a block for you — describe what it's about and Story
 
 **Flexible**
 
-- **Section** — a flexible container for custom layouts
+- **Basic** — a flexible container with column-based layouts
+- **Custom Design** — compose a canvas of photos, text, and shapes
 - **Repeater** — create repeating blocks and elements, useful for lists of similar items
 
 > **Note:** **Repeater** needs a Precision plan with Storyraise Collect active. It won't appear in the block list otherwise.
 
 ## Managing blocks
 
-- **Duplicate** a block to reuse its layout with different content.
-- **Delete** a block you don't need — deleted blocks can be restored if you change your mind.
-- **Reorder** your blocks by dragging — see [Reordering sections](reordering-sections.md).
-- **Hide** a block from the report's navigation menu while keeping it in the report — see [Navigation options](navigation-options.md).
-
-<!-- TEAM REVIEW: confirm where duplicate/delete/restore actions live in the current UI (block menu? right-click?), and whether these act on a single block or a whole section. -->
+- **Duplicate** or **delete** a single block: select it and use the buttons on [the element bar](element-bar.md). Deleted something by mistake? Use **Undo** in the top toolbar.
+- **Duplicate** or **delete** a whole section: open the **⋯** menu at the top of the builder and choose **Duplicate section** or **Delete section**.
+- **Reorder** your blocks and sections — see [Reordering sections](reordering-sections.md).
+- **Hide** a section from the report's navigation menu while keeping it in the report — see [Navigation options](navigation-options.md).
 
 ## Tips
 

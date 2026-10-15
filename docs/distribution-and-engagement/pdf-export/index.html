@@ -295,24 +295,30 @@
         <h1>PDF and print</h1>
 <p class="lead">Storyraise reports are built for the web, but plenty of situations still need a file: a board packet, an email attachment, a printed piece for an event, a grant appendix.</p>
 <h2>Getting the PDF</h2>
-<p><strong>Get PDF</strong> in the Share menu produces a PDF of a report — see <a href="/docs/distribution-and-engagement/sharing-reports/">Sharing reports</a>.</p>
-<div class="tip"><p><strong>You have to publish first.</strong> Get PDF works on a <em>published</em> report. If you&#39;re preparing something for a board meeting, publish it before the meeting — you can <a href="/docs/getting-started/publishing-and-sharing/">hide it from search engines</a> so it isn&#39;t indexed while still having a link and a PDF.</p></div>
+<p>Open the PDF view of your report in either of two ways:</p>
+<ul>
+<li>In the builder, open <strong>Preview</strong> and choose <strong>Open PDF preview</strong>. This works before you publish.</li>
+<li>After publishing, click <strong>Get PDF</strong> in the <strong>Share</strong> menu or on the <strong>Your report is live!</strong> page — see <a href="/docs/distribution-and-engagement/sharing-reports/">Sharing reports</a>.</li>
+</ul>
+<p>The PDF view shows your report laid out page by page. Choose <strong>Landscape</strong> or <strong>Portrait</strong>, click <strong>Open Print Dialog</strong>, and save it from your browser&#39;s print dialog: choose <strong>Save to PDF</strong> as the destination, pick the paper size, set margins to <strong>None</strong>, and turn on <strong>Print Backgrounds</strong>. The on-screen <strong>Download Instructions</strong> walk through the same settings.</p>
+<div class="tip"><p><strong>The PDF shows your latest saved edits, not necessarily what&#39;s published.</strong> If you&#39;ve changed the report since publishing, the PDF includes those changes. Republish if you want the web version and the PDF to match.</p></div>
+<p>For a personalized report, choose a constituent under <strong>Previewing as</strong> before you print, or you&#39;ll get the generic version.</p>
 <h2>One block, one page</h2>
 <p>When a report exports, <strong>each block becomes its own page</strong> in the PDF.</p>
 <p>That single rule is the whole trick to a good printed version. When you&#39;re planning something that will be printed, think of a block as a page:</p>
 <ul>
 <li>A block holding one big statement makes a strong page. A block holding three unrelated things makes a cluttered one.</li>
 <li>Very long blocks — a donor list with 400 names, a long story — will run past a single page. Split them into several blocks if you want control over where the breaks land.</li>
-<li>Blocks you added purely for web rhythm (a thin spacer, a decorative divider) become their own near-empty pages. Remove them from a print-bound version.</li>
+<li>Blocks you added purely for web rhythm (a thin spacer, a decorative divider) become their own near-empty pages. Select the block and set <strong>Show on...</strong> to <strong>Digital Only</strong> to keep it out of the PDF, or set a print-only block to <strong>PDF Only</strong>.</li>
 </ul>
 <h2>If print matters, make a print version</h2>
-<p>The cleanest approach is usually to duplicate the report and adapt the copy rather than trying to make one report perfect in both places:</p>
+<p>For small differences, the <strong>Show on...</strong> setting is enough: mark web-only blocks <strong>Digital Only</strong> and print-only blocks <strong>PDF Only</strong>, and one report serves both. When the print piece needs to differ a lot, duplicate the report and adapt the copy rather than trying to make one report perfect in both places:</p>
 <ol>
-<li>Duplicate the published report.</li>
+<li>Duplicate the report (from its menu in the dashboard, choose <strong>Duplicate</strong>).</li>
 <li>Remove anything that only works on the web — polls, embedded forms, video, anything with a hover or a click.</li>
 <li>Replace &quot;click here to give&quot; style calls to action with something a reader can act on from paper: a short URL, a QR code, a reply address.</li>
 <li>Split or merge blocks so the page breaks fall where you want them.</li>
-<li>Publish, then Get PDF.</li>
+<li>Open the PDF view and save the PDF.</li>
 </ol>
 <h2>Before you send it to a printer</h2>
 <ul>
@@ -324,7 +330,7 @@
 <h2>What a PDF doesn&#39;t do</h2>
 <ul>
 <li><strong>No analytics.</strong> A PDF that&#39;s emailed around tells you nothing about who read it. If you want to know that, share the link and use <a href="/docs/distribution-and-engagement/tracking-engagement/">tracking</a>.</li>
-<li><strong>No personalization.</strong> Merge tags render for whoever the export was made as, not per recipient. For each donor to see their own name, use <a href="/docs/distribution-and-engagement/personalized-links/">personalized links</a>.</li>
+<li><strong>One person per PDF.</strong> Merge tags render for whoever you chose under <strong>Previewing as</strong>, not per recipient. For a personalized PDF for every constituent, use <strong>Batch PDF Export</strong> under <strong>Tools</strong> (it downloads them all as a ZIP), or send <a href="/docs/distribution-and-engagement/personalized-links/">personalized links</a>.</li>
 <li><strong>No updates.</strong> A PDF is a snapshot. Republishing the report doesn&#39;t change a PDF someone already downloaded.</li>
 </ul>
 <h2>Related</h2>
@@ -358,6 +364,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="41bbdd88" data-engine-v="676be165" defer></script>
 </body>
 </html>

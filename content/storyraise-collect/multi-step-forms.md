@@ -2,7 +2,7 @@
 title: Multi-step forms
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Multi-step forms
@@ -11,7 +11,7 @@ A long form on one page feels like a chore. Splitting it into steps makes it fee
 
 ## Breaking a form into steps
 
-Add **New Section** dividers to your form, and Storyraise turns each section into its own step. Respondents see a **progress bar** ("Step 1 of 3"), can move **Back** and **Next** between steps, and can **Jump to…** a specific section. Their answers are saved as a draft as they go, so a closed tab doesn't lose their work.
+Add **New Section** dividers to your form, and Storyraise turns each section into its own step. Respondents see a **progress bar** ("Step 1 of 3"), can move **Back** and **Next** between steps, and can **Jump to…** a specific section. Their answers are saved as a draft in their browser as they go, so a closed tab doesn't lose their work.
 
 Steps reduce the intimidation of a long form and let you group related questions — "About you," "Your story," "Photos" — into digestible chunks.
 
@@ -27,6 +27,8 @@ Two choices there decide the shape of the form:
 - **Section label for each step** — which column names each step. Pick the column holding the fund, program, or story title and the respondent sees that as the step's heading. Choose **None** to leave the steps unlabelled.
 
 Then **Import & Build** generates the form.
+
+The grouped steps appear only when a respondent opens the form through a personalized **Dynamic Link** that carries their email (see [Sharing your form](sharing-your-form.md)). Storyraise gathers that person's rows into steps, pre-filled from your import, and each step's answers update its own row. Someone who opens the plain form link sees a single, blank form instead.
 
 > **Tip:** Pick a section label column your respondent will recognize. "Rivera Scholarship Fund" as a step heading tells them exactly which set of answers they're on; "Row 3" doesn't.
 

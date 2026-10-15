@@ -3,7 +3,7 @@ title: Embedding a Collect form
 section: Building Reports
 status: draft
 keywords: collect form, embed form, form in report, survey in report, story collection, gather stories, inline form, button form, modal, iframe, respond in report
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Embedding a Collect form
@@ -15,11 +15,17 @@ It's the natural pairing for a report that asks for something: tell a story, sig
 ## Adding the form
 
 1. Build the form first in [Storyraise Collect](../storyraise-collect/creating-a-collection.md). The element embeds a form you already have; it doesn't create one.
-2. In the builder, open the **Insert** bar and choose **Collect Form**.
+2. In the builder, open the **Insert** bar and choose **Form** (labeled **Collect Form** when you hover it).
 3. In the settings panel, pick your form under **Select a Form**.
 4. Choose how it should appear under **Show As**.
 
 If you haven't built a form yet the panel says so and offers a **Create a form** link straight into Collect. Once you have forms, the same spot becomes **Manage your forms**.
+
+<!-- TEAM REVIEW: the element is meant to require Storyraise Collect (gated_element_products,
+     builder app.js:20373), but that map sits inside Vue `methods` (app.js:2737), so Vue 2 replaces it
+     with a no-op and the gate never fires: any org can insert the element today. The fix is on an
+     unmerged branch (memory project_video_report_handoff.md). Once the gate works, add a note that
+     the element is dimmed with "Contact us for access" for orgs without Collect. Needs Vince. -->
 
 <!-- TEAM REVIEW: needs a screenshot of the Collect Form settings panel with a form selected and the Show As dropdown open. -->
 

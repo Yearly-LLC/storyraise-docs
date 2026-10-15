@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setting up your email sending subdomain — Storyraise</title>
-  <meta name="description" content="To enable email sending from Storyraise, we'll walk through a quick 4-step process with you." />
+  <meta name="description" content="Email sending setup is now self-service, and you no longer need a separate sending subdomain. Storyraise Send sends from the address your organization already…" />
   <link rel="canonical" href="https://docs.storyraise.com/docs/account-and-settings/email-subdomain-setup/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Storyraise Knowledge Base" />
   <meta property="og:title" content="Setting up your email sending subdomain — Storyraise" />
-  <meta property="og:description" content="To enable email sending from Storyraise, we'll walk through a quick 4-step process with you." />
+  <meta property="og:description" content="Email sending setup is now self-service, and you no longer need a separate sending subdomain. Storyraise Send sends from the address your organization already…" />
   <meta property="og:url" content="https://docs.storyraise.com/docs/account-and-settings/email-subdomain-setup/" />
   <meta property="og:image" content="https://docs.storyraise.com/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Setting up your email sending subdomain — Storyraise" />
-  <meta name="twitter:description" content="To enable email sending from Storyraise, we'll walk through a quick 4-step process with you." />
+  <meta name="twitter:description" content="Email sending setup is now self-service, and you no longer need a separate sending subdomain. Storyraise Send sends from the address your organization already…" />
   <meta name="twitter:image" content="https://docs.storyraise.com/assets/og-card.png" />
 
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "Setting up your email sending subdomain — Storyraise",
-  "description": "To enable email sending from Storyraise, we'll walk through a quick 4-step process with you.",
+  "description": "Email sending setup is now self-service, and you no longer need a separate sending subdomain. Storyraise Send sends from the address your organization already…",
   "url": "https://docs.storyraise.com/docs/account-and-settings/email-subdomain-setup/",
   "inLanguage": "en-US",
   "isPartOf": {
@@ -293,39 +293,17 @@
       <!-- CONTENT -->
       <div class="content">
         <h1>Setting up your email sending subdomain</h1>
-<p class="lead">To enable email sending from Storyraise, we&#39;ll walk through a quick 4-step process with you.</p>
+<p class="lead">Email sending setup is now self-service, and you no longer need a separate sending subdomain. Storyraise Send sends from the address your organization already uses (for example <code>giving@yourdomain.org</code>), and you add and verify the DNS records yourself in a short three-step setup.</p>
 <div class="tip"><p><strong>Setting up a subdomain for a portal instead?</strong> Hosting a Storyraise portal at your own web address uses different records. See <a href="/docs/account-and-settings/custom-portal-subdomain/">Setting up a custom subdomain for your portal</a>.</p></div>
-<h2>1. Choose a subdomain</h2>
-<p>First, decide on a subdomain to use for sending emails.</p>
-<p>Common examples:</p>
-<ul>
-<li><code>email.yourdomain.org</code></li>
-<li><code>messages.yourdomain.org</code></li>
-<li><code>updates.yourdomain.org</code></li>
-</ul>
-<div class="tip"><p><strong>Tip:</strong> Pick something simple and brand-friendly. Most customers go with <code>email.</code> or <code>messages.</code></p></div>
-<h2>2. We&#39;ll generate DNS records</h2>
-<p>Once you&#39;ve chosen your subdomain, send it back to us. We will:</p>
-<ul>
-<li>Generate the required DNS records (SPF, DKIM, and tracking)</li>
-<li>Send you a list of records to add to your domain provider (GoDaddy, Cloudflare, etc.)</li>
-</ul>
-<h2>3. Add DNS records</h2>
-<p>After we send the records:</p>
-<ul>
-<li>Log into your domain provider</li>
-<li>Add the provided DNS records exactly as listed</li>
-</ul>
-<div class="tip"><p><strong>Good to know:</strong> DNS changes typically take a few minutes to a few hours to propagate.</p></div>
-<h2>4. Verification &amp; go live</h2>
-<p>Once records are added:</p>
-<ul>
-<li>Let us know</li>
-<li>We&#39;ll verify everything is set up correctly</li>
-<li>Then activate email sending for your account</li>
-</ul>
-<h2>Prefer self-service?</h2>
-<p>A self-service domain wizard — where you generate, add, and verify your DNS records without waiting on us — is described in <a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a>.</p>
+<h2>How it works now</h2>
+<ol>
+<li><strong>Your existing address</strong> — enter the address you send from today, and bring over your unsubscribe list from your previous email tool.</li>
+<li><strong>Add DNS records</strong> — Storyraise shows the records to add at your domain provider (DKIM, SPF, and a DMARC record if you don&#39;t have one), with copy buttons and a message you can forward to your IT team.</li>
+<li><strong>Verify</strong> — click <strong>Check DNS records</strong> and Storyraise confirms each one.</li>
+</ol>
+<p>For the full walkthrough, see <a href="/docs/account-and-settings/custom-sending-domain/">Setting up a custom sending domain</a>.</p>
+<h2>Prefer a hand?</h2>
+<p>If you&#39;d rather we walk through it with you, or you need to move a verified organization to a different domain, contact <a href="https://storyraise.com/support">our support team</a>.</p>
 
 
         <hr />
@@ -351,6 +329,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="41bbdd88" data-engine-v="676be165" defer></script>
 </body>
 </html>

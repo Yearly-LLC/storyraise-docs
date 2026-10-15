@@ -296,23 +296,25 @@
 <p class="lead">You can bring constituents into Storyraise two ways: sync them from a <a href="/docs/crm-and-data/connecting-a-crm/">connected CRM</a>, or upload a CSV file. CSV import works with data exported from any system — or a spreadsheet you maintain by hand.</p>
 <h2>Importing from a CSV file</h2>
 <h3>1. Prepare your file</h3>
-<p>Your CSV needs headers for <strong>First Name</strong>, <strong>Last Name</strong>, and <strong>Email</strong>. Email is the key field — Storyraise uses it to identify each constituent, so rows without an email address can&#39;t be imported.</p>
+<p>Your CSV needs headers for <strong>First Name</strong>, <strong>Last Name</strong>, and <strong>Email</strong>. Email is the key field — Storyraise uses it to identify each constituent. A row with a name but no email address still imports: Storyraise keys that person on their name instead, so they can still get a personalized report (a printed one, for example). Rows with neither an email nor a name are skipped.</p>
 <p>The easiest path:</p>
 <ol>
-<li>In the <strong>Constituents</strong> area, open the <strong>CSV File</strong> tab.</li>
+<li>In the <strong>Constituents</strong> area, click <strong>Add constituents</strong> and open the <strong>CSV File</strong> tab.</li>
 <li>Download the <strong>Constituents Template (CSV)</strong>.</li>
 <li>Open it in Excel, Google Sheets, or Numbers, and fill in your constituent data.</li>
 </ol>
 <p>You can include additional columns beyond the required three — giving level, campaign, salutation, anything you like. Extra columns are imported as custom fields on each constituent and become available as merge tags for personalization.</p>
 <h3>2. Upload it</h3>
 <ol>
-<li>Back in the <strong>CSV File</strong> tab, click <strong>Upload CSV</strong>.</li>
-<li>Select your file. Storyraise imports each row as a constituent.</li>
+<li>Back in the <strong>CSV File</strong> tab, click <strong>Upload CSV</strong> and select your file.</li>
+<li>In <strong>Map your columns</strong>, choose which column holds <strong>Email</strong> (required), and which hold <strong>First name</strong> and <strong>Last name</strong>. Every other column is imported as a custom field.</li>
+<li>Optionally, add the imported constituents to an existing list or a new one.</li>
+<li>Click <strong>Import constituents</strong>.</li>
 </ol>
 <h3>3. Check the results</h3>
 <p>Your constituent list now shows the imported records, each tagged <strong>CSV</strong> so you can tell them apart from CRM-synced constituents. Open any constituent to review their fields.</p>
 <h2>Importing from a CRM</h2>
-<p>If you use Blackbaud or Bloomerang, connect it and sync instead of exporting CSVs by hand — see <a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a>. CRM-synced constituents are tagged with their source and keep the fields your CRM provides.</p>
+<p>If your CRM, giving platform, or email tool is one of the <a href="/docs/crm-and-data/supported-integrations/">supported integrations</a>, connect it and sync instead of exporting CSVs by hand — see <a href="/docs/crm-and-data/connecting-a-crm/">Connecting a CRM</a>. CRM-synced constituents are tagged with their source and keep the fields your CRM provides.</p>
 <h2>How re-imports work</h2>
 <p>Constituents are identified by email address. If you upload a file containing an email that&#39;s already in your list, that constituent&#39;s record is updated rather than duplicated. This means you can safely re-upload an updated export to refresh your data.</p>
 <h2>What constituent data unlocks</h2>
@@ -349,6 +351,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="41bbdd88" data-engine-v="676be165" defer></script>
 </body>
 </html>

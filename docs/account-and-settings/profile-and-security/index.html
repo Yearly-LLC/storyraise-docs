@@ -295,40 +295,34 @@
         <h1>Your profile and security</h1>
 <p class="lead">This page covers your personal account — your name and sign-in details — and how to secure it with two-step verification.</p>
 <h2>Your info</h2>
-<p>Under <strong>Your Info</strong> you can see your name and email and make changes:</p>
+<p>Open <strong>Account</strong> and stay on the <strong>General</strong> tab. Under <strong>Your Info</strong> you can:</p>
 <ul>
+<li><strong>Your Name</strong> — edit it and click <strong>Save name</strong>. This is how you appear to your teammates.</li>
 <li><strong>Update email</strong> — change the address you sign in with.</li>
 <li><strong>Update password</strong> — set a new password.</li>
+<li><strong>Default organization</strong> — if you belong to more than one organization, choose where you land when you sign in (or <strong>Ask me each time</strong>).</li>
 </ul>
 <h2>Resetting a forgotten password</h2>
-<p>If you can&#39;t sign in, use the password-reset option. Storyraise emails you reset instructions — <em>&quot;Check your email at [your address]. We&#39;ve sent password reset instructions.&quot;</em> Follow the link in that email to set a new password.</p>
+<p>If you can&#39;t sign in, click <strong>Forgot password?</strong> on the sign-in page, enter your email, and click <strong>Send reset email</strong>. You&#39;ll see <em>&quot;Check your inbox for a reset link.&quot;</em> Follow the link in that email to set a new password.</p>
+<p>If your organization uses <a href="/docs/account-and-settings/single-sign-on/">single sign-on</a>, you sign in through your identity provider instead, so password resets are handled there.</p>
 <h2>Verify your email</h2>
-<p>Before you can turn on two-step verification, your email address must be verified. If it isn&#39;t yet, Storyraise will prompt you and send a verification link — <em>&quot;You must verify your email before enabling multi-factor authentication.&quot;</em> Click the link in that email, then return to your settings.</p>
+<p>Before you can turn on two-step verification, your email address must be verified. If it isn&#39;t yet, the MFA section shows <em>&quot;You must verify your email before enabling multi-factor authentication.&quot;</em> Click <strong>Verify Email</strong>, then click the link in the email Storyraise sends you and return to your settings.</p>
 <h2>Two-step verification (MFA)</h2>
-<p>Two-step verification adds a second check at sign-in, so a stolen password alone can&#39;t get into your account. Storyraise supports two methods, set up on the <strong>Two-step verification</strong> page:</p>
-<h3>Authenticator app (recommended)</h3>
+<p>Two-step verification adds a second check at sign-in, so a stolen password alone can&#39;t get into your account. Storyraise uses a code sent to your phone by text message (SMS).</p>
+<p>To turn it on, open <strong>Account</strong> → <strong>General</strong> and find <strong>Multi-factor Authentication (MFA)</strong>:</p>
 <ol>
-<li>Choose <strong>Add authenticator app</strong>.</li>
-<li>Scan the QR code with an authenticator app (Google Authenticator, Authy, 1Password, etc.).</li>
-<li>Enter the 6-digit code the app shows to confirm.</li>
-<li>Optionally give it a display name.</li>
-</ol>
-<p>Authenticator apps work even without cell signal, which makes them more reliable than SMS.</p>
-<h3>Text message (SMS)</h3>
-<ol>
-<li>In <strong>Multi-factor Authentication (MFA)</strong>, enter your mobile number in international format (e.g. <code>+15551234567</code>).</li>
-<li>Choose to enroll / <strong>Send code</strong>.</li>
+<li>Under <strong>Your Mobile Phone Number</strong>, enter your number in international format (e.g. <code>+15551234567</code>).</li>
+<li>Click <strong>Enroll in SMS MFA</strong>.</li>
+<li>Confirm your password when asked (or sign in with Google again, if that&#39;s how you sign in).</li>
 <li>Enter the 6-digit code you receive by text to confirm.</li>
 </ol>
-<p>Once enrolled, you&#39;ll be asked for a code from your chosen method each time you sign in. You can see your enrolled methods — with the date each was added — on the Two-step verification page, and remove one if you switch phones.</p>
+<p>Once enrolled, the section shows the last four digits of your number. Use <strong>Update Phone Number</strong> if you switch phones, or <strong>Turn off two-factor</strong> to remove it.</p>
 <h2>Session timeout</h2>
 <p>Storyraise signs you out after <strong>15 minutes</strong> of inactivity, so an unattended machine doesn&#39;t leave your reports and constituent data open.</p>
 <p>Two minutes before that you get a warning with a countdown, and any activity clears it — nothing in the builder is lost without you being told first. Activity counts across every Storyraise tab you have open, so working in one tab won&#39;t get you signed out by another sitting idle.</p>
 <h2>Tips</h2>
 <ul>
-<li><strong>Turn on two-step verification</strong> — your reports and constituent data are worth the extra ten seconds at sign-in.</li>
-<li><strong>Prefer an authenticator app</strong> over SMS where you can; it&#39;s more secure and works offline.</li>
-<li><strong>Keep a backup.</strong> If you only enroll one phone and lose it, you can be locked out — enroll an authenticator app you can restore, or keep recovery options current.</li>
+<li><strong>Update your number before you switch phones.</strong> Only one phone can be enrolled. If you lose access to it, contact <a href="https://storyraise.com/support">our support team</a>.</li>
 </ul>
 <h2>Related</h2>
 <ul>
@@ -361,6 +355,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="41bbdd88" data-engine-v="676be165" defer></script>
 </body>
 </html>
