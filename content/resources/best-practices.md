@@ -30,7 +30,7 @@ Put your best story early — many readers won't reach the end. And keep it to o
 
 ## Stay relentlessly on brand — and only on brand
 
-Set up your [brand kit](../building-reports/brand-kit.md) before building. Two or three brand colors used consistently look more professional than a full palette; save your brightest accent for buttons and key stats. Stick to your primary and secondary fonts — one-off typefaces are what make a report feel homemade.
+Set up your [brand kit](../building-reports/brand-kit.md) before building. Two or three brand colors used consistently look more professional than a full palette; save your brightest accent for buttons and key stats. Stick to your [font pair](../building-reports/font-pairs.md) — one-off typefaces are what make a report feel homemade.
 
 ## Always do the mobile pass
 

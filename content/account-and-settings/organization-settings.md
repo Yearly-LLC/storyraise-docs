@@ -22,7 +22,7 @@ These are shown for reference. To change them, contact support — your URL in p
 
 ## Your brand
 
-Most of what makes your organization *look* like your organization lives in the **brand kit** — logos, colors, and primary/secondary fonts that apply across every report. See [Brand kit](../building-reports/brand-kit.md).
+Most of what makes your organization *look* like your organization lives in the **brand kit** — brand colors, report palettes, and font pairs that every new report starts from, plus logos and photos for the builder. See [Brand kit](../building-reports/brand-kit.md).
 
 ## Nonprofit certificate
 

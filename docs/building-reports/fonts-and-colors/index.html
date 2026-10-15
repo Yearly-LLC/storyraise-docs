@@ -143,6 +143,9 @@
       <li><a href="/docs/building-reports/">Overview</a></li>
       <li><a href="/docs/building-reports/using-templates/">Using templates</a></li>
       <li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
+      <li><a href="/docs/building-reports/report-palettes/">Report palettes</a></li>
+      <li><a href="/docs/building-reports/font-pairs/">Font pairs</a></li>
+      <li><a href="/docs/building-reports/brand-kit-and-new-reports/">Starting a report on brand</a></li>
       <li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
       <li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
       <li><a href="/docs/building-reports/element-bar/">The element bar</a></li>
@@ -293,43 +296,47 @@
 <p class="lead">Typography and color do most of the visual work in a report. This page covers how to choose and apply both.</p>
 <h2>Fonts</h2>
 <h3>The font library</h3>
-<p>Storyraise&#39;s font picker is backed by the Google Fonts library — hundreds of professionally designed, web-safe typefaces. Search by name and preview each font live before choosing.</p>
-<h3>Primary and secondary fonts</h3>
-<p>Set your two brand fonts in the <a href="/docs/building-reports/brand-kit/">brand kit</a>:</p>
-<ul>
-<li><strong>Primary</strong> — your leading typeface, used for headlines and emphasis.</li>
-<li><strong>Secondary</strong> — your supporting typeface, used for longer passages.</li>
-</ul>
-<p>When you edit text, you can apply either with the &quot;Aa&quot; font swatches, so the whole team uses the same two typefaces without hunting through the library each time.</p>
+<p>Storyraise&#39;s font picker is backed by the Google Fonts library — hundreds of professionally designed typefaces. Search by name and preview each font live before choosing.</p>
+<h3>Your brand fonts</h3>
+<p>Save your brand&#39;s heading and body fonts as a <a href="/docs/building-reports/font-pairs/">font pair</a> in the brand kit. Your default pair is preselected whenever someone creates a report, so the whole team starts in the same two typefaces without hunting through the library. You can also upload your own font files there. Uploaded fonts are listed first in every font picker.</p>
+<p>To change a whole report&#39;s fonts after it&#39;s created, open <strong>⋯ → Styles</strong> in the builder and set <strong>Heading Font</strong> and <strong>Body Font</strong>.</p>
 <h3>Per-element typography</h3>
 <p>Each text element can also be tuned individually: size, weight, color, alignment, line height, and letter spacing. Use this for fine-tuning — lean on your brand fonts for the big decisions.</p>
 <p>The <strong>Weight</strong> control names each weight rather than numbering it — Light, Regular, Medium, Semibold, Bold — and only offers the weights the font family actually has. If a weight you expect isn&#39;t in the list, that family doesn&#39;t publish it. Every weight a family does offer is loaded with the report, so a heading set in Bold renders in real Bold rather than a browser&#39;s thickened approximation of Regular.</p>
 <h3>Choosing fonts that work</h3>
 <ul>
-<li>Pair a distinctive primary with a quiet, highly readable secondary.</li>
+<li>Pair a distinctive heading font with a quiet, highly readable body font.</li>
 <li>If your brand guidelines name fonts that exist in Google Fonts, use those exact ones. If not, pick the closest match — e.g., Lato or Inter stand in well for Helvetica-family brands.</li>
 <li>Body text reads best at a comfortable size with generous line height; resist shrinking text to fit more in.</li>
 </ul>
 <h2>Colors</h2>
 <h3>Where colors come from</h3>
-<p>Every color picker in the builder offers:</p>
+<p>When you change an element&#39;s color in the builder, its color picker opens. At the top, drag in the color area and hue bar, or type any hex value. Below that are three rows:</p>
 <ul>
-<li><strong>Your brand colors</strong> — from your brand kit, always first.</li>
-<li><strong>The default palette</strong> — Storyraise&#39;s built-in colors.</li>
-<li><strong>Custom colors</strong> — pick or enter any hex value.</li>
+<li><strong>Report palette</strong> — the five colors this report was built with (see <a href="/docs/building-reports/report-palettes/">Report palettes</a>).</li>
+<li><strong>Your brand colors</strong> — from your <a href="/docs/building-reports/brand-kit/">brand kit</a>. The <strong>+</strong> and <strong>−</strong> at the end of this row add the color you&#39;ve picked to the brand kit, or remove a brand color, for the whole team.</li>
+<li><strong>Presets</strong> — a grid of Storyraise&#39;s built-in colors.</li>
 </ul>
+<p><img src="/assets/img/howto/brandkit_builder_picker.png" alt="The builder&#39;s color picker: a color area, hue bar and hex field, then Report palette, Your brand colors with + and − buttons, and the preset grid"></p>
 <h3>What you can color</h3>
 <ul>
 <li><strong>Section and block backgrounds</strong> — the biggest lever for visual variety. Alternating background colors between sections gives a report rhythm.</li>
 <li><strong>Text</strong> — headings and body text color per element.</li>
 <li><strong>Elements</strong> — buttons, infographics, counters, and dividers take color settings too.</li>
 </ul>
-<p>You can also apply your brand&#39;s theme colors to a whole block at once instead of coloring each element.</p>
+<p>You can also restyle a whole block at once instead of coloring each element. Select the block and choose <strong>Primary</strong> (a dark section) or <strong>Secondary</strong> (a light section) under <strong>Set Block Style</strong>. To recolor the whole report, switch palettes under <strong>⋯ → Styles → More color palettes</strong>.</p>
 <h3>Color tips</h3>
 <ul>
 <li><strong>Contrast is king.</strong> Dark text on light backgrounds (or the reverse) keeps your report readable for everyone — see <a href="/docs/building-reports/accessibility/">Accessibility considerations</a>.</li>
-<li><strong>Use accent color sparingly.</strong> Save your brightest brand color for buttons, links, and key stats so it draws the eye where it matters.</li>
+<li><strong>Use your brightest color sparingly.</strong> Save your brightest brand color for buttons, links, and key stats so it draws the eye where it matters.</li>
 <li><strong>Check on mobile.</strong> Colors that look subtle on a big screen can disappear on a phone — preview both. See <a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a>.</li>
+</ul>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/building-reports/brand-kit/">Brand kit</a></li>
+<li><a href="/docs/building-reports/report-palettes/">Report palettes</a></li>
+<li><a href="/docs/building-reports/font-pairs/">Font pairs</a></li>
+<li><a href="/docs/building-reports/accessibility/">Accessibility considerations</a></li>
 </ul>
 
 
@@ -356,6 +363,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="fc85553c" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="c1ea7ebf" data-engine-v="676be165" defer></script>
 </body>
 </html>

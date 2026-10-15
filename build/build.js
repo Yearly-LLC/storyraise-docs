@@ -146,7 +146,8 @@ const SECTIONS = [
     blurb: 'Writing, photos, colors, charts, and donor lists — and making it all work on a phone.',
     icon: 'edit_document',
     order: [
-      'using-templates', 'brand-kit', 'adding-sections', 'editing-content',
+      'using-templates', 'brand-kit', 'report-palettes', 'font-pairs',
+      'brand-kit-and-new-reports', 'adding-sections', 'editing-content',
       'element-bar', 'fonts-and-colors', 'donor-lists',
       'images-and-videos', 'creating-infographics', 'build-a-line-chart',
       'adding-a-poll', 'embedding-a-collect-form',

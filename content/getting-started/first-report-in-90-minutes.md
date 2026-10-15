@@ -17,7 +17,7 @@ You do not need to connect your CRM, import constituents, personalize anything, 
 | Step | Time | What you're doing |
 |---|---|---|
 | 1. Pick a template | 5 min | [Choose one that matches your goal](understanding-templates.md), not one that looks prettiest |
-| 2. Set your brand | 10 min | Logo and two colors in your [brand kit](../building-reports/brand-kit.md). Stop there |
+| 2. Set your brand | 10 min | Logo, your brand colors, and one report palette in your [brand kit](../building-reports/brand-kit.md). Stop there |
 | 3. Delete what you can't fill | 5 min | Remove sections you have no content for |
 | 4. Write your words | 40 min | The letter and two stories — see [What goes in an annual report](what-goes-in-an-annual-report.md) |
 | 5. Add photos | 15 min | [Phone photos are fine](../building-reports/image-sizes-and-dimensions.md) |

@@ -64,7 +64,7 @@ The static value you typed is what everyone else sees, so fill it in as well and
 Infographics pick up your organization's look automatically, and you can fine-tune from there:
 
 - **Font** — choose any font available to your report, including your brand fonts.
-- **Colors** — every color picker leads with your **brand colors**, followed by your **report's palette** colors, so charts stay on-palette. Set a per-row color, or turn on **Make chart monotone** to render the whole chart in a single color.
+- **Colors** — every color picker shows your **report's palette** first, then **your brand colors**, so charts stay on-palette. Set a per-row color, or turn on **Make chart monotone** to render the whole chart in a single color.
 - **Chart options** vary by type — for example, pie and donut charts offer **Show labels**, **Hide labels below (%)**, and **Show slice outline**; bar and line charts add **X-axis title**, **Y-axis title**, and value or axis **prefix/suffix** (for a `$` or `k`).
 
 Storyraise also protects readability: if a text color would be invisible against the background, it's automatically nudged to a legible shade. For more on brand styling, see [Brand kit](brand-kit.md) and [Fonts and colors](fonts-and-colors.md).

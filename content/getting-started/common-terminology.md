@@ -34,9 +34,10 @@ A quick reference for the words you'll see throughout Storyraise.
 
 | Term | What it means |
 |---|---|
-| **Brand kit** | Your organization's saved logos, images, colors, and fonts, available in every report. |
-| **Primary font** | Your brand's leading typeface, typically used for headlines and emphasis. |
-| **Secondary font** | Your brand's supporting typeface, typically used for longer passages of text. |
+| **Brand kit** | Your organization's saved brand colors, palettes, font pairs, logos, photos, and saved blocks. New reports start from it. |
+| **Brand colors** | The exact hex colors from your brand guide. They appear in the color picker whenever you color an element in the builder. |
+| **Report palette** | Five colors that decide what the buttons, dark sections, and light sections look like across a whole report. |
+| **Font pair** | A heading font and a body font saved together in the brand kit. Your default pair is preselected for new reports. |
 
 ## Publishing and audience
 

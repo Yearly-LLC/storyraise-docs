@@ -20,7 +20,7 @@ Each shelf scrolls sideways. Drag it, or use the arrows at either end.
 
 Click a template to open it as a real report rather than a thumbnail, so you can scroll it the way a reader would.
 
-Two toggles in the preview swap in your **brand colors** and **brand fonts**. Both start off, which is deliberate: see the template as it was designed first, then check it against your brand. A template that looks wrong in your colors is usually telling you something about the colors, not the template.
+Beside the preview, **Colors** and **Fonts** cards choose what the template is built with. Your default palette and font pair are preselected, so the preview already shows the template in your brand. Click **Template colors** or **Template fonts** (marked **As designed**) to compare it with the original. A template that looks wrong in your colors is usually telling you something about the colors, not the template. See [Starting a report on brand](brand-kit-and-new-reports.md).
 
 ## Starting from a template
 
@@ -30,7 +30,7 @@ When you create a report from a template, you get a complete editable copy: cove
 
 Work through the template in this order:
 
-1. **Apply your brand kit first.** Colors, fonts, and logo — see [Brand kit](brand-kit.md). It instantly makes the whole template feel like yours, and you'll judge the remaining work more accurately.
+1. **Start on brand.** Set up your [brand kit](brand-kit.md) before you create the report, and keep your palette and font pair selected when you click **Use this template**. The copy opens already in your colors and fonts. Then drop in your logo from **Assets → Your Logos** in the builder.
 2. **Replace content section by section.** Keep the layouts; swap the words and images.
 3. **Prune and add.** Delete what doesn't apply and [add the blocks](adding-sections.md) the template didn't include.
 4. **Don't fight the layout.** If a block's structure doesn't fit your content, it's usually faster to delete it and add a better-suited block type than to bend it into shape.

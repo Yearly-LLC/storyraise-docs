@@ -1,0 +1,40 @@
+{
+  "webm": "/home/euclid/source/repos/storyraise-docs/tools/element-bar/.cache/recordings/page@9d3ff00ac44f3d061ce63ff07053b76a.webm",
+  "marks": [
+    {
+      "scene": "s01",
+      "start": 0,
+      "end": 5.732
+    },
+    {
+      "scene": "s02",
+      "start": 5.732,
+      "end": 21.565
+    },
+    {
+      "scene": "s03",
+      "start": 21.565,
+      "end": 49.594
+    },
+    {
+      "scene": "s04",
+      "start": 49.594,
+      "end": 57.256
+    },
+    {
+      "scene": "s05",
+      "start": 57.256,
+      "end": 73.806
+    },
+    {
+      "scene": "s06",
+      "start": 73.806,
+      "end": 81.227
+    },
+    {
+      "scene": "s07",
+      "start": 81.227,
+      "end": 86.792
+    }
+  ]
+}

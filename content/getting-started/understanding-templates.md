@@ -38,7 +38,7 @@ Any templates your own team has saved appear first, above the rest, under **Your
 3. Click a template to preview it as a real report.
 4. When you've found the right one, create your report from it.
 
-The preview shows the template in its own design. You can switch on your brand colors and fonts to see it in yours — both toggles start off, so you always see the template as it was designed before you judge it against your brand.
+The preview shows the template in your default palette and font pair, because those are preselected. Click **Template colors** or **Template fonts** to see it as originally designed. See [Starting a report on brand](../building-reports/brand-kit-and-new-reports.md).
 
 ### Tips for picking
 
