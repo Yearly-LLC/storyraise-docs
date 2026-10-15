@@ -48,7 +48,7 @@ For a mailing, you don't build links by hand. Two tools under **Tools** in the d
 
 Both work the same way:
 
-1. **Choose your constituents.** Load them **From Storyraise** (optionally narrowed to a saved list), or **Upload CSV** with `first_name`, `last_name`, and `email` headers.
+1. **Choose your constituents.** Load them **From Storyraise** (optionally narrowed to a saved list), or **Upload CSV** with first name, last name, and email columns. The headers don't have to be exact: columns like *Preferred Email Address* or *Donor First Name* are recognized, and if no header mentions email, Storyraise finds the column whose values are email addresses. After you upload, the tool shows which columns it used, so you can check before generating. If it can't find an email column at all, it says so — add a column named **Email** and upload again.
 2. **Choose your report.** Select one of your published reports, or paste a link. The tool appends `?for=email` to it for each constituent.
 3. **Preview and download.** Review the per-constituent URLs, then download.
 

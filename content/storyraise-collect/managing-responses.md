@@ -34,6 +34,12 @@ Tagging responses to constituents is what turns a pile of submissions into usabl
 
 To empty a collection, open the **⋯** menu and choose **Clear all info**. This removes every response and can't be undone.
 
+## Deleted responses and uploaded files
+
+When you remove responses or answers — with **Delete row**, deleting a column, **Clear cell**, **Clear all info**, an **Import CSV** with **Replace**, or by deleting the whole collection — any photo, video, or document uploaded with them is removed too. Within about an hour the file's link stops working, including anywhere you'd used it, such as in a report.
+
+Storyraise keeps removed files privately for 30 days, so if something was deleted by mistake, contact [Storyraise support](https://storyraise.com/support) to have it restored. After 30 days the file is permanently deleted.
+
 ## Putting responses to work
 
 Collected stories and quotes are raw material for the rest of Storyraise — drop a beneficiary thank-you into a [report Testimonial section](../building-reports/adding-sections.md), or export responses as a CSV and upload them as the recipients of a [video message](../storyraise-video/sending-and-recipients.md), so their details can appear as merge tags.

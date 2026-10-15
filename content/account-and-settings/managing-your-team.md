@@ -51,7 +51,7 @@ In the **Your Team** list, each member shows a role selector. Pick a new role to
 
 In the **Your Team** list, click **Remove** next to the member, then **Remove from this organization**. Removing someone revokes their access to your organization's reports and data right away.
 
-If your organization uses [single sign-on](single-sign-on.md), also remove the person in your identity provider — otherwise they're added back the next time they sign in through SSO.
+If your organization uses [single sign-on](single-sign-on.md), the removal sticks: they aren't added back when they next sign in through SSO. It's still good practice to remove them in your identity provider too. To bring someone back, invite them again.
 
 ## Working together without stepping on each other
 

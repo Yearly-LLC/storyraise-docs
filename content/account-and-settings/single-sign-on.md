@@ -24,13 +24,19 @@ Once SSO is on for a domain, everyone with an email address at that domain signs
 
 ## Joining automatically
 
-The first time someone signs in through SSO, Storyraise creates their account and adds them to your organization. There's no invitation to send and no separate onboarding step — if your identity provider lets them through, they're in.
+The first time someone signs in through SSO, Storyraise creates their account and adds them to your organization. There's no invitation to send and no separate onboarding step — if your identity provider lets them through, they're in, unless you've removed them from your team (see **Removing someone** below).
 
 New SSO members join as **Editors** by default, which lets them build and edit but keeps billing, organization settings, and team management out of reach. If you'd like new members to start with a different role, ask us when we set up SSO. Change anyone's role afterwards from your team settings. See [User roles and permissions](../getting-started/user-roles-and-permissions.md).
 
-> **Note:** Because access follows your identity provider, removing someone there is what stops them signing in. Removing them only from your Storyraise team isn't enough: the next time they sign in through SSO, they're added back automatically. To take someone's access away, remove them in your identity provider first, then remove them from your Storyraise team.
+<!-- TEAM REVIEW: default role is Editor unless o/{slug}.sso_default_role_id is set (functions/sso.js:40,172); it's set by staff via scripts/activate-org-sso.js, not in the UI. "Ask us" wording assumes staff will set it on request. Removal (verified 2026-10-15, PR #162): rbac_remove_member writes o/{slug}/removed_members/{uid}; the SSO grant respects it and sends the user to auth.storyraise.com?error=sso_removed; a re-invite clears it. -->
 
-<!-- TEAM REVIEW: default role is Editor unless o/{slug}.sso_default_role_id is set (functions/sso.js:40,172); it's set by staff via scripts/activate-org-sso.js, not in the UI. "Ask us" wording assumes staff will set it on request. Re-join on every login: sso_callback calls ensure_sso_membership -> rbac.grantMembership on every sign-in (functions/sso.js:172-185, functions/rbac.js:482), and rbac_remove_member deletes the member doc (rbac.js:548), so a removed member who can still pass the IdP rejoins. -->
+## Removing someone
+
+To take someone's access away, remove them from your Storyraise team (see [Managing your team](managing-your-team.md)). The removal sticks: they aren't added back the next time they sign in through SSO. Instead they see *"Your access to this organization was removed."* (If they also belong to another Storyraise organization, they're signed in to that one.)
+
+It's still good practice to remove them in your identity provider as well, so their account is closed everywhere at once.
+
+To bring someone back, invite them again. Accepting the invitation restores their access with the role you invited them with.
 
 ## Setting it up
 
