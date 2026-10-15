@@ -303,12 +303,14 @@
 <ul>
 <li>A <strong>clean, branded form</strong> with your logo and an introduction.</li>
 <li>For <a href="/docs/storyraise-collect/multi-step-forms/">multi-step forms</a>, a <strong>progress bar</strong> and Back / Next navigation.</li>
-<li><strong>Draft autosave</strong> — answers are kept as they type, so an interruption doesn&#39;t mean starting over.</li>
+<li><strong>Draft autosave</strong> — answers are kept in their browser as they type, so an interruption doesn&#39;t mean starting over (as long as they come back on the same device and browser).</li>
 <li><strong>File uploads</strong> open the device&#39;s file picker for photos, videos, or documents.</li>
 <li>On submit, a confirmation that their response came through.</li>
 </ul>
-<h2>Smart pre-fill for known constituents</h2>
-<p>If a respondent is already in your <a href="/docs/crm-and-data/importing-constituent-data/">constituent list</a>, Storyraise recognizes them by email and <strong>pre-fills what it already knows</strong> — so a donor sharing a story doesn&#39;t re-enter their own name and details. It&#39;s less work for them and cleaner data for you.</p>
+<p>File uploads accept images, video, audio, and PDF files up to 200 MB each — see <a href="/docs/storyraise-collect/form-field-types/">Form field types</a>.</p>
+<h2>Smart pre-fill for known respondents</h2>
+<p>Pre-fill works through the <strong>Dynamic Link</strong>. When someone opens a personalized link and their email matches a row already in the collection — for example, a row from a CSV you <a href="/docs/storyraise-collect/managing-responses/">imported</a> — Storyraise <strong>pre-fills the form from that row</strong>, so a donor sharing a story doesn&#39;t re-enter their own name and details. When they submit, their answers update that row instead of adding a new one.</p>
+<p>Pre-fill reads the collection&#39;s own rows, not your <a href="/docs/crm-and-data/importing-constituent-data/">constituent list</a>. The plain form link never pre-fills, and neither does a personalized link whose email isn&#39;t in the collection; those open a blank form and add a new row.</p>
 <h2>Tips</h2>
 <ul>
 <li><strong>Tell people why.</strong> A sentence about how their story will be used (and that it might appear in a report) lifts both response rate and quality.</li>
@@ -346,6 +348,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="09560445" data-engine-v="676be165" defer></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 title: Images and videos
 section: Building Reports
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Images and videos
@@ -34,9 +34,7 @@ Select an image to adjust:
 
 ## Editing images
 
-Storyraise includes a built-in image editor — crop, rotate, apply filters, and annotate without leaving the builder or round-tripping through other software.
-
-<!-- TEAM REVIEW: confirm how the image editor is opened (button name on selected image?) so we can give the exact click path. -->
+Storyraise includes a built-in image editor — crop, rotate, apply filters, and annotate without leaving the builder or round-tripping through other software. Select the image (or the block whose background you want to change) and click **Edit media** — the tune icon — in the settings panel.
 
 ## Adding video
 
@@ -48,7 +46,7 @@ The video plays right inside your report. Host the file on YouTube or Vimeo (an 
 
 ## Personalizing images and video
 
-On the **Personalize** tab, **Override Media** swaps a piece of media out per reader, using a merge tag rather than a fixed file.
+On the **Use Data** tab of the settings panel, **Override Media** swaps a piece of media out per reader, using a merge tag rather than a fixed file. The **Use Data** tab is available on the Precision plan.
 
 It works on images, on section backgrounds, and on video elements — for a video you can override both the file it plays and its poster frame. The static media you placed is what everyone else sees; the merge tag only takes over when the report is opened through a [personalized link](../distribution-and-engagement/personalized-links.md) and the tag resolves to a real URL.
 

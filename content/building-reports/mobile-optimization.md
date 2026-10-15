@@ -2,7 +2,7 @@
 title: Mobile optimization
 section: Building Reports
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Mobile optimization
@@ -17,11 +17,13 @@ Every block is built to adapt: columns stack, images scale, and the navigation m
 
 The builder includes a mobile preview — **view and adjust styles for mobile**:
 
-1. Switch the canvas to the mobile view.
+1. In the top bar's **View** buttons, click the phone icon to switch the canvas to the mobile view.
 2. Scroll your report as a phone reader would.
-3. Adjust styles while in mobile view to fine-tune how things look on small screens, without affecting the desktop layout.
+3. Select text that's too big or too tight and set its **Size** and **Line Height**. In mobile view, these two settings apply to phones only, so the desktop layout is unaffected.
 
-Some settings are mobile-specific by design — for example, sections can reduce their height on mobile, and element visibility can be set per device (including **Mobile Only** content).
+<!-- TEAM REVIEW: the mobile text panel also shows Letter Spacing, Weight, and Justification (data-letter-spacing-m / data-font-weight-m / data-text-align-m, app.js ~6395), but nothing in css/report-base.css reads those attributes, so they have no effect on phones. Documented only Size and Line Height. Fix the traits or hide them? -->
+
+Some other settings are mobile-specific by design — for example, the Intro block has **Reduce height on mobile?**, and any element's **Show on...** setting can limit it to one device (including **Mobile Only** content).
 
 ## What to check in mobile view
 

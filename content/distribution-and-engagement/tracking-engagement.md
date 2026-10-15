@@ -2,7 +2,7 @@
 title: Tracking engagement
 section: Sharing & Analytics
 status: draft
-last_reviewed: 2026-09-04
+last_reviewed: 2026-10-15
 ---
 
 # Tracking engagement
@@ -17,10 +17,10 @@ When someone views your published report, Storyraise records:
 - **Unique and return visitors** — Storyraise separates *how many people* read from *how much reading happened*, so a reader who opens the report four times counts as one visitor with four opens.
 - **Sections viewed** — which sections of the report each visitor reached, and the path they took between them.
 - **Time spent** — how long visitors engage, totalled across all their visits.
-- **Link clicks** — taps on donation buttons, event links, social links, and any other link in your report, grouped by what they mean: Donate, Get Involved, Contact, Watch, Social, and Documents.
+- **Link clicks** — taps on donation buttons, event links, social links, and any other link in your report, grouped by what they mean: Donate, Get Involved, Contact, Watch, Social, Documents, and Other Links.
 - **Location** — the visitor's approximate region and city (never a precise address).
 - **Device** — mobile or desktop, so you know how your audience actually reads.
-- **Visit timing** — when people read, bucketed by weekday and time of day in your organization's timezone.
+- **Visit timing** — when people read, bucketed by weekday and time of day, shown in your own time zone.
 
 All of this feeds the **Analytics** tab of each published report — see [Understanding report metrics](understanding-report-metrics.md).
 
@@ -56,8 +56,6 @@ Need to share a published report internally with people *outside* your app team 
 Beyond raw views, Storyraise classifies what readers *do* into intent signals — actions like **Clicked Donation CTA**, **Clicked Event RSVP**, **Clicked Volunteer**, **Watched YouTube**, **Visited Facebook**, and **Revisited Report**. These signals feed each constituent's engagement score, helping you spot the people who didn't just read, but acted. See [Understanding report metrics](understanding-report-metrics.md).
 
 Intent signals are awarded on their own merits, not on top of a reading-time threshold — a reader who spent ten seconds in the report but clicked your donation button still earns a Donation badge. A meaningful action is never hidden behind a time bar.
-
-<!-- TEAM REVIEW: intent signals and time-spent metrics are part of the new Analytics UI (insights_ui branch, pending merge). Confirm availability before publishing. -->
 
 ## Getting better data
 

@@ -294,34 +294,31 @@
       <div class="content">
         <h1>Bloomerang</h1>
 <p class="lead">Connect Storyraise to Bloomerang to sync your constituents, so you can personalize reports for your donors and see who&#39;s engaging.</p>
-<div class="tip"><p><strong>Two ways to connect.</strong> You can connect Bloomerang from the <strong><a href="/docs/crm-and-data/connections-overview/">Connections</a></strong> tab (recommended — see <a href="#connecting-via-the-connections-tab">Connecting via the Connections tab</a> below) or from the per-system steps in the <strong>Constituents</strong> area. Bloomerang also syncs gifts into <a href="/docs/distribution-and-engagement/understanding-report-metrics/">Analytics</a>.</p></div>
+<div class="tip"><p>Connect Bloomerang from the <strong><a href="/docs/crm-and-data/connections-overview/">Connections</a></strong> tab. Bloomerang also syncs gifts into <a href="/docs/distribution-and-engagement/understanding-report-metrics/">Analytics</a>.</p></div>
 <h2>What you&#39;ll need</h2>
 <p>A <strong>Bloomerang API key</strong>. Bloomerang&#39;s guide to finding or creating one: <a href="https://support.bloomerang.co/s/article/13000076351#new">Where can I find my Bloomerang API key?</a></p>
 <div class="tip"><p>API keys belong to a Bloomerang user account. Use a key from an account that will stay active — if that user is deactivated, the key stops working.</p></div>
 <h2>Connect and sync</h2>
 <ol>
-<li>From the Storyraise dashboard, open the <strong>Constituents</strong> area and choose to sync constituents.</li>
-<li>Select the <strong>Bloomerang</strong> tab.</li>
+<li>Open the <strong><a href="/docs/crm-and-data/connections-overview/">Connections</a></strong> tab and find <strong>Bloomerang</strong> under <strong>Add a connection</strong>.</li>
+<li>Click <strong>Connect</strong>.</li>
 <li>Paste your API key into the key field (it looks like <code>aaead1d4-7075-57df-ec7f-11e717c7bdd1</code>).</li>
 <li>Click <strong>Sync constituents</strong>.</li>
 </ol>
-<p>Storyraise pulls in your Bloomerang constituents — names, emails, addresses, phone numbers, and other profile fields. Synced constituents appear in your constituent list tagged <strong>Bloomerang</strong>.</p>
-<h2>Connecting via the Connections tab</h2>
-<p>If your dashboard has the <strong>Connections</strong> tab, connect there instead: open <strong>Connections</strong>, find <strong>Bloomerang</strong>, click <strong>Connect</strong>, paste your API key, and choose <strong>Connect &amp; sync</strong>. The connection then shows as <strong>Live</strong>, with <strong>Sync now</strong> and daily auto-sync options — see <a href="/docs/crm-and-data/connections-overview/">The Connections tab</a> and <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</p>
+<p>Storyraise pulls in your Bloomerang constituents. Synced constituents appear in your constituent list tagged <strong>Bloomerang</strong>, and the connection shows as <strong>Live</strong> — see <a href="/docs/crm-and-data/managing-connections/">Managing connections</a>.</p>
 <h2>What gets synced</h2>
 <ul>
-<li>Name and email for each constituent</li>
-<li>Profile details such as address and phone fields</li>
-<li>Other fields from each constituent&#39;s Bloomerang record, flattened into individual Storyraise fields you can use as merge tags</li>
+<li>First name, last name, and email for each constituent, along with their Bloomerang constituent id.</li>
 </ul>
+<p>Other profile fields (address, phone, and so on) are <strong>not</strong> imported onto the constituent record. To bring giving into Storyraise, use <strong>Add data</strong> on the connection row to sync gifts into a collection — see <a href="/docs/crm-and-data/syncing-data-to-collections/">Syncing data to collections</a>.</p>
 <p>Records are matched by email address — constituents without an email in Bloomerang can&#39;t be synced, and re-syncs update existing records rather than duplicating them.</p>
 <h2>Keeping it fresh</h2>
-<p>Syncs run when you trigger them. Re-run <strong>Sync constituents</strong> before mailings or personalized publishes to pull the latest data — see <a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a>.</p>
+<p>Click the sync icon (<strong>Sync now</strong>) on the connection row to pull the latest data before mailings or personalized publishes. Or open the row&#39;s <strong>⋯ More</strong> menu, turn on <strong>Auto-sync</strong> (it&#39;s off by default), and set the <strong>Frequency</strong> to <strong>Daily</strong> or <strong>Weekly</strong> (weekly syncs run on Mondays). See <a href="/docs/crm-and-data/data-refreshes/">Data refreshes</a>.</p>
 <h2>Embedding Bloomerang donation forms</h2>
 <p>You can also embed a Bloomerang donation form inside a report: add the donation form element in the builder and paste your form&#39;s URL. Readers can give without leaving your report.</p>
 <h2>Troubleshooting</h2>
 <ul>
-<li><strong>Invalid key</strong> — re-copy the full key with no extra spaces; regenerate it in Bloomerang if needed.</li>
+<li><strong>Invalid key</strong> — re-copy the full key with no extra spaces; regenerate it in Bloomerang if needed. Bloomerang has no <strong>Edit credentials</strong> option, so to switch to a new key, <strong>Disconnect</strong> the connection (your synced data stays) and connect again with the new key.</li>
 <li><strong>Missing constituents</strong> — check that they have an email address in Bloomerang.</li>
 </ul>
 <p>More help: <a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a>.</p>
@@ -350,6 +347,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="09560445" data-engine-v="676be165" defer></script>
 </body>
 </html>

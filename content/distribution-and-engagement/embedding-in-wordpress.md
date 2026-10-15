@@ -3,7 +3,7 @@ title: Embedding in WordPress
 section: Sharing & Analytics
 status: draft
 keywords: wordpress, embed, iframe, gutenberg, elementor, classic editor, custom html, block editor
-last_reviewed: 2026-07-16
+last_reviewed: 2026-10-15
 ---
 
 # Embedding in WordPress
@@ -16,7 +16,7 @@ If you'd rather not embed at all, [sharing the plain link](sharing-reports.md) w
 
 ## Step 1 — Copy your embed code
 
-1. Publish your report. Storyraise opens the share screen straight after.
+1. Publish your report. Storyraise opens the **Your report is live!** page in a new tab.
 2. Click **Embed codes**.
 3. Pick the version you want and click **Copy**:
 
@@ -36,7 +36,7 @@ If you'd rather not embed at all, [sharing the plain link](sharing-reports.md) w
         style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 9999;"></iframe>
 ```
 
-You can reach the same screen later from the dashboard — open a published report's menu and choose **View Link**.
+Need the code later? Open the report in the builder and click **Share** — both embed codes are listed there. (On a personalized report, the **Share** window shows a platform link instead; republishing brings back the **Your report is live!** page.)
 
 ## Step 2 — Give it the full width of the page
 

@@ -3,7 +3,7 @@ title: Review comments
 section: Building Reports
 status: draft
 keywords: comments, comment, review, feedback, approval, sign off, collaborate, collaboration, team, drawer, notes, proofing, markup
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Review comments
@@ -14,11 +14,11 @@ Comments are private to your team. They live in the builder only — readers nev
 
 ## Opening the comments panel
 
-Click the **Comments** icon in the builder's top toolbar. A panel slides in from the side, and the icon carries a count once the report has comments on it.
+Open the **More actions** menu (**…**) at the top right of the builder and choose **Comments**. A panel slides in from the side. The menu item shows a count of the report's comments in parentheses.
 
-<!-- TEAM REVIEW: needs a screenshot of the Comments icon in the toolbar with a count on it. -->
+<!-- TEAM REVIEW: needs a screenshot of the More actions menu showing Comments with a count. -->
 
-> **Note:** Comments are part of Platinum and Precision. On other plans the icon opens an upgrade prompt instead.
+> **Note:** Comments are part of Platinum and Precision. On other plans, **Comments** opens an upgrade prompt instead.
 
 ## Comments belong to a section
 
@@ -31,7 +31,7 @@ That's the part worth knowing before you start: a note about the donor list won'
 ## Leaving a comment
 
 1. Open the section you want to comment on.
-2. Open the **Comments** panel.
+2. Open the **Comments** panel from the **More actions** (**…**) menu.
 3. Write your note in the box at the bottom and click **Post comment**.
 
 Your name and the date and time are attached automatically. Your own comments appear on one side of the panel and your teammates' on the other, so a long thread stays readable.

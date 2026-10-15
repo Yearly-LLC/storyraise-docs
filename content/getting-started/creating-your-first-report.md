@@ -3,7 +3,7 @@ title: Creating your first report
 keywords: annual report, impact report, appeal, newsletter, how long, time, deadline, checklist, get started, first report
 section: Getting Started
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-10-15
 ---
 
 # Creating your first report
@@ -13,11 +13,12 @@ You can have a working draft of your first report in just a few minutes. This gu
 ## Start a new report
 
 1. Sign in at [app.storyraise.com](https://app.storyraise.com).
-2. From the dashboard, choose **Create your first report** (or the new report button if you already have reports).
+2. Start a new report: choose **Create your first report** if you don't have any reports yet, click **New report** on the Home tab, or use **Add new** on the Reports page.
 3. Pick how you want to start:
-   - **Report from template** — browse professionally designed templates and start with a full report structure already in place. Recommended for your first report.
-   - **Blank report** — start from an empty canvas and add every section yourself.
-4. If you start from a blank report, enter a title when prompted. You can change it later.
+   - **From a template** — browse professionally designed templates and start with a full report structure already in place. Recommended for your first report.
+   - **Starter report** — a simple layout with some content; add blocks as you need them.
+   - **Empty report** — no sections; build every section yourself.
+4. For a starter or empty report, enter a title when prompted. You can change it later.
 
 Your new report opens in the builder.
 

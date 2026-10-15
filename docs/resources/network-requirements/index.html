@@ -311,6 +311,7 @@
 <h2>Allowlist for your IT team</h2>
 <p>Ask your IT team to allow the following domains through the firewall and any web filter — for the people who <strong>build</strong> reports <em>and</em> anyone who will <strong>view</strong> a published report.</p>
 <pre><code># Sign-in and the app
+app.storyraise.com
 auth.storyraise.com
 yearly-bv3.firebaseapp.com
 yearly-bv3.web.app
@@ -333,11 +334,16 @@ fonts.gstatic.com
 yearlyreport.cloud
 images.unsplash.com
 
+# Builder photo and icon search
+api.unsplash.com
+api.iconify.design
+
 # Front-end libraries
 cdn.jsdelivr.net
 unpkg.com
 cdnjs.cloudflare.com
 code.jquery.com
+ajax.googleapis.com
 use.typekit.net
 </code></pre>
 <h2>Important: allowing the domains may not be enough</h2>
@@ -414,6 +420,6 @@ use.typekit.net
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="09560445" data-engine-v="676be165" defer></script>
 </body>
 </html>

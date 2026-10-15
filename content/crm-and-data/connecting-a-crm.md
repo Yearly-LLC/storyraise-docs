@@ -2,7 +2,7 @@
 title: Connecting a CRM
 section: Donor Data & CRM
 status: draft
-last_reviewed: 2026-10-13
+last_reviewed: 2026-10-15
 ---
 
 # Connecting a CRM
@@ -27,7 +27,7 @@ Importing is **read-only** — Storyraise reads from your CRM and doesn't change
 1. Open the **Connections** tab and find your CRM under **Add a connection**.
 2. Click **Connect** and follow the prompts:
    - **Raiser's Edge NXT** and **Salesforce** — sign in and approve access, then choose who to sync: Raiser's Edge NXT asks you to **Select a list to import**, and Salesforce asks **Who should sync from Salesforce?** (everyone, or one or more Contact List Views). Click **Sync Constituents** (or **Sync constituents**) to finish. Full guides: [Raiser's Edge NXT](integrations/blackbaud-raisers-edge-nxt.md) and [Salesforce](integrations/salesforce.md).
-   - **API-key systems** such as Bloomerang — paste your key and click **Connect & sync**. Full guide: [Bloomerang](integrations/bloomerang.md).
+   - **API-key systems** such as Bloomerang — paste your key (and any other details the dialog asks for) and click **Connect & sync** (for Bloomerang, **Sync constituents**). Full guide: [Bloomerang](integrations/bloomerang.md).
 3. Storyraise imports your constituents. Each record is tagged with its source, so you always know where data came from.
 
 ## No CRM? No problem

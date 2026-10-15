@@ -3,7 +3,7 @@ title: Adding a poll
 section: Building Reports
 status: draft
 keywords: poll, polls, vote, voting, survey, question, multiple choice, single choice, results, tally, reader poll, ask readers, poll results, export votes
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Adding a poll
@@ -21,7 +21,7 @@ Answers collect under **Poll Results** in that report's Analytics, where you can
 
 A new poll starts empty on purpose: no sample question, no sample answers. An unedited poll shows nothing at all to a reader, so a poll you forgot to finish can never reach a donor with placeholder wording in it.
 
-You can also add a whole **Poll** section from **Add new section**, which gives the poll a page of its own rather than sitting it inside another block.
+You can also add a whole **Poll** block from the block list (**Add a block**), which gives the poll a section of its own rather than sitting it inside another block.
 
 <!-- TEAM REVIEW: needs a screenshot of the poll editor with a question and two or three answers filled in. -->
 
@@ -31,25 +31,26 @@ A poll needs at least two answers and takes up to ten. Past ten the bars stop be
 
 Each answer gets an accent color, seeded from a set that works together. You can change any of them.
 
-> **Tip:** Keep answers short. Past about 32 characters an answer wraps to a second line and the layout moves the text above its bar instead of beside it. The editor warns you on the answer that's about to trigger it.
+> **Tip:** Keep answers short. Once any answer passes 32 characters, the **Automatic** layout moves every answer's text inside its bar instead of beside it. The editor warns you on the answer that triggers it.
 
 ## Settings
 
-Open the poll's settings panel to control how it behaves and how it looks.
+The Poll Editor has three tabs: **Question & Answers**, **Voting**, and **Appearance**. Use **Preview** in the editor's header to try the poll before you place it.
 
 **How it behaves**
 
+- **Show question** — show or hide the question above the chart, for when the surrounding copy already asks it (on the **Question & Answers** tab).
 - **Selection** — **Single choice** for one answer per reader, **Multiple choice** to let them pick several.
-- **After Voting** — **Show everyone the results** reveals the full tally once someone answers. **Confirm the viewer's answer only** shows them what they chose and keeps everyone else's answers to you.
-- **Question** — show or hide the question above the chart, for when the surrounding copy already asks it.
+- **Changing answers** — **Readers can change their answer**, or **One response only** to lock in a reader's first answer.
+- **After voting** — **Show everyone the results** reveals the full tally once someone answers. **Confirm their answer only** shows them what they chose and keeps everyone else's answers to you.
 
 **How it reads**
 
-- **Show Values As** — counts, percentages, or both.
-- **Value Position** — after the bar, inside it, or hidden.
-- **Answers/Options Text** — **Automatic** places each answer beside its bar and moves it above when it's too long. You can also force **Beside**, **Above**, or **Inside the bar**.
+- **Show values as** — counts, percentages, or both.
+- **Value position** — after the bar, inside it, or hidden.
+- **Answers/Options text** (on the **Appearance** tab) — **Automatic** keeps short answers beside their bar and moves long ones inside it. You can also force **Beside the bar**, **Above the bar**, or **Inside the bar**.
 
-Font, text color, bar height, roundness, and spacing are all in the same panel, and brand kit colors appear in every color picker.
+Font, text color, bar height, roundness, and spacing are all on the **Appearance** tab, and brand kit colors appear in every color picker.
 
 ## What readers see
 

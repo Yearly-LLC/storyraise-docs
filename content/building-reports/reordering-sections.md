@@ -2,7 +2,7 @@
 title: Reordering sections
 section: Building Reports
 status: draft
-last_reviewed: 2026-06-12
+last_reviewed: 2026-10-15
 ---
 
 # Reordering sections
@@ -11,11 +11,9 @@ The order of your sections is the arc of your story. Storyraise makes it easy to
 
 ## Reorder by drag and drop
 
-1. Open the section sorter — the view that shows all your sections as a list with drag handles.
+1. Open the **Sort Sections** window: click **Sort sections** under the list of sections in the left sidebar, or open **Report settings** (the gear in the top bar), go to the **Sections** tab, and click **Sort sections**.
 2. Drag a section by its handle to its new position.
-3. The report's reading order and navigation menu update to match.
-
-<!-- TEAM REVIEW: confirm how the section sorter is opened from the builder (button/menu name). -->
+3. Click **Done sorting**. The report's reading order and navigation menu update to match.
 
 ## Order changes everything else
 

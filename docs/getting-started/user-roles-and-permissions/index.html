@@ -313,12 +313,12 @@
 <tbody><tr>
 <td><strong>Owner</strong></td>
 <td>The person who runs the account</td>
-<td>Full access to everything, including billing and team management. There&#39;s always at least one Owner.</td>
+<td>Full access to everything, including team management. There&#39;s always at least one Owner.</td>
 </tr>
 <tr>
 <td><strong>Admin</strong></td>
 <td>Trusted team leads</td>
-<td>Full access to everything and can <em>view</em> billing, but can&#39;t change the subscription.</td>
+<td>Full access to everything except the Owner-only Billing level (Admins can <em>view</em> billing).</td>
 </tr>
 <tr>
 <td><strong>Editor</strong></td>
@@ -332,7 +332,8 @@
 </tr>
 </tbody></table>
 <h2>What each role can access</h2>
-<p>Access to each area is one of four levels: <strong>— (none)</strong>, <strong>View</strong>, <strong>Edit</strong>, or <strong>Manage</strong> (Manage includes creating, editing, and deleting).</p>
+<p>Access to each area is one of four levels: <strong>— (none)</strong>, <strong>View</strong>, <strong>Edit</strong>, or <strong>Manage</strong> (Manage includes creating, editing, and deleting). Area names below match the labels on the <strong>Team</strong> tab in <strong>Account</strong>. <strong>Reports</strong> also covers templates and report folders.</p>
+<p>Subscriptions are managed with your Storyraise contact rather than in the dashboard, so the <strong>Billing</strong> area currently just shows your organization&#39;s plan.</p>
 <table>
 <thead>
 <tr>
@@ -344,42 +345,42 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Reports &amp; templates</td>
+<td>Reports</td>
 <td>Manage</td>
 <td>Manage</td>
 <td>Edit</td>
 <td>View</td>
 </tr>
 <tr>
-<td>Videos</td>
+<td>Video</td>
 <td>Manage</td>
 <td>Manage</td>
 <td>Edit</td>
 <td>View</td>
 </tr>
 <tr>
-<td>Collect forms</td>
+<td>Collect</td>
 <td>Manage</td>
 <td>Manage</td>
 <td>Edit</td>
 <td>View</td>
 </tr>
 <tr>
-<td>Constituents (CRM)</td>
+<td>Constituents</td>
 <td>Manage</td>
 <td>Manage</td>
 <td>Edit</td>
 <td>View</td>
 </tr>
 <tr>
-<td>Connections (integrations)</td>
+<td>Connections</td>
 <td>Manage</td>
 <td>Manage</td>
 <td>Edit</td>
 <td>View</td>
 </tr>
 <tr>
-<td>Health &amp; Actions</td>
+<td>Donor Signals</td>
 <td>Manage</td>
 <td>Manage</td>
 <td>Edit</td>
@@ -407,7 +408,7 @@
 <td>View</td>
 </tr>
 <tr>
-<td>Team &amp; roles</td>
+<td>Team</td>
 <td>Manage</td>
 <td>Manage</td>
 <td>View</td>
@@ -421,7 +422,7 @@
 <td>—</td>
 </tr>
 <tr>
-<td>Organization settings</td>
+<td>Org Settings</td>
 <td>Manage</td>
 <td>Manage</td>
 <td>—</td>
@@ -439,7 +440,7 @@
 <p>Roles set what someone can do across the whole organization. On top of that, an individual report folder can be limited to named people, so a work-in-progress stays off everyone else&#39;s dashboard.</p>
 <p>It filters what people see; it isn&#39;t a permission boundary. Anyone with a report&#39;s link can still open it, and published reports stay public to the web. See <a href="/docs/getting-started/report-folders/">Report folders</a>.</p>
 <h2>Custom roles</h2>
-<p>Beyond the four built-in roles, Owners and Admins can create <strong>custom roles</strong> — pick a name and set the access level for each area individually. Custom roles are useful when someone needs, say, Edit access to Reports and Analytics but only View on Constituents. Assign a custom role to a member exactly like a built-in one.</p>
+<p>Beyond the four built-in roles, anyone with Manage access to Team (Owners and Admins, by default) can create <strong>custom roles</strong> — pick a name and set the access level for each area individually. Custom roles are useful when someone needs, say, Edit access to Reports and Analytics but only View on Constituents. Assign a custom role to a member exactly like a built-in one. You can&#39;t grant anyone more access than you have yourself.</p>
 <h2>Fine-tuning one person&#39;s access</h2>
 <p>Need an exception for a single teammate without making a whole new role? You can set per-member <strong>overrides</strong> that raise or lower their access in specific areas on top of their role. (Overrides don&#39;t apply to Owners — an Owner always has full access, which protects you from accidentally locking everyone out.)</p>
 <h2>Assigning roles and inviting people</h2>
@@ -483,6 +484,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="09560445" data-engine-v="676be165" defer></script>
 </body>
 </html>

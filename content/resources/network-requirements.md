@@ -2,7 +2,7 @@
 title: Network requirements and troubleshooting
 section: Best Practices & Reference
 status: draft
-last_reviewed: 2026-06-18
+last_reviewed: 2026-10-15
 keywords: firewall, allowlist, whitelist, IT, network, blocked, not loading, images missing, fonts, logged out, proxy, VPN, school, corporate
 ---
 
@@ -33,6 +33,7 @@ Ask your IT team to allow the following domains through the firewall and any web
 
 ```
 # Sign-in and the app
+app.storyraise.com
 auth.storyraise.com
 yearly-bv3.firebaseapp.com
 yearly-bv3.web.app
@@ -55,11 +56,16 @@ fonts.gstatic.com
 yearlyreport.cloud
 images.unsplash.com
 
+# Builder photo and icon search
+api.unsplash.com
+api.iconify.design
+
 # Front-end libraries
 cdn.jsdelivr.net
 unpkg.com
 cdnjs.cloudflare.com
 code.jquery.com
+ajax.googleapis.com
 use.typekit.net
 ```
 

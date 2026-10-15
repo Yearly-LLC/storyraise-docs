@@ -2,7 +2,7 @@
 title: Troubleshooting sync issues
 section: Donor Data & CRM
 status: draft
-last_reviewed: 2026-10-13
+last_reviewed: 2026-10-15
 ---
 
 # Troubleshooting sync issues
@@ -13,9 +13,9 @@ Most sync problems come down to one of a few causes. Work through the section th
 
 Blackbaud authorizations expire periodically. Storyraise refreshes them automatically behind the scenes, but if a sync fails with an authorization error:
 
-1. Open the **Constituents** area and go to the **Blackbaud** tab.
-2. Click **Connect** to re-authorize with your Blackbaud account.
-3. Re-select your constituent list and sync again.
+1. Open the **Connections** tab and find **Raiser's Edge NXT** among your connected systems.
+2. Click the sync icon (**Sync now**). If the authorization has expired, you're sent to Blackbaud to sign in and authorize Storyraise again.
+3. Re-select your constituent list and click **Sync Constituents**.
 
 Make sure you authorize with a Blackbaud account that has access to the constituent lists you want to sync.
 
@@ -26,10 +26,10 @@ Make sure you authorize with a Blackbaud account that has access to the constitu
 
 ## "Some constituents didn't import"
 
-The most common cause is a **missing email address**. Storyraise identifies each constituent by email, so records without one are skipped.
+The most common cause is a **missing email address**. Connected CRMs, giving platforms, and email tools (every connection except Slate) skip any record without an email, because Storyraise identifies each constituent by email.
 
 - In your CRM, fill in email addresses where you can, then re-sync.
-- For CSV uploads, check that your file has a properly spelled **Email** header and that each row has a value in it.
+- CSV uploads and Slate work differently: a row with a name but no email still imports (keyed on the name), and only rows with neither an email nor a name are skipped. If CSV rows are missing, check that you chose the right **Email** column in **Map your columns** and that each row has a name or an email.
 
 ## "I have duplicate constituents"
 

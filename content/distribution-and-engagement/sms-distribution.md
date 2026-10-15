@@ -1,16 +1,18 @@
 ---
 title: SMS distribution
 section: Sharing & Analytics
-status: draft
+status: stub
 keywords: text message, texting, phone
-last_reviewed: 2026-09-04
+last_reviewed: 2026-10-15
 ---
 
 # SMS distribution
 
+> **Coming soon** — text messaging in Storyraise Send isn't available to customers yet; email is. See [Email distribution](email-distribution.md).
+
 Text messages get seen — most are read within minutes. **Storyraise Send** lets you deliver your reports and messages to constituents by SMS, each text personalized to its recipient.
 
-<!-- TEAM REVIEW: Storyraise Send is pre-release (text-message branch, not merged). Confirm availability, entry point, and final UI labels before publishing this page. -->
+<!-- TEAM REVIEW: SMS is allowlist-only in Send (storyraise-mail@stepper public/feature-flags.js SMS_PREVIEW_ORGS: storyraise, storyraise-alerts, ramsey, yearlytttest, jmsg, demo) and also needs a per-org registered sender (o/{slug}/sms/sender, A2P 10DLC). Every other org sees the SMS channel as "Coming soon" (public/channels/index.html), and the builder's Share modal marks Text as not live (builder public/js/app.js env.storyraise_send.channels, is_live: false). Send's SMS code still sends through Twilio, which is not on the published subprocessor list (Twilio was retired from the builder 2026-10-02). Decide whether SMS will launch before un-stubbing this page. -->
 
 ## What a Send text looks like
 
@@ -26,11 +28,10 @@ The flow mirrors [email distribution](email-distribution.md):
 
 1. **Compose your message.** Keep it short — SMS rewards brevity. Personalize with `@@field_name@@` merge tags.
 2. **Attach your content** — a published report or any link.
-3. **Add recipients.** Upload a CSV in the **Constituents Template** format; include a phone number column for text delivery.
-4. **Preview per recipient.** Click **Preview Messages & Send** and step through recipients to see each person's resolved message before anything goes out.
+3. **Add recipients.** Pick from your constituents. Only people with a phone number and SMS consent on file can be selected.
+4. **Preview per recipient.** Click **Review & send** and step through recipients to see each person's resolved message before anything goes out.
 5. **Send.** The confirmation shows exactly how many people you're texting.
 
-<!-- TEAM REVIEW: confirm the phone-number column name expected in the recipients CSV, and how a recipient's email-vs-phone delivery preference is chosen in the UI. -->
 
 ## Consent comes first
 

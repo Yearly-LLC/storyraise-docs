@@ -3,14 +3,16 @@ title: Managing your team
 section: Account & Settings
 status: draft
 keywords: invite, collaborators, members, roles, remove user, owner, admin, editor, viewer
-last_reviewed: 2026-07-13
+last_reviewed: 2026-10-15
 ---
 
 # Managing your team
 
 Storyraise is built for teams. Invite colleagues into your organization so you can build reports together, divide up the work, and review each other's drafts — and give each person the right level of access with **roles**.
 
-<!-- TEAM REVIEW: team/collaboration features are plan-dependent. Confirm which plans include team members before publishing, and whether to note it here. -->
+Everything on this page lives on the **Team** tab of **Account**.
+
+> **Plan note:** Every plan can see who's on the team, change roles, and remove someone. Inviting new teammates (the invite link) and creating custom roles are included on the Platinum and Precision plans. To change your plan, see [Managing your subscription](managing-your-subscription.md).
 
 ## Roles at a glance
 
@@ -21,13 +23,13 @@ Every member has a role that controls what they can do:
 - **Editor** — create and edit content; can see the team but not manage it.
 - **Viewer** — read-only access to content.
 
-You can also create **custom roles** with per-area access. For the full breakdown, see [User roles and permissions](../getting-started/user-roles-and-permissions.md).
+You can also create **custom roles** with per-area access (under **Roles** → **+ New custom role**), or give one person different access with **Access…** in the **⋯** menu next to their name. For the full breakdown, see [User roles and permissions](../getting-started/user-roles-and-permissions.md).
 
 ## Invite a teammate
 
 Under **Your Team**:
 
-1. Find the **Invite Link** field and pick the **role** new members should join with (the default is Editor).
+1. Find the **Invite Link** field. Below it, under *New members joining with this link start as*, pick the role new members should join with (the default is Editor).
 2. Click **Copy link**.
 3. Send the link to your colleague however you like — email, Slack, a message.
 
@@ -42,11 +44,14 @@ The invite link looks like `https://app.storyraise.com/invite/#/…` and is tied
 In the **Your Team** list, each member shows a role selector. Pick a new role to change their access immediately. A couple of guardrails keep you safe:
 
 - There's always at least one **Owner**.
-- Only an **Owner** can grant or remove the Owner role.
+- Only an **Owner** can change another Owner's role.
+- To hand ownership to someone else, the current Owner opens the **⋯** menu next to that person and chooses **Make Owner**. The current Owner becomes an Admin.
 
 ## Remove a teammate
 
-In the **Your Team** list, each member has a **Remove** button. Removing someone revokes their access to your organization's reports and data right away.
+In the **Your Team** list, click **Remove** next to the member, then **Remove from this organization**. Removing someone revokes their access to your organization's reports and data right away.
+
+If your organization uses [single sign-on](single-sign-on.md), also remove the person in your identity provider — otherwise they're added back the next time they sign in through SSO.
 
 ## Working together without stepping on each other
 

@@ -2,7 +2,7 @@
 title: Publishing and sharing reports
 section: Getting Started
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Publishing and sharing reports
@@ -60,7 +60,7 @@ The full guide: [Sharing reports](../distribution-and-engagement/sharing-reports
 
 ## Tracking engagement
 
-Once a report is published, its dashboard card shows how many times it's been opened. For deeper engagement detail, open the report and select **Analytics** — see [Analytics overview](../distribution-and-engagement/analytics-overview.md) and [Understanding report metrics](../distribution-and-engagement/understanding-report-metrics.md).
+Once a report is published, its dashboard card shows how many times it's been opened. For deeper engagement detail, open the report's **⋯** menu on the dashboard and choose **View Analytics** — see [Analytics overview](../distribution-and-engagement/analytics-overview.md) and [Understanding report metrics](../distribution-and-engagement/understanding-report-metrics.md).
 
 ## Next steps
 

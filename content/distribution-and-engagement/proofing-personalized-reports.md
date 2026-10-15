@@ -3,7 +3,7 @@ title: Proofing a personalized report
 section: Sharing & Analytics
 keywords: proof, preview, test, check before sending, merge tag, blank field, salutation, major donor, stewardship, quality check
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Proofing a personalized report
@@ -11,6 +11,15 @@ last_reviewed: 2026-09-08
 Before a report that carries a donor's name — or their gift — goes out to a few hundred people, you want to see exactly what they'll see. This page is the check to run first.
 
 The stakes are asymmetric. A typo in body copy is forgettable; a wrong salutation or a wrong amount in front of a major donor is a phone call from a board member.
+
+## Preview as a constituent
+
+You don't need a live link to see what one person sees. On the Precision plan:
+
+- **In the builder**, open **Preview**, choose **Open web preview**, and click **Previewing as** to pick a constituent. This shows your unpublished edits, so you can proof before you publish. **PDF preview** in the same bar shows the print version for that person.
+- **Preview as a Constituent** under **Tools** in the dashboard shows a published report as one reader sees it, and can put two readers side by side (or a reader next to **Someone with no personalized link**). Switch **Version** to **Draft** to check your unpublished edits.
+
+Two other tools under **Tools** help before a big send: **Report Preflight** checks a published report for unresolved merge tags, broken links, and missing descriptions, and **Data Health** (Precision plan) finds constituents with missing or invalid emails and incomplete fields.
 
 ## Open the report as a specific constituent
 
@@ -68,15 +77,6 @@ See the privacy note in [Personalized links](personalized-links.md).
 - [ ] Reviewers on the analytics exclusion list
 - [ ] Read on a phone, not just a laptop
 - [ ] Someone other than the author has read it
-
-<!-- TEAM REVIEW: this page currently describes proofing by opening a live
-     personalized URL, because that is the only method the knowledge base
-     documents for reports. Storyraise Video has "Preview & send" per recipient;
-     reports appear to have no equivalent preview-as-constituent view inside the
-     builder. Confirm — if such a preview exists, it belongs at the top of this
-     page and most of the above becomes a fallback. Also confirm whether a
-     report must be published before a ?for= link renders, since that determines
-     whether proofing requires a live public URL. -->
 
 ## Related
 

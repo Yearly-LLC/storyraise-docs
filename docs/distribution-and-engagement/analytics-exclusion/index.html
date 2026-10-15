@@ -304,7 +304,7 @@
 <p>Storyraise recognizes a teammate by the browser and computer they use for <code>app.storyraise.com</code>. Automatic exclusion works <strong>as long as they open the report on that same browser and machine.</strong></p>
 <p>If a teammate opens the report on a different device, in a different browser, or in a private/incognito window, Storyraise can&#39;t tell it&#39;s them, and that view will be counted. For those cases — and for people who help with your reports but don&#39;t sign into Storyraise at all — use the manual exclusion below.</p>
 <h3>Where to see who&#39;s covered</h3>
-<p>On the <strong>Account</strong> page, the <strong>Exclude from Analytics</strong> panel lists your signed-in teammates as already covered — you&#39;re always included in your own org. <strong>Owners, Admins, and Editors</strong> can see and edit this panel.</p>
+<p>On the <strong>Account</strong> page, the <strong>Exclude from Analytics</strong> panel lists your signed-in teammates as already covered — you&#39;re always included in your own org. <strong>Owners and Admins</strong> can see and edit this panel (as can any custom role with edit access to Org Settings); Editors and Viewers don&#39;t see it.</p>
 <h2>Excluding people outside your app team</h2>
 <p>Sometimes you share a published report internally with people who aren&#39;t on your Storyraise team — a board member reviewing before it goes out, a colleague at a partner organization, an external consultant. Because they never sign into <code>app.storyraise.com</code>, automatic exclusion doesn&#39;t cover them, and their visits would otherwise count as real audience engagement.</p>
 <p>The email exclusion feature handles this. It&#39;s <strong>two steps</strong>: add their email or domain to your exclusion list, then send them a report link tagged with that email.</p>
@@ -316,7 +316,7 @@
 </ul>
 <div class="tip"><p><strong>Use domain wildcards carefully.</strong> <code>*@partner.org</code> drops <em>every</em> visitor with that domain. If any of your real audience shares it — for example, everyone at a university or a large company on the same domain — their views would be excluded from your analytics too. When in doubt, add individual emails instead.</p></div>
 <p><strong>Your own organization&#39;s domain is the safe wildcard.</strong> Adding <code>*@your-org.org</code> covers every colleague, including subdomains like <code>mail.your-org.org</code>, and catches staff whose views automatic exclusion misses — someone reading on a personal phone, or in an incognito window. It&#39;s a useful belt-and-braces alongside automatic exclusion, as long as your constituents aren&#39;t on your own domain.</p>
-<p><strong>Owners, Admins, and Editors</strong> can edit the list. Changes save immediately and apply to all of your published reports.</p>
+<p><strong>Owners and Admins</strong> can edit the list. Changes save immediately and apply to all of your published reports.</p>
 <h3>2. Send the report link with their email</h3>
 <p>Adding someone to the list isn&#39;t enough on its own — Storyraise can only match a visit to your list when it can see the visitor&#39;s email. It sees that email when the report link carries it in the <code>?for=</code> parameter. So when you share the report with an excluded person, send them a link with <code>?for=</code> followed by their email:</p>
 <pre><code>https://your-org.yearly.report/your-report?for=colleague@partner.org
@@ -366,6 +366,6 @@ https://your-org.yearly.report/your-report#/p/3?for=colleague@partner.org
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="09560445" data-engine-v="676be165" defer></script>
 </body>
 </html>

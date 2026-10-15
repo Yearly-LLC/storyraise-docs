@@ -3,7 +3,7 @@ title: The Connections tab
 section: Donor Data & CRM
 status: draft
 keywords: connections, integrations, crm, sync, connect, hub
-last_reviewed: 2026-10-13
+last_reviewed: 2026-10-15
 ---
 
 # The Connections tab
@@ -29,7 +29,7 @@ Connections groups integrations into three categories:
 1. Open the **Connections** tab and find the system you want under **Add a connection** (search by name).
 2. Click **Connect**. What happens next depends on the system:
    - **Sign-in (OAuth)** — for Raiser's Edge NXT and Salesforce, you're sent to the provider to sign in and authorize Storyraise, then returned automatically. Next you choose who to sync — a constituent list for Raiser's Edge NXT, or everyone or one or more Contact List Views for Salesforce — and click **Sync Constituents** (Raiser's Edge NXT) or **Sync constituents** (Salesforce).
-   - **API key / credentials** — for everything else, a **Connect {system}** dialog asks for an API key (and sometimes a URL or account email). Each dialog includes a hint on exactly where to find your key in that provider, plus a link to their documentation. Click **Connect & sync**.
+   - **API key / credentials** — for everything else, a **Connect {system}** dialog asks for an API key (and sometimes a URL or account email). Each dialog includes a hint on exactly where to find your key in that provider, plus a link to their documentation. Click **Connect & sync** (Bloomerang's dialog says **Sync constituents**).
 3. Storyraise imports your constituents and the connection appears under your connected systems, marked **Live** (or **Error** if something went wrong).
 
 Each integration's page (linked above) lists exactly what it needs and where to find it.

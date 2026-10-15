@@ -1,20 +1,22 @@
 ---
 title: Setting up a custom subdomain for your portal
 section: Account & Settings
-status: draft
+status: stub
 keywords: domain, subdomain, custom domain, web address, url, dns, a record, txt, cname, ssl, certificate, https, caa, cloudflare, godaddy, portal, donor portal, it team
-last_reviewed: 2026-09-21
+last_reviewed: 2026-10-15
 ---
 
 # Setting up a custom subdomain for your portal
+
+> **Coming soon** — hosted portals aren't part of the standard Storyraise plans yet; custom portal subdomains are set up by hand for custom portal projects only.
 
 Host your Storyraise portal at your own web address, such as portal.yourdomain.org, with a few DNS records your IT team adds once.
 
 A custom subdomain puts your organization's name in the address bar, so donors land on a site they recognize and trust. We handle the hosting side, and your IT team adds the DNS records we send. Most setups finish within a few hours, and your current portal address keeps working the whole time.
 
-> **Setting up email sending instead?** That uses a different subdomain and a different set of records. See [Setting up your email sending subdomain](email-subdomain-setup.md).
+> **Setting up email sending instead?** That uses a different set of records, set up yourself in Storyraise Send. See [Setting up a custom sending domain](custom-sending-domain.md).
 
-<!-- TEAM REVIEW: custom subdomains are currently set up by hand for hosted portals only. Published report links always use the organization's Storyraise URL. Confirm how customers request this (support email, account manager?) and name it in step 2. -->
+<!-- TEAM REVIEW: custom subdomains are currently set up by hand for hosted portals only. Published report links always use the organization's Storyraise URL. Confirm how customers request this (support email, account manager?) and name it in step 2. Audit 2026-10-15: no customer-facing "portal" exists in the dashboard or builder (no portal UI in builder public/index.html or app-dashboard.js); the only hosted portal is the bespoke NGS Donor Portal (separate ngs-donorportal repo, memory project_ngs_donor_portal.md). Marked status: stub. Decide whether this page should stay public at all. -->
 
 ## Before you start
 
@@ -90,6 +92,6 @@ Add them before we switch the portal over, so sign-in works the moment the new a
 
 ## Related
 
-- [Setting up your email sending subdomain](email-subdomain-setup.md)
+- [Setting up a custom sending domain](custom-sending-domain.md)
 - [Single sign-on (SSO)](single-sign-on.md)
 - [Network requirements and troubleshooting](../resources/network-requirements.md)

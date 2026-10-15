@@ -2,7 +2,7 @@
 title: Sharing your form
 section: Storyraise Collect
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Sharing your form
@@ -23,13 +23,17 @@ Open your form and you're offered two, for two different jobs.
 
 - A **clean, branded form** with your logo and an introduction.
 - For [multi-step forms](multi-step-forms.md), a **progress bar** and Back / Next navigation.
-- **Draft autosave** — answers are kept as they type, so an interruption doesn't mean starting over.
+- **Draft autosave** — answers are kept in their browser as they type, so an interruption doesn't mean starting over (as long as they come back on the same device and browser).
 - **File uploads** open the device's file picker for photos, videos, or documents.
 - On submit, a confirmation that their response came through.
 
-## Smart pre-fill for known constituents
+File uploads accept images, video, audio, and PDF files up to 200 MB each — see [Form field types](form-field-types.md).
 
-If a respondent is already in your [constituent list](../crm-and-data/importing-constituent-data.md), Storyraise recognizes them by email and **pre-fills what it already knows** — so a donor sharing a story doesn't re-enter their own name and details. It's less work for them and cleaner data for you.
+## Smart pre-fill for known respondents
+
+Pre-fill works through the **Dynamic Link**. When someone opens a personalized link and their email matches a row already in the collection — for example, a row from a CSV you [imported](managing-responses.md) — Storyraise **pre-fills the form from that row**, so a donor sharing a story doesn't re-enter their own name and details. When they submit, their answers update that row instead of adding a new one.
+
+Pre-fill reads the collection's own rows, not your [constituent list](../crm-and-data/importing-constituent-data.md). The plain form link never pre-fills, and neither does a personalized link whose email isn't in the collection; those open a blank form and add a new row.
 
 ## Tips
 

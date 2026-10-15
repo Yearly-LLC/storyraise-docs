@@ -3,33 +3,30 @@ title: Managing your subscription
 section: Account & Settings
 status: draft
 keywords: billing, invoice, payment, plan, cancel, upgrade
-last_reviewed: 2026-06-12
+last_reviewed: 2026-10-15
 ---
 
 # Managing your subscription
 
-Your **Subscription** settings show your current plan and give you a self-service billing portal for everything money-related.
+Your **Subscription** settings show the plan your organization is on. Billing, invoices, and plan changes are handled by the Storyraise team rather than inside the app.
 
 ## See your current plan
 
-The **Subscription** section of your account shows the plan your organization is on. What's included depends on your plan — your Storyraise contact can walk you through the options if you're considering a change.
+Open your account settings and choose the **Subscription** tab. It shows your organization's current plan by name — for example *Storyraise Pro*, or *Storyraise Trial* if you haven't subscribed yet.
 
-## Manage billing and subscription
+The Subscription tab is visible to Owners and Admins. Editors and Viewers don't see it. See [User roles and permissions](../getting-started/user-roles-and-permissions.md).
 
-Click **Manage billing and subscription** to open your secure billing portal. There you can:
+## Change your plan, update billing, or cancel
 
-- Update your payment method.
-- View and download invoices and receipts.
-- Review your current plan and billing schedule.
-- Change or cancel your subscription.
+There's no self-service billing portal in Storyraise. To upgrade or downgrade, renew, cancel, update how you pay, or get a copy of an invoice, reach out to your Storyraise contact or [our support team](https://storyraise.com/support) and we'll take care of it.
 
-The portal is hosted by our payment processor, so your card details are handled securely and are never stored in Storyraise.
+Upgrade prompts you see in the app (for example, on a feature your plan doesn't include) take you to your account settings. From there, contact us to make the change.
 
-<!-- TEAM REVIEW: confirm exactly which self-service actions the billing portal exposes (upgrade/downgrade vs. cancel-only), and whether plan changes are self-service or handled by the Storyraise team. -->
+<!-- TEAM REVIEW: the "Manage billing and subscription" button was removed and Stripe billing retired 2026-10-02 (builder public/index.html:2707, ticket 1216795953249157). Confirm the preferred contact for billing changes (support page vs. account manager vs. a billing email) and name it here if it differs. Note: the in-app "Upgrade Now!" / "Upgrade to Platinum" buttons (public/index.html:2146, 3459, 5996) still only link to the Account page. -->
 
-## Need help with billing?
+## If your subscription has lapsed
 
-For plan changes, renewals, or questions a self-service portal can't answer, reach out to your Storyraise contact or [our support team](https://storyraise.com/support). If your subscription has lapsed and you'd like to come back, get in touch — we'll get you set up again.
+If your subscription has expired and you'd like to come back, get in touch with your Storyraise contact or [our support team](https://storyraise.com/support) — we'll get you set up again.
 
 ## Related
 

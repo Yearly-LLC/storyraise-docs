@@ -2,8 +2,8 @@
 title: Your profile and security
 section: Account & Settings
 status: draft
-keywords: mfa, 2fa, two-step verification, authenticator, password reset, login, sign in, session timeout, idle, inactivity, signed out, sso
-last_reviewed: 2026-09-08
+keywords: mfa, 2fa, two-step verification, sms, text message, password reset, login, sign in, session timeout, idle, inactivity, signed out, sso
+last_reviewed: 2026-10-15
 ---
 
 # Your profile and security
@@ -12,41 +12,37 @@ This page covers your personal account — your name and sign-in details — and
 
 ## Your info
 
-Under **Your Info** you can see your name and email and make changes:
+Open **Account** and stay on the **General** tab. Under **Your Info** you can:
 
+- **Your Name** — edit it and click **Save name**. This is how you appear to your teammates.
 - **Update email** — change the address you sign in with.
 - **Update password** — set a new password.
+- **Default organization** — if you belong to more than one organization, choose where you land when you sign in (or **Ask me each time**).
 
 ## Resetting a forgotten password
 
-If you can't sign in, use the password-reset option. Storyraise emails you reset instructions — *"Check your email at [your address]. We've sent password reset instructions."* Follow the link in that email to set a new password.
+If you can't sign in, click **Forgot password?** on the sign-in page, enter your email, and click **Send reset email**. You'll see *"Check your inbox for a reset link."* Follow the link in that email to set a new password.
+
+If your organization uses [single sign-on](single-sign-on.md), you sign in through your identity provider instead, so password resets are handled there.
 
 ## Verify your email
 
-Before you can turn on two-step verification, your email address must be verified. If it isn't yet, Storyraise will prompt you and send a verification link — *"You must verify your email before enabling multi-factor authentication."* Click the link in that email, then return to your settings.
+Before you can turn on two-step verification, your email address must be verified. If it isn't yet, the MFA section shows *"You must verify your email before enabling multi-factor authentication."* Click **Verify Email**, then click the link in the email Storyraise sends you and return to your settings.
 
 ## Two-step verification (MFA)
 
-Two-step verification adds a second check at sign-in, so a stolen password alone can't get into your account. Storyraise supports two methods, set up on the **Two-step verification** page:
+Two-step verification adds a second check at sign-in, so a stolen password alone can't get into your account. Storyraise uses a code sent to your phone by text message (SMS).
 
-### Authenticator app (recommended)
+To turn it on, open **Account** → **General** and find **Multi-factor Authentication (MFA)**:
 
-1. Choose **Add authenticator app**.
-2. Scan the QR code with an authenticator app (Google Authenticator, Authy, 1Password, etc.).
-3. Enter the 6-digit code the app shows to confirm.
-4. Optionally give it a display name.
+1. Under **Your Mobile Phone Number**, enter your number in international format (e.g. `+15551234567`).
+2. Click **Enroll in SMS MFA**.
+3. Confirm your password when asked (or sign in with Google again, if that's how you sign in).
+4. Enter the 6-digit code you receive by text to confirm.
 
-Authenticator apps work even without cell signal, which makes them more reliable than SMS.
+Once enrolled, the section shows the last four digits of your number. Use **Update Phone Number** if you switch phones, or **Turn off two-factor** to remove it.
 
-### Text message (SMS)
-
-1. In **Multi-factor Authentication (MFA)**, enter your mobile number in international format (e.g. `+15551234567`).
-2. Choose to enroll / **Send code**.
-3. Enter the 6-digit code you receive by text to confirm.
-
-Once enrolled, you'll be asked for a code from your chosen method each time you sign in. You can see your enrolled methods — with the date each was added — on the Two-step verification page, and remove one if you switch phones.
-
-<!-- TEAM REVIEW: confirm exact navigation to the Two-step verification page and whether both MFA methods are available to all customers. -->
+<!-- TEAM REVIEW: possible sign-in lockout. The live sign-in page (auth.storyraise.com, served from the `auth` branch public-auth/index.html) has no second-factor step: login_with_password / login_with_google catch every error and show "Something went wrong" for auth/multi-factor-auth-required (friendly_error has no mapping). The MFA challenge handler only exists in the dashboard (builder public/js/app-dashboard.js:19064-19165), which no longer hosts sign-in (it redirects to auth.storyraise.com, app-dashboard.js:6549). Verify that an SMS-enrolled user can actually sign in before encouraging MFA here. Authenticator-app (TOTP) MFA is not offered in the dashboard (only PhoneMultiFactorGenerator, app-dashboard.js:19136-19330), so that section was removed. -->
 
 ## Session timeout
 
@@ -56,9 +52,8 @@ Two minutes before that you get a warning with a countdown, and any activity cle
 
 ## Tips
 
-- **Turn on two-step verification** — your reports and constituent data are worth the extra ten seconds at sign-in.
-- **Prefer an authenticator app** over SMS where you can; it's more secure and works offline.
-- **Keep a backup.** If you only enroll one phone and lose it, you can be locked out — enroll an authenticator app you can restore, or keep recovery options current.
+<!-- TEAM REVIEW: a "Turn on two-step verification" tip was removed here pending the sign-in lockout check above. Restore it once an SMS-enrolled user is confirmed able to sign in at auth.storyraise.com. -->
+- **Update your number before you switch phones.** Only one phone can be enrolled. If you lose access to it, contact [our support team](https://storyraise.com/support).
 
 ## Related
 

@@ -193,7 +193,7 @@ const SECTIONS = [
   {
     dir: 'crm-and-data',
     label: 'Donor Data & CRM',
-    blurb: 'Connect your CRM or upload a spreadsheet. Read-only everywhere except Salesforce, which can optionally write engagement back.',
+    blurb: 'Connect your CRM or upload a spreadsheet. Read-only everywhere except Salesforce and Raiser\'s Edge NXT, which can optionally write engagement back.',
     icon: 'database',
     order: [
       'connecting-a-crm', 'importing-constituent-data', 'mapping-fields', 'data-refreshes',
@@ -207,7 +207,7 @@ const SECTIONS = [
   {
     dir: 'account-and-settings',
     label: 'Account & Settings',
-    blurb: 'Your team and who can see donor data, sign-in security, your sending domain, and billing.',
+    blurb: 'Your team and who can see donor data, sign-in security, your sending domain, and your plan.',
     icon: 'settings',
     order: [
       'setting-up-your-account', 'organization-settings', 'managing-your-team',
@@ -686,8 +686,8 @@ function homeSectionCard(section) {
 // Integrations were previously one flat row of equally weighted chips under
 // "any supported platform", which reads as a promise that every system is
 // equally supported. They are grouped by what the system is for, and Salesforce
-// carries a badge because it is the one integration that can write back — a
-// fact evaluators need before they plan a project, not on page three.
+// and Raiser's Edge NXT carry a badge because they are the integrations that can
+// write back — a fact evaluators need before they plan a project, not on page three.
 const CRM_GROUPS = [
   {
     label: 'System of record',
@@ -703,6 +703,7 @@ const CRM_GROUPS = [
 
 // Only claims we can source from the integration pages themselves.
 const CRM_NOTES = {
+  'blackbaud-raisers-edge-nxt': { label: 'Read + write-back', title: 'Reads constituents and gifts; can optionally write engagement back to Raiser\'s Edge NXT' },
   salesforce: { label: 'Read + write-back', title: 'Reads contacts and gifts; can optionally write engagement back to Salesforce' },
   civicrm: { label: 'Self-hosted', title: 'Self-hosted CiviCRM — your server must be reachable by Storyraise' },
   slate: { label: 'Manual mapping', title: 'Query columns are mapped by hand during setup' },

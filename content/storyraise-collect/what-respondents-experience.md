@@ -3,7 +3,7 @@ title: What respondents experience
 section: Storyraise Collect
 keywords: respondent, submit a story, phone, mobile, upload, draft, autosave, browser, offline, volunteer, field staff
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # What respondents experience
@@ -20,41 +20,32 @@ A Storyraise form is a web page. Open the link in any browser on any device. The
 
 - Your organization's branding, so it looks like it came from them
 - A progress bar, if the form has more than one step
-- One question at a time on a phone, rather than a wall of fields
 - A confirmation message when you submit
 
 Longer forms are often split into steps — see [Multi-step forms](multi-step-forms.md).
 
 ## Adding a photo or a video
 
-Questions that accept a file open your device's normal file picker, so you can choose an existing photo or record something new, depending on your phone.
+Questions that accept a file open your device's normal file picker, so you can choose an existing photo or video — and on most phones, take a new one with the camera. The form itself has no built-in recorder.
 
-The person who built the form chooses what each question accepts — an image, a video, or a document.
+You can upload photos, videos, audio clips, and PDF files, up to 200 MB each. Word, Excel, PowerPoint, and plain-text files won't upload — save them as a PDF first.
+
+If an upload fails, the form shows a message that starts *"Error storing file"*. Close the message and reload the page — your other answers are kept as a draft — then try again, or try a smaller file.
 
 **If you're on a slow or unreliable connection,** a large video may take a long time or fail partway. If that happens: record a shorter clip, or wait until you have wifi and submit then.
 
-<!-- TEAM REVIEW: this page needs three product facts we don't currently document
-     anywhere, and a volunteer will hit all three:
-       1. Maximum upload size, per file and per submission, and accepted formats
-          and video length. form-field-types.md documents no limits at all.
-       2. What a respondent actually sees when an upload fails — is there an
-          error, a retry, a partial save?
-       3. Whether in-browser camera/microphone recording exists. embedding-a-collect-form.md
-          claims "record a story and upload a photo questions work inside a report",
-          but form-field-types.md lists only File upload. One of the two is wrong.
-     Fill these in before treating this page as respondent-ready. -->
+<!-- TEAM REVIEW: verified 2026-10-15 against storage.rules (anonymous uploads: <200 MB, image/video/audio/PDF)
+     and the storyraise-collect branch (upload_media_anonymous: alert "Error storing file: ..." on failure,
+     and the loading overlay is not closed on that path, so the respondent may need to reload the page,
+     which keeps their draft). Still open: the respondent experience after a failed upload should be
+     confirmed on a real phone, and embedding-a-collect-form.md's "record a story" wording should be
+     checked, since the form has no in-browser recorder (file picker only). -->
 
 ## Finishing later
 
 Answers are saved as you type, so a form you've started isn't lost if you close the tab by accident.
 
-<!-- TEAM REVIEW: "Draft autosave" is asserted in sharing-your-form.md,
-     multi-step-forms.md and what-is-storyraise-collect.md, and defined in none of
-     them. Since there's no respondent account, the draft is almost certainly
-     stored in that browser on that device — which means switching devices or
-     clearing browser data loses it, and there is presumably a lifetime after
-     which it expires. Confirm and state it plainly here; a field worker who
-     starts on a phone and expects to finish on a laptop needs to know. -->
+The draft is saved **in the browser on the device you're using**. To pick up where you left off, open the same link in the same browser on the same device. Starting on a phone and finishing on a laptop won't carry your answers over, and clearing your browser data or closing a private window loses the draft. Once you submit, the draft is cleared.
 
 ## If the form won't submit
 

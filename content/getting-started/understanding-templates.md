@@ -3,7 +3,7 @@ title: Understanding templates
 keywords: annual report, impact report, appeal, campaign, capital campaign, year end, donor update
 section: Getting Started
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Understanding templates
@@ -16,16 +16,15 @@ A template is a full report: a cover, a set of sections in a sensible order, sam
 
 ## Finding your way around the gallery
 
-The gallery opens on a row of four **entry points**, which answer "which part of my job is this for?"
+The gallery opens on a row of three **entry points**, which answer "which part of my job is this for?"
 
-- **Fundraising** — appeals and solicitations
-- **Donor Relations & Stewardship** — donor reports and thank yous
-- **Communications** — newsletters, events, and video
-- **Annual & Impact** — annual reports, impact reports, endowment and philanthropy reports
+- **Fundraising** — appeals, solicitations, and donor reports
+- **Donor Relations & Stewardship** — impact, endowment, and philanthropy reports, plus thank yous
+- **Communications** — annual reports, newsletters, invitations, event recaps, and video
 
 Picking one narrows the page to the shelves that belong to it. Leave them alone and you see everything.
 
-Below that, templates sit on **shelves** by category: Annual & Impact Reports, Fundraising & Appeals, Donor Relations, Events, Newsletters & Updates, Thank Yous, and Video. Each shelf scrolls sideways — drag it, or use the arrows at either end.
+Below that, templates sit on **shelves** by category: Fundraising, Donor Relations, Thank Yous, Communications, and Video. Each shelf scrolls sideways — drag it, or use the arrows at either end.
 
 Any templates your own team has saved appear first, above the rest, under **Your templates**.
 
@@ -33,7 +32,7 @@ Any templates your own team has saved appear first, above the rest, under **Your
 
 ## Choosing a template
 
-1. From the dashboard, start a new report and choose **Report from template**.
+1. From the dashboard, start a new report and choose **From a template**.
 2. Pick an entry point, or browse the shelves.
 3. Click a template to preview it as a real report.
 4. When you've found the right one, create your report from it.

@@ -3,7 +3,7 @@ title: Analytics for older reports
 section: Sharing & Analytics
 status: draft
 keywords: legacy, older reports, page views, migration, estimated, empty analytics, lower numbers
-last_reviewed: 2026-09-04
+last_reviewed: 2026-10-15
 ---
 
 # Analytics for older reports
@@ -21,7 +21,7 @@ If an older report's Analytics tab looks empty, **The Story** tab is the place t
 
 ## What they may not show
 
-The newer measurements simply weren't being recorded at the time, so they can't be backfilled:
+The newer measurements weren't being recorded at the time, so they're missing by default:
 
 - Unique Visitors and Return Visitors
 - Average Time Spent
@@ -40,7 +40,7 @@ Where The Story needs a number the old counter never captured, it may present a 
 
 Compare newer reports with other newer reports. For year-over-year storytelling, lean on qualitative comparisons or on metrics both eras share, and note the methodology change wherever the numbers appear side by side.
 
-If you have questions about a specific older report — or you'd like us to look at whether more of its history can be recovered — [contact the Storyraise team](https://storyraise.com/support).
+If you have questions about a specific older report, [contact the Storyraise team](https://storyraise.com/support). In some cases the Storyraise team can rebuild part of an older report's history from the old counter's records so it shows the newer metrics. It's a manual step our team runs, not a setting you can switch on, and the rebuilt figures are approximate.
 
 ## Related
 

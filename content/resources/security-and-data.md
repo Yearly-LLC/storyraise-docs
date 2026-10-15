@@ -3,14 +3,14 @@ title: Security and data governance
 section: Best Practices & Reference
 keywords: security, privacy, data governance, retention, deletion, GDPR, DPA, subprocessors, encryption, compliance, procurement, IT review, data protection
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Security and data governance
 
 If you're evaluating Storyraise for an organization that holds donor records, this page is the starting point — what the product does with constituent data, what's documented, and what to request from us directly.
 
-> **Formal documentation.** For a Data Processing Agreement, a subprocessor list, security documentation, or a completed vendor security questionnaire, [contact our support team](https://storyraise.com/support) and say what your review requires. These are provided on request rather than published here.
+> **Formal documentation.** Our subprocessor list is published in our [GDPR statement](https://storyraise.com/gdpr). For a Data Processing Agreement, security documentation, or a completed vendor security questionnaire, [contact our support team](https://storyraise.com/support) and say what your review requires. These are provided on request rather than published here.
 
 ## What Storyraise holds
 
@@ -22,7 +22,7 @@ The scope is set by you. Storyraise imports the fields you map; if a field shoul
 
 Every integration is **read-only by default** — Storyraise reads from your system of record and does not modify it.
 
-The exception is [Salesforce](../crm-and-data/integrations/salesforce.md), which offers optional engagement write-back. When you enable and configure it, Storyraise can log a completed Activity (Task) on a Contact, or update custom fields you map. It is off until you turn it on.
+The exceptions are [Salesforce](../crm-and-data/integrations/salesforce.md) and [Raiser's Edge NXT](../crm-and-data/integrations/blackbaud-raisers-edge-nxt.md), which offer optional engagement write-back. When you enable and configure it, Storyraise can log a completed Task on a Salesforce Contact or an action on a Raiser's Edge NXT constituent, or update custom fields you map — one entry per person, kept up to date as their engagement changes. Write-back is off until you turn it on, and every other integration is read-only.
 
 See [Connecting a CRM](../crm-and-data/connecting-a-crm.md).
 
@@ -58,9 +58,12 @@ Disconnecting an integration optionally deletes the collections it synced, along
           See crm-and-data/data-governance.md.
        5. Hosting region, encryption in transit and at rest, and who at
           Storyraise can access customer data.
-       6. Subprocessors. network-requirements.md already discloses the Google/
-          Firebase dependency and several CDN hosts, so this is half-answered in
-          a page nobody looking for it would find.
+       6. Subprocessors. Now linked to storyraise.com/gdpr (published
+          2026-10-02). Open question: that list omits Cloudflare and Vercel,
+          which serve published reports; confirm before calling it complete.
+       5a. (2026-10-15 audit) Verified standing answers exist for item 5: US-only
+          hosting (us-central1 / US multi-region), TLS 1.2+ in transit, AES-256
+          Google-managed keys at rest. Vince to decide whether to publish them here.
        7. Whether the activity log referenced in the roles matrix is
           customer-visible, what it records, and its retention.
        8. Limits: constituent caps, CSV size, collection rows, and any sandbox

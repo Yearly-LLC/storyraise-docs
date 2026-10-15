@@ -3,7 +3,7 @@ title: Using responses in a report
 section: Storyraise Collect
 keywords: repeater, testimonial, collection, story into report, quotes, from form to report, precision plan
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Using responses in a report
@@ -19,7 +19,7 @@ Tidy the response first. Raw submissions are rarely publishable as-is:
 - Fix spelling and trim the quote to its strongest two or three sentences
 - Check the [consent record](consent-and-permissions.md) — story, image, and name are separate permissions
 - Confirm how the person wants to be credited
-- Use **Assign to…** in the [response table](managing-responses.md) to connect the response to the constituent it came from, so you know whose story is whose later
+- Tag the response to the constituent it came from — click its **Constituents** cell in the [response table](managing-responses.md) — so you know whose story is whose later
 
 ## Option 1 — copy it into a Testimonial block
 
@@ -39,15 +39,17 @@ The **Repeater** block creates repeating blocks and elements from a list, so one
 
 > **Plan requirement.** Repeater needs a **Precision** plan with Storyraise Collect active. If you don't have it, the block won't appear in the block list at all, and Option 1 is your route.
 
+A bound Repeater reads the collection each time someone opens the report, so responses you add, edit, or delete show up in the published report without republishing.
+
 <!-- TEAM REVIEW: this is the headline promise of Collect ("your annual report
      writes itself from real voices") and it is currently documented in one line
      in adding-sections.md. To finish this section we need:
        1. The click path to add a Repeater and bind it to a collection.
        2. Whether it binds to a whole collection or to a filtered view, and
           whether responses can be excluded individually.
-       3. Whether the report updates when new responses arrive after publishing,
-          or is a snapshot at build time. This is the question customers will
-          ask first.
+       3. RESOLVED 2026-10-15: live, not a snapshot. The published reader's
+          fetch_collection (public/js/report.js:5068) calls report_collection at
+          view time, which returns the collection's current responses.
        4. Whether photographs uploaded through a form can be used in the report,
           and how they are referenced. No page currently says where uploaded
           files land.

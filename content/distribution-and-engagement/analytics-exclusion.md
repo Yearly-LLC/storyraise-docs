@@ -3,7 +3,7 @@ title: Analytics exclusion
 section: Sharing & Analytics
 status: draft
 keywords: exclude, exclusion, internal views, team views, exclude email, exclude domain, board, partner, for parameter
-last_reviewed: 2026-09-04
+last_reviewed: 2026-10-15
 ---
 
 # Analytics exclusion
@@ -25,7 +25,7 @@ If a teammate opens the report on a different device, in a different browser, or
 
 ### Where to see who's covered
 
-On the **Account** page, the **Exclude from Analytics** panel lists your signed-in teammates as already covered — you're always included in your own org. **Owners, Admins, and Editors** can see and edit this panel.
+On the **Account** page, the **Exclude from Analytics** panel lists your signed-in teammates as already covered — you're always included in your own org. **Owners and Admins** can see and edit this panel (as can any custom role with edit access to Org Settings); Editors and Viewers don't see it.
 
 ## Excluding people outside your app team
 
@@ -44,7 +44,7 @@ On the **Account** page, open **Exclude from Analytics** and use **Add an email 
 
 **Your own organization's domain is the safe wildcard.** Adding `*@your-org.org` covers every colleague, including subdomains like `mail.your-org.org`, and catches staff whose views automatic exclusion misses — someone reading on a personal phone, or in an incognito window. It's a useful belt-and-braces alongside automatic exclusion, as long as your constituents aren't on your own domain.
 
-**Owners, Admins, and Editors** can edit the list. Changes save immediately and apply to all of your published reports.
+**Owners and Admins** can edit the list. Changes save immediately and apply to all of your published reports.
 
 ### 2. Send the report link with their email
 

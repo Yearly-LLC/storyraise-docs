@@ -320,32 +320,28 @@
 <p>When you&#39;re happy with the preview, click <strong>Done</strong> to drop it into your report. Reopen the editor any time to make changes — click the block and press <strong>Add / Edit Infographic</strong> again.</p>
 <p><img src="/assets/img/howto/whole_modal_viz01.png" alt="The full Infographic Editor: Templates on the left, a live pie-chart preview in the center, and options plus data on the right"></p>
 <h2>Entering your data</h2>
-<p>Infographics use data you enter by hand, so you&#39;re never waiting on a connection or an import. In the <strong>Data</strong> section of the options panel, each row is one data point with a <strong>Label</strong>, a <strong>Value</strong>, and its own <strong>Color</strong>. Use the row controls to shape your data:</p>
+<p>You type an infographic&#39;s data in directly, so you&#39;re never waiting on a connection. In the <strong>Data</strong> section of the options panel, each row is one data point with a <strong>Label</strong>, a <strong>Value</strong>, and its own <strong>Color</strong>. Use the row controls to shape your data:</p>
 <ul>
 <li><strong>Add</strong> (<strong>+</strong>) a new row, or <strong>remove</strong> (<strong>×</strong>) one you don&#39;t need.</li>
 <li><strong>Reorder</strong> rows with the up and down arrows — handy for putting months, quarters, or ranked items in the right order.</li>
 </ul>
 <p>Give the whole graphic a heading with the <strong>Title</strong> field.</p>
+<h3>Importing data from a CSV</h3>
+<p>Chart templates (pie, donut, bar, column, and line) can also take their rows from a spreadsheet. Above the data rows, click <strong>Import CSV</strong> and choose a <code>.csv</code> file; <strong>See CSV format</strong> shows an example. The importer reads the first two columns, a name and a number, and skips any row missing either. Importing <strong>replaces</strong> the rows already in the chart. On bar and line charts, a header row fills in the X- and Y-axis titles if you haven&#39;t set them yourself. List, Sequence, and Word Cloud templates are entered by hand.</p>
 <h3>Personalizing a value</h3>
-<p>A row&#39;s <strong>Label</strong> and <strong>Value</strong> can be bound to a merge tag instead of a fixed number, so the graphic reads differently for each person who opens the report. Type the tag into the field — the field offers the tags available to your report as you type — and the row uses it whenever the report is opened through a <a href="/docs/distribution-and-engagement/personalized-links/">personalized link</a>.</p>
-<p>The static value you typed is what everyone else sees, so fill it in as well and treat the merge tag as the personalized override.</p>
+<p>On chart templates, each data row also has optional <strong>Label variable</strong> and <strong>Value variable</strong> fields, so the graphic can read differently for each person who opens the report. Type a merge tag into one of them — the field offers the tags available to your report as you type — and the row uses it whenever the report is opened through a <a href="/docs/distribution-and-engagement/personalized-links/">personalized link</a>.</p>
+<p>The static <strong>Label</strong> and <strong>Value</strong> are what everyone else sees, so fill them in as well and treat the variable as the personalized override.</p>
 <h2>Styling to your brand</h2>
 <p>Infographics pick up your organization&#39;s look automatically, and you can fine-tune from there:</p>
 <ul>
 <li><strong>Font</strong> — choose any font available to your report, including your brand fonts.</li>
-<li><strong>Colors</strong> — every color picker shows your <strong>report&#39;s palette</strong> first, then <strong>your brand colors</strong>, so charts stay on-palette. Set a per-row color, or turn on <strong>Make chart monotone</strong> to render the whole chart in a single color.</li>
+<li><strong>Colors</strong> — every color picker shows <strong>your brand colors</strong> first, then your <strong>report&#39;s palette</strong>, so charts stay on-palette. Set a per-row color, or turn on <strong>Make chart monotone</strong> to render the whole chart in a single color.</li>
 <li><strong>Chart options</strong> vary by type — for example, pie and donut charts offer <strong>Show labels</strong>, <strong>Hide labels below (%)</strong>, and <strong>Show slice outline</strong>; bar and line charts add <strong>X-axis title</strong>, <strong>Y-axis title</strong>, and value or axis <strong>prefix/suffix</strong> (for a <code>$</code> or <code>k</code>).</li>
 </ul>
 <p>Storyraise also protects readability: if a text color would be invisible against the background, it&#39;s automatically nudged to a legible shade. For more on brand styling, see <a href="/docs/building-reports/brand-kit/">Brand kit</a> and <a href="/docs/building-reports/fonts-and-colors/">Fonts and colors</a>.</p>
 <div class="tip"><p><strong>Tip:</strong> Fewer data points read better. A chart with five or six clear categories tells a stronger story than one crammed with twenty.</p></div>
-<h2>Block layouts</h2>
-<p>The <strong>Infographics</strong> block offers four layouts, chosen from the block&#39;s <strong>Layout</strong> setting:</p>
-<ul>
-<li><strong>Standard</strong> — heading and body text above a single infographic.</li>
-<li><strong>Chart Right</strong> — text on the left, infographic on the right.</li>
-<li><strong>Two Charts</strong> — heading and body text above two infographics side by side.</li>
-<li><strong>Chart Left</strong> — infographic on the left, text on the right.</li>
-</ul>
+<h2>The Infographics block</h2>
+<p>The <strong>Infographics</strong> block has a single layout: a heading and body text above an infographic. To show two infographics side by side, add a second <strong>Infographic</strong> element and drop it beside the first.</p>
 <h2>In PDF and on mobile</h2>
 <p>Infographics render as crisp vector graphics, so they stay sharp when a report is exported to PDF. Two settings apply to the PDF only — <strong>Vertical alignment</strong> (top, center, or bottom on the page) and <strong>Show page number</strong> — and they live on the block&#39;s traits alongside the infographic.</p>
 <p>On smaller screens, an infographic scales to the width of its column; you can also set the block&#39;s <strong>Width (%)</strong> to give it more or less room. See <a href="/docs/building-reports/mobile-optimization/">Mobile optimization</a>.</p>
@@ -376,6 +372,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="09560445" data-engine-v="676be165" defer></script>
 </body>
 </html>

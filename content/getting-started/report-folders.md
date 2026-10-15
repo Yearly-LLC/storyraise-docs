@@ -3,7 +3,7 @@ title: Report folders
 section: Getting Started
 status: draft
 keywords: folder, folders, organize reports, group reports, hidden folder, folder visibility, who can see, restrict folder, manage visibility, private folder, move report, unfile
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Report folders
@@ -12,9 +12,7 @@ Folders group the reports on your dashboard — by year, by program, by campaign
 
 ## Creating a folder
 
-Click **New report** on the dashboard and choose **Folder**, then give it a name. If you don't have any folders yet, an **Add new folder** button sits where the folder grid will go.
-
-<!-- TEAM REVIEW: the button that opens this menu is labelled "New report" even though the menu also creates folders. Confirm we should describe it by its current label. -->
+On the Reports page, click **Add new** and choose **Folder**, then give it a name. If you don't have any folders yet, an **Add new folder** button sits where the folder grid will go.
 
 Folders show the number of reports filed in each, and clicking one opens it.
 

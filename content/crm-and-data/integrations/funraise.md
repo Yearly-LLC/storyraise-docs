@@ -3,7 +3,7 @@ title: Funraise
 section: Donor Data & CRM
 status: draft
 keywords: funraise, api key, supporters, donations, connections, crm
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-15
 ---
 
 # Funraise
@@ -14,10 +14,8 @@ Connect Funraise with an API key to import your supporters as constituents, alon
 
 ## What syncs
 
-- **Supporters**, into your [constituent list](../importing-constituent-data.md).
-- **Donations**, alongside them.
-
-<!-- TEAM REVIEW: the catalog marks Funraise as supporting the extended data sync. Confirm exactly which Funraise data can be synced into collections before we describe it here. -->
+- **Supporters**, into your [constituent list](../importing-constituent-data.md), matched by email. Supporters without an email are skipped.
+- **Donations** → available to sync into a collection with **Add data** on the connection row (see [Syncing data to collections](../syncing-data-to-collections.md)).
 
 ## Connect
 
@@ -25,7 +23,7 @@ In the **Connections** tab, find **Funraise**, click **Connect**, and enter:
 
 - **API Key** — your Funraise API key.
 
-Then **Connect & sync**. The connection shows as **Live**, with **Sync now** and nightly auto-sync — see [Managing connections](../managing-connections.md).
+Then **Connect & sync**. The connection shows as **Live**, with **Sync now** and optional **Auto-sync** (daily or weekly, off until you turn it on) — see [Managing connections](../managing-connections.md).
 
 ## Where to find your key
 

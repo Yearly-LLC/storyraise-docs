@@ -296,17 +296,21 @@
 <p class="lead">If you send donor communications from your own domain through Storyraise, two things matter: that the mail arrives, and that it meets the rules for commercial and nonprofit bulk email.</p>
 <p>Set up your domain first — see <a href="/docs/account-and-settings/custom-sending-domain/">Custom sending domain</a>.</p>
 <h2>Authentication: SPF, DKIM, and DMARC</h2>
-<p><a href="/docs/account-and-settings/custom-sending-domain/">Custom sending domain</a> covers the SPF and DKIM records Storyraise needs. Two things that page doesn&#39;t say, and that commonly break a setup:</p>
-<p><strong>A domain can only have one SPF record.</strong> If your domain already publishes SPF for Google Workspace or Microsoft 365, you must <em>merge</em> Storyraise&#39;s include into the existing record, not add a second TXT record. Two SPF records is a hard failure — mail from both senders starts failing checks.</p>
-<p><strong>If you publish DMARC, alignment matters.</strong> If your organization has a DMARC policy at <code>p=quarantine</code> or <code>p=reject</code>, mail sent through Storyraise must align on SPF or DKIM to pass. Sending from a subdomain that inherits your organizational DMARC policy is the usual arrangement. Check your policy before your first send rather than after, and consider monitoring DMARC reports around a large send.</p>
-<p>If you don&#39;t publish DMARC at all today, sending from a dedicated subdomain keeps this send stream separate from your main corporate mail — which is the point of using a subdomain.</p>
+<p><a href="/docs/account-and-settings/custom-sending-domain/">Custom sending domain</a> walks through the records Storyraise Send asks you to add: two DKIM records and an SPF (return address) record, all CNAMEs, plus a DMARC TXT record if your domain doesn&#39;t already have one. Two things that commonly trip people up:</p>
+<p><strong>You don&#39;t need to edit your existing SPF record.</strong> Storyraise&#39;s SPF record is a CNAME on its own host, not a change to the SPF TXT record your domain already publishes for Google Workspace or Microsoft 365. Add the records exactly as shown and leave your existing SPF alone. Because the records sit on their own hosts, they don&#39;t change how your existing email is routed.</p>
+<p><strong>A domain can only have one DMARC record.</strong> If your domain already publishes DMARC, keep it and skip the one Storyraise suggests — two DMARC records are treated as none. The setup checks for an existing record and marks it <strong>Already set up</strong>. If your policy is <code>p=quarantine</code> or <code>p=reject</code>, check before your first large send that the setup shows every record as verified. Sending works without DMARC, but Gmail and Yahoo may filter bulk mail from domains that don&#39;t publish one.</p>
 <h2>Unsubscribe</h2>
-<p>Every bulk donor communication needs a working way out. Include an unsubscribe footer in donor updates — see <a href="/docs/account-and-settings/custom-sending-domain/">Custom sending domain</a>.</p>
+<p>Storyraise Send handles unsubscribes for you:</p>
+<ul>
+<li><strong>Every email includes an unsubscribe link.</strong> The footer of each message has <strong>Unsubscribe</strong> and <strong>Manage preferences</strong> links.</li>
+<li><strong>Unsubscribes are honored automatically.</strong> Once someone unsubscribes using those links, Storyraise doesn&#39;t email them from your organization again.</li>
+<li><strong>Bring your past opt-outs.</strong> If you sent from the same address with another tool, import that tool&#39;s unsubscribe list during setup or later from the Email page in Send. See <a href="/docs/account-and-settings/custom-sending-domain/">Custom sending domain</a>. Importing it is your organization&#39;s responsibility.</li>
+</ul>
 <h2>What the law requires</h2>
 <p>Not legal advice, but the requirements that catch nonprofits out most often:</p>
 <ul>
 <li><strong>A working unsubscribe</strong> that is honoured promptly — ten business days under CAN-SPAM, and immediately in practice.</li>
-<li><strong>A physical postal address</strong> for your organization in the message.</li>
+<li><strong>A physical postal address</strong> for your organization in the message. Storyraise Send asks for a <strong>Mailing address</strong> before you send and adds it to the email footer.</li>
 <li><strong>Accurate headers and subject lines.</strong> The From name, From address, and subject must not mislead about who is writing or what the message is.</li>
 <li><strong>No sending to someone who has opted out</strong>, including via a freshly imported list. Re-importing a list does not reset an opt-out. See <a href="/docs/crm-and-data/data-governance/">Data governance and CRM flags</a>.</li>
 </ul>
@@ -314,14 +318,14 @@
 <h2>From name, From address, and Reply-to</h2>
 <ul>
 <li><strong>From name:</strong> your organization&#39;s name as donors know it, not an individual they don&#39;t recognize.</li>
-<li><strong>From address:</strong> on your verified sending domain. Consistency across sends builds sender reputation; changing it frequently damages it.</li>
+<li><strong>From address:</strong> the existing address you verified in Send. Consistency across sends builds sender reputation; changing it frequently damages it.</li>
 <li><strong>Reply-to:</strong> a monitored mailbox. Donors reply to stewardship email far more than to marketing email, and a reply that bounces or vanishes is a worse outcome than a lower open rate.</li>
 </ul>
 <h2>Protecting deliverability</h2>
 <ul>
 <li><strong>Send to people who know you.</strong> The single biggest driver of deliverability is engagement. A clean list of engaged donors outperforms a large stale one.</li>
 <li><strong>Clean out hard bounces.</strong> Repeatedly mailing dead addresses damages your sending reputation.</li>
-<li><strong>Warm up a new domain.</strong> A brand-new sending subdomain that suddenly sends 40,000 messages looks exactly like a compromised domain. Start with smaller, engaged segments.</li>
+<li><strong>Start with an address that already sends.</strong> Send uses an address your organization already sends from, because a brand-new address that suddenly sends 40,000 messages looks exactly like a compromised one. If you do start fresh, begin with smaller, engaged segments.</li>
 <li><strong>Test before the real send.</strong> See <a href="/docs/distribution-and-engagement/email-distribution/">Email distribution</a>.</li>
 <li><strong>Watch what happens after.</strong> Note that Storyraise does not currently provide email open and click tracking, so deliverability signals will come from your own domain monitoring rather than from Storyraise reporting.</li>
 </ul>
@@ -356,6 +360,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="09560445" data-engine-v="676be165" defer></script>
 </body>
 </html>

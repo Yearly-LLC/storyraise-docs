@@ -3,7 +3,7 @@ title: Syncing data to collections
 section: Donor Data & CRM
 status: draft
 keywords: extended data, collections, collect, sync, gifts, donations, fields, data sync
-last_reviewed: 2026-06-12
+last_reviewed: 2026-10-15
 ---
 
 # Syncing data to collections
@@ -14,13 +14,13 @@ Connecting a system imports your constituents. But your systems hold far more th
 
 From any connected system, you choose a set of data to bring in. Storyraise writes it to a **collection** — the same kind of collection [Storyraise Collect](../storyraise-collect/what-is-storyraise-collect.md) uses — and relates each row to a constituent by their ID. The result is structured data, tied to the right people, ready to pull into reports.
 
-> *Pick any data this connection exposes. It's written to a Collect collection, related to each constituent by id.*
+> *Bring extra details from this connection into Storyraise — like gifts or memberships — saved as a data set and matched to each person.*
 
 This is deliberately open-ended: gifts, donations, and email engagement are common examples, but the data you can sync is whatever your connected system exposes — not a fixed list.
 
 ## Add data to a collection
 
-On a connected system, choose **Add data**. A short, friendly four-step wizard walks you through it:
+On a connected system, choose **Add data**. A short, friendly four-step wizard (**Add donor data**) walks you through it:
 
 1. **Choose** — *"What do you want to bring in?"* Pick which object the connection exposes (for example gifts, donations, event registrations, or email activity).
 2. **Details** — *"Which details do you want?"* Select the specific fields to include. If the records you picked don't link to a person, Storyraise tells you here so you can choose something that does.
@@ -29,7 +29,9 @@ On a connected system, choose **Add data**. A short, friendly four-step wizard w
    - **Add them all up** — total a number (like gift amount) per person.
    - **Count how many** — the number of records per person.
    - **Keep every one** — save all records, nothing combined.
-4. **Review** — *"Here's a peek — look right?"* Choose who it covers (**Everyone** or **Just a specific list**), name the collection, and save. For gift-like data, Storyraise asks you to confirm which fields hold the **amount** and the **date**.
+
+   For gift-like data you can also answer **Are several rows parts of one gift?** — if your CRM splits one gift across rows (one per fund, say), pick the field they share and Storyraise rejoins them first.
+4. **Review** — *"Here's a peek — look right?"* Choose who it covers under **Who to include** (**Everyone** or **Just a specific list**), name the data set, and click **Bring in the data**. For gift-like data, Storyraise asks you to confirm which fields hold the **amount** and the **date**.
 
 Storyraise imports the data and relates each row to its constituent automatically.
 

@@ -302,11 +302,11 @@
 <li>If your domain is set up for SSO, you&#39;re handed to your identity provider to sign in there.</li>
 <li>Your provider sends you back and Storyraise opens.</li>
 </ol>
-<p>People at domains that aren&#39;t set up for SSO sign in with a password or with Google, exactly as before. Turning SSO on for your organization doesn&#39;t change anything for anyone outside it.</p>
+<p>Once SSO is on for a domain, everyone with an email address at that domain signs in through your identity provider — including teammates who used a password or Google before. People at domains that aren&#39;t set up for SSO sign in with a password or with Google, exactly as before. Turning SSO on for your organization doesn&#39;t change anything for anyone outside it.</p>
 <h2>Joining automatically</h2>
 <p>The first time someone signs in through SSO, Storyraise creates their account and adds them to your organization. There&#39;s no invitation to send and no separate onboarding step — if your identity provider lets them through, they&#39;re in.</p>
-<p>New SSO members join as <strong>Editors</strong>, which lets them build and edit but keeps billing, organization settings, and team management out of reach. Change anyone&#39;s role afterwards from your team settings. See <a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a>.</p>
-<div class="tip"><p><strong>Note:</strong> Because access follows your identity provider, removing someone there is what stops them signing in. Removing them from your Storyraise team as well is what removes their access to your reports.</p></div>
+<p>New SSO members join as <strong>Editors</strong> by default, which lets them build and edit but keeps billing, organization settings, and team management out of reach. If you&#39;d like new members to start with a different role, ask us when we set up SSO. Change anyone&#39;s role afterwards from your team settings. See <a href="/docs/getting-started/user-roles-and-permissions/">User roles and permissions</a>.</p>
+<div class="tip"><p><strong>Note:</strong> Because access follows your identity provider, removing someone there is what stops them signing in. Removing them only from your Storyraise team isn&#39;t enough: the next time they sign in through SSO, they&#39;re added back automatically. To take someone&#39;s access away, remove them in your identity provider first, then remove them from your Storyraise team.</p></div>
 <h2>Setting it up</h2>
 <p>SSO is set up with Storyraise rather than switched on from your settings page. We need the connection details from your identity provider and the email domains that should route through it, and we configure both ends.</p>
 <h2>Related</h2>
@@ -341,6 +341,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="29dd875f" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="09560445" data-engine-v="676be165" defer></script>
 </body>
 </html>
