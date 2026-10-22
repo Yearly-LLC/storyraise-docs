@@ -200,7 +200,7 @@ const SECTIONS = [
       'data-governance', 'troubleshooting-sync-issues', 'supported-integrations',
       'connections-overview', 'syncing-data-to-collections', 'managing-connections',
       'blackbaud-raisers-edge-nxt', 'bloomerang', 'salesforce', 'virtuous', 'civicrm', 'slate',
-      'ellucian', 'little-green-light', 'donorperfect', 'neon-crm', 'funraise',
+      'ellucian', 'little-green-light', 'donorperfect', 'neon-crm', 'everyaction', 'funraise',
       'givebutter', 'donorbox', 'fundraise-up', 'mailchimp',
     ],
   },
@@ -693,7 +693,7 @@ const CRM_GROUPS = [
     label: 'System of record',
     slugs: [
       'blackbaud-raisers-edge-nxt', 'bloomerang', 'salesforce', 'virtuous',
-      'donorperfect', 'neon-crm', 'little-green-light', 'civicrm',
+      'donorperfect', 'neon-crm', 'little-green-light', 'civicrm', 'everyaction',
     ],
   },
   { label: 'Higher education', slugs: ['slate', 'ellucian'] },

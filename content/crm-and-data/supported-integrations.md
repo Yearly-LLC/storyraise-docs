@@ -3,7 +3,7 @@ title: Supported integrations
 section: Donor Data & CRM
 status: draft
 keywords: integrations, connections, crm, supported, salesforce, mailchimp, giving
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-21
 ---
 
 # Supported integrations
@@ -25,7 +25,7 @@ Storyraise connects to your CRM, giving platforms, and email tools through the *
 | [DonorPerfect](integrations/donorperfect.md) | Donors and gift history |
 | [Neon CRM](integrations/neon-crm.md) | Accounts and donations |
 | [Funraise](integrations/funraise.md) | Supporters and giving |
-| EveryAction | Constituents from a saved list — *coming soon* |
+| [EveryAction (NGP VAN)](integrations/everyaction.md) | Constituents from a saved list, plus gifts — *available on request* |
 
 ## Giving
 
