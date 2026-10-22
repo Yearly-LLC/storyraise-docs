@@ -150,7 +150,7 @@ const SECTIONS = [
       'brand-kit-and-new-reports', 'adding-sections', 'editing-content',
       'element-bar', 'fonts-and-colors', 'donor-lists',
       'images-and-videos', 'creating-infographics', 'build-a-line-chart',
-      'adding-a-poll', 'embedding-a-collect-form',
+      'adding-a-poll', 'adding-a-quiz', 'embedding-a-collect-form',
       'image-sizes-and-dimensions', 'ai-content-generation',
       'reordering-sections', 'navigation-options', 'mobile-optimization',
       'review-comments', 'accessibility',

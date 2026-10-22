@@ -2,7 +2,7 @@
 title: Tracking engagement
 section: Sharing & Analytics
 status: draft
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-22
 ---
 
 # Tracking engagement
@@ -21,6 +21,7 @@ When someone views your published report, Storyraise records:
 - **Location** — the visitor's approximate region and city (never a precise address).
 - **Device** — mobile or desktop, so you know how your audience actually reads.
 - **Visit timing** — when people read, bucketed by weekday and time of day, shown in your own time zone.
+- **Poll and quiz answers** — what each reader chose, and for a quiz whether they got it right, on the report's **Poll Results** or **Polls & Quizzes** tab.
 
 All of this feeds the **Analytics** tab of each published report — see [Understanding report metrics](understanding-report-metrics.md).
 

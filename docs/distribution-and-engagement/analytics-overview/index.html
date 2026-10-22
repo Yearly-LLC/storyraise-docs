@@ -155,6 +155,7 @@
       <li><a href="/docs/building-reports/creating-infographics/">Creating infographics</a></li>
       <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
       <li><a href="/docs/building-reports/adding-a-poll/">Adding a poll</a></li>
+      <li><a href="/docs/building-reports/adding-a-quiz/">Adding a quiz</a></li>
       <li><a href="/docs/building-reports/embedding-a-collect-form/">Embedding a Collect form</a></li>
       <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
       <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
@@ -319,7 +320,27 @@
 <li><strong>The Numbers</strong> — where readers are, when they visit, what they click, how they move through your report, and where they stop. See <a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a>.</li>
 <li><strong>The Story</strong> — everything brought together in a plain-English summary you can download as a PDF, including key takeaways, people worth contacting, and recommended next steps. It&#39;s ready to read aloud in a staff meeting or hand to your board.</li>
 </ul>
-<p>If the report contains a poll or a reader feedback card, you&#39;ll also see <strong>Poll Results</strong> and <strong>Reader Feedback</strong> tabs, each with a <strong>Download CSV</strong> button.</p>
+<p>If the report contains a poll or a reader feedback card, you&#39;ll also see <strong>Poll Results</strong> and <strong>Reader Feedback</strong> tabs, each with a <strong>Download CSV</strong> button. The <strong>Poll Results</strong> tab is called <strong>Polls &amp; Quizzes</strong> once the report has at least one <a href="/docs/building-reports/adding-a-quiz/">quiz</a>.</p>
+<h2>Poll and quiz results</h2>
+<p>Each poll or quiz in the report gets a card with its question, how many people responded, and a bar for each answer. When a report has both, each card is labeled <strong>Poll</strong> or <strong>Quiz</strong>.</p>
+<p>A quiz card adds:</p>
+<ul>
+<li><strong>How many got it right</strong> — for example <em>18 of 24 answered correctly</em>, with a ring showing the percentage.</li>
+<li><strong>The most common other answer</strong> — the answer most readers reached for instead, and how many chose it. It&#39;s worth a sentence in your next update.</li>
+<li><strong>The correct answer, ticked</strong> on the bars.</li>
+</ul>
+<p><img src="/assets/img/howto/quiz-dashboard.png" alt="A quiz card on the Polls &amp; Quizzes tab, with the percentage ring and the correct answer ticked"></p>
+<p>Grading happens when you open the tab, so if you change a quiz&#39;s correct answer, every response is graded again against the new one.</p>
+<p><strong>Who responded</strong></p>
+<p>Click <strong>Show who responded</strong> to see each respondent, their answer, and when they answered. On a quiz, a <strong>Result</strong> column shows <strong>Correct</strong> or <strong>Not quite</strong>. A reader who opened a <a href="/docs/distribution-and-engagement/personalized-links/">personalized link</a> is named; anyone else shows as <strong>Anonymous</strong>.</p>
+<ul>
+<li><strong>Search</strong> by name or answer.</li>
+<li><strong>Filter</strong> a quiz to <strong>All</strong>, <strong>Correct</strong>, or <strong>Not quite</strong>, or a poll to one answer.</li>
+<li><strong>Scroll</strong> for more — the list loads 25 at a time, and the count below it shows how many match.</li>
+</ul>
+<p><img src="/assets/img/howto/quiz-dashboard-search.png" alt="Searching quiz respondents, with the Not quite filter selected"></p>
+<p>Use a filter as a follow-up list: the readers who answered <em>Not quite</em> are the ones who&#39;ll most appreciate hearing the full story.</p>
+<p><strong>Download CSV</strong> exports one row per answer, with the question, the answer, and the respondent&#39;s name and constituent ID. A quiz export adds two columns: <strong>Correct</strong> (Yes or No) and <strong>Correct Answer</strong>.</p>
 <h2>How fresh the data is</h2>
 <ul>
 <li><strong>A report&#39;s Analytics tab is near-live.</strong> Reader activity shows up within minutes.</li>
@@ -332,6 +353,7 @@
 <li><a href="/docs/distribution-and-engagement/acting-on-analytics/">Acting on analytics</a> — turning engagement into stewardship.</li>
 <li><a href="/docs/distribution-and-engagement/tracking-engagement/">Tracking engagement</a> — what&#39;s recorded on every published report.</li>
 <li><a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a> — keeping your own team out of the numbers.</li>
+<li><a href="/docs/building-reports/adding-a-poll/">Adding a poll</a> and <a href="/docs/building-reports/adding-a-quiz/">Adding a quiz</a> — asking readers a question.</li>
 <li><a href="/docs/distribution-and-engagement/analytics-for-older-reports/">Analytics for older reports</a> — what to expect from reports published before late May 2026.</li>
 </ul>
 
@@ -359,6 +381,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="ac97ab8e" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="66268006" data-engine-v="676be165" defer></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 title: Editing content
 section: Building Reports
 status: draft
-last_reviewed: 2026-09-08
+last_reviewed: 2026-10-22
 ---
 
 # Editing content
@@ -32,7 +32,7 @@ Click into any text and type. You can adjust a text element's font, size, color,
 - **Video** — YouTube and Vimeo embeds
 - **Audio** — audio player
 - **Counter** — animated numbers, great for key stats
-- **Poll** — ask readers a question and show the answers (see [Adding a poll](adding-a-poll.md))
+- **Poll/Quiz** — ask readers a question and show the answers, or quiz them and show the correct one (see [Adding a poll](adding-a-poll.md) and [Adding a quiz](adding-a-quiz.md))
 - **Collect Form** — a Storyraise Collect form readers can answer without leaving the report (see [Embedding a Collect form](embedding-a-collect-form.md))
 - **Infographic** — charts, visual lists, sequences, and word clouds (see [Creating infographics](creating-infographics.md))
 - **Table** — tabular data
@@ -58,6 +58,7 @@ Select a block to open **Set Block Style & Layout**, where you control its backg
 
 - [The element bar](element-bar.md)
 - [Adding a poll](adding-a-poll.md)
+- [Adding a quiz](adding-a-quiz.md)
 - [Embedding a Collect form](embedding-a-collect-form.md)
 - [Fonts and colors](fonts-and-colors.md)
 - [Images and videos](images-and-videos.md)

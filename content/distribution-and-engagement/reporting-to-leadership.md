@@ -3,7 +3,7 @@ title: Reporting your numbers to leadership
 section: Sharing & Analytics
 keywords: export, board report, CMO, leadership, metrics, UTM, google analytics, GA4, data export, quarterly, comparison, benchmark
 status: draft
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-22
 ---
 
 # Reporting your numbers to leadership
@@ -16,7 +16,7 @@ At some point someone asks for the numbers in a deck. This page covers what you 
 |---|---|---|
 | A narrative summary of a report's performance | **Yes** | **The Story** — a plain-English PDF summary. See [Analytics overview](analytics-overview.md) |
 | Per-constituent engagement | **Yes, in the dashboard** | [Tracking engagement](tracking-engagement.md) |
-| Poll results as data | **Yes** | **Download CSV** on the report's **Poll Results** tab in Analytics — see [Adding a poll](../building-reports/adding-a-poll.md) |
+| Poll and quiz results as data | **Yes** | **Download CSV** on the report's **Poll Results** tab (**Polls & Quizzes** when the report has a quiz) in Analytics — see [Adding a poll](../building-reports/adding-a-poll.md) and [Adding a quiz](../building-reports/adding-a-quiz.md) |
 | Form responses as data | **Yes** | CSV export from the collection — see [Managing responses](../storyraise-collect/managing-responses.md) |
 | A raw analytics export (CSV of opens, sessions, engagement) | **No** | — |
 | Email open and click rates | **No** | Not available; see [Email distribution](email-distribution.md) |

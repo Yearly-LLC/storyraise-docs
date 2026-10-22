@@ -37,7 +37,7 @@ You can also let AI draft a block for you — describe what it's about and Story
 
 - **Stats** — showcase achievements using key figures
 - **Infographics** — infographics with lists, sequences, and comparisons (see [Creating infographics](creating-infographics.md))
-- **Poll** — ask readers a question and give it a page of its own (see [Adding a poll](adding-a-poll.md))
+- **Poll/Quiz** — ask readers a question, or quiz them on the answer, on a page of its own (see [Adding a poll](adding-a-poll.md) and [Adding a quiz](adding-a-quiz.md))
 
 **People and gratitude**
 

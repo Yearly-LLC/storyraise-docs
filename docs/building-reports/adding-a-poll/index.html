@@ -155,6 +155,7 @@
       <li><a href="/docs/building-reports/creating-infographics/">Creating infographics</a></li>
       <li><a href="/docs/building-reports/build-a-line-chart/">Build a line chart</a></li>
       <li><a href="/docs/building-reports/adding-a-poll/" class="active" aria-current="page">Adding a poll</a></li>
+      <li><a href="/docs/building-reports/adding-a-quiz/">Adding a quiz</a></li>
       <li><a href="/docs/building-reports/embedding-a-collect-form/">Embedding a Collect form</a></li>
       <li><a href="/docs/building-reports/image-sizes-and-dimensions/">Image sizes and dimensions</a></li>
       <li><a href="/docs/building-reports/ai-content-generation/">AI content generation</a></li>
@@ -295,15 +296,19 @@
         <h1>Adding a poll</h1>
 <p class="lead">A poll asks your readers a question inside the report and shows the answers as a bar chart. It&#39;s the quickest way to turn a report from something people read into something they take part in.</p>
 <p>Answers collect under <strong>Poll Results</strong> in that report&#39;s Analytics, where you can see them per person and export them.</p>
+<p>Want readers to find out whether they were right? The same element can be a quiz — see <a href="/docs/building-reports/adding-a-quiz/">Adding a quiz</a>.</p>
 <h2>Adding a poll</h2>
 <ol>
-<li>In the builder, open the <strong>Insert</strong> bar and choose <strong>Poll</strong>.</li>
-<li>Click the poll to open its editor.</li>
+<li>In the builder, open the <strong>Insert</strong> bar and choose <strong>Poll/Quiz</strong>.</li>
+<li>Click the poll to open the <strong>Poll Editor</strong>.</li>
+<li>On the <strong>Question &amp; Answers</strong> tab, leave <strong>Poll</strong> selected at the top.</li>
 <li>Type your question and fill in the answers.</li>
 <li>Click <strong>Done</strong>.</li>
 </ol>
+<p><img src="/assets/img/howto/poll-quiz-insert.png" alt="The Poll/Quiz button on the Insert bar"></p>
 <p>A new poll starts empty on purpose: no sample question, no sample answers. An unedited poll shows nothing at all to a reader, so a poll you forgot to finish can never reach a donor with placeholder wording in it.</p>
-<p>You can also add a whole <strong>Poll</strong> block from the block list (<strong>Add a block</strong>), which gives the poll a section of its own rather than sitting it inside another block.</p>
+<p>You can also add a whole <strong>Poll/Quiz</strong> block from the block list (<strong>Add a block</strong>), which gives the poll a section of its own rather than sitting it inside another block.</p>
+<p><img src="/assets/img/howto/poll-editor-poll.png" alt="The Poll Editor in Poll mode, with a question and three answers filled in"></p>
 <h2>Answers</h2>
 <p>A poll needs at least two answers and takes up to ten. Past ten the bars stop being readable stacked in a column, so the editor won&#39;t add more.</p>
 <p>Each answer gets an accent color, seeded from a set that works together. You can change any of them.</p>
@@ -312,7 +317,7 @@
 <p>The Poll Editor has three tabs: <strong>Question &amp; Answers</strong>, <strong>Voting</strong>, and <strong>Appearance</strong>. Use <strong>Preview</strong> in the editor&#39;s header to try the poll before you place it.</p>
 <p><strong>How it behaves</strong></p>
 <ul>
-<li><strong>Show question</strong> — show or hide the question above the chart, for when the surrounding copy already asks it (on the <strong>Question &amp; Answers</strong> tab).</li>
+<li><strong>Question</strong> — <strong>Shown</strong> or <strong>Hidden</strong>, at the bottom of the <strong>Question &amp; Answers</strong> tab. Hide it when the surrounding copy already asks the question, so a reader isn&#39;t asked twice.</li>
 <li><strong>Selection</strong> — <strong>Single choice</strong> for one answer per reader, <strong>Multiple choice</strong> to let them pick several.</li>
 <li><strong>Changing answers</strong> — <strong>Readers can change their answer</strong>, or <strong>One response only</strong> to lock in a reader&#39;s first answer.</li>
 <li><strong>After voting</strong> — <strong>Show everyone the results</strong> reveals the full tally once someone answers. <strong>Confirm their answer only</strong> shows them what they chose and keeps everyone else&#39;s answers to you.</li>
@@ -328,15 +333,23 @@
 <p>A reader picks an answer and the bars animate to the result straight away. Nothing waits on the network, so it feels instant even on a slow connection.</p>
 <p>Votes are only recorded on the <strong>published</strong> report. Answering a poll while you&#39;re proofing in the builder, in preview, in print view, or in a PDF export does not count — a poll you clicked through while checking your work will never appear in your results.</p>
 <h2>Seeing the results</h2>
-<p>Open the report&#39;s <strong>Analytics</strong> and choose the <strong>Poll Results</strong> tab. It appears on any report that contains a poll.</p>
-<p>For each poll you get the question, the tally per answer, and a list of who answered. A reader who opened a <a href="/docs/distribution-and-engagement/personalized-links/">personalized link</a> is named; anyone else shows as <strong>Anonymous</strong>. Use the export button on a poll to download its votes as a CSV.</p>
+<p>Open the report&#39;s <strong>Analytics</strong> and choose the <strong>Poll Results</strong> tab. It appears on any report that contains a poll, and it&#39;s called <strong>Polls &amp; Quizzes</strong> once the report has a quiz in it. The <strong>Results → Analytics</strong> link at the bottom of the editor&#39;s <strong>Question &amp; Answers</strong> tab takes you straight there once the report is published.</p>
+<p>For each poll you get the question, the tally per answer, and a list of who answered. A reader who opened a <a href="/docs/distribution-and-engagement/personalized-links/">personalized link</a> is named; anyone else shows as <strong>Anonymous</strong>. Search the list by name or answer, or filter it to one answer. Use <strong>Download CSV</strong> on a poll to download its votes. See <a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a> for what each card shows.</p>
 <div class="tip"><p><strong>Note:</strong> Because a personalized link identifies the reader, poll answers on a personalized report are attributable to a named constituent. Say so in the question if the answer is something people would expect to give anonymously.</p></div>
+<h2>Turn it into a quiz</h2>
+<p>At the top of the <strong>Question &amp; Answers</strong> tab, choose <strong>Quiz</strong> instead of <strong>Poll</strong>. You mark the correct answer, and each reader finds out whether they got it right, with an optional explanation to follow. See <a href="/docs/building-reports/adding-a-quiz/">Adding a quiz</a>.</p>
 <h2>Related</h2>
 <ul>
-<li><a href="/docs/building-reports/editing-content/">Editing content</a></li>
-<li><a href="/docs/building-reports/adding-sections/">Adding sections</a></li>
-<li><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></li>
-<li><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a></li>
+<li><p><a href="/docs/building-reports/adding-a-quiz/">Adding a quiz</a></p>
+</li>
+<li><p><a href="/docs/building-reports/editing-content/">Editing content</a></p>
+</li>
+<li><p><a href="/docs/building-reports/adding-sections/">Adding sections</a></p>
+</li>
+<li><p><a href="/docs/distribution-and-engagement/personalized-links/">Personalized links</a></p>
+</li>
+<li><p><a href="/docs/distribution-and-engagement/analytics-overview/">Analytics overview</a></p>
+</li>
 </ul>
 
 
@@ -363,6 +376,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="ac97ab8e" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="66268006" data-engine-v="676be165" defer></script>
 </body>
 </html>
