@@ -34,7 +34,7 @@ At some point someone asks for the numbers in a deck. This page covers what you 
 
 Numbers that aren't defined get challenged in the room. Two worth being precise about:
 
-**Views are activity, not people.** [Understanding report metrics](understanding-report-metrics.md) describes Views as the clearest read on whether distribution worked — how many people arrived. It isn't a count of unique individuals, and visitors are identified by device, so one person on a phone and a laptop can appear twice.
+**Views are activity, not people.** [Understanding report metrics](understanding-report-metrics.md) describes Views as the clearest read on whether distribution worked — how many people arrived. It isn't a count of unique individuals: one person who opens the report three times adds three Views. For a count of people, use **Constituents Opened**, which comes from personalized links.
 
 **The Engagement Score is relative, not absolute.** It's benchmarked against the median reading time among identified constituents *on that report*. That makes it useful for ranking readers within one report and misleading if you compare it across reports or against last year — every report is scored against its own median. If you put it in a deck, say what it's relative to.
 

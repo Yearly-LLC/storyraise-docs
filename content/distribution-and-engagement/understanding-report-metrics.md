@@ -19,7 +19,7 @@ Analytics has two tabs:
 - **The Numbers** — every metric, chart, and list, for when you want the detail. That's what the rest of this page covers.
 - **The Story** — a plain-English summary of your report's performance: what stood out, people worth a follow-up, and ideas for next time. Download it as a PDF to read aloud in a staff meeting or share with your board.
 
-Reports with a poll or a reader feedback card also get **Poll Results** and **Reader Feedback** tabs. The **Poll Results** tab is called **Polls & Quizzes** when the report has a quiz — see [Analytics overview](analytics-overview.md).
+Reports with a reader feedback card also get a **Reader Feedback** tab — see [Analytics overview](analytics-overview.md).
 
 ## Highlights
 
@@ -39,7 +39,7 @@ The row of short callouts at the top of The Numbers — for example *Readers pea
 - **A forwarded link counts toward the person you sent it to.** Treat a return as a conversation starter, not proof of who did the reading.
 - **Don't panic at a low return rate on a short piece.** A one-page thank-you is *supposed* to be read once.
 
-> **Tip:** Keep your own team out of these numbers. Signed-in teammates are excluded automatically, and you can add individual staff addresses or your whole email domain — see [Analytics exclusion](analytics-exclusion.md).
+> **Tip:** Keep your own team out of these numbers. When you share a report internally, send the **team link** (your report link with `/nr` on the end), or tick **Sending to my team** on a personalized link. See [Analytics exclusion](analytics-exclusion.md).
 
 ## Views
 
@@ -137,7 +137,7 @@ A 0 to 3 star rating, applied to identified constituents only. The benchmark is 
 
 ## A note on what the numbers don't include
 
-Your own team's views are automatically excluded, so these metrics reflect your real audience — see [Analytics exclusion](analytics-exclusion.md).
+Visits through a team link aren't counted, so share internally with the team link and these metrics reflect your real audience. See [Analytics exclusion](analytics-exclusion.md).
 
 If you're looking at a report first published before late May 2026, expect a smaller set of metrics: see [Analytics for older reports](analytics-for-older-reports.md).
 

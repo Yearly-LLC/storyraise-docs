@@ -67,7 +67,7 @@ Votes are only recorded on the **published** report. Answering a poll while you'
 
 Open the report's **Analytics** and choose the **Poll Results** tab. It appears on any report that contains a poll, and it's called **Polls & Quizzes** once the report has a quiz in it. The **Results → Analytics** link at the bottom of the editor's **Question & Answers** tab takes you straight there once the report is published.
 
-For each poll you get the question, the tally per answer, and a list of who answered. A reader who opened a [personalized link](../distribution-and-engagement/personalized-links.md) is named; anyone else shows as **Anonymous**. Search the list by name or answer, or filter it to one answer. Use **Download CSV** on a poll to download its votes. See [Analytics overview](../distribution-and-engagement/analytics-overview.md) for what each card shows.
+For each poll you get the question, the tally per answer, and a list of who answered. A reader who opened a [personalized link](../distribution-and-engagement/personalized-links.md) is named; anyone else shows as **Anonymous**. Search the list by name or answer, or filter it to one answer. Use **Download CSV** on a poll to download its votes: one row per answer, with the question, the answer, and the respondent's name and constituent ID.
 
 > **Note:** Because a personalized link identifies the reader, poll answers on a personalized report are attributable to a named constituent. Say so in the question if the answer is something people would expect to give anonymously.
 

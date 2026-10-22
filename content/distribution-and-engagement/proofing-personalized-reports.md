@@ -3,7 +3,7 @@ title: Proofing a personalized report
 section: Sharing & Analytics
 keywords: proof, preview, test, check before sending, merge tag, blank field, salutation, major donor, stewardship, quality check
 status: draft
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-22
 ---
 
 # Proofing a personalized report
@@ -55,7 +55,13 @@ If the report merges giving data — an amount, a level, a fund name, a date —
 
 ## Keep your proofing out of the numbers
 
-Opening the report a dozen times while checking it will show up in analytics as engagement. Add yourself and your reviewers to the [analytics exclusion list](analytics-exclusion.md) before you start proofing, or your launch-day numbers will include your own team.
+Opening the report a dozen times while checking it will show up in analytics as engagement, under the name of whichever constituent's link you opened. Proof through **Preview as a Constituent**, which is never counted, or add `/nr` straight after the report name in any link you open or send to reviewers:
+
+```
+https://your-organization.yearly.report/your-report/nr?for=maria@example.com
+```
+
+See [Analytics exclusion](analytics-exclusion.md) for the team link and where to copy it.
 
 ## A word on forwarding
 
@@ -74,7 +80,7 @@ See the privacy note in [Personalized links](personalized-links.md).
 - [ ] Opened the plain link with no `?for=`
 - [ ] Every merged number checked for formatting and accuracy
 - [ ] `?for=` placed before any `#` in the URL you're actually sending
-- [ ] Reviewers on the analytics exclusion list
+- [ ] Reviewers sent team links (`/nr`), not live links
 - [ ] Read on a phone, not just a laptop
 - [ ] Someone other than the author has read it
 

@@ -2,7 +2,7 @@
 title: Publishing and sharing reports
 section: Getting Started
 status: draft
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-22
 ---
 
 # Publishing and sharing reports
@@ -50,7 +50,7 @@ To let the public find a report by searching, open the report's **Sharing & Priv
 
 ## Ways to share
 
-- **Direct link.** Find it anytime from the dashboard — open the report's menu and choose **View Link** — or copy it from the publish dialog.
+- **Direct link.** Copy it from the publish dialog or from **Share** in the builder. Sharing with your own team? Use **Copy team link** instead, so their visits aren't counted — see [Analytics exclusion](../distribution-and-engagement/analytics-exclusion.md).
 - **Email and social.** Paste the link into your email campaigns, newsletters, and social posts.
 - **Embed on your website.** Use an embed code to display the report inside a page on your own site.
 - **QR codes.** Generate QR codes that open your report — useful for printed mailers, event signage, and thank-you cards.

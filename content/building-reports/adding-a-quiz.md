@@ -49,7 +49,23 @@ To check the answered state before publishing, select the quiz and click **Previ
 
 ## Seeing the results
 
-Answers appear in the report's **Analytics**, on the **Polls & Quizzes** tab, with how many readers got it right and a **Correct** or **Not quite** beside each respondent. See [Analytics overview](../distribution-and-engagement/analytics-overview.md).
+Answers appear in the report's **Analytics**, on the **Polls & Quizzes** tab. When a report has both polls and quizzes, each card is labeled **Poll** or **Quiz**. A quiz card shows:
+
+- **How many got it right** — for example *18 of 24 answered correctly*, with a ring showing the percentage.
+- **The most common other answer** — the answer most readers reached for instead, and how many chose it. It's worth a sentence in your next update.
+- **The correct answer, ticked** on the bars.
+
+![A quiz card on the Polls & Quizzes tab, with the percentage ring and the correct answer ticked](/assets/img/howto/quiz-dashboard.png)
+
+Grading happens when you open the tab, so if you change a quiz's correct answer, every response is graded again against the new one.
+
+Click **Show who responded** to see each respondent, their answer, when they answered, and a **Result** of **Correct** or **Not quite**. A reader who opened a [personalized link](../distribution-and-engagement/personalized-links.md) is named; anyone else shows as **Anonymous**. Search by name or answer, or filter to **All**, **Correct**, or **Not quite**. The list loads 25 at a time.
+
+![Searching quiz respondents, with the Not quite filter selected](/assets/img/howto/quiz-dashboard-search.png)
+
+Use the filter as a follow-up list: the readers who answered *Not quite* are the ones who'll most appreciate hearing the full story.
+
+**Download CSV** exports one row per answer, with the question, the answer, and the respondent's name and constituent ID, plus **Correct** (Yes or No) and **Correct Answer** columns.
 
 ## Related
 

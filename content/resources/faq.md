@@ -3,7 +3,7 @@ title: Frequently asked questions
 keywords: pdf, print, board, questions, help, troubleshooting
 section: Best Practices & Reference
 status: draft
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-22
 ---
 
 # Frequently asked questions
@@ -59,10 +59,10 @@ It was published before the new engine and only ever recorded a running total. O
 Only for constituents who opened a personalized link — they appear by name. Visitors using the public link are counted but stay anonymous. See [Personalized links](../distribution-and-engagement/personalized-links.md).
 
 **Do my own team's views count in report metrics?**
-No. Views from your organization's team members are automatically excluded — even when staff open a constituent's personalized link to check it. If teammates are still showing up, add their addresses or your whole domain under **Account**. See [Analytics exclusion](../distribution-and-engagement/analytics-exclusion.md).
+Not when they use the team link: your report link with `/nr` on the end. Copy it from **Share** (**Copy team link**), or tick **Sending to my team** when you make a personalized link. A plain or personalized link without `/nr` is counted like anyone else's visit. See [Analytics exclusion](../distribution-and-engagement/analytics-exclusion.md).
 
 **I opened my own report to test it and nothing happened.**
-That's correct — your own views aren't recorded.
+If you opened it through **View Link** on the dashboard, the **View report** button after publishing, or a team link, that's expected: those visits aren't recorded.
 
 **How fresh is the data?**
 A report's Analytics tab is near-live. Home tab cards refresh overnight, covering activity through the previous night.

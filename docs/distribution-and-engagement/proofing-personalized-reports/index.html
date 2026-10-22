@@ -328,7 +328,10 @@
 <li>Does the figure match what the donor believes they gave? A pledge, a matched gift, or a gift made by a family foundation can all read as surprising to the person named.</li>
 </ul>
 <h2>Keep your proofing out of the numbers</h2>
-<p>Opening the report a dozen times while checking it will show up in analytics as engagement. Add yourself and your reviewers to the <a href="/docs/distribution-and-engagement/analytics-exclusion/">analytics exclusion list</a> before you start proofing, or your launch-day numbers will include your own team.</p>
+<p>Opening the report a dozen times while checking it will show up in analytics as engagement, under the name of whichever constituent&#39;s link you opened. Proof through <strong>Preview as a Constituent</strong>, which is never counted, or add <code>/nr</code> straight after the report name in any link you open or send to reviewers:</p>
+<pre><code>https://your-organization.yearly.report/your-report/nr?for=maria@example.com
+</code></pre>
+<p>See <a href="/docs/distribution-and-engagement/analytics-exclusion/">Analytics exclusion</a> for the team link and where to copy it.</p>
 <h2>A word on forwarding</h2>
 <p>A personalized link renders that constituent&#39;s merged data for anyone who opens it. If your report includes giving amounts or capacity-related fields, a forwarded link hands a third party private information about the original recipient.</p>
 <p>Two practical rules:</p>
@@ -343,7 +346,7 @@
 <li><input disabled="" type="checkbox"> Opened the plain link with no <code>?for=</code></li>
 <li><input disabled="" type="checkbox"> Every merged number checked for formatting and accuracy</li>
 <li><input disabled="" type="checkbox"> <code>?for=</code> placed before any <code>#</code> in the URL you&#39;re actually sending</li>
-<li><input disabled="" type="checkbox"> Reviewers on the analytics exclusion list</li>
+<li><input disabled="" type="checkbox"> Reviewers sent team links (<code>/nr</code>), not live links</li>
 <li><input disabled="" type="checkbox"> Read on a phone, not just a laptop</li>
 <li><input disabled="" type="checkbox"> Someone other than the author has read it</li>
 </ul>
@@ -378,6 +381,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="1a22bd90" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="20dbe55a" data-engine-v="676be165" defer></script>
 </body>
 </html>

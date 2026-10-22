@@ -3,7 +3,7 @@ title: Sharing reports
 section: Sharing & Analytics
 status: draft
 keywords: embed, iframe, qr, copy link, social, pdf, print, board meeting, board packet, download
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-22
 ---
 
 # Sharing reports
@@ -12,11 +12,12 @@ Publishing puts your report on the web — sharing puts it in front of your audi
 
 ## The Share menu
 
-When you publish, a **Your report is live!** page opens in a new tab with every sharing option in one place: copy the link, **Get PDF**, **Embed codes**, **QR code**, **Get personalized link** (a link formatted for your email platform — see [Personalized links](personalized-links.md)), and **View report**. It also offers ready-made social and email graphics under **Share directly**, and a shortcut to send the report with [Storyraise Send](email-distribution.md).
+When you publish, a **Your report is live!** page opens in a new tab with every sharing option in one place: copy the link, **Get PDF**, **Embed codes**, **QR code**, **Get personalized link** (a link formatted for your email platform — see [Personalized links](personalized-links.md)), **View report**, and a **Team link** for sharing internally. It also offers ready-made social and email graphics under **Share directly**, and a shortcut to send the report with [Storyraise Send](email-distribution.md).
 
 Later, open your published report in the builder and click **Share**. From there you can:
 
 - **Copy link** — your report's public web address, ready to paste anywhere.
+- **Copy team link** — the same address with `/nr` on the end, for sharing with your team. Visits through it aren't counted in analytics. See [Analytics exclusion](analytics-exclusion.md).
 - **Embed Code (standard)** — an iframe snippet that displays the report inside a page on your own website.
 - **Embed Code (fullscreen)** — an iframe snippet that takes over the whole browser window, for kiosk displays or dedicated landing pages.
 - **Get QR code** — a downloadable QR code that opens your report when scanned.
@@ -25,7 +26,7 @@ Later, open your published report in the builder and click **Share**. From there
 
 On a personalized report, the **Share** window instead asks **Which platform will you use to send your personalized report?** and gives you a link formatted for that platform (**Get report link**). The embed codes and QR code are still on the **Your report is live!** page.
 
-You can also grab the public link anytime from the dashboard: open a published report's menu and choose **View Link** to open the live report, or **Send in an email** for a personalized link formatted for your email tool.
+From the dashboard, open a published report's menu and choose **View Link** to open the live report, or **Send in an email** for a personalized link formatted for your email tool. **View Link** opens the team link, so your visit isn't counted; copy the public link from **Share** rather than from that tab's address bar.
 
 ## Sharing the link
 
@@ -74,4 +75,4 @@ Using WordPress? See [Embedding in WordPress](embedding-in-wordpress.md) for ste
 
 ## Timing your share
 
-Every visit counts toward your report's engagement data, but your own team's views are automatically excluded — so feel free to review and share internally before the big announcement. See [Tracking engagement](tracking-engagement.md).
+Every visit counts toward your report's engagement data, except visits through the team link. Use **Copy team link** to review and share internally before the big announcement, and your numbers stay clean. See [Tracking engagement](tracking-engagement.md).

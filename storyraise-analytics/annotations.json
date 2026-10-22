@@ -108,7 +108,7 @@
       "next": "Compare views with the size of the audience you reached. If activity is lower than you expected, revisit your subject line, timing, or where you shared the link.",
       "keepInMind": [
         "Views count visits to the report itself. They are not email opens.",
-        "Your own team is left out when Storyraise recognizes a signed-in teammate, and you can exclude staff email addresses or your whole domain.",
+        "Share internally with the team link (your report link with /nr on the end). Visits through it are never counted.",
         "Reports published before late May 2026 used an older counter, so compare newer reports with other newer reports."
       ],
       "demoValue": "249",

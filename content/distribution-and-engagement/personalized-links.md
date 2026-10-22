@@ -3,7 +3,7 @@ title: Personalized links
 section: Sharing & Analytics
 status: draft
 keywords: qr, qr code, merge tags, for parameter, unique url, honor roll, major donor, stewardship, endowment report, gift acknowledgment, salutation, pledge, personalization
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-22
 ---
 
 # Personalized links
@@ -38,6 +38,8 @@ Any field on your constituent records can be a merge tag. Open a constituent fro
 ## Getting a link for your email platform
 
 If you send through Mailchimp, Constant Contact, Bloomerang, Raiser's Edge NXT, Salesforce, or another email platform, you only need **one** link. In the dashboard, open a published report's menu and choose **Send in an email**, then pick your **Email tool** (or choose **Other** and paste your tool's email merge tag). You can also click **Get personalized link** on the **Your report is live!** page that opens after you publish. Storyraise formats the link with that platform's own email merge field after `?for=`, so the platform fills in each recipient's address when it sends. Leave the merge field exactly as it is.
+
+Each of these places also has a **Sending to my team, so their visits won't count** tickbox. Tick it only when the link is going to your own staff; leave it unticked for your constituents, or their visits won't be counted. See [Analytics exclusion](analytics-exclusion.md).
 
 ## Generating personalized links and QR codes at scale
 
