@@ -35,6 +35,7 @@ These don't ask a question — they shape and explain your form:
 Each field can be configured with:
 
 - A **label** (the question), **placeholder**, and **description** (helper text).
+- **Save to Variable** — the name the answer is saved under, written as `@@name@@`. Storyraise fills it in from the label as you type (lowercase, with underscores), and keeps every field's variable unique within the form. It's the key for that answer in the collection's responses, the column a CSV import matches to [pre-fill](sharing-your-form.md) the field, and the `@@tag@@` you use to show the answer in a report. Rename it if you like, but do it before responses arrive, since answers already collected stay under the old name.
 - **Required** — make an answer mandatory.
 - A **default value** and a custom **error message**.
 - For **Choose one / Choose many / Dropdown**, the list of **options** (one per line).

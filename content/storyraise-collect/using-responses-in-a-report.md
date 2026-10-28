@@ -43,12 +43,27 @@ The **Repeater** block creates repeating blocks and elements from a list, so one
 
 A bound Repeater reads the collection each time someone opens the report, so responses you add, edit, or delete show up in the published report without republishing.
 
+### Choosing which responses repeat
+
+Select the Repeater, open the **Use Data** tab, and pick the collection under **Select a Collection**. Then, under **Repeat When..**, set the rule that decides which rows appear:
+
+- **Pick a column to check** — the column to test.
+- **Select Condition** — **is**, **is not**, **contains**, **does not contain**, **is one of** (comma-separated values), **greater than**, **greater than or equal**, **less than**, or **less than or equal**.
+- **Enter the value to look for** — the value to compare against. It can be a merge tag such as `@@email@@`, so each reader sees only their own rows.
+
+**Sort and Limit** sets the order (**Sort by column**, **Sort direction**) and a maximum number of rows.
+
+> **A Repeater with no Repeat When rule shows nothing.** If the value is blank, or is a merge tag that has no value for this reader, the Repeater is removed from the page rather than listing every row. To show every response, give it a rule every row passes — for example, **is not** with a value no row has in that column.
+
+**is** is an exact match, and it's case-sensitive: `Volunteer` doesn't match `volunteer`. **Case-insensitive matching** (on by default) applies to **contains** and **does not contain** only, so use **contains** when capitalization in your data varies.
+
 <!-- TEAM REVIEW: this is the headline promise of Collect ("your annual report
      writes itself from real voices") and it is currently documented in one line
      in adding-sections.md. To finish this section we need:
        1. The click path to add a Repeater and bind it to a collection.
-       2. Whether it binds to a whole collection or to a filtered view, and
-          whether responses can be excluded individually.
+       2. RESOLVED 2026-10-28: it binds to a filtered view (Repeat When rule,
+          documented above; report.js expandRepeatersPass + fetch_collection).
+          Still open: whether responses can be excluded individually.
        3. RESOLVED 2026-10-15: live, not a snapshot. The published reader's
           fetch_collection (public/js/report.js:5068) calls report_collection at
           view time, which returns the collection's current responses.

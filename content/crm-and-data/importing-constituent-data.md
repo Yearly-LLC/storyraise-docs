@@ -18,8 +18,6 @@ You can bring constituents into Storyraise two ways: sync them from a [connected
 
 Your CSV needs headers for **First Name**, **Last Name**, and **Email**. Email is the key field — Storyraise uses it to identify each constituent. A row with a name but no email address still imports: Storyraise keys that person on their name instead, so they can still get a personalized report (a printed one, for example). Rows with neither an email nor a name are skipped.
 
-<!-- TEAM REVIEW: the "Map your columns" dialog still says "Rows without an email will be skipped" (public/index.html ~6578), but map_import_row (public/js/app-dashboard.js ~12251) gives name-only rows a placeholder address and imports them. The doc follows the code; the dialog copy should be corrected. -->
-
 The easiest path:
 
 1. In the **Constituents** area, click **Add constituents** and open the **CSV File** tab.
