@@ -10,6 +10,8 @@ last_reviewed: 2026-10-15
 
 Collecting stories is only half of it. This page traces one story from submission to a published report.
 
+> **Tip:** Prefer to see it? [Watch the walkthrough and explore the interactive demo](/collect-stories/): build a form, collect stories and photos, and show each donor the stories their gift supports.
+
 There are two ways to get collected material into a report: copy it in by hand, which works on any plan, or bind a **Repeater** block to the collection, which keeps the report in step with the responses.
 
 ## Before you start

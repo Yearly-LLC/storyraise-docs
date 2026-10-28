@@ -1,0 +1,44 @@
+{
+  "builder": {
+    "path": "/Applications/MAMP/htdocs/yearly-v3/builder",
+    "sha": "2b45b64ec7de24a9a518bca075221fd34cace221"
+  },
+  "source": {
+    "org_slug": "demo",
+    "report_id": "-NVC1ZEVuj-dyjAHJ6HW",
+    "page_id": "-OlNnRexmFNXUfHwZ1Ac",
+    "routes": [
+      "constituents",
+      "constituents/{id}",
+      "builder (Use Data > Show When)",
+      "preview ?for=",
+      "Share modal"
+    ],
+    "note": "Report content read once (read-only) into fixtures/report-intro.json. Constituents are fabricated in fixtures/constituents.json; Emily Wilson (Bronze) and James Taylor (Gold) mirror the demo org's, with fictional emails. Never open the live report in a builder: Vince edits it and autosave would write."
+  },
+  "identity": {
+    "org_name": "Harbor Lights Community Foundation",
+    "org_slug": "harbor-lights",
+    "link_host": "harborlights.example",
+    "report_title": "2026 Impact Report"
+  },
+  "rename": [
+    {
+      "from": "Personalized Report Template",
+      "to": "2026 Impact Report"
+    },
+    {
+      "from": "Personalized Report Sample",
+      "to": "2026 Impact Report"
+    }
+  ],
+  "capture": {
+    "timezone": "America/New_York",
+    "locale": "en-US",
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "port": 5050
+  }
+}

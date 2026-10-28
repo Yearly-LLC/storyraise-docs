@@ -1,0 +1,66 @@
+{
+  "_about": "Narration for the Storyraise Personalization walkthrough (approved by Vince 2026-10-28). `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. `respell` maps a caption word to how the voice should say it (applied to the TTS text only). Labels match the product UI (public/index.html, public/builder/index.html, public/preview/index.html). American English, no em dashes. Value first: caveats (a plain link without ?for= shows every Show When block; only Mailchimp has a built-in merge tag) live in the page FAQ and KB, not here.",
+  "respell": {},
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Cold open",
+      "minDuration": 9,
+      "text": "One report, [[cue:many]]written for every donor. [[cue:brand]]With Storyraise personalization, each reader sees their own name, their own giving, and the story that fits them."
+    },
+    {
+      "id": "s02",
+      "title": "Add constituents",
+      "minDuration": 9.4,
+      "text": "It starts on the [[cue:tab]]Constituents tab. [[cue:add]]Choose Add constituents, then [[cue:csv]]upload a CSV file, [[cue:crm]]or connect your CRM so your records stay in sync."
+    },
+    {
+      "id": "s03",
+      "title": "CSV columns",
+      "minDuration": 11.6,
+      "text": "[[cue:required]]Your file needs First Name, Last Name, and Email. [[cue:custom]]Every other column, like Donor Level or Gift Amount, comes in as a custom field. [[cue:map]]Map your columns, [[cue:import]]then Import constituents."
+    },
+    {
+      "id": "s04",
+      "title": "Constituent profile",
+      "minDuration": 8.4,
+      "text": "[[cue:open]]Open anyone to see their profile. [[cue:table]]Each field is a variable, [[cue:tag]]like donor level, ready to drop into a report."
+    },
+    {
+      "id": "s05",
+      "title": "Merge fields",
+      "minDuration": 10,
+      "text": "[[cue:canvas]]In the report, type a variable right into your text, [[cue:prepared]]between double at signs. [[cue:becomes]]Dear first name becomes Dear Emily, with her own gift and giving level filled in too."
+    },
+    {
+      "id": "s06",
+      "title": "Show When",
+      "minDuration": 13.2,
+      "text": "[[cue:select]]To show a section to some donors only, select it and open Use Data. [[cue:showwhen]]Under Show When, [[cue:variable]]pick donor level, [[cue:condition]]is, [[cue:value]]Gold. [[cue:levels]]Silver and Bronze get their own sections, set up the same way."
+    },
+    {
+      "id": "s07",
+      "title": "Preview as a donor",
+      "minDuration": 13.4,
+      "text": "[[cue:preview]]Open web preview and choose who you are previewing as. [[cue:emily]]Emily Wilson is a Bronze donor, [[cue:emilystory]]so she sees her name and the Bronze story. [[cue:james]]Switch to James Taylor, [[cue:jamesstory]]and the same report turns Gold."
+    },
+    {
+      "id": "s08",
+      "title": "Personalized link",
+      "minDuration": 12,
+      "text": "[[cue:share]]Ready to send? Publish your report, then open Share. [[cue:platform]]Tell us which email platform you use, [[cue:getlink]]and Get report link. [[cue:link]]Your platform fills in each donor's email, so everyone opens their own report."
+    },
+    {
+      "id": "s09",
+      "title": "Send it with Storyraise",
+      "minDuration": 12.4,
+      "text": "[[cue:sendcard]]Or let us send it for you. [[cue:draft]]Storyraise Send drafts the email, with a personalized View the Report button. [[cue:steps]]Pick your recipients, like the donors you just imported, then schedule it and send."
+    },
+    {
+      "id": "s10",
+      "title": "Close",
+      "minDuration": 7.6,
+      "text": "[[cue:recap]]Upload your donors, add a few variables, and every reader gets a report that feels written for them."
+    }
+  ]
+}

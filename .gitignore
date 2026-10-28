@@ -59,3 +59,23 @@ tools/connections-and-sync/video/assets/img/
 tools/element-bar/.cache
 tools/element-bar/.bin
 tools/element-bar/node_modules
+
+# Personalization page tooling (tools/personalization), same rules.
+tools/personalization/.cache
+tools/personalization/.bin
+tools/personalization/node_modules
+tools/personalization/video/renders/
+tools/personalization/video/snapshots/
+tools/personalization/video/audio/.cache/
+tools/personalization/video/assets/img/
+
+# Collect stories page tooling (tools/collect-stories), same rules.
+tools/collect-stories/.cache
+tools/collect-stories/.bin
+tools/collect-stories/node_modules
+tools/collect-stories/video/renders/
+tools/collect-stories/video/snapshots/
+tools/collect-stories/video/audio/.cache/
+tools/collect-stories/video/assets/img/
+tools/personalization/video/assets/shots/
+tools/collect-stories/video/assets/shots/

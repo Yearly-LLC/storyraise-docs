@@ -9,6 +9,8 @@ last_reviewed: 2026-10-15
 
 A **collection** is a form plus everything it gathers. This guide takes you from an empty Collections view to a form ready to share.
 
+> **Tip:** Prefer to see it? [Watch the walkthrough and explore the interactive demo](/collect-stories/): build a form, collect stories and photos, and show each donor the stories their gift supports.
+
 <!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Collect should be described as generally available. -->
 
 ## Start a new collection

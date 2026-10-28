@@ -10,6 +10,8 @@ last_reviewed: 2026-10-22
 
 Before a report that carries a donor's name — or their gift — goes out to a few hundred people, you want to see exactly what they'll see. This page is the check to run first.
 
+> **Tip:** Prefer to see it? [Watch the two-minute tour and explore the interactive demo](/personalization/): import donors, add variables and Show When content, then preview the report as two different donors.
+
 The stakes are asymmetric. A typo in body copy is forgettable; a wrong salutation or a wrong amount in front of a major donor is a phone call from a board member.
 
 ## Preview as a constituent

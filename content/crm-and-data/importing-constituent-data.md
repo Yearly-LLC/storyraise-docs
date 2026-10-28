@@ -10,6 +10,8 @@ last_reviewed: 2026-10-15
 
 You can bring constituents into Storyraise two ways: sync them from a [connected CRM](connecting-a-crm.md), or upload a CSV file. CSV import works with data exported from any system — or a spreadsheet you maintain by hand.
 
+> **Tip:** Prefer to see it? [Watch the two-minute tour and explore the interactive demo](/personalization/): import donors, add variables and Show When content, then preview the report as two different donors.
+
 ## Importing from a CSV file
 
 ### 1. Prepare your file

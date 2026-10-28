@@ -1,0 +1,113 @@
+WEBVTT
+
+1
+00:00:00.350 --> 00:00:03.150
+The best part of any impact report is the
+people in it.
+
+2
+00:00:03.160 --> 00:00:07.684
+Storyraise Collect gathers their stories,
+and your reports tell them.
+
+3
+00:00:07.950 --> 00:00:11.562
+Start a new collection and choose what you
+want to collect, like thank-yous from the
+
+4
+00:00:11.572 --> 00:00:14.355
+students your donors support.
+
+5
+00:00:14.550 --> 00:00:16.270
+Add the fields you need:
+
+6
+00:00:16.280 --> 00:00:21.431
+short text for a name, long text for their
+story, and a file upload for a photo.
+
+7
+00:00:21.644 --> 00:00:26.063
+Each field saves to a variable, like
+student note.
+
+8
+00:00:27.150 --> 00:00:29.392
+Get form link and send it however you
+like.
+
+9
+00:00:29.402 --> 00:00:32.766
+Students answer on any device, photo and
+all.
+
+10
+00:00:33.250 --> 00:00:37.443
+Every answer lands in the collection, one
+row per student, ready to review, edit, or
+
+11
+00:00:37.453 --> 00:00:38.912
+export.
+
+12
+00:00:39.350 --> 00:00:41.378
+In your report, add a repeater.
+
+13
+00:00:41.893 --> 00:00:45.667
+Under Repeat For Each Item in, select your
+collection.
+
+14
+00:00:45.677 --> 00:00:49.754
+Then lay out one story card with variables
+like student name, and set its image to
+
+15
+00:00:49.764 --> 00:00:51.792
+the student's photo.
+
+16
+00:00:51.950 --> 00:00:54.123
+Now tell it which stories to show.
+
+17
+00:00:54.133 --> 00:00:58.384
+Under Repeat When, match the fund code
+each student entered to the fund reference
+
+18
+00:00:58.394 --> 00:01:00.137
+on every donor's record.
+
+19
+00:01:00.147 --> 00:01:03.539
+Each donor sees the students their own
+gift supports.
+
+20
+00:01:03.549 --> 00:01:07.324
+Emily Wilson's fund supports Sophia and
+David, so theirs are the stories she
+
+21
+00:01:07.334 --> 00:01:08.363
+reads.
+
+22
+00:01:08.460 --> 00:01:11.196
+James Taylor sees Grace and Marcus
+instead.
+
+23
+00:01:11.293 --> 00:01:16.671
+And when a new matching story comes in, it
+shows up the next time the report opens.
+
+24
+00:01:16.681 --> 00:01:20.300
+Collect the stories once, and every report
+tells the right ones.

@@ -1,0 +1,516 @@
+{
+  "about": "Tour stops for the interactive Storyraise personalization demo. The demo spans five product screens; each stop names the screen and state it needs. Copy uses the product's own labels; every claim is checked against the code cited in `source` (builder repo). American English, no em dashes.",
+  "builderSha": "2b45b64e",
+  "screens": [
+    {
+      "id": "constituents",
+      "file": "demo/constituents.html",
+      "label": "Constituents",
+      "url": "app.storyraise.com/#/harbor-lights/constituents"
+    },
+    {
+      "id": "profile",
+      "file": "demo/profile.html",
+      "label": "Profile",
+      "url": "app.storyraise.com/#/harbor-lights/constituents/emily-wilson"
+    },
+    {
+      "id": "builder",
+      "file": "demo/builder.html",
+      "label": "Report",
+      "url": "app.storyraise.com/builder/#/harbor-lights/2026-impact-report"
+    },
+    {
+      "id": "preview",
+      "file": "demo/preview.html",
+      "label": "Preview",
+      "url": "app.storyraise.com/preview/#/harbor-lights/2026-impact-report"
+    },
+    {
+      "id": "share",
+      "file": "demo/share.html",
+      "label": "Share",
+      "url": "app.storyraise.com/builder/#/harbor-lights/2026-impact-report"
+    },
+    {
+      "id": "send",
+      "file": "demo/send.html",
+      "label": "Send",
+      "url": "send.storyraise.com/send/"
+    }
+  ],
+  "stops": [
+    {
+      "id": "add",
+      "target": "add",
+      "uiLabel": [
+        "Add constituents"
+      ],
+      "prepare": {
+        "screen": "constituents",
+        "state": "list"
+      },
+      "title": "Start with your constituents",
+      "tells": "Constituents are the people your reports are written for. Add them from the Constituents tab with Add constituents: upload a CSV file, add someone by hand, or connect your CRM.",
+      "why": "Every personalized detail in a report comes from a constituent's record, so this list is where personalization begins.",
+      "next": "If your donors live in a CRM, connect it under Connections so the list stays current on its own. Otherwise, a CSV file is the fastest start.",
+      "keepInMind": [],
+      "kb": {
+        "href": "/docs/crm-and-data/importing-constituent-data/",
+        "label": "Importing constituent data"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "872-890",
+          "note": "Add constituents menu and the Add Constituents From... card"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "2190",
+          "note": "Constituents nav item"
+        }
+      ]
+    },
+    {
+      "id": "csv",
+      "target": "csv",
+      "uiLabel": [
+        "CSV File",
+        "Upload CSV"
+      ],
+      "prepare": {
+        "screen": "constituents",
+        "state": "add-csv"
+      },
+      "title": "Three columns are all you need",
+      "tells": "Your file needs First Name, Last Name, and Email. Add as many other columns as you like: donor level, gift amount, a fund name, a personal note.",
+      "why": "The extra columns are what make a report feel personal. Each one becomes a custom field you can use anywhere in a report.",
+      "next": "Download the Constituents Template if you want a starting point, fill it in, then Upload CSV.",
+      "keepInMind": [
+        "Only Email is strictly required to match constituents. Include First Name and Last Name too, so greetings like Prepared for Emily Wilson read right.",
+        "Email is how Storyraise tells constituents apart, so a second upload with the same email updates that person instead of adding a duplicate."
+      ],
+      "kb": {
+        "href": "/docs/crm-and-data/importing-constituent-data/",
+        "label": "Importing constituent data"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "966-977",
+          "note": "CSV tab copy and Upload CSV"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "12134-12143",
+          "note": "document id is a hash of the email"
+        }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "map-core",
+      "target": "map-core",
+      "uiLabel": [
+        "Map your columns",
+        "Email",
+        "First name",
+        "Last name"
+      ],
+      "prepare": {
+        "screen": "constituents",
+        "state": "map"
+      },
+      "title": "Match your columns",
+      "tells": "After the upload, Storyraise matches your file's columns to Email, First name, and Last name. Common header names are matched for you.",
+      "why": "You can import a file straight out of your CRM or spreadsheet without renaming its headers first.",
+      "next": "Check the three matches. Under Add these contacts to a list?, choose Create new list, so you can pick these donors in one click when you send. Then Import constituents.",
+      "keepInMind": [],
+      "kb": {
+        "href": "/docs/crm-and-data/mapping-fields/",
+        "label": "Mapping fields"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "7393-7456",
+          "note": "Map your columns modal"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "12444",
+          "note": "suggest_field_mapping header aliases"
+        }
+      ]
+    },
+    {
+      "id": "map-custom",
+      "target": "map-custom",
+      "uiLabel": [
+        "Import constituents"
+      ],
+      "prepare": {
+        "screen": "constituents",
+        "state": "map"
+      },
+      "title": "Everything else becomes a custom field",
+      "tells": "Every column you do not match is imported as a custom field. A column named Donor Level becomes the variable donor_level.",
+      "why": "You never set up fields ahead of time. Whatever your file carries is ready to use in a report the moment the import finishes.",
+      "next": "Import constituents, then open anyone in the list to see what came across.",
+      "keepInMind": [
+        "Letters go lowercase, spaces become underscores, and symbols like $, -, and # are dropped, so Gift Amount ($) becomes gift_amount_. Copy the exact name from a profile."
+      ],
+      "kb": {
+        "href": "/docs/crm-and-data/mapping-fields/",
+        "label": "Mapping fields"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "7400",
+          "note": "every other column is imported as a custom field"
+        },
+        {
+          "file": "public/js/app-dashboard.js",
+          "lines": "12477, 12686",
+          "note": "map_import_row and process_string"
+        }
+      ]
+    },
+    {
+      "id": "variables",
+      "target": "variables",
+      "uiLabel": [
+        "Variable",
+        "Value"
+      ],
+      "prepare": {
+        "screen": "profile",
+        "state": "profile"
+      },
+      "title": "A profile is a list of variables",
+      "tells": "Each constituent's profile lists their fields as variables, written the way you use them in a report, like @@first_name@@ and @@donor_level@@, with this person's value beside each one.",
+      "why": "This is exactly what a report will fill in for Emily, so it is the quickest way to check her data before you send.",
+      "next": "Copy a variable from this list into your report text.",
+      "keepInMind": [],
+      "kb": {
+        "href": "/docs/crm-and-data/importing-constituent-data/",
+        "label": "Importing constituent data"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "1635-1665",
+          "note": "Variable / Value table"
+        }
+      ]
+    },
+    {
+      "id": "add-variable",
+      "target": "add-variable",
+      "uiLabel": [
+        "Add this Variable"
+      ],
+      "prepare": {
+        "screen": "profile",
+        "state": "profile"
+      },
+      "title": "Add or fix a field by hand",
+      "tells": "For constituents from a CSV file, you can edit a value or add a new variable right here.",
+      "why": "A one-off change, like a personal note for a single major donor, does not need a new upload.",
+      "next": "Type the variable name and value, then Add this Variable.",
+      "keepInMind": [
+        "Records that sync from a CRM are edited in the CRM, so the next sync does not overwrite your change."
+      ],
+      "kb": {
+        "href": "/docs/crm-and-data/importing-constituent-data/",
+        "label": "Importing constituent data"
+      },
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "1562-1566, 1668-1686",
+          "note": "Done Editing and the add-variable row"
+        }
+      ]
+    },
+    {
+      "id": "merge-tags",
+      "target": "template-line",
+      "uiLabel": [],
+      "prepare": {
+        "screen": "builder",
+        "state": "tags"
+      },
+      "title": "Type variables right into your text",
+      "tells": "Any text in a report can hold a variable between double at signs. Dear @@first_name@@ becomes Dear Emily when Emily opens it, and @@gift_amount@@ and @@donor_level@@ fill in her gift and level.",
+      "why": "One report reads as if it were written for each donor, without making a copy per person.",
+      "next": "Use the same variable names you see on a constituent's profile.",
+      "keepInMind": [],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/proofing-personalized-reports/",
+        "label": "Proofing personalized reports"
+      },
+      "source": [
+        {
+          "file": "public/js/report.js",
+          "lines": "1887-1910",
+          "note": "handle_variable_replacements"
+        }
+      ]
+    },
+    {
+      "id": "show-when",
+      "target": "show-when",
+      "uiLabel": [
+        "Use Data",
+        "Show When...",
+        "Select Variable",
+        "Select Condition",
+        "Enter Variable Value"
+      ],
+      "prepare": {
+        "screen": "builder",
+        "state": "gold"
+      },
+      "title": "Show a section to the right donors",
+      "tells": "Select a section, open Use Data, and set Show When. Here the Gold section shows when donor_level is Gold. The Silver and Bronze sections are set up the same way.",
+      "why": "Each giving level gets its own thank-you story in the same report, and every donor sees only theirs.",
+      "next": "Other conditions include is not, contains, is more than, and is less than, so you can also show content by fund or gift size.",
+      "keepInMind": [
+        "Use Data, Show When, Previewing as, and the personalized link are part of the Precision plan.",
+        "is matches exactly, capitals included, so Gold and gold differ. For is more than or is less than, store numbers without commas or $."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/proofing-personalized-reports/",
+        "label": "Proofing personalized reports"
+      },
+      "source": [
+        {
+          "file": "public/builder/index.html",
+          "lines": "1468-1471, 3585-3632",
+          "note": "Use Data tab and Show When card"
+        },
+        {
+          "file": "public/js/report.js",
+          "lines": "5003-5110",
+          "note": "run_merge_tag_conditions"
+        }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "previewing-as",
+      "target": "previewing-as",
+      "uiLabel": [
+        "Previewing as"
+      ],
+      "prepare": {
+        "screen": "preview",
+        "state": "emily"
+      },
+      "title": "Preview as any constituent",
+      "tells": "From the builder, Preview, then Open web preview. Previewing as shows whose report you are looking at; click it to search for anyone else.",
+      "why": "You see exactly what each donor will see before anything goes out.",
+      "next": "Check one donor from each level. Here that is Emily Wilson for Bronze and James Taylor for Gold.",
+      "keepInMind": [
+        "Use Data, Show When, Previewing as, and the personalized link are part of the Precision plan."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/proofing-personalized-reports/",
+        "label": "Proofing personalized reports"
+      },
+      "source": [
+        {
+          "file": "public/builder/index.html",
+          "lines": "738-755",
+          "note": "Preview menu"
+        },
+        {
+          "file": "public/preview/index.html",
+          "lines": "182-190, 467",
+          "note": "Previewing as and Constituent Report Lookup"
+        }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "emily",
+      "target": "level-section",
+      "uiLabel": [],
+      "prepare": {
+        "screen": "preview",
+        "state": "emily"
+      },
+      "title": "Emily sees the Bronze story",
+      "tells": "Emily Wilson is a Bronze donor, so her report says Prepared for Emily Wilson and shows only the Bronze section.",
+      "why": "The Gold and Silver sections are still in the report. They are simply hidden for her.",
+      "next": "Switch to James Taylor to compare.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "public/js/report.js",
+          "lines": "5003-5110",
+          "note": "a failed condition hides the block"
+        }
+      ],
+      "scroll": "start"
+    },
+    {
+      "id": "james",
+      "target": "level-section",
+      "uiLabel": [],
+      "prepare": {
+        "screen": "preview",
+        "state": "james"
+      },
+      "title": "James sees the Gold story",
+      "tells": "James Taylor is a Gold donor. Same report, same link, but Prepared for James Taylor and the Gold section.",
+      "why": "You write the report once and every level still gets a thank-you that fits.",
+      "next": "When each level looks right, share it.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "public/js/report.js",
+          "lines": "5003-5110",
+          "note": "run_merge_tag_conditions"
+        }
+      ],
+      "scroll": "start",
+      "popover": "left"
+    },
+    {
+      "id": "platform",
+      "target": "platform",
+      "uiLabel": [
+        "Share",
+        "Share Your Report",
+        "Which platform will you use to send your personalized report?",
+        "Get report link"
+      ],
+      "prepare": {
+        "screen": "share",
+        "state": "platform"
+      },
+      "title": "Tell us where you send from",
+      "tells": "Publish your report first; Share then appears next to Preview. Open it and answer Which platform will you use to send your personalized report? Storyraise builds the link with that platform's merge tag. Here it is Mailchimp.",
+      "why": "Your platform fills in each recipient as it sends, so the same link takes every donor to their own report.",
+      "next": "Get report link.",
+      "keepInMind": [
+        "Use Data, Show When, Previewing as, and the personalized link are part of the Precision plan.",
+        "If Share asks no platform question, the report has no variables yet."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/personalized-links/",
+        "label": "Personalized links"
+      },
+      "source": [
+        {
+          "file": "public/builder/index.html",
+          "lines": "770-786",
+          "note": "Share shows once the report is published; Publish becomes Republish"
+        },
+        {
+          "file": "public/builder/index.html",
+          "lines": "4012-4035",
+          "note": "Share modal platform prompt"
+        }
+      ]
+    },
+    {
+      "id": "copy-link",
+      "target": "copy-link",
+      "uiLabel": [
+        "Copy link",
+        "Copy team link"
+      ],
+      "prepare": {
+        "screen": "share",
+        "state": "link"
+      },
+      "title": "One link for every donor",
+      "tells": "This is your personalized link, sometimes called a dynamic link. It ends in ?for= and your platform's merge tag. Paste it into your email as a button or link.",
+      "why": "Each donor who clicks lands on their own version, and their visit shows up under their name in Analytics.",
+      "next": "To have teammates check donor versions without being counted, tick Sending to my team and copy the link. Copy team link opens the report without anyone's details, also uncounted.",
+      "keepInMind": [
+        "Check the text after ?for= matches your platform's email merge tag.",
+        "A link without ?for= shows variables as typed, like @@first_name@@, and every Show When section, so always send the personalized link."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/personalized-links/",
+        "label": "Personalized links"
+      },
+      "source": [
+        {
+          "file": "public/builder/index.html",
+          "lines": "4050-4060",
+          "note": "Copy link, team checkbox, ?for= warning"
+        },
+        {
+          "file": "public/js/report.js",
+          "lines": "3540-3600",
+          "note": "?for= lookup"
+        }
+      ],
+      "popover": "left"
+    },
+    {
+      "id": "send-card",
+      "target": "send-card",
+      "uiLabel": [
+        "Send it with Storyraise Send"
+      ],
+      "prepare": {
+        "screen": "share",
+        "state": "link"
+      },
+      "title": "Or let Storyraise send it",
+      "tells": "Storyraise Send drafts the email for you, with a View the Report button that is already personalized for each recipient.",
+      "why": "No merge tags to check and no copy and paste between tools.",
+      "next": "Draft the email, then review the preview, choose recipients, schedule, and send.",
+      "keepInMind": [],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/email-distribution/",
+        "label": "Email distribution"
+      },
+      "source": [
+        {
+          "file": "public/builder/index.html",
+          "lines": "4140-4147",
+          "note": "Send it with Storyraise Send card"
+        }
+      ]
+    },
+    {
+      "id": "send-recipients",
+      "target": "list",
+      "uiLabel": [
+        "Recipients",
+        "Review & send"
+      ],
+      "prepare": {
+        "screen": "send",
+        "state": "recipients"
+      },
+      "title": "Pick who gets it",
+      "tells": "In Storyraise Send, Review & send walks through Preview, Recipients, Schedule, and Send info. Here the 2026 Impact Report donors list adds all six donors at once.",
+      "why": "Each recipient gets the same email with their own View the Report link, so no one has to build merge tags by hand.",
+      "next": "Preview the email as a few recipients, then schedule it or send it now.",
+      "keepInMind": [
+        "Add your constituents to a list when you import them, and picking recipients is one click."
+      ],
+      "kb": {
+        "href": "/docs/distribution-and-engagement/email-distribution/",
+        "label": "Email distribution"
+      },
+      "source": [
+        {
+          "file": "deploy-send public/send/index.html",
+          "lines": "156-174",
+          "note": "Preview, Recipients, Schedule, Send info steps"
+        }
+      ]
+    }
+  ]
+}

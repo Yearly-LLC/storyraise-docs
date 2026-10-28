@@ -1,0 +1,59 @@
+{
+ "_about": "Fabricated Harbor Lights constituents. Field keys match what the CSV importer stores (process_string of each header). Emily and James mirror o/demo's levels.",
+ "constituents": [
+  {
+   "first_name": "Emily",
+   "last_name": "Wilson",
+   "email": "emily.wilson@harborlights.example",
+   "donor_level": "Bronze",
+   "gift_amount": "5,000",
+   "fund_reference": "F004",
+   "address": "273 Elm St, Laketown, CA 22507"
+  },
+  {
+   "first_name": "James",
+   "last_name": "Taylor",
+   "email": "james.taylor@harborlights.example",
+   "donor_level": "Gold",
+   "gift_amount": "25,000",
+   "fund_reference": "F002",
+   "address": "18 Harbor Rd, Laketown, CA 22501"
+  },
+  {
+   "first_name": "Maria",
+   "last_name": "Gonzalez",
+   "email": "maria.gonzalez@harborlights.example",
+   "donor_level": "Silver",
+   "gift_amount": "12,500",
+   "fund_reference": "F001",
+   "address": "96 Bayview Ave, Laketown, CA 22503"
+  },
+  {
+   "first_name": "Daniel",
+   "last_name": "Brooks",
+   "email": "daniel.brooks@harborlights.example",
+   "donor_level": "Gold",
+   "gift_amount": "30,000",
+   "fund_reference": "F003",
+   "address": "4 Lighthouse Ln, Laketown, CA 22502"
+  },
+  {
+   "first_name": "Aisha",
+   "last_name": "Robinson",
+   "email": "aisha.robinson@harborlights.example",
+   "donor_level": "Silver",
+   "gift_amount": "10,000",
+   "fund_reference": "F002",
+   "address": "611 Pier St, Laketown, CA 22508"
+  },
+  {
+   "first_name": "Robert",
+   "last_name": "Miller",
+   "email": "robert.miller@harborlights.example",
+   "donor_level": "Bronze",
+   "gift_amount": "2,500",
+   "fund_reference": "F004",
+   "address": "52 Cove Dr, Laketown, CA 22505"
+  }
+ ]
+}

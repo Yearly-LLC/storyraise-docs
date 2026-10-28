@@ -824,7 +824,8 @@ function buildSearchPage() {
 // /docs/building-reports/creating-visualizations/ moved to .../creating-infographics/
 // when Visualizations were renamed. Both old URLs survive as hand-written redirect
 // stubs so existing links, bookmarks and search results keep working.
-// storyraise-analytics/, automated-donor-journeys/ and donor-signals/ hold hand-written
+// storyraise-analytics/, automated-donor-journeys/, donor-signals/, personalization/
+// and collect-stories/ hold hand-written
 // landing pages (video and page sources in tools/<slug>). Listing them here gets their
 // /docs/ links checked; they sit outside docs/, so the orphan check never sees them.
 const HAND_MAINTAINED = new Set([
@@ -833,6 +834,8 @@ const HAND_MAINTAINED = new Set([
   'storyraise-analytics/index.html',
   'automated-donor-journeys/index.html',
   'donor-signals/index.html',
+  'personalization/index.html',
+  'collect-stories/index.html',
 ]);
 
 const problems = [];
@@ -946,6 +949,24 @@ for (const section of SECTIONS) {
   }
 
   console.log(`${section.label}: ${section.articles.length} articles`);
+}
+
+// The hand-written landing pages (tour video + interactive demo) are searchable
+// too. Title and description come from the page itself, so the page stays the
+// only copy; keywords are the questions people type when looking for them.
+const LANDING_SEARCH = [
+  { dir: 'storyraise-analytics', section: 'Sharing & Analytics', keywords: ['analytics', 'demo', 'video', 'tour', 'who read my report'] },
+  { dir: 'automated-donor-journeys', section: 'Sharing & Analytics', keywords: ['automation', 'journey', 'email platform', 'new donor', 'welcome'] },
+  { dir: 'donor-signals', section: 'Sharing & Analytics', keywords: ['donor signals', 'demo', 'video', 'tour', 'outreach', 'health'] },
+  { dir: 'personalization', section: 'Sharing & Analytics', keywords: ['personalization', 'personalized', 'merge tags', 'variables', 'show when', 'giving level', 'constituents', 'preview as', 'demo', 'video', 'tour'] },
+  { dir: 'collect-stories', section: 'Storyraise Collect', keywords: ['collect', 'stories', 'form', 'photos', 'repeater', 'repeat when', 'student stories', 'demo', 'video', 'tour'] },
+];
+for (const l of LANDING_SEARCH) {
+  const html = fs.readFileSync(path.join(ROOT, l.dir, 'index.html'), 'utf8');
+  const title = (html.match(/<title>([^<|]*)/) || [])[1];
+  const description = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
+  if (!title || !description) { problems.push(`${l.dir}/index.html: no <title> or meta description for search`); continue; }
+  searchIndex.push({ title: title.trim(), description, section: l.section, url: `/${l.dir}/`, keywords: l.keywords, body: description });
 }
 
 buildHome();
