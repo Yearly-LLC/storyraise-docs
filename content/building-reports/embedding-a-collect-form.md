@@ -45,7 +45,7 @@ For a button, you get the full set of button controls — text, font, size, roun
 
 ## What readers can do
 
-An embedded form can use a reader's camera and microphone, so **record a story** and **upload a photo** questions work inside a report exactly as they do on the form's own page.
+Readers answer an embedded form exactly as they would on the form's own page. **File upload** questions open the reader's file picker, so they can add a photo, video, or document without leaving the report — and on most phones, take a new photo or video with the camera. The form has no built-in recorder.
 
 ## Where responses go
 

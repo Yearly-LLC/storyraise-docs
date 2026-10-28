@@ -1,0 +1,175 @@
+{
+ "_about": "Read once (read-only) from o/demo collections -OY1WWp6j0VZJog3B3nC (stories) and -OlNvf6tnfenPpv5czqv (funds) on 2026-10-28. Renamed for Harbor Lights: student Emily Johnson -> Grace Johnson (clashed with donor Emily Wilson); a leftover placeholder phrase removed from one bio. The form fields are authored for the demo so each saves to the variable the stories already use; the source collection still had the default Collect fields. Majors and notes adjusted 2026-10-28 so each student fits their fund (review: Health Sciences funded an engineering major).",
+ "collection_title": "Scholarship Stories",
+ "funds_title": "Scholarship Funds",
+ "form": {
+  "title": "Share your scholarship story",
+  "description": "Tell the donors who fund your scholarship what it has meant to you. Your story may appear in our 2026 Impact Report.",
+  "fields": [
+   {
+    "element": "input",
+    "type": "text",
+    "label": "Your name",
+    "name": "student_name",
+    "placeholder": "Pat Jordan",
+    "required": true
+   },
+   {
+    "element": "input",
+    "type": "number",
+    "label": "Class year",
+    "name": "class_year",
+    "placeholder": "2027",
+    "required": true
+   },
+   {
+    "element": "input",
+    "type": "text",
+    "label": "Your major",
+    "name": "major",
+    "placeholder": "Biology",
+    "required": false
+   },
+   {
+    "element": "dropdown",
+    "type": "dropdown",
+    "label": "Which scholarship do you receive?",
+    "name": "fund_id",
+    "options": [
+     "F001 General Scholarship Fund",
+     "F002 STEM Research Endowment",
+     "F003 Arts & Humanities Excellence Fund",
+     "F004 Health Sciences Innovation Fund",
+     "F005 Athletics Endowment"
+    ],
+    "required": true
+   },
+   {
+    "element": "textarea",
+    "type": "textarea",
+    "label": "A little about you",
+    "name": "short_bio",
+    "placeholder": "Two or three sentences",
+    "required": false
+   },
+   {
+    "element": "textarea",
+    "type": "textarea",
+    "label": "Your note to the donors who made this possible",
+    "name": "student_note",
+    "required": true
+   },
+   {
+    "element": "input",
+    "type": "file",
+    "label": "A photo of you",
+    "name": "student_photo",
+    "accept": "images",
+    "required": false
+   }
+  ]
+ },
+ "stories": [
+  {
+   "class_year": "2027",
+   "fund_id": "F002",
+   "hobbies_interests": "Volunteering, debate club, hiking",
+   "major": "Biology",
+   "short_bio": "A first-generation college student passionate about community health research.",
+   "student_name": "Grace Johnson",
+   "student_note": "I am so grateful for your generous support. As a first-generation college student, your contribution has opened doors I never imagined possible. Because of your gift, I can focus on my studies in Biology and spend my summers in a research lab instead of a second job. Your kindness inspires me to give back and support others in the future.",
+   "student_photo": "https://images.unsplash.com/photo-1592621385645-e41659e8aabe?q=80&w=1294&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+   "_key": "r_1"
+  },
+  {
+   "class_year": "2027",
+   "fund_id": "F002",
+   "hobbies_interests": "Coding, chess, esports",
+   "major": "Computer Science",
+   "short_bio": "Aspiring software engineer with an interest in AI and data science.",
+   "student_name": "Marcus Lee",
+   "student_note": "Thank you so much for your generosity. Your support allows me to pursue my passion for computer science and research in artificial intelligence. Outside of class, I enjoy coding projects and mentoring younger students who are just discovering technology. Your gift not only helps me today but will also make an impact through the work I hope to do in the future.",
+   "student_photo": "https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+   "_key": "r_2"
+  },
+  {
+   "class_year": "2027",
+   "fund_id": "F004",
+   "hobbies_interests": "Cycling, painting, cooking",
+   "major": "Nursing",
+   "short_bio": "Nursing student and clinical volunteer at a community health center.",
+   "student_name": "Sophia Ramirez",
+   "student_note": "I want to sincerely thank you for supporting students like me. With your help, I have been able to spend more time in clinical training and less time worrying about tuition. Every patient I meet reminds me why I chose nursing, and your gift is part of every one of those moments.",
+   "student_photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+   "_key": "r_3"
+  },
+  {
+   "class_year": "2027",
+   "fund_id": "F004",
+   "hobbies_interests": "Basketball, photography, travel",
+   "major": "Public Health",
+   "short_bio": "Incoming student excited to study how communities stay healthy.",
+   "student_name": "David Chen",
+   "student_note": "Thank you so much for your generosity. As a new student just starting my journey, I am excited to study public health and learn how good policy keeps whole communities healthier. Your support makes it possible for me to focus on that from my very first semester.",
+   "student_photo": "https://images.unsplash.com/photo-1616419961374-bcafccc6239b?q=80&w=1285&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+   "_key": "r_4"
+  },
+  {
+   "class_year": "2027",
+   "fund_id": "F005",
+   "hobbies_interests": "Writing, theatre, yoga",
+   "major": "Kinesiology",
+   "short_bio": "Varsity runner and campus leader in student government.",
+   "student_name": "Ava Thompson",
+   "student_photo": "https://images.unsplash.com/photo-1566876657812-66eb7b3b1ad5?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+   "_key": "r_5"
+  }
+ ],
+ "funds": [
+  {
+   "book": "$1,513,115.00",
+   "fund_description": "Supports undergraduate scholarships across all disciplines..",
+   "fund_id": "F001",
+   "fund_name": "General Scholarship Fund",
+   "market": "$1,406,590.04",
+   "spending": "$50,540.22",
+   "_key": "r_1"
+  },
+  {
+   "book": "$1,237,403.00",
+   "fund_description": "Provides funding for student and faculty research in science, technology, engineering, and mathematics.",
+   "fund_id": "F002",
+   "fund_name": "STEM Research Endowment",
+   "market": "$1,240,208.73",
+   "spending": "$68,058.50",
+   "_key": "r_2"
+  },
+  {
+   "book": "$2,154,690.00",
+   "fund_description": "Supports programs, exhibitions, and performances in the arts and humanities.",
+   "fund_id": "F003",
+   "fund_name": "Arts & Humanities Excellence Fund",
+   "market": "$1,999,516.16",
+   "spending": "$107,619.44",
+   "_key": "r_3"
+  },
+  {
+   "book": "$3,869,647.00",
+   "fund_description": "Funds initiatives in nursing, medicine, and public health, including new lab equipment and fellowships.",
+   "fund_id": "F004",
+   "fund_name": "Health Sciences Innovation Fund",
+   "market": "$3,588,815.36",
+   "spending": "$156,078.36",
+   "_key": "r_4"
+  },
+  {
+   "book": "$673,416.00",
+   "fund_description": "Provides long-term support for student-athlete scholarships and athletic program development.",
+   "fund_id": "F005",
+   "fund_name": "Athletics Endowment",
+   "market": "$725,107.01",
+   "spending": "$39,330.31",
+   "_key": "r_5"
+  }
+ ]
+}

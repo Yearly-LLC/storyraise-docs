@@ -1,0 +1,52 @@
+{
+  "s01": {
+    "base": "s01.a839d5c3c1",
+    "mp3": "s01.a839d5c3c1.mp3",
+    "alignment": "s01.a839d5c3c1.alignment.json"
+  },
+  "s02": {
+    "base": "s02.f7c9c38c91",
+    "mp3": "s02.f7c9c38c91.mp3",
+    "alignment": "s02.f7c9c38c91.alignment.json"
+  },
+  "s03": {
+    "base": "s03.d7bba4cd31",
+    "mp3": "s03.d7bba4cd31.mp3",
+    "alignment": "s03.d7bba4cd31.alignment.json"
+  },
+  "s04": {
+    "base": "s04.55fe068d30",
+    "mp3": "s04.55fe068d30.mp3",
+    "alignment": "s04.55fe068d30.alignment.json"
+  },
+  "s05": {
+    "base": "s05.5c73270f1d",
+    "mp3": "s05.5c73270f1d.mp3",
+    "alignment": "s05.5c73270f1d.alignment.json"
+  },
+  "s06": {
+    "base": "s06.72ead646b9",
+    "mp3": "s06.72ead646b9.mp3",
+    "alignment": "s06.72ead646b9.alignment.json"
+  },
+  "s07": {
+    "base": "s07.9e2dbf5b7d",
+    "mp3": "s07.9e2dbf5b7d.mp3",
+    "alignment": "s07.9e2dbf5b7d.alignment.json"
+  },
+  "s08": {
+    "base": "s08.8b6c82326a",
+    "mp3": "s08.8b6c82326a.mp3",
+    "alignment": "s08.8b6c82326a.alignment.json"
+  },
+  "s09": {
+    "base": "s09.29b582be49",
+    "mp3": "s09.29b582be49.mp3",
+    "alignment": "s09.29b582be49.alignment.json"
+  },
+  "s10": {
+    "base": "s10.7181c6770d",
+    "mp3": "s10.7181c6770d.mp3",
+    "alignment": "s10.7181c6770d.alignment.json"
+  }
+}

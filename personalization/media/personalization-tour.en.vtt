@@ -1,0 +1,136 @@
+WEBVTT
+
+1
+00:00:00.350 --> 00:00:03.493
+One report, written for every donor.
+
+2
+00:00:03.845 --> 00:00:07.051
+With Storyraise personalization, each
+reader sees their own name, their own
+
+3
+00:00:07.061 --> 00:00:09.803
+giving, and the story that fits them.
+
+4
+00:00:09.813 --> 00:00:11.951
+It starts on the Constituents tab.
+
+5
+00:00:11.961 --> 00:00:16.920
+Choose Add constituents, then upload a CSV
+file, or connect your CRM so your records
+
+6
+00:00:16.930 --> 00:00:18.726
+stay in sync.
+
+7
+00:00:18.813 --> 00:00:21.810
+Your file needs First Name, Last Name, and
+Email.
+
+8
+00:00:21.820 --> 00:00:26.117
+Every other column, like Donor Level or
+Gift Amount, comes in as a custom field.
+
+9
+00:00:26.127 --> 00:00:29.398
+Map your columns, then Import
+constituents.
+
+10
+00:00:30.013 --> 00:00:32.273
+Open anyone to see their profile.
+
+11
+00:00:32.370 --> 00:00:37.022
+Each field is a variable, like donor
+level, ready to drop into a report.
+
+12
+00:00:38.013 --> 00:00:42.496
+In the report, type a variable right into
+your text, between double at signs.
+
+13
+00:00:42.506 --> 00:00:46.176
+Dear first name becomes Dear Emily, with
+her own gift and giving level filled in
+
+14
+00:00:46.186 --> 00:00:47.605
+too.
+
+15
+00:00:47.615 --> 00:00:51.506
+To show a section to some donors only,
+select it and open Use Data.
+
+16
+00:00:51.516 --> 00:00:55.546
+Under Show When, pick donor level, is,
+Gold.
+
+17
+00:00:55.556 --> 00:00:59.732
+Silver and Bronze get their own sections,
+set up the same way.
+
+18
+00:01:00.415 --> 00:01:03.813
+Open web preview and choose who you are
+previewing as.
+
+19
+00:01:04.026 --> 00:01:07.905
+Emily Wilson is a Bronze donor, so she
+sees her name and the Bronze story.
+
+20
+00:01:07.915 --> 00:01:11.882
+Switch to James Taylor, and the same
+report turns Gold.
+
+21
+00:01:13.415 --> 00:01:14.520
+Ready to send?
+
+22
+00:01:14.530 --> 00:01:16.825
+Publish your report, then open Share.
+
+23
+00:01:16.921 --> 00:01:19.860
+Tell us which email platform you use, and
+Get report link.
+
+24
+00:01:19.870 --> 00:01:24.557
+Your platform fills in each donor's email,
+so everyone opens their own report.
+
+25
+00:01:25.015 --> 00:01:26.730
+Or let us send it for you.
+
+26
+00:01:27.082 --> 00:01:31.089
+Storyraise Send drafts the email, with a
+personalized View the Report button.
+
+27
+00:01:31.099 --> 00:01:36.435
+Pick your recipients, like the donors you
+just imported, then schedule it and send.
+
+28
+00:01:37.015 --> 00:01:41.661
+Upload your donors, add a few variables,
+and every reader gets a report that feels
+
+29
+00:01:41.671 --> 00:01:43.095
+written for them.

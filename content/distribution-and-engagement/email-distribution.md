@@ -18,7 +18,7 @@ A Send message is built around your content: write a personal note, include a li
 
 The quickest route is from a published report:
 
-1. Open the report's share options — the **Your report is live!** page that opens after you publish, or the **Share** button in the builder.
+1. Open the report in the builder and click **Share**. (The **Your report is live!** page that opens after you publish doesn't include Storyraise Send.)
 2. Under **Send it with Storyraise Send**, choose **Email** and click **Draft the email**. Send opens in a new tab with a message already drafted around your report: its cover image and a [personalized link](personalized-links.md) for each recipient (the link ends in `?for=@@email@@`, which Send fills in per person).
 
 If your organization hasn't set up a sending address yet, the button reads **Set up your sending address** instead and walks you through that first, then brings you back to your draft.

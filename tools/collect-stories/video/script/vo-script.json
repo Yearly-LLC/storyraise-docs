@@ -1,0 +1,68 @@
+{
+  "_about": "Narration for the Storyraise Collect stories walkthrough (approved by Vince 2026-10-28). `text` is what viewers read in captions; [[cue:name]] markers are stripped before TTS and become timestamps visuals land on. Labels match the product UI (storyraise-collect branch public/js.js and compose/index.html; builder public/builder/index.html). American English, no em dashes. Value first: caveats (no QR or embed code in Collect, repeaters match tagged constituents with contains) live in the page FAQ and KB, not here.",
+  "respell": {},
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Cold open",
+      "minDuration": 8,
+      "text": "The best part of any impact report is the people in it. [[cue:brand]]Storyraise Collect gathers their stories, and your reports tell them."
+    },
+    {
+      "id": "s02",
+      "title": "Start a collection",
+      "minDuration": 7,
+      "text": "[[cue:new]]Start a new collection [[cue:type]]and choose what you want to collect, like thank-yous from the students your donors support."
+    },
+    {
+      "id": "s03",
+      "title": "Build the form",
+      "minDuration": 13,
+      "text": "[[cue:fields]]Add the fields you need: [[cue:short]]short text for a name, [[cue:long]]long text for their story, [[cue:upload]]and a file upload for a photo. [[cue:variable]]Each field saves to a variable, like student note."
+    },
+    {
+      "id": "s04",
+      "title": "Share the form",
+      "minDuration": 6.5,
+      "text": "[[cue:link]]Get form link and send it however you like. [[cue:form]]Students answer on any device, photo and all."
+    },
+    {
+      "id": "s05",
+      "title": "Responses",
+      "minDuration": 6.5,
+      "text": "[[cue:grid]]Every answer lands in the collection, one row per student, [[cue:review]]ready to review, edit, or export."
+    },
+    {
+      "id": "s06",
+      "title": "Add a repeater",
+      "minDuration": 13,
+      "text": "[[cue:repeater]]In your report, add a repeater. [[cue:collection]]Under Repeat For Each Item in, select your collection. [[cue:card]]Then lay out one story card with variables like student name, [[cue:photo]]and set its image to the student's photo."
+    },
+    {
+      "id": "s07",
+      "title": "One card per story",
+      "minDuration": 9,
+      "text": "[[cue:cards]]The repeater makes a card for every response. [[cue:new]]When a new story comes in, the report shows it too.",
+      "enabled": false,
+      "_note": "Cut 2026-10-28 after review: an unfiltered repeater renders nothing (report.js:4909-4911), so 'a card for every response' was not true. Its new-stories line moved to s09."
+    },
+    {
+      "id": "s08",
+      "title": "Make it personal",
+      "minDuration": 10,
+      "text": "[[cue:when]]Now tell it which stories to show. Under Repeat When, [[cue:rule]]match the fund code each student entered to the fund reference on every donor's record. [[cue:result]]Each donor sees the students their own gift supports."
+    },
+    {
+      "id": "s09",
+      "title": "Preview two donors",
+      "minDuration": 12,
+      "text": "[[cue:emily]]Emily Wilson's fund supports Sophia and David, [[cue:emilycards]]so theirs are the stories she reads. [[cue:james]]James Taylor sees Grace and Marcus instead. [[cue:new]]And when a new matching story comes in, it shows up the next time the report opens."
+    },
+    {
+      "id": "s10",
+      "title": "Close",
+      "minDuration": 5,
+      "text": "[[cue:recap]]Collect the stories once, and every report tells the right ones."
+    }
+  ]
+}

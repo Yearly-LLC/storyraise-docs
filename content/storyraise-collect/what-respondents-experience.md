@@ -34,8 +34,6 @@ If a file is the wrong type or too large, the form tells you before it uploads a
 
 **If you're on a slow or unreliable connection,** a large video may take a long time or fail partway. If that happens: record a shorter clip, or wait until you have wifi and submit then.
 
-<!-- TEAM REVIEW: still open: embedding-a-collect-form.md's "record a story" wording should be checked, since the form has no in-browser recorder (file picker only). -->
-
 ## Finishing later
 
 Answers are saved as you type, so a form you've started isn't lost if you close the tab by accident.
@@ -63,6 +61,6 @@ If you want your story removed later, contact the organization that sent you the
 
 ## For the person sending the form
 
-- [Sharing your form](sharing-your-form.md) — links, QR codes, and personalization
+- [Sharing your form](sharing-your-form.md) — form links and personalization
 - [Consent, releases, and dignity](consent-and-permissions.md) — asking properly
 - [Network requirements](../resources/network-requirements.md) — if a whole office can't load the form

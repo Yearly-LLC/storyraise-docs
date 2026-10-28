@@ -9,6 +9,8 @@ last_reviewed: 2026-10-15
 
 Storyraise Collect gathers the raw material your stories are made of. Build a form, share the link, and collect stories, thank-yous, photos, and data from your community — then put what you collect to work in your reports and videos.
 
+> **Tip:** Prefer to see it? [Watch the walkthrough and explore the interactive demo](/collect-stories/): build a form, collect stories and photos, and show each donor the stories their gift supports.
+
 <!-- TEAM REVIEW: labels on this page are verified against the deployed app. Still open: whether Storyraise Collect should be described as generally available. -->
 
 ## Start a collection

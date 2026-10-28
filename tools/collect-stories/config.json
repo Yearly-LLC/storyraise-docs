@@ -1,0 +1,43 @@
+{
+  "builder": {
+    "path": "/Applications/MAMP/htdocs/yearly-v3/builder",
+    "sha": "2b45b64ec7de24a9a518bca075221fd34cace221",
+    "collect_branch": "storyraise-collect",
+    "collect_sha": "52a70275"
+  },
+  "source": {
+    "org_slug": "demo",
+    "report_id": "-NVC1ZEVuj-dyjAHJ6HW",
+    "page_id": "stories",
+    "collections": {
+      "stories": "-OY1WWp6j0VZJog3B3nC",
+      "funds": "-OlNvf6tnfenPpv5czqv"
+    },
+    "note": "Stories and funds read once (read-only) into fixtures/collect.json; the Stories page content comes from the same report via the personalization kit's fixture read. Never open the live report or Collect collection in an editor."
+  },
+  "identity": {
+    "org_name": "Harbor Lights Community Foundation",
+    "org_slug": "harbor-lights",
+    "link_host": "harborlights.example",
+    "report_title": "2026 Impact Report"
+  },
+  "rename": [
+    {
+      "from": "Personalized Report Template",
+      "to": "2026 Impact Report"
+    },
+    {
+      "from": "Personalized Report Sample",
+      "to": "2026 Impact Report"
+    }
+  ],
+  "capture": {
+    "timezone": "America/New_York",
+    "locale": "en-US",
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "port": 5050
+  }
+}

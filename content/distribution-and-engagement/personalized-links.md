@@ -10,6 +10,8 @@ last_reviewed: 2026-10-22
 
 A personalized link opens your report addressed to one specific constituent — their name in the greeting, their details filled into merge tags, and their visit attributed to them in your Analytics. It's the difference between "Dear friend" and "Dear Maria."
 
+> **Tip:** Prefer to see it? [Watch the two-minute tour and explore the interactive demo](/personalization/): import donors, add variables and Show When content, then preview the report as two different donors.
+
 ## How personalized links work
 
 Take your report's public link and add `?for=` followed by a constituent's email address:

@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Storyraise Send | Storyraise</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" data-sr-css="send" href="send.css?v=af44584462" />
+  <link rel="stylesheet" data-sr-css="editor" href="send-editor.css?v=84a8e80dfd" />
+</head>
+<!-- Read-only replica of Storyraise Send with fabricated data for a fictional community
+     foundation. Captured from deploy-send 13d54568 (stepper) on 2026-10-28
+     by tools/personalization/replica/send. -->
+<body data-sr-screen="send">
+<div id="sr-mount"></div>
+<template data-sr-state="draft" data-sr-css="editor">
+    
+    
+    
+
+    <div x-show="user &amp;&amp; typeof user === 'object'" class="flex w-full h-full" @keydown.escape.window="sidebarOpen = false" style="">
+      <main :class="sidebarOpen ? 'main-content sidebar-open' : 'main-content sidebar-closed'" class="flex-1 flex flex-col h-full main-content sidebar-open">
+        
+
+        <header class="header-gradient">
+          <div class="header-content">
+            <div class="header-left">
+              <div class="header-logo">
+              <a :href="getBackUrl()" class="nav-link" href="#" data-inert="" aria-disabled="true">
+                <span class="material-icons">arrow_back</span>
+                <span x-text="getBackLabel()">Return to report</span>
+              </a>
+              
+              <a :href="getChannelsUrl()" class="nav-link" rel="noopener" href="#" data-inert="" aria-disabled="true">
+                <span class="material-icons">tune</span>
+                <span>Manage messaging</span>
+              </a>
+              </div>
+            </div>
+
+            <div class="header-center" style="gap: 0.75rem;">
+              
+              <a @click="openCombinedPreview()" class="nav-link" style="cursor: pointer;" data-inert="" aria-disabled="true">
+                <span class="material-icons">visibility</span>
+                <span>Preview</span>
+              </a>
+            </div>
+
+            <div class="header-nav">
+              
+              <a :href="getSendUrl()" @click.prevent="navigateToSend()" class="nav-link nav-link-primary" href="#" data-tour="review-send" data-sr-action="state:preview">
+                <span class="material-icons">send</span>
+                <span>Review &amp; send</span>
+              </a>
+              <a :href="getStorygramsUrl()" class="nav-link" :class="{'disabled': !canAccessStorygrams()}" :style="canAccessStorygrams() ? '' : 'opacity: 0.5; pointer-events: none;'" href="#" style="" data-inert="" aria-disabled="true">
+                <span class="material-icons">auto_stories</span>
+                <span>Sent messages</span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        
+        
+
+        <div class="main-workspace">
+          <div class="editor-layout">
+            <div class="editor-main-column">
+              
+              <div class="relative flex flex-col items-center w-full" style="padding: 0 48px;" x-show="activeChannel === 'email'" x-transition="">
+                
+                <div class="relative w-full" :class="{ 'transition-all duration-500': editorWidthTransitioning }" :style="`max-width: ${editorContentWidth}px;`" style="max-width: 600px;">
+                  
+                  
+
+                  
+                  
+
+                  
+                  
+
+                  
+                  <div class="editor-wrapper">
+                    
+                    <div class="editor-ribbon" id="editor-ribbon">
+                      <div class="ribbon-label">
+                        <span class="ribbon-label-text">Your E‑Mail</span>
+                      </div>
+                      <div class="ribbon-tools" id="email-ribbon-tools"><button class="ribbon-btn" data-tooltip="Add Text+" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">text_fields</span></button><button class="ribbon-btn" data-tooltip="Add Heading" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">h_mobiledata</span></button><button class="ribbon-btn" data-tooltip="Add List" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">list</span></button><button class="ribbon-btn" data-tooltip="Add Quote" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">format_quote</span></button><button class="ribbon-btn" data-tooltip="Add Link" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">link</span></button><button class="ribbon-btn" data-tooltip="Add Button" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">smart_button</span></button><button class="ribbon-btn" data-tooltip="Add Image" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">image</span></button><button class="ribbon-btn" data-tooltip="Add Divider" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">horizontal_rule</span></button><button class="ribbon-btn" data-tooltip="Add Columns" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">view_column</span></button><button class="ribbon-btn" data-tooltip="Add Social" data-draggable="true" style="cursor: grab;" data-inert="" aria-disabled="true"><span class="material-icons">share</span></button></div>
+                      <div class="ribbon-actions">
+                        <button class="ribbon-btn" :class="{ 'ribbon-btn-active': editorResizeMode }" @click="editorResizeMode = !editorResizeMode" :data-tooltip="editorResizeMode ? 'Finish resize' : 'Resize editor'" data-tooltip="Resize editor" data-inert="" aria-disabled="true">
+                          <span class="material-icons" x-text="editorResizeMode ? 'check' : 'aspect_ratio'">aspect_ratio</span>
+                        </button>
+                        <div style="display: flex;">
+                          <button class="ribbon-btn" @click="emailUndoAction()" data-tooltip="Undo" style="border-radius: 6px 0 0 6px;" data-inert="" aria-disabled="true">
+                            <span class="material-icons">undo</span>
+                          </button>
+                          <button class="ribbon-btn" @click="emailRedoAction()" data-tooltip="Redo" style="border-radius: 0 6px 6px 0; border-left: none;" data-inert="" aria-disabled="true">
+                            <span class="material-icons">redo</span>
+                          </button>
+                        </div>
+                        
+                        <div class="merge-tags-container" style="position: relative;">
+                          <button class="ribbon-btn" :class="{ 'ribbon-btn-active': showMergeTagsDropdown }" @click="showMergeTagsDropdown = !showMergeTagsDropdown" data-tooltip="copy variable" data-inert="" aria-disabled="true">
+                            <span style="font-size: 18px; font-weight: 600;">@</span>
+                          </button>
+                          
+                          
+                          
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div id="emailEditorjs" @click="smsEditorFocused = false" style="position: relative;" data-tour="email"><div class="codex-editor codex-editor--narrow codex-editor--empty"><div class="codex-editor__redactor" style="padding-bottom: 300px;"><div class="ce-block" data-id="Vb9CeGkHGC" data-hover-listener-attached="true"><div class="ce-block__content"><div class="cdx-heading" style="position: relative;"><div class="cdx-heading__input cdx-heading__text" contenteditable="false" data-placeholder="Enter heading..." style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 24px; line-height: 1.6; min-height: 24px;" data-empty="false">Hi @@first_name@@,</div></div></div></div><div class="ce-block" data-id="GDM-qQRzPy" data-hover-listener-attached="true"><div class="ce-block__content"><div class="cdx-text" style="position: relative;"><div class="cdx-text__input cdx-text__text" contenteditable="false" style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; min-height: 24px; display: block;" data-empty="false">I wanted to share a brief update with you. We've put together a report that highlights recent progress, key outcomes, and what's ahead.<br><br>You can view the report using the button below.</div></div></div></div><div class="ce-block" data-id="nSqCEVbpBm" data-hover-listener-attached="true"><div class="ce-block__content"><div class="cdx-block image-tool image-tool--filled"><div class="image-tool__image" style="text-align: center;"><img class="image-tool__image-picture" src="img/send-23762bf27a.jpg" style="margin-left: auto; margin-right: auto;"></div></div></div></div><div class="ce-block" data-id="74WuouSOsU" data-hover-listener-attached="true"><div class="ce-block__content"><div class="custom-button-wrapper" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 10px 0px; box-sizing: border-box;"><a class="custom-button-final" href="#" style="cursor: pointer; font-family: Arial, Helvetica, sans-serif; font-size: 18px; background: rgb(16, 185, 129); color: rgb(255, 255, 255); border-radius: 6px; outline: rgb(16, 185, 129) solid 0px; outline-offset: 0px;" data-tour="view-button" data-inert="" aria-disabled="true">View the Report</a></div></div></div><div class="ce-block" data-id="E1uWh-BfR6" data-hover-listener-attached="true"><div class="ce-block__content"><div class="cdx-text" style="position: relative;"><div class="cdx-text__input cdx-text__text" contenteditable="false" data-placeholder="Your Message" style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; min-height: 24px; display: block;" data-empty="false">Thank you for taking the time to stay connected with our work. We're grateful for your continued interest and support.<br><br>Warm regards,<br>Harbor Lights Community Foundation</div></div></div></div></div><div class="codex-editor-overlay"><div class="codex-editor-overlay__container"><div class="codex-editor-overlay__rectangle"></div></div></div><div class="ce-inline-toolbar"></div></div><div class="block-drag-handle" title="Drag to reorder"><span class="material-icons">drag_indicator</span></div></div>
+                  </div>
+                </div>
+
+                
+                
+              </div>
+
+              
+              
+
+                
+                
+              </div>
+          </div>
+
+          
+          
+        </div>
+
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+      </main>
+
+      <aside x-show="sidebarOpen" x-transition:enter="transition-opacity ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="sidebar h-full" @click.away="window.innerWidth &lt;= 768 ? sidebarOpen = false : null" x-trap.inert.noscroll="sidebarOpen &amp;&amp; window.innerWidth &lt;= 768">
+        <button @click="toggleSidebar()" class="sidebar-close-btn" data-inert="" aria-disabled="true">
+          <span class="material-icons">chevron_right</span>
+        </button>
+
+        
+        <div x-data="{ activeTab: 'edit' }" class="w-full h-full flex flex-col">
+          
+          <div class="sidebar-tabs-navigation">
+            <div class="sidebar-tabs-grid sidebar-tabs-grid-4">
+              <button @click="activeTab = 'edit'" :class="activeTab === 'edit' ? 'sidebar-tab-edit active' : 'sidebar-tab-edit'" class="sidebar-tab-button sidebar-tab-edit active" data-inert="" aria-disabled="true">
+                
+                Edit
+              </button>
+              
+              <button @click="activeTab = 'templates'" :class="activeTab === 'templates' ? 'sidebar-tab-templates active' : 'sidebar-tab-templates'" class="sidebar-tab-button sidebar-tab-templates" data-inert="" aria-disabled="true">
+                
+                Templates
+              </button>
+            </div>
+          </div>
+
+          
+          <div class="sidebar-tab-content">
+            
+            <div x-show="activeTab === 'edit'" id="block-settings-panel" class="block-settings-panel" :class="smsEditorFocused &amp;&amp; 'sms-editor-active'">
+              
+              
+
+              
+              <div class="block-settings-no-block" style="display: block;">
+                <div class="block-settings-hints-container">
+                  
+                  <div class="block-settings-indicator">
+                    <svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <p class="block-settings-message">Click a block to edit</p>
+                    <p class="block-settings-hint">Select any block in the editor</p>
+                  </div>
+
+                  
+                  <div class="block-settings-indicator">
+                    <svg class="click-icon hint-delay-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <p class="block-settings-message">Add new blocks</p>
+                    <p class="block-settings-hint">Click a block in the toolbar to add it to your message</p>
+                  </div>
+
+                  
+                  <div class="block-settings-indicator">
+                    <div class="hint-icon-group hint-delay-2">
+                      <svg class="click-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                      <svg class="block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        <path d="M7 8h10M7 12h6" stroke-linecap="round"></path>
+                      </svg>
+                    </div>
+                    <p class="block-settings-message">Drag to reorder or insert</p>
+                    <p class="block-settings-hint">Drag blocks within the editor to reorder them. Drag blocks from the toolbar to insert them anywhere in the editor.</p>
+                  </div>
+                </div>
+              </div>
+              
+              
+            </div>
+
+            
+
+            
+            
+
+          </div>
+        </div>
+      </aside>
+
+      
+
+      
+      <span class="save-status">
+        <template x-if="!isSaving">
+          <span>Saved</span>
+        </template><span>Saved</span>
+        <template x-if="isSaving">
+          <span>Saving<span class="dot dot-1">.</span><span class="dot dot-2">.</span><span class="dot dot-3">.</span></span>
+        </template>
+      </span>
+    </div>
+  
+
+<div class="ct"><div class="ct__content"></div></div></template>
+<template data-sr-state="preview" data-sr-css="send">
+
+  
+  
+
+  <header class="send-topbar">
+    <div class="send-topbar-title">
+      Send
+    </div>
+
+    <div class="send-topbar-right">
+      <a class="send-topbar-link" :href="getStudioUrl()" href="#" data-sr-action="state:draft">
+        <span class="material-icons">edit</span>
+        <span>Editor</span>
+      </a>
+      <a class="send-topbar-link" :href="getStorygramsUrl()" href="#" data-inert="" aria-disabled="true">
+        <span class="material-icons">history</span>
+        <span>Sent campaigns</span>
+      </a>
+    </div>
+  </header>
+
+  
+  
+
+  
+  
+
+  
+  
+  <div class="send-main" x-show="!contentLoading &amp;&amp; !isEmpty()" style="">
+    
+    
+
+    
+    <main class="send-canvas">
+      
+      <section class="send-controls">
+
+        
+        <div class="stepper-wrap">
+          <div class="stepper-wrap-inner">
+            <div class="send-stepper" :style="`--progress: ${(currentStep[activeChannel]-1) * 100 / 3}%`" role="tablist" style="--progress: 0%" data-tour="steps">
+              <div class="send-step is-active" :class="{ 'is-active': currentStep[activeChannel] === 1, 'is-complete': currentStep[activeChannel] &gt; 1 }" @click="setStep(1)" role="tab" data-sr-action="state:preview">
+                <span class="send-step-num"><span>1</span></span>
+                <span class="send-step-label">Preview</span>
+              </div>
+              <div class="send-step" :class="{ 'is-active': currentStep[activeChannel] === 2, 'is-complete': currentStep[activeChannel] &gt; 2 }" @click="setStep(2)" role="tab" data-sr-action="state:recipients">
+                <span class="send-step-num"><span>2</span></span>
+                <span class="send-step-label">Recipients</span>
+              </div>
+              <div class="send-step" :class="{ 'is-active': currentStep[activeChannel] === 3, 'is-complete': currentStep[activeChannel] &gt; 3 }" @click="setStep(3)" role="tab" data-sr-action="state:schedule">
+                <span class="send-step-num"><span>3</span></span>
+                <span class="send-step-label">Schedule</span>
+              </div>
+              <div class="send-step" :class="{ 'is-active': currentStep[activeChannel] === 4 }" @click="setStep(4)" role="tab" data-sr-action="toast:Send info is where you confirm the sender and subject. This is a read-only demo.">
+                <span class="send-step-num"><span>4</span></span>
+                <span class="send-step-label">Send info</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="list-seed-banner" x-show="ui.listSeed.open" :class="{ 'is-empty': ui.listSeed.count === 0 }" :role="ui.listSeed.count === 0 ? 'alert' : 'status'" role="status" style="" data-tour="list-banner">
+          <span class="material-icons" x-text="ui.listSeed.count === 0 ? 'error_outline' : 'check_circle'">check_circle</span>
+          <div class="list-seed-banner-body">
+            <template x-if="ui.listSeed.count &gt; 0">
+              <strong>
+                <span x-text="ui.listSeed.count.toLocaleString()"></span>
+                <span x-text="ui.listSeed.count === 1 ? 'recipient' : 'recipients'"></span>
+                added from “<span x-text="ui.listSeed.name"></span>”
+              </strong>
+            </template><strong>
+                <span x-text="ui.listSeed.count.toLocaleString()">6</span>
+                <span x-text="ui.listSeed.count === 1 ? 'recipient' : 'recipients'">recipients</span>
+                added from “<span x-text="ui.listSeed.name">2026 Impact Report donors</span>”
+              </strong>
+            <template x-if="ui.listSeed.count === 0 &amp;&amp; !ui.listSeed.known">
+              <strong>This organization has no list “<span x-text="ui.listSeed.name"></span>”, so nobody was added.</strong>
+            </template>
+            <template x-if="ui.listSeed.count === 0 &amp;&amp; ui.listSeed.known">
+              <strong>No one on “<span x-text="ui.listSeed.name"></span>” has an email address, so nobody was added.</strong>
+            </template>
+            
+          </div>
+          <button type="button" class="list-seed-banner-dismiss" @click="dismissListSeed()" aria-label="Dismiss" data-inert="" aria-disabled="true">
+            <span class="material-icons">close</span>
+          </button>
+        </div>
+
+        
+        <div class="send-step-body is-preview" :class="{ 'is-preview': currentStep[activeChannel] === 1 }">
+          <div class="send-step-body-inner is-wide" :class="{ 'is-wide': currentStep[activeChannel] === 1 }">
+
+            
+            
+
+            
+            <div class="step-pane preview-step" x-show="currentStep[activeChannel] === 1" :key="`p-${activeChannel}`">
+              
+              <div class="preview-toolbar">
+                <h3 class="send-step-title preview-inline-title" :title="`See how your ${activeChannel} will look — try different device sizes and step through recipients to verify merge tags.`" title="See how your email will look — try different device sizes and step through recipients to verify merge tags.">
+                  <span class="material-icons">visibility</span>
+                  Preview
+                </h3>
+                <span class="preview-toolbar-title">Device</span>
+                <div class="device-segmented" role="group" aria-label="Preview device size">
+                  <button class="device-btn is-active" :class="{ 'is-active': preview.deviceSize === 1920 }" @click="setPreviewDeviceSize(1920)" data-tip="Widescreen · 1920" aria-label="Widescreen" data-inert="" aria-disabled="true">
+                    <span class="material-icons">desktop_windows</span>
+                  </button>
+                  <button class="device-btn" :class="{ 'is-active': preview.deviceSize === 1280 }" @click="setPreviewDeviceSize(1280)" data-tip="Desktop · 1280" aria-label="Desktop" data-inert="" aria-disabled="true">
+                    <span class="material-icons">computer</span>
+                  </button>
+                  <button class="device-btn" :class="{ 'is-active': preview.deviceSize === 1024 }" @click="setPreviewDeviceSize(1024)" data-tip="Square · 1024" aria-label="Square" data-inert="" aria-disabled="true">
+                    <span class="material-icons">crop_square</span>
+                  </button>
+                  <button class="device-btn" :class="{ 'is-active': preview.deviceSize === 768 }" @click="setPreviewDeviceSize(768)" data-tip="Tablet · 768" aria-label="Tablet" data-inert="" aria-disabled="true">
+                    <span class="material-icons">tablet</span>
+                  </button>
+                  <button class="device-btn" :class="{ 'is-active': preview.deviceSize === 375 }" @click="setPreviewDeviceSize(375)" data-tip="Phone · 375" aria-label="Phone" data-inert="" aria-disabled="true">
+                    <span class="material-icons">smartphone</span>
+                  </button>
+                </div>
+
+                <span class="device-badge">
+                  <strong x-text="deviceLabel(preview.deviceSize)">Widescreen</strong>
+                  <span class="device-badge-px" x-text="preview.deviceSize + 'px'">1920px</span>
+                </span>
+
+                
+                <div class="preview-links" x-show="preview.links.length &gt; 0" @click.outside="ui.linkAudit.open = false" @keydown.escape="ui.linkAudit.open = false" style="">
+                  <button type="button" class="preview-links-trigger" @click="toggleLinkAudit()" :aria-expanded="ui.linkAudit.open" :title="`${preview.links.length} link${preview.links.length === 1 ? '' : 's'} in this email`" aria-expanded="false" title="3 links in this email" data-inert="" aria-disabled="true">
+                    <span class="material-icons">link</span>
+                    <span x-text="preview.links.length">3</span>
+                    <span x-text="preview.links.length === 1 ? 'link' : 'links'">links</span>
+                  </button>
+
+                  
+                </div>
+
+                <span class="preview-toolbar-spacer"></span>
+
+                <div class="recipient-stepper" x-show="recipientCount &gt; 0" style="">
+                  
+                  <div class="preview-picker" @click.outside="ui.previewPicker.open = false" @keydown.escape="ui.previewPicker.open = false">
+                    <button class="preview-picker-trigger" type="button" @click="togglePreviewPicker()" :aria-expanded="ui.previewPicker.open" aria-haspopup="listbox" aria-expanded="false" data-tour="preview-as" data-inert="" aria-disabled="true">
+                      <template x-if="currentPreviewRecipient">
+                        <span class="preview-picker-trigger-content">
+                          <span class="recipient-avatar preview-picker-avatar" :style="`--avatar-hue: ${currentPreviewRecipient.hue}`" x-text="currentPreviewRecipient.initials"></span>
+                          <span class="preview-picker-trigger-text">
+                            <span class="preview-picker-trigger-name" x-text="currentPreviewRecipient.name"></span>
+                            <span class="preview-picker-trigger-sub" x-text="`${(preview.recipientIndex || 0) + 1} of ${recipientCount}`"></span>
+                          </span>
+                        </span>
+                      </template><span class="preview-picker-trigger-content">
+                          <span class="recipient-avatar preview-picker-avatar" :style="`--avatar-hue: ${currentPreviewRecipient.hue}`" x-text="currentPreviewRecipient.initials" style="--avatar-hue: 341">EW</span>
+                          <span class="preview-picker-trigger-text">
+                            <span class="preview-picker-trigger-name" x-text="currentPreviewRecipient.name">emily wilson</span>
+                            <span class="preview-picker-trigger-sub" x-text="`${(preview.recipientIndex || 0) + 1} of ${recipientCount}`">1 of 6</span>
+                          </span>
+                        </span>
+                      <span class="material-icons preview-picker-chevron" :class="{ 'is-open': ui.previewPicker.open }">expand_more</span>
+                    </button>
+
+                    
+                  </div>
+
+                  <button @click="refreshPreview()" aria-label="Refresh preview" class="preview-refresh-btn" data-inert="" aria-disabled="true">
+                    <span class="material-icons">refresh</span>
+                  </button>
+                </div>
+                
+              </div>
+
+              <div class="preview-frame-wrap">
+                
+                <div class="preview-iframe-host" x-init="initPreviewScrollCentre($el)" data-sr-scroll="272,0">
+                  
+                  <div class="preview-fit" :style="`--device-w: ${preview.deviceSize}px; --doc-h: ${preview.contentHeight || 600}px`" style="--device-w: 1920px; --doc-h: 966px">
+                  <div class="preview-frame">
+                    <div class="preview-frame-chrome"></div>
+                    <template x-if="preview.contentHtml">
+                      <!-- One iframe serves every channel, so the accessible name
+                           has to follow activeChannel rather than say "Email". -->
+                      <!-- allow-popups lets target=_blank work at all; without
+                           allow-popups-to-escape-sandbox the opened tab would
+                           inherit this sandbox and render the destination with
+                           scripts disabled, which looks like a broken site. -->
+                      <iframe class="preview-iframe" :srcdoc="preview.contentHtml" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox" @load="measurePreviewHeight($event.target); wirePreviewLinks($event.target)" :title="activeChannel === 'sms' ? 'Text message preview'
+                                    : activeChannel === 'postcard' ? 'Postcard preview'
+                                    : 'Email preview'"></iframe>
+                    </template><iframe class="preview-iframe" :srcdoc="preview.contentHtml" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox" @load="measurePreviewHeight($event.target); wirePreviewLinks($event.target)" :title="activeChannel === 'sms' ? 'Text message preview'
+                                    : activeChannel === 'postcard' ? 'Postcard preview'
+                                    : 'Email preview'" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;style&gt;
+    body { margin: 0; padding: 0; background: #f4f4f4; font-family: Arial, sans-serif; }
+    .preview-page { padding: 24px 16px; }
+    .preview-card {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .preview-card-body { padding: 32px 24px; }
+    .preview-card-foot {
+      padding: 16px 24px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 12px; line-height: 18px; color: #666;
+    }
+    img { max-width: 100%; height: auto; }
+    table { max-width: 100%; }
+    /* Stack two-column blocks on narrow widths */
+    @media only screen and (max-width: 480px) {
+      .preview-card-body { padding: 20px 14px; }
+      .two-col-table { width: 100% !important; }
+      .two-col-cell {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 16px !important;
+      }
+      .two-col-cell:last-child { padding-bottom: 0 !important; }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;preview-page&quot;&gt;
+    &lt;div class=&quot;preview-card&quot;&gt;
+      &lt;div class=&quot;preview-card-body&quot;&gt;&lt;h2 style=&quot;margin: 20px 0 10px 0; font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: #333333; line-height: 1.2; text-align: left;&quot;&gt;Hi Emily,&lt;/h2&gt;&lt;p style=&quot;margin: 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; color: #333333; text-align: left;&quot;&gt;I wanted to share a brief update with you. We've put together a report that highlights recent progress, key outcomes, and what's ahead.&lt;br&gt;&lt;br&gt;You can view the report using the button below.&lt;/p&gt;&lt;img src=&quot;img/send-23762bf27a.jpg&quot; alt=&quot;&quot; style=&quot;max-width: 100%; height: auto; margin: 16px auto; display: block;&quot; /&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;margin: 16px auto; width: 100%;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;&lt;tr&gt;&lt;td style=&quot;border-radius: 6px; background-color: #10b981;&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;display: inline-block; padding: 12px 24px; background-color: #10b981; color: #ffffff; text-decoration: none; border-radius: 6px; outline: 0px solid #10b981; outline-offset: 0px; font-family: Arial, sans-serif; font-weight: 500; font-size: 14px;&quot;&gt;View the Report&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p style=&quot;margin: 16px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; color: #333333; text-align: left;&quot;&gt;Thank you for taking the time to stay connected with our work. We're grateful for your continued interest and support.&lt;br&gt;&lt;br&gt;Warm regards,&lt;br&gt;Harbor Lights Community Foundation&lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;preview-card-foot&quot;&gt;
+        You're receiving this mail from harbor-lights on behalf of Storyraise&lt;br/&gt;
+        100 Harbor Way, Laketown, CA 22501&lt;br/&gt;
+        &lt;a href=&quot;#&quot; style=&quot;color:#666; text-decoration: underline;&quot;&gt;Unsubscribe&lt;/a&gt; ·
+        &lt;a href=&quot;#&quot; style=&quot;color:#666; text-decoration: underline;&quot;&gt;Manage preferences&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;" title="Email preview" data-sr-frame-index="0" tabindex="-1" data-tour="email" data-sr-canvas=""></iframe>
+                    <template x-if="!preview.contentHtml">
+                      <div class="preview-iframe-empty">
+                        <span class="material-icons">drafts</span>
+                        <div>Nothing to preview yet — head back to the editor to add content.</div>
+                      </div>
+                    </template>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div x-effect="email.subject; email.blocks; email.mailingAddress; email.contentWidth;
+                             sms.body;
+                             postcard.frontBlocks; postcard.backBlocks; postcard.size;
+                             email.recipients; sms.recipients; postcard.recipients;
+                             constituents.length;
+                             activeChannel; preview.recipientIndex; preview.deviceSize;
+                             _preview &amp;&amp; _preview.requestUpdate()"></div>
+            </div>
+
+            
+            
+
+            
+            
+
+          </div>
+        </div>
+
+        
+        <footer class="send-step-footer">
+          
+          <a class="send-btn send-btn-secondary" x-show="currentStep[activeChannel] === 1" :href="getStudioUrl()" href="#" data-sr-action="state:draft">
+            <span class="material-icons">edit</span>
+            Back to editor
+          </a>
+
+          
+
+          <span class="send-step-footer-summary">
+            <span class="dot"></span>
+            <span x-show="activeChannel === 'email'">Email · <strong x-text="email.recipients.size">6</strong> recipient<span x-show="email.recipients.size !== 1">s</span></span>
+            
+            
+          </span>
+
+          <div style="display:flex; gap:8px;">
+            <button class="send-btn send-btn-primary" x-show="currentStep[activeChannel] &lt; 4" :disabled="!canGoNext()" @click="nextStep()" data-sr-action="state:recipients">
+              Next
+              <span class="material-icons">arrow_forward</span>
+            </button>
+
+            
+          </div>
+        </footer>
+      </section>
+
+    </main>
+  </div>
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+</template>
+<template data-sr-state="recipients" data-sr-css="send">
+
+  
+  
+
+  <header class="send-topbar">
+    <div class="send-topbar-title">
+      Send
+    </div>
+
+    <div class="send-topbar-right">
+      <a class="send-topbar-link" :href="getStudioUrl()" href="#" data-sr-action="state:draft">
+        <span class="material-icons">edit</span>
+        <span>Editor</span>
+      </a>
+      <a class="send-topbar-link" :href="getStorygramsUrl()" href="#" data-inert="" aria-disabled="true">
+        <span class="material-icons">history</span>
+        <span>Sent campaigns</span>
+      </a>
+    </div>
+  </header>
+
+  
+  
+
+  
+  
+
+  
+  
+  <div class="send-main" x-show="!contentLoading &amp;&amp; !isEmpty()" style="">
+    
+    
+
+    
+    <main class="send-canvas">
+      
+      <section class="send-controls">
+
+        
+        <div class="stepper-wrap">
+          <div class="stepper-wrap-inner">
+            <div class="send-stepper" :style="`--progress: ${(currentStep[activeChannel]-1) * 100 / 3}%`" role="tablist" style="--progress: 33.333333333333336%" data-tour="steps">
+              <div class="send-step is-complete" :class="{ 'is-active': currentStep[activeChannel] === 1, 'is-complete': currentStep[activeChannel] &gt; 1 }" @click="setStep(1)" role="tab" data-sr-action="state:preview">
+                <span class="send-step-num"></span>
+                <span class="send-step-label">Preview</span>
+              </div>
+              <div class="send-step is-active" :class="{ 'is-active': currentStep[activeChannel] === 2, 'is-complete': currentStep[activeChannel] &gt; 2 }" @click="setStep(2)" role="tab" data-sr-action="state:recipients">
+                <span class="send-step-num"><span>2</span></span>
+                <span class="send-step-label">Recipients</span>
+              </div>
+              <div class="send-step" :class="{ 'is-active': currentStep[activeChannel] === 3, 'is-complete': currentStep[activeChannel] &gt; 3 }" @click="setStep(3)" role="tab" data-sr-action="state:schedule">
+                <span class="send-step-num"><span>3</span></span>
+                <span class="send-step-label">Schedule</span>
+              </div>
+              <div class="send-step" :class="{ 'is-active': currentStep[activeChannel] === 4 }" @click="setStep(4)" role="tab" data-sr-action="toast:Send info is where you confirm the sender and subject. This is a read-only demo.">
+                <span class="send-step-num"><span>4</span></span>
+                <span class="send-step-label">Send info</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="list-seed-banner" x-show="ui.listSeed.open" :class="{ 'is-empty': ui.listSeed.count === 0 }" :role="ui.listSeed.count === 0 ? 'alert' : 'status'" role="status" style="">
+          <span class="material-icons" x-text="ui.listSeed.count === 0 ? 'error_outline' : 'check_circle'">check_circle</span>
+          <div class="list-seed-banner-body">
+            <template x-if="ui.listSeed.count &gt; 0">
+              <strong>
+                <span x-text="ui.listSeed.count.toLocaleString()"></span>
+                <span x-text="ui.listSeed.count === 1 ? 'recipient' : 'recipients'"></span>
+                added from “<span x-text="ui.listSeed.name"></span>”
+              </strong>
+            </template><strong>
+                <span x-text="ui.listSeed.count.toLocaleString()">6</span>
+                <span x-text="ui.listSeed.count === 1 ? 'recipient' : 'recipients'">recipients</span>
+                added from “<span x-text="ui.listSeed.name">2026 Impact Report donors</span>”
+              </strong>
+            <template x-if="ui.listSeed.count === 0 &amp;&amp; !ui.listSeed.known">
+              <strong>This organization has no list “<span x-text="ui.listSeed.name"></span>”, so nobody was added.</strong>
+            </template>
+            <template x-if="ui.listSeed.count === 0 &amp;&amp; ui.listSeed.known">
+              <strong>No one on “<span x-text="ui.listSeed.name"></span>” has an email address, so nobody was added.</strong>
+            </template>
+            
+          </div>
+          <button type="button" class="list-seed-banner-dismiss" @click="dismissListSeed()" aria-label="Dismiss" data-inert="" aria-disabled="true">
+            <span class="material-icons">close</span>
+          </button>
+        </div>
+
+        
+        <div class="send-step-body" :class="{ 'is-preview': currentStep[activeChannel] === 1 }">
+          <div class="send-step-body-inner" :class="{ 'is-wide': currentStep[activeChannel] === 1 }">
+
+            
+            <div class="step-pane" x-show="currentStep[activeChannel] === 2" :key="`r-${activeChannel}`">
+              <div class="recipient-header">
+                <div class="recipient-headrow">
+                  <div class="recipient-headrow-text">
+                    <h3 class="send-step-title">Recipients</h3>
+                    <p class="send-step-subtitle">
+                      Pick who receives this <strong x-text="activeChannel">email</strong>.
+                      Click anyone on the left to add them; click on the right to remove.
+                    </p>
+                    
+                    <p class="send-step-note">
+                      Manage your constituents
+                      <a class="recipient-pane-empty-link" :href="constituentsAppUrl()" rel="noopener noreferrer" href="#" data-inert="" aria-disabled="true">here</a>.
+                      Please ensure any constituents you send to have given consent to be emailed.
+                    </p>
+                  </div>
+                  
+                  <button class="send-btn send-btn-secondary recipient-headrow-add" x-show="activeChannel === 'email'" @click="openAddConstituent()" title="Create a constituent and add them to this email" data-inert="" aria-disabled="true">
+                    <span class="material-icons">person_add</span>
+                    Add a recipient
+                  </button>
+                </div>
+              </div>
+
+              
+              <div class="recipient-controls">
+                <div class="recipient-search">
+                  <span class="material-icons">search</span>
+                  <input type="text" placeholder="Search name or email…" x-model="filter.search" aria-label="Search available recipients" value="" style="" data-inert="" aria-disabled="true" readonly="">
+                  
+                </div>
+
+                
+                <template x-if="availableLists.length &gt; 0">
+                  <div class="recipient-tagstrip recipient-liststrip">
+                    <div class="recipient-tagstrip-label">
+                      <span class="material-icons">label</span>
+                      <span>Lists</span>
+                    </div>
+                    <div class="recipient-tagstrip-chips">
+                      <template x-for="l in availableLists" :key="l.id">
+                        <button class="recipient-tagchip recipient-listchip" :class="{ 'is-active': isListFilterActive(l.id) }" :style="l.color ? `--list-color: ${l.color}` : ''" @click="toggleListFilter(l.id)" :title="`${l.count} constituent${l.count === 1 ? '' : 's'} in ${l.name}`">
+                          <span class="recipient-tagchip-name" x-text="l.name"></span>
+                          <span class="recipient-tagchip-count" x-text="l.count"></span>
+                        </button>
+                      </template>
+                    </div>
+                  </div>
+                </template><div class="recipient-tagstrip recipient-liststrip">
+                    <div class="recipient-tagstrip-label">
+                      <span class="material-icons">label</span>
+                      <span>Lists</span>
+                    </div>
+                    <div class="recipient-tagstrip-chips">
+                      <template x-for="l in availableLists" :key="l.id">
+                        <button class="recipient-tagchip recipient-listchip" :class="{ 'is-active': isListFilterActive(l.id) }" :style="l.color ? `--list-color: ${l.color}` : ''" @click="toggleListFilter(l.id)" :title="`${l.count} constituent${l.count === 1 ? '' : 's'} in ${l.name}`">
+                          <span class="recipient-tagchip-name" x-text="l.name"></span>
+                          <span class="recipient-tagchip-count" x-text="l.count"></span>
+                        </button>
+                      </template><button class="recipient-tagchip recipient-listchip is-active" :class="{ 'is-active': isListFilterActive(l.id) }" :style="l.color ? `--list-color: ${l.color}` : ''" @click="toggleListFilter(l.id)" :title="`${l.count} constituent${l.count === 1 ? '' : 's'} in ${l.name}`" style="--list-color: #803BB1" title="6 constituents in 2026 Impact Report donors" data-tour="list" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="l.name">2026 Impact Report donors</span>
+                          <span class="recipient-tagchip-count" x-text="l.count">6</span>
+                        </button>
+                    </div>
+                  </div>
+
+                <template x-if="availableTags.length &gt; 0">
+                  <div class="recipient-tagstrip">
+                    <div class="recipient-tagstrip-label">
+                      <span class="material-icons">sell</span>
+                      <span>Filter by tag</span>
+                    </div>
+                    <div class="recipient-tagstrip-chips">
+                      <template x-for="t in availableTags" :key="t.name">
+                        <button class="recipient-tagchip" :class="{ 'is-active': isTagFilterActive(t.name) }" @click="toggleTagFilter(t.name)" :title="`${t.count} constituent${t.count === 1 ? '' : 's'} have ${t.name}`">
+                          <span class="recipient-tagchip-name" x-text="t.name"></span>
+                          <span class="recipient-tagchip-count" x-text="t.count"></span>
+                        </button>
+                      </template>
+                    </div>
+                  </div>
+                </template><div class="recipient-tagstrip">
+                    <div class="recipient-tagstrip-label">
+                      <span class="material-icons">sell</span>
+                      <span>Filter by tag</span>
+                    </div>
+                    <div class="recipient-tagstrip-chips">
+                      <template x-for="t in availableTags" :key="t.name">
+                        <button class="recipient-tagchip" :class="{ 'is-active': isTagFilterActive(t.name) }" @click="toggleTagFilter(t.name)" :title="`${t.count} constituent${t.count === 1 ? '' : 's'} have ${t.name}`">
+                          <span class="recipient-tagchip-name" x-text="t.name"></span>
+                          <span class="recipient-tagchip-count" x-text="t.count"></span>
+                        </button>
+                      </template><button class="recipient-tagchip" :class="{ 'is-active': isTagFilterActive(t.name) }" @click="toggleTagFilter(t.name)" :title="`${t.count} constituent${t.count === 1 ? '' : 's'} have ${t.name}`" title="6 constituents have donor_level" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="t.name">donor_level</span>
+                          <span class="recipient-tagchip-count" x-text="t.count">6</span>
+                        </button><button class="recipient-tagchip" :class="{ 'is-active': isTagFilterActive(t.name) }" @click="toggleTagFilter(t.name)" :title="`${t.count} constituent${t.count === 1 ? '' : 's'} have ${t.name}`" title="6 constituents have gift_amount" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="t.name">gift_amount</span>
+                          <span class="recipient-tagchip-count" x-text="t.count">6</span>
+                        </button><button class="recipient-tagchip" :class="{ 'is-active': isTagFilterActive(t.name) }" @click="toggleTagFilter(t.name)" :title="`${t.count} constituent${t.count === 1 ? '' : 's'} have ${t.name}`" title="6 constituents have fund_reference" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="t.name">fund_reference</span>
+                          <span class="recipient-tagchip-count" x-text="t.count">6</span>
+                        </button><button class="recipient-tagchip" :class="{ 'is-active': isTagFilterActive(t.name) }" @click="toggleTagFilter(t.name)" :title="`${t.count} constituent${t.count === 1 ? '' : 's'} have ${t.name}`" title="6 constituents have address" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="t.name">address</span>
+                          <span class="recipient-tagchip-count" x-text="t.count">6</span>
+                        </button>
+                    </div>
+                  </div>
+
+                <div class="recipient-activefilters" x-show="hasActiveFilters" style="">
+                  <span class="recipient-activefilters-label">Active:</span>
+                  <template x-if="filter.search">
+                    <button class="recipient-activefilter" @click="filter.search = ''" title="Clear search">
+                      <span class="material-icons">search</span>
+                      <span x-text="filter.search"></span>
+                      <span class="material-icons recipient-activefilter-x">close</span>
+                    </button>
+                  </template>
+                  <template x-for="id in (filter.lists || [])" :key="id">
+                    <button class="recipient-activefilter is-list" @click="toggleListFilter(id)" :title="`Remove list filter: ${listName(id)}`">
+                      <span class="material-icons">label</span>
+                      <span x-text="listName(id)"></span>
+                      <span class="material-icons recipient-activefilter-x">close</span>
+                    </button>
+                  </template><button class="recipient-activefilter is-list" @click="toggleListFilter(id)" :title="`Remove list filter: ${listName(id)}`" title="Remove list filter: 2026 Impact Report donors" data-inert="" aria-disabled="true">
+                      <span class="material-icons">label</span>
+                      <span x-text="listName(id)">2026 Impact Report donors</span>
+                      <span class="material-icons recipient-activefilter-x">close</span>
+                    </button>
+                  <template x-for="t in (filter.tags || [])" :key="t">
+                    <button class="recipient-activefilter is-tag" @click="toggleTagFilter(t)" :title="`Remove tag filter: ${t}`">
+                      <span class="material-icons">sell</span>
+                      <span x-text="t"></span>
+                      <span class="material-icons recipient-activefilter-x">close</span>
+                    </button>
+                  </template>
+                  <button class="recipient-activefilters-clear" @click="clearFilters()" data-inert="" aria-disabled="true">Clear all</button>
+                </div>
+              </div>
+
+              
+              <div class="recipient-twopane">
+                
+                <section class="recipient-pane recipient-pane-available">
+                  <header class="recipient-pane-header">
+                    <div class="recipient-pane-title">
+                      <span class="material-icons recipient-pane-icon">groups</span>
+                      <span>Available</span>
+                      <span class="recipient-pane-count" x-text="availableConstituents.length">0</span>
+                    </div>
+                    <button class="send-btn send-btn-ghost send-btn-tiny" @click="addAllAvailable()" :disabled="availableConstituents.length === 0" :title="`Add all ${availableConstituents.length} available recipient${availableConstituents.length === 1 ? '' : 's'}`" disabled="disabled" title="Add all 0 available recipients" data-inert="" aria-disabled="true">
+                      <span class="material-icons">add_circle</span>
+                      Add all
+                    </button>
+                  </header>
+
+                  
+                  <template x-if="activeChannel === 'sms' &amp;&amp; (smsConsentBreakdown.noConsent &gt; 0 || smsConsentBreakdown.optedOut &gt; 0)">
+                    <div class="recipient-pane-note">
+                      <span class="material-icons">verified_user</span>
+                      <span>
+                        Showing only contacts with SMS consent.
+                        <template x-if="smsConsentBreakdown.noConsent &gt; 0">
+                          <span><b x-text="smsConsentBreakdown.noConsent"></b> hidden — no consent on file</span>
+                        </template>
+                        <template x-if="smsConsentBreakdown.noConsent &gt; 0 &amp;&amp; smsConsentBreakdown.optedOut &gt; 0"><span>, </span></template>
+                        <template x-if="smsConsentBreakdown.optedOut &gt; 0">
+                          <span><b x-text="smsConsentBreakdown.optedOut"></b> opted out</span>
+                        </template>.
+                      </span>
+                    </div>
+                  </template>
+
+                  <template x-if="availableConstituents.length === 0">
+                    <div class="recipient-pane-empty">
+                      <span class="material-icons" x-text="hasActiveFilters
+                                      ? 'filter_list_off'
+                                      : (constituents.length === 0 ? 'group_add' : 'check_circle')"></span>
+                      <div class="recipient-pane-empty-title" x-text="hasActiveFilters
+                                      ? 'No matches in this filter'
+                                      : (constituents.length === 0
+                                          ? 'No constituents loaded'
+                                          : 'Everyone is selected')"></div>
+                      <!-- Three hints, one of which carries a link, so this cannot be a
+                           single x-text: constituents are added in the main app, and the
+                           deep link goes straight to this org's constituents page. -->
+                      <div class="recipient-pane-empty-hint">
+                        <template x-if="hasActiveFilters">
+                          <span>Try clearing a filter or removing a tag to widen the result.</span>
+                        </template>
+                        <template x-if="!hasActiveFilters &amp;&amp; constituents.length === 0">
+                          <span>Add constituents in
+                            <a class="recipient-pane-empty-link" :href="constituentsAppUrl()" target="_blank" rel="noopener noreferrer" x-text="constituentsAppLabel()"></a>
+                          </span>
+                        </template>
+                        <template x-if="!hasActiveFilters &amp;&amp; constituents.length &gt; 0">
+                          <span>Every constituent is already in the Selected pane.</span>
+                        </template>
+                      </div>
+                      <button x-show="hasActiveFilters" class="send-btn send-btn-ghost send-btn-tiny" @click="clearFilters()" style="margin-top: 12px;">
+                        <span class="material-icons">refresh</span>
+                        Clear filters
+                      </button>
+                    </div>
+                  </template><div class="recipient-pane-empty">
+                      <span class="material-icons" x-text="hasActiveFilters
+                                      ? 'filter_list_off'
+                                      : (constituents.length === 0 ? 'group_add' : 'check_circle')">filter_list_off</span>
+                      <div class="recipient-pane-empty-title" x-text="hasActiveFilters
+                                      ? 'No matches in this filter'
+                                      : (constituents.length === 0
+                                          ? 'No constituents loaded'
+                                          : 'Everyone is selected')">No matches in this filter</div>
+                      
+                      <div class="recipient-pane-empty-hint">
+                        <template x-if="hasActiveFilters">
+                          <span>Try clearing a filter or removing a tag to widen the result.</span>
+                        </template><span>Try clearing a filter or removing a tag to widen the result.</span>
+                        <template x-if="!hasActiveFilters &amp;&amp; constituents.length === 0">
+                          <span>Add constituents in
+                            <a class="recipient-pane-empty-link" :href="constituentsAppUrl()" target="_blank" rel="noopener noreferrer" x-text="constituentsAppLabel()"></a>
+                          </span>
+                        </template>
+                        <template x-if="!hasActiveFilters &amp;&amp; constituents.length &gt; 0">
+                          <span>Every constituent is already in the Selected pane.</span>
+                        </template>
+                      </div>
+                      <button x-show="hasActiveFilters" class="send-btn send-btn-ghost send-btn-tiny" @click="clearFilters()" style="margin-top: 12px;" data-inert="" aria-disabled="true">
+                        <span class="material-icons">refresh</span>
+                        Clear filters
+                      </button>
+                    </div>
+
+                  <template x-if="availableConstituents.length &gt; 0">
+                    <div class="recipient-pane-list">
+                      <template x-for="c in availableConstituents" :key="c.id || c._SR_email || c.email || c.phone">
+                        <button class="recipient-card recipient-card-add" type="button" @click="addConstituent(c)" :title="`Add ${constituentName(c)} to recipients`">
+                          <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          <div class="recipient-meta">
+                            <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            <div class="recipient-meta-key" x-text="constituentKey(c)"></div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="constituentTags(c).length &gt; 0">
+                            <template x-for="t in constituentTags(c).slice(0, 2)" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isTagFilterActive(t) }" x-text="t"></span>
+                            </template>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-add" aria-hidden="true">
+                            <span class="material-icons">add</span>
+                          </span>
+                        </button>
+                      </template>
+                    </div>
+                  </template>
+                </section>
+
+                
+                <section class="recipient-pane recipient-pane-selected" data-tour="recipients">
+                  <header class="recipient-pane-header">
+                    <div class="recipient-pane-title">
+                      <span class="material-icons recipient-pane-icon is-success">how_to_reg</span>
+                      <span>Selected</span>
+                      <span class="recipient-pane-count is-success" x-text="recipientCount">6</span>
+                    </div>
+                    <button class="send-btn send-btn-ghost send-btn-tiny" @click="clearAllSelected()" :disabled="recipientCount === 0" title="Remove every selected recipient" data-inert="" aria-disabled="true">
+                      <span class="material-icons">delete_sweep</span>
+                      Clear
+                    </button>
+                  </header>
+
+                  <template x-if="recipientCount === 0">
+                    <div class="recipient-pane-empty">
+                      <span class="material-icons">how_to_reg</span>
+                      <div class="recipient-pane-empty-title">No recipients yet</div>
+                      <div class="recipient-pane-empty-hint">
+                        Click anyone on the left to add them — or use <strong>Add all</strong>
+                        to take the whole filtered list at once.
+                      </div>
+                    </div>
+                  </template>
+
+                  <template x-if="recipientCount &gt; 0">
+                    <div class="recipient-pane-list">
+                      <template x-for="c in selectedConstituents" :key="c._adhoc ? c._key : (c.id || c._SR_email || c.email || c.phone)">
+                        <button class="recipient-card recipient-card-remove" type="button" @click="removeRecipient(c._adhoc ? c._key : constituentKey(c))" :title="`Remove ${c._adhoc ? c._key : constituentName(c)}`">
+                          <template x-if="!c._adhoc">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          </template>
+                          <template x-if="c._adhoc">
+                            <div class="recipient-avatar recipient-avatar-adhoc" title="Manually entered — not in constituent list">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="!c._adhoc">
+                              <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            </template>
+                            <template x-if="c._adhoc">
+                              <div class="recipient-meta-name" x-text="c._key"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="c._adhoc ? 'Manually added' : constituentKey(c)"></div>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-remove" aria-hidden="true">
+                            <span class="material-icons">close</span>
+                          </span>
+                        </button>
+                      </template>
+                    </div>
+                  </template><div class="recipient-pane-list">
+                      <template x-for="c in selectedConstituents" :key="c._adhoc ? c._key : (c.id || c._SR_email || c.email || c.phone)">
+                        <button class="recipient-card recipient-card-remove" type="button" @click="removeRecipient(c._adhoc ? c._key : constituentKey(c))" :title="`Remove ${c._adhoc ? c._key : constituentName(c)}`">
+                          <template x-if="!c._adhoc">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          </template>
+                          <template x-if="c._adhoc">
+                            <div class="recipient-avatar recipient-avatar-adhoc" title="Manually entered — not in constituent list">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="!c._adhoc">
+                              <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            </template>
+                            <template x-if="c._adhoc">
+                              <div class="recipient-meta-name" x-text="c._key"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="c._adhoc ? 'Manually added' : constituentKey(c)"></div>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-remove" aria-hidden="true">
+                            <span class="material-icons">close</span>
+                          </span>
+                        </button>
+                      </template><button class="recipient-card recipient-card-remove" type="button" @click="removeRecipient(c._adhoc ? c._key : constituentKey(c))" :title="`Remove ${c._adhoc ? c._key : constituentName(c)}`" title="Remove emily wilson" data-inert="" aria-disabled="true">
+                          <template x-if="!c._adhoc">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)" style="--avatar-hue: 341">EW</div>
+                          <template x-if="c._adhoc">
+                            <div class="recipient-avatar recipient-avatar-adhoc" title="Manually entered — not in constituent list">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="!c._adhoc">
+                              <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(c)">emily wilson</div>
+                            <template x-if="c._adhoc">
+                              <div class="recipient-meta-name" x-text="c._key"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="c._adhoc ? 'Manually added' : constituentKey(c)">emily.wilson@harborlights.example</div>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-remove" aria-hidden="true">
+                            <span class="material-icons">close</span>
+                          </span>
+                        </button><button class="recipient-card recipient-card-remove" type="button" @click="removeRecipient(c._adhoc ? c._key : constituentKey(c))" :title="`Remove ${c._adhoc ? c._key : constituentName(c)}`" title="Remove james taylor" data-inert="" aria-disabled="true">
+                          <template x-if="!c._adhoc">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)" style="--avatar-hue: 120">JT</div>
+                          <template x-if="c._adhoc">
+                            <div class="recipient-avatar recipient-avatar-adhoc" title="Manually entered — not in constituent list">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="!c._adhoc">
+                              <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(c)">james taylor</div>
+                            <template x-if="c._adhoc">
+                              <div class="recipient-meta-name" x-text="c._key"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="c._adhoc ? 'Manually added' : constituentKey(c)">james.taylor@harborlights.example</div>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-remove" aria-hidden="true">
+                            <span class="material-icons">close</span>
+                          </span>
+                        </button><button class="recipient-card recipient-card-remove" type="button" @click="removeRecipient(c._adhoc ? c._key : constituentKey(c))" :title="`Remove ${c._adhoc ? c._key : constituentName(c)}`" title="Remove maria gonzalez" data-inert="" aria-disabled="true">
+                          <template x-if="!c._adhoc">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)" style="--avatar-hue: 159">MG</div>
+                          <template x-if="c._adhoc">
+                            <div class="recipient-avatar recipient-avatar-adhoc" title="Manually entered — not in constituent list">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="!c._adhoc">
+                              <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(c)">maria gonzalez</div>
+                            <template x-if="c._adhoc">
+                              <div class="recipient-meta-name" x-text="c._key"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="c._adhoc ? 'Manually added' : constituentKey(c)">maria.gonzalez@harborlights.example</div>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-remove" aria-hidden="true">
+                            <span class="material-icons">close</span>
+                          </span>
+                        </button><button class="recipient-card recipient-card-remove" type="button" @click="removeRecipient(c._adhoc ? c._key : constituentKey(c))" :title="`Remove ${c._adhoc ? c._key : constituentName(c)}`" title="Remove daniel brooks" data-inert="" aria-disabled="true">
+                          <template x-if="!c._adhoc">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)" style="--avatar-hue: 214">DB</div>
+                          <template x-if="c._adhoc">
+                            <div class="recipient-avatar recipient-avatar-adhoc" title="Manually entered — not in constituent list">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="!c._adhoc">
+                              <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(c)">daniel brooks</div>
+                            <template x-if="c._adhoc">
+                              <div class="recipient-meta-name" x-text="c._key"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="c._adhoc ? 'Manually added' : constituentKey(c)">daniel.brooks@harborlights.example</div>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-remove" aria-hidden="true">
+                            <span class="material-icons">close</span>
+                          </span>
+                        </button><button class="recipient-card recipient-card-remove" type="button" @click="removeRecipient(c._adhoc ? c._key : constituentKey(c))" :title="`Remove ${c._adhoc ? c._key : constituentName(c)}`" title="Remove aisha robinson" data-inert="" aria-disabled="true">
+                          <template x-if="!c._adhoc">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)" style="--avatar-hue: 227">AR</div>
+                          <template x-if="c._adhoc">
+                            <div class="recipient-avatar recipient-avatar-adhoc" title="Manually entered — not in constituent list">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="!c._adhoc">
+                              <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(c)">aisha robinson</div>
+                            <template x-if="c._adhoc">
+                              <div class="recipient-meta-name" x-text="c._key"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="c._adhoc ? 'Manually added' : constituentKey(c)">aisha.robinson@harborlights.example</div>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-remove" aria-hidden="true">
+                            <span class="material-icons">close</span>
+                          </span>
+                        </button><button class="recipient-card recipient-card-remove" type="button" @click="removeRecipient(c._adhoc ? c._key : constituentKey(c))" :title="`Remove ${c._adhoc ? c._key : constituentName(c)}`" title="Remove robert miller" data-inert="" aria-disabled="true">
+                          <template x-if="!c._adhoc">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(c)}`" x-text="constituentInitials(c)" style="--avatar-hue: 328">RM</div>
+                          <template x-if="c._adhoc">
+                            <div class="recipient-avatar recipient-avatar-adhoc" title="Manually entered — not in constituent list">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="!c._adhoc">
+                              <div class="recipient-meta-name" x-text="constituentName(c)"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(c)">robert miller</div>
+                            <template x-if="c._adhoc">
+                              <div class="recipient-meta-name" x-text="c._key"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="c._adhoc ? 'Manually added' : constituentKey(c)">robert.miller@harborlights.example</div>
+                          </div>
+                          <span class="recipient-card-action recipient-card-action-remove" aria-hidden="true">
+                            <span class="material-icons">close</span>
+                          </span>
+                        </button>
+                    </div>
+                </section>
+              </div>
+            </div>
+
+            
+            
+
+            
+            
+
+            
+            
+
+          </div>
+        </div>
+
+        
+        <footer class="send-step-footer">
+          
+          
+
+          <button class="send-btn send-btn-secondary" x-show="currentStep[activeChannel] &gt; 1" @click="prevStep()" data-sr-action="state:preview">
+            <span class="material-icons">arrow_back</span>
+            Back
+          </button>
+
+          <span class="send-step-footer-summary">
+            <span class="dot"></span>
+            <span x-show="activeChannel === 'email'">Email · <strong x-text="email.recipients.size">6</strong> recipient<span x-show="email.recipients.size !== 1">s</span></span>
+            
+            
+          </span>
+
+          <div style="display:flex; gap:8px;">
+            <button class="send-btn send-btn-primary" x-show="currentStep[activeChannel] &lt; 4" :disabled="!canGoNext()" @click="nextStep()" data-sr-action="state:schedule">
+              Next
+              <span class="material-icons">arrow_forward</span>
+            </button>
+
+            
+          </div>
+        </footer>
+      </section>
+
+    </main>
+  </div>
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+</template>
+<template data-sr-state="schedule" data-sr-css="send">
+
+  
+  
+
+  <header class="send-topbar">
+    <div class="send-topbar-title">
+      Send
+    </div>
+
+    <div class="send-topbar-right">
+      <a class="send-topbar-link" :href="getStudioUrl()" href="#" data-sr-action="state:draft">
+        <span class="material-icons">edit</span>
+        <span>Editor</span>
+      </a>
+      <a class="send-topbar-link" :href="getStorygramsUrl()" href="#" data-inert="" aria-disabled="true">
+        <span class="material-icons">history</span>
+        <span>Sent campaigns</span>
+      </a>
+    </div>
+  </header>
+
+  
+  
+
+  
+  
+
+  
+  
+  <div class="send-main" x-show="!contentLoading &amp;&amp; !isEmpty()" style="">
+    
+    
+
+    
+    <main class="send-canvas">
+      
+      <section class="send-controls">
+
+        
+        <div class="stepper-wrap">
+          <div class="stepper-wrap-inner">
+            <div class="send-stepper" :style="`--progress: ${(currentStep[activeChannel]-1) * 100 / 3}%`" role="tablist" style="--progress: 66.66666666666667%" data-tour="steps">
+              <div class="send-step is-complete" :class="{ 'is-active': currentStep[activeChannel] === 1, 'is-complete': currentStep[activeChannel] &gt; 1 }" @click="setStep(1)" role="tab" data-sr-action="state:preview">
+                <span class="send-step-num"></span>
+                <span class="send-step-label">Preview</span>
+              </div>
+              <div class="send-step is-complete" :class="{ 'is-active': currentStep[activeChannel] === 2, 'is-complete': currentStep[activeChannel] &gt; 2 }" @click="setStep(2)" role="tab" data-sr-action="state:recipients">
+                <span class="send-step-num"></span>
+                <span class="send-step-label">Recipients</span>
+              </div>
+              <div class="send-step is-active" :class="{ 'is-active': currentStep[activeChannel] === 3, 'is-complete': currentStep[activeChannel] &gt; 3 }" @click="setStep(3)" role="tab" data-sr-action="state:schedule">
+                <span class="send-step-num"><span>3</span></span>
+                <span class="send-step-label">Schedule</span>
+              </div>
+              <div class="send-step" :class="{ 'is-active': currentStep[activeChannel] === 4 }" @click="setStep(4)" role="tab" data-sr-action="toast:Send info is where you confirm the sender and subject. This is a read-only demo.">
+                <span class="send-step-num"><span>4</span></span>
+                <span class="send-step-label">Send info</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="list-seed-banner" x-show="ui.listSeed.open" :class="{ 'is-empty': ui.listSeed.count === 0 }" :role="ui.listSeed.count === 0 ? 'alert' : 'status'" role="status" style="">
+          <span class="material-icons" x-text="ui.listSeed.count === 0 ? 'error_outline' : 'check_circle'">check_circle</span>
+          <div class="list-seed-banner-body">
+            <template x-if="ui.listSeed.count &gt; 0">
+              <strong>
+                <span x-text="ui.listSeed.count.toLocaleString()"></span>
+                <span x-text="ui.listSeed.count === 1 ? 'recipient' : 'recipients'"></span>
+                added from “<span x-text="ui.listSeed.name"></span>”
+              </strong>
+            </template><strong>
+                <span x-text="ui.listSeed.count.toLocaleString()">6</span>
+                <span x-text="ui.listSeed.count === 1 ? 'recipient' : 'recipients'">recipients</span>
+                added from “<span x-text="ui.listSeed.name">2026 Impact Report donors</span>”
+              </strong>
+            <template x-if="ui.listSeed.count === 0 &amp;&amp; !ui.listSeed.known">
+              <strong>This organization has no list “<span x-text="ui.listSeed.name"></span>”, so nobody was added.</strong>
+            </template>
+            <template x-if="ui.listSeed.count === 0 &amp;&amp; ui.listSeed.known">
+              <strong>No one on “<span x-text="ui.listSeed.name"></span>” has an email address, so nobody was added.</strong>
+            </template>
+            
+          </div>
+          <button type="button" class="list-seed-banner-dismiss" @click="dismissListSeed()" aria-label="Dismiss" data-inert="" aria-disabled="true">
+            <span class="material-icons">close</span>
+          </button>
+        </div>
+
+        
+        <div class="send-step-body" :class="{ 'is-preview': currentStep[activeChannel] === 1 }">
+          <div class="send-step-body-inner" :class="{ 'is-wide': currentStep[activeChannel] === 1 }">
+
+            
+            
+
+            
+            
+
+            
+            <div class="step-pane" x-show="currentStep[activeChannel] === 3" :key="`s-${activeChannel}`">
+              <div class="recipient-header">
+                <h3 class="send-step-title">Schedule</h3>
+                <p class="send-step-subtitle">
+                  Filter the <strong>On send</strong> pool on the left, then bulk-schedule them into a new or existing group on the right.
+                </p>
+              </div>
+
+              <div class="schedule-summary-card" data-tour="schedule">
+                <span class="material-icons">schedule</span>
+                <span x-text="scheduleSummary">Sending now to 6</span>
+              </div>
+
+              
+              <div class="recipient-controls">
+                <div class="recipient-search">
+                  <span class="material-icons">search</span>
+                  <input type="text" placeholder="Search the On send pool…" x-model="ui.scheduleFilter.search" aria-label="Search on-send recipients" value="" style="" data-inert="" aria-disabled="true" readonly="">
+                  
+                </div>
+
+                <template x-if="availableTags.length &gt; 0">
+                  <div class="recipient-tagstrip">
+                    <div class="recipient-tagstrip-label">
+                      <span class="material-icons">sell</span>
+                      <span>Filter by tag</span>
+                    </div>
+                    <div class="recipient-tagstrip-chips">
+                      <template x-for="t in availableTags" :key="t.name">
+                        <button class="recipient-tagchip" :class="{ 'is-active': isScheduleSearchTagActive(t.name) }" @click="toggleScheduleSearchTag(t.name)" :title="`Narrow to on-send recipients with ${t.name}`">
+                          <span class="recipient-tagchip-name" x-text="t.name"></span>
+                          <span class="recipient-tagchip-count" x-text="t.count"></span>
+                        </button>
+                      </template>
+                    </div>
+                  </div>
+                </template><div class="recipient-tagstrip">
+                    <div class="recipient-tagstrip-label">
+                      <span class="material-icons">sell</span>
+                      <span>Filter by tag</span>
+                    </div>
+                    <div class="recipient-tagstrip-chips">
+                      <template x-for="t in availableTags" :key="t.name">
+                        <button class="recipient-tagchip" :class="{ 'is-active': isScheduleSearchTagActive(t.name) }" @click="toggleScheduleSearchTag(t.name)" :title="`Narrow to on-send recipients with ${t.name}`">
+                          <span class="recipient-tagchip-name" x-text="t.name"></span>
+                          <span class="recipient-tagchip-count" x-text="t.count"></span>
+                        </button>
+                      </template><button class="recipient-tagchip" :class="{ 'is-active': isScheduleSearchTagActive(t.name) }" @click="toggleScheduleSearchTag(t.name)" :title="`Narrow to on-send recipients with ${t.name}`" title="Narrow to on-send recipients with donor_level" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="t.name">donor_level</span>
+                          <span class="recipient-tagchip-count" x-text="t.count">6</span>
+                        </button><button class="recipient-tagchip" :class="{ 'is-active': isScheduleSearchTagActive(t.name) }" @click="toggleScheduleSearchTag(t.name)" :title="`Narrow to on-send recipients with ${t.name}`" title="Narrow to on-send recipients with gift_amount" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="t.name">gift_amount</span>
+                          <span class="recipient-tagchip-count" x-text="t.count">6</span>
+                        </button><button class="recipient-tagchip" :class="{ 'is-active': isScheduleSearchTagActive(t.name) }" @click="toggleScheduleSearchTag(t.name)" :title="`Narrow to on-send recipients with ${t.name}`" title="Narrow to on-send recipients with fund_reference" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="t.name">fund_reference</span>
+                          <span class="recipient-tagchip-count" x-text="t.count">6</span>
+                        </button><button class="recipient-tagchip" :class="{ 'is-active': isScheduleSearchTagActive(t.name) }" @click="toggleScheduleSearchTag(t.name)" :title="`Narrow to on-send recipients with ${t.name}`" title="Narrow to on-send recipients with address" data-inert="" aria-disabled="true">
+                          <span class="recipient-tagchip-name" x-text="t.name">address</span>
+                          <span class="recipient-tagchip-count" x-text="t.count">6</span>
+                        </button>
+                    </div>
+                  </div>
+
+                
+              </div>
+
+              
+              <div class="recipient-twopane">
+
+                
+                <section class="recipient-pane recipient-pane-onsend">
+                  <header class="recipient-pane-header">
+                    <div class="recipient-pane-title">
+                      <span class="material-icons recipient-pane-icon is-warning">bolt</span>
+                      <span>On send</span>
+                      <span class="recipient-pane-count is-warning" x-text="hasOnSendFilter
+                                      ? `${onSendFiltered.length} of ${onSendRecipients.length}`
+                                      : onSendRecipients.length">6</span>
+                    </div>
+                  </header>
+
+                  
+                  <div class="schedule-actionbar">
+                    <button class="send-btn send-btn-ghost send-btn-tiny" @click="openMassDateTag()" :title="'Schedule each recipient by their own date field — e.g. birthday'" title="Schedule each recipient by their own date field — e.g. birthday" data-inert="" aria-disabled="true">
+                      <span class="material-icons">event_repeat</span>
+                      Schedule by date tag
+                    </button>
+
+                    <select class="schedule-add-to" x-show="scheduledGroupsExplicit.length &gt; 0" @change="addOnSendToExistingGroup($event.target.value); $event.target.value=''" :disabled="onSendRecipients.length === 0" style="display: none;" data-inert="" aria-disabled="true">
+                      <option value="" selected="">Add to existing</option>
+                      <template x-for="g in scheduledGroupsExplicit" :key="g.datetime">
+                        <option :value="g.datetime" x-text="`${formatScheduleDatetime(g.datetime)}  ·  ${g.recipients?.length || 0}`"></option>
+                      </template>
+                    </select>
+
+                    <button class="send-btn send-btn-primary send-btn-tiny" @click="openCreateScheduleGroup()" :disabled="onSendRecipients.length === 0 || ui.scheduleNew.open" :title="hasSelectedOnSend
+                                      ? `Schedule the ${selectedOnSend.length} selected into a new group`
+                                      : (hasOnSendFilter
+                                          ? `Schedule the filtered ${onSendFiltered.length} into a new group`
+                                          : `Schedule all ${onSendRecipients.length} into a new group`)" title="Schedule all 6 into a new group" data-inert="" aria-disabled="true">
+                      <span class="material-icons">add</span>
+                      Schedule group
+                    </button>
+                  </div>
+
+                  
+                  <div class="schedule-tickbar" x-show="onSendFiltered.length &gt; 0" style="">
+                    <label class="schedule-tickall" :class="{ 'is-on': selectedVisibleCount &gt; 0 &amp;&amp; selectedVisibleCount === onSendFiltered.length,
+                                     'is-some': selectedVisibleCount &gt; 0 &amp;&amp; selectedVisibleCount &lt; onSendFiltered.length }" data-inert="" aria-disabled="true">
+                      <input type="checkbox" :checked="selectedVisibleCount &gt; 0 &amp;&amp; selectedVisibleCount === onSendFiltered.length" @change="$event.target.checked ? selectAllOnSendVisible() : clearScheduleSelected()" style="" data-inert="" aria-disabled="true">
+                      <span class="schedule-tickall-box" aria-hidden="true">
+                        
+                        
+                      </span>
+                      <span x-text="selectedOnSend.length === 0
+                                      ? 'Select all visible'
+                                      : `${selectedOnSend.length} selected${hasOnSendFilter &amp;&amp; selectedVisibleCount !== selectedOnSend.length ? ` (${selectedVisibleCount} visible)` : ''}`">Select all visible</span>
+                    </label>
+                    
+                  </div>
+
+                  <template x-if="onSendRecipients.length === 0">
+                    <div class="recipient-pane-empty">
+                      <span class="material-icons">check_circle</span>
+                      <div class="recipient-pane-empty-title">Everyone is scheduled</div>
+                      <div class="recipient-pane-empty-hint">Every selected recipient is in a scheduled group on the right.</div>
+                    </div>
+                  </template>
+
+                  <template x-if="onSendRecipients.length &gt; 0 &amp;&amp; onSendFiltered.length === 0">
+                    <div class="recipient-pane-empty">
+                      <span class="material-icons">filter_list_off</span>
+                      <div class="recipient-pane-empty-title">No matches in this filter</div>
+                      <div class="recipient-pane-empty-hint">Try clearing a filter or removing a tag to widen the result.</div>
+                      <button class="send-btn send-btn-ghost send-btn-tiny" @click="clearScheduleFilter()" style="margin-top: 12px;">
+                        <span class="material-icons">refresh</span>
+                        Clear filters
+                      </button>
+                    </div>
+                  </template>
+
+                  <template x-if="onSendFiltered.length &gt; 0">
+                    <div class="recipient-pane-list">
+                      <template x-for="r in onSendFiltered" :key="r">
+                        <button type="button" class="recipient-card recipient-card-tickable" :class="{ 'is-ticked': isScheduleSelected(r) }" @click="toggleScheduleSelected(r)" :aria-pressed="isScheduleSelected(r)" :title="`${isScheduleSelected(r) ? 'Deselect' : 'Select'} ${r} for scheduling`">
+                          <template x-if="findConstituentForRecipient(r)">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                          </template>
+                          <template x-if="!findConstituentForRecipient(r)">
+                            <div class="recipient-avatar recipient-avatar-adhoc">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                            </template>
+                            <template x-if="!findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="r"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="r"></div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="findConstituentForRecipient(r) &amp;&amp; constituentTags(findConstituentForRecipient(r)).length &gt; 0">
+                            <template x-for="t in (findConstituentForRecipient(r) ? constituentTags(findConstituentForRecipient(r)).slice(0, 2) : [])" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t"></span>
+                            </template>
+                          </div>
+                          <span class="recipient-card-tickbox" :class="{ 'is-ticked': isScheduleSelected(r) }" aria-hidden="true">
+                            <span class="material-icons" x-show="isScheduleSelected(r)">check</span>
+                          </span>
+                        </button>
+                      </template>
+                    </div>
+                  </template><div class="recipient-pane-list">
+                      <template x-for="r in onSendFiltered" :key="r">
+                        <button type="button" class="recipient-card recipient-card-tickable" :class="{ 'is-ticked': isScheduleSelected(r) }" @click="toggleScheduleSelected(r)" :aria-pressed="isScheduleSelected(r)" :title="`${isScheduleSelected(r) ? 'Deselect' : 'Select'} ${r} for scheduling`">
+                          <template x-if="findConstituentForRecipient(r)">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                          </template>
+                          <template x-if="!findConstituentForRecipient(r)">
+                            <div class="recipient-avatar recipient-avatar-adhoc">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                            </template>
+                            <template x-if="!findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="r"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="r"></div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="findConstituentForRecipient(r) &amp;&amp; constituentTags(findConstituentForRecipient(r)).length &gt; 0">
+                            <template x-for="t in (findConstituentForRecipient(r) ? constituentTags(findConstituentForRecipient(r)).slice(0, 2) : [])" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t"></span>
+                            </template>
+                          </div>
+                          <span class="recipient-card-tickbox" :class="{ 'is-ticked': isScheduleSelected(r) }" aria-hidden="true">
+                            <span class="material-icons" x-show="isScheduleSelected(r)">check</span>
+                          </span>
+                        </button>
+                      </template><button type="button" class="recipient-card recipient-card-tickable" :class="{ 'is-ticked': isScheduleSelected(r) }" @click="toggleScheduleSelected(r)" :aria-pressed="isScheduleSelected(r)" :title="`${isScheduleSelected(r) ? 'Deselect' : 'Select'} ${r} for scheduling`" aria-pressed="false" title="Select emily.wilson@harborlights.example for scheduling" data-inert="" aria-disabled="true">
+                          <template x-if="findConstituentForRecipient(r)">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))" style="--avatar-hue: 341">EW</div>
+                          <template x-if="!findConstituentForRecipient(r)">
+                            <div class="recipient-avatar recipient-avatar-adhoc">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))">emily wilson</div>
+                            <template x-if="!findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="r"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="r">emily.wilson@harborlights.example</div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="findConstituentForRecipient(r) &amp;&amp; constituentTags(findConstituentForRecipient(r)).length &gt; 0">
+                            <template x-for="t in (findConstituentForRecipient(r) ? constituentTags(findConstituentForRecipient(r)).slice(0, 2) : [])" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t"></span>
+                            </template><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">donor_level</span><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">gift_amount</span>
+                          </div>
+                          <span class="recipient-card-tickbox" :class="{ 'is-ticked': isScheduleSelected(r) }" aria-hidden="true">
+                            
+                          </span>
+                        </button><button type="button" class="recipient-card recipient-card-tickable" :class="{ 'is-ticked': isScheduleSelected(r) }" @click="toggleScheduleSelected(r)" :aria-pressed="isScheduleSelected(r)" :title="`${isScheduleSelected(r) ? 'Deselect' : 'Select'} ${r} for scheduling`" aria-pressed="false" title="Select james.taylor@harborlights.example for scheduling" data-inert="" aria-disabled="true">
+                          <template x-if="findConstituentForRecipient(r)">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))" style="--avatar-hue: 120">JT</div>
+                          <template x-if="!findConstituentForRecipient(r)">
+                            <div class="recipient-avatar recipient-avatar-adhoc">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))">james taylor</div>
+                            <template x-if="!findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="r"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="r">james.taylor@harborlights.example</div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="findConstituentForRecipient(r) &amp;&amp; constituentTags(findConstituentForRecipient(r)).length &gt; 0">
+                            <template x-for="t in (findConstituentForRecipient(r) ? constituentTags(findConstituentForRecipient(r)).slice(0, 2) : [])" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t"></span>
+                            </template><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">donor_level</span><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">gift_amount</span>
+                          </div>
+                          <span class="recipient-card-tickbox" :class="{ 'is-ticked': isScheduleSelected(r) }" aria-hidden="true">
+                            
+                          </span>
+                        </button><button type="button" class="recipient-card recipient-card-tickable" :class="{ 'is-ticked': isScheduleSelected(r) }" @click="toggleScheduleSelected(r)" :aria-pressed="isScheduleSelected(r)" :title="`${isScheduleSelected(r) ? 'Deselect' : 'Select'} ${r} for scheduling`" aria-pressed="false" title="Select maria.gonzalez@harborlights.example for scheduling" data-inert="" aria-disabled="true">
+                          <template x-if="findConstituentForRecipient(r)">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))" style="--avatar-hue: 159">MG</div>
+                          <template x-if="!findConstituentForRecipient(r)">
+                            <div class="recipient-avatar recipient-avatar-adhoc">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))">maria gonzalez</div>
+                            <template x-if="!findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="r"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="r">maria.gonzalez@harborlights.example</div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="findConstituentForRecipient(r) &amp;&amp; constituentTags(findConstituentForRecipient(r)).length &gt; 0">
+                            <template x-for="t in (findConstituentForRecipient(r) ? constituentTags(findConstituentForRecipient(r)).slice(0, 2) : [])" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t"></span>
+                            </template><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">donor_level</span><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">gift_amount</span>
+                          </div>
+                          <span class="recipient-card-tickbox" :class="{ 'is-ticked': isScheduleSelected(r) }" aria-hidden="true">
+                            
+                          </span>
+                        </button><button type="button" class="recipient-card recipient-card-tickable" :class="{ 'is-ticked': isScheduleSelected(r) }" @click="toggleScheduleSelected(r)" :aria-pressed="isScheduleSelected(r)" :title="`${isScheduleSelected(r) ? 'Deselect' : 'Select'} ${r} for scheduling`" aria-pressed="false" title="Select daniel.brooks@harborlights.example for scheduling" data-inert="" aria-disabled="true">
+                          <template x-if="findConstituentForRecipient(r)">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))" style="--avatar-hue: 214">DB</div>
+                          <template x-if="!findConstituentForRecipient(r)">
+                            <div class="recipient-avatar recipient-avatar-adhoc">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))">daniel brooks</div>
+                            <template x-if="!findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="r"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="r">daniel.brooks@harborlights.example</div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="findConstituentForRecipient(r) &amp;&amp; constituentTags(findConstituentForRecipient(r)).length &gt; 0">
+                            <template x-for="t in (findConstituentForRecipient(r) ? constituentTags(findConstituentForRecipient(r)).slice(0, 2) : [])" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t"></span>
+                            </template><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">donor_level</span><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">gift_amount</span>
+                          </div>
+                          <span class="recipient-card-tickbox" :class="{ 'is-ticked': isScheduleSelected(r) }" aria-hidden="true">
+                            
+                          </span>
+                        </button><button type="button" class="recipient-card recipient-card-tickable" :class="{ 'is-ticked': isScheduleSelected(r) }" @click="toggleScheduleSelected(r)" :aria-pressed="isScheduleSelected(r)" :title="`${isScheduleSelected(r) ? 'Deselect' : 'Select'} ${r} for scheduling`" aria-pressed="false" title="Select aisha.robinson@harborlights.example for scheduling" data-inert="" aria-disabled="true">
+                          <template x-if="findConstituentForRecipient(r)">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))" style="--avatar-hue: 227">AR</div>
+                          <template x-if="!findConstituentForRecipient(r)">
+                            <div class="recipient-avatar recipient-avatar-adhoc">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))">aisha robinson</div>
+                            <template x-if="!findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="r"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="r">aisha.robinson@harborlights.example</div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="findConstituentForRecipient(r) &amp;&amp; constituentTags(findConstituentForRecipient(r)).length &gt; 0">
+                            <template x-for="t in (findConstituentForRecipient(r) ? constituentTags(findConstituentForRecipient(r)).slice(0, 2) : [])" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t"></span>
+                            </template><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">donor_level</span><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">gift_amount</span>
+                          </div>
+                          <span class="recipient-card-tickbox" :class="{ 'is-ticked': isScheduleSelected(r) }" aria-hidden="true">
+                            
+                          </span>
+                        </button><button type="button" class="recipient-card recipient-card-tickable" :class="{ 'is-ticked': isScheduleSelected(r) }" @click="toggleScheduleSelected(r)" :aria-pressed="isScheduleSelected(r)" :title="`${isScheduleSelected(r) ? 'Deselect' : 'Select'} ${r} for scheduling`" aria-pressed="false" title="Select robert.miller@harborlights.example for scheduling" data-inert="" aria-disabled="true">
+                          <template x-if="findConstituentForRecipient(r)">
+                            <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                          </template><div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))" style="--avatar-hue: 328">RM</div>
+                          <template x-if="!findConstituentForRecipient(r)">
+                            <div class="recipient-avatar recipient-avatar-adhoc">
+                              <span class="material-icons">person_outline</span>
+                            </div>
+                          </template>
+                          <div class="recipient-meta">
+                            <template x-if="findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                            </template><div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))">robert miller</div>
+                            <template x-if="!findConstituentForRecipient(r)">
+                              <div class="recipient-meta-name" x-text="r"></div>
+                            </template>
+                            <div class="recipient-meta-key" x-text="r">robert.miller@harborlights.example</div>
+                          </div>
+                          <div class="recipient-card-tags" x-show="findConstituentForRecipient(r) &amp;&amp; constituentTags(findConstituentForRecipient(r)).length &gt; 0">
+                            <template x-for="t in (findConstituentForRecipient(r) ? constituentTags(findConstituentForRecipient(r)).slice(0, 2) : [])" :key="t">
+                              <span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t"></span>
+                            </template><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">donor_level</span><span class="recipient-card-tag" :class="{ 'is-active': isScheduleSearchTagActive(t) }" x-text="t">gift_amount</span>
+                          </div>
+                          <span class="recipient-card-tickbox" :class="{ 'is-ticked': isScheduleSelected(r) }" aria-hidden="true">
+                            
+                          </span>
+                        </button>
+                    </div>
+                </section>
+
+                
+                <section class="recipient-pane recipient-pane-scheduled">
+                  <header class="recipient-pane-header">
+                    <div class="recipient-pane-title">
+                      <span class="material-icons recipient-pane-icon">schedule_send</span>
+                      <span>Scheduled</span>
+                      <span class="recipient-pane-count" x-text="scheduledGroupsExplicit.length">0</span>
+                    </div>
+                  </header>
+
+                  
+                  
+
+                  
+                  <template x-if="scheduledGroupsExplicit.length === 0 &amp;&amp; !ui.scheduleNew.open">
+                    <div class="recipient-pane-empty">
+                      <span class="material-icons">schedule</span>
+                      <div class="recipient-pane-empty-title">No scheduled groups yet</div>
+                      <div class="recipient-pane-empty-hint">
+                        Click <strong>Schedule group</strong> on the left to send a slice of On send at a specific time.
+                        Anything not scheduled stays in <strong>On send</strong> and goes out immediately on send.
+                      </div>
+                    </div>
+                  </template><div class="recipient-pane-empty">
+                      <span class="material-icons">schedule</span>
+                      <div class="recipient-pane-empty-title">No scheduled groups yet</div>
+                      <div class="recipient-pane-empty-hint">
+                        Click <strong>Schedule group</strong> on the left to send a slice of On send at a specific time.
+                        Anything not scheduled stays in <strong>On send</strong> and goes out immediately on send.
+                      </div>
+                    </div>
+
+                  
+                  <template x-if="scheduledGroupsExplicit.length &gt; 0">
+                    <div class="schedule-mini-list">
+                      <template x-for="g in scheduledGroupsExplicit" :key="g.datetime">
+                        <article class="schedule-mini" :class="{ 'is-expanded': isScheduleGroupExpanded(g.datetime), 'is-empty': (g.recipients?.length || 0) === 0 }">
+
+                          <header class="schedule-mini-header" @click="toggleScheduleGroup(g.datetime)">
+                            <div class="schedule-mini-title">
+                              <span class="material-icons">schedule_send</span>
+                              <span class="schedule-mini-time" x-text="formatScheduleDatetime(g.datetime)"></span>
+                            </div>
+                            <div class="schedule-mini-meta">
+                              <span class="schedule-mini-count" x-text="(g.recipients?.length || 0) + ' recipient' + ((g.recipients?.length || 0) === 1 ? '' : 's')"></span>
+                              <button class="schedule-mini-delete" @click.stop="deleteScheduleGroupByKey(g.datetime)" title="Delete this group — recipients move back to On send">
+                                <span class="material-icons">delete</span>
+                              </button>
+                              <span class="material-icons schedule-mini-chevron" :class="{ 'is-flipped': isScheduleGroupExpanded(g.datetime) }">expand_more</span>
+                            </div>
+                          </header>
+
+                          <div class="schedule-mini-body" x-show="isScheduleGroupExpanded(g.datetime)" x-cloak="">
+                            <template x-if="(g.recipients?.length || 0) === 0">
+                              <div class="schedule-mini-empty">
+                                Empty — use <strong>Add to existing ▾</strong> on the left to fill it.
+                              </div>
+                            </template>
+                            <template x-if="(g.recipients?.length || 0) &gt; 0">
+                              <div class="schedule-mini-rowlist">
+                                <template x-for="r in (g.recipients || [])" :key="r">
+                                  <div class="schedule-mini-row">
+                                    <template x-if="findConstituentForRecipient(r)">
+                                      <div class="recipient-avatar" :style="`--avatar-hue: ${constituentAvatarHue(findConstituentForRecipient(r))}`" x-text="constituentInitials(findConstituentForRecipient(r))"></div>
+                                    </template>
+                                    <template x-if="!findConstituentForRecipient(r)">
+                                      <div class="recipient-avatar recipient-avatar-adhoc">
+                                        <span class="material-icons">person_outline</span>
+                                      </div>
+                                    </template>
+                                    <div class="recipient-meta">
+                                      <template x-if="findConstituentForRecipient(r)">
+                                        <div class="recipient-meta-name" x-text="constituentName(findConstituentForRecipient(r))"></div>
+                                      </template>
+                                      <template x-if="!findConstituentForRecipient(r)">
+                                        <div class="recipient-meta-name" x-text="r"></div>
+                                      </template>
+                                      <div class="recipient-meta-key" x-text="r"></div>
+                                    </div>
+                                    <button class="schedule-mini-remove" @click="removeFromScheduleGroup(r)" :title="`Remove from this group — moves back to On send`">
+                                      <span class="material-icons">close</span>
+                                    </button>
+                                  </div>
+                                </template>
+                              </div>
+                            </template>
+                          </div>
+                        </article>
+                      </template>
+                    </div>
+                  </template>
+                </section>
+              </div>
+            </div>
+
+            
+            
+
+          </div>
+        </div>
+
+        
+        <footer class="send-step-footer">
+          
+          
+
+          <button class="send-btn send-btn-secondary" x-show="currentStep[activeChannel] &gt; 1" @click="prevStep()" data-sr-action="state:recipients">
+            <span class="material-icons">arrow_back</span>
+            Back
+          </button>
+
+          <span class="send-step-footer-summary">
+            <span class="dot"></span>
+            <span x-show="activeChannel === 'email'">Email · <strong x-text="email.recipients.size">6</strong> recipient<span x-show="email.recipients.size !== 1">s</span></span>
+            
+            
+          </span>
+
+          <div style="display:flex; gap:8px;">
+            <button class="send-btn send-btn-primary" x-show="currentStep[activeChannel] &lt; 4" :disabled="!canGoNext()" @click="nextStep()" data-sr-action="toast:Send info is where you confirm the sender and subject. This is a read-only demo.">
+              Next
+              <span class="material-icons">arrow_forward</span>
+            </button>
+
+            
+          </div>
+        </footer>
+      </section>
+
+    </main>
+  </div>
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+</template>
+<div id="sr-replica-toast" role="status" aria-live="polite"></div>
+<script id="sr-screen-meta" type="application/json">{"states":["draft","preview","recipients","schedule"],"body":{"draft":{"class":"h-screen flex"},"preview":{"class":"send-page","data-channel":"email","data-no-tabs":"true"},"recipients":{"class":"send-page","data-channel":"email","data-no-tabs":"true"},"schedule":{"class":"send-page","data-channel":"email","data-no-tabs":"true"}}}</script>
+<script>// Runtime for the Send screen: swaps captured states (and the stylesheet each one was
+// captured under: the composer and the /send/ flow are two different pages), keeps
+// everything read-only, and exposes window.SRScreen for the tour. Inlined into send.html
+// by build.mjs.
+(function () {
+    var meta = JSON.parse(document.getElementById('sr-screen-meta').textContent);
+    var screen = document.body.getAttribute('data-sr-screen');
+    var mount = document.getElementById('sr-mount');
+    var state = null;
+    var listeners = [];
+    var RO = 'This is a read-only demo.';
+
+    function tpl(name) { return document.querySelector('template[data-sr-state="' + name + '"]'); }
+
+    var toastTimer = null;
+    function toast(message) {
+        var el = document.getElementById('sr-replica-toast');
+        el.textContent = message || RO;
+        el.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { el.classList.remove('is-visible'); }, 2400);
+    }
+
+    function useSheet(key) {
+        Array.prototype.forEach.call(document.querySelectorAll('link[data-sr-css]'), function (l) {
+            l.disabled = l.getAttribute('data-sr-css') !== key;
+        });
+    }
+
+    // Resolves once the stylesheet and any email frame in the state have loaded.
+    function settle() {
+        var waits = [];
+        var link = document.querySelector('link[data-sr-css]:not([disabled])');
+        if (link && !link.sheet) waits.push(new Promise(function (r) { link.addEventListener('load', r, { once: true }); }));
+        Array.prototype.forEach.call(mount.querySelectorAll('iframe[srcdoc]'), function (f) {
+            if (!(f.contentDocument && f.contentDocument.readyState === 'complete' && f.contentDocument.body && f.contentDocument.body.childNodes.length)) {
+                waits.push(new Promise(function (r) { f.addEventListener('load', r, { once: true }); }));
+            }
+        });
+        return Promise.all(waits).then(function () { return document.fonts ? document.fonts.ready : null; });
+    }
+
+    var ready = Promise.resolve();
+    function restoreScroll() {
+        Array.prototype.forEach.call(mount.querySelectorAll('[data-sr-scroll]'), function (el) {
+            var xy = el.getAttribute('data-sr-scroll').split(',');
+            el.scrollLeft = Number(xy[0]) || 0;
+            el.scrollTop = Number(xy[1]) || 0;
+        });
+    }
+    function setState(name) {
+        var t = tpl(name);
+        if (!t) throw new Error('Unknown state: ' + name);
+        useSheet(t.getAttribute('data-sr-css'));
+        var body = meta.body[name] || {};
+        Array.prototype.slice.call(document.body.attributes).forEach(function (at) {
+            if (at.name !== 'data-sr-screen') document.body.removeAttribute(at.name);
+        });
+        Object.keys(body).forEach(function (k) { document.body.setAttribute(k, body[k]); });
+        mount.replaceChildren(t.content.cloneNode(true));
+        state = name;
+        window.scrollTo(0, 0);
+        restoreScroll();
+        // Again once the stylesheet and frames are in: until then nothing overflows to scroll.
+        ready = settle().then(restoreScroll);
+        var detail = { sr: 'state', screen: screen, state: name };
+        listeners.forEach(function (fn) { try { fn(detail); } catch (e) { /* ignore */ } });
+        if (window.parent && window.parent !== window) window.parent.postMessage(detail, '*');
+        return ready;
+    }
+
+    function run(action) {
+        var i = action.indexOf(':');
+        var verb = i === -1 ? action : action.slice(0, i);
+        var arg = i === -1 ? '' : action.slice(i + 1);
+        if (verb === 'state') return setState(arg);
+        if (verb === 'toast') return toast(arg);
+        return toast(RO);
+    }
+
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest('[data-sr-action]');
+        if (a) { e.preventDefault(); e.stopPropagation(); run(a.getAttribute('data-sr-action')); return; }
+        var inert = e.target.closest('[data-inert], a, button, label, input, select, textarea, [contenteditable]');
+        if (inert) { e.preventDefault(); e.stopPropagation(); toast(RO); }
+    }, true);
+    document.addEventListener('submit', function (e) { e.preventDefault(); }, true);
+    document.addEventListener('keydown', function (e) {
+        if (e.target && e.target.closest && e.target.closest('input, textarea, [contenteditable]') && e.key !== 'Tab') e.preventDefault();
+    }, true);
+
+    function find(id) { return mount.querySelector('[data-tour="' + id + '"]'); }
+
+    window.SRScreen = {
+        name: screen,
+        states: meta.states.slice(),
+        setState: setState,
+        getState: function () { return state; },
+        ready: function () { return ready; },
+        getTarget: find,
+        getTargets: function () {
+            return Array.prototype.map.call(mount.querySelectorAll('[data-tour]'), function (el) { return el.getAttribute('data-tour'); });
+        },
+        getTargetRect: function (id) { var el = find(id); return el ? el.getBoundingClientRect() : null; },
+        scrollToTarget: function (id, block) { var el = find(id); if (el) el.scrollIntoView({ block: block || 'center', behavior: 'instant' }); },
+        onChange: function (fn) { listeners.push(fn); },
+    };
+
+    var initial = new URLSearchParams(window.location.search).get('state') || (window.location.hash.match(/state=([\w-]+)/) || [])[1];
+    setState(initial && tpl(initial) ? initial : 'draft');
+})();
+</script>
+</body>
+</html>

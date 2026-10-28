@@ -10,13 +10,13 @@ last_reviewed: 2026-10-15
 
 You can bring constituents into Storyraise two ways: sync them from a [connected CRM](connecting-a-crm.md), or upload a CSV file. CSV import works with data exported from any system — or a spreadsheet you maintain by hand.
 
+> **Tip:** Prefer to see it? [Watch the two-minute tour and explore the interactive demo](/personalization/): import donors, add variables and Show When content, then preview the report as two different donors.
+
 ## Importing from a CSV file
 
 ### 1. Prepare your file
 
 Your CSV needs headers for **First Name**, **Last Name**, and **Email**. Email is the key field — Storyraise uses it to identify each constituent. A row with a name but no email address still imports: Storyraise keys that person on their name instead, so they can still get a personalized report (a printed one, for example). Rows with neither an email nor a name are skipped.
-
-<!-- TEAM REVIEW: the "Map your columns" dialog still says "Rows without an email will be skipped" (public/index.html ~6578), but map_import_row (public/js/app-dashboard.js ~12251) gives name-only rows a placeholder address and imports them. The doc follows the code; the dialog copy should be corrected. -->
 
 The easiest path:
 

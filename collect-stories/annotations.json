@@ -1,0 +1,508 @@
+{
+  "about": "Tour stops for the interactive Storyraise Collect stories demo. Seven product screens; each stop names the screen and state it describes. Copy uses the product's own labels, checked against the code cited in `source` (Collect = storyraise-collect branch; builder/reader = main). American English, no em dashes.",
+  "builderSha": "2b45b64e",
+  "collectSha": "52a70275",
+  "screens": [
+    {
+      "id": "collect-new",
+      "file": "demo/collect-new.html",
+      "label": "Collection",
+      "url": "collect.storyraise.com/#/harbor-lights"
+    },
+    {
+      "id": "collect-editor",
+      "file": "demo/collect-editor.html",
+      "label": "Form",
+      "url": "collect.storyraise.com/compose/#/harbor-lights/scholarship-stories"
+    },
+    {
+      "id": "collect-link",
+      "file": "demo/collect-link.html",
+      "label": "Share",
+      "url": "collect.storyraise.com/compose/#/harbor-lights/scholarship-stories"
+    },
+    {
+      "id": "collect-form",
+      "file": "demo/collect-form.html",
+      "label": "Respond",
+      "url": "collect.harborlights.example/form/#/harbor-lights/scholarship-stories"
+    },
+    {
+      "id": "collect-grid",
+      "file": "demo/collect-grid.html",
+      "label": "Responses",
+      "url": "collect.storyraise.com/#/harbor-lights/scholarship-stories"
+    },
+    {
+      "id": "profile",
+      "file": "demo/profile.html",
+      "label": "Donor",
+      "url": "app.storyraise.com/#/harbor-lights/constituents/emily-wilson"
+    },
+    {
+      "id": "builder",
+      "file": "demo/builder.html",
+      "label": "Report",
+      "url": "app.storyraise.com/builder/#/harbor-lights/2026-impact-report"
+    },
+    {
+      "id": "preview",
+      "file": "demo/preview.html",
+      "label": "Preview",
+      "url": "app.storyraise.com/preview/#/harbor-lights/2026-impact-report"
+    }
+  ],
+  "stops": [
+    {
+      "id": "start-new",
+      "target": "start-new",
+      "uiLabel": [
+        "Start new collection"
+      ],
+      "prepare": {
+        "screen": "collect-new",
+        "state": "list"
+      },
+      "title": "Start a collection",
+      "tells": "A collection holds one form and every response to it. Start new collection from Collections.",
+      "why": "Each collection becomes a data source your reports can repeat over.",
+      "next": "Name it for what you are gathering, like Scholarship Stories.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/js.js",
+          "lines": "5596",
+          "note": "create_new_message"
+        }
+      ],
+      "kb": {
+        "href": "/docs/storyraise-collect/",
+        "label": "Storyraise Collect"
+      },
+      "marker": "before"
+    },
+    {
+      "id": "type-thanks",
+      "target": "type-thanks",
+      "uiLabel": [
+        "What do you want to collect?",
+        "Thank-yous from beneficiaries"
+      ],
+      "prepare": {
+        "screen": "collect-new",
+        "state": "types"
+      },
+      "title": "Choose what you want to collect",
+      "tells": "Pick a starting point: thank-yous from beneficiaries, stories from program leaders, the field, or your community, general information, or an upload.",
+      "why": "Each one starts the form with sensible questions, so you edit instead of starting from a blank page.",
+      "next": "Here it is Thank-yous from beneficiaries, for students writing to the donors who fund them.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/js.js",
+          "lines": "1698-2005",
+          "note": "collection types"
+        }
+      ]
+    },
+    {
+      "id": "add-fields",
+      "target": "add-fields",
+      "uiLabel": [
+        "Add Fields",
+        "Short text",
+        "Long text",
+        "File upload"
+      ],
+      "prepare": {
+        "screen": "collect-editor",
+        "state": "form"
+      },
+      "title": "Add the fields you need",
+      "tells": "Add Fields offers short and long text, email, phone, choices, dropdowns, numbers, dates, and file uploads, plus headings and paragraphs to organize the form.",
+      "why": "A name, a story, and a photo are all it takes to fill a report with real people.",
+      "next": "Click a field type to add it, then click the field to edit it.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/js.js",
+          "lines": "815-1054",
+          "note": "Add Fields"
+        }
+      ],
+      "kb": {
+        "href": "/docs/storyraise-collect/form-field-types/",
+        "label": "Form field types"
+      }
+    },
+    {
+      "id": "save-variable",
+      "target": "save-variable",
+      "uiLabel": [
+        "Field editor.",
+        "Save to Variable",
+        "Make Field Required?"
+      ],
+      "prepare": {
+        "screen": "collect-editor",
+        "state": "field"
+      },
+      "title": "Every field saves to a variable",
+      "tells": "In the field editor, Save to Variable names the answer. This one saves to student_note, so a report can show it as @@student_note@@.",
+      "why": "The variable name is the link between the form and your report. Choose short, clear names.",
+      "next": "Set the label your respondents see, the variable your report uses, and whether the field is required.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/js.js",
+          "lines": "276-438",
+          "note": "field editor"
+        }
+      ],
+      "kb": {
+        "href": "/docs/storyraise-collect/form-field-types/",
+        "label": "Form field types"
+      },
+      "marker": "before"
+    },
+    {
+      "id": "allowed-types",
+      "target": "allowed-types",
+      "uiLabel": [
+        "Allowed File Types",
+        "Images only"
+      ],
+      "prepare": {
+        "screen": "collect-editor",
+        "state": "upload"
+      },
+      "title": "Photos and videos come in as uploads",
+      "tells": "A File upload field can accept any file, or only images, videos, or documents. This one takes images only.",
+      "why": "Respondents send their own photos from a phone or computer, and the photo arrives with their story.",
+      "next": "Use Videos only for a short video message.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/js.js",
+          "lines": "356-366",
+          "note": "Allowed File Types"
+        }
+      ]
+    },
+    {
+      "id": "standard-link",
+      "target": "standard-link",
+      "uiLabel": [
+        "Your form link.",
+        "Standard Link (non-personalized)",
+        "Copy form link"
+      ],
+      "prepare": {
+        "screen": "collect-link",
+        "state": "link"
+      },
+      "title": "Share one link",
+      "tells": "Get form link gives you the link to send by email, text, or social media. Anyone with it can respond.",
+      "why": "No accounts or apps for respondents, just a link that works on any device.",
+      "next": "Copy form link, or View form to see what respondents see.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/compose/index.html",
+          "lines": "528-585",
+          "note": "form link modal"
+        }
+      ],
+      "kb": {
+        "href": "/docs/storyraise-collect/sharing-your-form/",
+        "label": "Sharing your form"
+      }
+    },
+    {
+      "id": "f-note",
+      "target": "f-note",
+      "uiLabel": [
+        "Submit"
+      ],
+      "prepare": {
+        "screen": "collect-form",
+        "state": "filled"
+      },
+      "title": "What respondents see",
+      "tells": "The form carries your logo and questions. Here Sophia Ramirez writes her note and adds her photo.",
+      "why": "Stories in the respondent's own words read as far more genuine than anything written for them.",
+      "next": "Submit sends the response straight into the collection.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/js.js",
+          "lines": "8777-8850",
+          "note": "submit"
+        }
+      ]
+    },
+    {
+      "id": "grid",
+      "target": "grid",
+      "uiLabel": [
+        "Search by keyword...",
+        "Open form editor",
+        "Import CSV",
+        "Export CSV"
+      ],
+      "prepare": {
+        "screen": "collect-grid",
+        "state": "grid"
+      },
+      "title": "Every response, one row",
+      "tells": "Responses land in the collection as rows, one per student, with every field in its own column.",
+      "why": "You can review, edit, import, or export them before any of it appears in a report.",
+      "next": "Open any response to review or edit it.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/index.html",
+          "lines": "118-185",
+          "note": "grid"
+        }
+      ],
+      "kb": {
+        "href": "/docs/storyraise-collect/managing-responses/",
+        "label": "Managing responses"
+      }
+    },
+    {
+      "id": "repeater-insert",
+      "target": "repeater-insert",
+      "uiLabel": [
+        "Repeater"
+      ],
+      "prepare": {
+        "screen": "builder",
+        "state": "insert"
+      },
+      "title": "Add a Repeater",
+      "tells": "In the builder's Insert panel, drag a Repeater onto the page where the stories should go.",
+      "why": "A Repeater is a block that copies itself once for every matching row in a collection.",
+      "next": "Then select it and open Use Data.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "public/blocks/scenes/repeater.js",
+          "lines": "2-13",
+          "note": "Repeater block"
+        }
+      ]
+    },
+    {
+      "id": "repeat-collection",
+      "target": "repeat-collection",
+      "uiLabel": [
+        "Use Data",
+        "Repeat For Each Item in...",
+        "Select a Collection"
+      ],
+      "prepare": {
+        "screen": "builder",
+        "state": "repeater"
+      },
+      "title": "Point a repeater at the collection",
+      "tells": "Select a Repeater block, open Use Data, and under Repeat For Each Item in, select your collection.",
+      "why": "The block repeats once for every response, so the report grows as stories come in.",
+      "next": "Lay out one card inside it.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "public/builder/index.html",
+          "lines": "2411-2521",
+          "note": "Repeat For Each Item in panel"
+        }
+      ],
+      "kb": {
+        "href": "/docs/storyraise-collect/using-responses-in-a-report/",
+        "label": "Using responses in a report"
+      }
+    },
+    {
+      "id": "card-tags",
+      "target": "card-tags",
+      "uiLabel": [],
+      "prepare": {
+        "screen": "builder",
+        "state": "card"
+      },
+      "title": "Design one card",
+      "tells": "Inside the repeater, use the form's variables: @@student_name@@, @@class_year@@, @@major@@, @@student_note@@, and the photo from @@student_photo@@.",
+      "why": "You design a single card once, and every response fills its own copy.",
+      "next": "Next, give the card each student's photo.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "public/js/report.js",
+          "lines": "4870-4988",
+          "note": "expandRepeatersPass"
+        }
+      ]
+    },
+    {
+      "id": "photo",
+      "target": "override-media",
+      "uiLabel": [
+        "Override Media",
+        "Use Media from a Variable"
+      ],
+      "prepare": {
+        "screen": "builder",
+        "state": "photo"
+      },
+      "title": "Each student's own photo",
+      "tells": "Select the card's photo block, open Use Data, and under Override Media choose Use Media from a Variable: @@student_photo@@. In the editor you see a placeholder; each student's photo fills in when the report opens.",
+      "why": "The photo each student uploaded appears on their own card, with no downloading or resizing.",
+      "next": "For a video field, select a Video element and use Use Video from a Variable.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "public/builder/index.html",
+          "lines": "2309-2333",
+          "note": "Override Media"
+        }
+      ],
+      "marker": "after"
+    },
+    {
+      "id": "repeat-when",
+      "target": "repeat-when",
+      "uiLabel": [
+        "Pick a column to check",
+        "Select Condition",
+        "Enter the value to look for",
+        "Sort and Limit"
+      ],
+      "prepare": {
+        "screen": "builder",
+        "state": "repeater"
+      },
+      "title": "Make it personal",
+      "tells": "Under Repeat When, pick the column fund_id, the condition is, and the value @@fund_reference@@, the code on the donor's own record.",
+      "why": "Each donor sees the students their gift supports, and nobody else's.",
+      "next": "Sort and Limit can order the cards and cap how many show. A repeater needs a Repeat When to show anything.",
+      "keepInMind": [
+        "is needs an exact match, capitals included, even with Case-insensitive matching checked; that box only applies to contains. A Dropdown list whose options are the codes avoids typos.",
+        "Repeaters fill in when a donor opens their personalized link. Without ?for=, the page shows the card's variables as typed."
+      ],
+      "source": [
+        {
+          "file": "public/builder/index.html",
+          "lines": "2411-2521",
+          "note": "Repeat When"
+        },
+        {
+          "file": "public/js/report.js",
+          "lines": "4852-4867",
+          "note": "@@tags@@ resolve from the constituent"
+        }
+      ],
+      "marker": "before"
+    },
+    {
+      "id": "profile-fund",
+      "target": "variables",
+      "uiLabel": [
+        "Variable",
+        "Value"
+      ],
+      "prepare": {
+        "screen": "profile",
+        "state": "profile"
+      },
+      "title": "The donor's side of the match",
+      "tells": "Emily Wilson's record carries @@fund_reference@@, F004, the fund her gift supports. It came in as a column of her donor list, from a CSV import or your CRM.",
+      "why": "That shared code is what lets a report pick the right students for each donor.",
+      "next": "Make sure the codes on donor records and the codes students enter look exactly alike.",
+      "keepInMind": [],
+      "source": [
+        {
+          "file": "public/index.html",
+          "lines": "1635-1665",
+          "note": "Variable / Value"
+        }
+      ],
+      "kb": {
+        "href": "/personalization/",
+        "label": "Personalized reports"
+      }
+    },
+    {
+      "id": "emily",
+      "target": "story-cards",
+      "uiLabel": [
+        "Previewing as"
+      ],
+      "prepare": {
+        "screen": "preview",
+        "state": "emily"
+      },
+      "title": "Emily meets her students",
+      "tells": "Emily Wilson gives to the Health Sciences Innovation Fund, so her report shows Sophia Ramirez, a nursing student, and David Chen, who studies public health.",
+      "why": "The same report reads as a personal update from the people her gift helped.",
+      "next": "Switch to James Taylor to compare.",
+      "keepInMind": [],
+      "source": [],
+      "scroll": "start",
+      "popover": "left"
+    },
+    {
+      "id": "james",
+      "target": "story-cards",
+      "uiLabel": [],
+      "prepare": {
+        "screen": "preview",
+        "state": "james"
+      },
+      "title": "James meets his",
+      "tells": "James Taylor gives to the STEM Research Endowment, so he sees Grace Johnson and Marcus Lee instead.",
+      "why": "One report, one link, and every donor reads the stories behind their own gift.",
+      "next": "Send it with the personalized link from Share, or with Storyraise Send.",
+      "keepInMind": [],
+      "source": [],
+      "kb": {
+        "href": "/personalization/",
+        "label": "Personalized reports"
+      },
+      "scroll": "start",
+      "popover": "left"
+    },
+    {
+      "id": "assign",
+      "target": "assign",
+      "uiLabel": [
+        "Make Edits",
+        "Assign to...",
+        "Constituents"
+      ],
+      "prepare": {
+        "screen": "collect-grid",
+        "state": "drawer"
+      },
+      "title": "Or link one story to one donor",
+      "tells": "Instead of matching a shared code, you can tag a response to the donors it belongs to: Make Edits, then Assign to... Constituents. Here Sophia's story is tagged to Emily Wilson.",
+      "why": "Useful when there is no shared field, like a thank-you meant for one major donor.",
+      "next": "Then set the repeater to Repeat When constituents contains @@id@@.",
+      "keepInMind": [
+        "Use contains, not is: a response can be tagged to several donors, and is never matches a list."
+      ],
+      "source": [
+        {
+          "file": "storyraise-collect branch public/index.html",
+          "lines": "325-418",
+          "note": "drawer and constituent tagging"
+        },
+        {
+          "file": "public/js/report.js",
+          "lines": "5229-5230",
+          "note": "is never matches an array; use contains"
+        }
+      ]
+    }
+  ]
+}

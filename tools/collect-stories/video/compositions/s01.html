@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template id="s01-template">
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; }
+        /*
+            The picture is the sentence: one form, then the stories it gathered fanned
+            out as the cards a report shows, each with a student's own name and note.
+        */
+        .doc {
+          position: absolute; left: 960px; top: 560px; width: 380px; height: 480px; margin: -240px 0 0 -190px;
+          border-radius: 22px; background: #fbf7ef; box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+          opacity: 0; overflow: hidden;
+        }
+        .doc-hero { height: 150px; background: linear-gradient(135deg, #024a5c, #2f7c8c); }
+        .doc-body { padding: 26px 30px; }
+        .doc-kicker { font: 600 15px/1 "Poppins", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #8b8070; }
+        .doc-name { margin-top: 12px; font: 600 30px/1.2 "Poppins", sans-serif; color: #1d1a24; }
+        .doc-tag { font: 500 24px/1.2 "Poppins", sans-serif; color: #9a4fd0; background: rgba(154,79,208,0.1); border-radius: 8px; padding: 2px 8px; }
+        .doc-level {
+          display: inline-block; margin-top: 22px; padding: 8px 16px; border-radius: 999px;
+          font: 600 18px/1 "Poppins", sans-serif; color: #fff;
+        }
+        .lv-gold { background: #b8892c; }
+        .lv-silver { background: #7d8794; }
+        .lv-bronze { background: #9c5a33; }
+        .lv-any { background: #b9b2a6; }
+        .doc-lines i { display: block; height: 12px; margin-top: 14px; border-radius: 6px; background: #e7dfd1; }
+        .doc-lines i:nth-child(2) { width: 82%; }
+        .doc-lines i:nth-child(3) { width: 64%; }
+        /* The title lockup is the house style the Analytics tour set. */
+        .brand { position: absolute; left: 0; top: 290px; width: 1920px; text-align: center; opacity: 0; visibility: hidden; }
+        .brand-logo { display: block; width: 128px; height: 128px; margin: 0 auto; }
+        .brand-title { font-size: 132px; line-height: 1.05; margin-top: 30px; }
+        .brand-sub { margin-top: 26px; font: 500 34px/1.4 "Poppins", sans-serif; color: #cfc7dc; }
+        .brand-pills { margin-top: 40px; }
+        .brand-pills .sr-pill { margin: 0 9px; }
+      </style>
+      <div id="root" data-composition-id="s01" data-width="1920" data-height="1080">
+        <div id="s01-scene">
+          <div class="doc" id="s01-d-emily">
+            <div class="doc-hero"></div>
+            <div class="doc-body">
+              <div class="doc-kicker">Student story</div>
+              <div class="doc-name">Sophia Ramirez</div>
+              <span class="doc-level lv-bronze">Health Sciences</span>
+              <div class="doc-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="doc" id="s01-d-maria">
+            <div class="doc-hero"></div>
+            <div class="doc-body">
+              <div class="doc-kicker">Student story</div>
+              <div class="doc-name">Grace Johnson</div>
+              <span class="doc-level lv-silver">STEM Research</span>
+              <div class="doc-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="doc" id="s01-d-james">
+            <div class="doc-hero"></div>
+            <div class="doc-body">
+              <div class="doc-kicker">Student story</div>
+              <div class="doc-name">Marcus Lee</div>
+              <span class="doc-level lv-gold">STEM Research</span>
+              <div class="doc-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <!-- The form everyone answers: its fields, with the variables they save to. -->
+          <div class="doc" id="s01-d-master">
+            <div class="doc-hero"></div>
+            <div class="doc-body">
+              <div class="doc-kicker">Share your story</div>
+              <div class="doc-name"><span class="doc-tag">@@student_name@@</span></div>
+              <span class="doc-level lv-any">Your note · A photo</span>
+              <div class="doc-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand" id="s01-brand">
+          <img class="brand-logo" id="s01-logo" src="assets/logo-icon.svg" alt="" />
+          <p class="sr-display brand-title" id="s01-title">Collect <span class="sr-accent">Stories</span></p>
+          <p class="brand-sub" id="s01-sub">The people behind every gift, in their own words.</p>
+          <div class="brand-pills" id="s01-pills">
+            <span class="sr-pill">Build a form</span>
+            <span class="sr-pill">Gather stories and photos</span>
+            <span class="sr-pill">Repeat them in reports</span>
+          </div>
+        </div>
+      </div>
+      <script src="assets/gsap.min.js"></script>
+      <script>
+        (function () {
+          var T = window.SR_TIMELINE;
+          var S = T.scenes.s01;
+          var start = T.hosts.s01.start;
+          var L = function (t) { return Math.max(0, t - start); };
+          var tl = gsap.timeline({ paused: true });
+          var M = 1.6;
+          var B = L(S.cues.brand);
+          // The lockup takes the frame once the three copies have been read.
+          var LOCK = B + 1.9;
+
+          // "One report": the template arrives alone.
+          tl.set('#s01-d-master', { opacity: 0, y: 30, scale: 0.94 }, 0);
+          tl.to('#s01-d-master', { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power3.out' }, 0.25);
+
+          // "Written for every donor": three copies slide out from under it, each filled in.
+          var fan = [['#s01-d-emily', -440, -5], ['#s01-d-maria', 0, 0], ['#s01-d-james', 440, 5]];
+          fan.forEach(function (f, i) {
+            tl.set(f[0], { opacity: 0, x: 0, rotation: 0, scale: 0.96 }, 0);
+            tl.to(f[0], { opacity: 1, duration: 0.2 }, M + 0.05 + i * 0.12);
+            tl.to(f[0], { x: f[1], rotation: f[2], scale: 1, duration: 0.8, ease: 'power3.out' }, M + 0.05 + i * 0.12);
+          });
+          tl.to('#s01-d-master', { opacity: 0, scale: 0.9, duration: 0.45, ease: 'power2.in' }, M + 0.35);
+
+          tl.to('#s01-scene', { autoAlpha: 0, duration: 0.4, ease: 'power2.in' }, LOCK - 0.35);
+          tl.set('#s01-brand', { autoAlpha: 0, y: 24 }, 0);
+          tl.to('#s01-brand', { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' }, LOCK);
+          tl.set('#s01-logo', { opacity: 0, scale: 0.6 }, 0);
+          tl.to('#s01-logo', { opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.6)' }, LOCK + 0.05);
+          gsap.utils.toArray('#s01-pills .sr-pill').forEach(function (el, i) {
+            tl.set(el, { opacity: 0, y: 16 }, 0);
+            tl.to(el, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, LOCK + 0.5 + i * 0.12);
+          });
+          tl.to('#s01-brand', { autoAlpha: 0, duration: 0.4, ease: 'power2.in' }, T.hosts.s01.duration - 0.45);
+          window.__timelines['s01'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
