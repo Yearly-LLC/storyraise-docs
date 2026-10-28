@@ -12,7 +12,7 @@ Publishing puts your report on the web — sharing puts it in front of your audi
 
 ## The Share menu
 
-When you publish, a **Your report is live!** page opens in a new tab with every sharing option in one place: copy the link, **Get PDF**, **Embed codes**, **QR code**, **Get personalized link** (a link formatted for your email platform — see [Personalized links](personalized-links.md)), **View report**, and a **Team link** for sharing internally. It also offers ready-made social and email graphics under **Share directly**, and a shortcut to send the report with [Storyraise Send](email-distribution.md).
+When you publish, a **Your report is live!** page opens in a new tab with most of your sharing options in one place: copy the link, **Get PDF**, **Embed codes**, **QR code**, **Get personalized link** (a link formatted for your email platform — see [Personalized links](personalized-links.md)), **View report**, and a **Team link** for sharing internally. Below that, **Share your message** gives you a ready-to-post message (**Rewrite with AI**, **Copy message**, and **Share directly** to LinkedIn, Facebook, X, or Instagram), and **Generate promotional assets** builds downloadable social graphics from your report. To send the report with [Storyraise Send](email-distribution.md), use the builder's **Share** window instead — it isn't on the *Your report is live!* page.
 
 Later, open your published report in the builder and click **Share**. From there you can:
 

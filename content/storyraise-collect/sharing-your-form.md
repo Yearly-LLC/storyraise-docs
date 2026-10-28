@@ -11,9 +11,9 @@ Once your form is built, share its link and the responses start flowing in. This
 
 ## Two kinds of link
 
-Open your form and you're offered two, for two different jobs.
+Open your form and click **Get form link**. You're offered two links, for two different jobs.
 
-**Standard Link (non-personalized)** is the plain form link. Share it anywhere — email, your website, social media, a QR code on printed materials. **Copy form link** puts it on your clipboard, and **View form** opens it so you can check it the way a respondent will. Respondents don't need a Storyraise account.
+**Standard Link (non-personalized)** is the plain form link. Share it anywhere — email, your website, social media. **Copy form link** puts it on your clipboard, and **View form** opens it so you can check it the way a respondent will. Respondents don't need a Storyraise account.
 
 **Dynamic Link** is for a mail merge, where each person should get a link that already knows who they are. Name the platform you're sending from and Storyraise builds the link with that platform's own email merge field already in it, ready to paste into your campaign.
 
@@ -39,7 +39,7 @@ Pre-fill reads the collection's own rows, not your [constituent list](../crm-and
 
 - **Tell people why.** A sentence about how their story will be used (and that it might appear in a report) lifts both response rate and quality.
 - **Make it mobile-easy.** Most people open links on a phone — keep forms short and file uploads optional where you can.
-- **Put the link where the moment is.** A QR code on an event thank-you card collects stories while the experience is fresh.
+- **Put the link where the moment is.** A follow-up email the day after an event collects stories while the experience is fresh.
 
 ## Next
 

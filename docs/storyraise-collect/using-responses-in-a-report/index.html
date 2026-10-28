@@ -318,6 +318,16 @@
 <p>The <strong>Repeater</strong> block creates repeating blocks and elements from a list, so one layout renders once per item.</p>
 <div class="tip"><p><strong>Plan requirement.</strong> Repeater needs a <strong>Precision</strong> plan with Storyraise Collect active. If you don&#39;t have it, the block won&#39;t appear in the block list at all, and Option 1 is your route.</p></div>
 <p>A bound Repeater reads the collection each time someone opens the report, so responses you add, edit, or delete show up in the published report without republishing.</p>
+<h3>Choosing which responses repeat</h3>
+<p>Select the Repeater, open the <strong>Use Data</strong> tab, and pick the collection under <strong>Select a Collection</strong>. Then, under <strong>Repeat When..</strong>, set the rule that decides which rows appear:</p>
+<ul>
+<li><strong>Pick a column to check</strong> — the column to test.</li>
+<li><strong>Select Condition</strong> — <strong>is</strong>, <strong>is not</strong>, <strong>contains</strong>, <strong>does not contain</strong>, <strong>is one of</strong> (comma-separated values), <strong>greater than</strong>, <strong>greater than or equal</strong>, <strong>less than</strong>, or <strong>less than or equal</strong>.</li>
+<li><strong>Enter the value to look for</strong> — the value to compare against. It can be a merge tag such as <code>@@email@@</code>, so each reader sees only their own rows.</li>
+</ul>
+<p><strong>Sort and Limit</strong> sets the order (<strong>Sort by column</strong>, <strong>Sort direction</strong>) and a maximum number of rows.</p>
+<div class="tip"><p><strong>A Repeater with no Repeat When rule shows nothing.</strong> If the value is blank, or is a merge tag that has no value for this reader, the Repeater is removed from the page rather than listing every row. To show every response, give it a rule every row passes — for example, <strong>is not</strong> with a value no row has in that column.</p></div>
+<p><strong>is</strong> is an exact match, and it&#39;s case-sensitive: <code>Volunteer</code> doesn&#39;t match <code>volunteer</code>. <strong>Case-insensitive matching</strong> (on by default) applies to <strong>contains</strong> and <strong>does not contain</strong> only, so use <strong>contains</strong> when capitalization in your data varies.</p>
 <h2>Photographs submitted through a form</h2>
 <p>If you collected photographs alongside stories, check the consent record before using them — agreeing to share a story is not the same as agreeing to appear in a photograph.</p>
 <h2>Keeping the story true</h2>
@@ -359,6 +369,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="20dbe55a" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="d8293520" data-engine-v="676be165" defer></script>
 </body>
 </html>
