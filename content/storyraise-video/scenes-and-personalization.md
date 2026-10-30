@@ -11,15 +11,13 @@ keywords: scenes, edit scenes, merge tags, first name, personalize, constituent 
 Scenes are the words that appear over your video as you speak. Add a constituent's name and each person sees their own name on screen.
 
 <!-- TEAM REVIEW: verified against report-builder main (a657c6ec, #266 constituent wording) with the
-     new editor on for every org with Video, music and clips included. Cutaways (b-roll,
-     has_feature.video_broll) are on unless the Unsplash key is still on the demo tier (pending as
-     of 2026-10-30); if cutaways stay off, drop "cutaways" from the Footage line below. -->
+     new editor on for every org with Video (production a4d03aa8), music and clips included. -->
 
 ## Edit scenes
 
 When you finish recording, Storyraise writes a few scenes for you — timed text overlays in your template's style. The second step, **Edit scenes**, says **We added a scene for you. Open a part to change it, or add a constituent's name.** It has four parts, each with a short summary next to its name:
 
-- **Footage** — your recording. Drag the teal handles to trim the start and end. The **Add** menu adds cutaways (photos or clips that play over your voice) and extra clips.
+- **Footage** — your recording. Drag the teal handles to trim the start and end. **Add** > **Another recording** adds a second take that plays after this one.
 - **Scenes** — the words over your video, on a timeline.
 - **Sound** — free background music, with **Volume** and **Quieter while you talk**.
 - **Look** — the overall style.
