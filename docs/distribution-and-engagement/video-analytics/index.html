@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Video analytics — Storyraise</title>
-  <meta name="description" content="Coming soon — viewing analytics for Storyraise Video are in development and not yet available." />
+  <meta name="description" content="See who watched each video and how far they got, who to call next, what your team sent this week, and what each campaign led to." />
   <link rel="canonical" href="https://docs.storyraise.com/docs/distribution-and-engagement/video-analytics/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Storyraise Knowledge Base" />
   <meta property="og:title" content="Video analytics — Storyraise" />
-  <meta property="og:description" content="Coming soon — viewing analytics for Storyraise Video are in development and not yet available." />
+  <meta property="og:description" content="See who watched each video and how far they got, who to call next, what your team sent this week, and what each campaign led to." />
   <meta property="og:url" content="https://docs.storyraise.com/docs/distribution-and-engagement/video-analytics/" />
   <meta property="og:image" content="https://docs.storyraise.com/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Video analytics — Storyraise" />
-  <meta name="twitter:description" content="Coming soon — viewing analytics for Storyraise Video are in development and not yet available." />
+  <meta name="twitter:description" content="See who watched each video and how far they got, who to call next, what your team sent this week, and what each campaign led to." />
   <meta name="twitter:image" content="https://docs.storyraise.com/assets/og-card.png" />
 
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "Video analytics — Storyraise",
-  "description": "Coming soon — viewing analytics for Storyraise Video are in development and not yet available.",
+  "description": "See who watched each video and how far they got, who to call next, what your team sent this week, and what each campaign led to.",
   "url": "https://docs.storyraise.com/docs/distribution-and-engagement/video-analytics/",
   "inLanguage": "en-US",
   "isPartOf": {
@@ -208,9 +208,11 @@
       <li><a href="/docs/storyraise-video/">Overview</a></li>
       <li><a href="/docs/storyraise-video/what-is-storyraise-video/">What is Storyraise Video?</a></li>
       <li><a href="/docs/storyraise-video/creating-a-video-message/">Creating a video message</a></li>
+      <li><a href="/docs/storyraise-video/thanking-a-constituent/">Thanking a constituent</a></li>
       <li><a href="/docs/storyraise-video/recording-your-video/">Recording your video</a></li>
       <li><a href="/docs/storyraise-video/scenes-and-personalization/">Scenes and personalization</a></li>
-      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
+      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending, sharing, and downloading</a></li>
+      <li><a href="/docs/storyraise-video/managing-your-videos/">Managing your videos</a></li>
     </ul>
   </details>
   <details class="sidenav-group">
@@ -295,12 +297,93 @@
       <!-- CONTENT -->
       <div class="content">
         <h1>Video analytics</h1>
-<div class="note"><p><strong>Coming soon</strong> — viewing analytics for Storyraise Video are in development and not yet available.</p></div>
-<h2>In the meantime</h2>
-<p><a href="/docs/storyraise-video/what-is-storyraise-video/">Storyraise Video</a> lets you send personalized video messages to constituents by email, each with their own viewing link. While video-specific metrics aren&#39;t available yet, you can still measure the campaign around the video:</p>
+<p class="lead">See who watched each video and how far they got, who to call next, what your team sent this week, and what each campaign led to.</p>
+<p>Video analytics live in the dashboard under <strong>Videos</strong>, in four views: <strong>Videos</strong>, <strong>My constituents</strong>, <strong>Team this week</strong>, and <strong>Campaigns</strong>. Every number counts the same way: <strong>Watched half</strong> means a constituent saw at least half of the video.</p>
+<h2>Results for one video</h2>
+<p>Open a video&#39;s results from its card on the Videos list (<strong>See who watched</strong>, or the <strong>⋯</strong> menu), from <strong>Full results</strong> in the editor&#39;s <strong>Results</strong> step, or from <strong>Results</strong> next to anyone in My constituents. The other videos are listed down the left so you can move between them.</p>
+<p>The numbers at the top:</p>
 <ul>
-<li><strong>Pair the video with a report.</strong> If your message links to a report via <a href="/docs/distribution-and-engagement/personalized-links/">personalized links</a>, the report&#39;s <a href="/docs/distribution-and-engagement/understanding-report-metrics/">Analytics</a> shows which constituents followed through.</li>
-<li><strong>Host on YouTube or Vimeo where it makes sense.</strong> Videos embedded in reports through those platforms carry their own view counts on the hosting side, and clicks on embedded videos appear as intent signals in report metrics.</li>
+<li><strong>Constituent plays</strong> — plays by people you sent it to.</li>
+<li><strong>Other views (you, team, link)</strong> — your own previews, teammates, and the same-for-everyone link.</li>
+<li><strong>Constituents you sent it to watched half</strong> — for example, 4 of 10.</li>
+<li><strong>To call next</strong> — and how many you&#39;ve called.</li>
+</ul>
+<p>Under them:</p>
+<ul>
+<li><strong>Social</strong> — views from each social post&#39;s own link, by platform. Storyraise counts views from a post, never who viewed.</li>
+<li><strong>Where viewers stopped</strong> — how many viewers (anyone, not only constituents) were still watching from start to end.</li>
+<li><strong>Call next</strong> — constituents who watched at least half and haven&#39;t had a call. A call this week is the best time to talk; their phone number is right there.</li>
+<li>If some people on the video haven&#39;t been sent it yet, a line says how many, with a button to send it to them through Storyraise Send.</li>
+</ul>
+<p>Then one row per person, with a bar for how much they watched and their status:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Not sent</strong></td>
+<td>On the video, but nothing has gone to them.</td>
+</tr>
+<tr>
+<td><strong>Shared (not confirmed)</strong></td>
+<td>Their link was copied or drafted, but not confirmed sent.</td>
+</tr>
+<tr>
+<td><strong>Sent</strong></td>
+<td>Sent, not opened yet.</td>
+</tr>
+<tr>
+<td><strong>Opened</strong></td>
+<td>Opened their link, not watched yet.</td>
+</tr>
+<tr>
+<td><strong>Watched some</strong> / <strong>Watched half</strong> / <strong>Watched most</strong> / <strong>Watched it all</strong></td>
+<td>How far they got: a quarter, half, three quarters, or the end.</td>
+</tr>
+<tr>
+<td><strong>Clicked</strong></td>
+<td>Pressed your page&#39;s button (give, story, or report).</td>
+</tr>
+<tr>
+<td><strong>Replied</strong></td>
+<td>Pressed the Reply button.</td>
+</tr>
+<tr>
+<td><strong>Called</strong></td>
+<td>A call was logged after the video.</td>
+</tr>
+</tbody></table>
+<p>From a row you can call (on a phone or a computer that can place calls), click <strong>Log call</strong> and pick <strong>How did it go?</strong> — <strong>Reached</strong>, <strong>Left a voicemail</strong>, or <strong>No answer</strong> — or click <strong>Record a follow-up</strong> to open a new thank-you for them. <strong>Open in editor</strong> and <strong>Refresh</strong> are at the top of the page.</p>
+<p>The editor&#39;s own <strong>Results</strong> step shows the same thing in brief: the views, how far people watched, and each person&#39;s status, with <strong>Copy link</strong> next to each name. Until the video has been sent to anyone, it says <strong>Not sent to constituents yet</strong>, and the views shown are your own link and previews.</p>
+<h2>My constituents</h2>
+<p><strong>My constituents</strong> lists everyone you&#39;ve sent a quick thank-you and what they did with it — status, how much they watched, and which video. Counts across the top show how many to call next, watched half, called, and sent but not opened. Sort by <strong>Most recent</strong>, <strong>Call next first</strong>, or <strong>Name</strong>. Owners and Admins can switch between <strong>My thank-yous</strong> and <strong>Everyone&#39;s</strong>.</p>
+<h2>Team this week</h2>
+<p>Owners and Admins see <strong>Team this week</strong>: videos sent and watched by each teammate, Monday to Sunday.</p>
+<ul>
+<li>A chart of the last four weeks shows <strong>Sent</strong> and <strong>Constituents who watched half</strong>.</li>
+<li>The table lists each <strong>Teammate</strong> with <strong>Sent</strong>, <strong>Watched half</strong>, <strong>Called</strong>, <strong>Videos made</strong>, and a four-week trend. Someone with nothing sent this week is marked <strong>No sends this week</strong>.</li>
+<li>Click a name to see that person&#39;s week, their videos, and everyone they&#39;ve sent a video.</li>
+</ul>
+<h3>Nudge a teammate</h3>
+<p>Next to a teammate&#39;s name, click <strong>Nudge</strong> to email them their <strong>Who to thank</strong> list: constituents who watched half and haven&#39;t had a call, and new gifts nobody has thanked. Confirm with <strong>Send nudge</strong> (or <strong>Cancel</strong>). You can nudge each teammate once a day — afterward their row says <strong>Nudged today</strong> — and the email respects their email settings. The same button (<strong>Nudge</strong> and their first name) is on a teammate&#39;s own page.</p>
+<p>Earlier weeks update every morning. If nobody has sent a video in four weeks, the view says so instead of showing an empty chart.</p>
+<h2>Campaigns</h2>
+<p>Tag videos with a campaign to see what each one did: who watched, who you called, and gifts that followed.</p>
+<ol>
+<li>Open <strong>Campaigns</strong>, type a name under <strong>New campaign name</strong>, and click <strong>Add campaign</strong>.</li>
+<li>Tag a video from its Results page (<strong>Campaign</strong>, or <strong>New campaign…</strong> to add one there), from <strong>Count toward a campaign (optional)</strong> when you share it, or from <strong>Campaign</strong> when you start a quick thank-you.</li>
+</ol>
+<p>Each campaign shows its <strong>Videos</strong>, <strong>Sent</strong>, <strong>Watched half</strong>, <strong>Called</strong>, and <strong>Gifts within 30 days</strong>. Gifts come from <a href="/donor-signals/">Donor Signals</a>: a gift counts when the constituent watched at least half of one of the campaign&#39;s videos and gave within 30 days after. A gift after videos from two campaigns counts once, for the most recent one. Gifts are added up every morning, so a new campaign reads <strong>Next update</strong> until then. <strong>How gifts are counted</strong> on the page says the same.</p>
+<h2>On Home</h2>
+<p>If your organization has Storyraise Video, Home has a video card. Before anything is sent, it suggests people to thank and a button to start. After that, <strong>Videos this week.</strong> shows plays in the last seven days, how many constituents watched at least half, your top video, and <strong>Watched this week</strong> — each person with <strong>Call</strong> and <strong>Record a follow-up</strong>.</p>
+<h2>Related</h2>
+<ul>
+<li><a href="/docs/storyraise-video/managing-your-videos/">Managing your videos</a> — the Videos list</li>
+<li><a href="/docs/storyraise-video/sending-and-recipients/">Sending, sharing, and downloading</a></li>
+<li><a href="/docs/distribution-and-engagement/understanding-report-metrics/">Understanding report metrics</a> — the same ideas, for reports</li>
 </ul>
 
 
@@ -327,6 +410,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="e7d6d603" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="3c59c07d" data-engine-v="676be165" defer></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scenes and personalization — Storyraise</title>
-  <meta name="description" content="Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs." />
+  <meta name="description" content="Scenes are the words that appear over your video as you speak. Add a constituent's name and each person sees their own name on screen." />
   <link rel="canonical" href="https://docs.storyraise.com/docs/storyraise-video/scenes-and-personalization/" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#803BB1" media="(prefers-color-scheme: light)" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Storyraise Knowledge Base" />
   <meta property="og:title" content="Scenes and personalization — Storyraise" />
-  <meta property="og:description" content="Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs." />
+  <meta property="og:description" content="Scenes are the words that appear over your video as you speak. Add a constituent's name and each person sees their own name on screen." />
   <meta property="og:url" content="https://docs.storyraise.com/docs/storyraise-video/scenes-and-personalization/" />
   <meta property="og:image" content="https://docs.storyraise.com/assets/og-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Scenes and personalization — Storyraise" />
-  <meta name="twitter:description" content="Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs." />
+  <meta name="twitter:description" content="Scenes are the words that appear over your video as you speak. Add a constituent's name and each person sees their own name on screen." />
   <meta name="twitter:image" content="https://docs.storyraise.com/assets/og-card.png" />
 
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "Scenes and personalization — Storyraise",
-  "description": "Scenes are the on-screen text that appears over your video as you speak — and they're where each recipient's message becomes personally theirs.",
+  "description": "Scenes are the words that appear over your video as you speak. Add a constituent's name and each person sees their own name on screen.",
   "url": "https://docs.storyraise.com/docs/storyraise-video/scenes-and-personalization/",
   "inLanguage": "en-US",
   "isPartOf": {
@@ -208,9 +208,11 @@
       <li><a href="/docs/storyraise-video/">Overview</a></li>
       <li><a href="/docs/storyraise-video/what-is-storyraise-video/">What is Storyraise Video?</a></li>
       <li><a href="/docs/storyraise-video/creating-a-video-message/">Creating a video message</a></li>
+      <li><a href="/docs/storyraise-video/thanking-a-constituent/">Thanking a constituent</a></li>
       <li><a href="/docs/storyraise-video/recording-your-video/">Recording your video</a></li>
       <li><a href="/docs/storyraise-video/scenes-and-personalization/" class="active" aria-current="page">Scenes and personalization</a></li>
-      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a></li>
+      <li><a href="/docs/storyraise-video/sending-and-recipients/">Sending, sharing, and downloading</a></li>
+      <li><a href="/docs/storyraise-video/managing-your-videos/">Managing your videos</a></li>
     </ul>
   </details>
   <details class="sidenav-group">
@@ -295,30 +297,48 @@
       <!-- CONTENT -->
       <div class="content">
         <h1>Scenes and personalization</h1>
-<p class="lead">Scenes are the on-screen text that appears over your video as you speak — and they&#39;re where each recipient&#39;s message becomes personally theirs.</p>
-<h2>What scenes are</h2>
-<p>When you finish recording, Storyraise automatically structures your video into a few <strong>scenes</strong> — timed text overlays with animated headings, sized and styled to match. Each scene appears at the right moment as your video plays.</p>
-<h2>Editing a scene</h2>
-<p>Under <strong>Edit scenes</strong>, your scenes appear as blocks on a timeline under the video. Click a block to select that scene, and drag its left or right edge to change when it starts or ends. With a scene selected you can:</p>
+<p class="lead">Scenes are the words that appear over your video as you speak. Add a constituent&#39;s name and each person sees their own name on screen.</p>
+<h2>Edit scenes</h2>
+<p>When you finish recording, Storyraise writes a few scenes for you — timed text overlays in your template&#39;s style. The second step, <strong>Edit scenes</strong>, says <strong>We added a scene for you. Open a part to change it, or add a constituent&#39;s name.</strong> It has four parts, each with a short summary next to its name:</p>
 <ul>
-<li>Change its words under <strong>Edit Text</strong>.</li>
-<li>Describe a change under <strong>Refine with AI</strong> (for example, &quot;shorter, bolder&quot;) and click <strong>Regenerate scene</strong>.</li>
-<li>Click <strong>Insert icon</strong> to drop in a visual accent, or <strong>Insert variable</strong> to add a merge tag.</li>
+<li><strong>Footage</strong> — your recording. Drag the teal handles to trim the start and end. <strong>Add</strong> &gt; <strong>Another recording</strong> adds a second take that plays after this one.</li>
+<li><strong>Scenes</strong> — the words over your video, on a timeline.</li>
+<li><strong>Sound</strong> — free background music, with <strong>Volume</strong> and <strong>Quieter while you talk</strong>.</li>
+<li><strong>Look</strong> — the overall style.</li>
 </ul>
-<p>The <strong>⋯</strong> menu beside the timeline holds the rest. To add a scene, play the video to the moment you want it, open the menu, and click <strong>Add scene at</strong> — the option carries the current timestamp, so the new scene lands where you&#39;re paused rather than at the end. Generating it takes a moment. The same menu has <strong>Duplicate scene</strong>, and <strong>Remake all scenes</strong> when you want a fresh start on the overlay design.</p>
-<h2>Personalizing with merge tags</h2>
-<p>This is what sets Storyraise Video apart. Scene text supports merge tags in the <code>@@field_name@@</code> format, so:</p>
-<div class="tip"><p>Hi, @@first_name@@!</p></div>
-<p>becomes &quot;Hi, Maria!&quot; for Maria and &quot;Hi, James!&quot; for James — automatically, from each recipient&#39;s record. Any field on your constituents can be a merge tag: <code>@@first_name@@</code>, <code>@@last_name@@</code>, or custom fields like giving level or program name.</p>
-<p>The same <code>?for=</code> personalization that powers <a href="/docs/distribution-and-engagement/personalized-links/">personalized report links</a> drives video personalization. Merge tags fill in from the video&#39;s own <strong>recipients</strong> — the people you added with <strong>Select Recipients</strong> or a CSV (see <a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a>), matched by email. Someone who isn&#39;t one of the video&#39;s recipients sees the video with the merge tags left blank.</p>
+<p>Click <strong>Next: Edit captions</strong> when you&#39;re done.</p>
+<h2>Editing a scene</h2>
+<p>Under <strong>Scenes</strong>, each scene is a block on the timeline showing when it plays (for example, <strong>0:04 to 0:08</strong>). Click a block to select it; drag its edges to change when it starts or ends. Undo and redo sit beside the timeline.</p>
+<p><strong>Simple</strong> (the default) shows four things for the selected scene:</p>
+<ul>
+<li><strong>Words</strong> — the text, with a style menu (such as <strong>Big title</strong>) and bold and italic. A line under it shows what one constituent will see, for example <strong>James will see:</strong> Thanks, James Taylor.</li>
+<li><strong>Layout</strong> — where the text sits, such as <strong>Full overlay</strong>.</li>
+<li><strong>Entrance</strong> — how it arrives, such as <strong>Rise</strong>.</li>
+<li><strong>Size</strong> — how big the text is.</li>
+</ul>
+<p><strong>More for this scene</strong> holds the rest: <strong>Colors</strong>, <strong>Font</strong>, <strong>Picture</strong> (<strong>Add a picture</strong>, <strong>Insert icon</strong>), <strong>Rewrite with AI</strong> (describe a change, such as &quot;shorter, warmer&quot;), <strong>Timing</strong> (<strong>Starts at</strong> and <strong>Ends at</strong>), <strong>Entrance speed</strong> (<strong>Quick</strong>, <strong>Normal</strong>, <strong>Slow</strong>), and <strong>Remove this scene</strong>. Switch to <strong>Advanced</strong> to see every control at once.</p>
+<p>The <strong>⋯</strong> menu beside the timeline adds and remakes scenes. To add one, play the video to the moment you want, open the menu, and click <strong>Add scene at</strong> — the option carries the current time, so the new scene lands where you&#39;re paused. The same menu has <strong>Duplicate scene</strong>, and <strong>Remake all scenes</strong> when you want a fresh start.</p>
+<h2>Look</h2>
+<p><strong>Look</strong> sets the style for every scene at once: <strong>Brand</strong> (from your Brand Kit), <strong>Editorial</strong>, <strong>Bold kinetic</strong>, or <strong>Warm documentary</strong>. <strong>Warmer film look</strong> adds richer color and a soft vignette to your recording while scenes keep your brand colors. <strong>Update from Brand Kit</strong> picks up brand changes, and <strong>Save as your team&#39;s look</strong> makes this look your team&#39;s starting point.</p>
+<h2>Personalizing with constituent fields</h2>
+<p>This is what sets Storyraise Video apart. In <strong>Words</strong>, click <strong>Insert a constituent field</strong> and pick a field — <strong>First name</strong>, for example. It shows in the text as a chip, and each constituent sees their own value:</p>
+<div class="tip"><p>Thanks, <strong>First name</strong>!</p></div>
+<p>becomes &quot;Thanks, Maria!&quot; for Maria and &quot;Thanks, James!&quot; for James. Any field on your constituents can be used, such as last name, giving level, or program name. Fields that hold a person&#39;s own email address or phone number aren&#39;t offered.</p>
+<p>The <strong>add a constituent&#39;s name</strong> link at the top of the step opens <strong>Personalize with constituent data</strong>, a searchable list of your fields with <strong>Copy</strong> and <strong>Insert</strong> for each, and <strong>More fields</strong> for the rest. Under the hood, fields are merge tags in the <code>@@field_name@@</code> format, the same as <a href="/docs/distribution-and-engagement/personalized-links/">personalized report links</a>.</p>
+<p><strong>Who sees what:</strong></p>
+<ul>
+<li><strong>On each constituent&#39;s own page</strong>, fields fill in from their record. Fields fill in for the people on the video&#39;s recipient list (see <a href="/docs/storyraise-video/sending-and-recipients/">Sending, sharing, and downloading</a>), matched by email.</li>
+<li><strong>On the same link for everyone, and in a downloaded file</strong>, there&#39;s no one to fill in. A first name reads as &quot;friend&quot;, and other fields are left out along with the comma or space before them. Above the stage, <strong>Names: &quot;friend&quot;</strong> reminds you which version you&#39;re looking at.</li>
+</ul>
+<p>Use <strong>Preview as</strong> on <strong>Your page</strong> to check a particular person&#39;s version before you send.</p>
 <h2>Tips</h2>
 <ul>
 <li><strong>Put the name on screen early.</strong> Seeing their own name in the first scene tells the viewer instantly that this was made for them.</li>
 <li><strong>Keep overlay text short.</strong> Scenes punctuate your spoken words — a few words land; a paragraph competes with you.</li>
-<li><strong>Check your data first.</strong> A recipient missing a field a scene uses gets a blank where their name should be. Preview before sending — see <a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a>.</li>
+<li><strong>Check your data first.</strong> Someone missing a field a scene uses gets &quot;friend&quot; or a gap where their details should be. Preview a few people before sending — see <a href="/docs/storyraise-video/sending-and-recipients/">Sending, sharing, and downloading</a>.</li>
 </ul>
 <h2>Next</h2>
-<p><a href="/docs/storyraise-video/sending-and-recipients/">Sending and recipients</a> — choose who gets the video and preview each person&#39;s version.</p>
+<p><a href="/docs/storyraise-video/sending-and-recipients/">Sending, sharing, and downloading</a> — choose who gets the video, check each person&#39;s page, and send.</p>
 
 
         <hr />
@@ -344,6 +364,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="e7d6d603" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="3c59c07d" data-engine-v="676be165" defer></script>
 </body>
 </html>

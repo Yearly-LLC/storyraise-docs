@@ -42,7 +42,7 @@ Storyraise keeps removed files privately for 30 days, so if something was delete
 
 ## Putting responses to work
 
-Collected stories and quotes are raw material for the rest of Storyraise — drop a beneficiary thank-you into a [report Testimonial section](../building-reports/adding-sections.md), or export responses as a CSV and upload them as the recipients of a [video message](../storyraise-video/sending-and-recipients.md), so their details can appear as merge tags.
+Collected stories and quotes are raw material for the rest of Storyraise — drop a beneficiary thank-you into a [report Testimonial section](../building-reports/adding-sections.md), or export responses as a CSV to use elsewhere.
 
 ## Tips
 

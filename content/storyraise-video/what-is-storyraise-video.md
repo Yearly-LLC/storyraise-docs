@@ -2,65 +2,58 @@
 title: What is Storyraise Video?
 section: Storyraise Video
 status: draft
-last_reviewed: 2026-10-15
+last_reviewed: 2026-10-30
+keywords: video, thank-you video, personalized video, record, constituent video, donor video, video message
 ---
 
 # What is Storyraise Video?
 
-Storyraise Video turns one recording into hundreds of personal video messages. Record once, and every constituent receives a version addressed to them — their name on screen, a message in their inbox, and a viewing link that's theirs alone.
+Record a short video once, and every constituent gets their own page with their name in it. Then see who watched, and who to call next.
 
-<!-- TEAM REVIEW: labels on this page are verified against the deployed app (storyraise-video branch, 2026-10-15). Still open: whether Storyraise Video should be described as generally available. -->
+<!-- TEAM REVIEW: rewritten 2026-10-30 against report-builder main (a657c6ec, #266 constituent
+     wording) with the new Video editor and Videos list on for every org with Video. The weekly
+     digest email stays off and is deliberately not documented. Storyraise Video is generally
+     available to every org with Video (confirmed 2026-10-30). -->
 
-To start, open **Videos** in the dashboard sidebar and click **Add new**, or click **New video** on Home. Storyraise Video opens in a new tab. See [Creating a video message](creating-a-video-message.md) for the full walkthrough.
+Storyraise Video is available to every organization that has Video. To start, open **Videos** in the dashboard sidebar and click **New video**. See [Creating a video message](creating-a-video-message.md) for the full walkthrough.
 
-## How it works
+## Two ways to make a video
 
-### 1. Choose your message type
+**New video** asks **What are you making?**
 
-Start by picking what kind of message you're sending: **Thank You!**, **Case for Giving**, **Make an Appeal**, **Invitation**, **Event Recap**, or **Just an Update**. Your choice shapes the suggested talking points and scene layouts.
+- **Thank a constituent** — pick a person and Storyraise writes a short script from their last gift. You record, then copy their personal link or send it. About two minutes each. See [Thanking a constituent](thanking-a-constituent.md).
+- **Start from scratch** — appeals, updates, events, social clips. Pick a template, record or upload, and the editor opens in a new tab. See [Creating a video message](creating-a-video-message.md).
 
-Next you add your recipients (see step 4 below) — or click **Skip for now** and add them later.
+## How the editor works
 
-### 2. Record your message
+The editor walks you through five steps, listed down the right side under **Your video**:
 
-Record with your webcam right in the browser, or upload a video you've already made. Storyraise generates **talking points** for you based on your message type and organization — a short, warm script designed for a 45–60 second message. A few practical pointers the recorder will give you: good lighting, a clean background, camera at eye level.
+1. **Record your video** — use your webcam or upload a video. Trim the start and end. See [Recording your video](recording-your-video.md).
+2. **Edit scenes** — the text that appears over your video, including each constituent's name. See [Scenes and personalization](scenes-and-personalization.md).
+3. **Edit captions** — captions are made for you; fix anything the transcript got wrong.
+4. **Your page** — the page your constituents see, with your video, a few words, and a button.
+5. **Results** — who watched, how far they got, and where people stopped.
 
-After you record, Storyraise automatically:
+At the top of the editor, **Share** sends your video or copies a link, and **Download** makes a video file you can post or keep. See [Sending, sharing, and downloading](sending-and-recipients.md).
 
-- **Transcribes** your video.
-- **Generates captions**, broken into natural phrases and synced to your speech.
-- Captures a **thumbnail** for the email.
+## What constituents experience
 
-### 3. Edit your scenes
+Each constituent opens a clean, mobile-friendly page: your video with captions they can turn on or off, scenes with their name in them, and your words and button below. No account, app, or download required.
 
-Your video is automatically structured into **scenes** — timed text overlays that appear as you speak, with animated headings and styling you can adjust. This is where personalization happens: scene text supports merge tags, so `Hi, @@first_name@@!` greets each recipient by their own name. Refine any scene, add new ones, or choose **Remake all scenes** to start the overlay design fresh.
+## After you send
 
-### 4. Add recipients
-
-Add your audience when you create the video, or later from **Preview & send**, two ways:
-
-- **Select Recipients** — choose from your organization's constituents.
-- **Upload a CSV** — using the standard format (`first_name`, `last_name`, `email`, plus any custom fields you want available as merge tags).
-
-### 5. Preview and send
-
-Click **Preview & send** to review the exact video each recipient will see — step through recipients or search for a specific person, with every merge tag resolved to their real data. Then click **Send Video Messages**, which opens Storyraise Send with your video loaded: each recipient receives an email with your message, your video thumbnail, and a **Watch Video** button that opens their personal viewing page. See [Sending and recipients](sending-and-recipients.md).
-
-Prefer to send through your own email platform? **Get a link** gives you either a **Standard Link** (the same for everyone) or a **Dynamic Link** with a personalization variable you map to your CRM or email tool's merge field.
-
-## What recipients experience
-
-A clean, mobile-friendly viewing page with your video, synced **captions** they can toggle, playback controls, and your message below — logo, text, and any links you attached. No account, app, or download required.
+- **The Videos list** shows what to do next — videos to review, videos ready to send — and keeps drafts out of the way. See [Managing your videos](managing-your-videos.md).
+- **Results** shows each constituent's status (Sent, Opened, Watched half, and so on), who to call next, and lets you log the call. See [Video analytics](../distribution-and-engagement/video-analytics.md).
 
 ## What it's for
 
-- **Donor thank-yous** that feel hand-delivered, at scale
-- **Appeals and cases for giving** with a human face
-- **Event invitations and recaps** that get watched, not skimmed
-- **Program updates** that build connection between mailings
+- **Thank-yous** that feel hand-delivered, at scale
+- **Appeals and impact updates** with a human face
+- **Event recaps** that get watched, not skimmed
+- **Social clips** — download a Phone, Square, or Wide file for each app
 
 ## Related
 
 - [Personalized links](../distribution-and-engagement/personalized-links.md) — the same `?for=` personalization powers video links
-- [Importing constituent data](../crm-and-data/importing-constituent-data.md) — the fields that drive merge tags
-- [Video analytics](../distribution-and-engagement/video-analytics.md) — viewing metrics (coming soon)
+- [Importing constituent data](../crm-and-data/importing-constituent-data.md) — the fields that fill in each constituent's name and details
+- [Video analytics](../distribution-and-engagement/video-analytics.md) — Results, your constituents, your team, and campaigns
