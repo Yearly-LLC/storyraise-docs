@@ -21,6 +21,8 @@ Send each constituent their own page through Storyraise Send, copy one link for 
 
 Click **Share** at the top of the editor. **Share your video** has three parts.
 
+![The Share your video window: Send to constituents, with how many constituents are on the video, a Count toward a campaign (optional) menu set to Holiday Appeal 2026 and a Send to constituents button; Same link for everyone, with the link, Copy link and Copy for email; then Sending from Salesforce, Blackbaud or another CRM? and Other ways](/assets/img/howto/video_share.png)
+
 ### Send to constituents
 
 Each constituent gets their own page with their name in it. The card tells you how many people are on the video; click **Send to constituents** to see them.
