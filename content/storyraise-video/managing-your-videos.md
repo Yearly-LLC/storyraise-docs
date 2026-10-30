@@ -28,6 +28,8 @@ Each card shows the title, who it's for (**For Maria Lopez**), and one date — 
 - **Send to constituents** — it's recorded and ready.
 - **See who watched** — it's gone out; this opens its Results.
 
+![The Videos list with a To do group holding Thank you, Reggie (Send to constituents) and an All videos group holding three Watched cards with their plays, how many constituents watched half, and a Holiday Appeal 2026 campaign tag](/assets/img/howto/video_list.png)
+
 ## Statuses
 
 Every video has one of these statuses, and the status filter shows how many you have of each:
@@ -44,6 +46,8 @@ Drafts without a recording sit in a folded-away section at the bottom, **Not rec
 
 Each draft is a row with **Record**, which opens it in the editor. When there are several drafts for the same person, they're grouped into one row (for example, "6 drafts for Maria Lopez"), and its **⋯** menu offers to archive them all (for example, **Archive all 6 drafts**) or to keep the newest and archive the rest (**Keep the newest, archive 5**).
 
+![The Not recorded yet section open with three drafts, each with Record and a ⋯ menu, and the Tidy up confirmation: Archive 1 draft? 1 was started over a week ago. You can restore it from Archived, with Archive 1 and Cancel](/assets/img/howto/video_not_recorded.png)
+
 ### Tidy up
 
 When old drafts and extra copies pile up, **Tidy up** appears at the foot of the section with a count. It explains what it will archive — drafts started over a week ago, and extra copies for a person who has a newer one — then click **Archive** to confirm or **Cancel**. Each person keeps their newest draft from the past week, and you can restore any of them from Archived.
@@ -59,6 +63,8 @@ On a phone, both filters live behind the **Filter** button.
 ## The ⋯ menu
 
 Each card's **⋯** menu has:
+
+![A video card's ⋯ menu: Edit video, See who watched, Open constituent page, Download, Copy email link, Rename, Duplicate and Archive](/assets/img/howto/video_card_menu.png)
 
 - **Send to constituents** (for a video that's ready) — opens the video's Send list in the editor.
 - **Edit video** — opens it in the editor in a new tab.

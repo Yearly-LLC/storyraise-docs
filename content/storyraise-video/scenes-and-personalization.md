@@ -28,6 +28,8 @@ Click **Next: Edit captions** when you're done.
 
 Under **Scenes**, each scene is a block on the timeline showing when it plays (for example, **0:04 to 0:08**). Click a block to select it; drag its edges to change when it starts or ends. Undo and redo sit beside the timeline.
 
+![Edit scenes with the third scene selected. The stage shows Give today, Vivian over the video, with the recording in a small box at the bottom right. In the panel, Words holds Give today, followed by a First name chip, and a line reads Vivian will see: Give today, Vivian. Below are Insert a constituent field, Layout (Cam bottom right), Entrance (Rise) and Size](/assets/img/howto/video_edit_scenes.png)
+
 **Simple** (the default) shows four things for the selected scene:
 
 - **Words** — the text, with a style menu (such as **Big title**) and bold and italic. A line under it shows what one constituent will see, for example **James will see:** Thanks, James Taylor.

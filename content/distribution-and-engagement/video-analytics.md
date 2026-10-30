@@ -23,6 +23,8 @@ Video analytics live in the dashboard under **Videos**, in four views: **Videos*
 
 Open a video's results from its card on the Videos list (**See who watched**, or the **⋯** menu), from **Full results** in the editor's **Results** step, or from **Results** next to anyone in My constituents. The other videos are listed down the left so you can move between them.
 
+![The Results page for Help Fill Pantry Shelves This Winter, tagged Holiday Appeal 2026: 6 constituent plays, 2 other views, 5 of 10 constituents watched half, 4 to call next and 1 called; a Where viewers stopped chart; a Call next list with each person's percent watched; a prompt to send to the 2 constituents who haven't been sent it; and a row for Priya Valentine, Opened, with Log call and Record a follow-up](/assets/img/howto/video_results.png)
+
 The numbers at the top:
 
 - **Constituent plays** — plays by people you sent it to.
@@ -62,6 +64,8 @@ The editor's own **Results** step shows the same thing in brief: the views, how 
 
 Owners and Admins see **Team this week**: videos sent and watched by each teammate, Monday to Sunday.
 
+![Team this week: a four-week chart of Sent and Constituents who watched half, and a table with columns Teammate, Sent, Watched half, Called, Videos made and 4 weeks](/assets/img/howto/video_team.png)
+
 - A chart of the last four weeks shows **Sent** and **Constituents who watched half**.
 - The table lists each **Teammate** with **Sent**, **Watched half**, **Called**, **Videos made**, and a four-week trend. Someone with nothing sent this week is marked **No sends this week**.
 - Click a name to see that person's week, their videos, and everyone they've sent a video.
@@ -78,6 +82,8 @@ Tag videos with a campaign to see what each one did: who watched, who you called
 
 1. Open **Campaigns**, type a name under **New campaign name**, and click **Add campaign**.
 2. Tag a video from its Results page (**Campaign**, or **New campaign…** to add one there), from **Count toward a campaign (optional)** when you share it, or from **Campaign** when you start a quick thank-you.
+
+![Campaigns: a New campaign name field and Add campaign, and a row for Holiday Appeal 2026 with 2 videos, 11 sent, 6 of 11 watched half, 1 called, and Gifts within 30 days reading Next update](/assets/img/howto/video_campaigns.png)
 
 Each campaign shows its **Videos**, **Sent**, **Watched half**, **Called**, and **Gifts within 30 days**. Gifts come from [Donor Signals](/donor-signals/): a gift counts when the constituent watched at least half of one of the campaign's videos and gave within 30 days after. A gift after videos from two campaigns counts once, for the most recent one. Gifts are added up every morning, so a new campaign reads **Next update** until then. **How gifts are counted** on the page says the same.
 

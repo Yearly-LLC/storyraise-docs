@@ -25,11 +25,13 @@ Click **Share** at the top of the editor. **Share your video** has three parts.
 
 Each constituent gets their own page with their name in it. The card tells you how many people are on the video; click **Send to constituents** to see them.
 
-The **Send to constituents** list shows everyone on the video, each with a status such as **Not sent**:
+The **Send to constituents** list shows everyone on the video, each with a status such as **Not sent yet**:
 
 - **Preview** opens that person's page in a new tab — their name in the scenes, their data in every field. Step through people with the arrows or search for someone. Preview a few, especially those with the least complete records.
 - **Add constituents** adds more people: search your organization's constituents, tick them, and click **Add**.
 - **Email them in Send** opens [Storyraise Send](../distribution-and-engagement/email-distribution.md) in a new tab with your video loaded. Each person gets an email with your message, your video's thumbnail, and a **Watch Video** button that opens their own page. Nothing goes out until you send it in Send.
+
+![The Send to constituents list: each person with their email, a status such as Not sent yet, Sent, Viewed, Watched or Clicked, and a Preview button; Add constituents and Email them in Send at the bottom](/assets/img/howto/video_send_list.png)
 
 You can also open this list from **Send to constituents** on the **Your page** step, and from **Results** when nobody has been sent the video yet.
 
@@ -59,12 +61,16 @@ Only people on the video's recipient list get a personalized page; anyone else s
 
 You don't have to open the editor to share a recorded video. On the Videos list, open a video's **⋯** menu and click **Copy email link**. Click **Copy link** and paste it into your email; each person who opens it sees your video, and you see who watched.
 
+![The Copy email link window: Copy link, Preview as a real recipient and Show link, then Personalize for each constituent (optional) with an Email tool menu set to Mailchimp](/assets/img/howto/video_copy_email_link.png)
+
 - **Show link** reveals the link itself.
 - **Personalize for each constituent (optional)** picks your email tool — **Mailchimp**, **Constant Contact**, or **Another email tool** — and adds its merge tag for the email address, so each person's visit counts as theirs. Constant Contact fills in `[[EmailAddress]]` for you; for another tool, type its merge tag (ask whoever sends your newsletter). With Mailchimp connected, Storyraise can build a draft campaign with the link in it; it never sends it.
 
 ## Download the video file
 
 Click **Download** at the top of the editor (or on the **Your page** step) to make a video file you can post or keep. Everyone gets the same file, so first names show as "friend".
+
+![The Download window: Everyone gets the same file. Names show as "friend." Shape choices Wide, 16:9 (selected), Phone, 9:16 and Square, 1:1; Captions: a separate .srt file with Change; Make my Wide video; and Made for each app (optional)](/assets/img/howto/video_download.png)
 
 1. Pick a shape: **Wide, 16:9**, **Phone, 9:16**, or **Square, 1:1**.
 2. Check the captions line (for example, burned in, word by word) and click **Change** to adjust it.
