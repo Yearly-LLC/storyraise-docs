@@ -10,13 +10,12 @@ keywords: video, thank-you video, personalized video, record, constituent video,
 
 Record a short video once, and every constituent gets their own page with their name in it. Then see who watched, and who to call next.
 
-<!-- TEAM REVIEW: rewritten 2026-10-30 against report-builder main (bbe5229c) with the new Video
-     editor and Videos list (has_feature.video_editor_depth, video_report_page) on for every org,
-     and the app's "donor" wording changed to "constituent". The weekly digest email stays off and
-     is deliberately not documented. Still open: whether Storyraise Video should be described as
-     generally available. -->
+<!-- TEAM REVIEW: rewritten 2026-10-30 against report-builder main (a657c6ec, #266 constituent
+     wording) with the new Video editor and Videos list on for every org with Video. The weekly
+     digest email stays off and is deliberately not documented. Storyraise Video is generally
+     available to every org with Video (confirmed 2026-10-30). -->
 
-To start, open **Videos** in the dashboard sidebar and click **New video**. See [Creating a video message](creating-a-video-message.md) for the full walkthrough.
+Storyraise Video is available to every organization that has Video. To start, open **Videos** in the dashboard sidebar and click **New video**. See [Creating a video message](creating-a-video-message.md) for the full walkthrough.
 
 ## Two ways to make a video
 

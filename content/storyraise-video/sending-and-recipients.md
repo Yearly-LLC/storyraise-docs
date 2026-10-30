@@ -10,13 +10,12 @@ keywords: send, share, send to constituents, storyraise send, copy link, copy fo
 
 Send each constituent their own page through Storyraise Send, copy one link for everyone, use a personalized link in your CRM, or download a video file.
 
-<!-- TEAM REVIEW: verified against report-builder main (bbe5229c) with the new editor on for every
-     org, "donor" wording changed to "constituent" in the app. Sending hands off to Storyraise Send
+<!-- TEAM REVIEW: verified against report-builder main (a657c6ec, #266 constituent wording) with the
+     new editor on for every org with Video. Sending hands off to Storyraise Send
      (send.storyraise.com?video-message-id={id}); Send builds the email as message text + thumbnail
      + "Watch Video" button. Send's SMS channel is limited to an allowlist of internal orgs, so this
-     page doesn't mention text messages. Pick a list in Send / Pick constituents need
-     has_feature.video_send; Download needs has_feature.video_render. Confirm both are in the
-     rollout. -->
+     page doesn't mention text messages. video_send and video_render are on for every org with
+     Video (confirmed 2026-10-30). -->
 
 ## Share
 
@@ -34,7 +33,7 @@ The **Send to constituents** list shows everyone on the video, each with a statu
 
 You can also open this list from **Send to constituents** on the **Your page** step, and from **Results** when nobody has been sent the video yet.
 
-If your organization uses campaigns, **Count toward a campaign (optional)** on the card tags the video. See [Video analytics](../distribution-and-engagement/video-analytics.md).
+**Count toward a campaign (optional)** on the card tags the video with a campaign. See [Video analytics](../distribution-and-engagement/video-analytics.md).
 
 ### Same link for everyone
 

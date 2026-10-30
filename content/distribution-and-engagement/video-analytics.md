@@ -11,12 +11,11 @@ keywords: video results, who watched, watched half, call next, log call, my cons
 See who watched each video and how far they got, who to call next, what your team sent this week, and what each campaign led to.
 
 <!-- TEAM REVIEW: rewritten 2026-10-30 (was a "Coming soon" stub) against report-builder main
-     (bbe5229c): the dashboard's Results page (#/{org}/video/{id}/results), My donors, Team this
-     week and Campaigns views (public/index.html, js/video-team.js, js/video-recipient-status.js),
-     with the app's "donor" wording changed to "constituent". Not documented: the weekly digest
-     email (stays off), Nudge on Team this week (has_feature.video_nudge, not confirmed in the
-     rollout), and the CRM write-back chip on Results rows. Campaigns needs
-     has_feature.video_campaigns and its gift counts need Donor Signals. -->
+     (a657c6ec, #266 constituent wording): the dashboard's Results page
+     (#/{org}/video/{id}/results), My constituents, Team this week and Campaigns views
+     (public/index.html, js/video-team.js, js/video-recipient-status.js). Campaigns and Nudge are on
+     for every org with Video. Deliberately not documented: the weekly digest email (stays off)
+     and Log call writing to the CRM. Campaign gift counts need Donor Signals. -->
 
 Video analytics live in the dashboard under **Videos**, in four views: **Videos**, **My constituents**, **Team this week**, and **Campaigns**. Every number counts the same way: **Watched half** means a constituent saw at least half of the video.
 
@@ -66,6 +65,10 @@ Owners and Admins see **Team this week**: videos sent and watched by each teamma
 - A chart of the last four weeks shows **Sent** and **Constituents who watched half**.
 - The table lists each **Teammate** with **Sent**, **Watched half**, **Called**, **Videos made**, and a four-week trend. Someone with nothing sent this week is marked **No sends this week**.
 - Click a name to see that person's week, their videos, and everyone they've sent a video.
+
+### Nudge a teammate
+
+Next to a teammate's name, click **Nudge** to email them their **Who to thank** list: constituents who watched half and haven't had a call, and new gifts nobody has thanked. Confirm with **Send nudge** (or **Cancel**). You can nudge each teammate once a day — afterward their row says **Nudged today** — and the email respects their email settings. The same button (**Nudge** and their first name) is on a teammate's own page.
 
 Earlier weeks update every morning. If nobody has sent a video in four weeks, the view says so instead of showing an empty chart.
 

@@ -10,19 +10,18 @@ keywords: scenes, edit scenes, merge tags, first name, personalize, constituent 
 
 Scenes are the words that appear over your video as you speak. Add a constituent's name and each person sees their own name on screen.
 
-<!-- TEAM REVIEW: verified against report-builder main (bbe5229c) with the new editor on for every
-     org, "donor" wording changed to "constituent" in the app. Two parts of Edit scenes have their
-     own flags: Sound (music, has_feature.video_music) and Footage's Add menu (cutaways and extra
-     clips, has_feature.video_broll / video_clips). They're mentioned in one line each below;
-     cut those lines if the rollout leaves those flags off. -->
+<!-- TEAM REVIEW: verified against report-builder main (a657c6ec, #266 constituent wording) with the
+     new editor on for every org with Video, music and clips included. Cutaways (b-roll,
+     has_feature.video_broll) are on unless the Unsplash key is still on the demo tier (pending as
+     of 2026-10-30); if cutaways stay off, drop "cutaways" from the Footage line below. -->
 
 ## Edit scenes
 
 When you finish recording, Storyraise writes a few scenes for you — timed text overlays in your template's style. The second step, **Edit scenes**, says **We added a scene for you. Open a part to change it, or add a constituent's name.** It has four parts, each with a short summary next to its name:
 
-- **Footage** — your recording. Drag the teal handles to trim the start and end. If your account has cutaways or extra clips, the **Add** menu adds them here.
+- **Footage** — your recording. Drag the teal handles to trim the start and end. The **Add** menu adds cutaways (photos or clips that play over your voice) and extra clips.
 - **Scenes** — the words over your video, on a timeline.
-- **Sound** — background music, if your account has it, with **Volume** and **Quieter while you talk**.
+- **Sound** — free background music, with **Volume** and **Quieter while you talk**.
 - **Look** — the overall style.
 
 Click **Next: Edit captions** when you're done.

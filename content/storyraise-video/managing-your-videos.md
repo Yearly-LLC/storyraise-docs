@@ -10,11 +10,10 @@ keywords: videos list, to do, all videos, not recorded yet, drafts, ready to sen
 
 The Videos list puts what needs doing first, keeps unrecorded drafts out of the way, and lets you rename, duplicate, archive, and tidy up.
 
-<!-- TEAM REVIEW: verified against report-builder main (bbe5229c) public/index.html (video list v2)
-     and public/js/video-list.js, with has_feature.video_editor_depth on for every org and the app's
-     "donor" wording changed to "constituent". Archive is never a hard delete. -->
+<!-- TEAM REVIEW: verified against report-builder main (a657c6ec, #266 constituent wording)
+     public/index.html (video list v2) and public/js/video-list.js, on for every org with Video. Archive is never a hard delete. -->
 
-Open **Videos** in the dashboard sidebar. Along the top are the views — **Videos**, **My constituents**, **Team this week** (for Owners and Admins), and **Campaigns** (if your organization uses them) — and the search box, the filters, and **New video**. The other views are covered in [Video analytics](../distribution-and-engagement/video-analytics.md).
+Open **Videos** in the dashboard sidebar. Along the top are the views — **Videos**, **My constituents**, **Team this week** (for Owners and Admins), and **Campaigns** — and the search box, the filters, and **New video**. The other views are covered in [Video analytics](../distribution-and-engagement/video-analytics.md).
 
 ## What's on the list
 

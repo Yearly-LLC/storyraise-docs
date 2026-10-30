@@ -10,9 +10,8 @@ keywords: record, webcam, upload, teleprompter, talking points, trim, captions, 
 
 Record with your webcam or upload a video, read from a teleprompter if you like, and trim the ends. Storyraise writes the captions for you.
 
-<!-- TEAM REVIEW: verified against report-builder main (bbe5229c) with the new editor on for every
-     org. Left out on purpose: "Record it on your phone" (has_feature.video_framing), which may not
-     be on for every org. Add it if the rollout includes that flag. -->
+<!-- TEAM REVIEW: verified against report-builder main (a657c6ec) with the new editor on for every
+     org with Video, including framing tips and the phone handoff (has_feature.video_framing). -->
 
 ## Record or upload
 
@@ -28,8 +27,19 @@ The first step in the editor is **Record your video**. Before anything is record
 - **Your talking points** — Storyraise writes a short script from your template and your organization, sized for a 45–60 second message. It runs on the teleprompter over the camera view; use **Speed**, **Play**, and **Top** to control it, or **Edit script** to change the words.
 - **Wide**, **Phone**, and **Square** pick the shape you record in. A laptop webcam records wide, so a Phone or Square version is a little soft — fine for email and your page.
 - **Background** blurs or replaces what's behind you — **Light blur**, **Strong blur**, **Brand color**, **Gradient**, **Office**, **Bookshelf**, or **Your image**.
+- **Framing tips** appear over the camera view while it's on, naming the one thing worth fixing — for example, **Leave a little room above your head. Tilt the camera up a touch.** or **Move toward the center of the frame.** When you're set, it says **Framing looks good.** The camera image never leaves your computer for this.
 - **Camera and mic** picks your camera and microphone, and has switches for **Studio mic** (for a good external mic with headphones), **Framing grid**, and **Teleprompter**.
 - Click **Start recording** when you're ready.
+
+### Record on your phone
+
+A laptop webcam records wide, so a Phone-shaped video keeps only a narrow slice of it. For a sharp Phone video, click **Want a sharper Phone video? Record it on your phone**. **Record on your phone for a sharp Phone video** shows a QR code:
+
+1. Scan it with your phone's camera.
+2. Sign in if it asks, then hold the phone upright and record.
+3. Save. The take lands in this video.
+
+If scanning doesn't work, copy the link and open it on your phone instead. **Record with my webcam** goes back to the webcam.
 
 ## Recording tips
 
@@ -39,11 +49,10 @@ A few seconds of setup makes a big difference:
 - **Background** — a clean wall or tidy space keeps the focus on you.
 - **Camera height** — at eye level, with you centered in the frame.
 - **Sound** — record somewhere quiet; built-in mics pick up echo and traffic.
-- **Phone or tablet** works great if its camera is better than your computer's — record there, then use **Upload video**.
+- **Phone or tablet** works great if its camera is better than your computer's — record there with **Record it on your phone**, or upload the file with **Upload video**.
 
 ## Trim, re-record, or replace
 
-![The Record your video step after recording: "Your video is in. Trim it, or record again." with Record again, Replace video, Trim start and end and a delete button, then Next: Edit scenes. The other four steps are listed below it](/assets/img/howto/video-record-step.png)
 
 Once your video is in, the step says **Your video is in. Trim it, or record again.**
 
@@ -61,7 +70,6 @@ Captions matter: many people watch with the sound off, and captions make your me
 
 ### Edit captions
 
-![The Edit captions step: Captions and Transcript tabs, two caption lines with their times, Download captions (.srt), Start over from the transcript, and Next: Your page (plays wide)](/assets/img/howto/video-edit-captions.png)
 
 The third step, **Edit captions**, lets you fix anything the transcript got wrong. Click a line to jump the video there.
 

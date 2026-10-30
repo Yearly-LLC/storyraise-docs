@@ -10,18 +10,15 @@ keywords: quick thank-you, thank a constituent, thank-you video, who to thank, l
 
 A quick thank-you is a short video for one person. Pick them, read a script filled from their last gift, record, and send their own link. About two minutes.
 
-<!-- TEAM REVIEW: verified against report-builder main (bbe5229c) quick mode (compose/index.html
-     data-quick-panel, dashboard quick picker), with the app's "donor" wording changed to
-     "constituent". The "Who to thank" suggestions come from Donor Signals; without it the panel
-     says "Donor Signals isn't available for this account yet." and search still works. "Send with
-     Storyraise Send" needs has_feature.video_send. The campaign picker needs
-     has_feature.video_campaigns. -->
+<!-- TEAM REVIEW: verified against report-builder main (a657c6ec, #266 constituent wording) quick
+     mode (compose/index.html data-quick-panel, dashboard quick picker). The "Who to thank" suggestions come from Donor Signals; without it the panel
+     says "Donor Signals isn't available for this account yet." and search still works. -->
 
 ## Pick who you're thanking
 
 In the dashboard, open **Videos**, click **New video**, and choose **Thank a constituent**. **Who are you thanking?** lists people worth thanking now — new gifts, upgrades, and constituents at risk — from [Donor Signals](/donor-signals/). Anyone you've already thanked this week is marked **thanked this week**. To thank someone else, search by name or email.
 
-If your organization uses campaigns, choose one under **Campaign** first so the thank-you counts toward it.
+To count it toward a campaign, choose one under **Campaign** first so the thank-you counts toward it.
 
 Click a name and the recorder opens for them. If you'd already started a thank-you for that person and not recorded it, Storyraise picks up that draft instead of making another.
 

@@ -10,8 +10,8 @@ keywords: new video, start from scratch, template, video template, appeal, impac
 
 Start a video from the Videos list, pick a template, choose who it's for, and record. The editor then takes you through five short steps to a page you can send.
 
-<!-- TEAM REVIEW: verified against report-builder main (bbe5229c), new editor and Videos list on
-     for every org, "donor" wording changed to "constituent" in the app. The setup screens
+<!-- TEAM REVIEW: verified against report-builder main (a657c6ec, #266 constituent wording), new
+     editor and Videos list on for every org with Video. The setup screens
      (Pick a template, recipients, recording tips) are not behind the editor flag. Upload a CSV is
      hidden in the app.storyraise.com editor (is_csv_upload_enabled is false), so it isn't
      documented. -->
@@ -52,7 +52,6 @@ The last setup screen has a few recording tips — good lighting, a clean backgr
 
 ## The editor
 
-![The video editor before anything is recorded: the Wide, Phone and Square shape buttons above an empty stage that reads "No video yet" with Use webcam and Upload video buttons, and the five steps on the right — Record your video, then Edit scenes, Edit captions, Your page and Results, each marked "Record first"](/assets/img/howto/video-editor-empty.png)
 
 The stage on the left shows your video. The steps on the right, under **Your video**, go in order, and each one ends with a **Next** button that names the step after it. Until you've recorded, the later steps say **Record first**.
 
