@@ -183,11 +183,12 @@ const SECTIONS = [
   {
     dir: 'storyraise-video',
     label: 'Storyraise Video',
-    blurb: 'Record one thank-you and send a personalized version to every donor, by name.',
+    blurb: 'Record one video and send a personalized version to every constituent, by name — then see who watched.',
     icon: 'videocam',
     order: [
-      'what-is-storyraise-video', 'creating-a-video-message', 'recording-your-video',
-      'scenes-and-personalization', 'sending-and-recipients',
+      'what-is-storyraise-video', 'creating-a-video-message', 'thanking-a-constituent',
+      'recording-your-video', 'scenes-and-personalization', 'sending-and-recipients',
+      'managing-your-videos',
     ],
   },
   {
