@@ -64,6 +64,7 @@ Each card's **⋯** menu has:
 - **Edit video** — opens it in the editor in a new tab.
 - **See who watched** — its Results.
 - **Open constituent page** — the page people see, in a new tab.
+- **Download** (for a recorded video) — opens the video in the editor, straight to its download options, in a new tab.
 - **Copy email link** — a link to paste into your own email. See [Sending, sharing, and downloading](sending-and-recipients.md).
 - **Rename** — type a new name and press Enter (Esc cancels).
 - **Duplicate** — makes a copy and opens it in a new tab.
