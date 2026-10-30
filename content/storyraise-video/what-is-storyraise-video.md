@@ -28,6 +28,8 @@ Storyraise Video is available to every organization that has Video. To start, op
 
 The editor walks you through five steps, listed down the right side under **Your video**:
 
+![The video editor: the constituent page with the sender, the video and the words under it on the left, and the five steps under Your video on the right: Record your video, Edit scenes, Edit captions, Your page and Results](/assets/img/howto/video_editor.png)
+
 1. **Record your video** — use your webcam or upload a video. Trim the start and end. See [Recording your video](recording-your-video.md).
 2. **Edit scenes** — the text that appears over your video, including each constituent's name. See [Scenes and personalization](scenes-and-personalization.md).
 3. **Edit captions** — captions are made for you; fix anything the transcript got wrong.
@@ -44,6 +46,8 @@ Each constituent opens a clean, mobile-friendly page: your video with captions t
 
 - **The Videos list** shows what to do next — videos to review, videos ready to send — and keeps drafts out of the way. See [Managing your videos](managing-your-videos.md).
 - **Results** shows each constituent's status (Sent, Opened, Watched half, and so on), who to call next, and lets you log the call. See [Video analytics](../distribution-and-engagement/video-analytics.md).
+
+![The Videos list: a To do group with a thank-you that's ready to send and its Send to constituents link, an All videos group with three Watched videos, and a line saying 2 thank-yous started this week are not recorded yet](/assets/img/howto/video_list.png)
 
 ## What it's for
 

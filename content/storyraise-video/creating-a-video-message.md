@@ -23,6 +23,8 @@ In the dashboard, open **Videos** in the sidebar and click **New video**. Storyr
 - **Thank a constituent** — a quick, personal thank-you to one person. See [Thanking a constituent](thanking-a-constituent.md).
 - **Start from scratch** — appeals, updates, events, or anything else. Record or upload anything. The editor opens in a new tab.
 
+![The What are you making? window with two choices: Thank a constituent (pick a constituent and we write the script from their last gift) and Start from scratch (appeals, updates, events), and a Cancel button](/assets/img/howto/video_new_chooser.png)
+
 You can also click **New video** on Home, which goes straight to **Start from scratch**. Video is licensed separately; if your account doesn't have it, **New video** on Home is dimmed and shows **Contact us for access**.
 
 ## 1. Pick a template
@@ -53,6 +55,8 @@ The last setup screen has a few recording tips — good lighting, a clean backgr
 ## The editor
 
 
+![The video editor: All videos, the title, Share and Download along the top; Preview as and Wide, Phone, Square above the stage, which shows the constituent page with the sender, the video and the words under it; and the five steps under Your video on the right, with Record your video open](/assets/img/howto/video_editor.png)
+
 The stage on the left shows your video. The steps on the right, under **Your video**, go in order, and each one ends with a **Next** button that names the step after it. Until you've recorded, the later steps say **Record first**.
 
 1. **Record your video** — webcam or upload, with talking points. See [Recording your video](recording-your-video.md).
@@ -74,6 +78,8 @@ Along the top of the editor:
 ## 4. Your page
 
 **Your page** is what each constituent sees when they open their link. When your video is recorded, the step opens on a line that tells you where you stand — for example, **Ready to send.** Constituents can watch your video now — with **Send to constituents**, **Copy link**, and **Download** right under it.
+
+![The Your page step: Ready to send. Constituents can watch your video now, with Send to constituents, Copy link and Download; Words under your video with a Help Fill Our Shelves heading; Page details reading No button, No logo; and Design your page (optional)](/assets/img/howto/video_your_page.png)
 
 - **Preview as** above the stage shows the page as a particular constituent will see it, with their name filled in.
 - **Words under your video** is the text below the player.

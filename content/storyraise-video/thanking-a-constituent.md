@@ -20,11 +20,15 @@ In the dashboard, open **Videos**, click **New video**, and choose **Thank a con
 
 To count it toward a campaign, choose one under **Campaign** first so the thank-you counts toward it.
 
+![The Who are you thanking? window: a Campaign menu set to No campaign, a search box, and suggested constituents such as Reggie Salazar, Upgraded, $2,150, Aug 17 and Luis Okafor, At risk, $12,000, Dec 7, 2025](/assets/img/howto/video_thank_picker.png)
+
 Click a name and the recorder opens for them. If you'd already started a thank-you for that person and not recorded it, Storyraise picks up that draft instead of making another.
 
 ## Record
 
 The panel shows who you're thanking and their last gift. Under **What to say** is a short script filled from their record — on your computer; nothing about the gift is sent to AI. Edit it however you like. If part of it is highlighted, replace it with your own words or delete it before you record.
+
+![The quick thank-you panel for Simon Gutierrez, last gift $170, Aug 7, 2025, marked Win-back. What to say holds a short script with [one thing your gift made possible] highlighted, a note to replace the highlighted part before recording, the Record Simon's thank-you button and Upload a video instead](/assets/img/howto/video_thank_record.png)
 
 Click the record button, which carries their first name (for example, **Record Maria's thank-you**), or **Upload a video instead**. In the recorder, **Personalize talking points** refills the script for this person, and **Polish with AI (first name only)** smooths the wording using only their first name.
 
@@ -38,6 +42,8 @@ Once you've recorded, you have a few ways to get it to them:
 - **Open in Gmail**, **Open in Outlook**, or **Mail app** — opens a draft addressed to them. If there's no email on their record, add it in the draft.
 
 **Record again**, **Trim**, and **Other links** sit below.
+
+![After recording a thank-you for Vivian Yardley: Recorded. Captions are on and your name shows at the start; a campaign menu; an inbox preview with a play button; Copy for email, Copy Vivian's link and Send with Storyraise Send; Open in Gmail, Open in Outlook and Mail app; and Next constituent: Reggie Salazar](/assets/img/howto/video_thank_send.png)
 
 ## Thank the next person
 
