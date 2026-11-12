@@ -21,7 +21,7 @@ Click anything on the canvas to select it; the settings panel shows the options 
 
 ## Editing text
 
-Click into any text and type. You can adjust a text element's font, size, color, alignment, line height, and letter spacing from its settings. For report-wide typography, save a [font pair](font-pairs.md) in the brand kit, or set the report's heading and body fonts under **⋯ → Styles**, instead of styling text element by element.
+Click into any text and type. You can adjust a text element's font, size, color, alignment, line height, and letter spacing from its settings. For report-wide typography, save a [font pair](font-pairs.md) in the brand kit, or set the report's heading and body fonts in [Block styles](fonts-and-colors.md), instead of styling text element by element.
 
 ## Elements you can add
 

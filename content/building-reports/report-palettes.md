@@ -117,11 +117,14 @@ The **+** and **−** at the end of **Your brand colors** add the color you've p
 Changing a palette in the brand kit doesn't touch existing reports. To bring a palette into one:
 
 1. Open the report in the builder.
-2. Open **⋯ → Styles** (or **Manage styles** in the Blocks panel).
-3. Under **Color Palette**, click **More color palettes**.
-4. Pick a palette under **Your Palettes**. Your brand kit palettes are listed first, above the stock palettes under **Other Palettes**.
+2. In the **Blocks** panel, click the palette icon next to **Standard** and **My Library** to open **Block styles**.
+3. Under **Colors**, pick one of your palettes. Your default palette is marked **Default**.
+4. To recolor the blocks already in the section you're editing, turn on **Also restyle the blocks in this section**. This replaces colors, fonts and sizes set by hand on those blocks; words and images stay.
+5. Click **Done**.
 
-The whole report is recolored. Any typography you've already fine-tuned, such as font sizes, weights, and line heights, is kept. The report gets its own copy of the colors, so later edits in the report don't change the brand kit palette, and the other way round.
+New blocks use the palette from then on. Fonts don't change when you pick a palette. The report gets its own copy of the colors, so later edits in the report don't change the brand kit palette, and the other way round.
+
+To use colors that aren't in a saved palette, pick **Custom colors** and click each of the five colors to change it. **Save as a palette in Brand Kit** adds that set to your brand kit for the whole team. Like palettes made in the brand kit, it needs readable text and buttons before it can be saved. See [Block styles](fonts-and-colors.md) for the rest of the panel.
 
 ## Related
 

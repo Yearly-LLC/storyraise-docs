@@ -86,10 +86,11 @@ Click the **×** on a style's chip. The confirmation tells you exactly what will
 
 A report gets its fonts when it's created: the pair you choose in the **Fonts** cards becomes that report's heading and body fonts (see [Starting a report on brand](brand-kit-and-new-reports.md)). After that, the report's fonts are set in the builder:
 
-- **⋯ → Styles** sets the report-wide **Heading Font** and **Body Font**. Your uploaded fonts are listed first.
+- **Block styles** (the palette icon at the top of the **Blocks** panel) lists your font pairs under **Fonts**, each in its own typeface. Pick one to make it the report's heading and body fonts. Picking a palette never changes fonts.
+- **Custom fonts**, in the same list, lets you choose a heading font and a body font for just this report. Your uploaded fonts are listed first. **Save as a font pair in Brand Kit** saves the two as a pair for the whole team; this works for Google fonts and fonts already in your brand kit.
 - Each text element's own font, weight, and size can be adjusted in its settings — see [Fonts and colors](fonts-and-colors.md).
 
-Brand kit pairs aren't listed in the builder, so to give an existing report your pair's fonts, set **Heading Font** and **Body Font** to match it.
+New blocks use the fonts you pick. To change the blocks already in the section you're editing, turn on **Also restyle the blocks in this section** before clicking **Done**. See [Block styles](fonts-and-colors.md).
 
 ## Tips
 
