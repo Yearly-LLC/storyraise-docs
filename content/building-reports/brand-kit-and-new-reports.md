@@ -83,8 +83,8 @@ Your logo isn't placed automatically. Add it in the builder from the sidebar's *
 
 ## Changing your mind later
 
-- **Colors:** in the builder, open **⋯ → Styles → More color palettes** and pick any palette under **Your Palettes**. See [Report palettes](report-palettes.md).
-- **Fonts:** in the builder, set **Heading Font** and **Body Font** under **⋯ → Styles**. See [Font pairs](font-pairs.md).
+- **Colors:** in the builder, open **Block styles** (the palette icon at the top of the **Blocks** panel) and pick any palette under **Colors**. See [Report palettes](report-palettes.md).
+- **Fonts:** in the same panel, pick a font pair under **Fonts**, or choose **Custom fonts**. See [Font pairs](font-pairs.md).
 - **Brand colors** are one click away for any element: select it in the builder, open its color picker, and pick from the **Your brand colors** row.
 
 ## Related
