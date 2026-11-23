@@ -19,6 +19,12 @@ Blackbaud authorizations expire periodically. Storyraise refreshes them automati
 
 Make sure you authorize with a Blackbaud account that has access to the constituent lists you want to sync.
 
+## "Blackbaud doesn't offer my organization's environment"
+
+Blackbaud only lists environments where the Storyraise app has been enabled. An environment admin enables it once: in the **Blackbaud Marketplace**, go to **Manage**, select **Connect app**, and paste the Storyraise Application ID `32dc2387-be8a-412f-b915-a09cab180367`. Then click **Connect** in Storyraise again.
+
+If you connected to **SKY Developer Cohort** by mistake, that's Blackbaud's shared developer test environment with sample data only. **Disconnect** the connection, then **Connect** again and choose your organization's environment. See [Blackbaud (Raiser's Edge NXT)](integrations/blackbaud-raisers-edge-nxt.md).
+
 ## "Bloomerang says my API key is invalid"
 
 - Double-check you copied the entire key with no leading or trailing spaces. Keys look like `aaead1d4-7075-57df-ec7f-11e717c7bdd1`.
