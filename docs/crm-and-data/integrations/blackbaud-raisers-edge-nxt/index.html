@@ -302,12 +302,23 @@
 <ul>
 <li>A Blackbaud account with access to your organization&#39;s Raiser&#39;s Edge NXT environment and the constituent lists you want to sync.</li>
 <li>A <strong>constituent list</strong> in Raiser&#39;s Edge NXT containing the people you want in Storyraise. If you don&#39;t have one yet, create a list in RE NXT first — syncing works list by list, which keeps you in control of exactly who comes over.</li>
+<li>The <strong>Storyraise app enabled in your Raiser&#39;s Edge NXT environment</strong>. This is a one-time step for an environment admin — see below.</li>
 </ul>
+<h2>Before you connect: enable Storyraise in your environment</h2>
+<p>Blackbaud only lets an app reach an environment after one of that environment&#39;s admins has connected it. If nobody at your organization has done this yet, ask a Raiser&#39;s Edge NXT <strong>environment admin</strong> to:</p>
+<ol>
+<li>Open the <strong>Blackbaud Marketplace</strong> and go to <strong>Manage</strong>.</li>
+<li>Select <strong>Connect app</strong>.</li>
+<li>Paste the Storyraise Application ID: <code>32dc2387-be8a-412f-b915-a09cab180367</code> (the app is named <strong>Digital donor and impact reports</strong>).</li>
+<li>Click <strong>Connect</strong>.</li>
+</ol>
+<p>This only needs doing once per environment. After that, anyone with access to the environment can connect it to Storyraise.</p>
 <h2>Connect and sync</h2>
 <p>Raiser&#39;s Edge NXT uses sign-in (OAuth), so there&#39;s no API key to copy:</p>
 <ol>
 <li>Open the <strong><a href="/docs/crm-and-data/connections-overview/">Connections</a></strong> tab and find <strong>Raiser&#39;s Edge NXT</strong> under <strong>Add a connection</strong>.</li>
 <li>Click <strong>Connect</strong>. You&#39;ll be sent to Blackbaud to sign in and authorize Storyraise.</li>
+<li>If Blackbaud asks which environment to use, choose <strong>your organization&#39;s environment</strong>. Don&#39;t choose <strong>SKY Developer Cohort</strong> — that&#39;s Blackbaud&#39;s shared test environment for developers and holds only sample data.</li>
 <li>Approve the authorization. You&#39;ll return to Storyraise automatically, and a <strong>Select a list to import</strong> picker opens.</li>
 <li>Choose the <strong>constituent list</strong> you want to sync.</li>
 <li>Click <strong>Sync Constituents</strong>.</li>
@@ -349,6 +360,8 @@
 <ul>
 <li><strong>Authorization errors</strong> — reconnect via the <strong>Connect</strong> button, using a Blackbaud account with access to your lists.</li>
 <li><strong>Missing constituents</strong> — check that they&#39;re in the synced list and have an email address in RE NXT.</li>
+<li><strong>Your organization&#39;s environment isn&#39;t offered, or Blackbaud says the application isn&#39;t connected</strong> — the Storyraise app hasn&#39;t been enabled in your environment yet. Ask an environment admin to follow <strong>Before you connect</strong> above, then click <strong>Connect</strong> again.</li>
+<li><strong>Connected to the wrong environment</strong> (for example <strong>SKY Developer Cohort</strong>) — open the connection&#39;s menu, choose <strong>Disconnect</strong> (leave <strong>Also delete the data it synced</strong> unticked unless you want those records gone), then click <strong>Connect</strong> and pick your organization&#39;s environment.</li>
 </ul>
 <p>More help: <a href="/docs/crm-and-data/troubleshooting-sync-issues/">Troubleshooting sync issues</a>.</p>
 
@@ -376,6 +389,6 @@
   </footer>
 
   <script src="/assets/theme.js"></script>
-  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="ae8389d9" data-engine-v="676be165" defer></script>
+  <script src="/assets/search-boot.js?v=676be165" data-controller="/assets/search.js" data-eager="false" data-index-v="4bbfc186" data-engine-v="676be165" defer></script>
 </body>
 </html>
